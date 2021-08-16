@@ -1,28 +1,28 @@
 extra:
   alternate:
     - name: English
-      link: /
+      link: README.md
       lang: en
     - name: 中文
-      link: /zh-cn/
+      link: zh-cn/
       lang: zh
     - name: Español
-      link: /es/
+      link: es/
       lang: es
     - name: Français
-      link: /fr-fr/
+      link: fr-fr/
       lang: fr
     - name: עברית
-      link: /he-il/
+      link: he-il/
       lang: he
     - name: Português
-      link: /pt-br/
+      link: pt-br/
       lang: pt
     - name: Русский
-      link: /ru-ru/
+      link: ru-ru/
       lang: ru
     - name: 日本語
-      link: /ja/
+      link: ja/
       lang: ja
   version:
     provider: mike
@@ -44,6 +44,8 @@ markdown_extensions:
   - def_list
   - fenced_code
   - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
   - sane_lists
   - tables
   - toc:
@@ -53,8 +55,6 @@ markdown_extensions:
   - wikilinks
 nav:
   - README.md
-repo_name: qmk/qmk_firmware
-repo_url: https://github.com/qmk/qmk_firmware
 site_name: QMK Firmware Docs
 site_url: https://docs.qmk.fm
 theme:
