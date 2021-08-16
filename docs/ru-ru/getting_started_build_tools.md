@@ -146,7 +146,8 @@ util/docker_build.sh keyboard:keymap:target
 
 Если вы используете Linux, это должно работать прямо из коробки. На Windows и macOS это требует запуска [Docker Machine](http://gw.tnode.com/docker/docker-machine-with-usb-support-on-windows-macos/). Ее довольно утомительно настраивать, поэтому мы не рекомендуем это; используйте вместо этого [QMK Toolbox](https://github.com/qmk/qmk_toolbox).
 
-!> Docker для Windows требует включения [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v). Это означает, что он не работает на версиях Windows без Hyper-V, например, на Windows 7, Windows 8 и **Windows 10 Home**.
+!!! note
+    Docker для Windows требует включения [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v). Это означает, что он не работает на версиях Windows без Hyper-V, например, на Windows 7, Windows 8 и **Windows 10 Home**.
 
 ## Vagrant
 

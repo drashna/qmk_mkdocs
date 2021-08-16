@@ -12,15 +12,16 @@ Toutefois, la QMK Toolbox n'est actuellement disponible que pour Windows et macO
 
 Démarrez en ouvrant l'application QMK Toolbox. Cherchez le fichier de firmware dans Finder ou Explorer. Vore firmware de clavier peut être dans un de deux formats `.hex` ou `.bin`. QMK essaye de copier le bon format pour votre clavier du répertoire racine `qmk_firmware`.
 
-?> Si vous êtes sous Windows ou macOS il y a des commandes que vous pouvez utiliser pour facilement ouvrir le répertoire firmware dans Explorer ou Finder.
+!!! tip
+    Si vous êtes sous Windows ou macOS il y a des commandes que vous pouvez utiliser pour facilement ouvrir le répertoire firmware dans Explorer ou Finder.
 
-?> Windows:
+    Windows:
 
-    start .
+        start .
 
-?> macOS:
+    macOS:
 
-    open .
+        open .
 
 Le fichier firmware suit toujours ce format de nommage:
 
@@ -143,7 +144,8 @@ Une fois terminé, vous devrez mettre à zéro le contrôleur. Vous allez voir u
 >>> dfu-programmer atmega32u4 reset
 ```
 
-?> Si vous avez des soucis concernant ceci - par exemple `dfu-programmer: no device present` - merci de regarder [Foires Aux Questions de Compilation](faq_build.md).
+!!! note
+    Si vous avez des soucis concernant ceci - par exemple `dfu-programmer: no device present` - merci de regarder [Foires Aux Questions de Compilation](faq_build.md).
 
 #### Commandes DFU
 

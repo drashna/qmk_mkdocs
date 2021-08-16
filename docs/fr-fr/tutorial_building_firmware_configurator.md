@@ -2,23 +2,27 @@
 
 Le [Configurateur de QMK](https://config.qmk.fm) est une interface graphique en ligne permettant de générer des fichiers "hex" du firmware de QMK.
 
-?> **S'il vous plaît, suivez les étapes suivantes dans l'ordre.**
+!!! note
+    **S'il vous plaît, suivez les étapes suivantes dans l'ordre.**
 
 Regardez le [Tutoriel vidéo](https://youtu.be/tx54jkRC9ZY)https://www.youtube.com/watch?v=-imgglzDMdY)
 
 Le configurateur de QMK fonctionne mieux avec Chrome et Firefox.
 
-!> **Les fichiers d'autres outils, tels que KLE ou kbfirmware ne seront pas compatibles avec le configurateur QMK. Ne les chargez pas, ne les importez pas. Le configurateur QMK est un outil DIFFERENT.**
+!!! warning
+    **Les fichiers d'autres outils, tels que KLE ou kbfirmware ne seront pas compatibles avec le configurateur QMK. Ne les chargez pas, ne les importez pas. Le configurateur QMK est un outil DIFFERENT.**
 
 ## Sélectionner votre clavier
 
 Cliquez la boîte déroulante et sélectionnez le clavier pour lequel vous voulez créer une keymap.
 
-?> Si votre clavier a plusieurs versions, faites attention à utiliser la bonne.
+!!! warning
+    Si votre clavier a plusieurs versions, faites attention à utiliser la bonne.
 
 Je vais le répéter, parce que c'est important
 
-!> **FAITES ATTENTION A UTILISER LA BONNE VERSION !**
+!!! danger
+    **FAITES ATTENTION A UTILISER LA BONNE VERSION !**
 
 Si votre clavier est annoncé comme fonctionnant grâce à QMK mais n'est pas dans la liste, il y a des chances que le développeur ne l'ait pas encore fait, ou que nous n'avons pas encore eu le temps de le merger. Ajoutez un problème (issue) sur [qmk_firmware](https://github.com/qmk/qmk_firmware/issues) demandant le support de votre clavier, s'il n'y a pas de [Pull Request](https://github.com/qmk/qmk_firmware/pulls?q=is%3Aopen+is%3Apr+label%3Akeyboard) ouvert pour lui. Il y a aussi des claviers alimentés par QMK qui sont sur le compte GitHub du fabricant, il est bon de le vérifier aussi.
 
@@ -30,7 +34,8 @@ Choisissez la disposition (layout) qui représente le mieux la keymap que vous v
 
 Appelez cette keymap comme vous voulez.
 
-?> Si vous rencontrez des problèmes lors de la compilation, il peut être utile de changer ce nom, il peut déjà exister dans le dépôt du firmware QMK.
+!!! tip
+    Si vous rencontrez des problèmes lors de la compilation, il peut être utile de changer ce nom, il peut déjà exister dans le dépôt du firmware QMK.
 
 ## Créer votre keymap
 
@@ -65,7 +70,8 @@ Une fois satisfait de votre keymap, ou si vous souhaitez revenir travailler dess
 
 Vous pouvez ensuite charger ce fichier .json à nouveau en appuxant sur le bouton `Import Keymap`.
 
-!> **ATTENTION** Ce n'est pas le même type de fichier .json utilisé pour kbfirmware.com ou n'importe quel autre outil. Si vous essayez d'utiliser ce fichier pour d'autres outil, ou le fichier .json d'autres outils avec le configurateur QMK, il y a des chances que votre clavier **explose**.
+!!! warning
+    **ATTENTION** Ce n'est pas le même type de fichier .json utilisé pour kbfirmware.com ou n'importe quel autre outil. Si vous essayez d'utiliser ce fichier pour d'autres outil, ou le fichier .json d'autres outils avec le configurateur QMK, il y a des chances que votre clavier **explose**.
 
 ## Générer votre fichier firmware
 

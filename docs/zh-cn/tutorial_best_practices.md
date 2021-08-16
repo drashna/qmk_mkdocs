@@ -58,7 +58,8 @@ git push --set-upstream origin dev_branch
 
 这回建立一个叫做 `dev_branch`的新分支, 检查一下, 然后想你的分叉保存分支. 使用 `--set-upstream` 参数来告诉git使用你的分叉并且当每次你对你的分支用`git push` 或 `git pull`时要使用`dev_branch`。 它仅需要在第一次push的时候使用；然后你就可以很安全的用 `git push` 或 `git pull`, 并不需要其他参数了。
 
-!> 使用 `git push`, 你可以用 `-u` 来代替 `--set-upstream` &mdash; `-u`是`--set-upstream`的简写。
+!!! tip
+    使用 `git push`, 你可以用 `-u` 来代替 `--set-upstream` &mdash; `-u`是`--set-upstream`的简写。
 
 您可以将您的分支命名为您想要的任何名称，但建议将其命名为与您要进行的更改相关的内容。
 

@@ -57,7 +57,8 @@ git push --set-upstream origin dev_branch
 
 Ceci crée une branche nommée `dev_branch`, bascule vers cette branche, et ensuite sauvegarde cette nouvelle branche vers votre fork. L'argument `--set-upstream` demande à git d'utiliser votre fork et la branche `dev_branch` à chaque fois que vous utilisez `git push` ou `git pull` depuis cette branche. Vous ne devez l'utiliser que pour le premier "push", après cela, vous pouvez utiliser simplement `git push` ou `git pull`, sans le reste des arguments.
 
-!> Avec `git push`, vous pouvez utiliser `-u` à la place de `--set-upstream` &mdash; `-u` est un alias pour `--set-upstream`.
+!!! tip
+    Avec `git push`, vous pouvez utiliser `-u` à la place de `--set-upstream` &mdash; `-u` est un alias pour `--set-upstream`.
 
 Vous pouvez appeler votre branche à peu près comme vous voulez, toutefois il est recommandé d'utiliser un nom qui est lié aux changements que vous allez faire.
 
@@ -76,7 +77,8 @@ git commit -m "My commit message."
 
 `git add` ajoute les fichiers qui ont été changés dans la *zone de staging* de Git, qui est sa "zone de chargement". Elle contient tous les changements qui vont être *validés* (committed) par `git commit`, qui sauvegarde les changements vers le dépôt. Utilisez des messages de validation descriptifs afin que vous puissiez savoir ce qui a changé d'un coup d'oeil.
 
-!> Si vous changez beaucoup de fichiers, mais tous les fichiers font partie du même changement, vous pouvez utiliser `git add .` pour ajouter tous les fichiers changés dans le répertoire courant, plutôt que d'avoir à ajouter chaque fichier individuellement.
+!!! tip
+    Si vous changez beaucoup de fichiers, mais tous les fichiers font partie du même changement, vous pouvez utiliser `git add .` pour ajouter tous les fichiers changés dans le répertoire courant, plutôt que d'avoir à ajouter chaque fichier individuellement.
 
 ### Publier Vos Changements
 

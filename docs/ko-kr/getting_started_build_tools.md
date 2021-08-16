@@ -150,7 +150,8 @@ util/docker_build.sh keyboard:keymap:target
 ```
 만약 당시이 리눅스를 사용한다면 이 커맨드들은 추가 설정 없이 바로 작동할 것입니다. 하지만 위도우 또는 맥 환경에서는 [Docker Machine](http://gw.tnode.com/docker/docker-machine-with-usb-support-on-windows-macos/)를 사용하여야 이 커맨드들을 사용가능합니다. Docker Machine설정은 꽤 지루하고 짜증남으로 추천하지 않고 [QMK Toolbox](https://github.com/qmk/qmk_toolbox)를 사용하는 것을 추천합니다.
 
-!> 윈도우에서 독커는 [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)을 활성화 설정하여야 사용가능합니다. 즉, 도커는 Hyper-V를 지원하지 않는 윈도우 7, 윈도우 8, 그리고 **윈도우 10 홈**과 같은 윈도우 버전에서 사용할수 없다는 것을 의미합니다.
+!!! note
+    윈도우에서 독커는 [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)을 활성화 설정하여야 사용가능합니다. 즉, 도커는 Hyper-V를 지원하지 않는 윈도우 7, 윈도우 8, 그리고 **윈도우 10 홈**과 같은 윈도우 버전에서 사용할수 없다는 것을 의미합니다.
 
 ## Vagrant
 만약 컴웨어를 사용하는데 문제가 있다면 Vagrant라는 이름의 툴을 사용해 볼 수 있습니다. 이 툴은 가상환경을 세팅해줌과 동시에 컴웨어를 사용하는데에 필요한 모든 설정을 해줄 것입니다. OLKB는 가상환경에 파일을 호스팅하지 않습니다. [Vagrant 가이드](getting_started_vagrant.md)에서 더 많은 정보를 확인할 수 있습니다.

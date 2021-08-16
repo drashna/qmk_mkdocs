@@ -4,7 +4,8 @@ Github can be a little tricky to those that aren't familiar with it - this guide
 
 Github는 자주 사용하는 사람이 아니면 좀 여려울수도 있습니다. 이 문서는 Github를 사용하는데 필요한 forking, cloning 그리고 submitting a pull request with QMK를 설명할 것입니다. 
 
-?> 이 가이드는 당신이 git커맨드를 사용하는데 익숙하고 git환경을 당신의 시스템이 설치하였다는 전제하에 작성되었습니다.
+!!! note
+    이 가이드는 당신이 git커맨드를 사용하는데 익숙하고 git환경을 당신의 시스템이 설치하였다는 전제하에 작성되었습니다.
 
 아래와 같이 [QMK Github 페이지](https://github.com/qmk/qmk_firmware)에서 당신은 "Fork"라고 쓰여있는 버튼을 볼 수 있습니다
 

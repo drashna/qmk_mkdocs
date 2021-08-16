@@ -21,7 +21,8 @@ Zadig détectera automatiquement les périphériques en mode bootloader. Il se p
  - Les claviers AVR flashé avec le bootloader QMK-DFU s'appelleront `<nom du clavier> Bootloader` et auront aussi le VID `03EB`.
  - Pour la plupart des claviers ARM, ils s'appelleront `STM32 BOOTLOADER`, et auront un VID/PID `0483:DF11`.
 
-!> Si Zadig affiche certains de vos périphériques avec le driver `HidUsb`, votre clavier n'est probablement pas en mode bootloader. La flèche aura une couleur orange et vous aurez un message de confirmation vous demandant de modifier un pilote système. **Ne continuez pas!**
+!!! warning
+    Si Zadig affiche certains de vos périphériques avec le driver `HidUsb`, votre clavier n'est probablement pas en mode bootloader. La flèche aura une couleur orange et vous aurez un message de confirmation vous demandant de modifier un pilote système. **Ne continuez pas!**
 
 Si la flèche apparaît en vert, sélectionnez le driver et appuyez sur le bouton **Install Driver**. Le driver `libusb-win32` devrait normalement fonctionner pour AVR, et `WinUSB` pour ARM. Si vous avez des problèmes pour flasher la board, essayez d'installer un pilote différent de la liste. Pour flasher un périphérique USBaspLoader en ligne de commande avec msys2, le driver `libusbk` est recommandé, sinon `libusb-win32` devrait fonctionner correctement si vous utilisez QMK Toolbox pour flasher.
 

@@ -8,15 +8,16 @@ Si vous avez fermé et rouvert votre fenêtre de terminal depuis le démarrage d
 
 Démarrez par naviguer dans le répertoire `keymaps` de votre clavier.
 
-?> Si vous êtes sous macOS ou Windows, il y a des commandes que vous pouvez utiliser pour facilement ouvrir le dossier keymaps.
+!!! tip
+    Si vous êtes sous macOS ou Windows, il y a des commandes que vous pouvez utiliser pour facilement ouvrir le dossier keymaps.
 
-?> macOS:
+    macOS:
 
-    open keyboards/<keyboard_folder>/keymaps
+        open keyboards/<keyboard_folder>/keymaps
 
-?> Windows:
+    Windows:
 
-    start .\\keyboards\\<keyboard_folder>\\keymaps
+        start .\\keyboards\\<keyboard_folder>\\keymaps
 
 ## Créez une copie de la keymap `default`
 
@@ -44,7 +45,8 @@ Ouvrez votre fichier `keymap.c`. Dans ce fichier, vous trouverez la structure qu
 
 Cette ligne indique le début d'une liste de calques (layers). En dessous, vous trouverez des lignes contenant soit `LAYOUT`, soit `KEYMAP` et ces lignes indiquent le début d'un calque. En dessous de cette ligne se trouve la liste des touches qui comprennent ce calque particulier.
 
-!> Lorsque vous éditez votre fichier keymap, faites attention à ne pas ajouter ou enlever une virgule. Si vous le faites, vous aller empêcher votre firmware de compiler et il ne sera pas facile de trouver où la virgule est manquante ou en trop.
+!!! tip
+    Lorsque vous éditez votre fichier keymap, faites attention à ne pas ajouter ou enlever une virgule. Si vous le faites, vous aller empêcher votre firmware de compiler et il ne sera pas facile de trouver où la virgule est manquante ou en trop.
 
 ## Customisez le layout à votre goût
 
@@ -54,7 +56,8 @@ Libre à vous de choisir comment compléter cette étape. Faites le petit change
 * [Fonctionnalités](features.md)
 * [FAQ](faq.md)
 
-?> Lorsque vous découvrez comment des keymaps fonctionnent, faites de petits changements. De gros changements rendent le débuggage des problèmes éventuels plus difficile.
+!!! tip
+    Lorsque vous découvrez comment des keymaps fonctionnent, faites de petits changements. De gros changements rendent le débuggage des problèmes éventuels plus difficile.
 
 ## Compilez votre firmware
 
