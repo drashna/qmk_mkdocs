@@ -139,16 +139,15 @@ We've tried to make QMK as easy to set up as possible. You only have to prepare 
 
     In most situations you will want to answer `y` to all of the prompts.
 
-    !!! note
-       **Note on Debian, Ubuntu and their derivatives**:
+    **Note on Debian, Ubuntu and their derivatives**:
 
-       It's possible, that you will get an error saying something like: `bash: qmk: command not found`.
+    It's possible, that you will get an error saying something like: `bash: qmk: command not found`.
 
-       This is due to a [bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839155) Debian introduced with their Bash 4.4 release, which removed `$HOME/.local/bin` from the PATH. This bug was later fixed on Debian and Ubuntu.
+    This is due to a [bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839155) Debian introduced with their Bash 4.4 release, which removed `$HOME/.local/bin` from the PATH. This bug was later fixed on Debian and Ubuntu.
 
-       Sadly, Ubuntu reitroduced this bug and is [yet to fix it](https://bugs.launchpad.net/ubuntu/+source/bash/+bug/1588562).
+    Sadly, Ubuntu reitroduced this bug and is [yet to fix it](https://bugs.launchpad.net/ubuntu/+source/bash/+bug/1588562).
 
-       Luckily, the fix is easy. Run this as your user: `echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc`
+    Luckily, the fix is easy. Run this as your user: `echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc`
 
 === "FreeBSD"
 

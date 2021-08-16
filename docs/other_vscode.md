@@ -3,6 +3,7 @@
 [Visual Studio Code](https://code.visualstudio.com/) (VS Code) is an open-source code editor that supports many different programming languages. 
 
 Using a full-featured editor such as VS Code provides many advantages over a plain text editor, such as:
+
 * intelligent code completion
 * convenient navigation in the code
 * refactoring tools
