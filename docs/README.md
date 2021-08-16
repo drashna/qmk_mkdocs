@@ -8,13 +8,13 @@ QMK (*Quantum Mechanical Keyboard*) is an open source community centered around 
 
 === "Basic"
 
-    [QMK Configurator](newbs_building_firmware_configurator.md)
+    [QMK Configurator](tutorial_building_firmware_configurator.md)
 
     User friendly graphical interfaces, no programming knowledge required.
 
 === "Advanced"
 
-    [Use The Source](newbs.md)
+    [Use The Source](tutorial.md)
 
     More powerful, but harder to use.
 

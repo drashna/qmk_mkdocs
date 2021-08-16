@@ -2,8 +2,8 @@
 
 <!---
   grep --no-filename "^[ ]*git diff" docs/ja/*.md | sh
-  original document: 0.12.45:docs/newbs_flashing.md
-  git diff 0.12.45 HEAD -- docs/newbs_flashing.md | cat
+  original document: 0.12.45:docs/tutorial_flashing.md
+  git diff 0.12.45 HEAD -- docs/tutorial_flashing.md | cat
 -->
 
 カスタムファームウェアは出来たので、いよいよキーボードへの書き込み(フラッシュ)です。

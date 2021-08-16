@@ -23,8 +23,8 @@ QMK は初めてですか？始めるには2つの方法があります:
 * 基本: [QMK Configurator](https://config.qmk.fm)
     * ドロップダウンからあなたのキーボードを選択し、キーボードをプログラムします。
     * 見ることができる [紹介ビデオ](https://www.youtube.com/watch?v=-imgglzDMdY) があります。
-    * 読むことができる概要 [ドキュメント](ja/newbs_building_firmware_configurator.md) があります。
-* 発展: [ソースを使用します](ja/newbs.md)
+    * 読むことができる概要 [ドキュメント](ja/tutorial_building_firmware_configurator.md) があります。
+* 発展: [ソースを使用します](ja/tutorial.md)
     * より強力ですが、使うのはより困難です。
 
 ## 自分用にアレンジします

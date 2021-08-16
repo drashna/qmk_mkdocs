@@ -7,7 +7,7 @@ Ce document a pour but d'apprendre aux novices les meilleures solutions pour fac
 Ce document suppose les choses suivantes:
 
 1. Vous avez un compte GitHub, et avez [créé un "fork" pour le dépôt qmk_firmware](fr-FR/getting_started_github.md) avec votre compte.
-2. Vous avez [configuré votre environnement de compilation](fr-FR/newbs_getting_started.md?id=environment-setup).
+2. Vous avez [configuré votre environnement de compilation](fr-FR/tutorial_getting_started.md?id=environment-setup).
 
 ## La branche master de votre fork: Mettre à jour souvent, ne jamais commit
 

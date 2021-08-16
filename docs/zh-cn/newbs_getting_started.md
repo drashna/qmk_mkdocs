@@ -8,7 +8,7 @@ QMK试图通过使简单的事情变得更简单，使使不可能成为可能�
 
 在你能创建布局前,你要安装一些软件来建立你的开发环境。无论你想编译多少固件，这个操作都只需要进行一次。
 
-如果您更喜欢图形化界面, 请考虑使用在线工具[QMK配置器](https://config.qmk.fm)。 请参考 [使用在线GUI构建您的第一个固件](newbs_building_firmware_configurator.md)。
+如果您更喜欢图形化界面, 请考虑使用在线工具[QMK配置器](https://config.qmk.fm)。 请参考 [使用在线GUI构建您的第一个固件](tutorial_building_firmware_configurator.md)。
 
 
 ## 下载软件
@@ -99,4 +99,4 @@ Checking file size of clueboard_66_rev3_default.hex                             
 
 # 创建你的布局
 
-现在你可以创建属于你自己的布局了! 请移步 [构建你的第一个固件](newbs_building_firmware.md)来继续。
+现在你可以创建属于你自己的布局了! 请移步 [构建你的第一个固件](tutorial_building_firmware.md)来继续。

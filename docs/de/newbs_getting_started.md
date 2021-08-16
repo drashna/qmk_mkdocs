@@ -10,7 +10,7 @@ QMK möchte seine BenutzerInnen in die Lage versetzen, simple Aufgaben möglichs
 # Los geht's!
 Bevor Du damit loslegen kannst, deine Tastaturbelegung zu erstellen, musst Du ein wenig Software installieren und Dir eine Entwicklungsumgebung aufsetzen. Die gute Nachricht ist, dass das nur einmal erledigt werden muss, egal für wie viele verschiedene Tastaturen Du hinterher Firmware entwickeln willst.
 
-Wenn Du es vorziehst mit einer grafischen Oberfläche zu entwickeln kannst Du auch dazu gerne direkt mit dem online [QMK Konfigurator](https://config.qmk.fm) loslegen. Siehe auch: [Firmware mit der Online GUI erzeugen](de/newbs_building_firmware_configurator.md)
+Wenn Du es vorziehst mit einer grafischen Oberfläche zu entwickeln kannst Du auch dazu gerne direkt mit dem online [QMK Konfigurator](https://config.qmk.fm) loslegen. Siehe auch: [Firmware mit der Online GUI erzeugen](de/tutorial_building_firmware_configurator.md)
 
 ## Software herunterladen
 
@@ -98,4 +98,4 @@ Checking file size of clueboard_66_rev3_default.hex                             
 ```
 
 # Eine eigene Tastaturbelegung erstellen
-Du bist nun fertig mit dem Setup der Entwicklungsumgebung und solltest somit in der Lage sein, deine eigenen Tastaturbelegungen zu erstellen. Um fortzufahren, folge bitte der nächsten Anleitung unter [Die erste Firmware](de/newbs_building_firmware.md).
+Du bist nun fertig mit dem Setup der Entwicklungsumgebung und solltest somit in der Lage sein, deine eigenen Tastaturbelegungen zu erstellen. Um fortzufahren, folge bitte der nächsten Anleitung unter [Die erste Firmware](de/tutorial_building_firmware.md).

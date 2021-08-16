@@ -8,13 +8,13 @@ QMK是为你机械硬盘设计的的一个强大的开源固件。使用QMK可�
 
 这个教程有7个主要部分：
 
-* [新手上路](newbs_getting_started.md)
-* [用命令行构建你的第一个固件](newbs_building_firmware.md)
-* [用在线界面构建你的第一个固件](newbs_building_firmware_configurator.md)
-* [刷新固件](newbs_flashing.md)
-* [测试和调试](newbs_testing_debugging.md)
-* [Git最佳实践](newbs_best_practices.md)
-* [其他学习资源](newbs_learn_more_resources.md)
+* [新手上路](tutorial_getting_started.md)
+* [用命令行构建你的第一个固件](tutorial_building_firmware.md)
+* [用在线界面构建你的第一个固件](tutorial_building_firmware_configurator.md)
+* [刷新固件](tutorial_flashing.md)
+* [测试和调试](tutorial_testing_debugging.md)
+* [Git最佳实践](tutorial_best_practices.md)
+* [其他学习资源](tutorial_learn_more_resources.md)
 
 这份教程旨在帮助没有固件构建经验的人，也是根据该目的做出选择和建议。这些程序有很多替代方法，大部分替代我们都支持。如果你对完成一个任务有疑问，可以[向我们寻求帮助](getting_started_getting_help.md).
 

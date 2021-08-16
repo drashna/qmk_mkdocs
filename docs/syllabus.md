@@ -4,12 +4,12 @@ This page helps you build up your QMK knowledge by introducing the basics first 
 
 # Beginning Topics
 
-If you read nothing else you should read the documents in this section. After reading the [Tutorial](newbs.md) you should be able to create a basic keymap, compile it, and flash it to your keyboard. The remaining documents will flesh out your knowledge of these basics.
+If you read nothing else you should read the documents in this section. After reading the [Tutorial](tutorial.md) you should be able to create a basic keymap, compile it, and flash it to your keyboard. The remaining documents will flesh out your knowledge of these basics.
 
 * **Learn How To Use QMK Tools**
-    * [Tutorial](newbs.md)
+    * [Tutorial](tutorial.md)
     * [CLI](cli.md)
-    * [GIT](newbs_git_best_practices.md)
+    * [GIT](tutorial_git_best_practices.md)
 * **Learn About Keymaps**
     * [Layers](feature_layers.md)
     * [Keycodes](keycodes.md)

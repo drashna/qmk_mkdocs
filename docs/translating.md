@@ -11,7 +11,7 @@ A `_summary.md` file should exist in this folder with a list of links to each fi
 All links to other docs pages must also be prefixed with the language folder. If the link is to a specific part of the page (ie. a certain heading), you must use the English ID for the heading, like so:
 
 ```markdown
-[建立你的环境](zh-cn/newbs-getting-started.md#set-up-your-environment)
+[建立你的环境](zh-cn/tutorial-getting-started.md#set-up-your-environment)
 
 ## 建立你的环境 :id=set-up-your-environment
 ```

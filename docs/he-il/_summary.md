@@ -1,8 +1,8 @@
 <div dir="rtl" markdown="1">
 
 **בשפה העברית**
-* [המדריך המלא למתחילים](he-il/newbs.md)
-  * [מקורות ללמידה](he-il/newbs_learn_more_resources.md)
+* [המדריך המלא למתחילים](he-il/tutorial.md)
+  * [מקורות ללמידה](he-il/tutorial_learn_more_resources.md)
 * [בסיס QMK](he-il/README.md)
     * [מבוא לQMK](he-il/getting_started_introduction.md)
     * [איך להשתמש בGitHub](he-il/getting_started_github.md)
@@ -14,13 +14,13 @@
   * [איך לתעד נכון](he-il/documentation_best_practices.md)
 
 **בשפה האנגלית**
-* [המדריך המלא למתחילים](he-il/newbs.md)
-  * [התחלה](he-il/newbs_getting_started.md)
-  * [בנייה של הקושחה הראשונה שלך](he-il/newbs_building_firmware.md)
-  * [צריבה של הקושחה](he-il/newbs_flashing.md)
-  * [בדיקות ודיבאגינג](he-il/newbs_testing_debugging.md)
-  * [עבודה נכונה ב GIT](he-il/newbs_best_practices.md)
-  * [מקורות ללמידה](he-il/newbs_learn_more_resources.md)
+* [המדריך המלא למתחילים](he-il/tutorial.md)
+  * [התחלה](he-il/tutorial_getting_started.md)
+  * [בנייה של הקושחה הראשונה שלך](he-il/tutorial_building_firmware.md)
+  * [צריבה של הקושחה](he-il/tutorial_flashing.md)
+  * [בדיקות ודיבאגינג](he-il/tutorial_testing_debugging.md)
+  * [עבודה נכונה ב GIT](he-il/tutorial_best_practices.md)
+  * [מקורות ללמידה](he-il/tutorial_learn_more_resources.md)
 
 * [בסיס QMK](he-il/README.md)
   * [מבוא לQMK](he-il/getting_started_introduction.md)

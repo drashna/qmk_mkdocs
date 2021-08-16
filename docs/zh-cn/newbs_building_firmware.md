@@ -78,4 +78,4 @@ Checking file size of planck_rev5_xyverz.hex                                    
 
 ## 刷新你的固件
 
-请移步 [Flashing Firmware](newbs_flashing.md) 来继续。
+请移步 [Flashing Firmware](tutorial_flashing.md) 来继续。

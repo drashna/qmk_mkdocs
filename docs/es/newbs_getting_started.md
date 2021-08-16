@@ -8,7 +8,7 @@ QMK intenta poner un montón de poder en tus manos haciendo que las cosas fácil
 
 Antes de que puedas construir keymaps, necesitarás instalar algun software y configurar tu entorno de construcción. Esto sólo hay que hacerlo una vez sin importar en cuántos teclados planeas configurar el software. 
 
-Si prefieres hacerlo mediante un interfaz gráfico , por favor, considera utilizar el [Configurador QMK](https://config.qmk.fm). En ese caso dirígete a [Construyendo tu primer firmware usando la GUI](newbs_building_firmware_configurator.md). 
+Si prefieres hacerlo mediante un interfaz gráfico , por favor, considera utilizar el [Configurador QMK](https://config.qmk.fm). En ese caso dirígete a [Construyendo tu primer firmware usando la GUI](tutorial_building_firmware_configurator.md). 
 
 
 ## Descarga el software
@@ -100,4 +100,4 @@ Checking file size of clueboard_66_rev3_default.hex                             
 
 # Creando tu keymap
 
-Ya estás listo para crear tu propio keymap personal! Para hacerlo continua con [Construyendo tu primer firmware](newbs_building_firmware.md).
+Ya estás listo para crear tu propio keymap personal! Para hacerlo continua con [Construyendo tu primer firmware](tutorial_building_firmware.md).

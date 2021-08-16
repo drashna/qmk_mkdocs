@@ -16,7 +16,7 @@
 他の docs ページへの全てのリンクにも、言語のフォルダが前に付いている必要があります。もしリンクがページの特定の部分(例えば、特定の見出し)への場合、以下のように見出しに英語の ID を使う必要があります:
 
 ```markdown
-[建立你的环境](zh-cn/newbs-getting-started.md#set-up-your-environment)
+[建立你的环境](zh-cn/tutorial-getting-started.md#set-up-your-environment)
 
 ## 建立你的环境 :id=set-up-your-environment
 ```

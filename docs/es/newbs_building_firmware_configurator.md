@@ -75,7 +75,7 @@ Cuando la compilación haya acabado, podrás presionar el botón verde `Descarga
 
 ## Flasheando tu teclado
 
-Por favor, dirígete a la sección de [Flashear firmware](newbs_flashing.md)
+Por favor, dirígete a la sección de [Flashear firmware](tutorial_flashing.md)
 
 ## Problemas comunes
 

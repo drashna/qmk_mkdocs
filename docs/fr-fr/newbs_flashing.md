@@ -6,7 +6,7 @@ Maintenant que vous avez compilé un firmware custom, vous allez vouloir le flas
 
 La manière la plus simple de flasher votre clavier est avec [QMK Toolbox](https://github.com/qmk/qmk_toolbox/releases).
 
-Toutefois, la QMK Toolbox n'est actuellement disponible que pour Windows et macOS. Si vous utilisez Linux (ou préférez flasher le firmware depuis la ligne de commande), vous devrez utiliser [la métode décrite ci-dessous](newbs_flashing.md#flash-your-keyboard-from-the-command-line).
+Toutefois, la QMK Toolbox n'est actuellement disponible que pour Windows et macOS. Si vous utilisez Linux (ou préférez flasher le firmware depuis la ligne de commande), vous devrez utiliser [la métode décrite ci-dessous](tutorial_flashing.md#flash-your-keyboard-from-the-command-line).
 
 ### Charger le fichier dans QMK Toolbox
 
@@ -364,4 +364,4 @@ Uploading 22016 (0x5600) bytes starting at 0 (0x0)
 
 Bravo! Votre firmware customisé a été programmé sur votre clavier!
 
-Essayez-le et vérifiez qu'il fonctionne comme vous le souhaitez. Nous avons écrit [Tester et débugger](newbs_testing_debugging.md) pour compléter le guide du débutant, alors allez voir là-bas pour apprendre comment dépanner vos fonctionnalités custom.
+Essayez-le et vérifiez qu'il fonctionne comme vous le souhaitez. Nous avons écrit [Tester et débugger](tutorial_testing_debugging.md) pour compléter le guide du débutant, alors allez voir là-bas pour apprendre comment dépanner vos fonctionnalités custom.

@@ -8,7 +8,7 @@ If there are any inconsistencies with these recommendations, you're best off [cr
 
 - PR should be submitted using a non-`master` branch on the source repository
     - this does not mean you target a different branch for your PR, rather that you're not working out of your own master branch
-    - if submitter _does_ use their own `master` branch, they'll be given a link to the ["how to git"](https://docs.qmk.fm/#/newbs_git_using_your_master_branch) page after merging -- (end of this document will contain the contents of the message)
+    - if submitter _does_ use their own `master` branch, they'll be given a link to the ["how to git"](https://docs.qmk.fm/#/tutorial_git_using_your_master_branch) page after merging -- (end of this document will contain the contents of the message)
 - newly-added directories and filenames must be lowercase
     - this rule may be relaxed if upstream sources originally had uppercase characters (e.g. ChibiOS, or imported files from other repositories etc.)
     - if there is enough justification (i.e. consistency with existing core files etc.) this can be relaxed
@@ -125,9 +125,9 @@ For future reference, we recommend against committing to your `master` branch as
 
 There are instructions on how to keep your fork updated here:
 
-[**Best Practices: Your Fork's Master: Update Often, Commit Never**](https://docs.qmk.fm/#/newbs_git_using_your_master_branch)
+[**Best Practices: Your Fork's Master: Update Often, Commit Never**](https://docs.qmk.fm/#/tutorial_git_using_your_master_branch)
 
-[Fixing Your Branch](https://docs.qmk.fm/#/newbs_git_resynchronize_a_branch) will walk you through fixing up your `master` branch moving forward. If you need any help with this just ask.
+[Fixing Your Branch](https://docs.qmk.fm/#/tutorial_git_resynchronize_a_branch) will walk you through fixing up your `master` branch moving forward. If you need any help with this just ask.
 
 Thanks for contributing!
 ```

@@ -61,4 +61,4 @@ Checking file size of planck_rev5_default.hex                                   
 
 ## Flash Your Firmware
 
-Move on to [Flashing Firmware](newbs_flashing.md) to learn how to write your new firmware to your keyboard.
+Move on to [Flashing Firmware](tutorial_flashing.md) to learn how to write your new firmware to your keyboard.

@@ -6,7 +6,7 @@
 
 ## I don't know where to start!
 
-If this is the case, then you should start with our [Newbs Guide](newbs.md). There is a lot of great info there, and that should cover everything you need to get started.
+If this is the case, then you should start with our [Newbs Guide](tutorial.md). There is a lot of great info there, and that should cover everything you need to get started.
 
 If that's an issue, hop onto the [QMK Configurator](https://config.qmk.fm), as that will handle a majority of what you need there.
 
@@ -26,9 +26,9 @@ Then please open an [issue](https://github.com/qmk/qmk_firmware/issues/new), and
 
 ## But `git` and `GitHub` are intimidating!
 
-Don't worry, we have some pretty nice [Guidelines](newbs_git_best_practices.md) on how to start using `git` and GitHub to make things easier to develop.
+Don't worry, we have some pretty nice [Guidelines](tutorial_git_best_practices.md) on how to start using `git` and GitHub to make things easier to develop.
 
-Additionally, you can find additional `git` and GitHub related links [here](newbs_learn_more_resources.md).
+Additionally, you can find additional `git` and GitHub related links [here](tutorial_learn_more_resources.md).
 
 ## I have a Keyboard that I want to add support for
 

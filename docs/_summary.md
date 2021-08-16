@@ -1,10 +1,10 @@
 * Tutorial
-  * [Introduction](newbs.md)
-  * [Setup](newbs_getting_started.md)
-  * [Building Your First Firmware](newbs_building_firmware.md)
-  * [Flashing Firmware](newbs_flashing.md)
+  * [Introduction](tutorial.md)
+  * [Setup](tutorial_getting_started.md)
+  * [Building Your First Firmware](tutorial_building_firmware.md)
+  * [Flashing Firmware](tutorial_flashing.md)
   * [Getting Help/Support](support.md)
-  * [Other Resources](newbs_learn_more_resources.md)
+  * [Other Resources](tutorial_learn_more_resources.md)
   * [Syllabus](syllabus.md)
 
 * FAQs
@@ -16,7 +16,7 @@
   * [Glossary](reference_glossary.md)
 
 * Configurator
-  * [Overview](newbs_building_firmware_configurator.md)
+  * [Overview](tutorial_building_firmware_configurator.md)
   * [Step by Step](configurator_step_by_step.md)
   * [Troubleshooting](configurator_troubleshooting.md)
   * [Architecture](configurator_architecture.md)
@@ -47,10 +47,10 @@
       * [Using Eclipse with QMK](other_eclipse.md)
       * [Using VSCode with QMK](other_vscode.md)
     * Git Best Practices
-      * [Introduction](newbs_git_best_practices.md)
-      * [Your Fork](newbs_git_using_your_master_branch.md)
-      * [Merge Conflicts](newbs_git_resolving_merge_conflicts.md)
-      * [Fixing Your Branch](newbs_git_resynchronize_a_branch.md)
+      * [Introduction](tutorial_git_best_practices.md)
+      * [Your Fork](tutorial_git_using_your_master_branch.md)
+      * [Merge Conflicts](tutorial_git_resolving_merge_conflicts.md)
+      * [Fixing Your Branch](tutorial_git_resynchronize_a_branch.md)
     * Keyboard Building
       * [Hand Wiring Guide](hand_wire.md)
       * [ISP Flashing Guide](isp_flashing_guide.md)

@@ -7,13 +7,13 @@ Bist Du unsicher ob deine Tastatur QMK unterstützt? Wenn es eine mechanische Ta
 
 Diese Anleitung ist in 7 Abschnitte unterteilt:
 
-* [Die ersten Schritte](newbs_getting_started.md)
-* [Die erste Firmware auf der Kommandozeile erzeugen](newbs_building_firmware.md)
-* [Die erste Firmware mit der Online GUI erzeugen](newbs_building_firmware_configurator.md)
-* [Firmware flashen](newbs_flashing.md)
-* [Testen und Debuggen](newbs_testing_debugging.md)
-* [Git Leitfaden](newbs_best_practices.md)
-* [Weitere hilfreiche Ressourcen für Anfänger](newbs_learn_more_resources.md)
+* [Die ersten Schritte](tutorial_getting_started.md)
+* [Die erste Firmware auf der Kommandozeile erzeugen](tutorial_building_firmware.md)
+* [Die erste Firmware mit der Online GUI erzeugen](tutorial_building_firmware_configurator.md)
+* [Firmware flashen](tutorial_flashing.md)
+* [Testen und Debuggen](tutorial_testing_debugging.md)
+* [Git Leitfaden](tutorial_best_practices.md)
+* [Weitere hilfreiche Ressourcen für Anfänger](tutorial_learn_more_resources.md)
 
 Diese Anleitung richtet sich an Personen, die vorher noch nie Software kompiliert haben. Die Entscheidungen und Empfehlungen basieren auf dieser Grundannahme. Es gibt unterschiedliche Herangehensweisen für viele der Prozeduren und wir unterstützen die meisten Alternativen. Wenn Du mal nicht weiter weißt oder Dir nicht sicher bist, wie Du an ein Problem herangehen sollst, kannst Du uns gerne [um Hilfe bitten](getting_started_getting_help.md).
 

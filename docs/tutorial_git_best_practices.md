@@ -7,10 +7,10 @@ This section aims to instruct novices in the best ways to have a smooth experien
 This section assumes a few things:
 
 1. You have a GitHub account, and have [forked the qmk_firmware repository](getting_started_github.md) to your account.
-2. You've set up both [your build environment](newbs_getting_started.md#set-up-your-environment) and [QMK](newbs_getting_started.md#set-up-qmk).
+2. You've set up both [your build environment](tutorial_getting_started.md#set-up-your-environment) and [QMK](tutorial_getting_started.md#set-up-qmk).
 
 ---
 
-- Part 1: [Your Fork's Master: Update Often, Commit Never](newbs_git_using_your_master_branch.md)
-- Part 2: [Resolving Merge Conflicts](newbs_git_resolving_merge_conflicts.md)
-- Part 3: [Resynchronizing an Out-of-Sync Git Branch](newbs_git_resynchronize_a_branch.md)
+- Part 1: [Your Fork's Master: Update Often, Commit Never](tutorial_git_using_your_master_branch.md)
+- Part 2: [Resolving Merge Conflicts](tutorial_git_resolving_merge_conflicts.md)
+- Part 3: [Resynchronizing an Out-of-Sync Git Branch](tutorial_git_resynchronize_a_branch.md)

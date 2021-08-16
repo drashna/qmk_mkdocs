@@ -2,8 +2,8 @@
 
 <!---
   grep --no-filename "^[ ]*git diff" docs/ja/*.md | sh
-  original document: 0.12.45:docs/newbs_building_firmware_configurator.md
-  git diff 0.12.45 HEAD -- docs/newbs_building_firmware_configurator.md | cat
+  original document: 0.12.45:docs/tutorial_building_firmware_configurator.md
+  git diff 0.12.45 HEAD -- docs/tutorial_building_firmware_configurator.md | cat
 -->
 
 [![QMK Configurator Screenshot](https://i.imgur.com/anw9cOL.png)](https://config.qmk.fm/)

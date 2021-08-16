@@ -6,7 +6,7 @@ Nachdem deine Firmware nun fertig ist musst Du Sie noch auf deine Tastatur flash
 
 Der einfachste Weg deine Tastatur zu flashen ist mit Hilfe der [QMK Toolbox](https://github.com/qmk/qmk_toolbox/releases)
 
-Leider ist die QMK Toolbox derzeit nur für Windows und macOS verfügbar. Wenn Du Linux benutzt (oder es vorziehst die Firmware mit der Kommandozeile zu flashen) solltest Du die Methode benutzen die [hier](de/newbs_flashing.md#tastatur-mit-der-befehlszeile-flashen) beschrieben wird.
+Leider ist die QMK Toolbox derzeit nur für Windows und macOS verfügbar. Wenn Du Linux benutzt (oder es vorziehst die Firmware mit der Kommandozeile zu flashen) solltest Du die Methode benutzen die [hier](de/tutorial_flashing.md#tastatur-mit-der-befehlszeile-flashen) beschrieben wird.
 
 ### Lade die Datei in QMK Toolbox
 
@@ -366,4 +366,4 @@ Für Tastaturen mit STM32 Controller sind die DFU Befehle wie folgt:
 
 Herzlichen Glückwunsch! Deine individuell angepasst Firmware wurde auf deine Tastatur übertragen!
 
- Probiere deine neue Tastatur aus und gehe sicher dass alles wie gewünscht funktioniert. Wir haben einen weiteren Artikel zum Thema [Testen und Debuggen](de/newbs_testing_debugging.md) verfasst der sich mit Problembeseitigung beschäftigt um den Beginnger-Guide abzuschließen.
+ Probiere deine neue Tastatur aus und gehe sicher dass alles wie gewünscht funktioniert. Wir haben einen weiteren Artikel zum Thema [Testen und Debuggen](de/tutorial_testing_debugging.md) verfasst der sich mit Problembeseitigung beschäftigt um den Beginnger-Guide abzuschließen.

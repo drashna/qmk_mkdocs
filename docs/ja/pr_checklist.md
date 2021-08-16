@@ -13,7 +13,7 @@
 
 - PRは、ソースリポジトリ上の `master` ではないブランチを使って提出する必要があります
     - これは、あなたの PR にとって別のブランチをターゲットにするという意味ではなく、むしろ自分の master ブランチで作業をしていないという意味です
-    - もし PR の提出者が自分の `master` ブランチを使っている場合は、マージ後に ["git の使い方"](https://docs.qmk.fm/#/ja/newbs_git_using_your_master_branch) ページへのリンクが表示されます - (このドキュメントの最後にはメッセージの内容が含まれます)
+    - もし PR の提出者が自分の `master` ブランチを使っている場合は、マージ後に ["git の使い方"](https://docs.qmk.fm/#/ja/tutorial_git_using_your_master_branch) ページへのリンクが表示されます - (このドキュメントの最後にはメッセージの内容が含まれます)
 - 新しく追加されたディレクトリとファイル名は小文字でなければなりません
     - 上流のソースが元々大文字を使っていた場合 (ChibiOS や他のリポジトリからインポートしたファイルなど)、このルールは緩和されるかもしれません
     - 十分な正当性がある場合 (既存のコアファイルとの整合性など) は、このルールを緩和することができます。
@@ -126,9 +126,9 @@ For future reference, we recommend against committing to your `master` branch as
 
 There are instructions on how to keep your fork updated here:
 
-[**Best Practices: Your Fork's Master: Update Often, Commit Never**](https://docs.qmk.fm/#/newbs_git_using_your_master_branch)
+[**Best Practices: Your Fork's Master: Update Often, Commit Never**](https://docs.qmk.fm/#/tutorial_git_using_your_master_branch)
 
-[Fixing Your Branch](https://docs.qmk.fm/#/newbs_git_resynchronize_a_branch) will walk you through fixing up your `master` branch moving forward. If you need any help with this just ask.
+[Fixing Your Branch](https://docs.qmk.fm/#/tutorial_git_resynchronize_a_branch) will walk you through fixing up your `master` branch moving forward. If you need any help with this just ask.
 
 Thanks for contributing!
 ```

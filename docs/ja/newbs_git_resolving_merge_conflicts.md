@@ -2,14 +2,14 @@
 
 <!---
   grep --no-filename "^[ ]*git diff" docs/ja/*.md | sh
-  original document: 0.9.0:docs/newbs_git_resolving_merge_conflicts.md
-  git diff 0.9.0 HEAD -- docs/newbs_git_resolving_merge_conflicts.md | cat
+  original document: 0.9.0:docs/tutorial_git_resolving_merge_conflicts.md
+  git diff 0.9.0 HEAD -- docs/tutorial_git_resolving_merge_conflicts.md | cat
 -->
 
 ブランチでの作業の完了に時間がかかる場合、他の人が行った変更が、プルリクエストを開いたときにブランチに加えた変更と競合することがあります。
 これは *マージの競合* と呼ばれ、複数の人が同じファイルの同じ部分を編集すると発生します。
 
-?> このドキュメントは [あなたのフォークの master ブランチ: 更新は頻繁に、コミットはしないこと](ja/newbs_git_using_your_master_branch.md) で詳述されている概念に基づいています。
+?> このドキュメントは [あなたのフォークの master ブランチ: 更新は頻繁に、コミットはしないこと](ja/tutorial_git_using_your_master_branch.md) で詳述されている概念に基づいています。
 その概念に慣れていない場合は、まずそれを読んでから、ここに戻ってください。
 
 ## 変更のリベース

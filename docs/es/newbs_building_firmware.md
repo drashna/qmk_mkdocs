@@ -78,4 +78,4 @@ Checking file size of planck_rev5_xyverz.hex                                    
 
 ## Flashea tu firmware
 
-Continua con [Flasheando el firmware](newbs_flashing.md) para aprender cómo escribir tu firmware nuevo en tu teclado.
+Continua con [Flasheando el firmware](tutorial_flashing.md) para aprender cómo escribir tu firmware nuevo en tu teclado.

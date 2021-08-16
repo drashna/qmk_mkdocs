@@ -5,7 +5,7 @@
 <!-- FIXME: We should have ARM instructions somewhere. -->
 
 
-**노트:** 만약 당신이 처음 시작한다면 [입문자를 위한 가이드](newbs.md)페이지를 확인하세요.
+**노트:** 만약 당신이 처음 시작한다면 [입문자를 위한 가이드](tutorial.md)페이지를 확인하세요.
 
 계속하기전에 당신의 서브모듈(외부라이브러리)이 최신인지 `make git-submodule`을 사용하여 확인하세요.
 

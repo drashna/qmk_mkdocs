@@ -7,7 +7,7 @@
 本文假设了一些内容:
 
 1. 一有个GitHub账户, 并[创建qmk_firmware仓库分叉](getting_started_github.md)到你的帐户.
-2. 你已经[建立你的构建环境](newbs_getting_started.md?id=environment-setup).
+2. 你已经[建立你的构建环境](tutorial_getting_started.md?id=environment-setup).
 
 
 ## 你分叉的主分支: 一直在上传，但不要提交

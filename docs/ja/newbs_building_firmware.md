@@ -2,8 +2,8 @@
 
 <!---
   grep --no-filename "^[ ]*git diff" docs/ja/*.md | sh
-  original document: 0.9.44:docs/newbs_building_firmware.md
-  git diff 0.9.44 HEAD -- docs/newbs_building_firmware.md | cat
+  original document: 0.9.44:docs/tutorial_building_firmware.md
+  git diff 0.9.44 HEAD -- docs/tutorial_building_firmware.md | cat
 -->
 
 ビルド環境をセットアップしたので、カスタムファームウェアのビルドを開始する準備ができました。
@@ -78,4 +78,4 @@ Checking file size of planck_rev5_default.hex                                   
 
 ## ファームウェアを書きこむ
 
-[「ファームウェアを書きこむ」](ja/newbs_flashing.md) に移動して、キーボードに新しいファームウェアを書き込む方法を学習します。
+[「ファームウェアを書きこむ」](ja/tutorial_flashing.md) に移動して、キーボードに新しいファームウェアを書き込む方法を学習します。

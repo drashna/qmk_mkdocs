@@ -11,7 +11,7 @@ Quantum Mechanical Keyboard の略である [QMK](https://github.com/qmk) は、
 
 ## どこから始めればいいかわかりません！
 
-この場合は、[初心者ガイド](ja/newbs.md) から始めるべきです。ここには多くの素晴らしい情報があり、それらはあなたが始めるのに必要な全てをカバーするはずです。
+この場合は、[初心者ガイド](ja/tutorial.md) から始めるべきです。ここには多くの素晴らしい情報があり、それらはあなたが始めるのに必要な全てをカバーするはずです。
 
 問題がある場合は、[QMK Configurator](https://config.qmk.fm)にアクセスしてください。あなたが必要なものの大部分が処理されます。
 
@@ -31,9 +31,9 @@ OK、問題ありません。[GitHub で issue を開く](https://github.com/qmk
 
 ## しかし、`git` と `GitHub` は怖いです！
 
-心配しないでください。開発を容易にするために `git` と GitHub を使い始めるための、かなり良い [ガイドライン](ja/newbs_git_best_practices.md) があります。
+心配しないでください。開発を容易にするために `git` と GitHub を使い始めるための、かなり良い [ガイドライン](ja/tutorial_git_best_practices.md) があります。
 
-さらに、追加の `git` と GitHub の関連リンクを [ここ](ja/newbs_learn_more_resources.md) に見つけることができます。
+さらに、追加の `git` と GitHub の関連リンクを [ここ](ja/tutorial_learn_more_resources.md) に見つけることができます。
 
 ## サポートを追加したいキーボードがあります
 

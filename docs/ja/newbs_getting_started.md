@@ -2,8 +2,8 @@
 
 <!---
   grep --no-filename "^[ ]*git diff" docs/ja/*.md | sh
-  original document: 0.13.20:docs/newbs_getting_started.md
-  git diff 0.13.20 HEAD -- docs/newbs_getting_started.md | cat
+  original document: 0.13.20:docs/tutorial_getting_started.md
+  git diff 0.13.20 HEAD -- docs/tutorial_getting_started.md | cat
 -->
 
 キーマップをビルドする前に、いくつかのソフトウェアをインストールしてビルド環境を構築する必要があります。
@@ -13,12 +13,12 @@
 
 始めるために必要なソフトウェアがいくつかあります。
 
-* [テキストエディタ](ja/newbs_learn_more_resources.md#text-editor-resources)
+* [テキストエディタ](ja/tutorial_learn_more_resources.md#text-editor-resources)
   * プレーンテキストファイルを編集して保存できるプログラムが必要です。多くの OS に付属するデフォルトのエディタはプレーンテキストファイルを保存しないため、選択したエディタがプレーンテキストファイルを保存することを確認する必要があります。
 * [Toolbox (オプション)](https://github.com/qmk/qmk_toolbox)
   * Windows と macOS で使える GUI を備えたプログラムで、カスタムキーボードのプログラミングとデバッグの両方ができます。
 
-?> もし、Linux か Unix のコマンドを使ったことがない場合、こちらで基本的な概念や各種コマンドを学んでください。[これらの教材](ja/newbs_learn_more_resources.md#command-line-resources)で QMK を使うのに必要なことを学ぶことができます。
+?> もし、Linux か Unix のコマンドを使ったことがない場合、こちらで基本的な概念や各種コマンドを学んでください。[これらの教材](ja/tutorial_learn_more_resources.md#command-line-resources)で QMK を使うのに必要なことを学ぶことができます。
 
 ## 2. ビルド環境を準備する :id=set-up-your-environment
 
@@ -207,4 +207,4 @@ QMK を初めて使うほとんどの人は、キーボードを1つしか持っ
 
 # キーマップの作成
 
-これであなた専用のキーマップを作成する準備ができました！次は[初めてのファームウェアの構築](ja/newbs_building_firmware.md)で専用のキーマップを作成します。
+これであなた専用のキーマップを作成する準備ができました！次は[初めてのファームウェアの構築](ja/tutorial_building_firmware.md)で専用のキーマップを作成します。

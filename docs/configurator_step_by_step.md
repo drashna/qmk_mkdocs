@@ -55,4 +55,4 @@ When the compilation is done, you will be able to press the green `Download Firm
 
 ## Next steps: Flashing Your Keyboard
 
-Please refer to [Flashing Firmware](newbs_flashing.md).
+Please refer to [Flashing Firmware](tutorial_flashing.md).

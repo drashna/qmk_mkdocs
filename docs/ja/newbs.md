@@ -2,8 +2,8 @@
 
 <!---
   grep --no-filename "^[ ]*git diff" docs/ja/*.md | sh
-  original document: 0.12.45:docs/newbs.md
-  git diff 0.12.45 HEAD -- docs/newbs.md | cat
+  original document: 0.12.45:docs/tutorial.md
+  git diff 0.12.45 HEAD -- docs/tutorial.md | cat
 -->
 
 キーボードには、コンピュータ入っているものと似たようなプロセッサが入っています。
@@ -20,15 +20,15 @@ QMK は[多くの趣味のキーボード](https://qmk.fm/keyboards/)をサポ�
 現在使用しているキーボードが QMK を実行できない場合、QMK を実行できるキーボードの選択肢はたくさんあります。
 
 ?> **このガイドは私のためにあるのでしょうか？**<br>
-もし、プログラミングの考え方に抵抗があるのであれば、代わりに[私たちのオンライン GUI](ja/newbs_building_firmware_configurator.md) を見てみてください。
+もし、プログラミングの考え方に抵抗があるのであれば、代わりに[私たちのオンライン GUI](ja/tutorial_building_firmware_configurator.md) を見てみてください。
 
 ## 概要
 
 このガイドは、ソースコードを使ってキーボードのファームウェアを構築したいと考えている人に適しています。 もしあなたがすでにプログラマーであれば、このプロセスはとても身近で簡単に理解できるでしょう。このガイドには3つの主要なセクションがあります:
 
-1. [環境設定](ja/newbs_getting_started.md)
-2. [コマンドラインを使用して初めてのファームウェアを構築する](ja/newbs_building_firmware.md)
-3. [ファームウェアを書きこむ](ja/newbs_flashing.md)
+1. [環境設定](ja/tutorial_getting_started.md)
+2. [コマンドラインを使用して初めてのファームウェアを構築する](ja/tutorial_building_firmware.md)
+3. [ファームウェアを書きこむ](ja/tutorial_flashing.md)
 
 このガイドは、これまでソフトウェアをコンパイルしたことがない人を支援することに特化しています。
 その観点から選択と推奨を行います。
@@ -37,4 +37,4 @@ QMK は[多くの趣味のキーボード](https://qmk.fm/keyboards/)をサポ�
 
 ## 追加のリソース
 
-このガイドの他にも、QMK の学習に役立つリソースがいくつかあります。[シラバス](ja/syllabus.md)と[学習リソース](ja/newbs_learn_more_resources.md)のページにまとめました。
+このガイドの他にも、QMK の学習に役立つリソースがいくつかあります。[シラバス](ja/syllabus.md)と[学習リソース](ja/tutorial_learn_more_resources.md)のページにまとめました。

@@ -8,13 +8,13 @@ QMK es un poderoso firmware Open Source para tu teclado mecánico. Puedes utiliz
 
 Hay 7 secciones principales en esta guía:
 
-* [Empezando](newbs_getting_started.md)
-* [Construyendo tu primer firmware](newbs_building_firmware.md)
-* [Construyendo tu primer firmware usando la GUI](newbs_building_firmware_configurator.md)
-* [Flasheando el firmware](newbs_flashing.md)
-* [Testeando y depurando](newbs_testing_debugging.md)
-* [Mejores práticas](newbs_best_practices.md)
-* [Recursos de aprendizaje](newbs_learn_more_resources.md)
+* [Empezando](tutorial_getting_started.md)
+* [Construyendo tu primer firmware](tutorial_building_firmware.md)
+* [Construyendo tu primer firmware usando la GUI](tutorial_building_firmware_configurator.md)
+* [Flasheando el firmware](tutorial_flashing.md)
+* [Testeando y depurando](tutorial_testing_debugging.md)
+* [Mejores práticas](tutorial_best_practices.md)
+* [Recursos de aprendizaje](tutorial_learn_more_resources.md)
 
 Esta guía está enfocada en ayudar a alguien que nunca ha compilado software con anterioridad. Toma decisiones y hace recomendaciones teniendo en cuenta este punto de vista. Hay métodos alternativos para muchos de estos procedimientos, y soportamos la mayoría de esas alternativas. Si tienes alguna duda sobre cómo llevar a cabo una tarea nos puedes [preguntar para que te guiemos](getting_started_getting_help.md).
 

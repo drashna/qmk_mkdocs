@@ -8,7 +8,7 @@ QMK essaie de rendre les choses simples faciles, et les choses difficiles possib
 
 Avant de pouvoir construire des keymaps, vous devez installer quelques logiciels et configurer votre environnement de compilation. Ceci n'a besoin d'être fait seulement une fois, peu importe le nombre de clavier pour lesquels vous compter compiler un firmware.
 
-Si vous préférez une approche plus proche d'une interface graphique, considérez utiliser l'outil en ligne [QMK Configurator](https://config.qmk.fm). Référez-vous à [Construire votre premier firmware en utilisant l'interface graphique en ligne](newbs_building_firmware_configurator.md).
+Si vous préférez une approche plus proche d'une interface graphique, considérez utiliser l'outil en ligne [QMK Configurator](https://config.qmk.fm). Référez-vous à [Construire votre premier firmware en utilisant l'interface graphique en ligne](tutorial_building_firmware_configurator.md).
 
 ## Logiciels à télécharger
 
@@ -98,4 +98,4 @@ Checking file size of clueboard_66_rev3_default.hex                             
 
 # Créer votre Keymap
 
-Vous êtes maintenant prêt à créer votre propre keymap! Passez à l'étape [Compiler votre premier firmware](newbs_building_firmware.md) pour ce faire.
+Vous êtes maintenant prêt à créer votre propre keymap! Passez à l'étape [Compiler votre premier firmware](tutorial_building_firmware.md) pour ce faire.

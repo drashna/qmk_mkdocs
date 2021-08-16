@@ -1,12 +1,12 @@
 **En Français**
 
-* [Guide pour débutant complet](fr-fr/newbs.md)
-  * [Pour débuter](fr-fr/newbs_getting_started.md)
-  * [Compiler son premier firmware](fr-fr/newbs_building_firmware.md)
-  * [Flasher le Firmware](fr-fr/newbs_flashing.md)
-  * [Test et Débuggage](fr-fr/newbs_testing_debugging.md)
-  * [Bonnes pratiques Git](fr-fr/newbs_best_practices.md)
-  * [Ressources d'apprentissage](fr-fr/newbs_learn_more_resources.md)
+* [Guide pour débutant complet](fr-fr/tutorial.md)
+  * [Pour débuter](fr-fr/tutorial_getting_started.md)
+  * [Compiler son premier firmware](fr-fr/tutorial_building_firmware.md)
+  * [Flasher le Firmware](fr-fr/tutorial_flashing.md)
+  * [Test et Débuggage](fr-fr/tutorial_testing_debugging.md)
+  * [Bonnes pratiques Git](fr-fr/tutorial_best_practices.md)
+  * [Ressources d'apprentissage](fr-fr/tutorial_learn_more_resources.md)
 
 * [Les bases de QMK](fr-fr/README.md)
   * [Indroduction à QMK](fr-fr/getting_started_introduction.md)

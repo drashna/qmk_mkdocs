@@ -6,7 +6,7 @@
 
 刷新键盘的最简单方法是使用[QMK 工具箱](https://github.com/qmk/qmk_toolbox/releases). 
 
-但是，QMK工具箱目前仅适用于Windows和MacOS。如果您使用的是Linux（或者只是希望从命令行刷新固件），则必须使用 [方法概述](newbs_flashing.md#flash-your-keyboard-from-the-command-line).
+但是，QMK工具箱目前仅适用于Windows和MacOS。如果您使用的是Linux（或者只是希望从命令行刷新固件），则必须使用 [方法概述](tutorial_flashing.md#flash-your-keyboard-from-the-command-line).
 
 ### 将文件加载到QMK工具箱中
 
@@ -304,4 +304,4 @@ Transitioning to dfuMANIFEST state
 
 恭喜您! 您的自定义固件已经刷写到您的键盘
 
-试一试，确保一切按你想的方式进行。我们写了[测试和调试](newbs_testing_debugging.md)来完善新手引导。 因此，请前往那里了解如何排除自定义功能的故障。
+试一试，确保一切按你想的方式进行。我们写了[测试和调试](tutorial_testing_debugging.md)来完善新手引导。 因此，请前往那里了解如何排除自定义功能的故障。

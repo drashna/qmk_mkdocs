@@ -6,7 +6,7 @@ Ahora que has construido tu fichero de firmware personalizado querrás flashear 
 
 La manera más simple de flashear tu teclado sería con [QMK Toolbox](https://github.com/qmk/qmk_toolbox/releases). 
 
-De todos modos, QMK Toolbox actualmente sólo está disponible para Windows y macOS.  Si estás usando Linux (o sólo quisieras flashear el firmware desde la línea de comandos), tendrás que utilizar el [método indicado abajo](newbs_flashing.md#flash-your-keyboard-from-the-command-line).
+De todos modos, QMK Toolbox actualmente sólo está disponible para Windows y macOS.  Si estás usando Linux (o sólo quisieras flashear el firmware desde la línea de comandos), tendrás que utilizar el [método indicado abajo](tutorial_flashing.md#flash-your-keyboard-from-the-command-line).
 
 ### Cargar el fichero en QMK Toolbox
 
@@ -348,4 +348,4 @@ Hay un número de comandos DFU que puedes usar para flashear firmware a un dispo
 
 ¡Felicidades! ¡Tu firmware personalizado ha sido programado en tu teclado!
 
-Pruébalo y asegúrate de que todo funciona de la manera que tu quieres. Hemos escrito [Testeando y depurando](newbs_testing_debugging.md) para redondear esta guía de novatos, así que pásate por allí para aprender cómo resolver problemas con tu funcionalidad personalizada.
+Pruébalo y asegúrate de que todo funciona de la manera que tu quieres. Hemos escrito [Testeando y depurando](tutorial_testing_debugging.md) para redondear esta guía de novatos, así que pásate por allí para aprender cómo resolver problemas con tu funcionalidad personalizada.

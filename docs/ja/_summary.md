@@ -1,10 +1,10 @@
 * チュートリアル
-  * [入門](ja/newbs.md)
-  * [セットアップ](ja/newbs_getting_started.md)
-  * [初めてのファームウェアの構築](ja/newbs_building_firmware.md)
-  * [ファームウェアのフラッシュ](ja/newbs_flashing.md)
+  * [入門](ja/tutorial.md)
+  * [セットアップ](ja/tutorial_getting_started.md)
+  * [初めてのファームウェアの構築](ja/tutorial_building_firmware.md)
+  * [ファームウェアのフラッシュ](ja/tutorial_flashing.md)
   * [手助けを得る/サポート](ja/support.md)
-  * [他のリソース](ja/newbs_learn_more_resources.md)
+  * [他のリソース](ja/tutorial_learn_more_resources.md)
   * [シラバス](ja/syllabus.md)
 
 * FAQ
@@ -16,7 +16,7 @@
   * [用語](ja/reference_glossary.md)
 
 * Configurator
-  * [概要](ja/newbs_building_firmware_configurator.md)
+  * [概要](ja/tutorial_building_firmware_configurator.md)
   * [ステップ・バイ・ステップ](ja/configurator_step_by_step.md)
   * [トラブルシューティング](ja/configurator_troubleshooting.md)
   * QMK API
@@ -46,10 +46,10 @@
       * [QMK での Eclipse の使用](ja/other_eclipse.md)
       * [QMK での VSCode の使用](ja/other_vscode.md)
     * Git のベストプラクティス
-      * [入門](ja/newbs_git_best_practices.md)
-      * [フォーク](ja/newbs_git_using_your_master_branch.md)
-      * [マージの競合の解決](ja/newbs_git_resolving_merge_conflicts.md)
-      * [ブランチの修正](ja/newbs_git_resynchronize_a_branch.md)
+      * [入門](ja/tutorial_git_best_practices.md)
+      * [フォーク](ja/tutorial_git_using_your_master_branch.md)
+      * [マージの競合の解決](ja/tutorial_git_resolving_merge_conflicts.md)
+      * [ブランチの修正](ja/tutorial_git_resynchronize_a_branch.md)
     * キーボードを作る
       * [Hand Wiring ガイド](ja/hand_wire.md)
       * [ISP 書き込みガイド](ja/isp_flashing_guide.md)
