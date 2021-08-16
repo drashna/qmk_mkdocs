@@ -44,9 +44,14 @@ markdown_extensions:
   - def_list
   - fenced_code
   - footnotes
+  - pymdownx.betterem
+  - pymdownx.caret
   - pymdownx.details
+  - pymdownx.keys
   - pymdownx.superfences
   - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.tilde
   - sane_lists
   - tables
   - toc:
