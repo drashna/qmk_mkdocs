@@ -6,15 +6,17 @@ QMK (*Quantum Mechanical Keyboard*) is an open source community centered around 
 
 ## Get Started
 
-<div class="flex-container">
+=== "Basic"
 
-?> **Basic** [QMK Configurator](newbs_building_firmware_configurator.md) <br>
-User friendly graphical interfaces, no programming knowledge required.
+    [QMK Configurator](newbs_building_firmware_configurator.md)
 
-?> **Advanced** [Use The Source](newbs.md) <br> 
-More powerful, but harder to use.
+    User friendly graphical interfaces, no programming knowledge required.
 
-</div>
+=== "Advanced"
+
+    [Use The Source](newbs.md)
+
+    More powerful, but harder to use.
 
 ## Make It Yours
 
