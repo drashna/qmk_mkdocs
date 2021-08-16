@@ -1,0 +1,74 @@
+extra:
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: 中文
+      link: /zh-cn/
+      lang: zh
+    - name: Español
+      link: /es/
+      lang: es
+    - name: Français
+      link: /fr-fr/
+      lang: fr
+    - name: עברית
+      link: /he-il/
+      lang: he
+    - name: Português
+      link: /pt-br/
+      lang: pt
+    - name: Русский
+      link: /ru-ru/
+      lang: ru
+    - name: 日本語
+      link: /ja/
+      lang: ja
+  version:
+    provider: mike
+plugins:
+  - search:
+      lang:
+        - en
+        - es
+        - fr
+        - pt
+        - ru
+        - ja
+      prebuild_index: true
+      separator: '[\s\-\_]+'
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - def_list
+  - fenced_code
+  - footnotes
+  - sane_lists
+  - tables
+  - toc:
+      marker: ''
+      permalink: true
+      toc_depth: 3
+  - wikilinks
+nav:
+  - README.md
+repo_name: qmk/qmk_firmware
+repo_url: https://github.com/qmk/qmk_firmware
+site_name: QMK Firmware Docs
+site_url: https://docs.qmk.fm
+theme:
+  features:
+    - navigation.expand
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+  icon:
+    repo: fontawesome/brands/github
+  language: en
+  name: material
