@@ -165,7 +165,8 @@ The available keycodes for audio are:
 * `AU_OFF` - Turn Audio Feature off
 * `AU_TOG` - Toggle Audio Feature state
 
-!> These keycodes turn all of the audio functionality on and off.  Turning it off means that audio feedback, audio clicky, music mode, etc. are disabled, completely.
+!!! info
+    These keycodes turn all of the audio functionality on and off.  Turning it off means that audio feedback, audio clicky, music mode, etc. are disabled, completely.
 
 ## Tempo
 the 'speed' at which SONGs are played is dictated by the set Tempo, which is measured in beats-per-minute. Note lengths are defined relative to that.

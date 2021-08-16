@@ -18,7 +18,8 @@ combo_t key_combos[COMBO_COUNT] = {COMBO(test_combo, KC_ESC)};
 
 This will send "Escape" if you hit the A and B keys.
 
-!> This method only supports [basic keycodes](keycodes_basic.md). See the examples for more control.
+!!! info
+    This method only supports [basic keycodes](keycodes_basic.md). See the examples for more control.
 
 ## Examples
 

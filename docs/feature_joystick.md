@@ -4,7 +4,8 @@ The keyboard can be made to be recognized as a joystick HID device by the operat
 
 This is enabled by adding `JOYSTICK_ENABLE` to `rules.mk`. You can set this value to `analog`, `digital`, or `no`.
 
-!> Joystick support is not currently available on V-USB devices.
+!!! warning
+    Joystick support is not currently available on V-USB devices.
 
 The joystick feature provides two services:
  * reading analog input devices (eg. potentiometers)

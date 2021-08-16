@@ -98,7 +98,8 @@ These are the three main initialization functions, listed in the order that they
 * `matrix_init_*` - Happens midway through the firmware's startup process. Hardware is initialized, but features may not be yet.
 * `keyboard_post_init_*` - Happens at the end of the firmware's startup process. This is where you'd want to put "customization" code, for the most part.
 
-!> For most people, the `keyboard_post_init_user` function is what you want to call.  For instance, this is where you want to set up things for RGB Underglow.
+!!! tip
+    For most people, the `keyboard_post_init_user` function is what you want to call.  For instance, this is where you want to set up things for RGB Underglow.
 
 ## Keyboard Pre Initialization code
 

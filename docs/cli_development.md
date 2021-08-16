@@ -172,7 +172,7 @@ Some arguments should not be propagated to the configuration file. These can be 
 
 Example:
 
-```
+``` python
 @cli.argument('-o', '--output', arg_only=True, help='File to write to')
 @cli.argument('filename', arg_only=True, help='Configurator JSON file')
 @cli.subcommand('Create a keymap.c from a QMK Configurator export.')
@@ -182,7 +182,7 @@ def json_keymap(cli):
 
 You will only be able to access these arguments using `cli.args`. For example:
 
-```
+``` python
 cli.log.info('Reading from %s and writing to %s', cli.args.filename, cli.args.output)
 ```
 
@@ -202,7 +202,8 @@ We use nose2, flake8, and yapf to test, lint, and format code. You can use the `
 
 We use [yapf](https://github.com/google/yapf) to automatically format code. Our configuration is in the `[yapf]` section of `setup.cfg`.
 
-?> Tip- Many editors can use yapf as a plugin to automatically format code as you type.
+!!! tip
+    Many editors can use yapf as a plugin to automatically format code as you type.
 
 ## Testing Details
 

@@ -79,7 +79,8 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 }
 ```
 
-!> If you return `true`, this will allow the keyboard level code to run, as well.  Returning `false` will override the keyboard level code.  Depending on how the keyboard level function is set up. 
+!!! check
+    If you return `true`, this will allow the keyboard level code to run, as well.  Returning `false` will override the keyboard level code.  Depending on how the keyboard level function is set up. 
 
 ## Hardware
 

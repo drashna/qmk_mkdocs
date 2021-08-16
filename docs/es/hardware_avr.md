@@ -77,7 +77,10 @@ Cambia las líneas de `MANUFACTURER` y `PRODUCT` para reflejar con precisión tu
 #define PRODUCT         mi_teclado_fantastico
 ```
 
-?> Windows y macOS mostrarán el `MANUFACTURER` y `PRODUCT` en la lista de dispositivos USB. `lsusb` en Linux toma estos de la lista mantenida por el [Repositorio de ID USB](http://www.linux-usb.org/usb-ids.html) por defecto. `lsusb -v` mostrará los valores reportados por el dispositivo, y también están presentes en los registros del núcleo después de conectarlo.
+!!! tip
+     Windows y macOS mostrarán el `MANUFACTURER` y `PRODUCT` en la lista de dispositivos USB. 
+
+     En Linux `lsusb -v` mostrará los valores reportados por el dispositivo. `lsusb` toma estos de la lista mantenida por el [Repositorio de ID USB](http://www.linux-usb.org/usb-ids.html) por defecto. 
 
 ### Configuración de la matriz del teclado
 

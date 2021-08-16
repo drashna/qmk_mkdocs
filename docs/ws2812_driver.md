@@ -47,7 +47,8 @@ Default driver, the absence of configuration assumes this driver. To configure i
 WS2812_DRIVER = bitbang
 ```
 
-!> This driver is not hardware accelerated and may not be performant on heavily loaded systems.
+!!! note
+    This driver is not hardware accelerated and may not be performant on heavily loaded systems.
 
 ### I2C
 Targeting boards where WS2812 support is offloaded to a 2nd MCU. Currently the driver is limited to AVR given the known consumers are ps2avrGB/BMC. To configure it, add this to your rules.mk:

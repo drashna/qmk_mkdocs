@@ -8,15 +8,16 @@ Si has cerrado y reabierto la ventana de tu terminal después de seguir el prime
 
 Comienza navegando a la carpeta `keymaps` correspondiente a tu teclado.
 
-?> Si estás en macOS o Windows hay comandos que puedes utilizar fácilmente para abrir la carpeta keymaps.
+!!! tip
+    Si estás en macOS o Windows hay comandos que puedes utilizar fácilmente para abrir la carpeta keymaps.
 
-?> macOS:
+    macOS:
 
-    abre keyboards/<keyboard_folder>/keymaps
+        open keyboards/<keyboard_folder>/keymaps
 
-?> Windows:
+    Windows:
 
-    inicia .\\keyboards\\<keyboard_folder>\\keymaps
+        start .\keyboards\<keyboard_folder>\keymaps
 
 ## Crea una copia del keymap `default`
 
@@ -44,7 +45,8 @@ Abre tu `keymap.c`. Dentro de este fichero encontrarás la estructura que contro
 
 Esta línea indica el comienzo del listado de Capas. Debajo encontrarás líneas que contienen o bien `LAYOUT` o `KEYMAP`, y estas líneas indican el comienzo de una capa. Debajo de esa línea está la lista de teclas que pertenecen a esa capa concreta.
 
-!> Cuando estés editando tu fichero de keymap ten cuidado con no añadir ni eliminar ninguna coma. Si lo haces el firmware dejará de compilar y puede no ser fácil averiguar dónde está la coma faltante o sobrante.
+!!! warning
+    Cuando estés editando tu fichero de keymap ten cuidado con no añadir ni eliminar ninguna coma. Si lo haces el firmware dejará de compilar y puede no ser fácil averiguar dónde está la coma faltante o sobrante.
 
 ## Personaliza el Layout a tu gusto
 
@@ -54,7 +56,8 @@ Cómo completar esta paso depende enteramente de ti. Haz ese pequeño cambio que
 * [Características](features.md)
 * [Preguntas frecuentes](faq.md)
 
-?> Mientras estás descubriendo cómo funcionan los keymaps, haz pequeños cambios. Cambios mayores pueden hacer difícil la depuración de problemas que puedan aparecer.
+!!! tip
+    Mientras estás descubriendo cómo funcionan los keymaps, haz pequeños cambios. Cambios mayores pueden hacer difícil la depuración de problemas que puedan aparecer.
 
 ## Construye tu firmware
 

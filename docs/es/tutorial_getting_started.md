@@ -19,7 +19,8 @@ Necesitarás un programa con el que puedas editar y guardar archivos de **texto 
 
 También puedes descargar e instalar un editor de texto dedicado como [Sublime Text](https://www.sublimetext.com/) o [VS Code](https://code.visualstudio.com/). Esta es probablemente la mejor manera independientemente de la plataforma, ya que estos programas fueron creados específicamente para editar código.
 
-?> ¿No estás seguro de qué editor de texto utilizar? Laurence Bradford escribió una [estupenda introducción](https://learntocodewith.me/programming/basics/text-editors/) al tema.
+!!! tip
+     ¿No estás seguro de qué editor de texto utilizar? Laurence Bradford escribió una [estupenda introducción](https://learntocodewith.me/programming/basics/text-editors/) al tema.
 
 ### QMK Toolbox
 
@@ -35,9 +36,11 @@ QMK Toolbox is an optional graphical program for Windows and macOS that allows y
 Hemos intentado hacer QMK lo más fácil de configurar posible. Sólo tienes que preparar tu entorno Linux o Unix, y luego dejar que QMK
 instale el resto.
 
-?> Si no has trabajado con la línea de comandos de Linux/Unix con anterioridad, hay algunos conceptos y comandos básicos que deberías aprender. Estos recursos te enseñarán lo suficiente para poder trabajar con QMK:<br>
-[Comandos de Linux que debería saber](https://www.guru99.com/must-know-linux-commands.html)<br>
-[Algunos comandos básicos de Unix](https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html)
+!!! tip
+     Si no has trabajado con la línea de comandos de Linux/Unix con anterioridad, hay algunos conceptos y comandos básicos que deberías aprender. Estos recursos te enseñarán lo suficiente para poder trabajar con QMK:
+
+    * [Comandos de Linux que debería saber](https://www.guru99.com/must-know-linux-commands.html)
+    * [Algunos comandos básicos de Unix](https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html)
 
 ### Windows
 
@@ -61,7 +64,8 @@ Necesitarás instalar Git. Es bastante probable que ya lo tengas, pero si no, un
 * Fedora / Red Hat / CentOS: `yum install git`
 * Arch: `pacman -S git`
 
-?> Docker es también una opción en todas las plataformas. [Haz click aquí si quieres detalles.](getting_started_build_tools.md#docker)
+!!! info
+     Docker es también una opción en todas las plataformas. [Haz click aquí si quieres detalles.](getting_started_build_tools.md#docker)
 
 ## Configura QMK
 
@@ -72,7 +76,8 @@ git clone --recurse-submodules https://github.com/qmk/qmk_firmware.git
 cd qmk_firmware
 ```
 
-?> Si ya sabes [cómo usar GitHub](getting_started_github.md), te recomendamos en vez de eso, crees y clones tu propio fork. Si no sabes lo que significa, puedes ignorar este mensaje sin problemas.
+!!! tip
+     Si ya sabes [cómo usar GitHub](getting_started_github.md), te recomendamos en vez de eso, crees y clones tu propio fork. Si no sabes lo que significa, puedes ignorar este mensaje sin problemas.
 
 QMK viene con un script para ayudarte a configurar el resto de cosas que necesitarás. Deberías ejecutarlo introduciendo este comando:
 

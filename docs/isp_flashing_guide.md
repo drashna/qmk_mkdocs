@@ -4,7 +4,8 @@ ISP flashing (also known as ICSP flashing) is the process of programming a micro
 
 The main use of ISP flashing for QMK is flashing or replacing the bootloader on your AVR-based controller (Pro Micros, or V-USB chips).  
 
-?> This is only for programming AVR based boards, such as the Pro Micro or other ATmega controllers.  It is not for Arm controllers, such as the Proton C. 
+!!! info
+    This is only for programming AVR based boards, such as the Pro Micro or other ATmega controllers.  It is not for Arm controllers, such as the Proton C. 
 
 ## Dealing with Corrupted Bootloaders
 
@@ -101,7 +102,8 @@ This is pretty straight-forward - we'll be connecting like-things to like-things
     Teensy VCC <-> Keyboard VCC
     Teensy GND <-> Keyboard GND
     
-!> Note that the B0 pin on the Teensy is wired to the RESET/RST pin on the keyboard's controller.  ***DO NOT*** wire the RESET pin on the Teensy to the RESET on the keyboard. 
+!!! note
+    The B0 pin on the Teensy is wired to the RESET/RST pin on the keyboard's controller.  ***DO NOT*** wire the RESET pin on the Teensy to the RESET on the keyboard. 
 
 ### Pro Micro
 
@@ -112,7 +114,8 @@ This is pretty straight-forward - we'll be connecting like-things to like-things
     Pro Micro VCC      <-> Keyboard VCC
     Pro Micro GND      <-> Keyboard GND
 
-!> Note that the 10/B6 pin on the Pro Micro is wired to the RESET/RST pin on the keyboard's controller.  ***DO NOT*** wire the RESET pin on the Pro Micro to the RESET on the keyboard. 
+!!! note
+    The 10/B6 pin on the Pro Micro is wired to the RESET/RST pin on the keyboard's controller.  ***DO NOT*** wire the RESET pin on the Pro Micro to the RESET on the keyboard. 
 
 
 ## Flashing Your Keyboard 
@@ -149,7 +152,8 @@ To do this manually:
 3. Copy the entire bootloader's contents onto a new line (with no empty lines between) and paste it at the end of the original file
 4. Save it as a new file by naming it `<keyboard>_<keymap>_production.hex`
 
-?> It's possible to use other bootloaders here in the same way, but __you need a bootloader__, otherwise you'll have to use ISP again to write new firmware to your keyboard.
+!!! tip
+    It's possible to use other bootloaders here in the same way, but __you need a bootloader__, otherwise you'll have to use ISP again to write new firmware to your keyboard.
 
 #### Create QMK DFU Bootloader and Production images
 
@@ -162,7 +166,8 @@ The QMK DFU bootloader has only really been tested on `atmega32u4` controllers (
 
 You can flash either the bootloader or the production firmware file. The production firmware file will take a lot longer to flash, since it's flashing a lot more data. 
 
-?> Note: You should stay with the same bootloader. If you're using DFU already, switching to QMK DFU is fine. But flashing QMK DFU onto a Pro Micro, for instance, has additional steps needed.
+!!! note
+    You should stay with the same bootloader. If you're using DFU already, switching to QMK DFU is fine. But flashing QMK DFU onto a Pro Micro, for instance, has additional steps needed.
 
 ## Flashing Your Bootloader/Production File
 
@@ -225,7 +230,8 @@ If you're using a SparkFun PocketAVR Programmer, or another USB Tiny based ISP p
 
 If you're switching bootloaders, such as flashing QMK DFU on a Pro Micro, you will need to change the fuses, in additional to flashing the bootloader hex file.  This is because `caterina` (the Pro Micro bootloader) and `dfu` handle the startup routines differently, and that behavior is controlled by the fuses.  
 
-!> This is one area that it is very important to be careful, as changing fuses is one of the ways that you can permanently brick your controller.  
+!!! tip
+    This is one area that it is very important to be careful, as changing fuses is one of the ways that you can permanently brick your controller.  
 
 For this, we are assuming the 5V 16MHz versions of the `atmega32u4` (such as the 5V Pro Micro).
 

@@ -58,7 +58,8 @@ For Instance:
 
 Normally, if you do all this within the `TAPPING_TERM` (default: 200ms) this will be registered as `ax` by the firmware and host system. With permissive hold enabled, this modifies how this is handled by considering the Mod Tap keys as a Mod if another key is tapped, and would registered as `X` (`SHIFT`+`x`).
 
-?> If you have `Ignore Mod Tap Interrupt` enabled, as well, this will modify how both work. The regular key has the modifier added if the first key is released first or if both keys are held longer than the `TAPPING_TERM`.
+!!! tip
+    If you have `Ignore Mod Tap Interrupt` enabled, as well, this will modify how both work. The regular key has the modifier added if the first key is released first or if both keys are held longer than the `TAPPING_TERM`.
 
 For more granular control of this feature, you can add the following to your `config.h`:
 
@@ -101,9 +102,11 @@ For Instance:
 Normally, this would send a capital `X` (`SHIFT`+`x`), or, Mod + key. With `Ignore Mod Tap Interrupt` enabled, holding both keys are required for the `TAPPING_TERM` to register the hold action. A quick tap will output `ax` in this case, while a hold on both will still output capital `X` (`SHIFT`+`x`).
 
 
-?> __Note__: This only concerns modifiers and not layer switching keys.
+!!! note
+    This only concerns modifiers and not layer switching keys.
 
-?> If you have `Permissive Hold` enabled, as well, this will modify how both work. The regular key has the modifier added if the first key is released first or if both keys are held longer than the `TAPPING_TERM`.
+!!! tip
+    If you have `Permissive Hold` enabled, as well, this will modify how both work. The regular key has the modifier added if the first key is released first or if both keys are held longer than the `TAPPING_TERM`.
 
 For more granular control of this feature, you can add the following to your `config.h`:
 
@@ -146,7 +149,8 @@ With default settings, `a` will be sent on the first release, then `a` will be s
 
 With `TAPPING_FORCE_HOLD`, the second press will be interpreted as a Shift, allowing to use it as a modifier shortly after having used it as a tap.
 
-!> `TAPPING_FORCE_HOLD` will break anything that uses tapping toggles (Such as the `TT` layer keycode, and the One Shot Tap Toggle).
+!!! warning
+    `TAPPING_FORCE_HOLD` will break anything that uses tapping toggles (Such as the `TT` layer keycode, and the One Shot Tap Toggle).
 
 For more granular control of this feature, you can add the following to your `config.h`:
 

@@ -94,7 +94,8 @@ occasion. This is simply due to habit and holding some keys a little longer
 than others. Once you find this value, work on tapping your problem keys a little
 quicker than normal and you will be set.
 
-?> Auto Shift has three special keys that can help you get this value right very quick. See "Auto Shift Setup" for more details!
+!!! tip
+    Auto Shift has three special keys that can help you get this value right very quick. See [Using Auto Shift Setup](#using-auto-shift-setup) for more details!
 
 ### NO_AUTO_SHIFT_SPECIAL (simple define)
 

@@ -57,7 +57,8 @@ git push --set-upstream origin dev_branch
 
 Esto crea una nueva rama llamada `dev_branch`, te coloca en ella, y después guarda la nueva rama a tu fork. El parámetro `--set-upstream` le dice a git que use tu fork y la rama `dev_branch` cada vez que uses `git push` o `git pull` en esta rama. Solo necesitas usarlo la primera que que subes cambios; ya después, puedes usar `git push` o `git pull`, sin usar los demás parámetros.
 
-!> Con `git push`, puedes usar `-u` en vez de `--set-upstream` &mdash; `-u` es un alias de `--set-upstream`.
+!!! tip
+    Con `git push`, puedes usar `-u` en vez de `--set-upstream` &mdash; `-u` es un alias de `--set-upstream`.
 
 Puedes nombrar tu rama casi cualquier cosa, pero se recomienda ponerle algo con relación a los cambios que vas a hacer.
 
@@ -75,7 +76,8 @@ git commit -m "My commit message."
 ```
 `git add` agrega los archivos que han sido cambiados al *staging area* de Git, lo cual es la "zona de preparación"de Git. Este contiene los cambios que vas a *commit* usando `git commit`, que guarda los cambios en el repo. Usa un mensaje de commit descriptivo para que puedas saber que ha cambiado fácilmente.
 
-!> Si has cambiado muchos archivos, pero todos los archivos son parte del mismo cambio, puedes usar `git add .` para agregar todos los archivos cambiados que están en tu directiro actual, en vez de agregar cada archivo manualmente.
+!!! tip
+    Si has cambiado muchos archivos, pero todos los archivos son parte del mismo cambio, puedes usar `git add .` para agregar todos los archivos cambiados que están en tu directiro actual, en vez de agregar cada archivo manualmente.
 
 ### Publicar tus cambios
 

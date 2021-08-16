@@ -12,15 +12,16 @@ De todos modos, QMK Toolbox actualmente sólo está disponible para Windows y ma
 
 Empieza abriendo la aplicación QMK Toolbox. Tendrás que buscar el fichero de firmware usando Finder o Explorer. El firmware de teclado puede estar en uno de estos dos formatos- `.hex` o `.bin`. QMK intenta copiar el apropiado para tu teclado en el fichero raíz `qmk_firmware`.
 
-?> Si tu estás on Windows o macOS hay comandos que puedes usar para abrir fácilmente la carpeta del firmware actual en Explorer o Finder.
+!!! tip
+    Si tu estás on Windows o macOS hay comandos que puedes usar para abrir fácilmente la carpeta del firmware actual en Explorer o Finder.
 
-?> Windows:
+    Windows:
 
-    start .
+        start .
 
-?> macOS:
+    macOS:
 
-    open .
+        open .
 
 El fichero de firmware sempre sigue el siguiente formato de nombre:
 
@@ -102,7 +103,7 @@ Creating load file for flashing: .build/planck_rev5_xyverz.hex                  
 Copying planck_rev5_xyverz.hex to qmk_firmware folder                                               [OK]
 Checking file size of planck_rev5_xyverz.hex                                                        
  * File size is fine - 18574/28672
- ```
+```
 
 Después de llegar a este punto, el script de construcción buscará el bootloader DFU cada 5 segundos.  Repetirá lo siguiente hasta que se encuentre el dispositivo o lo canceles:
 
@@ -127,7 +128,8 @@ Una vez haya hecho esto, tendrás que reiniciar el controlador.  Debería mostra
 >>> dfu-programmer atmega32u4 reset
 ```
 
-?> Si tienes problemas con esto- del estilo de `dfu-programmer: no device present` - por favor consulta las [Preguntas frecuentes de construcción](faq_build.md).
+!!! tip
+    Si tienes problemas con esto- del estilo de `dfu-programmer: no device present` - por favor consulta las [Preguntas frecuentes de construcción](faq_build.md).
 
 #### Comandos DFU
 

@@ -129,7 +129,8 @@ The `post_config.h` file can be used for additional post-processing, depending o
   #endif
   ```
 
-?> If you define options using `post_config.h` as in the above example, you should not define the same options in the keyboard- or user-level `config.h`.
+!!! warning
+    If you define options using `post_config.h` as in the above example, you should not define the same options in the keyboard- or user-level `config.h`.
 
 ### `rules.mk`
 
@@ -148,7 +149,8 @@ The `rules.mk` file can also be placed in a sub-folder, and its reading order is
 
 Many of the settings written in the `rules.mk` file are interpreted by `common_features.mk`, which sets the necessary source files and compiler options.
 
-?> See `build_keyboard.mk` and `common_features.mk` for more details.
+!!! info
+    See `build_keyboard.mk` and `common_features.mk` for more details.
 
 ### `<keyboard_name.c>`
 
