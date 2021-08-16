@@ -1,0 +1,693 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/ja/flashing/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>書き込みの手順とブートローダ情報 - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              書き込みの手順とブートローダ情報
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dfu" class="md-nav__link">
+    DFU
+  </a>
+  
+    <nav class="md-nav" aria-label="DFU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qmk-dfu" class="md-nav__link">
+    QMK DFU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dfu_1" class="md-nav__link">
+    DFU コマンド
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caterina" class="md-nav__link">
+    Caterina
+  </a>
+  
+    <nav class="md-nav" aria-label="Caterina">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caterina_1" class="md-nav__link">
+    Caterina コマンド
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#halfkay" class="md-nav__link">
+    Halfkay
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usbasploader" class="md-nav__link">
+    USBasploader
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootloadhid" class="md-nav__link">
+    BootloadHID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stm32" class="md-nav__link">
+    STM32
+  </a>
+  
+    <nav class="md-nav" aria-label="STM32">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stm32_1" class="md-nav__link">
+    STM32 コマンド
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/ja/flashing.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">書き込みの手順とブートローダ情報<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<!---
+  original document: 0.10.33:docs/flashing.md
+  git diff 0.10.33 HEAD -- docs/flashing.md | cat
+-->
+
+<p>キーボードが使用するブートローダにはかなり多くの種類があり、ほぼ全てが異なる書き込みの方法を使います。幸いなことに、<a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> のようなプロジェクトは、あまり深く考える必要無しに様々なタイプと互換性を持つことを目指していますが、この文章では様々なタイプのブートローダとそれらを書き込むために利用可能な方法について説明します。</p>
+<p><code>rules.mk</code> の <code>BOOTLOADER</code> 変数で選択されたブートローダがある場合、QMK は .hex ファイルがデバイスに書き込むのに適切なサイズかどうかを自動的に計算し、合計サイズをバイト単位で(最大値とともに)出力します。</p>
+<h2 id="dfu">DFU<a class="headerlink" href="#dfu" title="Permanent link">&para;</a></h2>
+<p>Atmel の DFU ブートローダはデフォルトで全ての atmega32u4 チップに搭載されており、PCB (旧 OLKB キーボード、Clueboard) に独自の IC を持つ多くのキーボードで使われています。一部のキーボードは、LUFA の DFU ブートローダ(または QMK のフォーク) (新しい OLKB キーボード)を使う場合もあり、そのハードウェアに固有の追加機能が追加されます。</p>
+<p>DFU ブートローダとの互換性を確保するために、以下のブロックが <code>rules.mk</code> にあることを確認してください(オプションとして代わりに <code>lufa-dfu</code> や <code>qmk-dfu</code> が使えます):</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="c">#   Teensy       halfkay</span>
+<span class="c">#   Pro Micro    caterina</span>
+<span class="c">#   Atmel DFU    atmel-dfu</span>
+<span class="c">#   LUFA DFU     lufa-dfu</span>
+<span class="c">#   QMK DFU      qmk-dfu</span>
+<span class="c">#   ATmega32A    bootloadHID</span>
+<span class="c">#   ATmega328P   USBasp</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> atmel-dfu
+</code></pre></div>
+
+<p>互換性のあるフラッシャ:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (推奨の GUI)</li>
+<li>QMK の <a href="https://github.com/dfu-programmer/dfu-programmer">dfu-programmer</a> / <code>:dfu</code> (推奨のコマンドライン)</li>
+</ul>
+<p>書き込み手順:</p>
+<ol>
+<li><code>RESET</code> キーコードを押すか、RESET ボタンをタップします(または RST を GND にショートします)。</li>
+<li>OS がデバイスを検知するのを待ちます。</li>
+<li>メモリを消去します(自動的に実行されるかもしれません)</li>
+<li>.hex ファイルを書き込みます</li>
+<li>デバイスをアプリケーションモードにリセットします(自動的に実行されるかもしれません)</li>
+</ol>
+<p>あるいは:</p>
+<div class="codehilite"><pre><span></span><code>make &lt;keyboard&gt;:&lt;keymap&gt;:dfu
+</code></pre></div>
+
+<h3 id="qmk-dfu">QMK DFU<a class="headerlink" href="#qmk-dfu" title="Permanent link">&para;</a></h3>
+<p>QMK には LUFA DFU ブートローダのフォークがあり、ブートローダを終了してアプリケーションに戻る時に単純なマトリックススキャンを行うことができます。また、何かが起きた時に、LED を点滅したり、スピーカーでカチカチ音をたてたりします。これらの機能を有効にするには、<code>config.h</code> で以下のブロックを有効にします (ブートローダを終了するキーは、ここで定義された INPUT と OUTPUT に接続する必要があります):</p>
+<div class="codehilite"><pre><span></span><code>#define QMK_ESC_OUTPUT F1 // 通常 COL
+#define QMK_ESC_INPUT D5 // 通常 ROW
+#define QMK_LED E6
+#define QMK_SPEAKER C6
+</code></pre></div>
+
+<p>製造元と製品名は <code>config.h</code> から自動的に取得され、製品に「Bootloader」が追加されます。</p>
+<p>このブートローダを生成するには、<code>bootloader</code> ターゲット、例えば <code>make planck/rev4:default:bootloader</code> を使います。</p>
+<p>実稼働対応の .hex ファイル(アプリケーションおよびブートローダを含む)を生成するには、<code>production</code> ターゲット、例えば <code>make planck/rev4:default:production</code> を使います。</p>
+<h3 id="dfu_1">DFU コマンド<a class="headerlink" href="#dfu_1" title="Permanent link">&para;</a></h3>
+<p>ファームウェアを DFU デバイスに書き込むために使用できる DFU コマンドがいくつかあります。</p>
+<ul>
+<li><code>:dfu</code> - これが通常のオプションで、DFU デバイスが使用可能になるまで待機したのちファームウェアを書き込みます。5秒ごとに、DFU デバイスが存在するかチェックしています。</li>
+<li><code>:dfu-ee</code> - 通常の hex ファイルの代わりに <code>eep</code> ファイルを書き込みます。これを使用するのはまれです。</li>
+<li><code>:dfu-split-left</code> - デフォルトオプション (<code>:dfu</code>) と同様に、通常のファームウェアが書き込まれます。ただし、分割キーボードの「左側の」 EEPROM ファイルも書き込まれます。<em>これは、Elite C ベースの分割キーボードに最適です。</em></li>
+<li><code>:dfu-split-right</code> - デフォルトオプション (<code>:dfu</code>) と同様に、通常のファームウェアが書き込まれます。ただし、分割キーボードの「右側の」 EEPROM ファイルも書き込まれます。<em>これは、Elite C ベースの分割キーボードに最適です。</em></li>
+</ul>
+<h2 id="caterina">Caterina<a class="headerlink" href="#caterina" title="Permanent link">&para;</a></h2>
+<p>Arduino ボードとそのクローンは <a href="https://github.com/arduino/ArduinoCore-avr/tree/master/bootloaders/caterina">Caterina ブートローダ</a> (Pro Micro またはそのクローンで構築されたキーボード)を使用し、avr109 プロトコルを使って仮想シリアルを介して通信します。<a href="https://www.pololu.com/docs/0J61/9">A-Star</a> のようなブートローダは Caterina に基づいています。</p>
+<p>Caterina ブートローダとの互換性を確保するために、以下のブロックが <code>rules.mk</code> にあることを確認してください:</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="c">#   Teensy       halfkay</span>
+<span class="c">#   Pro Micro    caterina</span>
+<span class="c">#   Atmel DFU    atmel-dfu</span>
+<span class="c">#   LUFA DFU     lufa-dfu</span>
+<span class="c">#   QMK DFU      qmk-dfu</span>
+<span class="c">#   ATmega32A    bootloadHID</span>
+<span class="c">#   ATmega328P   USBasp</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> caterina
+</code></pre></div>
+
+<p>互換性のあるフラッシャ:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (推奨の GUI)</li>
+<li>avr109 を使った <a href="https://www.nongnu.org/avrdude/">avrdude</a> / <code>:avrdude</code> (推奨のコマンドライン)</li>
+<li><a href="https://github.com/zkemble/AVRDUDESS">AVRDUDESS</a></li>
+</ul>
+<p>書き込み手順:</p>
+<ol>
+<li><code>RESET</code> キーコードを押すか、RST をすばやく GND にショートします (入力後7秒で書き込みます)</li>
+<li>OS がデバイスを検知するのを待ちます。</li>
+<li>.hex ファイルを書き込みます</li>
+<li>デバイスが自動的にリセットされるのを待ちます</li>
+</ol>
+<p>あるいは</p>
+<div class="codehilite"><pre><span></span><code>make &lt;keyboard&gt;:&lt;keymap&gt;:avrdude
+</code></pre></div>
+
+<h3 id="caterina_1">Caterina コマンド<a class="headerlink" href="#caterina_1" title="Permanent link">&para;</a></h3>
+<p>ファームウェアを DFU デバイスに書き込むために使用できる DFU コマンドがいくつかあります。</p>
+<ul>
+<li><code>:avrdude</code> - これが通常のオプションで、Caterina デバイスが(新しい COM ポートを検出して)使用可能になるまで待機し、ファームウェアを書き込みます。</li>
+<li><code>:avrdude-loop</code> - これは <code>:avrdude</code> と同じコマンドを実行します。ただし書き込みが終了すると再び Caterina デバイスの書き込み待ちに戻ります。これは何台ものデバイスへ書き込むのに便利です。<em>Ctrl+C を押して、手動でこの繰り返しを終了させる必要があります。</em></li>
+<li><code>:avrdude-split-left</code> - デフォルトオプション (<code>:avrdude</code>) と同様に通常のファームウェアが書き込まれます。ただし、分割キーボードの「左側の」 EEPROM ファイルも書き込まれます。<em>これは、Pro Micro ベースの分割キーボードに最適です。</em></li>
+<li><code>:avrdude-split-right</code> - デフォルトオプション (<code>:avrdude</code>) と同様に通常のファームウェアが書き込まれます。ただし、分割キーボードの「右側の」 EEPROM ファイルも書き込まれます。<em>これは、Pro Micro ベースの分割キーボードに最適です。</em></li>
+</ul>
+<h2 id="halfkay">Halfkay<a class="headerlink" href="#halfkay" title="Permanent link">&para;</a></h2>
+<p>Halfkay は PJRC によって開発された超スリムなプロトコルであり、HID を使用し、全ての Teensys (つまり 2.0)に搭載されています。</p>
+<p>Halfkay ブートローダとの互換性を確保するために、以下のブロックが <code>rules.mk</code> にあることを確認してください:</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="c">#   Teensy       halfkay</span>
+<span class="c">#   Pro Micro    caterina</span>
+<span class="c">#   Atmel DFU    atmel-dfu</span>
+<span class="c">#   LUFA DFU     lufa-dfu</span>
+<span class="c">#   QMK DFU      qmk-dfu</span>
+<span class="c">#   ATmega32A    bootloadHID</span>
+<span class="c">#   ATmega328P   USBasp</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> halfkay
+</code></pre></div>
+
+<p>互換性のあるフラッシャ:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (推奨の GUI)</li>
+<li><a href="https://www.pjrc.com/teensy/loader.html">Teensy ローダー</a></li>
+<li><a href="https://www.pjrc.com/teensy/loader_cli.html">Teensy ローダーコマンドライン</a> (推奨のコマンドライン)</li>
+</ul>
+<p>書き込み手順:</p>
+<ol>
+<li><code>RESET</code> キーコードを押すか、RST をすばやく GND にショートします (入力後7秒で書き込みます)</li>
+<li>OS がデバイスを検知するのを待ちます。</li>
+<li>.hex ファイルを書き込みます</li>
+<li>デバイスをアプリケーションモードにリセットします(自動的に実行されるかもしれません)</li>
+</ol>
+<h2 id="usbasploader">USBasploader<a class="headerlink" href="#usbasploader" title="Permanent link">&para;</a></h2>
+<p>USBasploader は matrixstorm によって開発されたブートローダです。V-USB を実行する ATmega328P のような非 USB AVR チップで使われます。</p>
+<p>USBasploader ブートローダとの互換性を確保するために、以下のブロックが <code>rules.mk</code> にあることを確認してください:</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="c">#   Teensy       halfkay</span>
+<span class="c">#   Pro Micro    caterina</span>
+<span class="c">#   Atmel DFU    atmel-dfu</span>
+<span class="c">#   LUFA DFU     lufa-dfu</span>
+<span class="c">#   QMK DFU      qmk-dfu</span>
+<span class="c">#   ATmega32A    bootloadHID</span>
+<span class="c">#   ATmega328P   USBasp</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> USBasp
+</code></pre></div>
+
+<p>互換性のあるフラッシャ:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (推奨の GUI)</li>
+<li><code>usbasp</code> プログラマを使った <a href="https://www.nongnu.org/avrdude/">avrdude</a></li>
+<li><a href="https://github.com/zkemble/AVRDUDESS">AVRDUDESS</a></li>
+</ul>
+<p>書き込み手順:</p>
+<ol>
+<li><code>RESET</code> キーコードを押すか、RST を GND にすばやくショートしながら、ブートピンを GND にショートしたままにします。</li>
+<li>OS がデバイスを検知するのを待ちます。</li>
+<li>.hex ファイルを書き込みます</li>
+<li>デバイスをアプリケーションモードにリセットします(自動的に実行されるかもしれません)</li>
+</ol>
+<h2 id="bootloadhid">BootloadHID<a class="headerlink" href="#bootloadhid" title="Permanent link">&para;</a></h2>
+<p>BootloadHID は AVR マイクロコントローラ用の USB ブートローダです。アップローダーツールは Windows でカーネルレベルのドライバを必要としないため、DLL をインストールせずに実行することができます。</p>
+<p>bootloadHID ブートローダとの互換性を確保するために、以下のブロックが <code>rules.mk</code> にあることを確認してください:</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="c">#   Teensy       halfkay</span>
+<span class="c">#   Pro Micro    caterina</span>
+<span class="c">#   Atmel DFU    atmel-dfu</span>
+<span class="c">#   LUFA DFU     lufa-dfu</span>
+<span class="c">#   QMK DFU      qmk-dfu</span>
+<span class="c">#   ATmega32A    bootloadHID</span>
+<span class="c">#   ATmega328P   USBasp</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> bootloadHID
+</code></pre></div>
+
+<p>互換性のあるフラッシャ:</p>
+<ul>
+<li><a href="http://vusb.wikidot.com/project:hidbootflash">HIDBootFlash</a> (推奨の Windows GUI)</li>
+<li><a href="https://www.obdev.at/products/vusb/bootloadhid.html">bootloadhid コマンドライン</a> / QMK の <code>:BootloadHID</code> (推奨のコマンドライン)</li>
+</ul>
+<p>書き込み手順:</p>
+<ol>
+<li>以下のいずれかの方法を使ってブートローダに入ります:
+   * <code>RESET</code> キーコードをタップします (全てのデバイスでは動作しないかもしれません)
+   * キーボードを接続しながらソルトキーを押し続けます (通常はキーボードの readme に書かれています)</li>
+<li>OS がデバイスを検知するのを待ちます。</li>
+<li>.hex ファイルを書き込みます</li>
+<li>デバイスをアプリケーションモードにリセットします(自動的に実行されるかもしれません)</li>
+</ol>
+<p>あるいは:</p>
+<div class="codehilite"><pre><span></span><code>make &lt;keyboard&gt;:&lt;keymap&gt;:bootloadHID
+</code></pre></div>
+
+<h2 id="stm32">STM32<a class="headerlink" href="#stm32" title="Permanent link">&para;</a></h2>
+<p>全ての STM32 チップには、変更も削除もできない工場出荷時のブートローダがプリロードされています。一部の STM32 チップには USB プログラミングが付属していないブートローダがありますが(例えば STM32F103)、プロセスは同じです。</p>
+<p>現時点では、STM32 の <code>rules.mk</code> には、<code>BOOTLOADER</code> 変数は不要です。</p>
+<p>互換性のあるフラッシャ:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (推奨の GUI)</li>
+<li><a href="https://github.com/Stefan-Schmidt/dfu-util">dfu-util</a> / <code>:dfu-util</code> (推奨のコマンドライン)</li>
+</ul>
+<p>書き込み手順:</p>
+<ol>
+<li>以下のいずれかの方法を使ってブートローダに入ります:
+   * <code>RESET</code> キーコードをタップします (STM32F042 デバイスでは動作しないかもしれません)
+   * リセット回路が存在する場合、RESET ボタンをタップします
+   * それ以外の場合は、(BOOT0 ボタンあるいはブリッジ経由で)BOOT0 を VCC にブリッジし、(REEST ボタンあるいはブリッジ経由で)RESET を GND にショートし、BOOT0 ブリッジを放す必要があります。</li>
+<li>OS がデバイスを検知するのを待ちます。</li>
+<li>.bin ファイルを書き込みます
+   * DFU 署名に関する警告が表示されます; 無視してください</li>
+<li>デバイスをアプリケーションモードにリセットします(自動的に実行されるかもしれません)
+   * コマンドラインからビルドする場合(例えば、<code>make planck/rev6:default:dfu-util</code>)、<code>rules.mk</code> の中で <code>:leave</code> が <code>DFU_ARGS</code> 変数に渡されるようにしてください (例えば、<code>DFU_ARGS = -d 0483:df11 -a 0 -s 0x08000000:leave</code>)。そうすれば、書き込みの後でデバイスがリセットされます</li>
+</ol>
+<h3 id="stm32_1">STM32 コマンド<a class="headerlink" href="#stm32_1" title="Permanent link">&para;</a></h3>
+<p>ファームウェアを STM32 デバイスに書き込むために使用できる DFU コマンドがいくつかあります。</p>
+<ul>
+<li><code>:dfu-util</code> - STM32 デバイスに書き込むためのデフォルトコマンドで、STM32 ブートローダデバイスが見つかるまで待機します。</li>
+<li><code>:dfu-util-split-left</code> - デフォルトのオプション (<code>:dfu-util</code>) と同様に、通常のファームウェアが書き込まれます。ただし、分割キーボードの「左側の」 EEPROM の設定も行われます。</li>
+<li><code>:dfu-util-split-right</code> - デフォルトのオプション (<code>:dfu-util</code>) と同様に、通常のファームウェアが書き込まれます。ただし、分割キーボードの「右側の」 EEPROM の設定も行われます。</li>
+<li><code>:st-link-cli</code> - dfu-util ではなく、ST-LINK の CLI ユーティリティを介してファームウェアを書き込めます。</li>
+<li><code>:st-flash</code> - dfu-util ではなく、<a href="https://github.com/stlink-org/stlink">STLink Tools</a> の <code>st-flash</code> ユーティリティを介してファームウェアを書き込めます。</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

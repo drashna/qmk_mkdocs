@@ -1,0 +1,657 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/ChangeLog/20210227/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>QMK Breaking Changes - 2021 February 27 Changelog - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qmk-breaking-changes-2021-february-27-changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              QMK Breaking Changes - 2021 February 27 Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changes-requiring-user-action" class="md-nav__link">
+    Changes Requiring User Action
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-changes" class="md-nav__link">
+    Core Changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chibios-update-and-config-migration" class="md-nav__link">
+    ChibiOS Update and Config Migration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qmk-infrastructure-and-internals" class="md-nav__link">
+    QMK Infrastructure and Internals
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-change-list" class="md-nav__link">
+    Detailed Change List
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Change List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changes-requiring-user-action_1" class="md-nav__link">
+    Changes Requiring User Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixes" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additions-and-enhancements" class="md-nav__link">
+    Additions and Enhancements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-ups-and-optimizations" class="md-nav__link">
+    Clean-ups and Optimizations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qmk-infrastructure-and-internals_1" class="md-nav__link">
+    QMK Infrastructure and Internals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chibios-update-and-config-migration_1" class="md-nav__link">
+    ChibiOS Update and Config Migration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/ChangeLog/20210227.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="qmk-breaking-changes-2021-february-27-changelog">QMK Breaking Changes - 2021 February 27 Changelog<a class="headerlink" href="#qmk-breaking-changes-2021-february-27-changelog" title="Permanent link">&para;</a></h1>
+<h2 id="changes-requiring-user-action">Changes Requiring User Action<a class="headerlink" href="#changes-requiring-user-action" title="Permanent link">&para;</a></h2>
+<p>The following keyboards have had their source moved within QMK:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Old Keyboard Name</th>
+<th align="left">New Keyboard Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">bear_65</td>
+<td align="left">jacky_studio/bear_65</td>
+</tr>
+<tr>
+<td align="left">s7_elephant/rev1</td>
+<td align="left">jacky_studio/s7_elephant/rev1</td>
+</tr>
+<tr>
+<td align="left">s7_elephant/rev2</td>
+<td align="left">jacky_studio/s7_elephant/rev2</td>
+</tr>
+<tr>
+<td align="left">aplx6</td>
+<td align="left">aplyard/aplx6/rev1</td>
+</tr>
+<tr>
+<td align="left">southpaw75</td>
+<td align="left">fr4/southpaw75</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="https://github.com/qmk/qmk_firmware/tree/0.12.0/keyboards/aplyard/aplx6/rev1">Aplyard Aplx6 rev2</a> and the <a href="https://github.com/qmk/qmk_firmware/tree/0.12.0/keyboards/fr4/unix60">FR4Boards Unix60</a> have also been added as part of these changes.</p>
+<p>Additionally, the <code>handwired/bluepill/bluepill70</code> keyboard has been removed.</p>
+<h2 id="core-changes">Core Changes<a class="headerlink" href="#core-changes" title="Permanent link">&para;</a></h2>
+<h3 id="chibios-update-and-config-migration">ChibiOS Update and Config Migration<a class="headerlink" href="#chibios-update-and-config-migration" title="Permanent link">&para;</a></h3>
+<p>QMK's ChibiOS and ChibiOS-Contrib submodules have been updated to version 20.3.2.</p>
+<p>Along with this, QMK now provides default configuration files for all commonly-supported ARM microcontrollers running on ChibiOS. As such, keyboards are now only required to define settings which differ from the defaults, thereby reducing the size of pull requests for keyboards running atop ChibiOS.</p>
+<h3 id="qmk-infrastructure-and-internals">QMK Infrastructure and Internals<a class="headerlink" href="#qmk-infrastructure-and-internals" title="Permanent link">&para;</a></h3>
+<p>Python is now required to build QMK. The minimum Python version has been increased to 3.7.</p>
+<p>The power of <code>info.json</code> has been massively expanded. Most keyboard parameters can now be expressed in <code>info.json</code> instead of <code>config.h</code>/<code>rules.mk</code>. This should make maintaining keyboards easier, and will enable tooling that can allow non-technical users to add and maintain QMK keyboards without writing any code.</p>
+<p>To ease migration a new command has been provided, <code>qmk generate-info-json -kb &lt;keyboard&gt;</code>. You can use this command to generate a complete <code>info.json</code> file for a keyboard and then remove the duplicate information from <code>config.h</code> and <code>rules.mk</code>. </p>
+<p>Detailed example showing how to generate a new info.json and identify duplicate keys:</p>
+<div class="codehilite"><pre><span></span><code>user@hostname:~/qmk_firmware/keyboards/lets_split:0$ qmk generate-info-json &gt; new-info.json
+user@hostname:~/qmk_firmware/keyboards/lets_split:0$ mv new-info.json info.json
+user@hostname:~/qmk_firmware/keyboards/lets_split:0$ qmk info
+⚠ lets_split/rev2: DEBOUNCE in config.h is overwriting debounce in info.json
+⚠ lets_split/rev2: DEVICE_VER in config.h is overwriting usb.device_ver in info.json
+⚠ lets_split/rev2: DIODE_DIRECTION in config.h is overwriting diode_direction in info.json
+⚠ lets_split/rev2: MANUFACTURER in config.h is overwriting manufacturer in info.json
+⚠ lets_split/rev2: RGB_DI_PIN in config.h is overwriting rgblight.pin in info.json
+⚠ lets_split/rev2: RGBLED_NUM in config.h is overwriting rgblight.led_count in info.json
+⚠ lets_split/rev2: PRODUCT_ID in config.h is overwriting usb.pid in info.json
+⚠ lets_split/rev2: VENDOR_ID in config.h is overwriting usb.vid in info.json
+⚠ lets_split/rev2: Matrix pins are specified in both info.json and config.h, the config.h values win.
+⚠ lets_split/rev2: LAYOUTS in rules.mk is overwriting community_layouts in info.json
+⚠ lets_split/rev2: Feature bootmagic is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature mousekey is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature extrakey is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature console is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature command is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature nkro is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature backlight is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature midi is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature audio is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature unicode is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature bluetooth is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature rgblight is specified in both info.json and rules.mk, the rules.mk value wins.
+⚠ lets_split/rev2: Feature sleep_led is specified in both info.json and rules.mk, the rules.mk value wins.
+Keyboard Name: Let&#39;s Split
+Manufacturer: Wootpatoot
+Website:
+Maintainer: QMK Community
+Keyboard Folder: lets_split/rev2
+Layouts: LAYOUT, LAYOUT_ortho_4x12
+Size: 13 x 4
+Processor: atmega32u4
+Bootloader: caterina
+</code></pre></div>
+
+<h2 id="detailed-change-list">Detailed Change List<a class="headerlink" href="#detailed-change-list" title="Permanent link">&para;</a></h2>
+<h3 id="changes-requiring-user-action_1">Changes Requiring User Action<a class="headerlink" href="#changes-requiring-user-action_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Refactor Jacky's boards (Bear65 and S7 Elephant) (<a href="https://github.com/qmk/qmk_firmware/pull/10528">#10528</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11981">#11981</a>)</li>
+<li>Remove handwired/bluepill (<a href="https://github.com/qmk/qmk_firmware/pull/11415">#11415</a>)</li>
+<li>Aplyard Aplx6 Added rev2 &amp; move rev1+rev2 to parent folder (<a href="https://github.com/qmk/qmk_firmware/pull/10973">#10973</a>)</li>
+<li>added <code>unix60</code>, moved together with <code>southpaw75</code> into <code>fr4</code> folder (<a href="https://github.com/qmk/qmk_firmware/pull/11195">#11195</a>)</li>
+</ul>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>GCC 10 can now compile Drop Alt firmware (<a href="https://github.com/qmk/qmk_firmware/pull/9485">#9485</a>)</li>
+<li>Fix compiling on <code>develop</code> branch (<a href="https://github.com/qmk/qmk_firmware/pull/11409">#11409</a>)</li>
+<li>Fix broken keyboards and keymaps (<a href="https://github.com/qmk/qmk_firmware/pull/11412">#11412</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11427">#11427</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11448">#11448</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11447">#11447</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11473">#11473</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11584">#11584</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11600">#11600</a>)</li>
+<li>Fixed up build dependencies so that generated files are made available before compiling any object files (<a href="https://github.com/qmk/qmk_firmware/pull/11435">#11435</a>)</li>
+<li>Formatting fixes (<a href="https://github.com/qmk/qmk_firmware/commit/378edd9491f2ab0d3d8a970c9a8e64bc03ca15cf"><code>378edd9</code></a>, <a href="https://github.com/qmk/qmk_firmware/pull/11594">#11594</a>, <a href="https://github.com/qmk/qmk_firmware/commit/27749e1c967c02c05e62a89a0ae2776dd7e5158c"><code>27749e1</code></a>)</li>
+<li>Include <code>stdbool.h</code> in <code>uart.h</code> to fix compiler errors (<a href="https://github.com/qmk/qmk_firmware/pull/11728">#11728</a>)</li>
+<li>Decouple USB events from the USB interrupt handler in ChibiOS (<a href="https://github.com/qmk/qmk_firmware/pull/10437">#10437</a>)</li>
+<li>Fixes an issue while using Backlight and External EEPROM at the same time that would cause the MCU to lock up.</li>
+<li>Address wake from sleep instability (<a href="https://github.com/qmk/qmk_firmware/pull/11450">#11450</a>)</li>
+<li>Fix pressing media key on a momentarily activated layer may lead to missing key up events (<a href="https://github.com/qmk/qmk_firmware/pull/11162">#11162</a>)</li>
+<li>Fix an RGB initialisation bug on Massdrop keyboards (<a href="https://github.com/qmk/qmk_firmware/pull/12022">#12022</a>)</li>
+<li>Fix file encoding errors on Windows, and layouts not correctly merging into info.json (<a href="https://github.com/qmk/qmk_firmware/pull/12039">#12039</a>)</li>
+</ul>
+<h3 id="additions-and-enhancements">Additions and Enhancements<a class="headerlink" href="#additions-and-enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Allow configuration of serial USART timeout (<a href="https://github.com/qmk/qmk_firmware/pull/11057">#11057</a>)</li>
+<li>Added Sync Timer feature for Split Common keyboards (<a href="https://github.com/qmk/qmk_firmware/pull/10997">#10997</a>)</li>
+<li>Add modifier state to the Split Common transport (<a href="https://github.com/qmk/qmk_firmware/pull/10400">#10400</a>)</li>
+<li>Add Pix keyboard by sendz (<code>sendyyeah/pix</code>) (<a href="https://github.com/qmk/qmk_firmware/pull/11154">#11154</a>)</li>
+<li>Implement option for kinetic mouse movement algorithm for mouse keys (<a href="https://github.com/qmk/qmk_firmware/pull/6739">#6739</a>)</li>
+<li>Improved Language Specific Keycodes for US International and Extended Layouts (<a href="https://github.com/qmk/qmk_firmware/pull/11307">#11307</a>)</li>
+<li>Modified <code>QWIIC_ENABLE</code> in <code>rules.mk</code> to be yes/no choice, adding <code>QWIIC_DRIVERS</code> to allow for inclusion of specific drivers (<a href="https://github.com/qmk/qmk_firmware/pull/11426">#11426</a>)</li>
+<li>Allow AVR-based keyboards to override the <code>bootloader_jump</code> function (<a href="https://github.com/qmk/qmk_firmware/pull/11418">#11418</a>)</li>
+<li>Refine RGBLight Twinkle effect to be smoother (use breathing curve) (<a href="https://github.com/qmk/qmk_firmware/pull/11350">#11350</a>)</li>
+<li>Keep track of last matrix activity (<a href="https://github.com/qmk/qmk_firmware/pull/10730">#10730</a>, <a href="https://github.com/qmk/qmk_firmware/commit/ab375d3d075c105f09a1ddd0e155f178225518bc"><code>ab375d3</code></a>, <a href="https://github.com/qmk/qmk_firmware/pull/11552">#11552</a>)</li>
+<li>fix <code>matrix_io_delay()</code> timing in <code>quantum/matrix.c</code> (<a href="https://github.com/qmk/qmk_firmware/pull/9603">#9603</a>)</li>
+<li>Keep track of encoder activity (<a href="https://github.com/qmk/qmk_firmware/pull/11595">#11595</a>)</li>
+<li>Backport ChibiOS Audio changes from ZSA (<a href="https://github.com/qmk/qmk_firmware/pull/11687">#11687</a>)</li>
+<li>Add support for 8 buttons to mouse report (<a href="https://github.com/qmk/qmk_firmware/pull/10807">#10807</a>)</li>
+<li>Allow <code>post_config.h</code> to be implemented in userspace (<a href="https://github.com/qmk/qmk_firmware/pull/11519">#11519</a>)</li>
+<li>Adds AT90USB162 support (<a href="https://github.com/qmk/qmk_firmware/pull/11570">#11570</a>)</li>
+<li>Stop sounds when suspended (<a href="https://github.com/qmk/qmk_firmware/pull/11553">#11553</a>)</li>
+<li>Revamp spidey3 userspace and keymaps (<a href="https://github.com/qmk/qmk_firmware/pull/11768">#11768</a>)</li>
+<li>Add support for analog USBPD on STM32G4xx (<a href="https://github.com/qmk/qmk_firmware/pull/11824">#11824</a>)</li>
+<li>Master matrix can now be transported to the slave side in Split Common keyboards (<a href="https://github.com/qmk/qmk_firmware/pull/11046">#11046</a>)</li>
+<li>RGBLight: Allow configurable default settings (<a href="https://github.com/qmk/qmk_firmware/pull/11912">#11912</a>)</li>
+<li>Add <code>tap_code_delay(code, delay)</code> (<a href="https://github.com/qmk/qmk_firmware/pull/11913">#11913</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11938">#11938</a>)</li>
+</ul>
+<h3 id="clean-ups-and-optimizations">Clean-ups and Optimizations<a class="headerlink" href="#clean-ups-and-optimizations" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fix duplicate <code>I2C_KEYMAP_START</code> define (<a href="https://github.com/qmk/qmk_firmware/pull/11237">#11237</a>)</li>
+<li>Rewrite APA102 support for RGBLight (<a href="https://github.com/qmk/qmk_firmware/pull/10894">#10894</a>)</li>
+<li>Update ADB Protocol implementation in TMK Core (<a href="https://github.com/qmk/qmk_firmware/pull/11168">#11168</a>)</li>
+<li>Remove unused <code>action_get_macro()</code> usages in user files (<a href="https://github.com/qmk/qmk_firmware/pull/11165">#11165</a>)</li>
+<li>Remove <code>QMK_KEYBOARD_CONFIG_H</code> (<a href="https://github.com/qmk/qmk_firmware/pull/11576">#11576</a>)</li>
+<li>Remove duplicated housekeeping in <code>arm_atsam</code> (<a href="https://github.com/qmk/qmk_firmware/pull/11672">#11672</a>)</li>
+<li>UART driver refactor (<a href="https://github.com/qmk/qmk_firmware/pull/11637">#11637</a>)</li>
+<li>Move <code>transport.c</code> to <code>QUANTUM_LIB_SRC</code> (<a href="https://github.com/qmk/qmk_firmware/pull/11751">#11751</a>)</li>
+<li>Remove <code>MIDI_ENABLE_STRICT</code> from user keymaps (<a href="https://github.com/qmk/qmk_firmware/pull/11750">#11750</a>)</li>
+<li>Remove legacy print backward compatiblitly (<a href="https://github.com/qmk/qmk_firmware/pull/11805">#11805</a>)</li>
+<li>Migrate mousekey to quantum (<a href="https://github.com/qmk/qmk_firmware/pull/11804">#11804</a>)</li>
+<li>remove deprecated <code>qmk json-keymap</code> (<a href="https://github.com/qmk/qmk_firmware/pull/11823">#11823</a>)</li>
+<li>Remove FAUXCLICKY feature (deprecated) (<a href="https://github.com/qmk/qmk_firmware/pull/11829">#11829</a>)</li>
+<li>Refactor platform logic within <code>print.h</code> (<a href="https://github.com/qmk/qmk_firmware/pull/11863">#11863</a>)</li>
+<li>Audio system overhaul (<a href="https://github.com/qmk/qmk_firmware/pull/11820">#11820</a>)</li>
+<li>Output selection: Remove "USB and BT" option for Bluetooth (<a href="https://github.com/qmk/qmk_firmware/pull/11940">#11940</a>)</li>
+<li><code>tmk_core/common/action.c</code>: refactor for code size; merge multiple <code>case</code>s into one (<a href="https://github.com/qmk/qmk_firmware/pull/11943">#11943</a>)</li>
+<li>Remove rules and settings from user keymaps that are already defined at keyboard level (<a href="https://github.com/qmk/qmk_firmware/pull/11966">#11966</a>)</li>
+</ul>
+<h3 id="qmk-infrastructure-and-internals_1">QMK Infrastructure and Internals<a class="headerlink" href="#qmk-infrastructure-and-internals_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>bump to python 3.7 (<a href="https://github.com/qmk/qmk_firmware/pull/11408">#11408</a>)</li>
+<li><code>develop</code> branch is now formatted as part of CI tasks (<a href="https://github.com/qmk/qmk_firmware/pull/11893">#11893</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11905">#11905</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11907">#11907</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11928">#11928</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11936">#11936</a>)</li>
+<li>Configure keyboard matrix from info.json (<a href="https://github.com/qmk/qmk_firmware/pull/10817">#10817</a>)</li>
+<li>Validate our JSON data using json_schema (<a href="https://github.com/qmk/qmk_firmware/pull/11101">#11101</a>)</li>
+<li>Use the schema to eliminate custom code (<a href="https://github.com/qmk/qmk_firmware/pull/11108">#11108</a>)</li>
+<li>Add support for specifying BOARD in <code>info.json</code> (<a href="https://github.com/qmk/qmk_firmware/pull/11492">#11492</a>)</li>
+<li>Document how to add data driven configurations (<a href="https://github.com/qmk/qmk_firmware/pull/11502">#11502</a>)</li>
+<li>Process info.json rules ahead of userspace rules (<a href="https://github.com/qmk/qmk_firmware/pull/11542">#11542</a>)</li>
+<li>Remove duplicate manufacturer definitions (<a href="https://github.com/qmk/qmk_firmware/pull/11544">#11544</a>)</li>
+<li>Update list of MCUs in <code>keyboard.jsonschema</code> to mirror <code>qmk.constants.py</code> (<a href="https://github.com/qmk/qmk_firmware/pull/11688">#11688</a>)</li>
+<li>Create a system to map between <code>info.json</code> and <code>config.h</code>/<code>rules.mk</code> (<a href="https://github.com/qmk/qmk_firmware/pull/11548">#11548</a>)</li>
+<li>Make LAYOUT parsing more robust (<a href="https://github.com/qmk/qmk_firmware/pull/12000">#12000</a>)</li>
+</ul>
+<h3 id="chibios-update-and-config-migration_1">ChibiOS Update and Config Migration<a class="headerlink" href="#chibios-update-and-config-migration_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Add board specific to Proton-C, with usual defaults turned on to match Pro-Micro (<a href="https://github.com/qmk/qmk_firmware/pull/10976">#10976</a>)</li>
+<li>Disable almost all ChibiOS subsystems in default configs (<a href="https://github.com/qmk/qmk_firmware/pull/11111">#11111</a>)</li>
+<li>Config Migrations (<a href="https://github.com/qmk/qmk_firmware/pull/10418">#10418</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11123">#11123</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11261">#11261</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11413">#11413</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11414">#11414</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11495">#11495</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11504">#11504</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11529">#11529</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11588">#11588</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11598">#11598</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11607">#11607</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11617">#11617</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11620">#11620</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11630">#11630</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11646">#11646</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11689">#11689</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11846">#11846</a>, <a href="https://github.com/qmk/qmk_firmware/pull/11927">#11927</a>, <a href="https://github.com/qmk/qmk_firmware/pull/12001">#12001</a>)</li>
+<li>Disable subsystems repo-wide (<a href="https://github.com/qmk/qmk_firmware/pull/11449">#11449</a>)</li>
+<li>Leftover early initialisation conversions (<a href="https://github.com/qmk/qmk_firmware/pull/11615">#11615</a>)</li>
+<li>Fix up comments showing how to execute config migration (<a href="https://github.com/qmk/qmk_firmware/pull/11621">#11621</a>)</li>
+<li>Add STM32G431 and STM32G474 board definitions (<a href="https://github.com/qmk/qmk_firmware/pull/11793">#11793</a>)</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

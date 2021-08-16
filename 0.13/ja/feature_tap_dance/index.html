@@ -1,0 +1,912 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/ja/feature_tap_dance/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>タップダンス: 1つのキーが3つ、5つまたは100の異なる動作をします - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#135100" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              タップダンス: 1つのキーが3つ、5つまたは100の異なる動作をします
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#idintroduction" class="md-nav__link">
+    イントロダクション :id=introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idhow-to-use" class="md-nav__link">
+    タップダンスの使い方 :id=how-to-use
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idimplementation" class="md-nav__link">
+    実装の詳細 :id=implementation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idexamples" class="md-nav__link">
+    実装例 :id=examples
+  </a>
+  
+    <nav class="md-nav" aria-label="実装例 :id=examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idsimple-example" class="md-nav__link">
+    シンプルな実装例 :id=simple-example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idcomplex-examples" class="md-nav__link">
+    複雑な実装例 :id=complex-examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/ja/feature_tap_dance.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="135100">タップダンス: 1つのキーが3つ、5つまたは100の異なる動作をします<a class="headerlink" href="#135100" title="Permanent link">&para;</a></h1>
+<!---
+  original document: 0.10.33:docs/feature_tap_dance.md
+  git diff 0.10.33 HEAD -- docs/feature_tap_dance.md | cat
+-->
+
+<h2 id="idintroduction">イントロダクション :id=introduction<a class="headerlink" href="#idintroduction" title="Permanent link">&para;</a></h2>
+<p>セミコロンキーを1回叩くと、セミコロンが送信されます。2回素早く叩くと、コロンが送信されます。3回叩くと、あなたのキーボードのLEDが激しく踊るように明滅します。これは、タップダンスでできることの一例です。それは、コミュニティが提案したとても素敵なファームウェアの機能の1つで、<a href="https://github.com/algernon">algernon</a> がプルリクエスト <a href="https://github.com/qmk/qmk_firmware/pull/451">#451</a> で考えて作ったものです。algernon が述べる機能は次の通りです:</p>
+<p>この機能を使うと、特定のキーが、タップした回数に基づいて異なる振る舞いをします。そして、割り込みがあった時は、割り込み前に上手く処理されます。</p>
+<h2 id="idhow-to-use">タップダンスの使い方 :id=how-to-use<a class="headerlink" href="#idhow-to-use" title="Permanent link">&para;</a></h2>
+<p>最初に、あなたの <code>rules.mk</code> ファイルで <code>TAP_DANCE_ENABLE = yes</code> と設定する必要があります。なぜならば、デフォルトでは無効になっているからです。これでファームウェアのサイズが1キロバイトほど増加します。</p>
+<p>オプションで、あなたの <code>config.h</code> ファイルに次のような設定を追加して、<code>TAPPING_TERM</code> の時間をカスタマイズしたほうが良いです。</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#define TAPPING_TERM 175</span>
+</code></pre></div>
+
+<p><code>TAPPING_TERM</code> の時間は、あなたのタップダンスのキーのタップとタップの間の時間として許可された最大の時間で、ミリ秒単位で計測されます。例えば、もし、あなたがこの上にある <code>#define</code> ステートメントを使い、1回タップすると <code>Space</code> が送信され、2回タップすると <code>Enter</code> が送信されるタップダンスキーをセットアップした場合、175ミリ秒以内に2回キーをタップすれば <code>ENT</code> だけが送信されるでしょう。もし、1回タップしてから175ミリ秒以上待ってからもう一度タップすると、<code>SPC SPC</code> が送信されます。</p>
+<p>次に、いくつかのタップダンスのキーを定義するためには、<code>TD()</code> マクロを使うのが最も簡単です。これは数字を受け取り、この数字は後で <code>tap_dance-actions</code> 配列のインデックスとして使われます。</p>
+<p>その後、<code>tap_dance_actions</code> 配列を使って、タップダンスキーを押した時のアクションを定義します。現在は、5つの可能なオプションがあります:</p>
+<ul>
+<li><code>ACTION_TAP_DANCE_DOUBLE(kc1, kc2)</code>: 1回タップすると <code>kc1</code> キーコードを送信し、2回タップすると <code>kc2</code> キーコードを送信します。キーを押し続けているときは、適切なキーコードが登録されます: キーを押し続けた場合は <code>kc1</code>、一度タップしてから続けてもう一度キーを押してそのまま押し続けたときは、 <code>kc2</code> が登録されます。</li>
+<li><code>ACTION_TAP_DANCE_LAYER_MOVE(kc, layer)</code>: 1回タップすると <code>kc</code> キーコードが送信され、2回タップすると <code>layer</code> レイヤーに移動します(これは <code>TO</code> レイヤーキーコードのように機能します)。<ul>
+<li>この機能は <code>ACTION_TAP_DANCE_DUAL_ROLE</code> と同じですが、機能が明確になるように関数名を変更しました。どちらの関数名でも実行できます。</li>
+</ul>
+</li>
+<li><code>ACTION_TAP_DANCE_LAYER_TOGGLE(kc, layer)</code>: 1回タップすると <code>kc</code> キーコードが送信され、2回タップすると <code>layer</code> の状態をトグルします(これは <code>TG</code> レイヤーキーコードのように機能します)。</li>
+<li><code>ACTION_TAP_DANCE_FN(fn)</code>: ユーザーキーマップに定義した指定の関数が呼び出されます。タップダンス実行の回数分タップすると、最後の時点で呼び出されます。</li>
+<li><code>ACTION_TAP_DANCE_FN_ADVANCED(on_each_tap_fn, on_dance_finished_fn, on_dance_reset_fn)</code>: タップする度にユーザーキーマップに定義した最初の関数が呼び出されます。タップダンスの実行が終わった時点で2番目の関数が呼び出され、タップダンスの実行をリセットするときに最後の関数が呼び出されます。</li>
+<li>~~<code>ACTION_TAP_DANCE_FN_ADVANCED_TIME(on_each_tap_fn, on_dance_finished_fn, on_dance_reset_fn, tap_specific_tapping_term)</code>~~: これは <code>ACTION_TAP_DANCE_FN_ADVANCED</code> 関数と同じように機能します。しかし、<code>TAPPING_TERM</code> で事前に定義した時間の代わりに、カスタマイズしたタップ時間を使います。<ul>
+<li><a href="ja/custom_quantum_functions.md#Custom_Tapping_Term">ここ</a>で概説するように、これはキーごとのタッピング時間機能を優先して非推奨になりました。この特定のタップダンス機能を使う代わりに、使いたい特定の <code>TD()</code> マクロ(<code>TD(TD_ESC_CAPS)</code> のような)を確認する必要があります。</li>
+</ul>
+</li>
+</ul>
+<p>最初のオプションで、1つのキーに2つの役割を持たせる大抵のケースには十分です。例えば、<code>ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_ENT)</code> は、1回タップすると <code>Space</code> を送信し、2回タップすると <code>Enter</code> を送信します。</p>
+<p>!&gt; ここでは <a href="ja/keycodes_basic.md">基本的なキーコード</a> だけがサポートされていることを覚えておいてください。カスタムキーコードはサポートされていません。</p>
+<p>最初のオプションに似ていますが、2番目のオプションは単純なレイヤー切替のケースに適しています。</p>
+<p>これ以上に複雑なケースの場合、3番目か4番目のオプションを使います。（以下でそれらの例を列挙します）</p>
+<p>最後に、5番目のオプションは、もし、タップダンスキーをコードに追加した後、非タップダンスキーが奇妙な振る舞いを始めた時に特に役に立ちます。ありうる問題は、あなたがタップダンスキーを使いやすくするために <code>TAPPING_TERM</code> の時間を変更した結果、その他のキーが割り込みを処理する方法が変わってしまったというものです。</p>
+<h2 id="idimplementation">実装の詳細 :id=implementation<a class="headerlink" href="#idimplementation" title="Permanent link">&para;</a></h2>
+<p>さて、説明の大部分はここまでです！ 以下に挙げているいくつかの例に取り組むことができるようになり、あなた自身のタップダンスの機能を開発できるようになります。しかし、もし、あなたが裏側で起きていることをより深く理解したいのであれば、続けてそれが全てどのように機能するかの説明を読みましょう！</p>
+<p>メインエントリーポイントは、<code>process_tap_dance()</code> で、<code>process_record_quantum()</code> から呼び出されます。これはキーを押すたびに実行され、ハンドラは早期に実行されます。この関数は、押されたキーがタップダンスキーがどうか確認します。
+もし、押されたキーがタップダンスキーではなく、かつ、タップダンスが実行されていたなら、最初にそれを処理し、新しく押されたキーをキューに格納します。
+もし、押されたキーがタップダンスキーであるなら、既にアクティブなタップダンスと同じキーか確認します（もしアクティブなものがある場合、それと）。
+異なる場合、まず、古いタップダンスを処理し、続いて新しいタップダンスを登録します。
+同じ場合、カウンタの値を増やし、タイマーをリセットします。</p>
+<p>このことは、あなたは再びキーをタップするまでの時間として <code>TAPPING_TERM</code> の時間を持っていることを意味します。そのため、あなたは1つの <code>TAPPING_TERM</code> の時間内に全てのタップを行う必要はありません。これにより、キーの反応への影響を最小限に抑えながら、より長いタップ回数を可能にします。</p>
+<p>次は <code>matrix_scan_tap_dance()</code> です。この関数はタップダンスキーのタイムアウトを制御します。</p>
+<p>柔軟性のために、タップダンスは、キーコードの組み合わせにも、ユーザー関数にもなることができます。後者は、より高度なタップ回数の制御や、LED を点滅させたり、バックライトをいじったり、等々の制御を可能にします。これは、1つの共用体と、いくつかの賢いマクロによって成し遂げられています。</p>
+<h2 id="idexamples">実装例 :id=examples<a class="headerlink" href="#idexamples" title="Permanent link">&para;</a></h2>
+<h3 id="idsimple-example">シンプルな実装例 :id=simple-example<a class="headerlink" href="#idsimple-example" title="Permanent link">&para;</a></h3>
+<p>ここに1つの定義のための簡単な例があります。</p>
+<ol>
+<li><code>rules.mk</code> に <code>TAP_DANCE_ENABLE = yes</code> を追加します。</li>
+<li><code>config.h</code> ファイル（<code>qmk_firmware/keyboards/planck/config.h</code> からあなたのキーマップディレクトリにコピーできます）に <code>#define TAPPING_TERM 200</code> を追加します。</li>
+<li><code>keymap.c</code> ファイルに変数とタップダンスの定義を定義し、それからキーマップに追加します。</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="c1">// タップダンスの宣言</span>
+<span class="k">enum</span> <span class="p">{</span>
+    <span class="n">TD_ESC_CAPS</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// タップダンスの定義</span>
+<span class="n">qk_tap_dance_action_t</span> <span class="n">tap_dance_actions</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// 1回タップすると Escape キー、2回タップすると Caps Lock。</span>
+    <span class="p">[</span><span class="n">TD_ESC_CAPS</span><span class="p">]</span>  <span class="o">=</span> <span class="n">ACTION_TAP_DANCE_DOUBLE</span><span class="p">(</span><span class="n">KC_ESC</span><span class="p">,</span> <span class="n">KC_CAPS</span><span class="p">),</span>
+<span class="p">};</span>
+
+<span class="c1">// キーコードの代わりにタップダンスキーを追加します</span>
+<span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">PROGMEM</span> <span class="n">keymaps</span><span class="p">[][</span><span class="n">MATRIX_ROWS</span><span class="p">][</span><span class="n">MATRIX_COLS</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+    <span class="n">TD</span><span class="p">(</span><span class="n">TD_ESC_CAPS</span><span class="p">)</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h3 id="idcomplex-examples">複雑な実装例 :id=complex-examples<a class="headerlink" href="#idcomplex-examples" title="Permanent link">&para;</a></h3>
+<p>このセクションでは、いくつかの複雑なタップダンスの例を詳しく説明します。
+例で使われている全ての列挙型はこのように宣言します。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// 全ての例のための列挙型定義</span>
+<span class="k">enum</span> <span class="p">{</span>
+    <span class="n">CT_SE</span><span class="p">,</span>
+    <span class="n">CT_CLN</span><span class="p">,</span>
+    <span class="n">CT_EGG</span><span class="p">,</span>
+    <span class="n">CT_FLSH</span><span class="p">,</span>
+    <span class="n">X_TAP_DANCE</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h4 id="1-1-2-idexample-1">例1: 1回タップすると <code>:</code> を送信し、2回タップすると <code>;</code> を送信する :id=example-1<a class="headerlink" href="#1-1-2-idexample-1" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">dance_cln_finished</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">register_code16</span><span class="p">(</span><span class="n">KC_COLN</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">register_code</span><span class="p">(</span><span class="n">KC_SCLN</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">dance_cln_reset</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">unregister_code16</span><span class="p">(</span><span class="n">KC_COLN</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_SCLN</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 全てのタップダンス関数はここに定義します。ここでは1つだけ示します。</span>
+<span class="n">qk_tap_dance_action_t</span> <span class="n">tap_dance_actions</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">CT_CLN</span><span class="p">]</span> <span class="o">=</span> <span class="n">ACTION_TAP_DANCE_FN_ADVANCED</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">dance_cln_finished</span><span class="p">,</span> <span class="n">dance_cln_reset</span><span class="p">),</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h4 id="2-100-safety-dance-idexample-2">例2: 100回タップした後に "Safety Dance!" を送信します :id=example-2<a class="headerlink" href="#2-100-safety-dance-idexample-2" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">dance_egg</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;Safety dance!&quot;</span><span class="p">);</span>
+        <span class="n">reset_tap_dance</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">qk_tap_dance_action_t</span> <span class="n">tap_dance_actions</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">CT_EGG</span><span class="p">]</span> <span class="o">=</span> <span class="n">ACTION_TAP_DANCE_FN</span><span class="p">(</span><span class="n">dance_egg</span><span class="p">),</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h4 id="3-1-led-idexample-3">例3: 1つずつ LED を点灯させてから消灯する :id=example-3<a class="headerlink" href="#3-1-led-idexample-3" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="c1">// タップする毎に、LED を右から左に点灯します。</span>
+<span class="c1">// 4回目のタップで、右から左に消灯します。</span>
+<span class="kt">void</span> <span class="nf">dance_flsh_each</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+            <span class="n">ergodox_right_led_3_on</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+            <span class="n">ergodox_right_led_2_on</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+            <span class="n">ergodox_right_led_1_on</span><span class="p">();</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
+            <span class="n">ergodox_right_led_3_off</span><span class="p">();</span>
+            <span class="n">wait_ms</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+            <span class="n">ergodox_right_led_2_off</span><span class="p">();</span>
+            <span class="n">wait_ms</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+            <span class="n">ergodox_right_led_1_off</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 4回目のタップで、キーボードをフラッシュ状態にセットします。</span>
+<span class="kt">void</span> <span class="nf">dance_flsh_finished</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">reset_keyboard</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// もしフラッシュ状態にならない場合、LED を左から右に消灯します。</span>
+<span class="kt">void</span> <span class="nf">dance_flsh_reset</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ergodox_right_led_1_off</span><span class="p">();</span>
+    <span class="n">wait_ms</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+    <span class="n">ergodox_right_led_2_off</span><span class="p">();</span>
+    <span class="n">wait_ms</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+    <span class="n">ergodox_right_led_3_off</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// 全てのタップダンス関数を一緒に表示しています。この例3は &quot;CT_FLASH&quot; です。</span>
+<span class="n">qk_tap_dance_action_t</span> <span class="n">tap_dance_actions</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">CT_SE</span><span class="p">]</span> <span class="o">=</span> <span class="n">ACTION_TAP_DANCE_DOUBLE</span><span class="p">(</span><span class="n">KC_SPC</span><span class="p">,</span> <span class="n">KC_ENT</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">CT_CLN</span><span class="p">]</span> <span class="o">=</span> <span class="n">ACTION_TAP_DANCE_FN_ADVANCED</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">dance_cln_finished</span><span class="p">,</span> <span class="n">dance_cln_reset</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">CT_EGG</span><span class="p">]</span> <span class="o">=</span> <span class="n">ACTION_TAP_DANCE_FN</span><span class="p">(</span><span class="n">dance_egg</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">CT_FLSH</span><span class="p">]</span> <span class="o">=</span> <span class="n">ACTION_TAP_DANCE_FN_ADVANCED</span><span class="p">(</span><span class="n">dance_flsh_each</span><span class="p">,</span> <span class="n">dance_flsh_finished</span><span class="p">,</span> <span class="n">dance_flsh_reset</span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h4 id="4-idexample-4">例4: クアッドファンクションのタップダンス :id=example-4<a class="headerlink" href="#4-idexample-4" title="Permanent link">&para;</a></h4>
+<p><a href="https://github.com/danielggordon">DanielGGordon</a> によるもの</p>
+<p>キーを押す回数と、キーを押し続けるかタップするかによって、1つのキーに4つ（またはそれ以上）の機能を持たせることができるようになります。</p>
+<p>以下に例をあげます:
+*  1回タップ = <code>x</code> を送信
+*  押し続ける = <code>Control</code> を送信
+*  2回タップ = <code>Escape</code> を送信
+*  2回タップして押し続ける = <code>Alt</code> を送信</p>
+<p>'クアッドファンクションのタップダンス' を利用できるようにするには、いくつかのものが必要になります。</p>
+<p><code>keymap.c</code> ファイルの先頭、つまりキーマップの前に、以下のコードを追加します。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">is_press_action</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">tap</span><span class="p">;</span>
+
+<span class="k">enum</span> <span class="p">{</span>
+    <span class="n">SINGLE_TAP</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">SINGLE_HOLD</span><span class="p">,</span>
+    <span class="n">DOUBLE_TAP</span><span class="p">,</span>
+    <span class="n">DOUBLE_HOLD</span><span class="p">,</span>
+    <span class="n">DOUBLE_SINGLE_TAP</span><span class="p">,</span> <span class="c1">// シングルタップを2回送信</span>
+    <span class="n">TRIPLE_TAP</span><span class="p">,</span>
+    <span class="n">TRIPLE_HOLD</span>
+<span class="p">};</span>
+
+<span class="c1">// タップダンスの列挙型</span>
+<span class="k">enum</span> <span class="p">{</span>
+    <span class="n">X_CTL</span><span class="p">,</span>
+    <span class="n">SOME_OTHER_DANCE</span>
+<span class="p">};</span>
+
+<span class="kt">uint8_t</span> <span class="nf">cur_dance</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">);</span>
+
+<span class="c1">// xタップダンスのための関数。キーマップで利用できるようにするため、ここに置きます。</span>
+<span class="kt">void</span> <span class="nf">x_finished</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">x_reset</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">);</span>
+</code></pre></div>
+
+<p>次に、<code>keymap.c</code> ファイルの末尾に、次のコードを追加する必要があります。</p>
+<div class="codehilite"><pre><span></span><code><span class="cm">/* 実行されるタップダンスの種類に対応する整数を返します。</span>
+<span class="cm"> *</span>
+<span class="cm"> * タップダンスの状態を判別する方法: 割り込みと押下。</span>
+<span class="cm"> *</span>
+<span class="cm"> * 割り込み:</span>
+<span class="cm"> *   タップダンスの状態が「割り込み」の場合、他のキーがタップ時間中に押されたことを意味します。</span>
+<span class="cm"> *   これは通常、キーを「タップ」しようとしていることを示します。</span>
+<span class="cm"> *</span>
+<span class="cm"> * 押下:</span>
+<span class="cm"> *   キーがまだ押されているかどうか。この値が true の場合、タップ時間が終了したことを意味しますが、</span>
+<span class="cm"> *   キーはまだ押されたままです。これは通常、キーが「ホールド」されていることを意味します。</span>
+<span class="cm"> *</span>
+<span class="cm"> * タップダンスに関して、qmk ソフトウェアで現在不可能なことの1つは、&quot;permissive hold&quot; 機能を</span>
+<span class="cm"> * 模倣することです。</span>
+<span class="cm"> * 一般に、高度なタップダンスは一般的に入力される文字で使われた場合にうまく機能しません。</span>
+<span class="cm"> * 例えば &quot;A&quot; の場合。タップダンスは文字の入力中に入力しない文字以外のキーで使うのが最適です。</span>
+<span class="cm"> *</span>
+<span class="cm"> * 高度なタップダンスを配置するのに適した場所:</span>
+<span class="cm"> *   z、q、x、j、k、v、b、ファンクションキー、home/end、コンマ、セミコロン</span>
+<span class="cm"> *</span>
+<span class="cm"> * タップダンスキーの「最適な配置場所」の基準:</span>
+<span class="cm"> *   文章中で頻繁に入力するキーでないこと</span>
+<span class="cm"> *   ダブルタップに頻繁に使われるキーでないこと。例えば、&#39;tab&#39; はターミナルやウェブフォームで</span>
+<span class="cm"> *   しばしばダブルタップされます。そのため、タップダンスでは &#39;tab&#39; は良い選択ではありません。</span>
+<span class="cm"> *   一般的な単語で2回続けて使われる文字でないこと。例えば &#39;pepper&#39; 中の &#39;p&#39;。もしタップダンス機能が</span>
+<span class="cm"> *   文字 &#39;p&#39; に存在する場合、&#39;pepper&#39; という単語は入力するのが非常にいらだたしいものになるでしょう。</span>
+<span class="cm"> *</span>
+<span class="cm"> * 3つ目の点については、&#39;DOUBLE_SINGLE_TAP&#39; が存在しますが、これは完全にはテストされていません</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kt">uint8_t</span> <span class="nf">cur_dance</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">interrupted</span> <span class="o">||</span> <span class="o">!</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">pressed</span><span class="p">)</span> <span class="k">return</span> <span class="n">SINGLE_TAP</span><span class="p">;</span>
+        <span class="c1">// キーは割り込まれていませんが、まだ押し続けられています。&#39;HOLD&#39; を送信することを意味します。</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="n">SINGLE_HOLD</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// DOUBLE_SINGLE_TAP は &quot;pepper&quot; と入力することと、&#39;pp&#39; と入力したときに実際に</span>
+        <span class="c1">// ダブルタップしたい場合とを区別するためのものです。</span>
+        <span class="c1">// この戻り値の推奨されるユースケースは、&#39;ダブルタップ&#39; 動作やマクロではなく、</span>
+        <span class="c1">// そのキーの2つのキー入力を送信したい場合です。</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">interrupted</span><span class="p">)</span> <span class="k">return</span> <span class="n">DOUBLE_SINGLE_TAP</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">pressed</span><span class="p">)</span> <span class="k">return</span> <span class="n">DOUBLE_HOLD</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="n">DOUBLE_TAP</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 誰も同じ文字を3回入力しようとしていないと仮定します(少なくとも高速には)。</span>
+    <span class="c1">// タップダンスキーが &#39;KC_W&#39; で、&quot;www.&quot; と高速に入力したい場合、ここに例外を追加して</span>
+    <span class="c1">// &#39;TRIPLE_SINGLE_TAP&#39; を返し、&#39;DOUBLE_SINGLE_TAP&#39; のようにその列挙型を定義する必要があります。</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">interrupted</span> <span class="o">||</span> <span class="o">!</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">pressed</span><span class="p">)</span> <span class="k">return</span> <span class="n">TRIPLE_TAP</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="n">TRIPLE_HOLD</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">return</span> <span class="mi">8</span><span class="p">;</span> <span class="c1">// マジックナンバー。いつかこのメソッドはより多くの押下に対して機能するよう拡張されるでしょう</span>
+<span class="p">}</span>
+
+<span class="c1">//&#39;x&#39; タップダンスの &#39;tap&#39; のインスタンスを生成します。</span>
+<span class="k">static</span> <span class="n">tap</span> <span class="n">xtap_state</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">.</span><span class="n">is_press_action</span> <span class="o">=</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">x_finished</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">xtap_state</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">cur_dance</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">xtap_state</span><span class="p">.</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nl">SINGLE_TAP</span><span class="p">:</span> <span class="n">register_code</span><span class="p">(</span><span class="n">KC_X</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">SINGLE_HOLD</span><span class="p">:</span> <span class="n">register_code</span><span class="p">(</span><span class="n">KC_LCTRL</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">DOUBLE_TAP</span><span class="p">:</span> <span class="n">register_code</span><span class="p">(</span><span class="n">KC_ESC</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">DOUBLE_HOLD</span><span class="p">:</span> <span class="n">register_code</span><span class="p">(</span><span class="n">KC_LALT</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+        <span class="c1">// 最後の case は高速入力用です。キーが `f` であると仮定します:</span>
+        <span class="c1">// 例えば、`buffer` という単語を入力するとき、`Esc` ではなく `ff` を送信するようにします。</span>
+        <span class="c1">// 高速入力時に `ff` と入力するには、次の文字は `TAPPING_TERM` 以内に入力する必要があります。</span>
+        <span class="c1">// `TAPPING_TERM` はデフォルトでは 200ms です。</span>
+        <span class="k">case</span> <span class="nl">DOUBLE_SINGLE_TAP</span><span class="p">:</span> <span class="n">tap_code</span><span class="p">(</span><span class="n">KC_X</span><span class="p">);</span> <span class="n">register_code</span><span class="p">(</span><span class="n">KC_X</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">x_reset</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">xtap_state</span><span class="p">.</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nl">SINGLE_TAP</span><span class="p">:</span> <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_X</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">SINGLE_HOLD</span><span class="p">:</span> <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_LCTRL</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">DOUBLE_TAP</span><span class="p">:</span> <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_ESC</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">DOUBLE_HOLD</span><span class="p">:</span> <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_LALT</span><span class="p">);</span>
+        <span class="k">case</span> <span class="nl">DOUBLE_SINGLE_TAP</span><span class="p">:</span> <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_X</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">xtap_state</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">qk_tap_dance_action_t</span> <span class="n">tap_dance_actions</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">X_CTL</span><span class="p">]</span> <span class="o">=</span> <span class="n">ACTION_TAP_DANCE_FN_ADVANCED</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">x_finished</span><span class="p">,</span> <span class="n">x_reset</span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>これで、キーマップのどこでも簡単に <code>TD(X_CTL)</code> マクロが使えます。</p>
+<p>もし、この機能をユーザスペースで実現したい場合、 <a href="https://github.com/qmk/qmk_firmware/tree/master/users/gordon">DanielGGordon</a> がユーザスペースでどのように実装しているか確認してください。</p>
+<blockquote>
+<p>この設定の "hold" は、タップダンスのタイムアウト（<code>ACTION_TAP_DANCE_FN_ADVANCED_TIME</code> 参照）の <strong>後</strong> に起こります。即座に "hold" を得るためには、条件から <code>state-&gt;interrupted</code> の確認を除きます。結果として、複数回のタップのための時間をより多く持つことで快適な長いタップの期限を使うことができ、そして、"hold" のために長く待たないようにすることができます(2倍の <code>TAPPING TERM</code> で開始してみてください)。</p>
+</blockquote>
+<h4 id="5-idexample-5">例5: タップダンスを高度なモッドタップとレイヤータップキーに使う :id=example-5<a class="headerlink" href="#5-idexample-5" title="Permanent link">&para;</a></h4>
+<p>タップダンスは、タップされたコードが基本的なキーコード以外の場合に、 <code>MT()</code> と <code>LT()</code> マクロをエミュレートするのに利用できます。これは、通常 <code>Shift</code> を必要とする '(' や '{' のようなキーや、<code>Control + X</code> のように他の修飾されたキーコードをタップされたキーコードとして送信することに役立ちます。</p>
+<p>あなたのレイヤーとカスタムキーコードの下に、以下のコードを追加します。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// タップダンスのキーコード</span>
+<span class="k">enum</span> <span class="n">td_keycodes</span> <span class="p">{</span>
+    <span class="n">ALT_LP</span> <span class="c1">// 例: 押していると `LALT`、タップすると `(`。それぞれのタップダンスの追加のキーコードを追加します</span>
+<span class="p">};</span>
+
+<span class="c1">// 必要な数のタップダンス状態を含むタイプを定義します</span>
+<span class="k">typedef</span> <span class="k">enum</span> <span class="p">{</span>
+    <span class="n">SINGLE_TAP</span><span class="p">,</span>
+    <span class="n">SINGLE_HOLD</span><span class="p">,</span>
+    <span class="n">DOUBLE_SINGLE_TAP</span>
+<span class="p">}</span> <span class="n">td_state_t</span><span class="p">;</span>
+
+<span class="c1">// タップダンスの状態の型のグローバルインスタンスを作ります</span>
+<span class="k">static</span> <span class="n">td_state_t</span> <span class="n">td_state</span><span class="p">;</span>
+
+<span class="c1">// タップダンス関数を宣言します:</span>
+
+<span class="c1">// 現在のタップダンスの状態を特定するための関数</span>
+<span class="kt">uint8_t</span> <span class="nf">cur_dance</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">);</span>
+
+<span class="c1">// それぞれのタップダンスキーコードに適用する `finished` と `reset` 関数</span>
+<span class="kt">void</span> <span class="nf">altlp_finished</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">altlp_reset</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">);</span>
+</code></pre></div>
+
+<p>キーレイアウト（<code>LAYOUT</code>）の下に、タップダンスの関数を定義します。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// 返却するタップダンス状態を特定します</span>
+<span class="kt">uint8_t</span> <span class="nf">cur_dance</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">interrupted</span> <span class="o">||</span> <span class="o">!</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">pressed</span><span class="p">)</span> <span class="k">return</span> <span class="n">SINGLE_TAP</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="n">SINGLE_HOLD</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">DOUBLE_SINGLE_TAP</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// 上記で返却する最大の状態の値より大きい任意の数</span>
+<span class="p">}</span>
+
+<span class="c1">// 定義する各タップダンスキーコードのとりうる状態を制御します:</span>
+
+<span class="kt">void</span> <span class="nf">altlp_finished</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">td_state</span> <span class="o">=</span> <span class="n">cur_dance</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">td_state</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nl">SINGLE_TAP</span><span class="p">:</span>
+            <span class="n">register_code16</span><span class="p">(</span><span class="n">KC_LPRN</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">SINGLE_HOLD</span><span class="p">:</span>
+            <span class="n">register_mods</span><span class="p">(</span><span class="n">MOD_BIT</span><span class="p">(</span><span class="n">KC_LALT</span><span class="p">));</span> <span class="c1">// レイヤータップキーの場合、ここでは `layer_on(_MY_LAYER)` を使います</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">DOUBLE_SINGLE_TAP</span><span class="p">:</span> <span class="c1">// タップ時間内に2つの括弧 `((` の入れ子を可能にします</span>
+            <span class="n">tap_code16</span><span class="p">(</span><span class="n">KC_LPRN</span><span class="p">);</span>
+            <span class="n">register_code16</span><span class="p">(</span><span class="n">KC_LPRN</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">altlp_reset</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">td_state</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nl">SINGLE_TAP</span><span class="p">:</span>
+            <span class="n">unregister_code16</span><span class="p">(</span><span class="n">KC_LPRN</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">SINGLE_HOLD</span><span class="p">:</span>
+            <span class="n">unregister_mods</span><span class="p">(</span><span class="n">MOD_BIT</span><span class="p">(</span><span class="n">KC_LALT</span><span class="p">));</span> <span class="c1">// レイヤータップキーの場合、ここでは `layer_off(_MY_LAYER)` を使います</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">DOUBLE_SINGLE_TAP</span><span class="p">:</span>
+            <span class="n">unregister_code16</span><span class="p">(</span><span class="n">KC_LPRN</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 各タップダンスキーコードの `ACTION_TAP_DANCE_FN_ADVANCED()` を定義し、`finished` と `reset` 関数を渡します</span>
+<span class="n">qk_tap_dance_action_t</span> <span class="n">tap_dance_actions</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">ALT_LP</span><span class="p">]</span> <span class="o">=</span> <span class="n">ACTION_TAP_DANCE_FN_ADVANCED</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">altlp_finished</span><span class="p">,</span> <span class="n">altlp_reset</span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>それぞれのタップダンスキーコードをキーマップに含めるときは、<code>TD()</code> マクロでキーコードをラップします。例: <code>TD(ALT_LP)</code></p>
+<h4 id="6-idexample-6">例6: タップダンスを一時的なレイヤー切り替えとレイヤートグルキーに使う :id=example-6<a class="headerlink" href="#6-idexample-6" title="Permanent link">&para;</a></h4>
+<p>タップダンスは、MO(layer) と TG(layer) 機能を模倣することにも使用できます。この例では、1回タップすると <code>KC_QUOT</code> 、1回押してそのまま押し続けたら <code>MO(_MY_LAYER)</code> 、2回タップしたときは <code>TG(_MY_LAYER)</code> として機能するキーを設定します。</p>
+<p>最初のステップは、あなたの <code>keymap.c</code> ファイルの最初のあたりに以下のコードを追加します。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">is_press_action</span><span class="p">;</span>
+    <span class="kt">uint8_t</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">tap</span><span class="p">;</span>
+
+<span class="c1">// 必要な数のタップダンス状態のタイプを定義します</span>
+<span class="k">enum</span> <span class="p">{</span>
+    <span class="n">SINGLE_TAP</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">SINGLE_HOLD</span><span class="p">,</span>
+    <span class="n">DOUBLE_TAP</span>
+<span class="p">};</span>
+
+<span class="k">enum</span> <span class="p">{</span>
+    <span class="n">QUOT_LAYR</span><span class="p">,</span> <span class="c1">// カスタムタップダンスキー。他のタップダンスキーはこの列挙型に追加します</span>
+<span class="p">};</span>
+
+<span class="c1">// タップダンスキーで使われる関数を宣言します</span>
+
+<span class="c1">// 全てのタップダンスに関連する関数</span>
+<span class="kt">uint8_t</span> <span class="nf">cur_dance</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">);</span>
+
+<span class="c1">// 個別のタップダンスに関連する関数</span>
+<span class="kt">void</span> <span class="nf">ql_finished</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">ql_reset</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">);</span>
+</code></pre></div>
+
+<p>あなたの <code>keymap.c</code> ファイルの最後の方に以下のコードを追加します。</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// 現在のタップダンスの状態を決定します</span>
+<span class="kt">uint8_t</span> <span class="nf">cur_dance</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">pressed</span><span class="p">)</span> <span class="k">return</span> <span class="n">SINGLE_TAP</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="n">SINGLE_HOLD</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">state</span><span class="o">-&gt;</span><span class="n">count</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="n">DOUBLE_TAP</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="mi">8</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// この例のタップダンスキーに関連付けられた &quot;tap&quot; 構造体を初期化します</span>
+<span class="k">static</span> <span class="n">tap</span> <span class="n">ql_tap_state</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">.</span><span class="n">is_press_action</span> <span class="o">=</span> <span class="nb">true</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">};</span>
+
+<span class="c1">// タップダンスキーの動作をコントロールする関数</span>
+<span class="kt">void</span> <span class="nf">ql_finished</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ql_tap_state</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">cur_dance</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">ql_tap_state</span><span class="p">.</span><span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nl">SINGLE_TAP</span><span class="p">:</span>
+            <span class="n">tap_code</span><span class="p">(</span><span class="n">KC_QUOT</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">SINGLE_HOLD</span><span class="p">:</span>
+            <span class="n">layer_on</span><span class="p">(</span><span class="n">_MY_LAYER</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="nl">DOUBLE_TAP</span><span class="p">:</span>
+            <span class="c1">// レイヤーが既にセットされているか確認します</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">layer_state_is</span><span class="p">(</span><span class="n">_MY_LAYER</span><span class="p">))</span> <span class="p">{</span>
+                <span class="c1">// レイヤーが既にセットされていたら、オフにします。</span>
+                <span class="n">layer_off</span><span class="p">(</span><span class="n">_MY_LAYER</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// レイヤーがセットされていなかったら、オンにします。</span>
+                <span class="n">layer_on</span><span class="p">(</span><span class="n">_MY_LAYER</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">ql_reset</span><span class="p">(</span><span class="n">qk_tap_dance_state_t</span> <span class="o">*</span><span class="n">state</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">user_data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// キーを押し続けていて今離したら、レイヤーをオフに切り替えます。</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">ql_tap_state</span><span class="p">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">SINGLE_HOLD</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">layer_off</span><span class="p">(</span><span class="n">_MY_LAYER</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">ql_tap_state</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// タップダンスキーを機能に関連付けます</span>
+<span class="n">qk_tap_dance_action_t</span> <span class="n">tap_dance_actions</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">QUOT_LAYR</span><span class="p">]</span> <span class="o">=</span> <span class="n">ACTION_TAP_DANCE_FN_ADVANCED_TIME</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">ql_finished</span><span class="p">,</span> <span class="n">ql_reset</span><span class="p">,</span> <span class="mi">275</span><span class="p">)</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>上記のコードは、前の例で使われたコードに似ています。注意する1つのポイントは、必要に応じてレイヤーを切り替えられるように、どのレイヤーがアクティブになっているかいつでも確認できる必要があることです。これを実現するために、引数で与えられた <code>layer</code> がアクティブなら <code>true</code> を返す <code>layer_state_is(layer)</code> を使います。</p>
+<p><code>cur_dance()</code> と <code>ql_tap_state</code> の使い方は、上の例と似ています。</p>
+<p><code>ql_finished</code> 関数における <code>case:SINGLE_TAP</code> は、上の例と似ています。<code>SINGLE_HOLD</code> の case では、<code>ql_reset()</code> と連動してタップダンスキーを押している間 <code>_MY_LAYER</code> に切り替わり、キーを離した時に <code>_MY_LAYER</code> から離れます。これは、<code>MO(_MY_LAYER)</code> に似ています。<code>DOUBLE_TAP</code> の case では、<code>_MY_LAYER</code> がアクティブレイヤーかどうかを確認することによって動きます。そして、その結果に基づいてレイヤーのオン・オフをトグルします。これは <code>TG(_MY_LAYER)</code> に似ています。</p>
+<p><code>tap_dance_actions[]</code> は、上の例に似ています。 <code>ACTION_TAP_DANCE_FN_ADVANCED()</code> の代わりに <code>ACTION_TAP_DANCE_FN_ADVANCED_TIME()</code> を使ったことに注意してください。
+この理由は、私は、非タップダンスキーを使うにあたり <code>TAPPING_TERM</code> が短い(175ミリ秒以内)方が好きなのですが、タップダンスのアクションを確実に完了させるには短すぎるとわかったからです——そのため、ここでは時間を275ミリ秒に増やしています。</p>
+<p>最後に、このタップダンスキーを動かすため、忘れずに <code>TD(QUOT_LAYR)</code> を <code>keymaps[]</code> に加えてください。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

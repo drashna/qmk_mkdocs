@@ -1,0 +1,772 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/ja/feature_macros/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>マクロ - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              マクロ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#send_string-process_record_user" class="md-nav__link">
+    SEND_STRING() と process_record_user
+  </a>
+  
+    <nav class="md-nav" aria-label="SEND_STRING() と process_record_user">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    高度なマクロ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    タップ、ダウン、アップ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代替キーマップ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    メモリ内の文字列
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idadvanced-macro-functions" class="md-nav__link">
+    高度なマクロ関数 :id=advanced-macro-functions
+  </a>
+  
+    <nav class="md-nav" aria-label="高度なマクロ関数 :id=advanced-macro-functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#record-eventpressed" class="md-nav__link">
+    record-&gt;event.pressed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register_codekc" class="md-nav__link">
+    register_code(&lt;kc&gt;);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unregister_codekc" class="md-nav__link">
+    unregister_code(&lt;kc&gt;);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tap_codekc" class="md-nav__link">
+    tap_code(&lt;kc&gt;);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register_code16kcunregister_code16kctap_code16kc" class="md-nav__link">
+    register_code16(&lt;kc&gt;);、unregister_code16(&lt;kc&gt;);、tap_code16(&lt;kc&gt;);
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear_keyboard" class="md-nav__link">
+    clear_keyboard();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear_mods" class="md-nav__link">
+    clear_mods();
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear_keyboard_but_mods" class="md-nav__link">
+    clear_keyboard_but_mods();
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    高度な例:
+  </a>
+  
+    <nav class="md-nav" aria-label="高度な例:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alttab" class="md-nav__link">
+    スーパー ALT↯TAB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/ja/feature_macros.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">マクロ<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<!---
+  original document: 0.9.43:docs/feature_macros.md
+  git diff 0.9.43 HEAD -- docs/feature_macros.md | cat
+-->
+
+<p>マクロにより、1つのキーを押すだけで複数のキーストロークを送信することができます。QMK にはマクロを定義し使う方法が幾つかあります。これらはなんでもすることができます: よく使うフレーズの入力、コピーペースト、反復的なゲームの動き、あるいはコードを書くことさえ手助けします。</p>
+<p>!&gt; <strong>セキュリティの注意</strong>: マクロを使って、パスワード、クレジットカード番号、その他の機密情報のいずれも送信することが可能ですが、それは非常に悪い考えです。あなたのキーボードを手に入れた人は誰でもテキストエディタを開いてその情報にアクセスすることができます。</p>
+<h2 id="send_string-process_record_user"><code>SEND_STRING()</code> と <code>process_record_user</code><a class="headerlink" href="#send_string-process_record_user" title="Permanent link">&para;</a></h2>
+<p>単語またはフレーズを入力するキーが欲しい時があります。最も一般的な状況のために <code>SEND_STRING()</code> を提供しています。これは文字列(つまり、文字のシーケンス)を入力します。簡単にキーコードに変換することができる全ての ASCII 文字がサポートされています (例えば、<code>qmk 123\n\t</code>)。</p>
+<p>以下は2キーのキーボードのための <code>keymap.c</code> の例です:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">enum</span> <span class="n">custom_keycodes</span> <span class="p">{</span>
+    <span class="n">QMKBEST</span> <span class="o">=</span> <span class="n">SAFE_RANGE</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kt">bool</span> <span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nl">QMKBEST</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// キーコード QMKBEST が押された時</span>
+            <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;QMK is the best thing ever!&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// キーコード QMKBEST が放された時</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">PROGMEM</span> <span class="n">keymaps</span><span class="p">[][</span><span class="n">MATRIX_ROWS</span><span class="p">][</span><span class="n">MATRIX_COLS</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span><span class="n">QMKBEST</span><span class="p">,</span> <span class="n">KC_ESC</span><span class="p">},</span>
+        <span class="c1">// ...</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<p>ここで起きることは以下の通りです:
+最初に他のキーコードで使用されていない範囲で新しいカスタムキーコードを定義します。
+次に、<code>process_record_user</code> 関数を使います。これはキーが押されるか放されるたびに呼び出され、カスタムキーコードがアクティブかどうかを確認します。
+アクティブな場合、<code>SEND_STRING</code> マクロ (これは C プロセッサのマクロで、QMK のマクロと混同しないでください)を介して文字列 <code>"QMK is the best thing ever!"</code> をコンピュータに送信します。
+呼び出し元に、処理したばかりのキー押下を通常通り(機能を置き換えたり変更したりしなかったので)処理し続けるよう指示するため、<code>true</code> を返します。
+最後に、最初のボタンがマクロをアクティブにし、2番目のボタンが単なるエスケープボタンになるようにキーマップを定義します。</p>
+<p>複数のマクロを追加することもできます。
+以下のように、別のキーコードを追加し、switch 文に別の case ラベルを追加することで、それを行うことができます:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">enum</span> <span class="n">custom_keycodes</span> <span class="p">{</span>
+    <span class="n">QMKBEST</span> <span class="o">=</span> <span class="n">SAFE_RANGE</span><span class="p">,</span>
+    <span class="n">QMKURL</span><span class="p">,</span>
+    <span class="n">MY_OTHER_MACRO</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kt">bool</span> <span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nl">QMKBEST</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// キーコード QMKBEST が押された時</span>
+            <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;QMK is the best thing ever!&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// キーコード QMKBEST が放された時</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+
+    <span class="k">case</span> <span class="nl">QMKURL</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// キーコード QMKURL が押された場合</span>
+            <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;https://qmk.fm/</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// キーコード QMKURL が放された場合</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+
+    <span class="k">case</span> <span class="nl">MY_OTHER_MACRO</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">SEND_STRING</span><span class="p">(</span><span class="n">SS_LCTL</span><span class="p">(</span><span class="s">&quot;ac&quot;</span><span class="p">));</span> <span class="c1">// 全てを選択しコピーします</span>
+        <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">PROGMEM</span> <span class="n">keymaps</span><span class="p">[][</span><span class="n">MATRIX_ROWS</span><span class="p">][</span><span class="n">MATRIX_COLS</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span><span class="n">MY_CUSTOM_MACRO</span><span class="p">,</span> <span class="n">MY_OTHER_MACRO</span><span class="p">},</span>
+        <span class="c1">// ...</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h3 id="_2">高度なマクロ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><code>process_record_user()</code> 関数のほかに、<code>post_process_record_user()</code> 関数があります。これは <code>process_record</code> の後に実行され、キーストロークが送信された後の処理に使用できます。これは例えば、通常のキーの前に押され、通常のキーの後で放されるキーがほしい場合に便利です。</p>
+<p>この例では、通常のキー入力を変更して、キーストロークが通常送信される前に <code>F22</code> が押されるようにし、キーが放された__後にのみ__ <code>F22</code> キーを放します。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">f22_tracker</span><span class="p">;</span>
+
+<span class="kt">bool</span> <span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">KC_A</span> <span class="p">...</span> <span class="nl">KC_F21</span><span class="p">:</span> <span class="c1">// F22 をスキップする方法に注意してください</span>
+    <span class="k">case</span> <span class="n">KC_F23</span> <span class="p">...</span> <span class="nl">KC_EXSEL</span><span class="p">:</span> <span class="c1">//exsel は修飾キーの直前のキーです</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">register_code</span><span class="p">(</span><span class="n">KC_F22</span><span class="p">);</span> <span class="c1">//これは F22 を押したことを送信することを意味します</span>
+        <span class="n">f22_tracker</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">register_code</span><span class="p">(</span><span class="n">keycode</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">post_process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">KC_A</span> <span class="p">...</span> <span class="nl">KC_F21</span><span class="p">:</span> <span class="c1">// F22 をスキップする方法に注意してください</span>
+    <span class="k">case</span> <span class="n">KC_F23</span> <span class="p">...</span> <span class="nl">KC_EXSEL</span><span class="p">:</span> <span class="c1">//exsel は修飾キーの直前のキーです</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">f22_tracker</span><span class="o">--</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">f22_tracker</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_F22</span><span class="p">);</span> <span class="c1">//これは F22 を放したことを送信することを意味します</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="_3">タップ、ダウン、アップ<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><code>Ctrl</code> あるいは <code>Home</code> など、ソースコードに文字列として表記できないキーをマクロで使うこともできます。
+以下のようにラップすることで任意のコードを送信することができます:</p>
+<ul>
+<li><code>SS_TAP()</code> キーを押して放します。</li>
+<li><code>SS_DOWN()</code> キーを押します (ただし、放しません)。</li>
+<li><code>SS_UP()</code> キーを放します。</li>
+</ul>
+<p>例えば:</p>
+<div class="codehilite"><pre><span></span><code>SEND_STRING(SS_TAP(X_HOME));
+</code></pre></div>
+
+<p><code>KC_HOME</code> をタップします - プリフィックスが <code>X_</code> で <code>KC_</code> ではないことに注意してください。以下のように、他の文字列と組み合わせることもできます:</p>
+<div class="codehilite"><pre><span></span><code>SEND_STRING(&quot;VE&quot;SS_TAP(X_HOME)&quot;LO&quot;);
+</code></pre></div>
+
+<p>これは "VE" に続けて <code>KC_HOME</code> をタップ、そして "LO" (新しい行の場合は "LOVE" と綴る)を送信します。</p>
+<p>文字列に遅延を追加することもできます:</p>
+<ul>
+<li><code>SS_DELAY(msecs)</code> は指定されたミリ秒だけ遅らせます。</li>
+</ul>
+<p>例えば:</p>
+<div class="codehilite"><pre><span></span><code>SEND_STRING(&quot;VE&quot; SS_DELAY(1000) SS_TAP(X_HOME) &quot;LO&quot;);
+</code></pre></div>
+
+<p>これは "VE" 、1秒の遅延、<code>KC_HOME</code> をタップ、"LO" (新しい行の場合は "LOVE" と綴るが、中間に遅延がある) を送信します。</p>
+<p>使用できるモッドショートカットもいくつかあります:</p>
+<ul>
+<li><code>SS_LCTL(文字列)</code></li>
+<li><code>SS_LSFT(文字列)</code></li>
+<li><code>SS_LALT(文字列)</code>、<code>SS_LOPT(文字列)</code></li>
+<li><code>SS_LGUI(文字列)</code>、<code>SS_LCMD(文字列)</code>、<code>SS_LWIN(文字列)</code></li>
+<li><code>SS_RCTL(文字列)</code></li>
+<li><code>SS_RSFT(文字列)</code></li>
+<li><code>SS_RALT(文字列)</code>、<code>SS_ROPT(文字列)</code>、<code>SS_ALGR(文字列)</code></li>
+<li><code>SS_RGUI(文字列)</code>、<code>SS_RCMD(文字列)</code>、<code>SS_RWIN(文字列)</code></li>
+</ul>
+<p>これらはそれぞれの修飾キーを押し、指定された文字列を送信してから、修飾キーを解放します。
+それらは以下のように使うことができます:</p>
+<div class="codehilite"><pre><span></span><code>SEND_STRING(SS_LCTL(&quot;a&quot;));
+</code></pre></div>
+
+<p>これは、左 Control +<code>a</code> (左 Control をダウンし、<code>a</code>、左 Control をアップ)を送信します - それらは文字列(例えば <code>"k"</code>)であり、<code>X_K</code> キーコードでは無いことに注意してください。</p>
+<h3 id="_4">代替キーマップ<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>デフォルトでは、QWERTY レイアウトの US キーマップを想定しています; それを変更したい場合(例えば OS がソフトウェア Colemak を使う場合)、キーマップのどこかに以下を含めます:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;sendstring_colemak.h&quot;</span><span class="cp"></span>
+</code></pre></div>
+
+<h3 id="_5">メモリ内の文字列<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>何らかの理由で文字列を操作していて、(リテラル、文字列定数の代わりに)生成したばかりのものを出力する必要がある場合は、以下のように <code>send_string()</code> を使うことができます:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">char</span> <span class="n">my_str</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;ok.&quot;</span><span class="p">;</span>
+<span class="n">send_string</span><span class="p">(</span><span class="n">my_str</span><span class="p">);</span>
+</code></pre></div>
+
+<p>上で定義したショートカットは <code>send_string()</code> では動作しないですが、必要に応じて別の行に分けることができます:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">char</span> <span class="n">my_str</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;ok.&quot;</span><span class="p">;</span>
+<span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;I said: &quot;</span><span class="p">);</span>
+<span class="n">send_string</span><span class="p">(</span><span class="n">my_str</span><span class="p">);</span>
+<span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;..&quot;</span><span class="n">SS_TAP</span><span class="p">(</span><span class="n">X_END</span><span class="p">));</span>
+</code></pre></div>
+
+<h2 id="idadvanced-macro-functions">高度なマクロ関数 :id=advanced-macro-functions<a class="headerlink" href="#idadvanced-macro-functions" title="Permanent link">&para;</a></h2>
+<p>マクロの生成に役立つ関数が幾つかあります。マクロの中にかなり高度なコードを書くことができますが、機能が複雑になりすぎる場合は、代わりにカスタムキーコードを定義することをお勧めします。マクロはシンプルにしなければなりません。</p>
+<p>?&gt; 追加の機能として、<a href="ja/ref_functions.md">便利な関数</a> の中で説明される関数を使うこともできます。例えば <code>reset_keyboard()</code> によりマクロの一部としてキーボードをリセットすることができます。</p>
+<h3 id="record-eventpressed"><code>record-&gt;event.pressed</code><a class="headerlink" href="#record-eventpressed" title="Permanent link">&para;</a></h3>
+<p>これでスイッチが押されているか放されているかどうかをテストすることができます。以下が例です。</p>
+<div class="codehilite"><pre><span></span><code>    <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// キーダウン時</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// キーアップ時</span>
+    <span class="p">}</span>
+</code></pre></div>
+
+<h3 id="register_codekc"><code>register_code(&lt;kc&gt;);</code><a class="headerlink" href="#register_codekc" title="Permanent link">&para;</a></h3>
+<p>これはコンピュータに <code>&lt;kc&gt;</code> キーダウンイベントを送信します。例として <code>KC_ESC</code>、<code>KC_C</code>、<code>KC_4</code> や、<code>KC_LSFT</code> と <code>KC_LGUI</code> のような修飾キーなどもあります。</p>
+<h3 id="unregister_codekc"><code>unregister_code(&lt;kc&gt;);</code><a class="headerlink" href="#unregister_codekc" title="Permanent link">&para;</a></h3>
+<p><code>register_code</code> 関数と対応して、これは <code>&lt;kc&gt;</code> キーアップイベントをコンピュータに送信します。これを使わない場合、キーは送信されるまで押し続けられます。</p>
+<h3 id="tap_codekc"><code>tap_code(&lt;kc&gt;);</code><a class="headerlink" href="#tap_codekc" title="Permanent link">&para;</a></h3>
+<p>これは <code>register_code(&lt;kc&gt;)</code> を送信し、その後 <code>unregister_code(&lt;kc&gt;)</code> を送信します。押下とリリースイベントの両方を送信する場合に便利です (押し続けるのではなく、キーを"タップ"する)。</p>
+<p>タップの登録(解除)に問題がある場合、<code>config.h</code> ファイルで <code>#define TAP_CODE_DELAY 100</code> を設定することで、登録イベントと解除イベントの間に遅延を追加することができます。値はミリ秒です。</p>
+<h3 id="register_code16kcunregister_code16kctap_code16kc"><code>register_code16(&lt;kc&gt;);</code>、<code>unregister_code16(&lt;kc&gt;);</code>、<code>tap_code16(&lt;kc&gt;);</code><a class="headerlink" href="#register_code16kcunregister_code16kctap_code16kc" title="Permanent link">&para;</a></h3>
+<p>これらの関数は対応する通常の関数と同様に機能しますが、修飾キーで修飾されたキーコードを使うことができます (Shift、Alt、Control、GUI を適用)。</p>
+<p>例えば、修飾キーを押して(<code>register_code()</code>して)、キーコードを押す(<code>register_code()</code>する)代わりに、<code>register_code16(S(KC_5));</code> を使うことができます。</p>
+<h3 id="clear_keyboard"><code>clear_keyboard();</code><a class="headerlink" href="#clear_keyboard" title="Permanent link">&para;</a></h3>
+<p>これは現在押されている全ての修飾キーとキーをクリアします。</p>
+<h3 id="clear_mods"><code>clear_mods();</code><a class="headerlink" href="#clear_mods" title="Permanent link">&para;</a></h3>
+<p>これは現在押されている全ての修飾キーをクリアします。</p>
+<h3 id="clear_keyboard_but_mods"><code>clear_keyboard_but_mods();</code><a class="headerlink" href="#clear_keyboard_but_mods" title="Permanent link">&para;</a></h3>
+<p>これは現在押されている修飾キー以外の全てのキーをクリアします。</p>
+<h2 id="_6">高度な例:<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="alttab">スーパー ALT↯TAB<a class="headerlink" href="#alttab" title="Permanent link">&para;</a></h3>
+<p>このマクロは <code>KC_LALT</code> を登録し、<code>KC_TAB</code> をタップして、1000ms 待ちます。キーが再度タップされると、別の <code>KC_TAB</code> が送信されます; タップが無い場合、<code>KC_LALT</code> が登録解除され、ウィンドウを切り替えることができます。</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">bool</span> <span class="n">is_alt_tab_active</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// keymap.c の先頭付近にこれを追加します</span>
+<span class="kt">uint16_t</span> <span class="n">alt_tab_timer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>     <span class="c1">// すぐにそれらを使います</span>
+
+<span class="k">enum</span> <span class="n">custom_keycodes</span> <span class="p">{</span>          <span class="c1">// 素晴らしいキーコードを用意してください</span>
+  <span class="n">ALT_TAB</span> <span class="o">=</span> <span class="n">SAFE_RANGE</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="kt">bool</span> <span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// これはキーコードを利用したつまらない作業のほとんどを行います。</span>
+    <span class="k">case</span> <span class="nl">ALT_TAB</span><span class="p">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">is_alt_tab_active</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">is_alt_tab_active</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+          <span class="n">register_code</span><span class="p">(</span><span class="n">KC_LALT</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">alt_tab_timer</span> <span class="o">=</span> <span class="n">timer_read</span><span class="p">();</span>
+        <span class="n">register_code</span><span class="p">(</span><span class="n">KC_TAB</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_TAB</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">matrix_scan_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// とても重要なタイマー</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">is_alt_tab_active</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">timer_elapsed</span><span class="p">(</span><span class="n">alt_tab_timer</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_LALT</span><span class="p">);</span>
+      <span class="n">is_alt_tab_active</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

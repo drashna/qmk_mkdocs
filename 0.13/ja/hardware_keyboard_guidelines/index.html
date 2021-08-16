@@ -1,0 +1,754 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/ja/hardware_keyboard_guidelines/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>QMK キーボードガイドライン - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qmk" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              QMK キーボードガイドライン
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qmk-lint" class="md-nav__link">
+    QMK Lint を使う
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    あなたのキーボード/プロジェクトの名前を決める
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    サブフォルダ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    キーボードのフォルダ構成
+  </a>
+  
+    <nav class="md-nav" aria-label="キーボードのフォルダ構成">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#readmemd" class="md-nav__link">
+    readme.md
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infojson" class="md-nav__link">
+    info.json
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configh" class="md-nav__link">
+    config.h
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rulesmk" class="md-nav__link">
+    rules.mk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard_namec" class="md-nav__link">
+    &lt;keyboard_name.c&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keyboard_nameh" class="md-nav__link">
+    &lt;keyboard_name.h&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    画像/ハードウェアのファイル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    キーボードのデフォルト設定
+  </a>
+  
+    <nav class="md-nav" aria-label="キーボードのデフォルト設定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    ブートマジックとコマンド
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    カスタムキーボードプログラミング
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    生産しない/手配線 プロジェクト
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    エラーとしての警告
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    著作権表示
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    ライセンス
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    技術的な詳細
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/ja/hardware_keyboard_guidelines.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="qmk">QMK キーボードガイドライン<a class="headerlink" href="#qmk" title="Permanent link">&para;</a></h1>
+<!---
+  grep --no-filename "^[ ]*git diff" docs/ja/*.md | sh
+  original document: 0.12.41:docs/hardware_keyboard_guidelines.md
+  git diff 0.12.41 HEAD -- docs/hardware_keyboard_guidelines.md | cat
+-->
+
+<p>QMK は開始以来、コミュニティにおけるキーボードの作成や保守に貢献しているあなたのような人たちのおかげで飛躍的に成長しました。私たちが成長するにつれて、うまくやるためのいくつかのパターンを発見しました。他の人たちがあなたの苦労の恩恵を受けやすくするため、それにあわせてもらえるようお願いします。</p>
+<h2 id="qmk-lint">QMK Lint を使う<a class="headerlink" href="#qmk-lint" title="Permanent link">&para;</a></h2>
+<p>キーボードの問題をチェックできるツール、<code>qmk lint</code> を提供しています。キーボードとキーマップで作業をしている間は、頻繁に使うことをお勧めします。</p>
+<p>チェックに合格した例:</p>
+<div class="codehilite"><pre><span></span><code>$ qmk lint -kb rominronin/katana60/rev2
+Ψ Lint check passed!
+</code></pre></div>
+
+<p>チェックに失敗した例:</p>
+<div class="codehilite"><pre><span></span><code>$ qmk lint -kb clueboard/66/rev3
+☒ Missing keyboards/clueboard/66/rev3/readme.md
+☒ Lint check failed!
+</code></pre></div>
+
+<h2 id="_1">あなたのキーボード/プロジェクトの名前を決める<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>キーボードの名前は全て小文字で、アルファベット、数字、アンダースコア(<code>_</code>)のみで構成されています。アンダースコア(<code>_</code>)で始めてはいけません。スラッシュ(<code>/</code>)はサブフォルダの区切り文字として使用されます。</p>
+<p><code>test</code>、<code>keyboard</code>、<code>all</code> はmakeコマンド用に予約されており、キーボードまたはサブフォルダ名として使用することは出来ません。</p>
+<p>正しい例:</p>
+<ul>
+<li><code>412_64</code></li>
+<li><code>chimera_ortho</code></li>
+<li><code>clueboard/66/rev3</code></li>
+<li><code>planck</code></li>
+<li><code>v60_type_r</code></li>
+</ul>
+<h2 id="_2">サブフォルダ<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>QMK では、まとめるためや同じキーボードのリビジョン間でコードを共有するためにサブフォルダを使用します。フォルダは最大4階層までネストできます。</p>
+<div class="codehilite"><pre><span></span><code>qmk_firmware/keyboards/top_folder/sub_1/sub_2/sub_3/sub_4
+</code></pre></div>
+
+<p>サブフォルダ内に <code>rules.mk</code> ファイルが存在するとコンパイル可能なキーボードとして見なされます。QMK Configurator から使用できるようになり、<code>make all</code> でテストされます。同じメーカーのキーボードをまとめるためにフォルダを使用している場合は <code>rules.mk</code> ファイルを置いてはいけません。</p>
+<p>例:</p>
+<p>Clueboard は、サブフォルダをまとめるためとキーボードのリビジョン管理の両方のために使用しています。</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_firmware/tree/master"><code>qmk_firmware</code></a></li>
+<li><a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards"><code>keyboards</code></a><ul>
+<li><a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/clueboard"><code>clueboard</code></a>  &larr; これはまとめるためのフォルダです。 <code>rules.mk</code> ファイルはありません。</li>
+<li><a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/clueboard/60"><code>60</code></a>  &larr; これはコンパイルできるキーボードです。<code>rules.mk</code> が存在します。</li>
+<li><a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/clueboard/66"><code>66</code></a> &larr; これもコンパイルできるキーボードです。 デフォルトのリビジョンとして <code>DEFAULT_FOLDER</code> に <code>rev3</code> を指定しています。<ul>
+<li><a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/clueboard/66/rev1"><code>rev1</code></a> &larr; コンパイル可能: <code>make clueboard/66/rev1</code></li>
+<li><a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/clueboard/66/rev2"><code>rev2</code></a> &larr; コンパイル可能: <code>make clueboard/66/rev2</code></li>
+<li><a href="https://github.com/qmk/qmk_firmware/tree/master/keyboards/clueboard/66/rev3"><code>rev3</code></a> &larr; コンパイル可能: <code>make clueboard/66/rev3</code> もしくは <code>make clueboard/66</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">キーボードのフォルダ構成<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>キーボードは <code>qmk_firmware/keyboards/</code> 内にあり、前のセクションで説明したようにフォルダ名はキーボードの名前にする必要があります。このフォルダ内にはいくつかのファイルがあります。</p>
+<ul>
+<li><code>readme.md</code></li>
+<li><code>info.json</code></li>
+<li><code>config.h</code></li>
+<li><code>rules.mk</code></li>
+<li><code>&lt;keyboard_name&gt;.c</code></li>
+<li><code>&lt;keyboard_name&gt;.h</code></li>
+</ul>
+<h3 id="readmemd"><code>readme.md</code><a class="headerlink" href="#readmemd" title="Permanent link">&para;</a></h3>
+<p>全てのプロジェクトにはどのようなキーボードなのか、誰が設計したか、どこで入手できるかを説明する <code>readme.md</code> ファイルが必要です。もしあれば、メーカーの Web サイトなどの詳しい情報へのリンクも含める必要があります。<a href="ja/documentation_templates.md#keyboard-readmemd-template">キーボード readme テンプレート</a>を参考にして下さい。</p>
+<h3 id="infojson"><code>info.json</code><a class="headerlink" href="#infojson" title="Permanent link">&para;</a></h3>
+<p>このファイルは <a href="https://github.com/qmk/qmk_api">QMK API</a> から使用されます。<a href="https://config.qmk.fm/">QMK Configurator</a> が必要とするキーボードの情報が含まれています。ここでメタデータを設定することもできます。詳しくは <a href="ja/reference_info_json.md">info.json 形式</a> を参照して下さい。</p>
+<h3 id="configh"><code>config.h</code><a class="headerlink" href="#configh" title="Permanent link">&para;</a></h3>
+<p>全てのプロジェクトには、マトリックスサイズ、製品名、USB VID/PID、説明、その他の設定などが含まれた <code>config.h</code> ファイルが必要です。一般に、このファイルを使用して常に機能するキーボードの重要な情報やデフォルトを設定します。</p>
+<p>また、<code>config.h</code> ファイルはサブフォルダにも置くことができ、その読み込み順は以下の通りです。</p>
+<ul>
+<li><code>keyboards/top_folder/config.h</code></li>
+<li><code>keyboards/top_folder/sub_1/config.h</code><ul>
+<li><code>keyboards/top_folder/sub_1/sub_2/config.h</code></li>
+<li><code>keyboards/top_folder/sub_1/sub_2/sub_3/config.h</code><ul>
+<li><code>keyboards/top_folder/sub_1/sub_2/sub_3/sub_4/config.h</code></li>
+<li><code>users/a_user_folder/config.h</code></li>
+<li><code>keyboards/top_folder/keymaps/a_keymap/config.h</code></li>
+<li><code>keyboards/top_folder/sub_1/sub_2/sub_3/sub_4/post_config.h</code></li>
+</ul>
+</li>
+<li><code>keyboards/top_folder/sub_1/sub_2/sub_3/post_config.h</code></li>
+<li><code>keyboards/top_folder/sub_1/sub_2/post_config.h</code></li>
+</ul>
+</li>
+<li><code>keyboards/top_folder/sub_1/post_config.h</code></li>
+<li><code>keyboards/top_folder/post_config.h</code></li>
+</ul>
+<p><code>post_config.h</code> ファイルは、<code>config.h</code> ファイルで指定された内容に応じて、追加の後処理を行うために使用することができます。
+例えば、キーマップレベルの <code>config.h</code> ファイルで <code>IOS_DEVICE_ENABLE</code> マクロを以下のように定義すると、<code>post_config.h</code> ファイルでより詳細な設定を行うことができます。</p>
+<ul>
+<li><code>keyboards/top_folder/keymaps/a_keymap/config.h</code>
+  <code>c
+  #define IOS_DEVICE_ENABLE</code></li>
+<li><code>keyboards/top_folder/post_config.h</code>
+  ```c
+  #ifndef IOS_DEVICE_ENABLE
+    // USB_MAX_POWER_CONSUMPTION value for this keyboard
+    #define USB_MAX_POWER_CONSUMPTION 400
+  #else
+    // fix iPhone and iPad power adapter issue
+    // iOS device need lessthan 100
+    #define USB_MAX_POWER_CONSUMPTION 100
+  #endif</li>
+</ul>
+<p>#ifdef RGBLIGHT_ENABLE
+    #ifndef IOS_DEVICE_ENABLE
+      #define RGBLIGHT_LIMIT_VAL 200
+      #define RGBLIGHT_VAL_STEP 17
+    #else
+      #define RGBLIGHT_LIMIT_VAL 35
+      #define RGBLIGHT_VAL_STEP 4
+    #endif
+    #ifndef RGBLIGHT_HUE_STEP
+      #define RGBLIGHT_HUE_STEP 10
+    #endif
+    #ifndef RGBLIGHT_SAT_STEP
+      #define RGBLIGHT_SAT_STEP 17
+    #endif
+  #endif
+  ```</p>
+<p>?&gt; 上記の例のように <code>post_config.h</code> でオプションを定義する場合、キーボードやユーザレベルの <code>config.h</code> で同じオプションを定義してはいけません。</p>
+<h3 id="rulesmk"><code>rules.mk</code><a class="headerlink" href="#rulesmk" title="Permanent link">&para;</a></h3>
+<p>このファイルが存在するということは、フォルダがキーボードであり、<code>make</code> コマンドで使用できることを意味します。ここでキーボードのビルド環境を構築し、デフォルトの機能を設定します。</p>
+<p><code>rules.mk</code> ファイルはサブフォルダにも置くことができ、その読み込み順は以下の通りです。</p>
+<ul>
+<li><code>keyboards/top_folder/rules.mk</code></li>
+<li><code>keyboards/top_folder/sub_1/rules.mk</code><ul>
+<li><code>keyboards/top_folder/sub_1/sub_2/rules.mk</code></li>
+<li><code>keyboards/top_folder/sub_1/sub_2/sub_3/rules.mk</code><ul>
+<li><code>keyboards/top_folder/sub_1/sub_2/sub_3/sub_4/rules.mk</code></li>
+<li><code>keyboards/top_folder/keymaps/a_keymap/rules.mk</code></li>
+<li><code>users/a_user_folder/rules.mk</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>common_features.mk</code></li>
+</ul>
+<p><code>rules.mk</code> ファイルに書かれた多くの設定は <code>common_features.mk</code> によって解釈され、必要なソースファイルやコンパイラのオプションが設定されます。</p>
+<p>?&gt; 詳しくは <code>build_keyboard.mk</code> と <code>common_features.mk</code> を見てください。</p>
+<h3 id="keyboard_namec"><code>&lt;keyboard_name.c&gt;</code><a class="headerlink" href="#keyboard_namec" title="Permanent link">&para;</a></h3>
+<p>ここではキーボードのカスタマイズされたコードを記述します。通常、初期化してキーボードのハードウェアを制御するコードを記述します。キーボードが LED やスピーカー、その他付属ハードウェアのないキーマトリックスのみで構成されている場合は空にできます。</p>
+<p>通常、以下の関数がこのファイルで定義されます。</p>
+<ul>
+<li><code>void matrix_init_kb(void)</code></li>
+<li><code>void matrix_scan_kb(void)</code></li>
+<li><code>bool process_record_kb(uint16_t keycode, keyrecord_t *record)</code></li>
+<li><code>void led_set_kb(uint8_t usb_led)</code></li>
+</ul>
+<h3 id="keyboard_nameh"><code>&lt;keyboard_name.h&gt;</code><a class="headerlink" href="#keyboard_nameh" title="Permanent link">&para;</a></h3>
+<p>このファイルはキーボードのマトリックスを定義するために使用されます。配列をキーボードの物理的なスイッチマトリックスに変換する C マクロを最低限1つ定義する必要があります。複数のレイアウトでキーボードを構築出来る場合は、追加のマクロを定義しなければいけません。</p>
+<p>レイアウトが1つしかない場合は、このマクロは <code>LAYOUT</code> とします。</p>
+<p>複数のレイアウトを定義する場合、物理的に構成することが出来なくとも、マトリックス上で全てのスイッチ位置をサポートする <code>LAYOUT_all</code> という名前の基本となるレイアウトが必要です。これは <code>default</code> キーマップで使用すべきマクロです。次に、他のレイアウトマクロを使用する <code>default_&lt;layout&gt;</code> といった追加のキーマップを用意します。これによって、他の人が定義されたレイアウトを使いやすくなります。</p>
+<p>レイアウトマクロの名前は全て小文字で、先頭の <code>LAYOUT</code> だけ大文字です。</p>
+<p>例として、ANSI と ISO をサポートする 60% PCB がある場合、以下のようにレイアウトとキーマップを定義出来ます。</p>
+<table>
+<thead>
+<tr>
+<th>レイアウト名</th>
+<th>キーマップ名</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LAYOUT_all</td>
+<td>default</td>
+<td>ISO と ANSI のどちらもサポートしたレイアウト</td>
+</tr>
+<tr>
+<td>LAYOUT_ansi</td>
+<td>default_ansi</td>
+<td>ANSI レイアウト</td>
+</tr>
+<tr>
+<td>LAYOUT_iso</td>
+<td>default_iso</td>
+<td>ISO レイアウト</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">画像/ハードウェアのファイル<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>リポジトリのサイズを小さく保つために、いくつかの例外を除いて、どの形式のバイナリファイルも受け入れないようになりました。外部の場所（<a href="https://imgur.com">https://imgur.com</a>など）でホストして、<code>readme.md</code> でリンクすることをおすすめします。</p>
+<p>ハードウェアのファイル(プレートやケース、PCB など)は <a href="https://github.com/qmk/qmk.fm">qmk.fm リポジトリ</a>に提供でき、<a href="https://qmk.fm">qmk.fm</a> で利用可能になります。ダウンロード出来るファイルは <code>/&lt;keyboard&gt;/</code>（名前は上記と同じ形式）に保存され、<code>https://qmk.fm/&lt;keyboard&gt;/</code> で提供されます。ページは <code>/_pages/&lt;keyboard&gt;/</code> から生成されて、同じ場所で提供されます（ .mdファイルはJekyllを通して .htmlファイル変換されます）。<code>lets_split</code> ファイルを参照して下さい。</p>
+<h2 id="_5">キーボードのデフォルト設定<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>QMK が提供する機能の量を考えれば、新しいユーザーが混乱するのは当たり前です。キーボードのデフォルトファームウェアをまとめるなら、有効にする機能とオプションをハードウェアのサポートに必要な最低限のセットにすることをおすすめします。特定の機能に関するおすすめは以下の通りです。</p>
+<h3 id="_6">ブートマジックとコマンド<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><a href="ja/feature_bootmagic.md">ブートマジック</a> と<a href="ja/feature_command.md">コマンド</a>は、ユーザーがキーボードを明白でない方法で制御出来るようにする2つの関連機能です。いずれかの機能を有効にする場合、この機能をどのように提供するかについて、よく考えることをおすすめします。この機能が必要なユーザーは、あなたのキーボードを最初のプログラムできるキーボードとして使用している初心者に影響を与えることなく、個人的なキーマップ内で有効に出来ることを覚えておきましょう。</p>
+<p>新規ユーザーが遭遇する最も多い問題は、キーボードを接続している間に間違えてブートマジックをトリガーしてしまうことです。キーボードの下を持っているとき、知らない間に Alt とスペースバーを押して、これらのキーが交換されてしまったことに気づきます。デフォルトではこの機能を無効にすることをおすすめしますが、有効にする場合は、キーボードを接続している間に押し間違えないキーへ <code>BOOTMAGIC_KEY_SALT</code> を設定することを検討して下さい。</p>
+<p>キーボードに2つの Shift キーがない場合は、<code>COMMAND_ENABLE = no</code> を指定していても <code>IS_COMMAND</code> が動作するデフォルトを設定しておくべきです。ユーザーがコマンドを有効化したときに使用するデフォルトが与えられます。</p>
+<h2 id="_7">カスタムキーボードプログラミング<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p><a href="ja/custom_quantum_functions.md">機能のカスタマイズ</a>にあるようにキーボードのカスタム関数を定義できます。ユーザーも同様にその動作をカスタマイズしたいかもしれないということと、ユーザーにそれを可能にすることを忘れないで下さい。 <code>process_record_kb()</code>のようなカスタム関数を提供している場合、関数がその関数の <code>_user()</code> 版を呼び出すことを確認して下さい。また、その関数の<code>_user()</code> 版の戻り値を確認して、user が <code>true</code> を返した場合のみカスタムコードを実行しなければいけません。</p>
+<h2 id="_8">生産しない/手配線 プロジェクト<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>プロトタイプや手配線によるものなど QMK を使用するどんなプロジェクトも受け入れますが、<code>/keyboards/</code> フォルダが乱雑になるのを防ぐために、<code>/keyboards/handwired/</code> を用意しています。いつかプロトタイプのプロジェクトが製品のプロジェクトになった時点でメインの <code>/keyboards/</code> フォルダへ移動します！</p>
+<h2 id="_9">エラーとしての警告<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>キーボードを開発するときは、全ての警告がエラーとして扱われることに注意して下さい。小さな警告が蓄積されて、将来大きなエラーを引き起こす可能性があります。(そして、警告を放っておくのは良くない習慣です)</p>
+<h2 id="_10">著作権表示<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>別のプロジェクトを元にしてキーボードの設定をするものの同じコードを使用しない場合は、ファイル上部にある著作権表示を次の形式に従って自分の名前を表示するよう、更新して下さい。</p>
+<div class="codehilite"><pre><span></span><code>Copyright 2017 Your Name &lt;your@email.com&gt;
+</code></pre></div>
+
+<p>他の人のコードを修正し、その変更が些細な部分のみであれば、著作権表示の名前をそのままにしておかないといけません。ファイルに対して重要な作業を行った場合、以下のようにあなたの名前を追加します。</p>
+<div class="codehilite"><pre><span></span><code>Copyright 2017 Their Name &lt;original_author@example.com&gt; Your Name &lt;you@example.com&gt;
+</code></pre></div>
+
+<p>年はファイルが作成された最初の年にします。後年にそのファイルに対して作業が行われた場合、次のように2つ目の年を追加して反映することが出来ます。</p>
+<div class="codehilite"><pre><span></span><code>Copyright 2015-2017 Your Name &lt;you@example.com&gt;
+</code></pre></div>
+
+<h2 id="_11">ライセンス<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>QMK のコア部分は <a href="https://www.gnu.org/licenses/licenses.en.html">GNU General Public License</a> でライセンスされます。AVR マイコン用のバイナリを提供する場合は、<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPLv2</a> か、<a href="https://www.gnu.org/licenses/gpl.html">GPLv3</a> のどちらかから選択出来ます。ARM マイコン用のバイナリを提供する場合は、 <a href="https://www.chibios.org">ChibiOS</a> の GPLv3 ライセンスに準拠するため、<a href="https://www.gnu.org/licenses/gpl.html">GPL Version 3</a> を選択しなければいけません。</p>
+<p><a href="https://ugfx.io">uGFX</a> を使用している場合は、<a href="https://ugfx.io/license.html">uGFX License</a> に準拠する必要があります。uGFX を利用したデバイスを販売するには個別に商用ライセンスを取得しなければいけません。</p>
+<h2 id="_12">技術的な詳細<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<p>キーボードを QMK で動作させるための詳細は<a href="ja/hardware.md">ハードウェア</a>を参照して下さい！</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

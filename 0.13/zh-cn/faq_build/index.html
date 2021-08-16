@@ -1,0 +1,560 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/zh-cn/faq_build/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>关于构建的常见问题 - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              关于构建的常见问题
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    如果您不能在Linux上编程
+  </a>
+  
+    <nav class="md-nav" aria-label="如果您不能在Linux上编程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux-udev" class="md-nav__link">
+    Linux udev 规则
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linuxbootloader" class="md-nav__link">
+    串行设备在Linux上检测不到bootloader模式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dfu-bootloader" class="md-nav__link">
+    DFU Bootloader的未知设备
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-vid-pid" class="md-nav__link">
+    USB VID 和 PID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avrbootloader_size" class="md-nav__link">
+    AVR的BOOTLOADER_SIZE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos-avr-gcc-internal-compiler-error-abort-trap-6-program-cc1" class="md-nav__link">
+    在MacOS上 avr-gcc: internal compiler error: Abort trap: 6 (program cc1)
+  </a>
+  
+    <nav class="md-nav" aria-label="在MacOS上 avr-gcc: internal compiler error: Abort trap: 6 (program cc1)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avr-gcc-81-lufa" class="md-nav__link">
+    avr-gcc 8.1 和 LUFA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-arm-rev6-planck-clueboard-60-hs60v2-etc-feb-2019" class="md-nav__link">
+    我刷新了我的键盘但是键盘不工作/按键没有注册 - 而且还是ARM的 (rev6 planck, clueboard 60, hs60v2, etc...) (Feb 2019)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/zh-cn/faq_build.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">关于构建的常见问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>本页所写是QMK构建的常见问题.如果你还没有进行过编译,就看一下<a href="getting_started_build_tools.md">构建环境搭建</a> 和 <a href="getting_started_make_guide.md">make的说明</a>.</p>
+<h2 id="linux">如果您不能在Linux上编程<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<p>您需要适当的权限才能操作设备。对于Linux用户, 请参阅下方有关<code>udev</code>规则的说明。如果您对<code>udev</code>有问题，解决方法是用<code>sudo</code>命令。如果您不熟悉此命令，使用<code>man sudo</code>查看其手册或<a href="https://linux.die.net/man/8/sudo">看这个网页</a>.</p>
+<p>在你的主控是ATMega32u4时，以下是使用<code>sudo</code>命令的样例：</p>
+<div class="codehilite"><pre><span></span><code>$ sudo dfu-programmer atmega32u4 erase --force
+$ sudo dfu-programmer atmega32u4 flash your.hex
+$ sudo dfu-programmer atmega32u4 reset
+</code></pre></div>
+
+<p>或只用；</p>
+<div class="codehilite"><pre><span></span><code>$ sudo make &lt;keyboard&gt;:&lt;keymap&gt;:dfu
+</code></pre></div>
+
+<p>使用<code>sudo</code>运行<code>make</code>一般来说<strong>不</strong>推荐，如果可能，尽量使用前一种方法之一。</p>
+<h3 id="linux-udev">Linux <code>udev</code> 规则<a class="headerlink" href="#linux-udev" title="Permanent link">&para;</a></h3>
+<p>在Linux上，您需要适当的权限才能访问MCU。你也可以在刷新固件时使用 <code>sudo</code>，或把这些文件放到<code>/etc/udev/rules.d/</code>。</p>
+<p><strong>/etc/udev/rules.d/50-atmel-dfu.rules:</strong></p>
+<div class="codehilite"><pre><span></span><code># Atmel ATMega32U4
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;03eb&quot;, ATTRS{idProduct}==&quot;2ff4&quot;, MODE:=&quot;0666&quot;
+# Atmel USBKEY AT90USB1287
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;03eb&quot;, ATTRS{idProduct}==&quot;2ffb&quot;, MODE:=&quot;0666&quot;
+# Atmel ATMega32U2
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;03eb&quot;, ATTRS{idProduct}==&quot;2ff0&quot;, MODE:=&quot;0666&quot;
+</code></pre></div>
+
+<p><strong>/etc/udev/rules.d/52-tmk-keyboard.rules:</strong></p>
+<div class="codehilite"><pre><span></span><code># tmk键盘产品     https://github.com/tmk/tmk_keyboard
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;feed&quot;, MODE:=&quot;0666&quot;
+</code></pre></div>
+
+<p><strong>/etc/udev/rules.d/54-input-club-keyboard.rules:</strong></p>
+<div class="codehilite"><pre><span></span><code># Input Club keyboard bootloader
+SUBSYSTEMS==&quot;usb&quot;, ATTRS{idVendor}==&quot;1c11&quot;, MODE:=&quot;0666&quot;
+</code></pre></div>
+
+<h3 id="linuxbootloader">串行设备在Linux上检测不到bootloader模式<a class="headerlink" href="#linuxbootloader" title="Permanent link">&para;</a></h3>
+<p>确保您的内核对您的设备有相应的支持。 如果你的设备是 USB ACM, 比如Pro Micro (Atmega32u4)，就要加上<code>CONFIG_USB_ACM=y</code>. 其他设备可能需要<code>USB_SERIAL</code> 及其任何子选项。</p>
+<h2 id="dfu-bootloader">DFU Bootloader的未知设备<a class="headerlink" href="#dfu-bootloader" title="Permanent link">&para;</a></h2>
+<p>如果您在使用Windows来刷新键盘的时候碰到了问题，检查设备管理器。如果在键盘处于 "bootloader模式"时你看到 "未知设备"，说明你可能面临设备问题。</p>
+<p>重新运行MSYS2上的安装脚本或许会凑效（比如在MSYS2/WSL运行 <code>./util/qmk_install.sh</code>) 或者重新安装QMK工具箱也可能会解决你的问题。</p>
+<p>如果以上方法还是短针攻疽，那您可能需要使用<a href="https://zadig.akeo.ie/">Zadig Utility</a>。下载此程序, 找到设备问题, 然后选择 <code>WinUSB</code>选项, 然后点击"Reinstall driver"。完成后再试试刷新你的键盘。倘若依然徒劳无功，那就尝试所有选项直到好用为止。</p>
+<p>?&gt; 事实上没有一个驱动的最佳选择，有些选项就是和某些系统相辅相成。但libUSB和WinUSB似乎也算是这里的最佳选择了。
+如果bootloader在设备列表中没有显示，你可能要使能 "List all devices"选项在选项菜单中<code>Options</code>，然后找到有问题的bootloader设备。(译者注：在win10中可能为 查看-显示隐藏的设备)</p>
+<h2 id="usb-vid-pid">USB VID 和 PID<a class="headerlink" href="#usb-vid-pid" title="Permanent link">&para;</a></h2>
+<p>你可以在编辑<code>config.h</code>时使用任何你想用的ID值。实际上，使用任何可能未使用的ID都没有问题，除了有极低的与其他产品发生冲突的可能性。</p>
+<p>大多数QMK主板使用<code>0xFEED</code>作为vendor ID。您应该查看其他键盘，以确保选择了唯一的Product ID。</p>
+<p>也要看看这个。
+https://github.com/tmk/tmk_keyboard/issues/150</p>
+<p>一也可以在下方链接购买一个唯一的VID:PID。不过个人使用似乎用不着这个。
+- https://www.obdev.at/products/vusb/license.html
+- https://www.mcselec.com/index.php?page=shop.product_details&amp;flypage=shop.flypage&amp;product_id=92&amp;option=com_phpshop&amp;Itemid=1</p>
+<h2 id="avrbootloader_size">AVR的BOOTLOADER_SIZE<a class="headerlink" href="#avrbootloader_size" title="Permanent link">&para;</a></h2>
+<p>注意Teensy2.0++ bootloader的大小是2048字节。有些Makefile注释错了。</p>
+<div class="codehilite"><pre><span></span><code># Boot Section Size in *bytes*
+#   Teensy halfKay   512
+#   Teensy++ halfKay 2048
+#   Atmel DFU loader 4096       (TMK Alt Controller)
+#   LUFA bootloader  4096
+#   USBaspLoader     2048
+OPT_DEFS += -DBOOTLOADER_SIZE=2048
+</code></pre></div>
+
+<h2 id="macos-avr-gcc-internal-compiler-error-abort-trap-6-program-cc1">在MacOS上 <code>avr-gcc: internal compiler error: Abort trap: 6 (program cc1)</code><a class="headerlink" href="#macos-avr-gcc-internal-compiler-error-abort-trap-6-program-cc1" title="Permanent link">&para;</a></h2>
+<p>这是brew更新的问题，导致AVR GCC依赖的符号链接被损坏。</p>
+<p>解决方案是移除并重新安装所有受影响的模块。</p>
+<div class="codehilite"><pre><span></span><code>brew rm avr-gcc
+brew rm dfu-programmer
+brew rm dfu-util
+brew rm gcc-arm-none-eabi
+brew rm avrdude
+brew install avr-gcc
+brew install dfu-programmer
+brew install dfu-util
+brew install gcc-arm-none-eabi
+brew install avrdude
+</code></pre></div>
+
+<h3 id="avr-gcc-81-lufa">avr-gcc 8.1 和 LUFA<a class="headerlink" href="#avr-gcc-81-lufa" title="Permanent link">&para;</a></h3>
+<p>如果你把avr-gcc升级到7以上你可能会遇到关于LUFA的问题。比如:</p>
+<p><code>lib/lufa/LUFA/Drivers/USB/Class/Device/AudioClassDevice.h:380:5: error: 'const' attribute on function returning 'void'</code></p>
+<p>那你就需要在brew中把avr-gcc回退到7。</p>
+<div class="codehilite"><pre><span></span><code>brew uninstall --force avr-gcc
+brew install avr-gcc@8
+brew link --force avr-gcc@8
+</code></pre></div>
+
+<h3 id="-arm-rev6-planck-clueboard-60-hs60v2-etc-feb-2019">我刷新了我的键盘但是键盘不工作/按键没有注册 - 而且还是ARM的 (rev6 planck, clueboard 60, hs60v2, etc...) (Feb 2019)<a class="headerlink" href="#-arm-rev6-planck-clueboard-60-hs60v2-etc-feb-2019" title="Permanent link">&para;</a></h3>
+<p>由于EEPROM在基于ARM的芯片上的工作原理，保存的设置可能不再有效。这会影响默认层，而且<em>或许</em>在某些情况下，会使键盘不好用，我们仍在调查这些情况。重置EEPROM将解决此问题。</p>
+<p><a href="https://cdn.discordapp.com/attachments/473506116718952450/539284620861243409/planck_rev6_default.bin">Planck rev6键盘重置EEPROM</a> 是用于强制重置EEPROM的。刷入这个文件后，再次刷入正常固件，这会将键盘恢复到_正常_工作状态。
+<a href="https://cdn.discordapp.com/attachments/473506116718952450/537849497313738762/preonic_rev3_default.bin">Preonic rev3键盘重置EEPROM</a></p>
+<p>如果以任何形式启用了bootmagic， 那么您还需要(看<a href="feature_bootmagic.md">Bootmagic文档</a> 以及键盘信息，以了解如何执行此操作的详细信息).</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

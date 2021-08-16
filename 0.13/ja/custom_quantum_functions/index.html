@@ -1,0 +1,723 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/ja/custom_quantum_functions/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>キーボードの挙動をカスタマイズする方法 - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              キーボードの挙動をカスタマイズする方法
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ida-word-on-core-vs-keyboards-vs-keymap" class="md-nav__link">
+    コア、キーボード、キーマップ階層 :id=a-word-on-core-vs-keyboards-vs-keymap
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/ja/custom_quantum_functions.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">キーボードの挙動をカスタマイズする方法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<!---
+  original document: 0.12.41:docs/custom_quantum_functions.md
+  git diff 0.12.41 HEAD -- docs/custom_quantum_functions.md | cat
+-->
+
+<p>多くの人にとって、カスタムキーボードはボタンの押下をコンピュータに送信するだけではありません。単純なボタンの押下やマクロよりも複雑なことを実行できるようにしたいでしょう。QMK にはコードを挿入したり、機能を上書きしたり、様々な状況でキーボードの挙動をカスタマイズできるフックがあります。</p>
+<p>このページでは、QMK に関する特別な知識は想定していませんが、<a href="ja/understanding_qmk.md">QMK の理解</a>を読むとより根本的なレベルで何が起きているかを理解するのに役立ちます。</p>
+<h2 id="ida-word-on-core-vs-keyboards-vs-keymap">コア、キーボード、キーマップ階層 :id=a-word-on-core-vs-keyboards-vs-keymap<a class="headerlink" href="#ida-word-on-core-vs-keyboards-vs-keymap" title="Permanent link">&para;</a></h2>
+<p>私たちは QMK を階層として構造化しました:</p>
+<ul>
+<li>コア (<code>_quantum</code>)</li>
+<li>キーボード/リビジョン (<code>_kb</code>)<ul>
+<li>キーマップ (<code>_user</code>)</li>
+</ul>
+</li>
+</ul>
+<p>以下で説明される各関数は <code>_kb()</code> サフィックスあるいは <code>_user()</code> サフィックスを使って定義することができます。<code>_kb()</code> サフィックスはキーボード/リビジョンレベルで使うことを意図しており、一方で <code>_user()</code> サフィックスはキーマップレベルで使われるべきです。</p>
+<p>キーボード/リビジョンレベルで関数を定義する場合、<code>_kb()</code> は他の何かを実行する前に <code>_user()</code> を呼び出すよう実装することが重要です。そうでなければ、キーマップレベル関数は呼ばれないでしょう。</p>
+<h1 id="_2">カスタムキーコード<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<p>最も一般的なタスクは、既存のキーコードの挙動を変更するか、新しいキーコードを作成することです。コードの観点からは、それぞれの仕組みは非常に似ています。</p>
+<h2 id="_3">新しいキーコードの定義<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>独自のカスタムキーコードを作成する最初のステップは、それらを列挙することです。これは、カスタムキーコードに名前を付け、そのキーコードにユニークな番号を割り当てることの両方を意味します。QMK は、カスタムキーコードを固定範囲の番号に制限するのではなく、<code>SAFE_RANGE</code> マクロを提供します。カスタムキーコードを列挙する時に <code>SAFE_RANGE</code> を使うと、ユニークな番号を取得することが保証されます。</p>
+<p>これは2つのキーコードを列挙する例です。このブロックを <code>keymap.c</code> に追加した後で、キーマップの中で <code>FOO</code> と <code>BAR</code> を使うことができます。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">enum</span> <span class="n">my_keycodes</span> <span class="p">{</span>
+  <span class="n">FOO</span> <span class="o">=</span> <span class="n">SAFE_RANGE</span><span class="p">,</span>
+  <span class="n">BAR</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h2 id="idprogramming-the-behavior-of-any-keycode">任意のキーコードの挙動のプログラミング :id=programming-the-behavior-of-any-keycode<a class="headerlink" href="#idprogramming-the-behavior-of-any-keycode" title="Permanent link">&para;</a></h2>
+<p>既存のキーの挙動を上書きしたい場合、あるいは新しいキーについて挙動を定義する場合、<code>process_record_kb()</code> および <code>process_record_user()</code> 関数を使うべきです。これらは実際のキーイベントが処理される前のキー処理中に QMK によって呼び出されます。これらの関数が <code>true</code> を返す場合、QMK はキーコードを通常通りに処理します。これは、キーを置き換えるのではなく、キーの機能を拡張するのに便利です。これらの関数が <code>false</code> を返す場合、QMK は通常のキー処理をスキップし、必要なキーのアップまたはダウンイベントを送信するのかはユーザ次第です。</p>
+<p>これらの関数はキーが押されるか放されるたびに呼び出されます。</p>
+<h3 id="process_record_user"><code>process_record_user()</code> の実装例<a class="headerlink" href="#process_record_user" title="Permanent link">&para;</a></h3>
+<p>この例は2つの事を行います。<code>FOO</code> と呼ばれるカスタムキーコードの挙動を定義し、Enter キーが押されるたびに音を再生します。</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">bool</span> <span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nl">FOO</span><span class="p">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 押された時に何かをします</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// 放された時に何かをします</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// このキーの以降の処理をスキップします</span>
+    <span class="k">case</span> <span class="nl">KC_ENTER</span><span class="p">:</span>
+      <span class="c1">// enter が押された時に音を再生します</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">tone_qwerty</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// QMK に enter のプレスまたはリリースイベントを送信させます</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// 他の全てのキーコードを通常通りに処理します</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="process_record_"><code>process_record_*</code> 関数のドキュメント<a class="headerlink" href="#process_record_" title="Permanent link">&para;</a></h3>
+<ul>
+<li>キーボード/リビジョン: <code>bool process_record_kb(uint16_t keycode, keyrecord_t *record)</code></li>
+<li>キーマップ: <code>bool process_record_user(uint16_t keycode, keyrecord_t *record)</code></li>
+</ul>
+<p><code>keycode</code> 引数はキーマップで定義されているものです。例えば <code>MO(1)</code>、<code>KC_L</code> など。これらのイベントを処理するには <code>switch...case</code> ブロックを使うべきです。</p>
+<p><code>record</code> 引数は実際のプレスに関する情報を含みます:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">keyrecord_t</span> <span class="n">record</span> <span class="p">{</span>
+  <span class="n">keyevent_t</span> <span class="n">event</span> <span class="p">{</span>
+    <span class="n">keypos_t</span> <span class="n">key</span> <span class="p">{</span>
+      <span class="kt">uint8_t</span> <span class="n">col</span>
+      <span class="kt">uint8_t</span> <span class="n">row</span>
+    <span class="p">}</span>
+    <span class="kt">bool</span>     <span class="n">pressed</span>
+    <span class="kt">uint16_t</span> <span class="n">time</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h1 id="_4">キーボードの初期化コード<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<p>キーボードの初期化プロセスには幾つかのステップがあります。何をしたいかによって、どの関数を使うべきかに影響します。</p>
+<p>3つの主な初期化関数があり、呼び出される順番にリストされています。</p>
+<ul>
+<li><code>keyboard_pre_init_*</code> - ほとんどのものが開始される前に起こります。非常に早くに実行したいハードウェアのセットアップに適しています。</li>
+<li><code>matrix_init_*</code> - ファームウェアのスタートアッププロセスの途中で起こります。ハードウェアは初期化されますが、機能はまだ初期化されていない場合があります。</li>
+<li><code>keyboard_post_init_*</code> - ファームウェアのスタートアッププロセスの最後に起こります。これはほとんどの場合、 "カスタマイズ"コードを配置する場所です。</li>
+</ul>
+<p>!&gt; ほとんどの人にとって、<code>keyboard_post_init_user</code> が呼び出したいものです。例えば、ここで RGB アンダーグローのセットアップを行います。</p>
+<h2 id="_5">キーボードの事前初期化コード<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>これは USB さえ起動する前の、起動中の非常に早い段階で実行されます。</p>
+<p>この直後にマトリックスが初期化されます。</p>
+<p>これは主にハードウェア向きの初期化のためであるため、ほとんどのユーザは使うべきではありません。</p>
+<p>ただし、初期化が必要なハードウェアがある場合には、これが最適な場所です (LED ピンの初期化など)。</p>
+<h3 id="keyboard_pre_init_user"><code>keyboard_pre_init_user()</code> の実装例<a class="headerlink" href="#keyboard_pre_init_user" title="Permanent link">&para;</a></h3>
+<p>この例は、キーボードレベルで、LED ピンとして B0、B1、B2、B3 および B4 をセットアップします。</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">keyboard_pre_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// キーボードの事前初期コードを呼び出します。</span>
+
+  <span class="c1">// LED ピンを出力として設定します</span>
+  <span class="n">setPinOutput</span><span class="p">(</span><span class="n">B0</span><span class="p">);</span>
+  <span class="n">setPinOutput</span><span class="p">(</span><span class="n">B1</span><span class="p">);</span>
+  <span class="n">setPinOutput</span><span class="p">(</span><span class="n">B2</span><span class="p">);</span>
+  <span class="n">setPinOutput</span><span class="p">(</span><span class="n">B3</span><span class="p">);</span>
+  <span class="n">setPinOutput</span><span class="p">(</span><span class="n">B4</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="keyboard_pre_init_-idkeyboard_pre_init_-function-documentation"><code>keyboard_pre_init_*</code> 関数のドキュメント :id=keyboard_pre_init_-function-documentation<a class="headerlink" href="#keyboard_pre_init_-idkeyboard_pre_init_-function-documentation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>キーボード/リビジョン: <code>void keyboard_pre_init_kb(void)</code></li>
+<li>キーマップ: <code>void keyboard_pre_init_user(void)</code></li>
+</ul>
+<h2 id="_6">マトリックスの初期化コード<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>これは、マトリックスが初期化され、ハードウェアの一部がセットアップされた後で、ただし機能の多くが初期化される前に、呼び出されます。</p>
+<p>他の場所で必要になるかもしれないものをセットアップするのに役立ちますが、ハードウェアに関連するものではなく、開始場所に依存するものでもありません。</p>
+<h3 id="matrix_init_"><code>matrix_init_*</code> 関数のドキュメント<a class="headerlink" href="#matrix_init_" title="Permanent link">&para;</a></h3>
+<ul>
+<li>キーボード/リビジョン: <code>void matrix_init_kb(void)</code></li>
+<li>キーマップ: <code>void matrix_init_user(void)</code></li>
+</ul>
+<h2 id="_7">キーボードの事後初期化コード<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>キーボードの初期化プロセスの極めて最後のタスクとして実行されます。この時点で初期化される必要があるような、特定の機能を変更したい場合に便利です。</p>
+<h3 id="keyboard_post_init_user"><code>keyboard_post_init_user()</code> の実装例<a class="headerlink" href="#keyboard_post_init_user" title="Permanent link">&para;</a></h3>
+<p>この例は、他の全てのものが初期化された後で実行され、rgb アンダーグローの設定をセットアップします。</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">keyboard_post_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// post init コードを呼びます</span>
+  <span class="n">rgblight_enable_noeeprom</span><span class="p">();</span> <span class="c1">// 設定を保存せずに Rgb を有効にします</span>
+  <span class="n">rgblight_sethsv_noeeprom</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">// 保存せずに色を青緑/シアンに設定します</span>
+  <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="n">RGBLIGHT_MODE_BREATHING</span> <span class="o">+</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// 保存せずにモードを高速なブリージングに設定します</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="keyboard_post_init_"><code>keyboard_post_init_*</code> 関数のドキュメント<a class="headerlink" href="#keyboard_post_init_" title="Permanent link">&para;</a></h3>
+<ul>
+<li>キーボード/リビジョン: <code>void keyboard_post_init_kb(void)</code></li>
+<li>キーマップ: <code>void keyboard_post_init_user(void)</code></li>
+</ul>
+<h1 id="idmatrix-scanning-code">マトリックススキャンコード :id=matrix-scanning-code<a class="headerlink" href="#idmatrix-scanning-code" title="Permanent link">&para;</a></h1>
+<p>可能であれば常に <code>process_record_*()</code> を使ってキーボードをカスタマイズし、その方法でイベントをフックし、コードがキーボードのパフォーマンスに悪影響を与えないようにします。ただし、まれにマトリックススキャンにフックする必要があります。これらの関数は1秒あたり少なくとも10回は呼び出されるため、これらの関数のコードのパフォーマンスに非常に注意してください。</p>
+<h3 id="matrix_scan_"><code>matrix_scan_*</code> の実装例<a class="headerlink" href="#matrix_scan_" title="Permanent link">&para;</a></h3>
+<p>この例は意図的に省略されています。このようなパフォーマンスに敏感な領域にフックする前に、例を使わずにこれを書くために、QMK 内部について十分理解する必要があります。助けが必要であれば、<a href="https://github.com/qmk/qmk_firmware/issues/new">issue を開く</a> か <a href="https://discord.gg/Uq7gcHh">Discord で会話</a>してください。</p>
+<h3 id="matrix_scan__1"><code>matrix_scan_*</code> 関数のドキュメント<a class="headerlink" href="#matrix_scan__1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>キーボード/リビジョン: <code>void matrix_scan_kb(void)</code></li>
+<li>キーマップ: <code>void matrix_scan_user(void)</code></li>
+</ul>
+<p>この関数はマトリックススキャンのたびに呼び出されます。これは基本的に MCU が処理できる頻度です。大量に実行されるため、ここに何を置くかについては注意してください。</p>
+<p>カスタムマトリックススキャンコードが必要な場合は、この関数を使う必要があります。また、カスタムステータス出力 (LED あるいはディスプレイなど)や、ユーザが入力していない場合でも定期的にトリガーするその他の機能のために使うことができます。</p>
+<h1 id="idkeyboard-housekeeping">キーボードハウスキーピング :id=keyboard-housekeeping<a class="headerlink" href="#idkeyboard-housekeeping" title="Permanent link">&para;</a></h1>
+<ul>
+<li>キーボード/リビジョン: <code>void housekeeping_task_kb(void)</code></li>
+<li>キーマップ: <code>void housekeeping_task_user(void)</code></li>
+</ul>
+<p>この関数は、全ての QMK 処理の最後に、次の繰り返しを開始する前に呼び出されます。<code>housekeeping_task_*</code> の関数が呼び出された時点で、QMK が最後のマトリックススキャンを処理したと、安全に見なすことができます -- レイヤーの状態が更新され、USB レポートが送信され、LED が更新され、表示が描画されています。</p>
+<p><code>matrix_scan_*</code> と同様に、これらは MCU が処理できる頻度で呼び出されます。キーボードの応答性を維持するために、これらの関数の呼び出し中にできるだけ何もしないことをお勧めします。実際に何か特別なものを実装する必要がある場合に動作を停止させる可能性があります。</p>
+<h1 id="_8">キーボードアイドリング/ウェイクコード<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<p>キーボードがサポートしている場合、多くの機能を停止することで"アイドル"にすることができます。これの良い例は、RGB ライトあるいはバックライトです。これにより、電力消費を節約できるか、キーボードの動作が改善されるかもしれません。</p>
+<p>これは2つの関数によって制御されます: <code>suspend_power_down_*</code> および <code>suspend_wakeup_init_*</code>。これらはシステムキーボードがアイドルになった時と、起動した時のそれぞれで呼ばれます。</p>
+<h3 id="suspend_power_down_user-suspend_wakeup_init_user">suspend_power_down_user() と suspend_wakeup_init_user() の実装例<a class="headerlink" href="#suspend_power_down_user-suspend_wakeup_init_user" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">suspend_power_down_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">suspend_wakeup_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="_9">キーボードサスペンド/ウェイク関数のドキュメント<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li>キーボード/リビジョン : <code>void suspend_power_down_kb(void)</code> および <code>void suspend_wakeup_init_user(void)</code></li>
+<li>キーマップ: <code>void suspend_power_down_kb(void)</code> および <code>void suspend_wakeup_init_user(void)</code></li>
+</ul>
+<h1 id="idlayer-change-code">レイヤー切り替えコード :id=layer-change-code<a class="headerlink" href="#idlayer-change-code" title="Permanent link">&para;</a></h1>
+<p>これはレイヤーが切り替えられるたびにコードを実行します。レイヤー表示あるいはカスタムレイヤー処理に役立ちます。</p>
+<h3 id="layer_state_set_"><code>layer_state_set_*</code> の実装例<a class="headerlink" href="#layer_state_set_" title="Permanent link">&para;</a></h3>
+<p>この例は、レイヤーに基づいて <a href="ja/feature_rgblight.md">RGB アンダーグロー</a>を設定する方法を示していて、Planck を例として使っています。</p>
+<div class="codehilite"><pre><span></span><code><span class="n">layer_state_t</span> <span class="nf">layer_state_set_user</span><span class="p">(</span><span class="n">layer_state_t</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">get_highest_layer</span><span class="p">(</span><span class="n">state</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nl">_RAISE</span><span class="p">:</span>
+        <span class="n">rgblight_setrgb</span> <span class="p">(</span><span class="mh">0x00</span><span class="p">,</span>  <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">_LOWER</span><span class="p">:</span>
+        <span class="n">rgblight_setrgb</span> <span class="p">(</span><span class="mh">0xFF</span><span class="p">,</span>  <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">_PLOVER</span><span class="p">:</span>
+        <span class="n">rgblight_setrgb</span> <span class="p">(</span><span class="mh">0x00</span><span class="p">,</span>  <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">_ADJUST</span><span class="p">:</span>
+        <span class="n">rgblight_setrgb</span> <span class="p">(</span><span class="mh">0x7A</span><span class="p">,</span>  <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span> <span class="c1">//  他の全てのレイヤーあるいはデフォルトのレイヤー</span>
+        <span class="n">rgblight_setrgb</span> <span class="p">(</span><span class="mh">0x00</span><span class="p">,</span>  <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="k">return</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>特定のレイヤーの状態を確認するには、<code>IS_LAYER_ON_STATE(state, layer)</code> と <code>IS_LAYER_OFF_STATE(state, layer)</code> マクロを使います。</p>
+<p><code>layer_state_set_*</code> 関数の外では、グローバルなレイヤー状態を確認するために <code>IS_LAYER_ON(layer)</code> と <code>IS_LAYER_OFF(layer)</code> マクロを使えます。</p>
+<h3 id="layer_state_set__1"><code>layer_state_set_*</code> 関数のドキュメント<a class="headerlink" href="#layer_state_set__1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>キーボード/リビジョン: <code>layer_state_t layer_state_set_kb(layer_state_t state)</code></li>
+<li>キーマップ: <code>layer_state_t layer_state_set_user(layer_state_t state)</code></li>
+</ul>
+<p><a href="ja/keymap.md#keymap-layer-status">キーマップの概要</a>で説明されるように、<code>state</code> はアクティブなレイヤーのビットマスクです。</p>
+<h1 id="eeprom">永続的な設定 (EEPROM)<a class="headerlink" href="#eeprom" title="Permanent link">&para;</a></h1>
+<p>これによりキーボードのための永続的な設定を設定することができます。これらの設定はコントローラの EEPROM に保存され、電源が落ちた後であっても保持されます。設定は <code>eeconfig_read_kb</code> および <code>eeconfig_read_user</code> を使って読み取ることができ、<code>eeconfig_update_kb</code> および <code>eeconfig_update_user</code> を使って書きこむことができます。これは切り替え可能な機能 (rgb レイヤーの表示の切り替えなど)に役立ちます。さらに、<code>eeconfig_init_kb</code> および <code>eeconfig_init_user</code> を使って EEPROM のデフォルト値を設定できます。</p>
+<p>ここでの複雑な部分は、EEPROM を介してデータを保存およびアクセスできる方法がたくさんあり、これを行うための"正しい"方法が無いということです。ただし、各関数には DWORD (4 バイト)しかありません。</p>
+<p>EEPROM の書き込み回数には制限があることに注意してください。これは非常に高い値ですが、EEPROM に書き込むのはこれだけではなく、もし頻繁に書き込むと、MCU の寿命を大幅に短くする可能性があります。</p>
+<ul>
+<li>この例を理解していない場合は、この機能はかなり複雑なため、この機能を使うことを避けても構いません。</li>
+</ul>
+<h3 id="_10">実装例<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>これは、設定を追加し、読み書きする例です。この例では、ユーザキーマップを使っています。これは複雑な機能で、多くのことが行われています。実際、動作のために上記の多くの関数を使います！</p>
+<p>keymap.c ファイルの中で、先頭にこれを追加します:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">typedef</span> <span class="k">union</span> <span class="p">{</span>
+  <span class="kt">uint32_t</span> <span class="n">raw</span><span class="p">;</span>
+  <span class="k">struct</span> <span class="p">{</span>
+    <span class="kt">bool</span>     <span class="nl">rgb_layer_change</span> <span class="p">:</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span> <span class="n">user_config_t</span><span class="p">;</span>
+
+<span class="n">user_config_t</span> <span class="n">user_config</span><span class="p">;</span>
+</code></pre></div>
+
+<p>これは、設定をメモリ内に保存し、EEPROM に書き込むことができる32ビット構造体をセットアップします。これを使うと、この構造体に変数が定義されるため、変数を定義する必要が無くなります。<code>bool</code> (boolean) の値は1ビットを使い、<code>uint8_t</code> は8ビットを使い、<code>uint16_t</code> は16ビットを使うことに注意してください。組み合わせて使うことができますが、順番の変更は読み書きされる値が変更されるため、問題が発生するかもしれません。</p>
+<p><code>layer_state_set_*</code> 関数のために <code>rgb_layer_change</code> を使い、全てを設定するために <code>keyboard_post_init_user</code> および <code>process_record_user</code> を使います。</p>
+<p>ここで、上の <code>keyboard_post_init_user</code> コードを使って、作成したばかりの構造体を設定するために <code>eeconfig_read_user()</code> を追加します。そして、この構造体をすぐに使ってキーマップの機能を制御することができます。それは以下のようになります:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">keyboard_post_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// キーマップレベルのマトリックスの初期化処理を呼びます</span>
+
+  <span class="c1">// EEPROM からユーザ設定を読み込みます</span>
+  <span class="n">user_config</span><span class="p">.</span><span class="n">raw</span> <span class="o">=</span> <span class="n">eeconfig_read_user</span><span class="p">();</span>
+
+  <span class="c1">// 有効な場合はデフォルトレイヤーを設定します</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">rgblight_enable_noeeprom</span><span class="p">();</span>
+    <span class="n">rgblight_sethsv_noeeprom_cyan</span><span class="p">();</span>
+    <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>上記の関数は読み取ったばかりの EEPROM 設定を使い、デフォルトのレイヤーの RGB 色を設定します。その「生の」値は、上で作成した「共用体」に基づいて使用可能な構造に変換されます。</p>
+<div class="codehilite"><pre><span></span><code><span class="n">layer_state_t</span> <span class="nf">layer_state_set_user</span><span class="p">(</span><span class="n">layer_state_t</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">get_highest_layer</span><span class="p">(</span><span class="n">state</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nl">_RAISE</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="n">rgblight_sethsv_noeeprom_magenta</span><span class="p">();</span> <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">_LOWER</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="n">rgblight_sethsv_noeeprom_red</span><span class="p">();</span> <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">_PLOVER</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="n">rgblight_sethsv_noeeprom_green</span><span class="p">();</span> <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="nl">_ADJUST</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="n">rgblight_sethsv_noeeprom_white</span><span class="p">();</span> <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span> <span class="c1">//  他の全てのレイヤーあるいはデフォルトのレイヤー</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="n">rgblight_sethsv_noeeprom_cyan</span><span class="p">();</span> <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="k">return</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>これにより、値が有効になっていた場合のみ、RGB アンダーグローが変更されます。この値を設定するために、<code>RGB_LYR</code> と呼ばれる <code>process_record_user</code> 用の新しいキーコードを作成します。さらに、通常の RGB コードを使う場合、上記の例を使ってオフになることを確認します。以下のようになります:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">bool</span> <span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="nl">FOO</span><span class="p">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 押された時に何かをします</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// 放された時に何かをします</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// このキーの以降の処理をスキップします</span>
+    <span class="k">case</span> <span class="nl">KC_ENTER</span><span class="p">:</span>
+        <span class="c1">// enter が押された時に音を再生します</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">tone_qwerty</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// QMK に enter のプレスまたはリリースイベントを送信させます</span>
+    <span class="k">case</span> <span class="nl">RGB_LYR</span><span class="p">:</span>  <span class="c1">// これにより、アンダーグローをレイヤー表示として、あるいは通常通りに使うことができます。</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 状態を切り替えます</span>
+            <span class="n">eeconfig_update_user</span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="p">);</span> <span class="c1">// 新しい状態を EEPROM に書き込みます</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// レイヤーの状態表示が有効な場合</span>
+                <span class="n">layer_state_set</span><span class="p">(</span><span class="n">layer_state</span><span class="p">);</span>   <span class="c1">// すぐにレイヤーの色を更新します</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">RGB_MODE_FORWARD</span> <span class="p">...</span> <span class="nl">RGB_MODE_GRADIENT</span><span class="p">:</span> <span class="c1">// 任意の RGB コード に対して(quantum_keycodes.h を見てください。400行目参照)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// これはレイヤー表示を無効にします。これを変更する場合は、無効にしたいだろうため。</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span>        <span class="c1">// 有効な場合のみ</span>
+                <span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>  <span class="c1">// 無効にします</span>
+                <span class="n">eeconfig_update_user</span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="p">);</span> <span class="c1">// 設定を EEPROM に書き込みます</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// 他の全てのキーコードを通常通りに処理します</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>最後に、<code>eeconfig_init_user</code> 関数を追加して、EEPROM がリセットされた時にデフォルト値、さらにはカスタムアクションを指定できるようにします。EEPROM を強制的にリセットするには、<code>EEP_RST</code> キーコードあるいは<a href="ja/feature_bootmagic.md">ブートマジック</a>機能を使います。例えば、デフォルトで rgb レイヤー表示を設定し、デフォルト値を保存したい場合。</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">eeconfig_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// EEPROM がリセットされます！</span>
+  <span class="n">user_config</span><span class="p">.</span><span class="n">raw</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// デフォルトでこれを有効にします</span>
+  <span class="n">eeconfig_update_user</span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="p">);</span> <span class="c1">// デフォルト値を EEPROM に書き込みます</span>
+
+  <span class="c1">// これらの値も EEPROM に書き込むためには、noeeprom 以外のバージョンを使います</span>
+  <span class="n">rgblight_enable</span><span class="p">();</span> <span class="c1">// デフォルトで RGB を有効にします</span>
+  <span class="n">rgblight_sethsv_cyan</span><span class="p">();</span>  <span class="c1">// デフォルトでシアンに設定します</span>
+  <span class="n">rgblight_mode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// デフォルトでソリッドに設定します</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>これで完了です。RGB レイヤー表示は必要な場合にのみ機能します。キーボードを取り外した後でも保存されます。RGB コードのいずれかを使うと、レイヤー表示が無効になり、設定したモードと色がそのままになります。</p>
+<h3 id="eeconfig">'EECONFIG' 関数のドキュメント<a class="headerlink" href="#eeconfig" title="Permanent link">&para;</a></h3>
+<ul>
+<li>キーボード/リビジョン: <code>void eeconfig_init_kb(void)</code>、<code>uint32_t eeconfig_read_kb(void)</code> および <code>void eeconfig_update_kb(uint32_t val)</code></li>
+<li>キーマップ: <code>void eeconfig_init_user(void)</code>、<code>uint32_t eeconfig_read_user(void)</code> および <code>void eeconfig_update_user(uint32_t val)</code></li>
+</ul>
+<p><code>val</code> は EEPROM に書き込みたいデータの値です。<code>eeconfig_read_*</code> 関数は EEPROM から32ビット(DWORD) 値を返します。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

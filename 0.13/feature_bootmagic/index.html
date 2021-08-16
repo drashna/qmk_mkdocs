@@ -1,0 +1,877 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/feature_bootmagic/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Bootmagic - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bootmagic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bootmagic
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hotkeys" class="md-nav__link">
+    Hotkeys
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keycodes-idkeycodes" class="md-nav__link">
+    Keycodes :id=keycodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_bootmagic.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="bootmagic">Bootmagic<a class="headerlink" href="#bootmagic" title="Permanent link">&para;</a></h1>
+<p>There are three separate but related features that allow you to change the behavior of your keyboard without reflashing. While each of them have similar functionality, it is accessed in different ways depending on how your keyboard is configured.</p>
+<p><strong>Bootmagic</strong> is a system for configuring your keyboard while it initializes. To trigger a Bootmagic command, hold down the Bootmagic key and one or more command keys.</p>
+<p><strong>Bootmagic Keycodes</strong> are prefixed with <code>MAGIC_</code>, and allow you to access the Bootmagic functionality <em>after</em> your keyboard has initialized. To use the keycodes, assign them to your keymap as you would any other keycode.</p>
+<p><strong>Command</strong>, formerly known as <strong>Magic</strong>, is another feature that allows you to control different aspects of your keyboard. While it shares some functionality with Bootmagic, it also allows you to do things that Bootmagic does not, such as printing version information to the console. For more information, see <a href="../feature_command/">Command</a>.</p>
+<p>On some keyboards Bootmagic is disabled by default. If this is the case, it must be explicitly enabled in your <code>rules.mk</code> with:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">BOOTMAGIC_ENABLE</span> <span class="o">=</span> full
+</code></pre></div>
+
+<p>?&gt; You may see <code>yes</code> being used in place of <code>full</code>, and this is okay. However, <code>yes</code> is deprecated, and ideally <code>full</code> (or <code>lite</code>) should be used instead.</p>
+<p>Additionally, you can use <a href="#bootmagic-lite">Bootmagic Lite</a> (a scaled down, very basic version of Bootmagic) by adding the following to your <code>rules.mk</code> file:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">BOOTMAGIC_ENABLE</span> <span class="o">=</span> lite
+</code></pre></div>
+
+<h2 id="hotkeys">Hotkeys<a class="headerlink" href="#hotkeys" title="Permanent link">&para;</a></h2>
+<p>Hold down the Bootmagic key (Space by default) and the desired hotkey while plugging in your keyboard. For example, holding Space+<code>B</code> should cause it to enter the bootloader.</p>
+<table>
+<thead>
+<tr>
+<th>Hotkey</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Escape</td>
+<td>Ignore Bootmagic configuration in EEPROM</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>Enter the bootloader</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>Toggle debugging over serial</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>Toggle key matrix debugging</td>
+</tr>
+<tr>
+<td><code>K</code></td>
+<td>Toggle keyboard debugging</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>Toggle mouse debugging</td>
+</tr>
+<tr>
+<td><code>L</code></td>
+<td>Set "Left Hand" for EE_HANDS handedness</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>Set "Right Hand" for EE_HANDS handedness</td>
+</tr>
+<tr>
+<td>Backspace</td>
+<td>Clear the EEPROM</td>
+</tr>
+<tr>
+<td>Caps Lock</td>
+<td>Toggle treating Caps Lock as Left Control</td>
+</tr>
+<tr>
+<td>Left Control</td>
+<td>Toggle swapping Caps Lock and Left Control</td>
+</tr>
+<tr>
+<td>Left Alt</td>
+<td>Toggle swapping Left Alt and Left GUI</td>
+</tr>
+<tr>
+<td>Right Alt</td>
+<td>Toggle swapping Right Alt and Right GUI</td>
+</tr>
+<tr>
+<td>Left GUI</td>
+<td>Toggle the GUI keys (useful when gaming)</td>
+</tr>
+<tr>
+<td><code>&#96;</code></td>
+<td>Toggle swapping <code>&#96;</code> and Escape</td>
+</tr>
+<tr>
+<td><code>\</code></td>
+<td>Toggle swapping <code>\</code> and Backspace</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>Toggle N-Key Rollover (NKRO)</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>Make layer 0 the default layer</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>Make layer 1 the default layer</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>Make layer 2 the default layer</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>Make layer 3 the default layer</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td>Make layer 4 the default layer</td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td>Make layer 5 the default layer</td>
+</tr>
+<tr>
+<td><code>6</code></td>
+<td>Make layer 6 the default layer</td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td>Make layer 7 the default layer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="keycodes-idkeycodes">Keycodes :id=keycodes<a class="headerlink" href="#keycodes-idkeycodes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Aliases</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MAGIC_SWAP_CONTROL_CAPSLOCK</code></td>
+<td><code>CL_SWAP</code></td>
+<td>Swap Caps Lock and Left Control</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNSWAP_CONTROL_CAPSLOCK</code></td>
+<td><code>CL_NORM</code></td>
+<td>Unswap Caps Lock and Left Control</td>
+</tr>
+<tr>
+<td><code>MAGIC_CAPSLOCK_TO_CONTROL</code></td>
+<td><code>CL_CTRL</code></td>
+<td>Treat Caps Lock as Control</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNCAPSLOCK_TO_CONTROL</code></td>
+<td><code>CL_CAPS</code></td>
+<td>Stop treating Caps Lock as Control</td>
+</tr>
+<tr>
+<td><code>MAGIC_SWAP_LCTL_LGUI</code></td>
+<td><code>LCG_SWP</code></td>
+<td>Swap Left Control and GUI</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNSWAP_LCTL_LGUI</code></td>
+<td><code>LCG_NRM</code></td>
+<td>Unswap Left Control and GUI</td>
+</tr>
+<tr>
+<td><code>MAGIC_SWAP_RCTL_RGUI</code></td>
+<td><code>RCG_SWP</code></td>
+<td>Swap Right Control and GUI</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNSWAP_RCTL_RGUI</code></td>
+<td><code>RCG_NRM</code></td>
+<td>Unswap Right Control and GUI</td>
+</tr>
+<tr>
+<td><code>MAGIC_SWAP_CTL_GUI</code></td>
+<td><code>CG_SWAP</code></td>
+<td>Swap Control and GUI on both sides</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNSWAP_CTL_GUI</code></td>
+<td><code>CG_NORM</code></td>
+<td>Unswap Control and GUI on both sides</td>
+</tr>
+<tr>
+<td><code>MAGIC_TOGGLE_CTL_GUI</code></td>
+<td><code>CG_TOGG</code></td>
+<td>Toggle Control and GUI swap on both sides</td>
+</tr>
+<tr>
+<td><code>MAGIC_SWAP_LALT_LGUI</code></td>
+<td><code>LAG_SWP</code></td>
+<td>Swap Left Alt and GUI</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNSWAP_LALT_LGUI</code></td>
+<td><code>LAG_NRM</code></td>
+<td>Unswap Left Alt and GUI</td>
+</tr>
+<tr>
+<td><code>MAGIC_SWAP_RALT_RGUI</code></td>
+<td><code>RAG_SWP</code></td>
+<td>Swap Right Alt and GUI</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNSWAP_RALT_RGUI</code></td>
+<td><code>RAG_NRM</code></td>
+<td>Unswap Right Alt and GUI</td>
+</tr>
+<tr>
+<td><code>MAGIC_SWAP_ALT_GUI</code></td>
+<td><code>AG_SWAP</code></td>
+<td>Swap Alt and GUI on both sides</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNSWAP_ALT_GUI</code></td>
+<td><code>AG_NORM</code></td>
+<td>Unswap Alt and GUI on both sides</td>
+</tr>
+<tr>
+<td><code>MAGIC_TOGGLE_ALT_GUI</code></td>
+<td><code>AG_TOGG</code></td>
+<td>Toggle Alt and GUI swap on both sides</td>
+</tr>
+<tr>
+<td><code>MAGIC_NO_GUI</code></td>
+<td><code>GUI_OFF</code></td>
+<td>Disable the GUI keys</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNNO_GUI</code></td>
+<td><code>GUI_ON</code></td>
+<td>Enable the GUI keys</td>
+</tr>
+<tr>
+<td><code>MAGIC_SWAP_GRAVE_ESC</code></td>
+<td><code>GE_SWAP</code></td>
+<td>Swap <code>&#96;</code> and Escape</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNSWAP_GRAVE_ESC</code></td>
+<td><code>GE_NORM</code></td>
+<td>Unswap <code>&#96;</code> and Escape</td>
+</tr>
+<tr>
+<td><code>MAGIC_SWAP_BACKSLASH_BACKSPACE</code></td>
+<td><code>BS_SWAP</code></td>
+<td>Swap <code>\</code> and Backspace</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNSWAP_BACKSLASH_BACKSPACE</code></td>
+<td><code>BS_NORM</code></td>
+<td>Unswap <code>\</code> and Backspace</td>
+</tr>
+<tr>
+<td><code>MAGIC_HOST_NKRO</code></td>
+<td><code>NK_ON</code></td>
+<td>Enable N-key rollover</td>
+</tr>
+<tr>
+<td><code>MAGIC_UNHOST_NKRO</code></td>
+<td><code>NK_OFF</code></td>
+<td>Disable N-key rollover</td>
+</tr>
+<tr>
+<td><code>MAGIC_TOGGLE_NKRO</code></td>
+<td><code>NK_TOGG</code></td>
+<td>Toggle N-key rollover</td>
+</tr>
+<tr>
+<td><code>MAGIC_EE_HANDS_LEFT</code></td>
+<td><code>EH_LEFT</code></td>
+<td>Set the master half of a split keyboard as the left hand (for <code>EE_HANDS</code>)</td>
+</tr>
+<tr>
+<td><code>MAGIC_EE_HANDS_RIGHT</code></td>
+<td><code>EH_RGHT</code></td>
+<td>Set the master half of a split keyboard as the right hand (for <code>EE_HANDS</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>If you would like to change the hotkey assignments for Bootmagic, <code>#define</code> these in your <code>config.h</code> at either the keyboard or keymap level.</p>
+<table>
+<thead>
+<tr>
+<th>Define</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BOOTMAGIC_KEY_SALT</code></td>
+<td><code>KC_SPACE</code></td>
+<td>The Bootmagic key</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_SKIP</code></td>
+<td><code>KC_ESC</code></td>
+<td>Ignore Bootmagic configuration in EEPROM</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_EEPROM_CLEAR</code></td>
+<td><code>KC_BSPACE</code></td>
+<td>Clear the EEPROM configuration</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_BOOTLOADER</code></td>
+<td><code>KC_B</code></td>
+<td>Enter the bootloader</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEBUG_ENABLE</code></td>
+<td><code>KC_D</code></td>
+<td>Toggle debugging over serial</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEBUG_MATRIX</code></td>
+<td><code>KC_X</code></td>
+<td>Toggle matrix debugging</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEBUG_KEYBOARD</code></td>
+<td><code>KC_K</code></td>
+<td>Toggle keyboard debugging</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEBUG_MOUSE</code></td>
+<td><code>KC_M</code></td>
+<td>Toggle mouse debugging</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_EE_HANDS_LEFT</code></td>
+<td><code>KC_L</code></td>
+<td>Set "Left Hand" for EE_HANDS handedness</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_EE_HANDS_RIGHT</code></td>
+<td><code>KC_R</code></td>
+<td>Set "Right Hand" for EE_HANDS handedness</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_SWAP_CONTROL_CAPSLOCK</code></td>
+<td><code>KC_LCTRL</code></td>
+<td>Swap Left Control and Caps Lock</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_CAPSLOCK_TO_CONTROL</code></td>
+<td><code>KC_CAPSLOCK</code></td>
+<td>Toggle treating Caps Lock as Left Control</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_SWAP_LALT_LGUI</code></td>
+<td><code>KC_LALT</code></td>
+<td>Toggle swapping Left Alt and Left GUI (for macOS)</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_SWAP_RALT_RGUI</code></td>
+<td><code>KC_RALT</code></td>
+<td>Toggle swapping Right Alt and Right GUI (for macOS)</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_NO_GUI</code></td>
+<td><code>KC_LGUI</code></td>
+<td>Toggle the GUI keys (useful when gaming)</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_SWAP_GRAVE_ESC</code></td>
+<td><code>KC_GRAVE</code></td>
+<td>Toggle swapping <code>&#96;</code> and Escape</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_SWAP_BACKSLASH_BACKSPACE</code></td>
+<td><code>KC_BSLASH</code></td>
+<td>Toggle swapping <code>\</code> and Backspace</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_HOST_NKRO</code></td>
+<td><code>KC_N</code></td>
+<td>Toggle N-Key Rollover (NKRO)</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEFAULT_LAYER_0</code></td>
+<td><code>KC_0</code></td>
+<td>Make layer 0 the default layer</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEFAULT_LAYER_1</code></td>
+<td><code>KC_1</code></td>
+<td>Make layer 1 the default layer</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEFAULT_LAYER_2</code></td>
+<td><code>KC_2</code></td>
+<td>Make layer 2 the default layer</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEFAULT_LAYER_3</code></td>
+<td><code>KC_3</code></td>
+<td>Make layer 3 the default layer</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEFAULT_LAYER_4</code></td>
+<td><code>KC_4</code></td>
+<td>Make layer 4 the default layer</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEFAULT_LAYER_5</code></td>
+<td><code>KC_5</code></td>
+<td>Make layer 5 the default layer</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEFAULT_LAYER_6</code></td>
+<td><code>KC_6</code></td>
+<td>Make layer 6 the default layer</td>
+</tr>
+<tr>
+<td><code>BOOTMAGIC_KEY_DEFAULT_LAYER_7</code></td>
+<td><code>KC_7</code></td>
+<td>Make layer 7 the default layer</td>
+</tr>
+</tbody>
+</table>
+<h1 id="bootmagic-lite-idbootmagic-lite">Bootmagic Lite :id=bootmagic-lite<a class="headerlink" href="#bootmagic-lite-idbootmagic-lite" title="Permanent link">&para;</a></h1>
+<p>In addition to the full blown Bootmagic feature, is the Bootmagic Lite feature that only handles jumping into the bootloader. This is great for boards that don't have a physical reset button but you need a way to jump into the bootloader, and don't want to deal with the headache that Bootmagic can cause.</p>
+<p>To enable this version of Bootmagic, you need to enable it in your <code>rules.mk</code> with:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">BOOTMAGIC_ENABLE</span> <span class="o">=</span> lite
+</code></pre></div>
+
+<p>Additionally, you may want to specify which key to use. This is especially useful for keyboards that have unusual matrices. To do so, you need to specify the row and column of the key that you want to use. Add these entries to your <code>config.h</code> file:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#define BOOTMAGIC_LITE_ROW 0</span>
+<span class="cp">#define BOOTMAGIC_LITE_COLUMN 1</span>
+</code></pre></div>
+
+<p>By default, these are set to 0 and 0, which is usually the "ESC" key on a majority of keyboards.</p>
+<p>And to trigger the bootloader, you hold this key down when plugging the keyboard in. Just the single key.</p>
+<p>!&gt; Using bootmagic lite will <strong>always reset</strong> the EEPROM, so you will lose any settings that have been saved.</p>
+<h2 id="split-keyboards">Split Keyboards<a class="headerlink" href="#split-keyboards" title="Permanent link">&para;</a></h2>
+<p>When handedness is predetermined via an option like <code>SPLIT_HAND_PIN</code>, you might need to configure a different key between halves. To do so, add these entries to your <code>config.h</code> file:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#define BOOTMAGIC_LITE_ROW_RIGHT 4</span>
+<span class="cp">#define BOOTMAGIC_LITE_COLUMN_RIGHT 1</span>
+</code></pre></div>
+
+<p>By default, these values are not set.</p>
+<h2 id="advanced-bootmagic-lite">Advanced Bootmagic Lite<a class="headerlink" href="#advanced-bootmagic-lite" title="Permanent link">&para;</a></h2>
+<p>The <code>bootmagic_lite</code> function is defined weakly, so that you can replace this in your code, if you need. A great example of this is the Zeal60 boards that have some additional handling needed.</p>
+<p>To replace the function, all you need to do is add something like this to your code:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">bootmagic_lite</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">matrix_scan</span><span class="p">();</span>
+    <span class="n">wait_ms</span><span class="p">(</span><span class="n">DEBOUNCE</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">matrix_scan</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">matrix_get_row</span><span class="p">(</span><span class="n">BOOTMAGIC_LITE_ROW</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">BOOTMAGIC_LITE_COLUMN</span><span class="p">))</span> <span class="p">{</span>
+      <span class="c1">// Jump to bootloader.</span>
+      <span class="n">bootloader_jump</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>You can additional feature here. For instance, resetting the eeprom or requiring additional keys to be pressed to trigger bootmagic. Keep in mind that <code>bootmagic_lite</code> is called before a majority of features are initialized in the firmware.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

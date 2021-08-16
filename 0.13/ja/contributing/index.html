@@ -1,0 +1,545 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/ja/contributing/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>貢献方法 - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              貢献方法
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    この全てを読みたくはありません！単純に質問があります！
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/ja/contributing.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">貢献方法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<!---
+  original document: 0.13.15:docs/contributing.md
+  git diff 0.13.15 HEAD -- docs/contributing.md | cat
+-->
+
+<p>👍🎉 まず、これを読み貢献する時間を作ってくれてありがとうございます！🎉👍</p>
+<p>サードパーティの貢献は、QMK の成長と改善に役立ちます。プルリクエストと貢献プロセスを貢献者とメンテナの両方にとって便利で簡単なものにしたいです。この目的のために、大きな変更をせずにプルリクエストが受け入れられるように貢献者向けのガイドラインをまとめました。</p>
+<ul>
+<li><a href="#project-overview">プロジェクトの概要</a></li>
+<li><a href="#coding-conventions">コーディング規約</a></li>
+<li><a href="#general-guidelines">一般的なガイドライン</a></li>
+<li><a href="#what-does-the-code-of-conduct-mean-for-me">行動規範は私にとって何を意味しますか？</a></li>
+</ul>
+<h2 id="_2">この全てを読みたくはありません！単純に質問があります！<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>QMK について質問したい場合は、<a href="https://reddit.com/r/olkb">OLKB Subreddit</a> あるいは <a href="https://discord.gg/Uq7gcHh">Discord</a> ですることができます。</p>
+<p>以下の事を覚えておいてください:</p>
+<ul>
+<li>誰かがあなたの質問に答えるのに数時間掛かるかもしれません。しばらくお待ちください！</li>
+<li>QMK に関わる全ての人が彼らの時間とエネルギーを提供しています。QMK に関する作業や質問への回答に対する報酬はありません。</li>
+<li>できるだけ簡単に答えられるように質問してみてください。その方法が分からない場合は、以下に幾つかの良いガイドがあります:</li>
+<li>https://opensource.com/life/16/10/how-ask-technical-questions</li>
+<li>http://www.catb.org/esr/faqs/smart-questions.html</li>
+</ul>
+<h1 id="idproject-overview">プロジェクトの概要 :id=project-overview<a class="headerlink" href="#idproject-overview" title="Permanent link">&para;</a></h1>
+<p>QMK は主に C で書かれており、特定の機能と部品は C++ で書かれています。QMK は、キーボードの中の組み込みプロセッサ、特に AVR (<a href="https://www.fourwalledcubicle.com/LUFA.php">LUFA</a>) と ARM (<a href="https://www.chibios.org">ChibiOS</a>) を対象にしています。すでに Arduino プログラミングに精通している場合は、多くの概念と制限がおなじみのものです。QMK に貢献するには Arduino を使用した経験は必要ありません。</p>
+<!-- FIXME: We should include a list of resources for learning C here. -->
+
+<h1 id="_3">どこで助けを得られますか？<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<p>助けが必要であれば、<a href="https://github.com/qmk/qmk_firmware/issues">issue を開く</a> か <a href="https://discord.gg/Uq7gcHh">Discord で会話する</a>ことができます。</p>
+<h1 id="_4">どうやって貢献することができますか？<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h1>
+<p>以前にオープンソースに貢献したことはありませんか？ QMK で貢献がどのように機能するかが疑問ですか？ ここに簡単な説明があります！</p>
+<ol start="0">
+<li><a href="https://github.com">GitHub</a> アカウントにサインアップします。</li>
+<li>貢献するためのキーマップをまとめるか、解決に興味がある<a href="https://github.com/qmk/qmk_firmware/issues">問題を見つける</a>、あるいは追加したい<a href="https://github.com/qmk/qmk_firmware/issues?q=is%3Aopen+is%3Aissue+label%3Afeature">機能</a>を見つけます。</li>
+<li>問題に関連付けられているリポジトリをあなたの GitHub アカウントにフォークします。これは、<code>GitHub上のあなたのユーザー名/qmk_firmware</code> の下にリポジトリのコピーを持つことを意味します。</li>
+<li><code>git clone https://github.com/GitHub上のあなたのユーザー名/repository-name.git</code> を使ってローカルマシンにリポジトリをクローンします。</li>
+<li>新しい機能に取り組んでいる場合は、issue を開きこれから行う作業について話し合うことを検討してください。</li>
+<li><code>git checkout -b branch-name-here</code> を使って修正用の新しいブランチを作成します。</li>
+<li>解決しようとしている問題、あるいは追加したい機能について適切な変更を加えます。</li>
+<li><code>git add insert-paths-of-changed-files-here</code> を使って変更されたファイルの内容を git がプロジェクトの状態を管理するために使用する "snapshot"、インデックスとしても知られている、に追加します。</li>
+<li><code>git commit -m "Insert a short message of the changes made here"</code> を使って、説明的なメッセージとともにインデックスの内容を保存します。</li>
+<li><code>git push origin branch-name-here</code> を使って GitHub 上のリポジトリに変更をプッシュします。</li>
+<li>プルリクエストを <a href="https://github.com/qmk/qmk_firmware/pull/new/master">QMK Firmware</a> にサブミットします。</li>
+<li>行われた変更の簡単な説明と、変更に関する問題またはバグ番号を使って、プルリクエストにタイトルを付けます。例えば、issue に "Added more log outputting to resolve #4352" のようなタイトルをつけることができます。</li>
+<li>プルリクエストの説明では、行った変更、行ったプルリクエストに存在すると思われる問題、およびメンテナに対する質問を説明します。プルリクエストが完ぺきではない場合(プルリクエストが無い場合)でも問題ありません。レビュワーが問題の修正と改善を手伝います。</li>
+<li>プルリクエストがメンテナによってレビューされるのを待ちます。</li>
+<li>レビューをしているメンテナが変更を推奨する場合は、プルリクエストに変更を加えます。</li>
+<li>プルリクエストがマージされた後で成功を祝います！</li>
+</ol>
+<h1 id="idcoding-conventions">コーディング規約 :id=coding-conventions<a class="headerlink" href="#idcoding-conventions" title="Permanent link">&para;</a></h1>
+<p>私たちのスタイルのほとんどは簡単に理解できます。C あるいは Python のいずれかに精通している場合は、ローカルスタイルにそれほど問題はないはずです。</p>
+<ul>
+<li><a href="ja/coding_conventions_c.md">コーディング規約 - C</a></li>
+<li><a href="ja/coding_conventions_python.md">コーディング規約 - Python</a></li>
+</ul>
+<h1 id="idgeneral-guidelines">一般的なガイドライン :id=general-guidelines<a class="headerlink" href="#idgeneral-guidelines" title="Permanent link">&para;</a></h1>
+<p>QMK には幾つかの異なるタイプの変更があり、それぞれ異なるレベルの厳密さが必要です。どのような種類の変更を行っても、次のガイドラインに留意してください。</p>
+<ul>
+<li>PR を論理単位に分割します。例えば、2つの個別の機能をカバーする1つの PR を送信するのではなく、代わりに機能ごとに個別の PR をサブミットします。</li>
+<li>コミットする前に、<code>git diff --check</code> を使って不要な空白を確認します。</li>
+<li>コードの変更が実際にコンパイルされることを確認してください。</li>
+<li>キーマップ: <code>make keyboard:your_new_keymap</code> がエラーを返さないことを確認してください。</li>
+<li>キーボード: <code>make keyboard:all</code> がエラーを返さないことを確認してください。</li>
+<li>コア: <code>make all</code> がエラーを返さないことを確認してください。</li>
+<li>コミットメッセージがそれ自体で理解できることを確認してください。最初の行に短い説明(70文字以内)を入れ、2行目は空にし、3行目以降では必要に応じてコミットを詳細に説明する必要があります。例:</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>kerpleplork の fronzlebop を調整します
+
+kerpleplork はエラーコード 23 で連続的に失敗していました。根本的な原因は fronzlebop 設定で、これにより kerpleplork はN回の繰り返しごとにアクティブになります。
+
+私が使用できるデバイスの限られた実験では、kerpleplork の混乱を避けるために 7 は十分高い値であることを示していますが、念のため ARM デバイスを持つ人たちからフィードバックを得たいです。
+</code></pre></div>
+
+<p>!&gt; <strong>重要:</strong> デフォルト以外のキーマップ、ユーザスペースおよびレイアウトのようなユーザコードへのバグ修正あるいは改善に貢献したい場合は、PR にコードの元の提出者にタグをつけてください。Git と GitHub のスキルレベルに関係なく、多くのユーザは知らないうちにコードが変更されることに混乱したりイライラしたりするかもしれません。</p>
+<h2 id="_5">ドキュメント<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>ドキュメントは QMK への貢献を始める最も簡単な方法の1つです。ドキュメントが間違っているか不完全な場所を見つけ、これらを修正するのは簡単です！私たちもドキュメントを編集する人を非常に必要としています。編集するスキルがあるが、どこにどのように飛び乗ればいいのか分からない場合は、<a href="#where-can-i-go-for-help">助けをもとめて</a>ください！</p>
+<p>全てのドキュメントは <code>qmk_firmware/docs</code> ディレクトリの中にあります。あるいは web ベースのワークフローを使いたい場合は、https://docs.qmk.fm/ の各ページの下部にある "Edit this page" リンクをクリックすることができます。</p>
+<p>ドキュメントの中にコードの例を提供する場合は、ドキュメント内の他の場所で使用されている命名規則を順守してください。例えば、一貫性を保つために、<code>my_layers</code> あるいは <code>my_keycodes</code> として列挙型を標準化します:</p>
+<div class="codehilite"><pre><span></span><code><span class="k">enum</span> <span class="n">my_layers</span> <span class="p">{</span>
+  <span class="n">_FIRST_LAYER</span><span class="p">,</span>
+  <span class="n">_SECOND_LAYER</span>
+<span class="p">};</span>
+
+<span class="k">enum</span> <span class="n">my_keycodes</span> <span class="p">{</span>
+  <span class="n">FIRST_LAYER</span> <span class="o">=</span> <span class="n">SAFE_RANGE</span><span class="p">,</span>
+  <span class="n">SECOND_LAYER</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h3 id="idpreviewing-the-documentation">ドキュメントのプレビュー :id=previewing-the-documentation<a class="headerlink" href="#idpreviewing-the-documentation" title="Permanent link">&para;</a></h3>
+<p>開発環境をセットアップした場合は、プルリクエストを開く前に以下のコマンドを <code>qmk_firmware/</code> フォルダから実行することで、あなたの変更をプレビューすることができます:</p>
+<div class="codehilite"><pre><span></span><code>./bin/qmk docs
+</code></pre></div>
+
+<p>または、Python 3 のみがインストールされている場合:</p>
+<div class="codehilite"><pre><span></span><code>python3 -m http.server 8936
+</code></pre></div>
+
+<p>その後、ウェブブラウザで、<code>http://localhost:8936/</code> を表示します。</p>
+<h2 id="_6">キーマップ<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>ほとんどの初めての QMK 貢献者は、個人のキーマップから始めます。キーマップの標準はかなりカジュアルなものにしようとしています(キーマップは結局のところ作成者の性格を反映しています)が、他の人があなたのキーマップを簡単に見つけて学ぶことができるように、これらのガイドラインに従うようにお願いします。</p>
+<ul>
+<li><a href="../documentation_templates/">テンプレート</a> を使って <code>readme.md</code> を書きます。</li>
+<li>全てのキーマップの PR は squash されるため、コミットがどのように squash されるかを気にする場合は、自分で行う必要があります。</li>
+<li>キーマップの PR に機能をまとめないでください。最初に機能をサブミットし、次にキーマップのための2つ目の PR をサブミットします。</li>
+<li><code>Makefile</code> をキーマップフォルダに含めないでください(もう使われていません)。</li>
+<li>ファイルヘッダの著作権を更新します (<code>%YOUR_NAME%</code> を探します)</li>
+</ul>
+<h2 id="_7">キーボード<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>キーボードは QMK の存在理由です。一部のキーボードはコミュニティによって管理されていますが、他のキーボードはそれぞれのキーボードを作成する責任者によって管理されています。<code>readme.md</code> を見るとそのキーボードを管理しているのが誰かが分かります。特定のキーボードに関する質問がある場合、<a href="https://github.com/qmk/qmk_firmware/issues">Issue を開いて</a>質問にメンテナをタグ付けしてください。(訳注: タグ付け は <a href="https://help.github.com/ja/github/writing-on-github/basic-writing-and-formatting-syntax#mentioning-people-and-teams">メンションする</a> という意味です。)</p>
+<p>また以下のガイドラインに従うことをお願いします:</p>
+<ul>
+<li><a href="ja/documentation_templates.md">テンプレート</a> を使って <code>readme.md</code> を書きます。</li>
+<li>コミットの数を適切に保ってください。そうでなければあなたの PR を squash します。</li>
+<li>コア機能を新しいキーボードにまとめないでください。最初に機能をサブミットし、次にキーボード用に別の PR をサブミットしてください。</li>
+<li><code>.c</code>/<code>.h</code> ファイルにすぐ上の親フォルダに従って名前を付けます。例えば、<code>/keyboards/&lt;kb1&gt;/&lt;kb2&gt;/&lt;kb2&gt;.[ch]</code></li>
+<li><code>Makefile</code> をキーボードフォルダに含めないでください(もう使われていません)</li>
+<li>ファイルヘッダの著作権を更新します (<code>%YOUR_NAME%</code> を探します)</li>
+</ul>
+<h2 id="quantumtmk">Quantum/TMK コア<a class="headerlink" href="#quantumtmk" title="Permanent link">&para;</a></h2>
+<p>新しい機能をビルドするために多くの作業を行う前に、最適な方法で実装していることを確認する必要があります。<a href="ja/understanding_qmk.md">QMK の理解</a>を読むことで、QMK の基本的な理解を得ることができます。これはあなたを QMK のプログラムフローのツアーに連れて行きます。ここから、あなたのアイデアを実装するための最良の方法の感覚をつかむために、私たちと話す必要があります。これを行うには主に2つの方法があります:</p>
+<ul>
+<li><a href="https://discord.gg/Uq7gcHh">Discord でのチャット</a></li>
+<li><a href="https://github.com/qmk/qmk_firmware/issues/new">Issue を開く</a></li>
+</ul>
+<p>機能とバグ修正の PR は全てのキーボードに影響します。また、私たちは QMK の再編も進めています。このため、実装が行われる前に特に重要な変更について議論することが特に重要です。最初に私たちと話をせずに PR を開いた場合、あなたの選択が私たちの計画した方向とうまく合わない場合は幾つかの大きな再作業を行う覚悟をしてください。</p>
+<p>機能やバグの修正に取り組む時に留意すべき幾つかの事があります。</p>
+<ul>
+<li><strong>デフォルトで無効</strong> - QMK がサポートするほとんどのチップでメモリがかなり制限されており、現在のキーマップが壊れていないことが重要です。ですので、あなたの機能をオフにするのではなく<strong>オン</strong>にするようにしてください。デフォルトでオンにすべき場合、あるいはコードのサイズを小さくする必要がある場合は、相談してください。</li>
+<li><strong>サブミットする前にローカルでコンパイル</strong> - これが明白であることを願っていますが、コンパイルする必要があります。私たちの Travis システムは全ての問題をキャッチしますが、結果が返ってくるのを待つ代わりに幾つかのキーボードをローカルでコンパイルする方が一般的に速いです。</li>
+<li><strong>リビジョンと異なるチップベースを考慮</strong> - 僅かに異なる設定、さらには異なるチップベースを可能にするリビジョンを持つキーボードが幾つかあります。ARM および AVR でサポートされる機能を作成する、あるいは動作しないプラットフォームでは自動的に無効化するようにしてください。</li>
+<li><strong>機能の説明</strong> - 新しいファイルあるいは既存のファイルの一部として、<code>docs/</code> の中に文章化します。文章化しないと、他の人はあなたの苦労から利益を得ることができません。</li>
+</ul>
+<p>また以下のガイドラインに従うことをお願いします:</p>
+<ul>
+<li>コミットの数を適切に保ってください。そうでなければあなたの PR を squash します。</li>
+<li>キーボードあるいはキーマップをコアの変更にまとめないでください。コアの変更を最初にサブミットしてください。</li>
+<li>機能のための<a href="ja/unit_testing.md">ユニット テスト</a>を書いてください。</li>
+<li>編集しているファイルのスタイルに従ってください。スタイルが明確でないか、スタイルが混在している場合は、上記の<a href="#coding-conventions">コーディング規約</a>に準拠する必要があります。</li>
+</ul>
+<h2 id="_8">リファクタリング<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>QMK で物事がどのようにレイアウトされるかについて明確なビジョンを維持するために、私たちはリファクタリングを詳細に計画し、変更をする協力者がいます。リファクタリングのアイデアあるいは提案がある場合は、<a href="https://github.com/qmk/qmk_firmware/issues">issue を開いてください</a>。QMK を改善する方法についてお話ししたいと思います。</p>
+<h1 id="idwhat-does-the-code-of-conduct-mean-for-me">行動規範は私にとって何を意味しますか？ :id=what-does-the-code-of-conduct-mean-for-me<a class="headerlink" href="#idwhat-does-the-code-of-conduct-mean-for-me" title="Permanent link">&para;</a></h1>
+<p>私たちの<a href="https://github.com/qmk/qmk_firmware/blob/master/CODE_OF_CONDUCT.md">行動規範</a>は、身元に関係なくあなたがプロジェクトの全員を敬意と礼儀を持って扱う責任があることを意味します。あなたが行動規範に記載されている不適切な行動やコメントの被害者である場合は、私たちはあなたのためにここにおり、私たちのコードに従って虐待者が適切に懲戒されるように最善を尽くします。</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

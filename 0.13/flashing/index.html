@@ -1,0 +1,753 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/flashing/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Flashing Instructions and Bootloader Information - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#flashing-instructions-and-bootloader-information" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Flashing Instructions and Bootloader Information
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#atmel-dfu" class="md-nav__link">
+    Atmel DFU
+  </a>
+  
+    <nav class="md-nav" aria-label="Atmel DFU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qmk-dfu" class="md-nav__link">
+    QMK DFU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make-targets" class="md-nav__link">
+    make Targets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caterina" class="md-nav__link">
+    Caterina
+  </a>
+  
+    <nav class="md-nav" aria-label="Caterina">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make-targets_1" class="md-nav__link">
+    make Targets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#halfkay" class="md-nav__link">
+    HalfKay
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usbasploader" class="md-nav__link">
+    USBasploader
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootloadhid" class="md-nav__link">
+    BootloadHID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stm32apm32-dfu" class="md-nav__link">
+    STM32/APM32 DFU
+  </a>
+  
+    <nav class="md-nav" aria-label="STM32/APM32 DFU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make-targets_2" class="md-nav__link">
+    make Targets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stm32duino" class="md-nav__link">
+    STM32duino
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kiibohd-dfu" class="md-nav__link">
+    Kiibohd DFU
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tinyuf2" class="md-nav__link">
+    tinyuf2
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/flashing.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="flashing-instructions-and-bootloader-information">Flashing Instructions and Bootloader Information<a class="headerlink" href="#flashing-instructions-and-bootloader-information" title="Permanent link">&para;</a></h1>
+<p>There are quite a few different types of bootloaders that keyboards use, and almost all of them use their own flashing method and tools. Luckily, projects like the <a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> aim to support as many of them as possible, but this article will describe the different types of bootloaders, and available methods for flashing them.</p>
+<p>For AVR-based keyboards, QMK will automatically calculate if your <code>.hex</code> file is the right size to be flashed to the device based on the <code>BOOTLOADER</code> value set in <code>rules.mk</code>, and output the total size in bytes (along with the max).</p>
+<p>You will also be able to use the CLI to flash your keyboard, by running:</p>
+<div class="codehilite"><pre><span></span><code>$ qmk flash -kb &lt;keyboard&gt; -km &lt;keymap&gt;
+</code></pre></div>
+
+<p>See the <a href="../cli_commands/#qmk-flash"><code>qmk flash</code></a> documentation for more information.</p>
+<h2 id="atmel-dfu">Atmel DFU<a class="headerlink" href="#atmel-dfu" title="Permanent link">&para;</a></h2>
+<p>Atmel's DFU bootloader comes on all USB AVRs by default (except for 16/32U4RC), and is used by many keyboards that have their own ICs on their PCBs (older OLKB boards, Clueboards). Some keyboards may also use LUFA's DFU bootloader, or QMK's fork of it (newer OLKB boards), that adds in additional features specific to that hardware.</p>
+<p>To ensure compatibility with the DFU bootloader, make sure this block is present in your <code>rules.mk</code> (optionally with <code>lufa-dfu</code> or <code>qmk-dfu</code> instead):</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> atmel-dfu
+</code></pre></div>
+
+<p>Compatible flashers:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (recommended GUI)</li>
+<li><a href="https://github.com/dfu-programmer/dfu-programmer">dfu-programmer</a> / <code>:dfu</code> target in QMK (recommended command line)</li>
+</ul>
+<p>Flashing sequence:</p>
+<ol>
+<li>Enter the bootloader using any of the following methods:<ul>
+<li>Press the <code>RESET</code> keycode</li>
+<li>Press the <code>RESET</code> button on the PCB if available</li>
+<li>Short RST to GND quickly</li>
+</ul>
+</li>
+<li>Wait for the OS to detect the device</li>
+<li>Erase the flash memory (will be done automatically if using the Toolbox or CLI/<code>make</code> command)</li>
+<li>Flash a .hex file</li>
+<li>Reset the device into application mode (will be done automatically as above)</li>
+</ol>
+<h3 id="qmk-dfu">QMK DFU<a class="headerlink" href="#qmk-dfu" title="Permanent link">&para;</a></h3>
+<p>QMK maintains <a href="https://github.com/qmk/lufa/tree/master/Bootloaders/DFU">a fork of the LUFA DFU bootloader</a> that additionally performs a simple matrix scan for exiting the bootloader and returning to the application, as well as flashing an LED/making a ticking noise with a speaker when things are happening. To enable these features, add the following defines to your <code>config.h</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#define QMK_ESC_OUTPUT F1  </span><span class="c1">// COL pin if COL2ROW</span>
+<span class="cp">#define QMK_ESC_INPUT  D5  </span><span class="c1">// ROW pin if COL2ROW</span>
+<span class="c1">// Optional:</span>
+<span class="c1">//#define QMK_LED E6</span>
+<span class="c1">//#define QMK_SPEAKER C6</span>
+</code></pre></div>
+
+<p>Currently we do not recommend making <code>QMK_ESC</code> the same key as the one designated for <a href="../feature_bootmagic/#bootmagic-lite">Bootmagic Lite</a>, as holding it down will cause the MCU to loop back and forth between entering and exiting the bootloader.</p>
+<p>The manufacturer and product strings are automatically pulled from <code>config.h</code>, with " Bootloader" appended to the product string.</p>
+<p>To generate this bootloader, use the <code>bootloader</code> target, eg. <code>make planck/rev4:default:bootloader</code>. To generate a production-ready .hex file (combining QMK and the bootloader), use the <code>production</code> target, eg. <code>make planck/rev4:default:production</code>.</p>
+<h3 id="make-targets"><code>make</code> Targets<a class="headerlink" href="#make-targets" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>:dfu</code>: Checks every 5 seconds until a DFU device is available, and then flashes the firmware.</li>
+<li><code>:dfu-split-left</code> and <code>:dfu-split-right</code>: Flashes the firmware as with <code>:dfu</code>, but also sets the handedness setting in EEPROM. This is ideal for Elite-C-based split keyboards.</li>
+</ul>
+<h2 id="caterina">Caterina<a class="headerlink" href="#caterina" title="Permanent link">&para;</a></h2>
+<p>Arduino boards and their clones use the <a href="https://github.com/arduino/ArduinoCore-avr/tree/master/bootloaders/caterina">Caterina bootloader</a> or a variant of it (any keyboard built with a Pro Micro or clone, and the Pololu A-Star), and uses the AVR109 protocol to communicate through virtual serial.</p>
+<p>To ensure compatibility with the Caterina bootloader, make sure this block is present in your <code>rules.mk</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> caterina
+</code></pre></div>
+
+<p>Compatible flashers:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (recommended GUI)</li>
+<li><a href="https://www.nongnu.org/avrdude/">avrdude</a> with the <code>avr109</code> programmer / <code>:avrdude</code> target in QMK (recommended command line)</li>
+<li><a href="https://github.com/zkemble/AVRDUDESS">AVRDUDESS</a></li>
+</ul>
+<p>Flashing sequence:</p>
+<ol>
+<li>Enter the bootloader using any of the following methods (you only have 7 seconds to flash once it enters; some variants may require you to reset twice within 750 milliseconds):<ul>
+<li>Press the <code>RESET</code> keycode</li>
+<li>Press the <code>RESET</code> button on the PCB if available</li>
+<li>Short RST to GND quickly</li>
+</ul>
+</li>
+<li>Wait for the OS to detect the device</li>
+<li>Flash a .hex file</li>
+<li>Wait for the device to reset automatically</li>
+</ol>
+<h3 id="make-targets_1"><code>make</code> Targets<a class="headerlink" href="#make-targets_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>:avrdude</code>: Checks every 5 seconds until a Caterina device is available (by detecting a new COM port), and then flashes the firmware.</li>
+<li><code>:avrdude-loop</code>: Flashes the firmware as with <code>:avrdude</code>, but after each device is flashed, will attempt to flash again. This is useful for bulk flashing. Hit Ctrl+C to escape the loop.</li>
+<li><code>:avrdude-split-left</code> and <code>:avrdude-split-right</code>: Flashes the firmware as with <code>:avrdude</code>, but also sets the handedness setting in EEPROM. This is ideal for Pro Micro-based split keyboards.</li>
+</ul>
+<h2 id="halfkay">HalfKay<a class="headerlink" href="#halfkay" title="Permanent link">&para;</a></h2>
+<p>HalfKay is a super-slim bootloader developed by PJRC that presents itself as an HID device (which requires no additional driver), and comes preflashed on all Teensys, namely the 2.0. It is currently closed-source, and thus once overwritten (eg. via ISP flashing another bootloader), cannot be restored.</p>
+<p>To ensure compatibility with the Halfkay bootloader, make sure this block is present in your <code>rules.mk</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> halfkay
+</code></pre></div>
+
+<p>Compatible flashers:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (recommended GUI)</li>
+<li><a href="https://www.pjrc.com/teensy/loader_cli.html">Teensy Loader Command Line</a> / <code>:teensy</code> target in QMK (recommended command line)</li>
+<li><a href="https://www.pjrc.com/teensy/loader.html">Teensy Loader</a></li>
+</ul>
+<p>Flashing sequence:</p>
+<ol>
+<li>Enter the bootloader using any of the following methods (you only have 7 seconds to flash once it enters):<ul>
+<li>Press the <code>RESET</code> keycode</li>
+<li>Press the <code>RESET</code> button on the Teensy or PCB if available</li>
+<li>short RST to GND quickly</li>
+</ul>
+</li>
+<li>Wait for the OS to detect the device</li>
+<li>Flash a .hex file</li>
+<li>Reset the device into application mode (may be done automatically)</li>
+</ol>
+<h2 id="usbasploader">USBasploader<a class="headerlink" href="#usbasploader" title="Permanent link">&para;</a></h2>
+<p>USBasploader is a bootloader originally by <a href="https://www.obdev.at/products/vusb/usbasploader.html">Objective Development</a>. It emulates a USBasp ISP programmer and is used in some non-USB AVR chips such as the ATmega328P, which run V-USB.</p>
+<p>To ensure compatibility with the USBasploader bootloader, make sure this block is present in your <code>rules.mk</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> USBasp
+</code></pre></div>
+
+<p>Compatible flashers:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (recommended GUI)</li>
+<li><a href="https://www.nongnu.org/avrdude/">avrdude</a> with the <code>usbasp</code> programmer / <code>:usbasp</code> target in QMK (recommended command line)</li>
+<li><a href="https://github.com/zkemble/AVRDUDESS">AVRDUDESS</a></li>
+</ul>
+<p>Flashing sequence:</p>
+<ol>
+<li>Enter the bootloader using any of the following methods:<ul>
+<li>Press the <code>RESET</code> keycode</li>
+<li>Keep the <code>BOOT</code> button held while quickly tapping the <code>RESET</code> button on the PCB</li>
+</ul>
+</li>
+<li>Wait for the OS to detect the device</li>
+<li>Flash a .hex file</li>
+<li>Press the <code>RESET</code> button on the PCB or short RST to GND</li>
+</ol>
+<h2 id="bootloadhid">BootloadHID<a class="headerlink" href="#bootloadhid" title="Permanent link">&para;</a></h2>
+<p>BootloadHID is a USB bootloader for AVR microcontrollers. It presents itself as an HID input device, much like HalfKay, and can therefore be run without installing any driver on Windows.</p>
+<p>To ensure compatibility with the bootloadHID bootloader, make sure this block is present in your <code>rules.mk</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> bootloadHID
+</code></pre></div>
+
+<p>Compatible flashers:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (recommended GUI)</li>
+<li><a href="https://www.obdev.at/products/vusb/bootloadhid.html">bootloadHID CLI</a> / <code>:bootloadHID</code> target in QMK (recommended command line)</li>
+<li><a href="http://vusb.wikidot.com/project:hidbootflash">HIDBootFlash</a></li>
+</ul>
+<p>Flashing sequence:</p>
+<ol>
+<li>Enter the bootloader using any of the following methods:<ul>
+<li>Tap the <code>RESET</code> keycode</li>
+<li>Hold the salt key while plugging the keyboard in - for PS2AVRGB boards, this is usually the key connected to MCU pins A0 and B0, otherwise it will be documented in your keyboard's readme</li>
+</ul>
+</li>
+<li>Wait for the OS to detect the device</li>
+<li>Flash a .hex file</li>
+<li>Reset the device into application mode (may be done automatically)</li>
+</ol>
+<h2 id="stm32apm32-dfu">STM32/APM32 DFU<a class="headerlink" href="#stm32apm32-dfu" title="Permanent link">&para;</a></h2>
+<p>All STM32 and APM32 MCUs, except for F103 (see the <a href="#stm32duino">STM32duino section</a>) come preloaded with a factory bootloader that cannot be modified nor deleted.</p>
+<p>To ensure compatibility with the STM32-DFU bootloader, make sure this block is present in your <code>rules.mk</code> (optionally with <code>apm32-dfu</code> instead):</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> stm32-dfu
+</code></pre></div>
+
+<p>Compatible flashers:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (recommended GUI)</li>
+<li><a href="https://dfu-util.sourceforge.net/">dfu-util</a> / <code>:dfu-util</code> target in QMK (recommended command line)</li>
+</ul>
+<p>Flashing sequence:</p>
+<ol>
+<li>Enter the bootloader using any of the following methods:<ul>
+<li>Tap the <code>RESET</code> keycode (may not work on STM32F042 devices)</li>
+<li>If a reset circuit is present, tap the <code>RESET</code> button on the PCB; some boards may also have a toggle switch that must be flipped</li>
+<li>Otherwise, you need to bridge <code>BOOT0</code> to VCC (via <code>BOOT0</code> button or jumper), short <code>RESET</code> to GND (via <code>RESET</code> button or jumper), and then let go of the <code>BOOT0</code> bridge</li>
+</ul>
+</li>
+<li>Wait for the OS to detect the device</li>
+<li>Flash a .bin file</li>
+<li>Reset the device into application mode (may be done automatically)</li>
+</ol>
+<h3 id="make-targets_2"><code>make</code> Targets<a class="headerlink" href="#make-targets_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>:dfu-util</code>: Waits until an STM32 bootloader device is available, and then flashes the firmware.</li>
+<li><code>:dfu-util-split-left</code> and <code>:dfu-util-split-right</code>: Flashes the firmware as with <code>:avrdude</code>, but also sets the handedness setting in EEPROM. This is ideal for Proton-C-based split keyboards.</li>
+<li><code>:st-link-cli</code>: Allows you to flash the firmware via the ST-Link CLI utility, rather than dfu-util. Requires an ST-Link dongle.</li>
+<li><code>:st-flash</code>: Allows you to flash the firmware via the <code>st-flash</code> utility from <a href="https://github.com/stlink-org/stlink">STLink Tools</a>, rather than dfu-util. Requires an ST-Link dongle.</li>
+</ul>
+<h2 id="stm32duino">STM32duino<a class="headerlink" href="#stm32duino" title="Permanent link">&para;</a></h2>
+<p>This bootloader is used almost exclusively for STM32F103 boards, as they do not come with a USB DFU bootloader. The source code and prebuilt binaries can be found <a href="https://github.com/rogerclarkmelbourne/STM32duino-bootloader">here</a>.</p>
+<p>To ensure compatibility with the STM32duino bootloader, make sure this block is present in your <code>rules.mk</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> stm32duino
+</code></pre></div>
+
+<p>Compatible flashers:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (recommended GUI)</li>
+<li><a href="https://dfu-util.sourceforge.net/">dfu-util</a> / <code>:dfu-util</code> target in QMK (recommended command line)</li>
+</ul>
+<p>Flashing sequence:</p>
+<ol>
+<li>Enter the bootloader using any of the following methods:<ul>
+<li>Tap the <code>RESET</code> keycode</li>
+<li>If a reset circuit is present, tap the <code>RESET</code> button on the PCB</li>
+<li>Otherwise, you need to bridge <code>BOOT0</code> to VCC (via <code>BOOT0</code> button or jumper), short <code>RESET</code> to GND (via <code>RESET</code> button or jumper), and then let go of the <code>BOOT0</code> bridge</li>
+</ul>
+</li>
+<li>Wait for the OS to detect the device</li>
+<li>Flash a .bin file</li>
+<li>Reset the device into application mode (may be done automatically)</li>
+</ol>
+<h2 id="kiibohd-dfu">Kiibohd DFU<a class="headerlink" href="#kiibohd-dfu" title="Permanent link">&para;</a></h2>
+<p>Keyboards produced by Input Club use NXP Kinetis microcontrollers rather than STM32, and come with their own <a href="https://github.com/kiibohd/controller/tree/master/Bootloader">custom bootloader</a>, however the process and protocol is largely the same.</p>
+<p>The <code>rules.mk</code> setting for this bootloader is <code>kiibohd</code>, but since this bootloader is limited to Input Club boards, it should not be necessary to set at keymap or user level.</p>
+<p>Compatible flashers:</p>
+<ul>
+<li><a href="https://github.com/qmk/qmk_toolbox/releases">QMK Toolbox</a> (recommended GUI)</li>
+<li><a href="https://dfu-util.sourceforge.net/">dfu-util</a> / <code>:dfu-util</code> target in QMK (recommended command line)</li>
+</ul>
+<p>Flashing sequence:</p>
+<ol>
+<li>Enter the bootloader using any of the following methods:<ul>
+<li>Tap the <code>RESET</code> keycode (this may only enter the MCU into a "secure" bootloader mode; see https://github.com/qmk/qmk_firmware/issues/6112)</li>
+<li>Press the <code>RESET</code> button on the PCB</li>
+</ul>
+</li>
+<li>Wait for the OS to detect the device</li>
+<li>Flash a .bin file</li>
+<li>Reset the device into application mode (may be done automatically)</li>
+</ol>
+<h2 id="tinyuf2">tinyuf2<a class="headerlink" href="#tinyuf2" title="Permanent link">&para;</a></h2>
+<p>Keyboards may opt into supporting the tinyuf2 bootloader. This is currently only supported on the F411 blackpill.</p>
+<p>The <code>rules.mk</code> setting for this bootloader is <code>tinyuf2</code>, and can be specified at the keymap or user level.</p>
+<p>To ensure compatibility with the tinyuf2 bootloader, make sure this block is present in your <code>rules.mk</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="c"># Bootloader selection</span>
+<span class="nv">BOOTLOADER</span> <span class="o">=</span> tinyuf2
+</code></pre></div>
+
+<p>Compatible flashers:</p>
+<ul>
+<li>Any application able to copy a file from one place to another, such as <em>macOS Finder</em> or <em>Windows Explorer</em>.</li>
+</ul>
+<p>Flashing sequence:</p>
+<ol>
+<li>Enter the bootloader using any of the following methods:<ul>
+<li>Tap the <code>RESET</code> keycode</li>
+<li>Double-tap the <code>nRST</code> button on the PCB.</li>
+</ul>
+</li>
+<li>Wait for the OS to detect the device</li>
+<li>Copy the .uf2 file to the new USB disk</li>
+<li>Wait for the keyboard to become available</li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

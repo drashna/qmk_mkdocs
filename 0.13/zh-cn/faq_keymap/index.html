@@ -1,0 +1,618 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/zh-cn/faq_keymap/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>布局常见问题 - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              布局常见问题
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    我能用什么键码?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    默认的键码什么样?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    我有一些键变成了其他功能或者不工作了
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    菜单键不好用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kc_sysreq" class="md-nav__link">
+    KC_SYSREQ 不工作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    电源键不工作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    自动大小写锁定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    修改 键/层 卡住
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanical-lock-switch-support" class="md-nav__link">
+    机械自锁开关支持Mechanical Lock Switch Support
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asciicedille-c" class="md-nav__link">
+    输入ASCII之外的特殊字符比如Cédille 'Ç'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macosfn" class="md-nav__link">
+    macOS上的Fn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-osx" class="md-nav__link">
+    Mac OSX的媒体控制键
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-osx_1" class="md-nav__link">
+    Mac OSX中支持那些键?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-osxjis" class="md-nav__link">
+    Mac OSX中的JIS键
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rn-42karabiner" class="md-nav__link">
+    RN-42蓝牙模块与Karabiner不能有效协同工作
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#esc" class="md-nav__link">
+    Esc 和 &#96; 双功能键
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac-osx_2" class="md-nav__link">
+    Mac OSX的弹出键
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action_utilc-weak_modsreal_mods" class="md-nav__link">
+    action_util.c中的 weak_mods和real_mods是什么
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/zh-cn/faq_keymap.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">布局常见问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>本页本页包含人们经常遇到的关于布局的问题。如果你觉得没什么问题，请先看<a href="keymap.md">布局概览</a>。</p>
+<h2 id="_2">我能用什么键码?<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>看<a href="keycodes.md">键码</a>你可以找到你能用的键码索引。可以的话这些链接可以连接到更广泛的文档。</p>
+<p>键码实际上定义在<a href="https://github.com/qmk/qmk_firmware/blob/master/tmk_core/common/keycode.h">common/keycode.h</a>.</p>
+<h2 id="_3">默认的键码什么样?<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>世界上有三种标准键盘设计，分别是：ANSI, ISO, and JIS. 主要是北美用ANSI(译者注：中国很多键盘使用这个), 欧洲和非洲主要使用ISO，日本使用JIS。未提及的区域通常使用ANSI或ISO。与这些设计对应的键代码如下所示：</p>
+<!-- 该图片的来源: https://www.keyboard-layout-editor.com/#/gists/bf431647d1001cff5eff20ae55621e9a -->
+<p><img alt="键盘设计图" src="https://i.imgur.com/5wsh5wM.png" /></p>
+<h2 id="_4">我有一些键变成了其他功能或者不工作了<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>QMK有两个功能，Bootmagic和命令行，它允许您在运行中更改键盘的行为。该功能包括但不仅限于, 交换Ctrl/Caps，关闭界面，交换Alt/Gui，交换 Backspace/Backslash，禁用所有键，以及其他的行为改变。</p>
+<p>快速解决方法是插入键盘时按住<code>Space</code>+<code>Backspace</code>。该操作将重置已保存设置，让这些键回复初始功能。这招不好用的话参阅下方：</p>
+<ul>
+<li><a href="feature_bootmagic.md">Bootmagic</a></li>
+<li><a href="feature_command.md">命令</a> </li>
+</ul>
+<h2 id="_5">菜单键不好用<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>现在大多数键盘 <code>KC_RGUI</code>和<code>KC_RCTL</code>中间的键子叫做<code>KC_APP</code>。这是因为在这个键子发明之前相关标准里就已经有键叫做<code>MENU(菜单)</code>了，所以微软叫他<code>APP(应用)</code>键。</p>
+<h2 id="kc_sysreq"><code>KC_SYSREQ</code> 不工作<a class="headerlink" href="#kc_sysreq" title="Permanent link">&para;</a></h2>
+<p>使用抓屏的键码(<code>KC_PSCREEN</code>或<code>KC_PSCR</code>)而不用<code>KC_SYSREQ</code>。组合键'Alt + Print Screen'会被当作'System request'。</p>
+<p>见<a href="https://github.com/tmk/tmk_keyboard/issues/168">issue #168</a>和
+* https://en.wikipedia.org/wiki/Magic_SysRq_key
+* https://en.wikipedia.org/wiki/System_request</p>
+<h2 id="_6">电源键不工作<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>这有点让人困惑,QMK有两个"Power(电源)"键码: <code>KC_POWER</code> 在键盘/小键盘的HID使用页面中，<code>KC_SYSTEM_POWER</code> (或者叫<code>KC_PWR</code>)在用户页。</p>
+<p>前者只能被macOS识别，但是后者，即<code>KC_SLEP</code>和<code>KC_WAKE</code>三大主要操作系统全都支持，所以推荐使用这两个。Windows下这些键立即生效，macOS要长按直到弹出对话框。</p>
+<h2 id="_7">自动大小写锁定<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>可以解决'the'问题(正常应为The)。我经常在输入'The'时不慎输入了'the'或者'THe'。自动大小写锁定可以修正此类问题。详见下方链接。
+https://github.com/tmk/tmk_keyboard/issues/67</p>
+<h2 id="_8">修改 键/层 卡住<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>除非正确配置层切换，否则修改键或层可能会卡住。
+对于修改键和图层操作，必须把<code>KC_TRANS</code>放到目标层的相同位置，用于注销修改键或在释放事件时返回到上一层。
+* https://github.com/tmk/tmk_core/blob/master/doc/keymap.md#31-momentary-switching
+* https://geekhack.org/index.php?topic=57008.msg1492604#msg1492604
+* https://github.com/tmk/tmk_keyboard/issues/248</p>
+<h2 id="mechanical-lock-switch-support">机械自锁开关支持Mechanical Lock Switch Support<a class="headerlink" href="#mechanical-lock-switch-support" title="Permanent link">&para;</a></h2>
+<p>本功能用于<em>机械自锁开关</em>比如<a href="https://deskthority.net/wiki/Alps_SKCL_Lock">this Alps one</a>。你可以通过向<code>config.h</code>添加以下宏来使能该功能：</p>
+<div class="codehilite"><pre><span></span><code>#define LOCKING_SUPPORT_ENABLE
+#define LOCKING_RESYNC_ENABLE
+</code></pre></div>
+
+<p>在使能该功能后，要在键盘中使用<code>KC_LCAP</code>, <code>KC_LNUM</code> 和 <code>KC_LSCR</code>这三个键码。</p>
+<p>远古机械键盘偶尔会有自锁机械开关，现在几乎没有了。<strong><em>大多数情况下你不需要使用该功能，且要使用<code>KC_CAPS</code>, <code>KC_NLCK</code>和<code>KC_SLCK</code>这三个键码。</em></strong></p>
+<h2 id="asciicedille-c">输入ASCII之外的特殊字符比如Cédille 'Ç'<a class="headerlink" href="#asciicedille-c" title="Permanent link">&para;</a></h2>
+<p>请见<a href="feature_unicode.md">Unicode</a>功能。</p>
+<h2 id="macosfn">macOS上的<code>Fn</code><a class="headerlink" href="#macosfn" title="Permanent link">&para;</a></h2>
+<p>不像大多数FN键，苹果上那个有自己的键码...呃，基本上算吧。 他取缔了基本6键无冲HID报告的第六个键码 -- 所以苹果键盘其实是5键无冲的。</p>
+<p>技术上说QMK可以发送这个键。但是，这样做需要修改报告格式以添加FN键的状态。这还不是最糟糕的，你的键盘的VID和PID和真的苹果键盘不一样的话还不会被识别。
+QMK官方支持这个会被律师函的，所以就当我没说过。</p>
+<p>详见<a href="https://github.com/qmk/qmk_firmware/issues/2179">issue#2179</a>。</p>
+<h2 id="mac-osx">Mac OSX的媒体控制键<a class="headerlink" href="#mac-osx" title="Permanent link">&para;</a></h2>
+<h4 id="kc_mnxt-kc_mprv-mac">KC_MNXT 和 KC_MPRV 在Mac上不好用<a class="headerlink" href="#kc_mnxt-kc_mprv-mac" title="Permanent link">&para;</a></h4>
+<p>使用 <code>KC_MFFD</code>(<code>KC_MEDIA_FAST_FORWARD</code>) 和 <code>KC_MRWD</code>(<code>KC_MEDIA_REWIND</code>)，不要用 <code>KC_MNXT</code> 和 <code>KC_MPRV</code>.
+详见 https://github.com/tmk/tmk_keyboard/issues/195</p>
+<h2 id="mac-osx_1">Mac OSX中支持那些键?<a class="headerlink" href="#mac-osx_1" title="Permanent link">&para;</a></h2>
+<p>你可以从此源码中获知在OSX中支持哪些键码</p>
+<p><code>usb_2_adb_keymap</code> 阵列映射 键盘/小键盘 页用于ADB扫描码(OSX内部键码).</p>
+<p>https://opensource.apple.com/source/IOHIDFamily/IOHIDFamily-606.1.7/IOHIDFamily/Cosmo_USB2ADB.c</p>
+<p><code>IOHIDConsumer::dispatchConsumerEvent</code>会处理用户页面用法。</p>
+<!--翻译问题：上面那两句翻译的不好-> handles Consumer page usages. -->
+<p>https://opensource.apple.com/source/IOHIDFamily/IOHIDFamily-606.1.7/IOHIDFamily/IOHIDConsumer.cpp</p>
+<h2 id="mac-osxjis">Mac OSX中的JIS键<a class="headerlink" href="#mac-osxjis" title="Permanent link">&para;</a></h2>
+<p>岛国特别键比如<code>無変換(Muhenkan)</code>, <code>変換(Henkan)</code>, <code>ひらがな(hiragana)</code>OSX是不是别的。You can use <strong>Seil</strong> to enable those keys, try following options.</p>
+<!--翻译问题：以上“岛国特别键”没有任何地域歧视的意思 -->
+<ul>
+<li>在电脑键盘上使能NFER键</li>
+<li>在电脑键盘上使能XFER键</li>
+<li>在电脑键盘上使能KATAKAN键</li>
+</ul>
+<p>https://pqrs.org/osx/karabiner/seil.html</p>
+<h2 id="rn-42karabiner">RN-42蓝牙模块与Karabiner不能有效协同工作<a class="headerlink" href="#rn-42karabiner" title="Permanent link">&para;</a></h2>
+<p>Karabiner - Mac OSX的改键软件 - 默认RN-42模块是不会被响应的。想要Karabiner和你的键盘协同工作你要使能此选项：
+https://github.com/tekezo/Karabiner/issues/403#issuecomment-102559237</p>
+<p>此问题详见下方链接。
+https://github.com/tmk/tmk_keyboard/issues/213
+https://github.com/tekezo/Karabiner/issues/403</p>
+<h2 id="esc">Esc 和 <code>&#96;</code> 双功能键<a class="headerlink" href="#esc" title="Permanent link">&para;</a></h2>
+<p>请见<a href="feature_grave_esc.md">Grave Escape</a>功能。</p>
+<h2 id="mac-osx_2">Mac OSX的弹出键<a class="headerlink" href="#mac-osx_2" title="Permanent link">&para;</a></h2>
+<p><code>KC_EJCT</code> 键码在OSX可以使用 https://github.com/tmk/tmk_keyboard/issues/250
+似乎Windows10会忽略该键码，Linux/Xorg可以识别该键码但默认不映射。</p>
+<p>目前尚不清楚如何在真正的苹果键盘按出弹出键。HHKB使用<code>F20</code>用于弹出键(<code>Fn+f</code>)，该功能在MAC模式有效但不保证与苹果弹出键码相符。</p>
+<h2 id="action_utilc-weak_modsreal_mods"><code>action_util.c</code>中的 <code>weak_mods</code>和<code>real_mods</code>是什么<a class="headerlink" href="#action_utilc-weak_modsreal_mods" title="Permanent link">&para;</a></h2>
+<p><strong><em>待改善</em></strong></p>
+<p>real_mods 用于保存实际(物理)修改键的实际状态。
+weak_mods 用于保存虚拟或临时修改键，它将不会影响实际修改键。</p>
+<p>以按下左侧Shift键然后输入ACTION_MODS_KEY(LSHIFT, KC_A)为例，</p>
+<p>在weak_mods时，
+* (1) 按下不抬起左Shift: real_mods |= MOD_BIT(LSHIFT)
+* (2) 按 ACTION_MODS_KEY(LSHIFT, KC_A): weak_mods |= MOD_BIT(LSHIFT)
+* (3) 抬起 ACTION_MODS_KEY(LSHIFT, KC_A): weak_mods &amp;= ~MOD_BIT(LSHIFT)
+real_mods 还是保持在修改状态。</p>
+<p>在没有weak_mods时，
+* (1) 按下不抬起左Shift: real_mods |= MOD_BIT(LSHIFT)
+* (2) 按 ACTION_MODS_KEY(LSHIFT, KC_A): real_mods |= MOD_BIT(LSHIFT)
+* (3) 抬起 ACTION_MODS_KEY(LSHIFT, KC_A): real_mods &amp;= ~MOD_BIT(LSHIFT)
+此时real_mods失去‘实际左Shift’的状态。</p>
+<p>weak_mods和real_mods现已全部加入键盘数据包发送豪华套餐。
+https://github.com/tmk/tmk_core/blob/master/common/action_util.c#L57</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

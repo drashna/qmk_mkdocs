@@ -1,0 +1,1667 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/feature_rgblight/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>RGB Lighting - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rgb-lighting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RGB Lighting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#color-selection" class="md-nav__link">
+    Color Selection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keycodes" class="md-nav__link">
+    Keycodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effects-and-animations" class="md-nav__link">
+    Effects and Animations
+  </a>
+  
+    <nav class="md-nav" aria-label="Effects and Animations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#effect-and-animation-toggles" class="md-nav__link">
+    Effect and Animation Toggles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effect-and-animation-settings" class="md-nav__link">
+    Effect and Animation Settings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-usage-to-reduce-memory-footprint" class="md-nav__link">
+    Example Usage to Reduce Memory Footprint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animation-speed" class="md-nav__link">
+    Animation Speed
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lighting-layers" class="md-nav__link">
+    Lighting Layers
+  </a>
+  
+    <nav class="md-nav" aria-label="Lighting Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-lighting-layers-iddefining-lighting-layers" class="md-nav__link">
+    Defining Lighting Layers :id=defining-lighting-layers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-and-disabling-lighting-layers-idenabling-lighting-layers" class="md-nav__link">
+    Enabling and disabling lighting layers :id=enabling-lighting-layers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lighting-layer-blink-idlighting-layer-blink" class="md-nav__link">
+    Lighting layer blink :id=lighting-layer-blink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overriding-rgb-lighting-onoff-status" class="md-nav__link">
+    Overriding RGB Lighting on/off status
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#utility-functions" class="md-nav__link">
+    Utility Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-level-functions" class="md-nav__link">
+    Low level Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#effects-and-animations-functions" class="md-nav__link">
+    Effects and Animations Functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colors" class="md-nav__link">
+    Colors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-the-order-of-the-leds" class="md-nav__link">
+    Changing the order of the LEDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clipping-range" class="md-nav__link">
+    Clipping Range
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-modification" class="md-nav__link">
+    Hardware Modification
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_rgblight.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="rgb-lighting">RGB Lighting<a class="headerlink" href="#rgb-lighting" title="Permanent link">&para;</a></h1>
+<p>QMK has the ability to control RGB LEDs attached to your keyboard. This is commonly called <em>underglow</em>, due to the LEDs often being mounted on the bottom of the keyboard, producing a nice diffused effect when combined with a translucent case.</p>
+<p><img alt="Planck with RGB Underglow" src="https://raw.githubusercontent.com/qmk/qmk_firmware/3774a7fcdab5544fc787f4c200be05fcd417e31f/keyboards/planck/keymaps/yang/planck-with-rgb-underglow.jpg" /></p>
+<p>Some keyboards come with RGB LEDs preinstalled. Others must have them installed after the fact. See the <a href="#hardware-modification">Hardware Modification</a> section for information on adding RGB lighting to your keyboard.</p>
+<p>Currently QMK supports the following addressable LEDs (however, the white LED in RGBW variants is not supported):</p>
+<ul>
+<li>WS2811, WS2812, WS2812B, WS2812C, etc.</li>
+<li>SK6812, SK6812MINI, SK6805</li>
+<li>APA102</li>
+</ul>
+<p>These LEDs are called "addressable" because instead of using a wire per color, each LED contains a small microchip that understands a special protocol sent over a single wire. The chip passes on the remaining data to the next LED, allowing them to be chained together. In this way, you can easily control the color of the individual LEDs.</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>On keyboards with onboard RGB LEDs, it is usually enabled by default. If it is not working for you, check that your <code>rules.mk</code> includes the following:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">RGBLIGHT_ENABLE</span> <span class="o">=</span> yes
+</code></pre></div>
+
+<p>For APA102 LEDs, add the following to your <code>rules.mk</code>:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">RGBLIGHT_ENABLE</span> <span class="o">=</span> yes
+<span class="nv">RGBLIGHT_DRIVER</span> <span class="o">=</span> APA102
+</code></pre></div>
+
+<p>At minimum you must define the data pin your LED strip is connected to, and the number of LEDs in the strip, in your <code>config.h</code>. For APA102 LEDs, you must also define the clock pin. If your keyboard has onboard RGB LEDs, and you are simply creating a keymap, you usually won't need to modify these.</p>
+<table>
+<thead>
+<tr>
+<th>Define</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RGB_DI_PIN</code></td>
+<td>The pin connected to the data pin of the LEDs</td>
+</tr>
+<tr>
+<td><code>RGB_CI_PIN</code></td>
+<td>The pin connected to the clock pin of the LEDs (APA102 only)</td>
+</tr>
+<tr>
+<td><code>RGBLED_NUM</code></td>
+<td>The number of LEDs connected</td>
+</tr>
+<tr>
+<td><code>RGBLED_SPLIT</code></td>
+<td>(Optional) For split keyboards, the number of LEDs connected on each half directly wired to <code>RGB_DI_PIN</code></td>
+</tr>
+</tbody>
+</table>
+<p>Then you should be able to use the keycodes below to change the RGB lighting to your liking.</p>
+<h3 id="color-selection">Color Selection<a class="headerlink" href="#color-selection" title="Permanent link">&para;</a></h3>
+<p>QMK uses <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">Hue, Saturation, and Value</a> to select colors rather than RGB. The color wheel below demonstrates how this works.</p>
+<p><img src="gitbook/images/color-wheel.svg" alt="HSV Color Wheel" width="250"/></p>
+<p>Changing the <strong>Hue</strong> cycles around the circle.<br>
+Changing the <strong>Saturation</strong> moves between the inner and outer sections of the wheel, affecting the intensity of the color.<br>
+Changing the <strong>Value</strong> sets the overall brightness.<br></p>
+<p><img alt="QMK Color Wheel with HSV Values" src="https://i.imgur.com/vkYVo66.jpg" /></p>
+<h2 id="keycodes">Keycodes<a class="headerlink" href="#keycodes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Aliases</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RGB_TOG</code></td>
+<td></td>
+<td>Toggle RGB lighting on or off</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_FORWARD</code></td>
+<td><code>RGB_MOD</code></td>
+<td>Cycle through modes, reverse direction when Shift is held</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_REVERSE</code></td>
+<td><code>RGB_RMOD</code></td>
+<td>Cycle through modes in reverse, forward direction when Shift is held</td>
+</tr>
+<tr>
+<td><code>RGB_HUI</code></td>
+<td></td>
+<td>Increase hue, decrease hue when Shift is held</td>
+</tr>
+<tr>
+<td><code>RGB_HUD</code></td>
+<td></td>
+<td>Decrease hue, increase hue when Shift is held</td>
+</tr>
+<tr>
+<td><code>RGB_SAI</code></td>
+<td></td>
+<td>Increase saturation, decrease saturation when Shift is held</td>
+</tr>
+<tr>
+<td><code>RGB_SAD</code></td>
+<td></td>
+<td>Decrease saturation, increase saturation when Shift is held</td>
+</tr>
+<tr>
+<td><code>RGB_VAI</code></td>
+<td></td>
+<td>Increase value (brightness), decrease value when Shift is held</td>
+</tr>
+<tr>
+<td><code>RGB_VAD</code></td>
+<td></td>
+<td>Decrease value (brightness), increase value when Shift is held</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_PLAIN</code></td>
+<td><code>RGB_M_P</code></td>
+<td>Static (no animation) mode</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_BREATHE</code></td>
+<td><code>RGB_M_B</code></td>
+<td>Breathing animation mode</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_RAINBOW</code></td>
+<td><code>RGB_M_R</code></td>
+<td>Rainbow animation mode</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_SWIRL</code></td>
+<td><code>RGB_M_SW</code></td>
+<td>Swirl animation mode</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_SNAKE</code></td>
+<td><code>RGB_M_SN</code></td>
+<td>Snake animation mode</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_KNIGHT</code></td>
+<td><code>RGB_M_K</code></td>
+<td>"Knight Rider" animation mode</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_XMAS</code></td>
+<td><code>RGB_M_X</code></td>
+<td>Christmas animation mode</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_GRADIENT</code></td>
+<td><code>RGB_M_G</code></td>
+<td>Static gradient animation mode</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_RGBTEST</code></td>
+<td><code>RGB_M_T</code></td>
+<td>Red, Green, Blue test animation mode</td>
+</tr>
+<tr>
+<td><code>RGB_MODE_TWINKLE</code></td>
+<td><code>RGB_M_TW</code></td>
+<td>Twinkle animation mode</td>
+</tr>
+</tbody>
+</table>
+<p>!&gt; By default, if you have both the RGB Light and the <a href="../feature_rgb_matrix/">RGB Matrix</a> feature enabled, these keycodes will work for both features, at the same time. You can disable the keycode functionality by defining the <code>*_DISABLE_KEYCODES</code> option for the specific feature.</p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>Your RGB lighting can be configured by placing these <code>#define</code>s in your <code>config.h</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Define</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RGBLIGHT_HUE_STEP</code></td>
+<td><code>10</code></td>
+<td>The number of steps to cycle through the hue by</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_SAT_STEP</code></td>
+<td><code>17</code></td>
+<td>The number of steps to increment the saturation by</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_VAL_STEP</code></td>
+<td><code>17</code></td>
+<td>The number of steps to increment the brightness by</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_LIMIT_VAL</code></td>
+<td><code>255</code></td>
+<td>The maximum brightness level</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_SLEEP</code></td>
+<td><em>Not defined</em></td>
+<td>If defined, the RGB lighting will be switched off when the host goes to sleep</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_SPLIT</code></td>
+<td><em>Not defined</em></td>
+<td>If defined, synchronization functionality for split keyboards is added</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_DISABLE_KEYCODES</code></td>
+<td><em>Not defined</em></td>
+<td>If defined, disables the ability to control RGB Light from the keycodes. You must use code functions to control the feature</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_DEFAULT_MODE</code></td>
+<td><code>RGBLIGHT_MODE_STATIC_LIGHT</code></td>
+<td>The default mode to use upon clearing the EEPROM</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_DEFAULT_HUE</code></td>
+<td><code>0</code> (red)</td>
+<td>The default hue to use upon clearing the EEPROM</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_DEFAULT_SAT</code></td>
+<td><code>UINT8_MAX</code> (255)</td>
+<td>The default saturation to use upon clearing the EEPROM</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_DEFAULT_VAL</code></td>
+<td><code>RGBLIGHT_LIMIT_VAL</code></td>
+<td>The default value (brightness) to use upon clearing the EEPROM</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_DEFAULT_SPD</code></td>
+<td><code>0</code></td>
+<td>The default speed to use upon clearing the EEPROM</td>
+</tr>
+</tbody>
+</table>
+<h2 id="effects-and-animations">Effects and Animations<a class="headerlink" href="#effects-and-animations" title="Permanent link">&para;</a></h2>
+<p>Not only can this lighting be whatever color you want,
+if <code>RGBLIGHT_EFFECT_xxxx</code> or <code>RGBLIGHT_ANIMATIONS</code> is defined, you also have a number of animation modes at your disposal:</p>
+<table>
+<thead>
+<tr>
+<th>Mode number symbol</th>
+<th>Additional number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RGBLIGHT_MODE_STATIC_LIGHT</code></td>
+<td><em>None</em></td>
+<td>Solid color (this mode is always enabled)</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_MODE_BREATHING</code></td>
+<td>0,1,2,3</td>
+<td>Solid color breathing</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_MODE_RAINBOW_MOOD</code></td>
+<td>0,1,2</td>
+<td>Cycling rainbow</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_MODE_RAINBOW_SWIRL</code></td>
+<td>0,1,2,3,4,5</td>
+<td>Swirling rainbow</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_MODE_SNAKE</code></td>
+<td>0,1,2,3,4,5</td>
+<td>Snake</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_MODE_KNIGHT</code></td>
+<td>0,1,2</td>
+<td>Knight</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_MODE_CHRISTMAS</code></td>
+<td><em>None</em></td>
+<td>Christmas</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_MODE_STATIC_GRADIENT</code></td>
+<td>0,1,..,9</td>
+<td>Static gradient</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_MODE_RGB_TEST</code></td>
+<td><em>None</em></td>
+<td>RGB Test</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_MODE_ALTERNATING</code></td>
+<td><em>None</em></td>
+<td>Alternating</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_MODE_TWINKLE</code></td>
+<td>0,1,2,3,4,5</td>
+<td>Twinkle</td>
+</tr>
+</tbody>
+</table>
+<p>Check out <a href="https://youtube.com/watch?v=VKrpPAHlisY">this video</a> for a demonstration.</p>
+<p>Note: For versions older than 0.6.117, The mode numbers were written directly. In <code>quantum/rgblight.h</code> there is a contrast table between the old mode number and the current symbol.</p>
+<h3 id="effect-and-animation-toggles">Effect and Animation Toggles<a class="headerlink" href="#effect-and-animation-toggles" title="Permanent link">&para;</a></h3>
+<p>Use these defines to add or remove animations from the firmware. When you are running low on flash space, it can be helpful to disable animations you are not using.</p>
+<table>
+<thead>
+<tr>
+<th>Define</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RGBLIGHT_ANIMATIONS</code></td>
+<td><em>Not defined</em></td>
+<td>Enable all additional animation modes.</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_ALTERNATING</code></td>
+<td><em>Not defined</em></td>
+<td>Enable alternating animation mode.</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_BREATHING</code></td>
+<td><em>Not defined</em></td>
+<td>Enable breathing animation mode.</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_CHRISTMAS</code></td>
+<td><em>Not defined</em></td>
+<td>Enable christmas animation mode.</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_KNIGHT</code></td>
+<td><em>Not defined</em></td>
+<td>Enable knight animation mode.</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_RAINBOW_MOOD</code></td>
+<td><em>Not defined</em></td>
+<td>Enable rainbow mood animation mode.</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_RAINBOW_SWIRL</code></td>
+<td><em>Not defined</em></td>
+<td>Enable rainbow swirl animation mode.</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_RGB_TEST</code></td>
+<td><em>Not defined</em></td>
+<td>Enable RGB test animation mode.</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_SNAKE</code></td>
+<td><em>Not defined</em></td>
+<td>Enable snake animation mode.</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_STATIC_GRADIENT</code></td>
+<td><em>Not defined</em></td>
+<td>Enable static gradient mode.</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_TWINKLE</code></td>
+<td><em>Not defined</em></td>
+<td>Enable twinkle animation mode.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="effect-and-animation-settings">Effect and Animation Settings<a class="headerlink" href="#effect-and-animation-settings" title="Permanent link">&para;</a></h3>
+<p>The following options are used to tweak the various animations:</p>
+<table>
+<thead>
+<tr>
+<th>Define</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RGBLIGHT_EFFECT_BREATHE_CENTER</code></td>
+<td><em>Not defined</em></td>
+<td>If defined, used to calculate the curve for the breathing animation. Valid values are 1.0 to 2.7</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_BREATHE_MAX</code></td>
+<td><code>255</code></td>
+<td>The maximum brightness for the breathing mode. Valid values are 1 to 255</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_CHRISTMAS_INTERVAL</code></td>
+<td><code>40</code></td>
+<td>How long (in milliseconds) to wait between animation steps for the "Christmas" animation</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_CHRISTMAS_STEP</code></td>
+<td><code>2</code></td>
+<td>The number of LEDs to group the red/green colors by for the "Christmas" animation</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_KNIGHT_LED_NUM</code></td>
+<td><code>RGBLED_NUM</code></td>
+<td>The number of LEDs to have the "Knight" animation travel</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_KNIGHT_LENGTH</code></td>
+<td><code>3</code></td>
+<td>The number of LEDs to light up for the "Knight" animation</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_KNIGHT_OFFSET</code></td>
+<td><code>0</code></td>
+<td>The number of LEDs to start the "Knight" animation from the start of the strip by</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_RAINBOW_SWIRL_RANGE</code></td>
+<td><code>255</code></td>
+<td>Range adjustment for the rainbow swirl effect to get different swirls</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_SNAKE_LENGTH</code></td>
+<td><code>4</code></td>
+<td>The number of LEDs to light up for the "Snake" animation</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_TWINKLE_LIFE</code></td>
+<td><code>200</code></td>
+<td>Adjusts how quickly each LED brightens and dims when twinkling (in animation steps)</td>
+</tr>
+<tr>
+<td><code>RGBLIGHT_EFFECT_TWINKLE_PROBABILITY</code></td>
+<td><code>1/127</code></td>
+<td>Adjusts how likely each LED is to twinkle (on each animation step)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-usage-to-reduce-memory-footprint">Example Usage to Reduce Memory Footprint<a class="headerlink" href="#example-usage-to-reduce-memory-footprint" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Remove <code>RGBLIGHT_ANIMATIONS</code> from <code>config.h</code>.</li>
+<li>Selectively add the animations you want to enable. The following would enable two animations and save about 4KiB:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code> #undef RGBLED_NUM
+<span class="gd">-#define RGBLIGHT_ANIMATIONS</span>
+<span class="gi">+#define RGBLIGHT_EFFECT_STATIC_GRADIENT</span>
+<span class="gi">+#define RGBLIGHT_EFFECT_RAINBOW_SWIRL</span>
+ #define RGBLED_NUM 12
+ #define RGBLIGHT_HUE_STEP 8
+ #define RGBLIGHT_SAT_STEP 8
+</code></pre></div>
+
+<h3 id="animation-speed">Animation Speed<a class="headerlink" href="#animation-speed" title="Permanent link">&para;</a></h3>
+<p>You can also modify the speeds that the different modes animate at:</p>
+<p>Here is a quick demo on Youtube (with NPKC KC60) (https://www.youtube.com/watch?v=VKrpPAHlisY).</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// How long (in milliseconds) to wait between animation steps for each of the &quot;Solid color breathing&quot; animations</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">RGBLED_BREATHING_INTERVALS</span><span class="p">[]</span> <span class="n">PROGMEM</span> <span class="o">=</span> <span class="p">{</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+
+<span class="c1">// How long (in milliseconds) to wait between animation steps for each of the &quot;Cycling rainbow&quot; animations</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">RGBLED_RAINBOW_MOOD_INTERVALS</span><span class="p">[]</span> <span class="n">PROGMEM</span> <span class="o">=</span> <span class="p">{</span><span class="mi">120</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">30</span><span class="p">};</span>
+
+<span class="c1">// How long (in milliseconds) to wait between animation steps for each of the &quot;Swirling rainbow&quot; animations</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">RGBLED_RAINBOW_SWIRL_INTERVALS</span><span class="p">[]</span> <span class="n">PROGMEM</span> <span class="o">=</span> <span class="p">{</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">};</span>
+
+<span class="c1">// How long (in milliseconds) to wait between animation steps for each of the &quot;Snake&quot; animations</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">RGBLED_SNAKE_INTERVALS</span><span class="p">[]</span> <span class="n">PROGMEM</span> <span class="o">=</span> <span class="p">{</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">};</span>
+
+<span class="c1">// How long (in milliseconds) to wait between animation steps for each of the &quot;Knight&quot; animations</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">RGBLED_KNIGHT_INTERVALS</span><span class="p">[]</span> <span class="n">PROGMEM</span> <span class="o">=</span> <span class="p">{</span><span class="mi">127</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">31</span><span class="p">};</span>
+
+<span class="c1">// How long (in milliseconds) to wait between animation steps for each of the &quot;Twinkle&quot; animations</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">RGBLED_TWINKLE_INTERVALS</span><span class="p">[]</span> <span class="n">PROGMEM</span> <span class="o">=</span> <span class="p">{</span><span class="mi">50</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span><span class="p">};</span>
+
+<span class="c1">// These control which hues are selected for each of the &quot;Static gradient&quot; modes</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">RGBLED_GRADIENT_RANGES</span><span class="p">[]</span> <span class="n">PROGMEM</span> <span class="o">=</span> <span class="p">{</span><span class="mi">255</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">64</span><span class="p">};</span>
+</code></pre></div>
+
+<h2 id="lighting-layers">Lighting Layers<a class="headerlink" href="#lighting-layers" title="Permanent link">&para;</a></h2>
+<p>?&gt; <strong>Note:</strong> Lighting Layers is an RGB Light feature, it will not work for RGB Matrix. See <a href="../feature_rgb_matrix/?indicators">RGB Matrix Indicators</a> for details on how to do so.</p>
+<p>By including <code>#define RGBLIGHT_LAYERS</code> in your <code>config.h</code> file you can enable lighting layers. These make
+it easy to use your underglow LEDs as status indicators to show which keyboard layer is currently active, or the state of caps lock, all without disrupting any animations. <a href="https://youtu.be/uLGE1epbmdY">Here's a video</a> showing an example of what you can do.</p>
+<h3 id="defining-lighting-layers-iddefining-lighting-layers">Defining Lighting Layers :id=defining-lighting-layers<a class="headerlink" href="#defining-lighting-layers-iddefining-lighting-layers" title="Permanent link">&para;</a></h3>
+<p>By default, 8 layers are possible. This can be expanded to as many as 32 by overriding the definition of <code>RGBLIGHT_MAX_LAYERS</code> in <code>config.h</code> (e.g. <code>#define RGBLIGHT_MAX_LAYERS 32</code>). Please note, if you use a split keyboard, you will need to flash both sides of the split after changing this. Also, increasing the maximum will increase the firmware size, and will slow sync on split keyboards.</p>
+<p>To define a layer, we modify <code>keymap.c</code> to list the LED ranges and the colors we want to overlay on them using an array of <code>rgblight_segment_t</code> using the <code>RGBLIGHT_LAYER_SEGMENTS</code> macro. We can define multiple layers and enable/disable them independently:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Light LEDs 6 to 9 and 12 to 15 red when caps lock is active. Hard to ignore!</span>
+<span class="k">const</span> <span class="n">rgblight_segment_t</span> <span class="n">PROGMEM</span> <span class="n">my_capslock_layer</span><span class="p">[]</span> <span class="o">=</span> <span class="n">RGBLIGHT_LAYER_SEGMENTS</span><span class="p">(</span>
+    <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">HSV_RED</span><span class="p">},</span>       <span class="c1">// Light 4 LEDs, starting with LED 6</span>
+    <span class="p">{</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">HSV_RED</span><span class="p">}</span>       <span class="c1">// Light 4 LEDs, starting with LED 12</span>
+<span class="p">);</span>
+<span class="c1">// Light LEDs 9 &amp; 10 in cyan when keyboard layer 1 is active</span>
+<span class="k">const</span> <span class="n">rgblight_segment_t</span> <span class="n">PROGMEM</span> <span class="n">my_layer1_layer</span><span class="p">[]</span> <span class="o">=</span> <span class="n">RGBLIGHT_LAYER_SEGMENTS</span><span class="p">(</span>
+    <span class="p">{</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HSV_CYAN</span><span class="p">}</span>
+<span class="p">);</span>
+<span class="c1">// Light LEDs 11 &amp; 12 in purple when keyboard layer 2 is active</span>
+<span class="k">const</span> <span class="n">rgblight_segment_t</span> <span class="n">PROGMEM</span> <span class="n">my_layer2_layer</span><span class="p">[]</span> <span class="o">=</span> <span class="n">RGBLIGHT_LAYER_SEGMENTS</span><span class="p">(</span>
+    <span class="p">{</span><span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HSV_PURPLE</span><span class="p">}</span>
+<span class="p">);</span>
+<span class="c1">// Light LEDs 13 &amp; 14 in green when keyboard layer 3 is active</span>
+<span class="k">const</span> <span class="n">rgblight_segment_t</span> <span class="n">PROGMEM</span> <span class="n">my_layer3_layer</span><span class="p">[]</span> <span class="o">=</span> <span class="n">RGBLIGHT_LAYER_SEGMENTS</span><span class="p">(</span>
+    <span class="p">{</span><span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HSV_GREEN</span><span class="p">}</span>
+<span class="p">);</span>
+<span class="c1">// etc..</span>
+</code></pre></div>
+
+<p>We combine these layers into an array using the <code>RGBLIGHT_LAYERS_LIST</code> macro, and assign it to the <code>rgblight_layers</code> variable during keyboard setup. Note that you can only define up to 8 lighting layers. Any extra layers will be ignored. Since the different lighting layers overlap, the order matters in the array, with later layers taking precedence:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// Now define the array of layers. Later layers take precedence</span>
+<span class="k">const</span> <span class="n">rgblight_segment_t</span><span class="o">*</span> <span class="k">const</span> <span class="n">PROGMEM</span> <span class="n">my_rgb_layers</span><span class="p">[]</span> <span class="o">=</span> <span class="n">RGBLIGHT_LAYERS_LIST</span><span class="p">(</span>
+    <span class="n">my_capslock_layer</span><span class="p">,</span>
+    <span class="n">my_layer1_layer</span><span class="p">,</span>    <span class="c1">// Overrides caps lock layer</span>
+    <span class="n">my_layer2_layer</span><span class="p">,</span>    <span class="c1">// Overrides other layers</span>
+    <span class="n">my_layer3_layer</span>     <span class="c1">// Overrides other layers</span>
+<span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">keyboard_post_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Enable the LED layers</span>
+    <span class="n">rgblight_layers</span> <span class="o">=</span> <span class="n">my_rgb_layers</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Note: For split keyboards with two controllers, both sides need to be flashed when updating the contents of rgblight_layers.</p>
+<h3 id="enabling-and-disabling-lighting-layers-idenabling-lighting-layers">Enabling and disabling lighting layers :id=enabling-lighting-layers<a class="headerlink" href="#enabling-and-disabling-lighting-layers-idenabling-lighting-layers" title="Permanent link">&para;</a></h3>
+<p>Everything above just configured the definition of each lighting layer.
+We can now enable and disable the lighting layers whenever the state of the keyboard changes:</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">bool</span> <span class="nf">led_update_user</span><span class="p">(</span><span class="n">led_t</span> <span class="n">led_state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">rgblight_set_layer_state</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">led_state</span><span class="p">.</span><span class="n">caps_lock</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">layer_state_t</span> <span class="nf">default_layer_state_set_user</span><span class="p">(</span><span class="n">layer_state_t</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">rgblight_set_layer_state</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">layer_state_cmp</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">_DVORAK</span><span class="p">));</span>
+    <span class="k">return</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">layer_state_t</span> <span class="nf">layer_state_set_user</span><span class="p">(</span><span class="n">layer_state_t</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">rgblight_set_layer_state</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">layer_state_cmp</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">_FN</span><span class="p">));</span>
+    <span class="n">rgblight_set_layer_state</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">layer_state_cmp</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">_ADJUST</span><span class="p">));</span>
+    <span class="k">return</span> <span class="n">state</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="lighting-layer-blink-idlighting-layer-blink">Lighting layer blink :id=lighting-layer-blink<a class="headerlink" href="#lighting-layer-blink-idlighting-layer-blink" title="Permanent link">&para;</a></h3>
+<p>By including <code>#define RGBLIGHT_LAYER_BLINK</code> in your <code>config.h</code> file you can turn a lighting
+layer on for a specified duration. Once the specified number of milliseconds has elapsed
+the layer will be turned off. This is useful, e.g., if you want to acknowledge some
+action (e.g. toggling some setting):</p>
+<div class="codehilite"><pre><span></span><code><span class="k">const</span> <span class="n">rgblight_segment_t</span> <span class="n">PROGMEM</span> <span class="n">_yes_layer</span><span class="p">[]</span> <span class="o">=</span> <span class="n">RGBLIGHT_LAYER_SEGMENTS</span><span class="p">(</span> <span class="p">{</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">HSV_GREEN</span><span class="p">}</span> <span class="p">);</span>
+<span class="k">const</span> <span class="n">rgblight_segment_t</span> <span class="n">PROGMEM</span> <span class="n">_no_layer</span><span class="p">[]</span> <span class="o">=</span> <span class="n">RGBLIGHT_LAYER_SEGMENTS</span><span class="p">(</span> <span class="p">{</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">HSV_RED</span><span class="p">}</span> <span class="p">);</span>
+
+<span class="k">const</span> <span class="n">rgblight_segment_t</span><span class="o">*</span> <span class="k">const</span> <span class="n">PROGMEM</span> <span class="n">_rgb_layers</span><span class="p">[]</span> <span class="o">=</span>
+    <span class="n">RGBLIGHT_LAYERS_LIST</span><span class="p">(</span> <span class="n">_yes_layer</span><span class="p">,</span> <span class="n">_no_layer</span> <span class="p">);</span>
+
+<span class="kt">void</span> <span class="nf">keyboard_post_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">rgblight_layers</span> <span class="o">=</span> <span class="n">_rgb_layers</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Note we user post_process_record_user because we want the state</span>
+<span class="c1">// after the flag has been flipped...</span>
+<span class="kt">void</span> <span class="nf">post_process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nl">DEBUG</span><span class="p">:</span>
+            <span class="n">rgblight_blink_layer</span><span class="p">(</span><span class="n">debug_enable</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="nl">NK_TOGG</span><span class="p">:</span>
+        <span class="k">case</span> <span class="nl">NK_ON</span><span class="p">:</span>
+        <span class="k">case</span> <span class="nl">NK_OFF</span><span class="p">:</span>
+            <span class="n">rgblight_blink_layer</span><span class="p">(</span><span class="n">keymap_config</span><span class="p">.</span><span class="n">nkro</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>You can also use <code>rgblight_blink_layer_repeat</code> to specify the amount of times the layer is supposed to blink. Using the layers from above,</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">post_process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="nl">DEBUG</span><span class="p">:</span>
+            <span class="n">rgblight_blink_layer_repeat</span><span class="p">(</span><span class="n">debug_enable</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>would turn the layer 0 (or 1) on and off again three times when <code>DEBUG</code> is pressed.</p>
+<h3 id="overriding-rgb-lighting-onoff-status">Overriding RGB Lighting on/off status<a class="headerlink" href="#overriding-rgb-lighting-onoff-status" title="Permanent link">&para;</a></h3>
+<p>Normally lighting layers are not shown when RGB Lighting is disabled (e.g. with <code>RGB_TOG</code> keycode). If you would like lighting layers to work even when the RGB Lighting is otherwise off, add <code>#define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF</code> to your <code>config.h</code>.</p>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<p>If you need to change your RGB lighting in code, for example in a macro to change the color whenever you switch layers, QMK provides a set of functions to assist you. See <a href="https://github.com/qmk/qmk_firmware/blob/master/quantum/rgblight.h"><code>rgblight.h</code></a> for the full list, but the most commonly used functions include:</p>
+<h3 id="utility-functions">Utility Functions<a class="headerlink" href="#utility-functions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sethsv(hue, sat, val, ledbuf)</code></td>
+<td>Set ledbuf to the given HSV value</td>
+</tr>
+<tr>
+<td><code>sethsv_raw(hue, sat, val, ledbuf)</code></td>
+<td>Set ledbuf to the given HSV value without RGBLIGHT_LIMIT_VAL check</td>
+</tr>
+<tr>
+<td><code>setrgb(r, g, b, ledbuf)</code></td>
+<td>Set ledbuf to the given RGB value where <code>r</code>/<code>g</code>/<code>b</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="low-level-functions">Low level Functions<a class="headerlink" href="#low-level-functions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rgblight_set()</code></td>
+<td>Flash out led buffers to LEDs</td>
+</tr>
+<tr>
+<td><code>rgblight_set_clipping_range(pos, num)</code></td>
+<td>Set clipping Range. see <a href="#clipping-range">Clipping Range</a></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">sethsv</span><span class="p">(</span><span class="n">HSV_WHITE</span><span class="p">,</span> <span class="p">(</span><span class="n">LED_TYPE</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">led</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// led 0</span>
+<span class="n">sethsv</span><span class="p">(</span><span class="n">HSV_RED</span><span class="p">,</span>   <span class="p">(</span><span class="n">LED_TYPE</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">led</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// led 1</span>
+<span class="n">sethsv</span><span class="p">(</span><span class="n">HSV_GREEN</span><span class="p">,</span> <span class="p">(</span><span class="n">LED_TYPE</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">led</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span> <span class="c1">// led 2</span>
+<span class="n">rgblight_set</span><span class="p">();</span> <span class="c1">// Utility functions do not call rgblight_set() automatically, so they need to be called explicitly.</span>
+</code></pre></div>
+
+<h3 id="effects-and-animations-functions">Effects and Animations Functions<a class="headerlink" href="#effects-and-animations-functions" title="Permanent link">&para;</a></h3>
+<h4 id="effect-range-setting">effect range setting<a class="headerlink" href="#effect-range-setting" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rgblight_set_effect_range(pos, num)</code></td>
+<td>Set Effects Range</td>
+</tr>
+</tbody>
+</table>
+<h4 id="direct-operation">direct operation<a class="headerlink" href="#direct-operation" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rgblight_setrgb_at(r, g, b, index)</code></td>
+<td>Set a single LED to the given RGB value, where <code>r</code>/<code>g</code>/<code>b</code> are between 0 and 255 and <code>index</code> is between 0 and <code>RGBLED_NUM</code> (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_sethsv_at(h, s, v, index)</code></td>
+<td>Set a single LED to the given HSV value, where <code>h</code>/<code>s</code>/<code>v</code> are between 0 and 255, and <code>index</code> is between 0 and <code>RGBLED_NUM</code> (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_setrgb_range(r, g, b, start, end)</code></td>
+<td>Set a continuous range of LEDs to the given RGB value, where <code>r</code>/<code>g</code>/<code>b</code> are between 0 and 255 and <code>start</code>(included) and <code>stop</code>(excluded) are between 0 and <code>RGBLED_NUM</code> (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_sethsv_range(h, s, v, start, end)</code></td>
+<td>Set a continuous range of LEDs to the given HSV value, where <code>h</code>/<code>s</code>/<code>v</code> are between 0 and 255, and <code>start</code>(included) and <code>stop</code>(excluded) are between 0 and <code>RGBLED_NUM</code> (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_setrgb(r, g, b)</code></td>
+<td>Set effect range LEDs to the given RGB value where <code>r</code>/<code>g</code>/<code>b</code> are between 0 and 255 (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_setrgb_master(r, g, b)</code></td>
+<td>Set the LEDs on the master side  to the given RGB value, where <code>r</code>/<code>g</code>/<code>b</code> are between 0 and 255 (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_setrgb_slave(r, g, b)</code></td>
+<td>Set the LEDs on the slave side  to the given RGB value, where <code>r</code>/<code>g</code>/<code>b</code> are between 0 and 255 (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_sethsv_master(h, s, v)</code></td>
+<td>Set the LEDs on the master side to the given HSV value, where <code>h</code>/<code>s</code>/<code>v</code> are between 0 and 255 (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_sethsv_slave(h, s, v)</code></td>
+<td>Set the LEDs on the slave side to the given HSV value, where <code>h</code>/<code>s</code>/<code>v</code> are between 0 and 255 (not written to EEPROM)</td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">rgblight_sethsv_at</span><span class="p">(</span><span class="n">HSV_WHITE</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// led 0</span>
+<span class="n">rgblight_sethsv_at</span><span class="p">(</span><span class="n">HSV_RED</span><span class="p">,</span>   <span class="mi">1</span><span class="p">);</span> <span class="c1">// led 1</span>
+<span class="n">rgblight_sethsv_at</span><span class="p">(</span><span class="n">HSV_GREEN</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// led 2</span>
+<span class="c1">// The above functions automatically calls rgblight_set(), so there is no need to call it explicitly.</span>
+<span class="c1">// Note that it is inefficient to call repeatedly.</span>
+</code></pre></div>
+
+<h4 id="effect-mode-change">effect mode change<a class="headerlink" href="#effect-mode-change" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rgblight_mode(x)</code></td>
+<td>Set the mode, if RGB animations are enabled</td>
+</tr>
+<tr>
+<td><code>rgblight_mode_noeeprom(x)</code></td>
+<td>Set the mode, if RGB animations are enabled (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_step()</code></td>
+<td>Change the mode to the next RGB animation in the list of enabled RGB animations</td>
+</tr>
+<tr>
+<td><code>rgblight_step_noeeprom()</code></td>
+<td>Change the mode to the next RGB animation in the list of enabled RGB animations (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_step_reverse()</code></td>
+<td>Change the mode to the previous RGB animation in the list of enabled RGB animations</td>
+</tr>
+<tr>
+<td><code>rgblight_step_reverse_noeeprom()</code></td>
+<td>Change the mode to the previous RGB animation in the list of enabled RGB animations (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_reload_from_eeprom()</code></td>
+<td>Reload the effect configuration (enabled, mode and color) from EEPROM</td>
+</tr>
+</tbody>
+</table>
+<h4 id="effects-mode-disableenable">effects mode disable/enable<a class="headerlink" href="#effects-mode-disableenable" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rgblight_toggle()</code></td>
+<td>Toggle effect range LEDs between on and off</td>
+</tr>
+<tr>
+<td><code>rgblight_toggle_noeeprom()</code></td>
+<td>Toggle effect range LEDs between on and off (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_enable()</code></td>
+<td>Turn effect range LEDs on, based on their previous state</td>
+</tr>
+<tr>
+<td><code>rgblight_enable_noeeprom()</code></td>
+<td>Turn effect range LEDs on, based on their previous state (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_disable()</code></td>
+<td>Turn effect range LEDs off</td>
+</tr>
+<tr>
+<td><code>rgblight_disable_noeeprom()</code></td>
+<td>Turn effect range LEDs off (not written to EEPROM)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="hue-sat-val-change">hue, sat, val change<a class="headerlink" href="#hue-sat-val-change" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rgblight_increase_hue()</code></td>
+<td>Increase the hue for effect range LEDs. This wraps around at maximum hue</td>
+</tr>
+<tr>
+<td><code>rgblight_increase_hue_noeeprom()</code></td>
+<td>Increase the hue for effect range LEDs. This wraps around at maximum hue (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_decrease_hue()</code></td>
+<td>Decrease the hue for effect range LEDs. This wraps around at minimum hue</td>
+</tr>
+<tr>
+<td><code>rgblight_decrease_hue_noeeprom()</code></td>
+<td>Decrease the hue for effect range LEDs. This wraps around at minimum hue (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_increase_sat()</code></td>
+<td>Increase the saturation for effect range LEDs. This stops at maximum saturation</td>
+</tr>
+<tr>
+<td><code>rgblight_increase_sat_noeeprom()</code></td>
+<td>Increase the saturation for effect range LEDs. This stops at maximum saturation (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_decrease_sat()</code></td>
+<td>Decrease the saturation for effect range LEDs. This stops at minimum saturation</td>
+</tr>
+<tr>
+<td><code>rgblight_decrease_sat_noeeprom()</code></td>
+<td>Decrease the saturation for effect range LEDs. This stops at minimum saturation (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_increase_val()</code></td>
+<td>Increase the value for effect range LEDs. This stops at maximum value</td>
+</tr>
+<tr>
+<td><code>rgblight_increase_val_noeeprom()</code></td>
+<td>Increase the value for effect range LEDs. This stops at maximum value (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_decrease_val()</code></td>
+<td>Decrease the value for effect range LEDs. This stops at minimum value</td>
+</tr>
+<tr>
+<td><code>rgblight_decrease_val_noeeprom()</code></td>
+<td>Decrease the value for effect range LEDs. This stops at minimum value (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_sethsv(h, s, v)</code></td>
+<td>Set effect range LEDs to the given HSV value where <code>h</code>/<code>s</code>/<code>v</code> are between 0 and 255</td>
+</tr>
+<tr>
+<td><code>rgblight_sethsv_noeeprom(h, s, v)</code></td>
+<td>Set effect range LEDs to the given HSV value where <code>h</code>/<code>s</code>/<code>v</code> are between 0 and 255 (not written to EEPROM)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="speed-functions">Speed functions<a class="headerlink" href="#speed-functions" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rgblight_increase_speed()</code></td>
+<td>Increases the animation speed</td>
+</tr>
+<tr>
+<td><code>rgblight_increase_speed_noeeprom()</code></td>
+<td>Increases the animation speed (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_decrease_speed()</code></td>
+<td>Decreases the animation speed</td>
+</tr>
+<tr>
+<td><code>rgblight_decrease_speed_noeeprom()</code></td>
+<td>Decreases the animation speed (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>rgblight_set_speed()</code></td>
+<td>Sets the speed. Value is between 0 and 255</td>
+</tr>
+<tr>
+<td><code>rgblight_set_speed_noeeprom()</code></td>
+<td>Sets the speed. Value is between 0 and 255 (not written to EEPROM)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="layer-functions">layer functions<a class="headerlink" href="#layer-functions" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rgblight_get_layer_state(i)</code></td>
+<td>Returns <code>true</code> if lighting layer <code>i</code> is enabled</td>
+</tr>
+<tr>
+<td><code>rgblight_set_layer_state(i, is_on)</code></td>
+<td>Enable or disable lighting layer <code>i</code> based on value of <code>bool is_on</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="query">query<a class="headerlink" href="#query" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rgblight_is_enabled()</code></td>
+<td>Gets current on/off status</td>
+</tr>
+<tr>
+<td><code>rgblight_get_mode()</code></td>
+<td>Gets current mode</td>
+</tr>
+<tr>
+<td><code>rgblight_get_hue()</code></td>
+<td>Gets current hue</td>
+</tr>
+<tr>
+<td><code>rgblight_get_sat()</code></td>
+<td>Gets current sat</td>
+</tr>
+<tr>
+<td><code>rgblight_get_val()</code></td>
+<td>Gets current val</td>
+</tr>
+<tr>
+<td><code>rgblight_get_speed()</code></td>
+<td>Gets current speed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="colors">Colors<a class="headerlink" href="#colors" title="Permanent link">&para;</a></h2>
+<p>These are shorthands to popular colors. The <code>RGB</code> ones can be passed to the <code>setrgb</code> functions, while the <code>HSV</code> ones to the <code>sethsv</code> functions.</p>
+<table>
+<thead>
+<tr>
+<th>RGB</th>
+<th>HSV</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RGB_WHITE</code></td>
+<td><code>HSV_WHITE</code></td>
+</tr>
+<tr>
+<td><code>RGB_RED</code></td>
+<td><code>HSV_RED</code></td>
+</tr>
+<tr>
+<td><code>RGB_CORAL</code></td>
+<td><code>HSV_CORAL</code></td>
+</tr>
+<tr>
+<td><code>RGB_ORANGE</code></td>
+<td><code>HSV_ORANGE</code></td>
+</tr>
+<tr>
+<td><code>RGB_GOLDENROD</code></td>
+<td><code>HSV_GOLDENROD</code></td>
+</tr>
+<tr>
+<td><code>RGB_GOLD</code></td>
+<td><code>HSV_GOLD</code></td>
+</tr>
+<tr>
+<td><code>RGB_YELLOW</code></td>
+<td><code>HSV_YELLOW</code></td>
+</tr>
+<tr>
+<td><code>RGB_CHARTREUSE</code></td>
+<td><code>HSV_CHARTREUSE</code></td>
+</tr>
+<tr>
+<td><code>RGB_GREEN</code></td>
+<td><code>HSV_GREEN</code></td>
+</tr>
+<tr>
+<td><code>RGB_SPRINGGREEN</code></td>
+<td><code>HSV_SPRINGGREEN</code></td>
+</tr>
+<tr>
+<td><code>RGB_TURQUOISE</code></td>
+<td><code>HSV_TURQUOISE</code></td>
+</tr>
+<tr>
+<td><code>RGB_TEAL</code></td>
+<td><code>HSV_TEAL</code></td>
+</tr>
+<tr>
+<td><code>RGB_CYAN</code></td>
+<td><code>HSV_CYAN</code></td>
+</tr>
+<tr>
+<td><code>RGB_AZURE</code></td>
+<td><code>HSV_AZURE</code></td>
+</tr>
+<tr>
+<td><code>RGB_BLUE</code></td>
+<td><code>HSV_BLUE</code></td>
+</tr>
+<tr>
+<td><code>RGB_PURPLE</code></td>
+<td><code>HSV_PURPLE</code></td>
+</tr>
+<tr>
+<td><code>RGB_MAGENTA</code></td>
+<td><code>HSV_MAGENTA</code></td>
+</tr>
+<tr>
+<td><code>RGB_PINK</code></td>
+<td><code>HSV_PINK</code></td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite"><pre><span></span><code><span class="n">rgblight_setrgb</span><span class="p">(</span><span class="n">RGB_ORANGE</span><span class="p">);</span>
+<span class="n">rgblight_sethsv_noeeprom</span><span class="p">(</span><span class="n">HSV_GREEN</span><span class="p">);</span>
+<span class="n">rgblight_setrgb_at</span><span class="p">(</span><span class="n">RGB_GOLD</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="n">rgblight_sethsv_range</span><span class="p">(</span><span class="n">HSV_WHITE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+</code></pre></div>
+
+<p>These are defined in <a href="https://github.com/qmk/qmk_firmware/blob/master/quantum/rgblight_list.h"><code>rgblight_list.h</code></a>. Feel free to add to this list!</p>
+<h2 id="changing-the-order-of-the-leds">Changing the order of the LEDs<a class="headerlink" href="#changing-the-order-of-the-leds" title="Permanent link">&para;</a></h2>
+<p>If you want to make the logical order of LEDs different from the electrical connection order, you can do this by defining the <code>RGBLIGHT_LED_MAP</code> macro in your <code>config.h</code>.</p>
+<p>Normally, the contents of the LED buffer are output to the LEDs in the same order.
+<img src="https://user-images.githubusercontent.com/2170248/55743718-01866c80-5a6e-11e9-8134-25419928327a.JPG" alt="simple dicrect" width="50%"/></p>
+<p>By defining <code>RGBLIGHT_LED_MAP</code> as in the example below, you can specify the LED with addressing in reverse order of the electrical connection order.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// config.h</span>
+
+<span class="cp">#define RGBLED_NUM 4</span>
+<span class="cp">#define RGBLIGHT_LED_MAP { 3, 2, 1, 0 }</span>
+</code></pre></div>
+
+<p><img src="https://user-images.githubusercontent.com/2170248/55743725-08ad7a80-5a6e-11e9-83ed-126a2b0209fc.JPG" alt="simple mapped" width="50%"/></p>
+<p>For keyboards that use the RGB LEDs as a backlight for each key, you can also define it as in the example below.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// config.h</span>
+
+<span class="cp">#define RGBLED_NUM 30</span>
+
+<span class="cm">/* RGB LED Conversion macro from physical array to electric array */</span>
+<span class="cp">#define LED_LAYOUT( \</span>
+<span class="cp">    L00, L01, L02, L03, L04, L05,  \</span>
+<span class="cp">    L10, L11, L12, L13, L14, L15,  \</span>
+<span class="cp">    L20, L21, L22, L23, L24, L25,  \</span>
+<span class="cp">    L30, L31, L32, L33, L34, L35,  \</span>
+<span class="cp">    L40, L41, L42, L43, L44, L45 ) \</span>
+<span class="cp">  { \</span>
+<span class="cp">    L05, L04, L03, L02, L01, L00,   \</span>
+<span class="cp">    L10, L11, L12, L13, L14, L15,   \</span>
+<span class="cp">    L25, L24, L23, L22, L21, L20,   \</span>
+<span class="cp">    L30, L31, L32, L33, L34, L35,   \</span>
+<span class="cp">    L46, L45, L44, L43, L42, L41    \</span>
+<span class="cp">  }</span>
+
+<span class="cm">/* RGB LED logical order map */</span>
+<span class="cm">/* Top-&gt;Bottom, Right-&gt;Left */</span>
+<span class="cp">#define RGBLIGHT_LED_MAP LED_LAYOUT( \</span>
+<span class="cp">  25, 20, 15, 10,  5,  0,       \</span>
+<span class="cp">  26, 21, 16, 11,  6,  1,       \</span>
+<span class="cp">  27, 22, 17, 12,  7,  2,       \</span>
+<span class="cp">  28, 23, 18, 13,  8,  3,       \</span>
+<span class="cp">  29, 24, 19, 14,  9,  4 )</span>
+</code></pre></div>
+
+<h2 id="clipping-range">Clipping Range<a class="headerlink" href="#clipping-range" title="Permanent link">&para;</a></h2>
+<p>Using the <code>rgblight_set_clipping_range()</code> function, you can prepare more buffers than the actual number of LEDs, and output some of the buffers to the LEDs. This is useful if you want the split keyboard to treat left and right LEDs as logically contiguous.</p>
+<p>You can set the Clipping Range by executing the following code.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// some source</span>
+<span class="n">rgblight_set_clipping_range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+</code></pre></div>
+
+<p><img src="https://user-images.githubusercontent.com/2170248/55743785-2bd82a00-5a6e-11e9-9d4b-1b4ffaf4932b.JPG" alt="clip direct" width="70%"/></p>
+<p>In addition to setting the Clipping Range, you can use <code>RGBLIGHT_LED_MAP</code> together.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// config.h</span>
+<span class="cp">#define RGBLED_NUM 8</span>
+<span class="cp">#define RGBLIGHT_LED_MAP { 7, 6, 5, 4, 3, 2, 1, 0 }</span>
+
+<span class="c1">// some soruce</span>
+  <span class="n">rgblight_set_clipping_range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+</code></pre></div>
+
+<p><img src="https://user-images.githubusercontent.com/2170248/55743747-119e4c00-5a6e-11e9-91e5-013203ffae8a.JPG" alt="clip mapped" width="70%"/></p>
+<h2 id="hardware-modification">Hardware Modification<a class="headerlink" href="#hardware-modification" title="Permanent link">&para;</a></h2>
+<p>If your keyboard lacks onboard underglow LEDs, you may often be able to solder on an RGB LED strip yourself. You will need to find an unused pin to wire to the data pin of your LED strip. Some keyboards may break out unused pins from the MCU to make soldering easier. The other two pins, VCC and GND, must also be connected to the appropriate power pins.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

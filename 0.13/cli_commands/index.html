@@ -1,0 +1,663 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/cli_commands/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>QMK CLI Commands - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qmk-cli-commands" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              QMK CLI Commands
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/cli_commands.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="qmk-cli-commands">QMK CLI Commands<a class="headerlink" href="#qmk-cli-commands" title="Permanent link">&para;</a></h1>
+<h1 id="user-commands">User Commands<a class="headerlink" href="#user-commands" title="Permanent link">&para;</a></h1>
+<h2 id="qmk-compile"><code>qmk compile</code><a class="headerlink" href="#qmk-compile" title="Permanent link">&para;</a></h2>
+<p>This command allows you to compile firmware from any directory. You can compile JSON exports from <a href="https://config.qmk.fm">https://config.qmk.fm</a>, compile keymaps in the repo, or compile the keyboard in the current working directory.</p>
+<p>This command is directory aware. It will automatically fill in KEYBOARD and/or KEYMAP if you are in a keyboard or keymap directory.</p>
+<p><strong>Usage for Configurator Exports</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk compile [-c] &lt;configuratorExport.json&gt;
+</code></pre></div>
+
+<p><strong>Usage for Keymaps</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk compile [-c] [-e &lt;var&gt;=&lt;value&gt;] -kb &lt;keyboard_name&gt; -km &lt;keymap_name&gt;
+</code></pre></div>
+
+<p><strong>Usage in Keyboard Directory</strong>:  </p>
+<p>Must be in keyboard directory with a default keymap, or in keymap directory for keyboard, or supply one with <code>--keymap &lt;keymap_name&gt;</code></p>
+<div class="codehilite"><pre><span></span><code>qmk compile
+</code></pre></div>
+
+<p><strong>Usage for building all keyboards that support a specific keymap</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk compile -kb all -km &lt;keymap_name&gt;
+</code></pre></div>
+
+<p><strong>Example</strong>:</p>
+<div class="codehilite"><pre><span></span><code>$ qmk config compile.keymap=default
+$ cd ~/qmk_firmware/keyboards/planck/rev6
+$ qmk compile
+Ψ Compiling keymap with make planck/rev6:default
+...
+</code></pre></div>
+
+<p>or with optional keymap argument</p>
+<div class="codehilite"><pre><span></span><code>$ cd ~/qmk_firmware/keyboards/clueboard/66/rev4 
+$ qmk compile -km 66_iso
+Ψ Compiling keymap with make clueboard/66/rev4:66_iso
+...
+</code></pre></div>
+
+<p>or in keymap directory</p>
+<div class="codehilite"><pre><span></span><code>$ cd ~/qmk_firmware/keyboards/gh60/satan/keymaps/colemak
+$ qmk compile
+Ψ Compiling keymap with make make gh60/satan:colemak
+...
+</code></pre></div>
+
+<p><strong>Usage in Layout Directory</strong>:  </p>
+<p>Must be under <code>qmk_firmware/layouts/</code>, and in a keymap folder.</p>
+<div class="codehilite"><pre><span></span><code>qmk compile -kb &lt;keyboard_name&gt;
+</code></pre></div>
+
+<p><strong>Example</strong>:</p>
+<div class="codehilite"><pre><span></span><code>$ cd ~/qmk_firmware/layouts/community/60_ansi/mechmerlin-ansi
+$ qmk compile -kb dz60
+Ψ Compiling keymap with make dz60:mechmerlin-ansi
+...
+</code></pre></div>
+
+<h2 id="qmk-flash"><code>qmk flash</code><a class="headerlink" href="#qmk-flash" title="Permanent link">&para;</a></h2>
+<p>This command is similar to <code>qmk compile</code>, but can also target a bootloader. The bootloader is optional, and is set to <code>:flash</code> by default. To specify a different bootloader, use <code>-bl &lt;bootloader&gt;</code>. Visit the <a href="../flashing/">Flashing Firmware</a> guide for more details of the available bootloaders.</p>
+<p>This command is directory aware. It will automatically fill in KEYBOARD and/or KEYMAP if you are in a keyboard or keymap directory.</p>
+<p><strong>Usage for Configurator Exports</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk flash [-bl &lt;bootloader&gt;] [-c] [-e &lt;var&gt;=&lt;value&gt;] &lt;configuratorExport.json&gt;
+</code></pre></div>
+
+<p><strong>Usage for Keymaps</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk flash -kb &lt;keyboard_name&gt; -km &lt;keymap_name&gt; [-bl &lt;bootloader&gt;] [-c] [-e &lt;var&gt;=&lt;value&gt;]
+</code></pre></div>
+
+<p><strong>Listing the Bootloaders</strong></p>
+<div class="codehilite"><pre><span></span><code>qmk flash -b
+</code></pre></div>
+
+<h2 id="qmk-config"><code>qmk config</code><a class="headerlink" href="#qmk-config" title="Permanent link">&para;</a></h2>
+<p>This command lets you configure the behavior of QMK. For the full <code>qmk config</code> documentation see <a href="../cli_configuration/">CLI Configuration</a>.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk config [-ro] [config_token1] [config_token2] [...] [config_tokenN]
+</code></pre></div>
+
+<h2 id="qmk-console"><code>qmk console</code><a class="headerlink" href="#qmk-console" title="Permanent link">&para;</a></h2>
+<p>This command lets you connect to keyboard consoles to get debugging messages. It only works if your keyboard firmware has been compiled with <code>CONSOLE_ENABLED=yes</code>.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk console [-d &lt;pid&gt;:&lt;vid&gt;[:&lt;index&gt;]] [-l] [-n] [-t] [-w &lt;seconds&gt;]
+</code></pre></div>
+
+<p><strong>Examples</strong>:</p>
+<p>Connect to all available keyboards and show their console messages:</p>
+<div class="codehilite"><pre><span></span><code>qmk console
+</code></pre></div>
+
+<p>List all devices:</p>
+<div class="codehilite"><pre><span></span><code>qmk console -l
+</code></pre></div>
+
+<p>Show only messages from clueboard/66/rev3 keyboards:</p>
+<div class="codehilite"><pre><span></span><code>qmk console -d C1ED:2370
+</code></pre></div>
+
+<p>Show only messages from the second clueboard/66/rev3:</p>
+<div class="codehilite"><pre><span></span><code>qmk console -d C1ED:2370:2
+</code></pre></div>
+
+<p>Show timestamps and VID:PID instead of names:</p>
+<div class="codehilite"><pre><span></span><code>qmk console -n -t
+</code></pre></div>
+
+<p>Disable bootloader messages:</p>
+<div class="codehilite"><pre><span></span><code>qmk console --no-bootloaders
+</code></pre></div>
+
+<h2 id="qmk-doctor"><code>qmk doctor</code><a class="headerlink" href="#qmk-doctor" title="Permanent link">&para;</a></h2>
+<p>This command examines your environment and alerts you to potential build or flash problems. It can fix many of them if you want it to.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk doctor [-y] [-n]
+</code></pre></div>
+
+<p><strong>Examples</strong>:</p>
+<p>Check your environment for problems and prompt to fix them:</p>
+<div class="codehilite"><pre><span></span><code>qmk doctor
+</code></pre></div>
+
+<p>Check your environment and automatically fix any problems found:</p>
+<div class="codehilite"><pre><span></span><code>qmk doctor -y
+</code></pre></div>
+
+<p>Check your environment and report problems only:</p>
+<div class="codehilite"><pre><span></span><code>qmk doctor -n
+</code></pre></div>
+
+<h2 id="qmk-format-json"><code>qmk format-json</code><a class="headerlink" href="#qmk-format-json" title="Permanent link">&para;</a></h2>
+<p>Formats a JSON file in a (mostly) human-friendly way. Will usually correctly detect the format of the JSON (info.json or keymap.json) but you can override this with <code>--format</code> if neccesary.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk format-json [-f FORMAT] &lt;json_file&gt;
+</code></pre></div>
+
+<h2 id="qmk-info"><code>qmk info</code><a class="headerlink" href="#qmk-info" title="Permanent link">&para;</a></h2>
+<p>Displays information about keyboards and keymaps in QMK. You can use this to get information about a keyboard, show the layouts, display the underlying key matrix, or to pretty-print JSON keymaps.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk info [-f FORMAT] [-m] [-l] [-km KEYMAP] [-kb KEYBOARD]
+</code></pre></div>
+
+<p>This command is directory aware. It will automatically fill in KEYBOARD and/or KEYMAP if you are in a keyboard or keymap directory.</p>
+<p><strong>Examples</strong>:</p>
+<p>Show basic information for a keyboard:</p>
+<div class="codehilite"><pre><span></span><code>qmk info -kb planck/rev5
+</code></pre></div>
+
+<p>Show the matrix for a keyboard:</p>
+<div class="codehilite"><pre><span></span><code>qmk info -kb ergodox_ez -m
+</code></pre></div>
+
+<p>Show a JSON keymap for a keyboard:</p>
+<div class="codehilite"><pre><span></span><code>qmk info -kb clueboard/california -km default
+</code></pre></div>
+
+<h2 id="qmk-json2c"><code>qmk json2c</code><a class="headerlink" href="#qmk-json2c" title="Permanent link">&para;</a></h2>
+<p>Creates a keymap.c from a QMK Configurator export.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk json2c [-o OUTPUT] filename
+</code></pre></div>
+
+<h2 id="qmk-c2json"><code>qmk c2json</code><a class="headerlink" href="#qmk-c2json" title="Permanent link">&para;</a></h2>
+<p>Creates a keymap.json from a keymap.c.<br />
+<strong>Note:</strong> Parsing C source files is not easy, therefore this subcommand may not work with your keymap. In some cases not using the C pre-processor helps.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk c2json -km KEYMAP -kb KEYBOARD [-q] [--no-cpp] [-o OUTPUT] filename
+</code></pre></div>
+
+<h2 id="qmk-lint"><code>qmk lint</code><a class="headerlink" href="#qmk-lint" title="Permanent link">&para;</a></h2>
+<p>Checks over a keyboard and/or keymap and highlights common errors, problems, and anti-patterns.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk lint [-km KEYMAP] [-kb KEYBOARD] [--strict]
+</code></pre></div>
+
+<p>This command is directory aware. It will automatically fill in KEYBOARD and/or KEYMAP if you are in a keyboard or keymap directory.</p>
+<p><strong>Examples</strong>:</p>
+<p>Do a basic lint check:</p>
+<div class="codehilite"><pre><span></span><code>qmk lint -kb rominronin/katana60/rev2
+</code></pre></div>
+
+<h2 id="qmk-list-keyboards"><code>qmk list-keyboards</code><a class="headerlink" href="#qmk-list-keyboards" title="Permanent link">&para;</a></h2>
+<p>This command lists all the keyboards currently defined in <code>qmk_firmware</code></p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk list-keyboards
+</code></pre></div>
+
+<h2 id="qmk-list-keymaps"><code>qmk list-keymaps</code><a class="headerlink" href="#qmk-list-keymaps" title="Permanent link">&para;</a></h2>
+<p>This command lists all the keymaps for a specified keyboard (and revision).</p>
+<p>This command is directory aware. It will automatically fill in KEYBOARD if you are in a keyboard directory.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk list-keymaps -kb planck/ez
+</code></pre></div>
+
+<h2 id="qmk-new-keyboard"><code>qmk new-keyboard</code><a class="headerlink" href="#qmk-new-keyboard" title="Permanent link">&para;</a></h2>
+<p>This command creates a new keyboard based on available templates.</p>
+<p>This command will prompt for input to guide you though the generation process.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk new-keyboard
+</code></pre></div>
+
+<h2 id="qmk-new-keymap"><code>qmk new-keymap</code><a class="headerlink" href="#qmk-new-keymap" title="Permanent link">&para;</a></h2>
+<p>This command creates a new keymap based on a keyboard's existing default keymap.</p>
+<p>This command is directory aware. It will automatically fill in KEYBOARD and/or KEYMAP if you are in a keyboard or keymap directory.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk new-keymap [-kb KEYBOARD] [-km KEYMAP]
+</code></pre></div>
+
+<h2 id="qmk-clean"><code>qmk clean</code><a class="headerlink" href="#qmk-clean" title="Permanent link">&para;</a></h2>
+<p>This command cleans up the <code>.build</code> folder. If <code>--all</code> is passed, any .hex or .bin files present in the <code>qmk_firmware</code> directory will also be deleted.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk clean [-a]
+</code></pre></div>
+
+<hr />
+<h1 id="developer-commands">Developer Commands<a class="headerlink" href="#developer-commands" title="Permanent link">&para;</a></h1>
+<h2 id="qmk-cformat"><code>qmk cformat</code><a class="headerlink" href="#qmk-cformat" title="Permanent link">&para;</a></h2>
+<p>This command formats C code using clang-format. </p>
+<p>Run it with no arguments to format all core code that has been changed. Default checks <code>origin/master</code> with <code>git diff</code>, branch can be changed using <code>-b &lt;branch_name&gt;</code></p>
+<p>Run it with <code>-a</code> to format all core code, or pass filenames on the command line to run it on specific files.</p>
+<p><strong>Usage for specified files</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk cformat [file1] [file2] [...] [fileN]
+</code></pre></div>
+
+<p><strong>Usage for all core files</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk cformat -a
+</code></pre></div>
+
+<p><strong>Usage for only changed files against origin/master</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk cformat
+</code></pre></div>
+
+<p><strong>Usage for only changed files against branch_name</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk cformat -b branch_name
+</code></pre></div>
+
+<h2 id="qmk-docs"><code>qmk docs</code><a class="headerlink" href="#qmk-docs" title="Permanent link">&para;</a></h2>
+<p>This command starts a local HTTP server which you can use for browsing or improving the docs. Default port is 8936.
+Use the <code>-b</code>/<code>--browser</code> flag to automatically open the local webserver in your default browser.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk docs [-b] [-p PORT]
+</code></pre></div>
+
+<h2 id="qmk-generate-docs"><code>qmk generate-docs</code><a class="headerlink" href="#qmk-generate-docs" title="Permanent link">&para;</a></h2>
+<p>This command allows you to generate QMK documentation locally. It can be uses for general browsing or improving the docs. External tools such as <a href="https://www.npmjs.com/package/serve">serve</a> can be used to browse the generated files.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk generate-docs
+</code></pre></div>
+
+<h2 id="qmk-generate-rgb-breathe-table"><code>qmk generate-rgb-breathe-table</code><a class="headerlink" href="#qmk-generate-rgb-breathe-table" title="Permanent link">&para;</a></h2>
+<p>This command generates a lookup table (LUT) header file for the <a href="../feature_rgblight/">RGB Lighting</a> feature's breathing animation. Place this file in your keyboard or keymap directory as <code>rgblight_breathe_table.h</code> to override the default LUT in <code>quantum/</code>.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk generate-rgb-breathe-table [-q] [-o OUTPUT] [-m MAX] [-c CENTER]
+</code></pre></div>
+
+<h2 id="qmk-kle2json"><code>qmk kle2json</code><a class="headerlink" href="#qmk-kle2json" title="Permanent link">&para;</a></h2>
+<p>This command allows you to convert from raw KLE data to QMK Configurator JSON. It accepts either an absolute file path, or a file name in the current directory. By default it will not overwrite <code>info.json</code> if it is already present. Use the <code>-f</code> or <code>--force</code> flag to overwrite.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk kle2json [-f] &lt;filename&gt;
+</code></pre></div>
+
+<p><strong>Examples</strong>:</p>
+<div class="codehilite"><pre><span></span><code>$ qmk kle2json kle.txt 
+☒ File info.json already exists, use -f or --force to overwrite.
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>$ qmk kle2json -f kle.txt -f
+Ψ Wrote out to info.json
+</code></pre></div>
+
+<h2 id="qmk-pyformat"><code>qmk pyformat</code><a class="headerlink" href="#qmk-pyformat" title="Permanent link">&para;</a></h2>
+<p>This command formats python code in <code>qmk_firmware</code>.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk pyformat
+</code></pre></div>
+
+<h2 id="qmk-pytest"><code>qmk pytest</code><a class="headerlink" href="#qmk-pytest" title="Permanent link">&para;</a></h2>
+<p>This command runs the python test suite. If you make changes to python code you should ensure this runs successfully.</p>
+<p><strong>Usage</strong>:</p>
+<div class="codehilite"><pre><span></span><code>qmk pytest
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

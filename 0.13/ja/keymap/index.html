@@ -1,0 +1,612 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/ja/keymap/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>キーマップの概要 - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              キーマップの概要
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#idkeymap-and-layers" class="md-nav__link">
+    キーマップとレイヤー :id=keymap-and-layers
+  </a>
+  
+    <nav class="md-nav" aria-label="キーマップとレイヤー :id=keymap-and-layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idkeymap-layer-status" class="md-nav__link">
+    キーマップレイヤーステータス :id=keymap-layer-status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    レイヤーの優先順位と透過性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keymapc" class="md-nav__link">
+    keymap.c の分析
+  </a>
+  
+    <nav class="md-nav" aria-label="keymap.c の分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iddefinitions" class="md-nav__link">
+    定義 :id=definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idlayers-and-keymaps" class="md-nav__link">
+    レイヤーとキーマップ :id=layers-and-keymaps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/ja/keymap.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="_1">キーマップの概要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<!---
+  original document: 0.9.44:docs/keymap.md
+  git diff 0.9.44 HEAD -- docs/keymap.md | cat
+-->
+
+<p>QMK のキーマップは C のソースファイルの中で定義されます。そのデータ構造は配列の配列です。外側はレイヤーを要素とする配列で、レイヤーはキーを要素とする配列。ほとんどのキーボードは <code>LAYOUT()</code> マクロを定義して、この配列の配列を作成しやすくしています。</p>
+<h2 id="idkeymap-and-layers">キーマップとレイヤー :id=keymap-and-layers<a class="headerlink" href="#idkeymap-and-layers" title="Permanent link">&para;</a></h2>
+<p>QMKでは、<strong><code>const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS]</code></strong>は、<strong>アクションコード</strong>を保持している <strong>16 bit</strong> データの中でキーマップ情報の複数の<strong>レイヤー</strong>を保持します。最大で<strong>32個のレイヤー</strong>を定義することができます。</p>
+<p>普通のキー定義の場合、<strong>アクションコード</strong>の上位8ビットは全て0で、下位8ビットは<strong>キーコード</strong>としてキーによって生成された USB HID usage コードを保持します。</p>
+<p>各レイヤーは同時に有効にできます。レイヤーには 0 から 31 までのインデックスが付けられ、上位のレイヤーが優先されます。</p>
+<div class="codehilite"><pre><span></span><code>Keymap: 32 Layers                   Layer: action code matrix
+-----------------                   ---------------------
+stack of layers                     array_of_action_code[row][column]
+       ____________ precedence               _______________________
+      /           / | high                  / ESC / F1  / F2  / F3   ....
+  31 /___________// |                      /-----/-----/-----/-----
+  30 /___________// |                     / TAB /  Q  /  W  /  E   ....
+  29 /___________/  |                    /-----/-----/-----/-----
+   :   _:_:_:_:_:__ |               :   /LCtrl/  A  /  S  /  D   ....
+   :  / : : : : : / |               :  /  :     :     :     :
+   2 /___________// |               2 `--------------------------
+   1 /___________// |               1 `--------------------------
+   0 /___________/  V low           0 `--------------------------
+</code></pre></div>
+
+<p>TMK の歴史的経緯から、キーマップに保存されたアクションコードは、一部のドキュメントではキーコードと呼ばれる場合があります。</p>
+<h3 id="idkeymap-layer-status">キーマップレイヤーステータス :id=keymap-layer-status<a class="headerlink" href="#idkeymap-layer-status" title="Permanent link">&para;</a></h3>
+<p>キーマップレイヤーの状態は、2つの32ビットパラメータによって決定されます。</p>
+<ul>
+<li><strong><code>default_layer_state</code></strong> は、常に有効で参照される基本キーマップレイヤー (0-31) を示します (デフォルトレイヤー)。</li>
+<li><strong><code>layer_state</code></strong> は現在の各レイヤーのオン/オフの状態をビットで持ちます。</li>
+</ul>
+<p>キーマップレイヤー '0' は通常 <code>default_layer</code> で、他のレイヤーはファームウェアの起動後に最初はオフになっていますが、これは <code>config.h</code> で異なる設定にすることが可能です。例えば Qwerty ではなく Colemak に切り替えるなど、キーレイアウトを完全に切り替える場合、<code>default_layer</code> を変更すると便利です。</p>
+<div class="codehilite"><pre><span></span><code>Initial state of Keymap          Change base layout
+-----------------------          ------------------
+
+  31                               31
+  30                               30
+  29                               29
+   :                                :
+   :                                :   ____________
+   2   ____________                 2  /           /
+   1  /           /              ,-&gt;1 /___________/
+,-&gt;0 /___________/               |  0
+|                                |
+`--- default_layer = 0           `--- default_layer = 1
+     layer_state   = 0x00000001       layer_state   = 0x00000002
+</code></pre></div>
+
+<p>一方、<code>layer_state</code> を変更して、基本レイヤーをナビゲーションキー、ファンクションキー (F1-F12)、メディアキー、特別なアクションなどの機能を持つ他のレイヤーでオーバーレイすることができます。</p>
+<div class="codehilite"><pre><span></span><code>Overlay feature layer
+---------------------      bit|status
+       ____________        ---+------
+  31  /           /        31 |   0
+  30 /___________// -----&gt; 30 |   1
+  29 /___________/  -----&gt; 29 |   1
+   :                        : |   :
+   :   ____________         : |   :
+   2  /           /         2 |   0
+,-&gt;1 /___________/  -----&gt;  1 |   1
+|  0                        0 |   0
+|                                 +
+`--- default_layer = 1            |
+     layer_state   = 0x60000002 &lt;-&#39;
+</code></pre></div>
+
+<h3 id="_2">レイヤーの優先順位と透過性<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><strong><em>上位のレイヤーはレイヤーのスタックでより高い優先順位を持つ</em></strong>ことに注意してください。ファームウェアは最上位のアクティブレイヤーから下に向かってキーコードを検索します。ファームウェアがアクティブなレイヤーで <code>KC_TRNS</code> (透過)以外のキーコードを見つけると、検索を停止し、下位レイヤーは参照されません。</p>
+<div class="codehilite"><pre><span></span><code>       ____________
+      /           /  &lt;--- Higher layer
+     /  KC_TRNS  //
+    /___________//   &lt;--- Lower layer (KC_A)
+    /___________/
+
+上記シナリオでは、上位レイヤーに非透過のキーが定義されているとそのキーが使われますが、`KC_TRNS` (または同等のキーコード)が定義されている場合は常に下位レベルのキーコード(`KC_A`)が使われます。
+</code></pre></div>
+
+<p><strong>メモ:</strong> 特定のレイヤーの透過性を示す有効な方法:
+* <code>KC_TRANSPARENT</code>
+* <code>KC_TRNS</code> (別名)
+* <code>_______</code> (別名)</p>
+<p>これらのキーコードは、処理する非透過のキーコードを探すときに、下位レイヤーを検索させることができます。</p>
+<h2 id="keymapc"><code>keymap.c</code> の分析<a class="headerlink" href="#keymapc" title="Permanent link">&para;</a></h2>
+<p>この例では、<a href="https://github.com/qmk/qmk_firmware/blob/ca01d94005f67ec4fa9528353481faa622d949ae/keyboards/clueboard/keymaps/default/keymap.c">デフォルトの Clueboard 66% キーマップの古いバージョン</a>を見ていきます。そのファイルを別のブラウザウィンドウで開くとコンテキスト内のすべてを見ることができるので便利です。</p>
+<p><code>keymap.c</code> ファイルには、あなたが関心があるであろう以下の2つの主要なセクションがあります:</p>
+<ul>
+<li><a href="#definitions">定義</a></li>
+<li><a href="#layers-and-keymaps">レイヤー/キーマップデータ構造</a></li>
+</ul>
+<h3 id="iddefinitions">定義 :id=definitions<a class="headerlink" href="#iddefinitions" title="Permanent link">&para;</a></h3>
+<p>ファイルの上部に以下のものがあります:</p>
+<div class="codehilite"><pre><span></span><code>#include QMK_KEYBOARD_H
+
+// 便利な定義
+#define GRAVE_MODS  (MOD_BIT(KC_LSHIFT)|MOD_BIT(KC_RSHIFT)|MOD_BIT(KC_LGUI)|MOD_BIT(KC_RGUI)|MOD_BIT(KC_LALT)|MOD_BIT(KC_RALT))
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+*  KC_TRNS (透過) の代わりに _______ を使うことができます   *
+ *  あるいは、KC_NO (NOOP)  として XXXXXXX を使うことができます    *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+// 各レイヤーは読みやすいように名前を持ちます。
+// アンダースコアは何も意味を持ちません
+// STUFF あるいは他の名前のレイヤーを持つことができます。
+// レイヤー名は全て同じ長さである必要はなく、
+// また名前を完全に省略して単に数字を使うことができます。
+#define _BL 0
+#define _FL 1
+#define _CL 2
+</code></pre></div>
+
+<p>これらはキーマップとカスタム関数を作成するときに使うことができる便利な定義です。<code>GRAVE_MODS</code> 定義は後でカスタム関数で使われ、その下の <code>_BL</code>、<code>_FL</code>、<code>_CL</code> 定義は各レイヤーを参照しやすくします。</p>
+<p>注意: 古いキーマップファイルに <code>_______</code> および <code>XXXXXXX</code> の定義が含まれているかもしれません。これらはそれぞれ <code>KC_TRNS</code> および <code>KC_NO</code> の代わりに使うことができ、レイヤーがどのキーを上書きしているかを簡単に確認することができます。これらの定義はデフォルトで含まれるため、今では不要になりました。</p>
+<h3 id="idlayers-and-keymaps">レイヤーとキーマップ :id=layers-and-keymaps<a class="headerlink" href="#idlayers-and-keymaps" title="Permanent link">&para;</a></h3>
+<p>このファイルの主要部分は <code>keymaps[]</code> 定義です。ここで、レイヤーとそれらの内容を列挙します。ファイルのこの部分は、以下の定義から始まります:</p>
+<div class="codehilite"><pre><span></span><code>const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+</code></pre></div>
+
+<p>この後で、LAYOUT() マクロのリストがあります。LAYOUT() は単一のレイヤーを定義するためのキーのリストです。通常、1つ以上の"基本レイヤー" (QWERTY、Dvorak、Colemak など)があり、その上に1つ以上の"機能"レイヤーを重ねます。レイヤーの処理方法により、"より上位"のレイヤーの上に"より下位"のレイヤーを重ねることはできません。</p>
+<p>QMK の <code>keymaps[][MATRIX_ROWS][MATRIX_COLS]</code> は、16ビットのアクションコード( quantum キーコードとも呼ばれる)を保持します。一般的なキーを表すキーコードの場合、その上位バイトは0で、その下位バイトはキーボードの USB HID usage ID です。</p>
+<blockquote>
+<p>QMK のフォーク元の TMK は、代わりに <code>const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS]</code> を使い、8ビットキーコードを保持します。一部のキーコード値は、<code>fn_actions[]</code> 配列を介して特定のアクションコードの実行を引き起こすために予約されています。</p>
+</blockquote>
+<h4 id="_3">基本レイヤー<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>Clueboard の基本レイヤーの例です:</p>
+<div class="codehilite"><pre><span></span><code>/* Keymap _BL: Base Layer (Default Layer)
+*/
+[_BL] = LAYOUT(
+F(0),    KC_1,    KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,    KC_0,     KC_MINS,  KC_EQL,   KC_GRV,  KC_BSPC,          KC_PGUP, \
+KC_TAB,  KC_Q,    KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,    KC_P,     KC_LBRC,  KC_RBRC,  KC_BSLS,                   KC_PGDN, \
+KC_CAPS, KC_A,    KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,    KC_SCLN,  KC_QUOT,  KC_NUHS,  KC_ENT,                             \
+KC_LSFT, KC_NUBS, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT,   KC_SLSH,  KC_RO,    KC_RSFT,          KC_UP,            \
+KC_LCTL, KC_LGUI, KC_LALT, KC_MHEN,          KC_SPC,KC_SPC,                        KC_HENK,  KC_RALT,  KC_RCTL,  MO(_FL), KC_LEFT, KC_DOWN, KC_RGHT),
+</code></pre></div>
+
+<p>これについて注意すべきいくつかの興味深いこと:</p>
+<ul>
+<li>C ソースの観点からは、これは単一の配列に過ぎませんが、物理デバイス上の各キーがどこにあるかをより簡単に可視化するために、空白が埋め込まれています。</li>
+<li>単純なキーボードスキャンコードの先頭には KC_ が付いていますが、"特別な"キーには付いていません。</li>
+<li>左上のキーはカスタム機能 0 (<code>F(0)</code>) をアクティブにします。</li>
+<li>"Fn" キーは <code>MO(_FL)</code> で定義され、そのキーが押されている間は <code>_FL</code> レイヤーに移動します。</li>
+</ul>
+<h4 id="_4">機能オーバーレイレイヤー<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>機能レイヤーはコードの観点から基本レイヤーと違いはありません。ただし概念的には、置き換えの代わりにオーバーレイとしてそのレイヤーを構築します。多くの人にとってはこの区別は重要ではありませんが、より複雑なレイヤー設定を構築するにつれて、ますます重要になります。</p>
+<div class="codehilite"><pre><span></span><code>[_FL] = LAYOUT(
+KC_GRV,  KC_F1,   KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,   KC_F10,   KC_F11,   KC_F12,   _______, KC_DEL,           BL_STEP, \
+_______, _______, _______,_______,_______,_______,_______,_______,KC_PSCR,KC_SLCK, KC_PAUS,  _______,  _______,  _______,                   _______, \
+_______, _______, MO(_CL),_______,_______,_______,_______,_______,_______,_______, _______,  _______,  _______,  _______,                           \
+_______, _______, _______,_______,_______,_______,_______,_______,_______,_______, _______,  _______,  _______,  _______,          KC_PGUP,         \
+_______, _______, _______, _______,        _______,_______,                        _______,  _______,  _______,  MO(_FL), KC_HOME, KC_PGDN, KC_END),
+</code></pre></div>
+
+<p>注意すべきいくつかの興味深いこと:</p>
+<ul>
+<li><code>_______</code> 定義を使って、<code>KC_TRNS</code> を <code>_______</code> に変換しました。これによりこのレイヤーで変更されたキーを簡単に見つけることができます。</li>
+<li>このレイヤーで <code>_______</code> キーのいずれかを押すと、次の下位のアクティブなレイヤーのキーがアクティブになります。</li>
+</ul>
+<h1 id="_5">核心となる詳細<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h1>
+<p>これで独自のキーマップを作成するための基本的な概要が得られました。詳細は以下のリソースを見てください:</p>
+<ul>
+<li><a href="ja/keycodes.md">キーコード</a></li>
+<li><a href="ja/faq_keymap.md">キーマップ FAQ</a></li>
+</ul>
+<p>これらのドキュメントの改善に積極的に取り組んでいます。それらを改善する方法について提案がある場合は、<a href="https://github.com/qmk/qmk_firmware/issues/new">issue を報告</a>してください！</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,619 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/driver_installation_zadig/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Bootloader Driver Installation with Zadig - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bootloader-driver-installation-with-zadig" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bootloader Driver Installation with Zadig
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recovering-from-installation-to-wrong-device" class="md-nav__link">
+    Recovering from Installation to Wrong Device
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstallation" class="md-nav__link">
+    Uninstallation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-known-bootloaders" class="md-nav__link">
+    List of Known Bootloaders
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/driver_installation_zadig.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="bootloader-driver-installation-with-zadig">Bootloader Driver Installation with Zadig<a class="headerlink" href="#bootloader-driver-installation-with-zadig" title="Permanent link">&para;</a></h1>
+<p>QMK presents itself to the host as a regular HID keyboard device, and as such requires no special drivers. However, in order to flash your keyboard on Windows, the bootloader device that appears when you reset the board often <em>does</em>.</p>
+<p>There are two notable exceptions: the Caterina bootloader, usually seen on Pro Micros, and the HalfKay bootloader shipped with PJRC Teensys, appear as a serial port and a generic HID device respectively, and so do not require a driver.</p>
+<p>We recommend the use of the <a href="https://zadig.akeo.ie/">Zadig</a> utility. If you have set up the development environment with MSYS2, the <code>qmk_install.sh</code> script will have already installed the drivers for you.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Put your keyboard into bootloader mode, either by hitting the <code>RESET</code> keycode (which may be on a different layer), or by pressing the reset switch that's usually located on the underside of the board. If your keyboard has neither, try holding Escape or Space+<code>B</code> as you plug it in (see the <a href="../feature_bootmagic/">Bootmagic</a> docs for more details). Some boards use <a href="../feature_command/">Command</a> instead of Bootmagic; in this case, you can enter bootloader mode by hitting Left Shift+Right Shift+<code>B</code> or Left Shift+Right Shift+Escape at any point while the keyboard is plugged in.
+Some keyboards may have specific instructions for entering the bootloader. For example, the <a href="../feature_bootmagic/#bootmagic-lite">Bootmagic Lite</a> key (default: Escape) might be on a different key, e.g. Left Control; or the magic combination for Command (default: Left Shift+Right Shift) might require you to hold something else, e.g. Left Control+Right Control. Refer to the board's README file if you are unsure.</p>
+<p>To put a device in bootloader mode with USBaspLoader, tap the <code>RESET</code> button while holding down the <code>BOOT</code> button.
+Alternatively, hold <code>BOOT</code> while inserting the USB cable.</p>
+<p>Zadig should automatically detect the bootloader device, but you may sometimes need to check <strong>Options → List All Devices</strong> and select the device from the dropdown instead.</p>
+<p>!&gt; If Zadig lists one or more devices with the <code>HidUsb</code> driver, your keyboard is probably not in bootloader mode. The arrow will be colored orange and you will be asked to confirm modifying a system driver. <strong>Do not</strong> proceed if this is the case!</p>
+<p>If the arrow appears green, select the driver, and click <strong>Install Driver</strong>. See the <a href="#list-of-known-bootloaders">list of known bootloaders</a> for the correct driver to install.</p>
+<p><img alt="Zadig with a bootloader driver correctly installed" src="https://i.imgur.com/b8VgXzx.png" /></p>
+<p>Finally, unplug and replug the keyboard to make sure the new driver has been loaded. If you are using the QMK Toolbox to flash, exit and restart it too, as it can sometimes fail to recognize the driver change.</p>
+<h2 id="recovering-from-installation-to-wrong-device">Recovering from Installation to Wrong Device<a class="headerlink" href="#recovering-from-installation-to-wrong-device" title="Permanent link">&para;</a></h2>
+<p>If you find that you can no longer type with the keyboard, you may have accidentally replaced the driver for the keyboard itself instead of for the bootloader. This can happen when the keyboard is not in the bootloader mode. You can easily confirm this in Zadig - a healthy keyboard has the <code>HidUsb</code> driver installed on all of its interfaces:</p>
+<p><img alt="A healthy keyboard as seen by Zadig" src="https://i.imgur.com/Hx0E5kC.png" /></p>
+<p>Open the Device Manager, select <strong>View → Devices by container</strong>, and look for an entry with your keyboard's name.</p>
+<p><img alt="The board with the wrong driver installed, in Device Manager" src="https://i.imgur.com/o7WLvBl.png" /></p>
+<p>Right-click each entry and hit <strong>Uninstall device</strong>. Make sure to tick <strong>Delete the driver software for this device</strong> first if it appears.</p>
+<p><img alt="The Device Uninstall dialog, with the &quot;delete driver&quot; checkbox ticked" src="https://i.imgur.com/aEs2RuA.png" /></p>
+<p>Click <strong>Action → Scan for hardware changes</strong>. At this point, you should be able to type again. Double check in Zadig that the keyboard device(s) are using the <code>HidUsb</code> driver. If so, you're all done, and your board should be functional again! Otherwise, repeat this process until Zadig reports the correct driver.</p>
+<p>?&gt; A full reboot of your computer may sometimes be necessary at this point, to get Windows to pick up the new driver.</p>
+<h2 id="uninstallation">Uninstallation<a class="headerlink" href="#uninstallation" title="Permanent link">&para;</a></h2>
+<p>Uninstallation of bootloader devices is a little more involved than installation.</p>
+<p>Open the Device Manager, select <strong>View → Devices by container</strong>, and look for the bootloader device. Match up the USB VID and PID in Zadig with one from <a href="#list-of-known-bootloaders">the table below</a>.</p>
+<p>Find the <code>Inf name</code> value in the Details tab of the device properties. This should generally be something like <code>oemXX.inf</code>:</p>
+<p><img alt="Device properties showing the Inf name value" src="https://i.imgur.com/Bu4mk9m.png" /></p>
+<p>Then, open a new Command Prompt window as an Administrator (type in <code>cmd</code> into the Start menu and press Ctrl+Shift+Enter). Run <code>pnputil /enum-drivers</code> to verify the <code>Inf name</code> matches the <code>Published Name</code> field of one of the entries:</p>
+<p><img alt="pnputil output with matching driver highlighted" src="https://i.imgur.com/3RrSjzW.png" /></p>
+<p>Run <code>pnputil /delete-driver oemXX.inf /uninstall</code>. This will delete the driver and remove it from any devices using it. Note that this will not uninstall the device itself.</p>
+<p>As with the previous section, this process may need to be repeated multiple times, as multiple drivers can be applicable to the same device.</p>
+<p>!&gt; <strong>WARNING:</strong> Be <em>extremely careful</em> when doing this! You could potentially uninstall the driver for some other critical device. If you are unsure, double check the output of <code>/enum-drivers</code>, and omit the <code>/uninstall</code> flag when running <code>/delete-driver</code>.</p>
+<h2 id="list-of-known-bootloaders">List of Known Bootloaders<a class="headerlink" href="#list-of-known-bootloaders" title="Permanent link">&para;</a></h2>
+<p>This is a list of known bootloader devices and their USB vendor and product IDs, as well as the correct driver to assign for flashing with QMK. Note that the usbser and HidUsb drivers are built in to Windows, and cannot be assigned with Zadig - if your device has an incorrect driver, you must use the Device Manager to uninstall it as described in the previous section.</p>
+<p>The device name here is the name that appears in Zadig, and may not be what the Device Manager or QMK Toolbox displays.</p>
+<table>
+<thead>
+<tr>
+<th>Bootloader</th>
+<th>Device Name</th>
+<th>VID/PID</th>
+<th>Driver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>atmel-dfu</code></td>
+<td>ATmega16u2 DFU</td>
+<td><code>03EB:2FEF</code></td>
+<td>libusb0</td>
+</tr>
+<tr>
+<td><code>atmel-dfu</code></td>
+<td>ATmega32U2 DFU</td>
+<td><code>03EB:2FF0</code></td>
+<td>libusb0</td>
+</tr>
+<tr>
+<td><code>atmel-dfu</code></td>
+<td>ATm16U4 DFU V1.0.2</td>
+<td><code>03EB:2FF3</code></td>
+<td>libusb0</td>
+</tr>
+<tr>
+<td><code>atmel-dfu</code></td>
+<td>ATm32U4DFU</td>
+<td><code>03EB:2FF4</code></td>
+<td>libusb0</td>
+</tr>
+<tr>
+<td><code>atmel-dfu</code></td>
+<td><em>none</em> (AT90USB64)</td>
+<td><code>03EB:2FF9</code></td>
+<td>libusb0</td>
+</tr>
+<tr>
+<td><code>atmel-dfu</code></td>
+<td>AT90USB128 DFU</td>
+<td><code>03EB:2FFB</code></td>
+<td>libusb0</td>
+</tr>
+<tr>
+<td><code>qmk-dfu</code></td>
+<td>(keyboard name) Bootloader</td>
+<td>As <code>atmel-dfu</code></td>
+<td>libusb0</td>
+</tr>
+<tr>
+<td><code>halfkay</code></td>
+<td><em>none</em></td>
+<td><code>16C0:0478</code></td>
+<td>HidUsb</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>Pro Micro 3.3V</td>
+<td><code>1B4F:9203</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>Pro Micro 5V</td>
+<td><code>1B4F:9205</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>LilyPadUSB</td>
+<td><code>1B4F:9207</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>Pololu A-Star 32U4 Bootloader</td>
+<td><code>1FFB:0101</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>Arduino Leonardo</td>
+<td><code>2341:0036</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>Arduino Micro</td>
+<td><code>2341:0037</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>Adafruit Feather 32u4</td>
+<td><code>239A:000C</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>Adafruit ItsyBitsy 32u4 3V</td>
+<td><code>239A:000D</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>Adafruit ItsyBitsy 32u4 5V</td>
+<td><code>239A:000E</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>Arduino Leonardo</td>
+<td><code>2A03:0036</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>caterina</code></td>
+<td>Arduino Micro</td>
+<td><code>2A03:0037</code></td>
+<td>usbser</td>
+</tr>
+<tr>
+<td><code>bootloadHID</code></td>
+<td>HIDBoot</td>
+<td><code>16C0:05DF</code></td>
+<td>HidUsb</td>
+</tr>
+<tr>
+<td><code>USBasp</code></td>
+<td>USBasp</td>
+<td><code>16C0:05DC</code></td>
+<td>libusbK</td>
+</tr>
+<tr>
+<td><code>apm32-dfu</code></td>
+<td>APM32 DFU ISP Mode</td>
+<td><code>314B:0106</code></td>
+<td>WinUSB</td>
+</tr>
+<tr>
+<td><code>stm32-dfu</code></td>
+<td>STM32 BOOTLOADER</td>
+<td><code>0483:DF11</code></td>
+<td>WinUSB</td>
+</tr>
+<tr>
+<td><code>kiibohd</code></td>
+<td>Kiibohd DFU Bootloader</td>
+<td><code>1C11:B007</code></td>
+<td>WinUSB</td>
+</tr>
+<tr>
+<td><code>stm32duino</code></td>
+<td>Maple 003</td>
+<td><code>1EAF:0003</code></td>
+<td>WinUSB</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>

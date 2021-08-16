@@ -1,0 +1,1104 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/0.13/ja/adc_driver/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>ADC ドライバ - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#adc" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ADC ドライバ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh-cn/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr-fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he-il/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt-br/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru-ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Quantum Mechanical Keyboard Firmware
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Quantum Mechanical Keyboard Firmware
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    使い方
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    チャンネル
+  </a>
+  
+    <nav class="md-nav" aria-label="チャンネル">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avr" class="md-nav__link">
+    AVR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arm" class="md-nav__link">
+    ARM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    関数
+  </a>
+  
+    <nav class="md-nav" aria-label="関数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avr_1" class="md-nav__link">
+    AVR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arm_1" class="md-nav__link">
+    ARM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    設定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arm_2" class="md-nav__link">
+    ARM
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/ja/adc_driver.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="adc">ADC ドライバ<a class="headerlink" href="#adc" title="Permanent link">&para;</a></h1>
+<!---
+  original document: 0.10.52:docs/adc_driver.md
+  git diff 0.10.52 HEAD -- docs/adc_driver.md | cat
+-->
+
+<p>QMK は対応している MCU のアナログ・デジタルコンバータ（ADC) を使用し、特定のピンの電圧を計測することができます。この機能はデジタル出力の<a href="ja/feature_encoders.md">ロータリーエンコーダ</a>などではなく、アナログ計測が必要な可変抵抗器を使用したボリュームコントロールや Bluetooth キーボードのバッテリー残量表示などの実装に役立ちます。</p>
+<p>このドライバは現在 AVR と一部の ARM デバイスをサポートしています。返される値は 0V と VCC (通常 AVR の場合は 5V または 3.3V、ARM の場合は 3.3V)の間でマッピングされた 10ビットの整数 (0-1023) ですが、ARM の場合、もしもより精度が必要であれば <code>#define</code> を使うと操作をより柔軟に制御できます。</p>
+<h2 id="_1">使い方<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>このドライバを使うには、<code>rules.mk</code> に以下を追加します:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">SRC</span> <span class="o">+=</span> analog.c
+</code></pre></div>
+
+<p>そして、コードの先頭に以下の include を置きます:</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;analog.h&quot;</span><span class="cp"></span>
+</code></pre></div>
+
+<h2 id="_2">チャンネル<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="avr">AVR<a class="headerlink" href="#avr" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>AT90USB64/128</th>
+<th>ATmega16/32U4</th>
+<th>ATmega32A</th>
+<th>ATmega328/P</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>F0</code></td>
+<td><code>F0</code></td>
+<td><code>A0</code></td>
+<td><code>C0</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>F1</code></td>
+<td><code>F1</code></td>
+<td><code>A1</code></td>
+<td><code>C1</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>F2</code></td>
+<td></td>
+<td><code>A2</code></td>
+<td><code>C2</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>F3</code></td>
+<td></td>
+<td><code>A3</code></td>
+<td><code>C3</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>F4</code></td>
+<td><code>F4</code></td>
+<td><code>A4</code></td>
+<td><code>C4</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>F5</code></td>
+<td><code>F5</code></td>
+<td><code>A5</code></td>
+<td><code>C5</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>F6</code></td>
+<td><code>F6</code></td>
+<td><code>A6</code></td>
+<td>*</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>F7</code></td>
+<td><code>F7</code></td>
+<td><code>A7</code></td>
+<td>*</td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+<td><code>D4</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td><code>D6</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td><code>D7</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td></td>
+<td><code>B4</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td></td>
+<td><code>B5</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td></td>
+<td><code>B6</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><sup>* ATmega328/P には余分な2つの ADC チャンネルがありますが、DIP ピンアウトには存在せず、GPIO ピンとは共有されません。これらに直接アクセスするために、<code>adc_read()</code> を使えます。</p>
+<h3 id="arm">ARM<a class="headerlink" href="#arm" title="Permanent link">&para;</a></h3>
+<p>これらのピンの一部は同じチャンネルを使って ADC 上でダブルアップされることに注意してください。これは、これらのピンがどちらかの ADC に使われる可能性があるからです。</p>
+<p>また、F0 と F3 は異なるナンバリングスキーマを使うことに注意してください。F0 には1つの ADC があり、チャンネルは0から始まるインデックスですが、F3 には4つの ADC があり、チャンネルは1から始まるインデックスです。これは、F0 が ADC の <code>ADCv1</code> 実装を使用するのに対し、F3 が <code>ADCv3</code> 実装を使用するためです。</p>
+<table>
+<thead>
+<tr>
+<th>ADC</th>
+<th>Channel</th>
+<th>STM32F0xx</th>
+<th>STM32F3xx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td><code>A0</code></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td><code>A1</code></td>
+<td><code>A0</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td><code>A2</code></td>
+<td><code>A1</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td><code>A3</code></td>
+<td><code>A2</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td><code>A4</code></td>
+<td><code>A3</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td><code>A5</code></td>
+<td><code>F4</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>6</td>
+<td><code>A6</code></td>
+<td><code>C0</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>7</td>
+<td><code>A7</code></td>
+<td><code>C1</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>8</td>
+<td><code>B0</code></td>
+<td><code>C2</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>9</td>
+<td><code>B1</code></td>
+<td><code>C3</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>10</td>
+<td><code>C0</code></td>
+<td><code>F2</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td>11</td>
+<td><code>C1</code></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>12</td>
+<td><code>C2</code></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>13</td>
+<td><code>C3</code></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>14</td>
+<td><code>C4</code></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>15</td>
+<td><code>C5</code></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>16</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td></td>
+<td><code>A4</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td></td>
+<td><code>A5</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td></td>
+<td><code>A6</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td></td>
+<td><code>A7</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td></td>
+<td><code>C4</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>6</td>
+<td></td>
+<td><code>C0</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>7</td>
+<td></td>
+<td><code>C1</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>8</td>
+<td></td>
+<td><code>C2</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>9</td>
+<td></td>
+<td><code>C3</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td></td>
+<td><code>F2</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>11</td>
+<td></td>
+<td><code>C5</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>12</td>
+<td></td>
+<td><code>B2</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td>13</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>14</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>15</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>16</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td></td>
+<td><code>B1</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td></td>
+<td><code>E9</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td></td>
+<td><code>E13</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td></td>
+<td><code>E8</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>7</td>
+<td></td>
+<td><code>D10</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>8</td>
+<td></td>
+<td><code>D11</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>9</td>
+<td></td>
+<td><code>D12</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>10</td>
+<td></td>
+<td><code>D13</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>11</td>
+<td></td>
+<td><code>D14</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>12</td>
+<td></td>
+<td><code>B0</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>13</td>
+<td></td>
+<td><code>E7</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>14</td>
+<td></td>
+<td><code>E10</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>15</td>
+<td></td>
+<td><code>E11</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>16</td>
+<td></td>
+<td><code>E12</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td></td>
+<td><code>E14</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td></td>
+<td><code>B12</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td></td>
+<td><code>B13</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td></td>
+<td><code>B14</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td></td>
+<td><code>B15</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+<td></td>
+<td><code>E8</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>7</td>
+<td></td>
+<td><code>D10</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>8</td>
+<td></td>
+<td><code>D11</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>9</td>
+<td></td>
+<td><code>D12</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>10</td>
+<td></td>
+<td><code>D13</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>11</td>
+<td></td>
+<td><code>D14</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>12</td>
+<td></td>
+<td><code>D8</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>13</td>
+<td></td>
+<td><code>D9</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td>14</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>15</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>16</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">関数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="avr_1">AVR<a class="headerlink" href="#avr_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>関数</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>analogReference(mode)</code></td>
+<td>アナログの電圧リファレンスソースを設定する。<code>ADC_REF_EXTERNAL</code>、<code>ADC_REF_POWER</code>、<code>ADC_REF_INTERNAL</code> のいずれかでなければなりません。</td>
+</tr>
+<tr>
+<td><code>analogReadPin(pin)</code></td>
+<td>指定されたピンから値を読み取ります。例えば、ATmega32U4 の ADC6 の場合 <code>F6</code>。</td>
+</tr>
+<tr>
+<td><code>pinToMux(pin)</code></td>
+<td>指定されたピンを mux 値に変換します。サポートされていないピンが指定された場合、"0V (GND)" の mux 値を返します。</td>
+</tr>
+<tr>
+<td><code>adc_read(mux)</code></td>
+<td>指定された mux に従って ADC から値を読み取ります。詳細は、MCU のデータシートを見てください。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="arm_1">ARM<a class="headerlink" href="#arm_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>関数</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>analogReadPin(pin)</code></td>
+<td>指定されたピンから値を読み取ります。STM32F0 では チャンネル 0 の <code>A0</code>、STM32F3 ではチャンネル 1 の ADC1。ピンを複数の ADC に使える場合は、この関数のために番号の小さい ADC が選択されることに注意してください。例えば、<code>C0</code> は、ADC2 にも使える場合、ADC1 のチャンネル 6 になります。</td>
+</tr>
+<tr>
+<td><code>analogReadPinAdc(pin, adc)</code></td>
+<td>指定されたピンと ADC から値を読み取ります。例えば、<code>C0, 1</code> は、ADC1 ではなく ADC2 のチャンネル 6 から読み取ります。この関数では、ADC はインデックス 0 から始まることに注意してください。</td>
+</tr>
+<tr>
+<td><code>pinToMux(pin)</code></td>
+<td>指定されたピンをチャンネルと ADC の組み合わせに変換します。サポートされていないピンが指定された場合、"0V (GND)" の mux 値を返します。</td>
+</tr>
+<tr>
+<td><code>adc_read(mux)</code></td>
+<td>指定されたピンと ADC の組み合わせに応じて ADC から値を読み取ります。詳細は、MCU のデータシートを見てください。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">設定<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="arm_2">ARM<a class="headerlink" href="#arm_2" title="Permanent link">&para;</a></h2>
+<p>ADC の ARM 実装には、独自のキーボードとキーマップでオーバーライドして動作方法を変更できる幾つかの追加オプションがあります。利用可能なオプションの詳細については、特定のマイクロコントローラについて ChibiOS の対応する <code>hal_adc_lld.h</code> を調べてください。</p>
+<table>
+<thead>
+<tr>
+<th><code>#define</code></th>
+<th>型</th>
+<th>既定値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ADC_CIRCULAR_BUFFER</code></td>
+<td><code>bool</code></td>
+<td><code>false</code></td>
+<td><code>true</code> の場合、この実装は循環バッファを使います。</td>
+</tr>
+<tr>
+<td><code>ADC_NUM_CHANNELS</code></td>
+<td><code>int</code></td>
+<td><code>1</code></td>
+<td>ADC 動作の一部としてスキャンされるチャンネル数を設定します。現在の実装は <code>1</code> のみをサポートします。</td>
+</tr>
+<tr>
+<td><code>ADC_BUFFER_DEPTH</code></td>
+<td><code>int</code></td>
+<td><code>2</code></td>
+<td>各結果の深さを設定します。デフォルトでは12ビットの結果しか取得できないため、これを2バイトに設定して1つの値を含めることができます。8ビット以下の結果を選択した場合は、これを 1 に設定できます。</td>
+</tr>
+<tr>
+<td><code>ADC_SAMPLING_RATE</code></td>
+<td><code>int</code></td>
+<td><code>ADC_SMPR_SMP_1P5</code></td>
+<td>ADC のサンプリングレートを設定します。デフォルトでは、最も速い設定に設定されています。</td>
+</tr>
+<tr>
+<td><code>ADC_RESOLUTION</code></td>
+<td><code>int</code></td>
+<td><code>ADC_CFGR1_RES_12BIT</code></td>
+<td>結果の分解能。デフォルトでは12ビットを選択しますが、12、10、8、6ビットを選択できます。</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.instant", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>
