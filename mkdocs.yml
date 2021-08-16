@@ -44,7 +44,6 @@ markdown_extensions:
   - def_list
   - fenced_code
   - footnotes
-  - pymdownx.betterem
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.keys
