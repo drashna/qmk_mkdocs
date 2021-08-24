@@ -4,7 +4,7 @@ When defining a [keymap](keymap.md) each key needs a valid key definition. This 
 
 This is a reference only. Each group of keys links to the page documenting their functionality in more detail.
 
-## Basic Keycodes :id=basic-keycodes
+## Basic Keycodes {: id=basic-keycodes }
 
 See also: [Basic Keycodes](keycodes_basic.md)
 
@@ -215,7 +215,7 @@ See also: [Basic Keycodes](keycodes_basic.md)
 <sup>5. Skips the entire track in iTunes when tapped, seeks within the current track when held.</sup><br/>
 <sup>6. WMP does not recognize the Rewind key, but both alter playback speed in VLC.</sup>
 
-## Quantum Keycodes :id=quantum-keycodes
+## Quantum Keycodes {: id=quantum-keycodes }
 
 See also: [Quantum Keycodes](quantum_keycodes.md#qmk-keycodes)
 
@@ -225,7 +225,7 @@ See also: [Quantum Keycodes](quantum_keycodes.md#qmk-keycodes)
 |`DEBUG`       |         |Toggle debug mode                                      |
 |`EEPROM_RESET`|`EEP_RST`|Reinitializes the keyboard's EEPROM (persistent memory)|
 
-## Audio Keys :id=audio-keys
+## Audio Keys {: id=audio-keys }
 
 See also: [Audio](feature_audio.md)
 
@@ -243,7 +243,7 @@ See also: [Audio](feature_audio.md)
 |`MU_TOG`        |         |Toggles Music Mode                |
 |`MU_MOD`        |         |Cycles through the music modes    |
 
-## Backlighting :id=backlighting
+## Backlighting {: id=backlighting }
 
 See also: [Backlighting](feature_backlight.md)
 
@@ -257,7 +257,7 @@ See also: [Backlighting](feature_backlight.md)
 |`BL_DEC` |Decrease the backlight level              |
 |`BL_BRTG`|Toggle backlight breathing                |
 
-## Bootmagic :id=bootmagic
+## Bootmagic {: id=bootmagic }
 
 See also: [Bootmagic](feature_bootmagic.md)
 
@@ -293,7 +293,7 @@ See also: [Bootmagic](feature_bootmagic.md)
 |`MAGIC_EE_HANDS_LEFT`             |`EH_LEFT`|Set the master half of a split keyboard as the left hand (for `EE_HANDS`) |
 |`MAGIC_EE_HANDS_RIGHT`            |`EH_RGHT`|Set the master half of a split keyboard as the right hand (for `EE_HANDS`)|
 
-## Bluetooth :id=bluetooth
+## Bluetooth {: id=bluetooth }
 
 See also: [Bluetooth](feature_bluetooth.md)
 
@@ -303,7 +303,7 @@ See also: [Bluetooth](feature_bluetooth.md)
 |`OUT_USB` |USB only                                      |
 |`OUT_BT`  |Bluetooth only                                |
 
-## Dynamic Macros :id=dynamic-macros
+## Dynamic Macros {: id=dynamic-macros }
 
 See also: [Dynamic Macros](feature_dynamic_macros.md)
 
@@ -315,7 +315,7 @@ See also: [Dynamic Macros](feature_dynamic_macros.md)
 |`DYN_MACRO_PLAY2`|`DM_PLY2`|Replay Macro 2                                    |
 |`DYN_REC_STOP`   |`DM_RSTP`|Finish the macro that is currently being recorded.|
 
-## Grave Escape :id=grave-escape
+## Grave Escape {: id=grave-escape }
 
 See also: [Grave Escape](feature_grave_esc.md)
 
@@ -323,7 +323,7 @@ See also: [Grave Escape](feature_grave_esc.md)
 |-----------|---------|------------------------------------------------------------------|
 |`GRAVE_ESC`|`KC_GESC`|Escape when pressed, <code>&#96;</code> when Shift or GUI are held|
 
-## Key Lock :id=key-lock
+## Key Lock {: id=key-lock }
 
 See also: [Key Lock](feature_key_lock.md)
 
@@ -331,7 +331,7 @@ See also: [Key Lock](feature_key_lock.md)
 |---------|--------------------------------------------------------------|
 |`KC_LOCK`|Hold down the next key pressed, until the key is pressed again|
 
-## Layer Switching :id=layer-switching
+## Layer Switching {: id=layer-switching }
 
 See also: [Layer Switching](feature_layers.md#switching-and-toggling-layers)
 
@@ -346,7 +346,7 @@ See also: [Layer Switching](feature_layers.md#switching-and-toggling-layers)
 |`TO(layer)`     |Turns on `layer` and turns off all other layers, except the default layer |
 |`TT(layer)`     |Normally acts like MO unless it's tapped multiple times, which toggles `layer` on |
 
-## Leader Key :id=leader-key
+## Leader Key {: id=leader-key }
 
 See also: [Leader Key](feature_leader_key.md)
 
@@ -354,7 +354,7 @@ See also: [Leader Key](feature_leader_key.md)
 |---------|------------------------|
 |`KC_LEAD`|Begins a leader sequence|
 
-## MIDI :id=midi
+## MIDI {: id=midi }
 
 See also: [MIDI](feature_midi.md)
 
@@ -505,7 +505,7 @@ See also: [MIDI](feature_midi.md)
 |`MI_BENDD`  |         |Bend pitch down                  |
 |`MI_BENDU`  |         |Bend pitch up                    |
 
-## Mouse Keys :id=mouse-keys
+## Mouse Keys {: id=mouse-keys }
 
 See also: [Mouse Keys](feature_mouse_keys.md)
 
@@ -528,7 +528,7 @@ See also: [Mouse Keys](feature_mouse_keys.md)
 |`KC_MS_ACCEL1`  |`KC_ACL1`|Set mouse acceleration to 1|
 |`KC_MS_ACCEL2`  |`KC_ACL2`|Set mouse acceleration to 2|
 
-## Modifiers :id=modifiers
+## Modifiers {: id=modifiers }
 
 See also: [Modifier Keys](feature_advanced_keycodes.md#modifier-keys)
 
@@ -556,7 +556,7 @@ See also: [Modifier Keys](feature_advanced_keycodes.md#modifier-keys)
 |`KC_MEH`  |                                  |Left Control, Shift and Alt                           |
 |`KC_HYPR` |                                  |Left Control, Shift, Alt and GUI                      |
 
-## Mod-Tap Keys :id=mod-tap-keys
+## Mod-Tap Keys {: id=mod-tap-keys }
 
 See also: [Mod-Tap](mod_tap.md)
 
@@ -585,7 +585,7 @@ See also: [Mod-Tap](mod_tap.md)
 |`MEH_T(kc)`  |                                                                 |Left Control, Shift and Alt when held, `kc` when tapped       |
 |`HYPR_T(kc)` |`ALL_T(kc)`                                                      |Left Control, Shift, Alt and GUI when held, `kc` when tapped - more info [here](https://brettterpstra.com/2012/12/08/a-useful-caps-lock-key/)|
 
-## RGB Lighting :id=rgb-lighting
+## RGB Lighting {: id=rgb-lighting }
 
 See also: [RGB Lighting](feature_rgblight.md)
 
@@ -610,7 +610,7 @@ See also: [RGB Lighting](feature_rgblight.md)
 |`RGB_MODE_GRADIENT`|`RGB_M_G` |Static gradient animation mode                                      |
 |`RGB_MODE_RGBTEST` |`RGB_M_T` |Red,Green,Blue test animation mode                                  |
 
-## RGB Matrix Lighting :id=rgb-matrix-lighting
+## RGB Matrix Lighting {: id=rgb-matrix-lighting }
 
 See also: [RGB Matrix Lighting](feature_rgb_matrix.md)
 
@@ -628,7 +628,7 @@ See also: [RGB Matrix Lighting](feature_rgb_matrix.md)
 |`RGB_SPI`          |          |Increase effect speed (does not support eeprom yet), decrease speed when Shift is held|
 |`RGB_SPD`          |          |Decrease effect speed (does not support eeprom yet), increase speed when Shift is held|
 
-## Thermal Printer :id=thermal-printer
+## Thermal Printer {: id=thermal-printer }
 
 See also: [Thermal Printer](feature_thermal_printer.md)
 
@@ -637,7 +637,7 @@ See also: [Thermal Printer](feature_thermal_printer.md)
 |`PRINT_ON` |Start printing everything the user types|
 |`PRINT_OFF`|Stop printing everything the user types |
 
-## US ANSI Shifted Symbols :id=us-ansi-shifted-symbols
+## US ANSI Shifted Symbols {: id=us-ansi-shifted-symbols }
 
 See also: [US ANSI Shifted Symbols](keycodes_us_ansi_shifted.md)
 
@@ -665,7 +665,7 @@ See also: [US ANSI Shifted Symbols](keycodes_us_ansi_shifted.md)
 |`KC_RIGHT_ANGLE_BRACKET`|`KC_RABK`, `KC_GT` |`>`        |
 |`KC_QUESTION`           |`KC_QUES`          |`?`        |
 
-## One Shot Keys :id=one-shot-keys
+## One Shot Keys {: id=one-shot-keys }
 
 See also: [One Shot Keys](one_shot_keys.md)
 
@@ -677,7 +677,7 @@ See also: [One Shot Keys](one_shot_keys.md)
 |`OS_OFF`    |Turns One Shot keys off           |
 |`OS_TOGG`   |Toggles One Shot keys status      |
 
-## Space Cadet :id=space-cadet
+## Space Cadet {: id=space-cadet }
 
 See also: [Space Cadet](feature_space_cadet.md)
 
@@ -691,7 +691,7 @@ See also: [Space Cadet](feature_space_cadet.md)
 |`KC_RAPC`  |Right Alt when held, `)` when tapped    |
 |`KC_SFTENT`|Right Shift when held, Enter when tapped|
 
-## Swap Hands :id=swap-hands
+## Swap Hands {: id=swap-hands }
 
 See also: [Swap Hands](feature_swap_hands.md)
 
@@ -706,7 +706,7 @@ See also: [Swap Hands](feature_swap_hands.md)
 |`SH_TT`    |Toggles with a tap; momentary when held.                                 |
 |`SH_OS`    |One shot swap hands: toggle while pressed or until next key press.       |
 
-## Unicode Support :id=unicode-support
+## Unicode Support {: id=unicode-support }
 
 See also: [Unicode Support](feature_unicode.md)
 

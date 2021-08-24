@@ -10,6 +10,6 @@
 
 [ここに移動しました](ja/faq_misc.md#testing)
 
-## デバッグ :id=debugging
+## デバッグ {: id=debugging }
 
 [ここに移動しました](ja/faq_debug.md#debugging)
