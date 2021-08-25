@@ -18,35 +18,7 @@ All links to other docs pages must also be prefixed with the language folder. If
 
 Once you've finished translating a new language, you'll also need to modify the following files:
 
-* [`docs/_langs.md`](https://github.com/qmk/qmk_firmware/blob/master/docs/_langs.md)  
-  Each line should contain a country flag as a [GitHub emoji shortcode](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#country-flag) followed by the name represented in its own language:
-
-  ```markdown
-   - [:cn: 中文](/zh-cn/)
-  ```
-
-* [`docs/index.html`](https://github.com/qmk/qmk_firmware/blob/master/docs/index.html)  
-  Both `placeholder` and `noData` objects should have a dictionary entry for the language folder in a string:
-
-  ```js
-  '/zh-cn/': '没有结果!',
-  ```
-
-  The `nameLink` object, for setting the "QMK Firmware" heading link in the sidebar, must also be added to:
-
-  ```js
-  '/zh-cn/': '/#/zh-cn/',
-  ```
-
-  And make sure to add the language folder in the `fallbackLanguages` list, so it will properly fall back to English instead of 404ing:
-
-  ```js
-  fallbackLanguages: [
-    // ...
-    'zh-cn',
-    // ...
-  ],
-  ```
+<!-- FIXME(skullydazed/anyone): redo this for mkdocs -->
 
 ## Previewing the Translations
 
