@@ -249,7 +249,7 @@ theme:
     code: Source Code Pro
   icon:
     repo: fontawesome/brands/github
-  language: en
+  language: ru
   name: material
   palette:
     - media: "(prefers-color-scheme: light)"
