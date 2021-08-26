@@ -1,15 +1,15 @@
-name: Master Docs
+name: Develop Docs
 
 on:
   workflow_dispatch:
   push:
     branches:
-    - main
+    - develop
     paths:
     - 'docs/**'
 
 jobs:
-  docs_main:
+  docs_develop:
     runs-on: ubuntu-latest
     container: qmkfm/qmk_cli
 
@@ -27,7 +27,7 @@ jobs:
         python3 -m pip install -r requirements.txt
 
     - name: Build docs
-      run: ./build_translations.sh master
+      run: ./build_translations.sh develop
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.4
@@ -35,4 +35,4 @@ jobs:
         branch: gh-pages
         folder: site
         git-config-email: hello@qmk.fm
-        target-folder: master
+        target-folder: develop
