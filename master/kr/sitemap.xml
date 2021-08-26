@@ -411,17 +411,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://qmk.github.io/qmk_mkdocs/master/kr/getting_started_build_tools/</loc>
-         <lastmod>2021-08-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://qmk.github.io/qmk_mkdocs/master/kr/getting_started_docker/</loc>
-         <lastmod>2021-08-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://qmk.github.io/qmk_mkdocs/master/kr/getting_started_getting_help/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
