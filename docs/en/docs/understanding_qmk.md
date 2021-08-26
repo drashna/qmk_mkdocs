@@ -5,11 +5,11 @@ This document attempts to explain how the QMK firmware works from a very high le
 * [Tutorial](tutorial.md)
 * [How Keyboards Work](how_keyboards_work.md)
 * FAQs:
-    * [faq_build.md](Build FAQ)
-    * [faq_debug.md](Debug FAQ)
-    * [faq_general.md](General FAQ)
-    * [faq_keymap.md](Keymap FAQ)
-    * [faq_misc.md](Misc FAQ)
+    * [Build FAQ](faq_build.md)
+    * [Debug FAQ](faq_debug.md)
+    * [General FAQ](faq_general.md)
+    * [Keymap FAQ](faq_keymap.md)
+    * [Misc FAQ](faq_misc.md)
 
 ## Startup
 
