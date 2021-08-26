@@ -1,4 +1,4 @@
-name: Generate Docs
+name: Develop Docs
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
     - 'docs/**'
 
 jobs:
-  generate:
+  docs_develop:
     runs-on: ubuntu-latest
     container: qmkfm/qmk_cli
 
