@@ -153,8 +153,14 @@ nav:
     - Breaking Changes:
       - Overview: breaking_changes.md
       - My Pull Request Was Flagged: breaking_changes_instructions.md
-      - Most Recent ChangeLog: ChangeLog/20210529.md "QMK v0.13.0 - 2021 May 29"
-      - Past Breaking Changes: breaking_changes_history.md
+      - Most Recent ChangeLog: ChangeLog/20210529.md
+      - Past Breaking Changes:
+          - 2021 Feb 27, 0.12.0: ChangeLog/20210227.md
+          - 2020 Nov 28, 0.11.0: ChangeLog/20201128.md
+          - 2020 Aug 29, 0.10.0: ChangeLog/20200829.md
+          - 2020 May 30, 0.9.0: ChangeLog/20200530.md
+          - 2020 Feb 29, 0.8.0: ChangeLog/20200229.md
+          - 2019 Aug 30, 0.7.0: ChangeLog/20190830.md
     - C Development:
       - ARM Debugging Guide: arm_debugging.md
       - AVR Processors: hardware_avr.md

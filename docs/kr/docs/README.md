@@ -30,4 +30,4 @@ QMK(*Quantum Mechanical Keyboard 양자 기계식 키보드*)란 QMK 컴워어, 
 
 ## 커스터마이징
 
-QMK는 사용할 수 있는 매우 다양한 [기능](features.md)과 체계화된 [참고자료](https://docs.qmk.fm)들이 있습니다. 그중 대부분은 [키맵](keymap.md)을 수정하거나 [키코드](keycodes.md)를 변경하는데에 특화되어 있습니다.
+QMK는 사용할 수 있는 매우 다양한 기능과 체계화된 [참고자료](https://docs.qmk.fm)들이 있습니다. 그중 대부분은 [키맵](keymap.md)을 수정하거나 [키코드](keycodes.md)를 변경하는데에 특화되어 있습니다.
