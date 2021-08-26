@@ -9,7 +9,7 @@
       
       
       
-        <link rel="canonical" href="https://docs.qmk.fm/devel/ru/getting_started_introduction/">
+        <link rel="canonical" href="https://qmk.github.io/qmk_mkdocs/master/ru/getting_started_introduction/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
@@ -2895,17 +2895,17 @@
 <h2 id="qmk">Базовая структура QMK<a class="headerlink" href="#qmk" title="Permanent link">&para;</a></h2>
 <p>QMK - это форк <a href="https://github.com/tmk">Джуна Вако (Jun Wako)</a> проекта <a href="https://github.com/tmk/tmk_keyboard">tmk_keyboard</a>. Оригинальный код TMK с изменениями можно найти в папке <code>tmk_core</code>. Дополнения QMK к проекту можно найти в папке <code>quantum</code>. Проекты клавиатур можно найти в папках <code>handwired</code> и <code>keyboard</code>.</p>
 <h3 id="_2">Структура пространства пользователя<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>Внутри папки <code>users</code> находится каталог для каждого пользователя. Это место для пользователей, куда они могут поместить код, чтобы использовать его с разными клавиатурами. Для получения дополнительной информации обратитесь к документации по <a href="ru-ru/feature_userspace.md">функциям пользовательского пространства</a>.</p>
+<p>Внутри папки <code>users</code> находится каталог для каждого пользователя. Это место для пользователей, куда они могут поместить код, чтобы использовать его с разными клавиатурами. Для получения дополнительной информации обратитесь к документации по <a href="../feature_userspace/">функциям пользовательского пространства</a>.</p>
 <h3 id="_3">Структура проекта клавиатуры<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>Внутри папки <code>keyboards</code> есть подпапки <code>handwired</code> и есть подкаталоги поставщиков и производителей, для примера, <code>clueboard</code> - это каталог для каждого проекта клавиатуры, например, <code>qmk_firmware/keyboards/clueboard/2x1800</code>. В нем вы найдете следующую структуру:
 * <code>keymaps/</code>: Различные раскладки клавиш, которые можно собрать.
 * <code>rules.mk</code>: Файл, который устанавливает параметры по умолчанию для команды "make". Не редактируйте этот файл напрямую, вместо этого используйте <code>rules.mk</code>, относящийся к конкретной раскладке.
 * <code>config.h</code>: Файл, который устанавливает параметры времени компиляции по умолчанию. Не редактируйте этот файл напрямую, вместо этого используйте <code>config.h</code>, относящийся к конкретной раскладке.
-* <code>info.json</code>: Файл настройки раскладки для QMK Configurator. Посмотрите <a href="ru-ru/reference_configurator_support.md">Поддержку конфигуратора</a> для дополнительной информации.
+* <code>info.json</code>: Файл настройки раскладки для QMK Configurator. Посмотрите <a href="../reference_configurator_support/">Поддержку конфигуратора</a> для дополнительной информации.
 * <code>readme.md</code>: Краткий обзор клавиатуры.
 * <code>&lt;keyboardName&gt;.h</code>: В этом файле определяется раскладка клавиатуры по матрице переключателей клавиатуры.
 * <code>&lt;keyboardName&gt;.c</code>: В этом файле вы можете найти пользовательский код для клавиатуры.</p>
-<p>Для получения дополнительной информации о структуре проекта обратитесь к <a href="ru-ru/hardware_keyboard_guidelines.md">Руководству QMK по клавиатуре</a>.</p>
+<p>Для получения дополнительной информации о структуре проекта обратитесь к <a href="../hardware_keyboard_guidelines/">Руководству QMK по клавиатуре</a>.</p>
 <h3 id="_4">Структура раскладки клавиатуры<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>В каждой папке раскладки клавиатуры могут быть найдены следующие файлы. Обязательным является только файл <code>keymap.c</code>, и если остальные файлы не найдены, то будут выбраны параметры по умолчанию.</p>
 <ul>
