@@ -62,7 +62,7 @@ markdown_extensions:
       toc_depth: 3
   - wikilinks
 nav:
-  - Accueil: README.md
+  - Home: README.md
   - En Français:
     - Guide pour débutant complet:
       - Introduction: tutorial.md
@@ -181,7 +181,7 @@ nav:
 repo_name: qmk/qmk_firmware
 repo_url: https://github.com/qmk/qmk_firmware
 site_name: QMK Firmware Docs
-site_url: https://docs.qmk.fm/fr
+site_url: https://docs.qmk.fm/devel/fr
 theme:
   features:
     - navigation.expand

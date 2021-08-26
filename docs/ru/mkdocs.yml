@@ -235,7 +235,7 @@ nav:
 repo_name: qmk/qmk_firmware
 repo_url: https://github.com/qmk/qmk_firmware
 site_name: QMK Firmware Docs
-site_url: https://docs.qmk.fm/kr
+site_url: https://docs.qmk.fm/devel/ru
 theme:
   features:
     - navigation.expand
@@ -249,7 +249,7 @@ theme:
     code: Source Code Pro
   icon:
     repo: fontawesome/brands/github
-  language: kr
+  language: ru
   name: material
   palette:
     - media: "(prefers-color-scheme: light)"

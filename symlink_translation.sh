@@ -2,7 +2,7 @@
 
 # Setup the symlinks for working on a translation
 
-set -e
+#set -e
 set -x
 
 if [ -z "$1" ]; then
@@ -11,14 +11,17 @@ if [ -z "$1" ]; then
 fi
 
 translation=$1
+
+cd "$(dirname "${BASH_SOURCE[0]}")"/docs/en
+
 for file in $(find docs -name \*.md); do
-	if ! [ -e ${translation}/${file} ]; then
-		mkdir -p $(dirname ${translation}${file})
+	if ! [ -e ../${translation}/${file} ]; then
 		# Ugly hack, but ChangeLog is the only subdir we have...
 		if echo $file | grep -q ChangeLog; then
-			ln -s ../../../${file} ${translation}${file}
+			mkdir -p ../$(dirname ${translation}/${file})
+			ln -s ../../../en/${file} ../${translation}/${file}
 		else
-			ln -s ../../${file} ${translation}${file}
+			ln -s ../../en/${file} ../${translation}/${file}
 		fi
 	fi
 done
