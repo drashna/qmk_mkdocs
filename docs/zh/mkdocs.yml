@@ -101,7 +101,7 @@ nav:
     - 背光: feature_backlight.md
     - 蓝牙: feature_bluetooth.md
     - 热改键: feature_bootmagic.md
-    - 组合: feature_combo
+    - 组合: feature_combo.md
     - 命令: feature_command.md
     - 消抖 API: feature_debounce_type.md
     - 拨动开关: feature_dip_switch.md
