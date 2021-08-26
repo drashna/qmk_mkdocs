@@ -20,7 +20,7 @@ jobs:
         fetch-depth: 1
 
     - name: Install dependencies
-      run: python3 -m pip install -r requirements.txt
+      run: python3 -m pip install -U -r requirements.txt
 
     - name: Build docs
       run: ./build_translations.sh
