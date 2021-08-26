@@ -33,13 +33,13 @@
 * `ACTION_TAP_DANCE_FN(fn)`: ユーザーキーマップに定義した指定の関数が呼び出されます。タップダンス実行の回数分タップすると、最後の時点で呼び出されます。
 * `ACTION_TAP_DANCE_FN_ADVANCED(on_each_tap_fn, on_dance_finished_fn, on_dance_reset_fn)`: タップする度にユーザーキーマップに定義した最初の関数が呼び出されます。タップダンスの実行が終わった時点で2番目の関数が呼び出され、タップダンスの実行をリセットするときに最後の関数が呼び出されます。
 * ~~`ACTION_TAP_DANCE_FN_ADVANCED_TIME(on_each_tap_fn, on_dance_finished_fn, on_dance_reset_fn, tap_specific_tapping_term)`~~: これは `ACTION_TAP_DANCE_FN_ADVANCED` 関数と同じように機能します。しかし、`TAPPING_TERM` で事前に定義した時間の代わりに、カスタマイズしたタップ時間を使います。
-    * [ここ](ja/custom_quantum_functions.md#Custom_Tapping_Term)で概説するように、これはキーごとのタッピング時間機能を優先して非推奨になりました。この特定のタップダンス機能を使う代わりに、使いたい特定の `TD()` マクロ(`TD(TD_ESC_CAPS)` のような)を確認する必要があります。
+    * [ここ](custom_quantum_functions.md#Custom_Tapping_Term)で概説するように、これはキーごとのタッピング時間機能を優先して非推奨になりました。この特定のタップダンス機能を使う代わりに、使いたい特定の `TD()` マクロ(`TD(TD_ESC_CAPS)` のような)を確認する必要があります。
 
 
 最初のオプションで、1つのキーに2つの役割を持たせる大抵のケースには十分です。例えば、`ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_ENT)` は、1回タップすると `Space` を送信し、2回タップすると `Enter` を送信します。
 
 !!! info
-    ここでは [基本的なキーコード](ja/keycodes_basic.md) だけがサポートされていることを覚えておいてください。カスタムキーコードはサポートされていません。
+    ここでは [基本的なキーコード](keycodes_basic.md) だけがサポートされていることを覚えておいてください。カスタムキーコードはサポートされていません。
 
 最初のオプションに似ていますが、2番目のオプションは単純なレイヤー切替のケースに適しています。
 

@@ -149,24 +149,24 @@ QMK での全ての利用可能な設定にはデフォルトがあります。�
   * キーごとの `TAPPING_TERM` 設定の処理を有効にします
 * `#define RETRO_TAPPING`
   * 押下とリリースの間に他のキーによる中断がなければ、TAPPING_TERM の後であってもとにかくタップします
-  * 詳細は [Retro Tapping](ja/tap_hold.md#retro-tapping) を見てください
+  * 詳細は [Retro Tapping](tap_hold.md#retro-tapping) を見てください
 * `#define RETRO_TAPPING_PER_KEY`
   * キーごとの `RETRO_TAPPING` 設定の処理を有効にします
 * `#define TAPPING_TOGGLE 2`
   * トグルを引き起こす前のタップ数
 * `#define PERMISSIVE_HOLD`
   * `TAPPING_TERM` にヒットしていなくても、リリースする前に別のキーが押されると、タップとホールドキーがホールドを引き起こします
-  * 詳細は [Permissive Hold](ja/tap_hold.md#permissive-hold) を見てください
+  * 詳細は [Permissive Hold](tap_hold.md#permissive-hold) を見てください
 * `#define PERMISSIVE_HOLD_PER_KEY`
   * キーごとの `PERMISSIVE_HOLD` 設定の処理を有効にします
 * `#define IGNORE_MOD_TAP_INTERRUPT`
   * 両方のキーに `TAPPING_TERM` を適用することで、ホールド時に他のキーに変換するキーを使ってローリングコンボ (zx) をすることができるようにします
-  * 詳細は [Ignore Mod Tap Interrupt](ja/tap_hold.md#ignore-mod-tap-interrupt) を見てください
+  * 詳細は [Ignore Mod Tap Interrupt](tap_hold.md#ignore-mod-tap-interrupt) を見てください
 * `#define IGNORE_MOD_TAP_INTERRUPT_PER_KEY`
   * キーごとの `IGNORE_MOD_TAP_INTERRUPT` 設定の処理を有効にします
 * `#define TAPPING_FORCE_HOLD`
   * タップされた直後に、デュアルロールキーを修飾子として使用できるようにします
-  * [Tapping Force Hold](ja/tap_hold.md#tapping-force-hold)を見てください
+  * [Tapping Force Hold](tap_hold.md#tapping-force-hold)を見てください
   * タップトグル機能を無効にします (`TT` あるいは One Shot Tap Toggle)
 * `#define TAPPING_FORCE_HOLD_PER_KEY`
   * キーごとの `TAPPING_FORCE_HOLD` 設定処理を有効にします。
@@ -184,7 +184,7 @@ QMK での全ての利用可能な設定にはデフォルトがあります。�
 * `#define QMK_KEYS_PER_SCAN 4`
   * 走査ごとに1つ以上のキーを送信できるようにします。デフォルトでは、走査ごとに `process_record()` 経由で1つのキーイベントのみが送信されます。これはほとんどのタイピングにほとんど影響しませんが、多くのコードを入力しているか、走査レートが最初から遅い場合、キーイベントの処理に多少の遅延が生じる可能性があります。それぞれのプレスとリリースは別のイベントです。スキャン時間が 1ms 程度のキーボードの場合、とても高速なタイピストでさえ、実際にキーボードから数 ms 以上の遅延を発生させるのに必要な 500 キーストロークを1秒間に生成することはないでしょう。しかし、3～4ms の走査時間でコードを入力している場合はどうでしょうか？おそらくこれが必要です。
 * `#define COMBO_COUNT 2`
-  * [コンボ](ja/feature_combo.md)機能で使っているコンボの数にこれを設定します。
+  * [コンボ](feature_combo.md)機能で使っているコンボの数にこれを設定します。
 * `#define COMBO_TERM 200`
   * コンボキーが検出されるまでの時間。定義されていない場合は、デフォルトは `TAPPING_TERM` です。
 * `#define TAP_CODE_DELAY 100`
@@ -199,14 +199,14 @@ QMK での全ての利用可能な設定にはデフォルトがあります。�
 * `#define RGBLIGHT_ANIMATIONS`
   * RGB アニメーションを実行します
 * `#define RGBLIGHT_LAYERS`
-  * オンとオフを切り替えることができる [ライトレイヤー](ja/feature_rgblight.md?id=lighting-layers) を定義できます。現在のキーボードレイヤーまたは Caps Lock 状態を表示するのに最適です。
+  * オンとオフを切り替えることができる [ライトレイヤー](feature_rgblight.md?id=lighting-layers) を定義できます。現在のキーボードレイヤーまたは Caps Lock 状態を表示するのに最適です。
 * `#define RGBLIGHT_MAX_LAYERS`
-  * デフォルトは8です。もしさらに [ライトレイヤー](ja/feature_rgblight.md?id=lighting-layers) が必要であれば、32まで拡張できます。
+  * デフォルトは8です。もしさらに [ライトレイヤー](feature_rgblight.md?id=lighting-layers) が必要であれば、32まで拡張できます。
   * メモ: 最大値を大きくするとファームウェアサイズが大きくなり、分割キーボードで同期が遅くなります。
 * `#define RGBLIGHT_LAYER_BLINK`
-  * 指定されたミリ秒の間、ライトレイヤーを [点滅](ja/feature_rgblight.md?id=lighting-layer-blink) する機能を追加します(例えば、アクションを確認するため)。
+  * 指定されたミリ秒の間、ライトレイヤーを [点滅](feature_rgblight.md?id=lighting-layer-blink) する機能を追加します(例えば、アクションを確認するため)。
 * `#define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF`
-  * 定義されている場合、RGB ライトがオフになっている場合でも [ライトレイヤー](ja/feature_rgblight?id=overriding-rgb-lighting-onoff-status) が表示されます。
+  * 定義されている場合、RGB ライトがオフになっている場合でも [ライトレイヤー](feature_rgblight?id=overriding-rgb-lighting-onoff-status) が表示されます。
 * `#define RGBLED_NUM 12`
   * LED の数
 * `#define RGBLIGHT_SPLIT`
@@ -333,10 +333,10 @@ QMK での全ての利用可能な設定にはデフォルトがあります。�
      ...  a.o c.o  ...  lib_b.a lib_d.a  ...
     ```
 * `LAYOUTS`
-  * このキーボードがサポートする[レイアウト](ja/feature_layouts.md)のリスト
+  * このキーボードがサポートする[レイアウト](feature_layouts.md)のリスト
 * `LTO_ENABLE`
   * キーボードをコンパイルする時に、Link Time Optimization (LTO) を有効にします。これは処理に時間が掛かりますが、コンパイルされたサイズを大幅に減らします (そして、ファームウェアが小さいため、追加の時間は分からないくらいです)。
-ただし、LTO が有効な場合、古い TMK のマクロと関数の機能が壊れるため、自動的にこれらの機能を無効にします。これは `NO_ACTION_MACRO` と `NO_ACTION_FUNCTION` を自動的に定義することで行われます。(メモ: これは QMK の [マクロ](ja/feature_macros.md) と [レイヤー](ja/feature_layers.md) には影響を与えません。)
+ただし、LTO が有効な場合、古い TMK のマクロと関数の機能が壊れるため、自動的にこれらの機能を無効にします。これは `NO_ACTION_MACRO` と `NO_ACTION_FUNCTION` を自動的に定義することで行われます。(メモ: これは QMK の [マクロ](feature_macros.md) と [レイヤー](feature_layers.md) には影響を与えません。)
 
 ## AVR MCU オプション
 * `MCU = atmega32u4`
