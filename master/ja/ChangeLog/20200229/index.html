@@ -16,7 +16,7 @@
     
     
       
-        <title>QMK Breaking Change - 2020 Feb 29 Changelog - QMK Firmware Docs</title>
+        <title>2020 Feb 29, 0.8.0 - QMK Firmware Docs</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              QMK Breaking Change - 2020 Feb 29 Changelog
+              2020 Feb 29, 0.8.0
             
           </span>
         </div>
@@ -1841,14 +1841,16 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       <label class="md-nav__link" for="__nav_7">
         QMK の開発
@@ -1876,12 +1878,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" data-md-state="indeterminate" type="checkbox" id="__nav_7_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
       
       <label class="md-nav__link" for="__nav_7_2">
         互換性を破る変更/Breaking changes
@@ -1923,8 +1927,43 @@
   
   
     <li class="md-nav__item">
-      <a href="../20210227.md "QMK v0.12.0 - 2021 Feb 27"" class="md-nav__link">
+      <a href="../20210529/" class="md-nav__link">
         最近の変更履歴
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_4" type="checkbox" id="__nav_7_2_4" checked>
+      
+      <label class="md-nav__link" for="__nav_7_2_4">
+        過去の互換性を破る変更
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="過去の互換性を破る変更" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          過去の互換性を破る変更
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20210227/" class="md-nav__link">
+        2021 Feb 27, 0.12.0
       </a>
     </li>
   
@@ -1935,9 +1974,159 @@
   
   
     <li class="md-nav__item">
-      <a href="../../breaking_changes_history/" class="md-nav__link">
-        過去の互換性を破る変更
+      <a href="../20201128/" class="md-nav__link">
+        2020 Nov 28, 0.11.0
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20200829/" class="md-nav__link">
+        2020 Aug 29, 0.10.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20200530/" class="md-nav__link">
+        2020 May 30, 0.9.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2020 Feb 29, 0.8.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        2020 Feb 29, 0.8.0
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#update-chibioschibios-contribugfx-submodules" class="md-nav__link">
+    Update ChibiOS/ChibiOS-Contrib/uGFX submodules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-chibios-timer-overflow-for-16-bit-systick-devices" class="md-nav__link">
+    Fix ChibiOS timer overflow for 16-bit SysTick devices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-lufa-submodule" class="md-nav__link">
+    Update LUFA submodule
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoder-flip" class="md-nav__link">
+    Encoder flip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-support-for-backlight_on_state-for-hardware-pwm-backlight" class="md-nav__link">
+    Adding support for BACKLIGHT_ON_STATE for hardware PWM backlight
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrating-action_layer_tap_key-entries-in-fn_actions-to-lt-keycodes" class="md-nav__link">
+    Migrating ACTION_LAYER_TAP_KEY() entries in fn_actions to LT() keycodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-backlight-keycode-handling-to-process_keycode" class="md-nav__link">
+    Moving backlight keycode handling to process_keycode/
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refactor-planck-keymaps-to-use-layout-macros" class="md-nav__link">
+    Refactor Planck keymaps to use Layout Macros
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gon-nerd-codebase-refactor" class="md-nav__link">
+    GON NerD codebase refactor
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20190830/" class="md-nav__link">
+        2019 Aug 30, 0.7.0
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -2911,6 +3100,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        
+        <a href="../20200530/" class="md-footer__link md-footer__link--prev" aria-label="前: 2020 May 30, 0.9.0" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              2020 May 30, 0.9.0
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../20190830/" class="md-footer__link md-footer__link--next" aria-label="次: 2019 Aug 30, 0.7.0" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              2019 Aug 30, 0.7.0
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

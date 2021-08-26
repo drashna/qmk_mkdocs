@@ -1949,7 +1949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ChangeLog/20210529.md "QMK v0.13.0 - 2021 May 29"" class="md-nav__link">
+      <a href="../ChangeLog/20210529/" class="md-nav__link">
         Most Recent ChangeLog
       </a>
     </li>
@@ -1960,10 +1960,97 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../breaking_changes_history/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_2_4" checked>
+      
+      <label class="md-nav__link" for="__nav_7_2_4">
         Past Breaking Changes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Past Breaking Changes" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Past Breaking Changes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChangeLog/20210227/" class="md-nav__link">
+        2021 Feb 27, 0.12.0
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChangeLog/20201128/" class="md-nav__link">
+        2020 Nov 28, 0.11.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChangeLog/20200829/" class="md-nav__link">
+        2020 Aug 29, 0.10.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChangeLog/20200530/" class="md-nav__link">
+        2020 May 30, 0.9.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChangeLog/20200229/" class="md-nav__link">
+        2020 Feb 29, 0.8.0
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChangeLog/20190830/" class="md-nav__link">
+        2019 Aug 30, 0.7.0
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -2894,7 +2981,7 @@
 <td>Set a callback which is called at the beginning of the midi_device_process call. This can be used to poll for input data and send the data through the midi_device_input function. You'll probably only use this if you're creating a custom device.</td>
 </tr>
 <tr>
-<td><code>struct</code><a href="docs/api_midi_device.md#struct__midi__device"><code>_midi_device</code></a></td>
+<td><code>struct</code><a href="./#struct__midi__device"><code>_midi_device</code></a></td>
 <td>This structure represents the input and output functions and processing data for a midi device.</td>
 </tr>
 </tbody>
@@ -2981,87 +3068,87 @@
 </thead>
 <tbody>
 <tr>
-<td><code>public midi_var_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a25d4c94b4bbccd5b98f1032b469f3ff9"><code>send_func</code></a></td>
+<td><code>public midi_var_byte_func_t</code><a href="./#struct__midi__device_1a25d4c94b4bbccd5b98f1032b469f3ff9"><code>send_func</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a6da5236c1bc73877728df92d213a78d1"><code>input_cc_callback</code></a></td>
+<td><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1a6da5236c1bc73877728df92d213a78d1"><code>input_cc_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1aa10b15cf1a7fb825a5df0d2abbe34a1c"><code>input_noteon_callback</code></a></td>
+<td><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1aa10b15cf1a7fb825a5df0d2abbe34a1c"><code>input_noteon_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1aaf290043078534d3a5a0ea4c840eba84"><code>input_noteoff_callback</code></a></td>
+<td><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1aaf290043078534d3a5a0ea4c840eba84"><code>input_noteoff_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1acb0b4901c545cec4b28b126f2d8c315f"><code>input_aftertouch_callback</code></a></td>
+<td><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1acb0b4901c545cec4b28b126f2d8c315f"><code>input_aftertouch_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a305fea672caeb996f2233bf8cd2bef18"><code>input_pitchbend_callback</code></a></td>
+<td><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1a305fea672caeb996f2233bf8cd2bef18"><code>input_pitchbend_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a5f3f13638b3fef3fc561ed1bf301d586"><code>input_songposition_callback</code></a></td>
+<td><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1a5f3f13638b3fef3fc561ed1bf301d586"><code>input_songposition_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_two_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1adaf1da617c9a10a9dcad00ab1959d3da"><code>input_progchange_callback</code></a></td>
+<td><code>public midi_two_byte_func_t</code><a href="./#struct__midi__device_1adaf1da617c9a10a9dcad00ab1959d3da"><code>input_progchange_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_two_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1ab7ca2925c539915d43974eff604d85f7"><code>input_chanpressure_callback</code></a></td>
+<td><code>public midi_two_byte_func_t</code><a href="./#struct__midi__device_1ab7ca2925c539915d43974eff604d85f7"><code>input_chanpressure_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_two_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a89bed8a5a55376120cfc0a62b42f057f"><code>input_songselect_callback</code></a></td>
+<td><code>public midi_two_byte_func_t</code><a href="./#struct__midi__device_1a89bed8a5a55376120cfc0a62b42f057f"><code>input_songselect_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_two_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1ad9813e75d22e284f9f65a907d20600f0"><code>input_tc_quarterframe_callback</code></a></td>
+<td><code>public midi_two_byte_func_t</code><a href="./#struct__midi__device_1ad9813e75d22e284f9f65a907d20600f0"><code>input_tc_quarterframe_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_one_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a9448eba4afb7e43650434748db3777be"><code>input_realtime_callback</code></a></td>
+<td><code>public midi_one_byte_func_t</code><a href="./#struct__midi__device_1a9448eba4afb7e43650434748db3777be"><code>input_realtime_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_one_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a0cb8fd53e00cf1d4202d4fa04d038e8d"><code>input_tunerequest_callback</code></a></td>
+<td><code>public midi_one_byte_func_t</code><a href="./#struct__midi__device_1a0cb8fd53e00cf1d4202d4fa04d038e8d"><code>input_tunerequest_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_sysex_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1afff9a0ce641762aaef24c1e6953ec9a2"><code>input_sysex_callback</code></a></td>
+<td><code>public midi_sysex_func_t</code><a href="./#struct__midi__device_1afff9a0ce641762aaef24c1e6953ec9a2"><code>input_sysex_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_var_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1abb974ec6d734001b4a0e370f292be503"><code>input_fallthrough_callback</code></a></td>
+<td><code>public midi_var_byte_func_t</code><a href="./#struct__midi__device_1abb974ec6d734001b4a0e370f292be503"><code>input_fallthrough_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_var_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1aae0d535129d4fd650edc98eb3f7584f8"><code>input_catchall_callback</code></a></td>
+<td><code>public midi_var_byte_func_t</code><a href="./#struct__midi__device_1aae0d535129d4fd650edc98eb3f7584f8"><code>input_catchall_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public midi_no_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1aeb0bb8923d66c23d874e177dc4265754"><code>pre_input_process_callback</code></a></td>
+<td><code>public midi_no_byte_func_t</code><a href="./#struct__midi__device_1aeb0bb8923d66c23d874e177dc4265754"><code>pre_input_process_callback</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public uint8_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a7c5684857d6af4ebc4dc12da27bd6b2a"><code>input_buffer</code></a></td>
+<td><code>public uint8_t</code><a href="./#struct__midi__device_1a7c5684857d6af4ebc4dc12da27bd6b2a"><code>input_buffer</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public input_state_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a69a687d2d1c449ec15a11c07a5722e39"><code>input_state</code></a></td>
+<td><code>public input_state_t</code><a href="./#struct__midi__device_1a69a687d2d1c449ec15a11c07a5722e39"><code>input_state</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public uint16_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a68dea8e7b6151e89c85c95caa612ee5d"><code>input_count</code></a></td>
+<td><code>public uint16_t</code><a href="./#struct__midi__device_1a68dea8e7b6151e89c85c95caa612ee5d"><code>input_count</code></a></td>
 <td></td>
 </tr>
 <tr>
-<td><code>public uint8_t</code><a href="docs/api_midi_device.md#struct__midi__device_1ada41de021135dc423abedcbb30f366ff"><code>input_queue_data</code></a></td>
+<td><code>public uint8_t</code><a href="./#struct__midi__device_1ada41de021135dc423abedcbb30f366ff"><code>input_queue_data</code></a></td>
 <td></td>
 </tr>
 <tr>
@@ -3071,27 +3158,27 @@
 </tbody>
 </table>
 <h2 id="members_1">Members<a class="headerlink" href="#members_1" title="Permanent link">&para;</a></h2>
-<h4 id="struct__midi__device_1a25d4c94b4bbccd5b98f1032b469f3ff9"><code>public midi_var_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a25d4c94b4bbccd5b98f1032b469f3ff9"><code>send_func</code></a><a class="headerlink" href="#struct__midi__device_1a25d4c94b4bbccd5b98f1032b469f3ff9" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1a6da5236c1bc73877728df92d213a78d1"><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a6da5236c1bc73877728df92d213a78d1"><code>input_cc_callback</code></a><a class="headerlink" href="#struct__midi__device_1a6da5236c1bc73877728df92d213a78d1" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1aa10b15cf1a7fb825a5df0d2abbe34a1c"><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1aa10b15cf1a7fb825a5df0d2abbe34a1c"><code>input_noteon_callback</code></a><a class="headerlink" href="#struct__midi__device_1aa10b15cf1a7fb825a5df0d2abbe34a1c" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1aaf290043078534d3a5a0ea4c840eba84"><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1aaf290043078534d3a5a0ea4c840eba84"><code>input_noteoff_callback</code></a><a class="headerlink" href="#struct__midi__device_1aaf290043078534d3a5a0ea4c840eba84" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1acb0b4901c545cec4b28b126f2d8c315f"><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1acb0b4901c545cec4b28b126f2d8c315f"><code>input_aftertouch_callback</code></a><a class="headerlink" href="#struct__midi__device_1acb0b4901c545cec4b28b126f2d8c315f" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1a305fea672caeb996f2233bf8cd2bef18"><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a305fea672caeb996f2233bf8cd2bef18"><code>input_pitchbend_callback</code></a><a class="headerlink" href="#struct__midi__device_1a305fea672caeb996f2233bf8cd2bef18" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1a5f3f13638b3fef3fc561ed1bf301d586"><code>public midi_three_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a5f3f13638b3fef3fc561ed1bf301d586"><code>input_songposition_callback</code></a><a class="headerlink" href="#struct__midi__device_1a5f3f13638b3fef3fc561ed1bf301d586" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1adaf1da617c9a10a9dcad00ab1959d3da"><code>public midi_two_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1adaf1da617c9a10a9dcad00ab1959d3da"><code>input_progchange_callback</code></a><a class="headerlink" href="#struct__midi__device_1adaf1da617c9a10a9dcad00ab1959d3da" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1ab7ca2925c539915d43974eff604d85f7"><code>public midi_two_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1ab7ca2925c539915d43974eff604d85f7"><code>input_chanpressure_callback</code></a><a class="headerlink" href="#struct__midi__device_1ab7ca2925c539915d43974eff604d85f7" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1a89bed8a5a55376120cfc0a62b42f057f"><code>public midi_two_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a89bed8a5a55376120cfc0a62b42f057f"><code>input_songselect_callback</code></a><a class="headerlink" href="#struct__midi__device_1a89bed8a5a55376120cfc0a62b42f057f" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1ad9813e75d22e284f9f65a907d20600f0"><code>public midi_two_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1ad9813e75d22e284f9f65a907d20600f0"><code>input_tc_quarterframe_callback</code></a><a class="headerlink" href="#struct__midi__device_1ad9813e75d22e284f9f65a907d20600f0" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1a9448eba4afb7e43650434748db3777be"><code>public midi_one_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a9448eba4afb7e43650434748db3777be"><code>input_realtime_callback</code></a><a class="headerlink" href="#struct__midi__device_1a9448eba4afb7e43650434748db3777be" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1a0cb8fd53e00cf1d4202d4fa04d038e8d"><code>public midi_one_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a0cb8fd53e00cf1d4202d4fa04d038e8d"><code>input_tunerequest_callback</code></a><a class="headerlink" href="#struct__midi__device_1a0cb8fd53e00cf1d4202d4fa04d038e8d" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1afff9a0ce641762aaef24c1e6953ec9a2"><code>public midi_sysex_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1afff9a0ce641762aaef24c1e6953ec9a2"><code>input_sysex_callback</code></a><a class="headerlink" href="#struct__midi__device_1afff9a0ce641762aaef24c1e6953ec9a2" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1abb974ec6d734001b4a0e370f292be503"><code>public midi_var_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1abb974ec6d734001b4a0e370f292be503"><code>input_fallthrough_callback</code></a><a class="headerlink" href="#struct__midi__device_1abb974ec6d734001b4a0e370f292be503" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1aae0d535129d4fd650edc98eb3f7584f8"><code>public midi_var_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1aae0d535129d4fd650edc98eb3f7584f8"><code>input_catchall_callback</code></a><a class="headerlink" href="#struct__midi__device_1aae0d535129d4fd650edc98eb3f7584f8" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1aeb0bb8923d66c23d874e177dc4265754"><code>public midi_no_byte_func_t</code><a href="docs/api_midi_device.md#struct__midi__device_1aeb0bb8923d66c23d874e177dc4265754"><code>pre_input_process_callback</code></a><a class="headerlink" href="#struct__midi__device_1aeb0bb8923d66c23d874e177dc4265754" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1a7c5684857d6af4ebc4dc12da27bd6b2a"><code>public uint8_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a7c5684857d6af4ebc4dc12da27bd6b2a"><code>input_buffer</code></a><a class="headerlink" href="#struct__midi__device_1a7c5684857d6af4ebc4dc12da27bd6b2a" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1a69a687d2d1c449ec15a11c07a5722e39"><code>public input_state_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a69a687d2d1c449ec15a11c07a5722e39"><code>input_state</code></a><a class="headerlink" href="#struct__midi__device_1a69a687d2d1c449ec15a11c07a5722e39" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1a68dea8e7b6151e89c85c95caa612ee5d"><code>public uint16_t</code><a href="docs/api_midi_device.md#struct__midi__device_1a68dea8e7b6151e89c85c95caa612ee5d"><code>input_count</code></a><a class="headerlink" href="#struct__midi__device_1a68dea8e7b6151e89c85c95caa612ee5d" title="Permanent link">&para;</a></h4>
-<h4 id="struct__midi__device_1ada41de021135dc423abedcbb30f366ff"><code>public uint8_t</code><a href="docs/api_midi_device.md#struct__midi__device_1ada41de021135dc423abedcbb30f366ff"><code>input_queue_data</code></a><a class="headerlink" href="#struct__midi__device_1ada41de021135dc423abedcbb30f366ff" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1a25d4c94b4bbccd5b98f1032b469f3ff9"><code>public midi_var_byte_func_t</code><a href="./#struct__midi__device_1a25d4c94b4bbccd5b98f1032b469f3ff9"><code>send_func</code></a><a class="headerlink" href="#struct__midi__device_1a25d4c94b4bbccd5b98f1032b469f3ff9" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1a6da5236c1bc73877728df92d213a78d1"><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1a6da5236c1bc73877728df92d213a78d1"><code>input_cc_callback</code></a><a class="headerlink" href="#struct__midi__device_1a6da5236c1bc73877728df92d213a78d1" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1aa10b15cf1a7fb825a5df0d2abbe34a1c"><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1aa10b15cf1a7fb825a5df0d2abbe34a1c"><code>input_noteon_callback</code></a><a class="headerlink" href="#struct__midi__device_1aa10b15cf1a7fb825a5df0d2abbe34a1c" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1aaf290043078534d3a5a0ea4c840eba84"><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1aaf290043078534d3a5a0ea4c840eba84"><code>input_noteoff_callback</code></a><a class="headerlink" href="#struct__midi__device_1aaf290043078534d3a5a0ea4c840eba84" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1acb0b4901c545cec4b28b126f2d8c315f"><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1acb0b4901c545cec4b28b126f2d8c315f"><code>input_aftertouch_callback</code></a><a class="headerlink" href="#struct__midi__device_1acb0b4901c545cec4b28b126f2d8c315f" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1a305fea672caeb996f2233bf8cd2bef18"><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1a305fea672caeb996f2233bf8cd2bef18"><code>input_pitchbend_callback</code></a><a class="headerlink" href="#struct__midi__device_1a305fea672caeb996f2233bf8cd2bef18" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1a5f3f13638b3fef3fc561ed1bf301d586"><code>public midi_three_byte_func_t</code><a href="./#struct__midi__device_1a5f3f13638b3fef3fc561ed1bf301d586"><code>input_songposition_callback</code></a><a class="headerlink" href="#struct__midi__device_1a5f3f13638b3fef3fc561ed1bf301d586" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1adaf1da617c9a10a9dcad00ab1959d3da"><code>public midi_two_byte_func_t</code><a href="./#struct__midi__device_1adaf1da617c9a10a9dcad00ab1959d3da"><code>input_progchange_callback</code></a><a class="headerlink" href="#struct__midi__device_1adaf1da617c9a10a9dcad00ab1959d3da" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1ab7ca2925c539915d43974eff604d85f7"><code>public midi_two_byte_func_t</code><a href="./#struct__midi__device_1ab7ca2925c539915d43974eff604d85f7"><code>input_chanpressure_callback</code></a><a class="headerlink" href="#struct__midi__device_1ab7ca2925c539915d43974eff604d85f7" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1a89bed8a5a55376120cfc0a62b42f057f"><code>public midi_two_byte_func_t</code><a href="./#struct__midi__device_1a89bed8a5a55376120cfc0a62b42f057f"><code>input_songselect_callback</code></a><a class="headerlink" href="#struct__midi__device_1a89bed8a5a55376120cfc0a62b42f057f" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1ad9813e75d22e284f9f65a907d20600f0"><code>public midi_two_byte_func_t</code><a href="./#struct__midi__device_1ad9813e75d22e284f9f65a907d20600f0"><code>input_tc_quarterframe_callback</code></a><a class="headerlink" href="#struct__midi__device_1ad9813e75d22e284f9f65a907d20600f0" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1a9448eba4afb7e43650434748db3777be"><code>public midi_one_byte_func_t</code><a href="./#struct__midi__device_1a9448eba4afb7e43650434748db3777be"><code>input_realtime_callback</code></a><a class="headerlink" href="#struct__midi__device_1a9448eba4afb7e43650434748db3777be" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1a0cb8fd53e00cf1d4202d4fa04d038e8d"><code>public midi_one_byte_func_t</code><a href="./#struct__midi__device_1a0cb8fd53e00cf1d4202d4fa04d038e8d"><code>input_tunerequest_callback</code></a><a class="headerlink" href="#struct__midi__device_1a0cb8fd53e00cf1d4202d4fa04d038e8d" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1afff9a0ce641762aaef24c1e6953ec9a2"><code>public midi_sysex_func_t</code><a href="./#struct__midi__device_1afff9a0ce641762aaef24c1e6953ec9a2"><code>input_sysex_callback</code></a><a class="headerlink" href="#struct__midi__device_1afff9a0ce641762aaef24c1e6953ec9a2" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1abb974ec6d734001b4a0e370f292be503"><code>public midi_var_byte_func_t</code><a href="./#struct__midi__device_1abb974ec6d734001b4a0e370f292be503"><code>input_fallthrough_callback</code></a><a class="headerlink" href="#struct__midi__device_1abb974ec6d734001b4a0e370f292be503" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1aae0d535129d4fd650edc98eb3f7584f8"><code>public midi_var_byte_func_t</code><a href="./#struct__midi__device_1aae0d535129d4fd650edc98eb3f7584f8"><code>input_catchall_callback</code></a><a class="headerlink" href="#struct__midi__device_1aae0d535129d4fd650edc98eb3f7584f8" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1aeb0bb8923d66c23d874e177dc4265754"><code>public midi_no_byte_func_t</code><a href="./#struct__midi__device_1aeb0bb8923d66c23d874e177dc4265754"><code>pre_input_process_callback</code></a><a class="headerlink" href="#struct__midi__device_1aeb0bb8923d66c23d874e177dc4265754" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1a7c5684857d6af4ebc4dc12da27bd6b2a"><code>public uint8_t</code><a href="./#struct__midi__device_1a7c5684857d6af4ebc4dc12da27bd6b2a"><code>input_buffer</code></a><a class="headerlink" href="#struct__midi__device_1a7c5684857d6af4ebc4dc12da27bd6b2a" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1a69a687d2d1c449ec15a11c07a5722e39"><code>public input_state_t</code><a href="./#struct__midi__device_1a69a687d2d1c449ec15a11c07a5722e39"><code>input_state</code></a><a class="headerlink" href="#struct__midi__device_1a69a687d2d1c449ec15a11c07a5722e39" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1a68dea8e7b6151e89c85c95caa612ee5d"><code>public uint16_t</code><a href="./#struct__midi__device_1a68dea8e7b6151e89c85c95caa612ee5d"><code>input_count</code></a><a class="headerlink" href="#struct__midi__device_1a68dea8e7b6151e89c85c95caa612ee5d" title="Permanent link">&para;</a></h4>
+<h4 id="struct__midi__device_1ada41de021135dc423abedcbb30f366ff"><code>public uint8_t</code><a href="./#struct__midi__device_1ada41de021135dc423abedcbb30f366ff"><code>input_queue_data</code></a><a class="headerlink" href="#struct__midi__device_1ada41de021135dc423abedcbb30f366ff" title="Permanent link">&para;</a></h4>
 <h4 id="struct__midi__device_1a49c8538a8a02193c58e28a56eb695d8f"><code>public</code><a href="#structbyte_queue__t"><code>byteQueue_t</code></a><code></code><a href="#struct__midi__device_1a49c8538a8a02193c58e28a56eb695d8f"><code>input_queue</code></a><a class="headerlink" href="#struct__midi__device_1a49c8538a8a02193c58e28a56eb695d8f" title="Permanent link">&para;</a></h4>
                 
               

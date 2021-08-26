@@ -442,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting_started_introduction/" class="md-nav__link">
+      <a href="../tutorial/" class="md-nav__link">
         QMK简介
       </a>
     </li>
@@ -1174,7 +1174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../feature_combo" class="md-nav__link">
+      <a href="../feature_combo/" class="md-nav__link">
         组合
       </a>
     </li>
@@ -2071,9 +2071,16 @@
                 <h1 id="understanding-qmks-code">Understanding QMK's Code<a class="headerlink" href="#understanding-qmks-code" title="Permanent link">&para;</a></h1>
 <p>This document attempts to explain how the QMK firmware works from a very high level. It assumes you understand basic programming concepts but does not (except where needed to demonstrate) assume familiarity with C. It assumes that you have a basic understanding of the following documents:</p>
 <ul>
-<li><a href="../getting_started_introduction/">Introduction</a></li>
+<li><a href="../tutorial/">Tutorial</a></li>
 <li><a href="../how_keyboards_work/">How Keyboards Work</a></li>
-<li><a href="../faq/">FAQ</a></li>
+<li>FAQs:<ul>
+<li><a href="../faq_build/">Build FAQ</a></li>
+<li><a href="../faq_debug/">Debug FAQ</a></li>
+<li><a href="../faq_general/">General FAQ</a></li>
+<li><a href="../faq_keymap/">Keymap FAQ</a></li>
+<li><a href="../faq_misc/">Misc FAQ</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="startup">Startup<a class="headerlink" href="#startup" title="Permanent link">&para;</a></h2>
 <p>You can think of QMK as no different from any other computer program. It is started, performs its tasks, and then ends. The entry point for the program is the <code>main()</code> function, just like it is on any other C program. However, for a newcomer to QMK it can be confusing because the <code>main()</code> function appears in multiple places, and it can be hard to tell which one to look at.</p>

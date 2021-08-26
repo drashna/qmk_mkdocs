@@ -6,11 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://qmk.github.io/qmk_mkdocs/master/ru/_summary/</loc>
-         <lastmod>2021-08-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://qmk.github.io/qmk_mkdocs/master/ru/adc_driver/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
@@ -47,11 +42,6 @@
     </url>
     <url>
          <loc>https://qmk.github.io/qmk_mkdocs/master/ru/breaking_changes/</loc>
-         <lastmod>2021-08-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://qmk.github.io/qmk_mkdocs/master/ru/breaking_changes_history/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -426,11 +416,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://qmk.github.io/qmk_mkdocs/master/ru/getting_started_introduction/</loc>
-         <lastmod>2021-08-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://qmk.github.io/qmk_mkdocs/master/ru/getting_started_make_guide/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
@@ -687,11 +672,6 @@
     </url>
     <url>
          <loc>https://qmk.github.io/qmk_mkdocs/master/ru/tutorial_learn_more_resources/</loc>
-         <lastmod>2021-08-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://qmk.github.io/qmk_mkdocs/master/ru/tutorial_testing_debugging/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
