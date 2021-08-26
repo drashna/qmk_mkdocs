@@ -9,7 +9,12 @@
 
 * [入門](tutorial.md)
 * [キーボードがどのように動作するか](how_keyboards_work.md)
-* [FAQ](faq.md)
+* FAQs:
+    * [QMK のビルド/コンパイル](faq_build.md)
+    * [QMK のデバッグ](faq_debug.md)
+    * [一般的な FAQ](faq_general.md)
+    * [キーマップ FAQ](faq_keymap.md)
+    * [QMK のトラブルシューティング](faq_misc.md)
 
 ## スタートアップ
 
