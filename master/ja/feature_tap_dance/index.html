@@ -2980,14 +2980,14 @@
 <li><code>ACTION_TAP_DANCE_FN(fn)</code>: ユーザーキーマップに定義した指定の関数が呼び出されます。タップダンス実行の回数分タップすると、最後の時点で呼び出されます。</li>
 <li><code>ACTION_TAP_DANCE_FN_ADVANCED(on_each_tap_fn, on_dance_finished_fn, on_dance_reset_fn)</code>: タップする度にユーザーキーマップに定義した最初の関数が呼び出されます。タップダンスの実行が終わった時点で2番目の関数が呼び出され、タップダンスの実行をリセットするときに最後の関数が呼び出されます。</li>
 <li><del><code>ACTION_TAP_DANCE_FN_ADVANCED_TIME(on_each_tap_fn, on_dance_finished_fn, on_dance_reset_fn, tap_specific_tapping_term)</code></del>: これは <code>ACTION_TAP_DANCE_FN_ADVANCED</code> 関数と同じように機能します。しかし、<code>TAPPING_TERM</code> で事前に定義した時間の代わりに、カスタマイズしたタップ時間を使います。<ul>
-<li><a href="ja/custom_quantum_functions.md#Custom_Tapping_Term">ここ</a>で概説するように、これはキーごとのタッピング時間機能を優先して非推奨になりました。この特定のタップダンス機能を使う代わりに、使いたい特定の <code>TD()</code> マクロ(<code>TD(TD_ESC_CAPS)</code> のような)を確認する必要があります。</li>
+<li><a href="../custom_quantum_functions/#Custom_Tapping_Term">ここ</a>で概説するように、これはキーごとのタッピング時間機能を優先して非推奨になりました。この特定のタップダンス機能を使う代わりに、使いたい特定の <code>TD()</code> マクロ(<code>TD(TD_ESC_CAPS)</code> のような)を確認する必要があります。</li>
 </ul>
 </li>
 </ul>
 <p>最初のオプションで、1つのキーに2つの役割を持たせる大抵のケースには十分です。例えば、<code>ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_ENT)</code> は、1回タップすると <code>Space</code> を送信し、2回タップすると <code>Enter</code> を送信します。</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>ここでは <a href="ja/keycodes_basic.md">基本的なキーコード</a> だけがサポートされていることを覚えておいてください。カスタムキーコードはサポートされていません。</p>
+<p>ここでは <a href="../keycodes_basic/">基本的なキーコード</a> だけがサポートされていることを覚えておいてください。カスタムキーコードはサポートされていません。</p>
 </div>
 <p>最初のオプションに似ていますが、2番目のオプションは単純なレイヤー切替のケースに適しています。</p>
 <p>これ以上に複雑なケースの場合、3番目か4番目のオプションを使います。（以下でそれらの例を列挙します）</p>

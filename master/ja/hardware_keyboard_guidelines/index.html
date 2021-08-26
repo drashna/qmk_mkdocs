@@ -3210,9 +3210,9 @@
 <li><code>&lt;keyboard_name&gt;.h</code></li>
 </ul>
 <h3 id="readmemd"><code>readme.md</code><a class="headerlink" href="#readmemd" title="Permanent link">&para;</a></h3>
-<p>全てのプロジェクトにはどのようなキーボードなのか、誰が設計したか、どこで入手できるかを説明する <code>readme.md</code> ファイルが必要です。もしあれば、メーカーの Web サイトなどの詳しい情報へのリンクも含める必要があります。<a href="ja/documentation_templates.md#keyboard-readmemd-template">キーボード readme テンプレート</a>を参考にして下さい。</p>
+<p>全てのプロジェクトにはどのようなキーボードなのか、誰が設計したか、どこで入手できるかを説明する <code>readme.md</code> ファイルが必要です。もしあれば、メーカーの Web サイトなどの詳しい情報へのリンクも含める必要があります。<a href="../documentation_templates/#keyboard-readmemd-template">キーボード readme テンプレート</a>を参考にして下さい。</p>
 <h3 id="infojson"><code>info.json</code><a class="headerlink" href="#infojson" title="Permanent link">&para;</a></h3>
-<p>このファイルは <a href="https://github.com/qmk/qmk_api">QMK API</a> から使用されます。<a href="https://config.qmk.fm/">QMK Configurator</a> が必要とするキーボードの情報が含まれています。ここでメタデータを設定することもできます。詳しくは <a href="ja/reference_info_json.md">info.json 形式</a> を参照して下さい。</p>
+<p>このファイルは <a href="https://github.com/qmk/qmk_api">QMK API</a> から使用されます。<a href="https://config.qmk.fm/">QMK Configurator</a> が必要とするキーボードの情報が含まれています。ここでメタデータを設定することもできます。詳しくは <a href="../reference_info_json/">info.json 形式</a> を参照して下さい。</p>
 <h3 id="configh"><code>config.h</code><a class="headerlink" href="#configh" title="Permanent link">&para;</a></h3>
 <p>全てのプロジェクトには、マトリックスサイズ、製品名、USB VID/PID、説明、その他の設定などが含まれた <code>config.h</code> ファイルが必要です。一般に、このファイルを使用して常に機能するキーボードの重要な情報やデフォルトを設定します。</p>
 <p>また、<code>config.h</code> ファイルはサブフォルダにも置くことができ、その読み込み順は以下の通りです。</p>
@@ -3340,11 +3340,11 @@
 <h2 id="_5">キーボードのデフォルト設定<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>QMK が提供する機能の量を考えれば、新しいユーザーが混乱するのは当たり前です。キーボードのデフォルトファームウェアをまとめるなら、有効にする機能とオプションをハードウェアのサポートに必要な最低限のセットにすることをおすすめします。特定の機能に関するおすすめは以下の通りです。</p>
 <h3 id="_6">ブートマジックとコマンド<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p><a href="ja/feature_bootmagic.md">ブートマジック</a> と<a href="ja/feature_command.md">コマンド</a>は、ユーザーがキーボードを明白でない方法で制御出来るようにする2つの関連機能です。いずれかの機能を有効にする場合、この機能をどのように提供するかについて、よく考えることをおすすめします。この機能が必要なユーザーは、あなたのキーボードを最初のプログラムできるキーボードとして使用している初心者に影響を与えることなく、個人的なキーマップ内で有効に出来ることを覚えておきましょう。</p>
+<p><a href="../feature_bootmagic/">ブートマジック</a> と<a href="../feature_command/">コマンド</a>は、ユーザーがキーボードを明白でない方法で制御出来るようにする2つの関連機能です。いずれかの機能を有効にする場合、この機能をどのように提供するかについて、よく考えることをおすすめします。この機能が必要なユーザーは、あなたのキーボードを最初のプログラムできるキーボードとして使用している初心者に影響を与えることなく、個人的なキーマップ内で有効に出来ることを覚えておきましょう。</p>
 <p>新規ユーザーが遭遇する最も多い問題は、キーボードを接続している間に間違えてブートマジックをトリガーしてしまうことです。キーボードの下を持っているとき、知らない間に Alt とスペースバーを押して、これらのキーが交換されてしまったことに気づきます。デフォルトではこの機能を無効にすることをおすすめしますが、有効にする場合は、キーボードを接続している間に押し間違えないキーへ <code>BOOTMAGIC_KEY_SALT</code> を設定することを検討して下さい。</p>
 <p>キーボードに2つの Shift キーがない場合は、<code>COMMAND_ENABLE = no</code> を指定していても <code>IS_COMMAND</code> が動作するデフォルトを設定しておくべきです。ユーザーがコマンドを有効化したときに使用するデフォルトが与えられます。</p>
 <h2 id="_7">カスタムキーボードプログラミング<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p><a href="ja/custom_quantum_functions.md">機能のカスタマイズ</a>にあるようにキーボードのカスタム関数を定義できます。ユーザーも同様にその動作をカスタマイズしたいかもしれないということと、ユーザーにそれを可能にすることを忘れないで下さい。 <code>process_record_kb()</code>のようなカスタム関数を提供している場合、関数がその関数の <code>_user()</code> 版を呼び出すことを確認して下さい。また、その関数の<code>_user()</code> 版の戻り値を確認して、user が <code>true</code> を返した場合のみカスタムコードを実行しなければいけません。</p>
+<p><a href="../custom_quantum_functions/">機能のカスタマイズ</a>にあるようにキーボードのカスタム関数を定義できます。ユーザーも同様にその動作をカスタマイズしたいかもしれないということと、ユーザーにそれを可能にすることを忘れないで下さい。 <code>process_record_kb()</code>のようなカスタム関数を提供している場合、関数がその関数の <code>_user()</code> 版を呼び出すことを確認して下さい。また、その関数の<code>_user()</code> 版の戻り値を確認して、user が <code>true</code> を返した場合のみカスタムコードを実行しなければいけません。</p>
 <h2 id="_8">生産しない/手配線 プロジェクト<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>プロトタイプや手配線によるものなど QMK を使用するどんなプロジェクトも受け入れますが、<code>/keyboards/</code> フォルダが乱雑になるのを防ぐために、<code>/keyboards/handwired/</code> を用意しています。いつかプロトタイプのプロジェクトが製品のプロジェクトになった時点でメインの <code>/keyboards/</code> フォルダへ移動します！</p>
 <h2 id="_9">エラーとしての警告<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
@@ -3366,7 +3366,7 @@
 <p>QMK のコア部分は <a href="https://www.gnu.org/licenses/licenses.en.html">GNU General Public License</a> でライセンスされます。AVR マイコン用のバイナリを提供する場合は、<a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GPLv2</a> か、<a href="https://www.gnu.org/licenses/gpl.html">GPLv3</a> のどちらかから選択出来ます。ARM マイコン用のバイナリを提供する場合は、 <a href="https://www.chibios.org">ChibiOS</a> の GPLv3 ライセンスに準拠するため、<a href="https://www.gnu.org/licenses/gpl.html">GPL Version 3</a> を選択しなければいけません。</p>
 <p><a href="https://ugfx.io">uGFX</a> を使用している場合は、<a href="https://ugfx.io/license.html">uGFX License</a> に準拠する必要があります。uGFX を利用したデバイスを販売するには個別に商用ライセンスを取得しなければいけません。</p>
 <h2 id="_12">技術的な詳細<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<p>キーボードを QMK で動作させるための詳細は<a href="ja/hardware.md">ハードウェア</a>を参照して下さい！</p>
+<p>キーボードを QMK で動作させるための詳細は<a href="hardware.md">ハードウェア</a>を参照して下さい！</p>
                 
               
               

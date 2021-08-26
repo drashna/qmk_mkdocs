@@ -2878,7 +2878,7 @@ $ qmk compile -kb dz60
 </code></pre></div></p>
 <h2 id="qmk-flash"><code>qmk flash</code><a class="headerlink" href="#qmk-flash" title="Permanent link">&para;</a></h2>
 <p>このコマンドは <code>qmk compile</code> に似ていますが、ブートローダを対象にすることもできます。ブートローダはオプションで、デフォルトでは <code>:flash</code> に設定されています。
-違うブートローダを指定するには、<code>-bl &lt;bootloader&gt;</code> を使ってください。利用可能なブートローダの詳細については、<a href="ja/flashing.md">ファームウェアを書き込む</a>を見てください。</p>
+違うブートローダを指定するには、<code>-bl &lt;bootloader&gt;</code> を使ってください。利用可能なブートローダの詳細については、<a href="../flashing/">ファームウェアを書き込む</a>を見てください。</p>
 <p>このコマンドはディレクトリを認識します。キーボードやキーマップのディレクトリにいる場合、自動的に KEYBOARD や KEYMAP を入力します。</p>
 <p><strong>Configurator Exports での使い方</strong>:</p>
 <div class="highlight"><pre><span></span><code>qmk flash &lt;configuratorExport.json&gt; -bl &lt;bootloader&gt;
@@ -2890,7 +2890,7 @@ $ qmk compile -kb dz60
 <div class="highlight"><pre><span></span><code>qmk flash -b
 </code></pre></div>
 <h2 id="qmk-config"><code>qmk config</code><a class="headerlink" href="#qmk-config" title="Permanent link">&para;</a></h2>
-<p>このコマンドにより QMK の挙動を設定することができます。完全な <code>qmk config</code> のドキュメントについては、<a href="ja/cli_configuration.md">CLI 設定</a>を見てください。</p>
+<p>このコマンドにより QMK の挙動を設定することができます。完全な <code>qmk config</code> のドキュメントについては、<a href="../cli_configuration/">CLI 設定</a>を見てください。</p>
 <p><strong>使用法</strong>:</p>
 <div class="highlight"><pre><span></span><code>qmk config [-ro] [config_token1] [config_token2] [...] [config_tokenN]
 </code></pre></div>

@@ -3048,24 +3048,24 @@
 <li>キーごとの <code>TAPPING_TERM</code> 設定の処理を有効にします</li>
 <li><code>#define RETRO_TAPPING</code></li>
 <li>押下とリリースの間に他のキーによる中断がなければ、TAPPING_TERM の後であってもとにかくタップします</li>
-<li>詳細は <a href="ja/tap_hold.md#retro-tapping">Retro Tapping</a> を見てください</li>
+<li>詳細は <a href="../tap_hold/#retro-tapping">Retro Tapping</a> を見てください</li>
 <li><code>#define RETRO_TAPPING_PER_KEY</code></li>
 <li>キーごとの <code>RETRO_TAPPING</code> 設定の処理を有効にします</li>
 <li><code>#define TAPPING_TOGGLE 2</code></li>
 <li>トグルを引き起こす前のタップ数</li>
 <li><code>#define PERMISSIVE_HOLD</code></li>
 <li><code>TAPPING_TERM</code> にヒットしていなくても、リリースする前に別のキーが押されると、タップとホールドキーがホールドを引き起こします</li>
-<li>詳細は <a href="ja/tap_hold.md#permissive-hold">Permissive Hold</a> を見てください</li>
+<li>詳細は <a href="../tap_hold/#permissive-hold">Permissive Hold</a> を見てください</li>
 <li><code>#define PERMISSIVE_HOLD_PER_KEY</code></li>
 <li>キーごとの <code>PERMISSIVE_HOLD</code> 設定の処理を有効にします</li>
 <li><code>#define IGNORE_MOD_TAP_INTERRUPT</code></li>
 <li>両方のキーに <code>TAPPING_TERM</code> を適用することで、ホールド時に他のキーに変換するキーを使ってローリングコンボ (zx) をすることができるようにします</li>
-<li>詳細は <a href="ja/tap_hold.md#ignore-mod-tap-interrupt">Ignore Mod Tap Interrupt</a> を見てください</li>
+<li>詳細は <a href="../tap_hold/#ignore-mod-tap-interrupt">Ignore Mod Tap Interrupt</a> を見てください</li>
 <li><code>#define IGNORE_MOD_TAP_INTERRUPT_PER_KEY</code></li>
 <li>キーごとの <code>IGNORE_MOD_TAP_INTERRUPT</code> 設定の処理を有効にします</li>
 <li><code>#define TAPPING_FORCE_HOLD</code></li>
 <li>タップされた直後に、デュアルロールキーを修飾子として使用できるようにします</li>
-<li><a href="ja/tap_hold.md#tapping-force-hold">Tapping Force Hold</a>を見てください</li>
+<li><a href="../tap_hold/#tapping-force-hold">Tapping Force Hold</a>を見てください</li>
 <li>タップトグル機能を無効にします (<code>TT</code> あるいは One Shot Tap Toggle)</li>
 <li><code>#define TAPPING_FORCE_HOLD_PER_KEY</code></li>
 <li>キーごとの <code>TAPPING_FORCE_HOLD</code> 設定処理を有効にします。</li>
@@ -3085,7 +3085,7 @@
 <li><code>#define QMK_KEYS_PER_SCAN 4</code></li>
 <li>走査ごとに1つ以上のキーを送信できるようにします。デフォルトでは、走査ごとに <code>process_record()</code> 経由で1つのキーイベントのみが送信されます。これはほとんどのタイピングにほとんど影響しませんが、多くのコードを入力しているか、走査レートが最初から遅い場合、キーイベントの処理に多少の遅延が生じる可能性があります。それぞれのプレスとリリースは別のイベントです。スキャン時間が 1ms 程度のキーボードの場合、とても高速なタイピストでさえ、実際にキーボードから数 ms 以上の遅延を発生させるのに必要な 500 キーストロークを1秒間に生成することはないでしょう。しかし、3～4ms の走査時間でコードを入力している場合はどうでしょうか？おそらくこれが必要です。</li>
 <li><code>#define COMBO_COUNT 2</code></li>
-<li><a href="ja/feature_combo.md">コンボ</a>機能で使っているコンボの数にこれを設定します。</li>
+<li><a href="../feature_combo/">コンボ</a>機能で使っているコンボの数にこれを設定します。</li>
 <li><code>#define COMBO_TERM 200</code></li>
 <li>コンボキーが検出されるまでの時間。定義されていない場合は、デフォルトは <code>TAPPING_TERM</code> です。</li>
 <li><code>#define TAP_CODE_DELAY 100</code></li>
@@ -3100,14 +3100,14 @@
 <li><code>#define RGBLIGHT_ANIMATIONS</code></li>
 <li>RGB アニメーションを実行します</li>
 <li><code>#define RGBLIGHT_LAYERS</code></li>
-<li>オンとオフを切り替えることができる <a href="ja/feature_rgblight.md?id=lighting-layers">ライトレイヤー</a> を定義できます。現在のキーボードレイヤーまたは Caps Lock 状態を表示するのに最適です。</li>
+<li>オンとオフを切り替えることができる <a href="../feature_rgblight/?id=lighting-layers">ライトレイヤー</a> を定義できます。現在のキーボードレイヤーまたは Caps Lock 状態を表示するのに最適です。</li>
 <li><code>#define RGBLIGHT_MAX_LAYERS</code></li>
-<li>デフォルトは8です。もしさらに <a href="ja/feature_rgblight.md?id=lighting-layers">ライトレイヤー</a> が必要であれば、32まで拡張できます。</li>
+<li>デフォルトは8です。もしさらに <a href="../feature_rgblight/?id=lighting-layers">ライトレイヤー</a> が必要であれば、32まで拡張できます。</li>
 <li>メモ: 最大値を大きくするとファームウェアサイズが大きくなり、分割キーボードで同期が遅くなります。</li>
 <li><code>#define RGBLIGHT_LAYER_BLINK</code></li>
-<li>指定されたミリ秒の間、ライトレイヤーを <a href="ja/feature_rgblight.md?id=lighting-layer-blink">点滅</a> する機能を追加します(例えば、アクションを確認するため)。</li>
+<li>指定されたミリ秒の間、ライトレイヤーを <a href="../feature_rgblight/?id=lighting-layer-blink">点滅</a> する機能を追加します(例えば、アクションを確認するため)。</li>
 <li><code>#define RGBLIGHT_LAYERS_OVERRIDE_RGB_OFF</code></li>
-<li>定義されている場合、RGB ライトがオフになっている場合でも <a href="ja/feature_rgblight?id=overriding-rgb-lighting-onoff-status">ライトレイヤー</a> が表示されます。</li>
+<li>定義されている場合、RGB ライトがオフになっている場合でも <a href="feature_rgblight?id=overriding-rgb-lighting-onoff-status">ライトレイヤー</a> が表示されます。</li>
 <li><code>#define RGBLED_NUM 12</code></li>
 <li>LED の数</li>
 <li><code>#define RGBLIGHT_SPLIT</code></li>
@@ -3262,10 +3262,10 @@ LIB_SRC += lib_d.c
     <div class="highlight"><pre><span></span><code> ...  a.o c.o  ...  lib_b.a lib_d.a  ...
 </code></pre></div></li>
 <li><code>LAYOUTS</code></li>
-<li>このキーボードがサポートする<a href="ja/feature_layouts.md">レイアウト</a>のリスト</li>
+<li>このキーボードがサポートする<a href="../feature_layouts/">レイアウト</a>のリスト</li>
 <li><code>LTO_ENABLE</code></li>
 <li>キーボードをコンパイルする時に、Link Time Optimization (LTO) を有効にします。これは処理に時間が掛かりますが、コンパイルされたサイズを大幅に減らします (そして、ファームウェアが小さいため、追加の時間は分からないくらいです)。
-ただし、LTO が有効な場合、古い TMK のマクロと関数の機能が壊れるため、自動的にこれらの機能を無効にします。これは <code>NO_ACTION_MACRO</code> と <code>NO_ACTION_FUNCTION</code> を自動的に定義することで行われます。(メモ: これは QMK の <a href="ja/feature_macros.md">マクロ</a> と <a href="ja/feature_layers.md">レイヤー</a> には影響を与えません。)</li>
+ただし、LTO が有効な場合、古い TMK のマクロと関数の機能が壊れるため、自動的にこれらの機能を無効にします。これは <code>NO_ACTION_MACRO</code> と <code>NO_ACTION_FUNCTION</code> を自動的に定義することで行われます。(メモ: これは QMK の <a href="../feature_macros/">マクロ</a> と <a href="../feature_layers/">レイヤー</a> には影響を与えません。)</li>
 </ul>
 <h2 id="avr-mcu">AVR MCU オプション<a class="headerlink" href="#avr-mcu" title="Permanent link">&para;</a></h2>
 <ul>

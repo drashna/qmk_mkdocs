@@ -2962,7 +2962,7 @@
 -->
 
 <p>この機能により、外部ドライバによって駆動される LED マトリックスを使うことができます。この機能は、バックライト制御と同じキーコードを使えるようにするため、バックライトシステムに接続します。</p>
-<p>RGB LED を使いたい場合は、代わりに <a href="ja/feature_rgb_matrix.md">RGB マトリックスサブシステム</a> を使うべきです。</p>
+<p>RGB LED を使いたい場合は、代わりに <a href="../feature_rgb_matrix/">RGB マトリックスサブシステム</a> を使うべきです。</p>
 <h2 id="_1">ドライバ設定<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="is31fl3731">IS31FL3731<a class="headerlink" href="#is31fl3731" title="Permanent link">&para;</a></h3>
 <p>I2C IS31FL3731 RGB コントローラを使ったアドレス指定可能な LED マトリックスライトのための基本的なサポートがあります:有効にするには、<code>rules.mk</code> に以下を追加します:</p>
@@ -3053,7 +3053,7 @@ LED_MATRIX_DRIVER = IS31FL3731
 
 <p>ここで、<code>Cx_y</code> は<a href="https://www.issi.com/WW/pdf/31FL3731.pdf">データシート</a>およびヘッダファイル <code>drivers/issi/is31fl3731-simple.h</code> で定義されるマトリックス内の LED の位置です。<code>driver</code> は <code>config.h</code> で定義したドライバのインデックス(<code>0</code>、<code>1</code>、<code>2</code>、<code>3</code>のいずれか)です。</p>
 <h2 id="_2">キーコード<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>現在のところ、全ての LED マトリックスのキーコードは<a href="ja/feature_backlight.md">バックライトシステム</a>と共有されます。</p>
+<p>現在のところ、全ての LED マトリックスのキーコードは<a href="../feature_backlight/">バックライトシステム</a>と共有されます。</p>
 <h2 id="led_1">LED マトリックス効果<a class="headerlink" href="#led_1" title="Permanent link">&para;</a></h2>
 <p>現在のところ、LED マトリックス効果は作成されていません。</p>
 <h2 id="_3">カスタムレイヤー効果<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>

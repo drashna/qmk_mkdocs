@@ -2878,7 +2878,7 @@
 -->
 
 <p>多くの人にとって、カスタムキーボードはボタンの押下をコンピュータに送信するだけではありません。単純なボタンの押下やマクロよりも複雑なことを実行できるようにしたいでしょう。QMK にはコードを挿入したり、機能を上書きしたり、様々な状況でキーボードの挙動をカスタマイズできるフックがあります。</p>
-<p>このページでは、QMK に関する特別な知識は想定していませんが、<a href="ja/understanding_qmk.md">QMK の理解</a>を読むとより根本的なレベルで何が起きているかを理解するのに役立ちます。</p>
+<p>このページでは、QMK に関する特別な知識は想定していませんが、<a href="../understanding_qmk/">QMK の理解</a>を読むとより根本的なレベルで何が起きているかを理解するのに役立ちます。</p>
 <h2 id="a-word-on-core-vs-keyboards-vs-keymap">コア、キーボード、キーマップ階層<a class="headerlink" href="#a-word-on-core-vs-keyboards-vs-keymap" title="Permanent link">&para;</a></h2>
 <p>私たちは QMK を階層として構造化しました:</p>
 <ul>
@@ -3040,7 +3040,7 @@
 <h1 id="layer-change-code">レイヤー切り替えコード<a class="headerlink" href="#layer-change-code" title="Permanent link">&para;</a></h1>
 <p>これはレイヤーが切り替えられるたびにコードを実行します。レイヤー表示あるいはカスタムレイヤー処理に役立ちます。</p>
 <h3 id="layer_state_set_"><code>layer_state_set_*</code> の実装例<a class="headerlink" href="#layer_state_set_" title="Permanent link">&para;</a></h3>
-<p>この例は、レイヤーに基づいて <a href="ja/feature_rgblight.md">RGB アンダーグロー</a>を設定する方法を示していて、Planck を例として使っています。</p>
+<p>この例は、レイヤーに基づいて <a href="../feature_rgblight/">RGB アンダーグロー</a>を設定する方法を示していて、Planck を例として使っています。</p>
 <div class="highlight"><pre><span></span><code><span class="n">layer_state_t</span> <span class="nf">layer_state_set_user</span><span class="p">(</span><span class="n">layer_state_t</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">switch</span> <span class="p">(</span><span class="n">get_highest_layer</span><span class="p">(</span><span class="n">state</span><span class="p">))</span> <span class="p">{</span>
     <span class="k">case</span> <span class="nl">_RAISE</span><span class="p">:</span>
@@ -3069,7 +3069,7 @@
 <li>キーボード/リビジョン: <code>layer_state_t layer_state_set_kb(layer_state_t state)</code></li>
 <li>キーマップ: <code>layer_state_t layer_state_set_user(layer_state_t state)</code></li>
 </ul>
-<p><a href="ja/keymap.md#keymap-layer-status">キーマップの概要</a>で説明されるように、<code>state</code> はアクティブなレイヤーのビットマスクです。</p>
+<p><a href="../keymap/#keymap-layer-status">キーマップの概要</a>で説明されるように、<code>state</code> はアクティブなレイヤーのビットマスクです。</p>
 <h1 id="eeprom">永続的な設定 (EEPROM)<a class="headerlink" href="#eeprom" title="Permanent link">&para;</a></h1>
 <p>これによりキーボードのための永続的な設定を設定することができます。これらの設定はコントローラの EEPROM に保存され、電源が落ちた後であっても保持されます。設定は <code>eeconfig_read_kb</code> および <code>eeconfig_read_user</code> を使って読み取ることができ、<code>eeconfig_update_kb</code> および <code>eeconfig_update_user</code> を使って書きこむことができます。これは切り替え可能な機能 (rgb レイヤーの表示の切り替えなど)に役立ちます。さらに、<code>eeconfig_init_kb</code> および <code>eeconfig_init_user</code> を使って EEPROM のデフォルト値を設定できます。</p>
 <p>ここでの複雑な部分は、EEPROM を介してデータを保存およびアクセスできる方法がたくさんあり、これを行うための"正しい"方法が無いということです。ただし、各関数には DWORD (4 バイト)しかありません。</p>
@@ -3166,7 +3166,7 @@
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-最後に、<code>eeconfig_init_user</code> 関数を追加して、EEPROM がリセットされた時にデフォルト値、さらにはカスタムアクションを指定できるようにします。EEPROM を強制的にリセットするには、<code>EEP_RST</code> キーコードあるいは<a href="ja/feature_bootmagic.md">ブートマジック</a>機能を使います。例えば、デフォルトで rgb レイヤー表示を設定し、デフォルト値を保存したい場合。</p>
+最後に、<code>eeconfig_init_user</code> 関数を追加して、EEPROM がリセットされた時にデフォルト値、さらにはカスタムアクションを指定できるようにします。EEPROM を強制的にリセットするには、<code>EEP_RST</code> キーコードあるいは<a href="../feature_bootmagic/">ブートマジック</a>機能を使います。例えば、デフォルトで rgb レイヤー表示を設定し、デフォルト値を保存したい場合。</p>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">eeconfig_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// EEPROM がリセットされます！</span>
   <span class="n">user_config</span><span class="p">.</span><span class="n">raw</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// デフォルトでこれを有効にします</span>

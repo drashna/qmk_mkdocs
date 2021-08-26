@@ -3113,9 +3113,9 @@
   git diff 0.13.15 HEAD -- docs/faq_keymap.md | cat
 -->
 
-<p>このページは人々がキーマップについてしばしば持つ疑問について説明します。まだ読んだことが無い場合には、<a href="ja/keymap.md">キーマップの概要</a>を最初に読むべきです。</p>
+<p>このページは人々がキーマップについてしばしば持つ疑問について説明します。まだ読んだことが無い場合には、<a href="../keymap/">キーマップの概要</a>を最初に読むべきです。</p>
 <h2 id="_1">どのキーコードを使えますか？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>あなたが利用可能なキーコードのインデックスについては、<a href="ja/keycodes.md">キーコード</a>を見てください。より広範なドキュメントがある場合は、そこからリンクしてあります。</p>
+<p>あなたが利用可能なキーコードのインデックスについては、<a href="../keycodes/">キーコード</a>を見てください。より広範なドキュメントがある場合は、そこからリンクしてあります。</p>
 <p>キーコードは実際には <a href="https://github.com/qmk/qmk_firmware/blob/master/tmk_core/common/keycode.h">common/keycode.h</a> で定義されています。</p>
 <h2 id="_2">デフォルトのキーコードとは何か？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>世界中で使用されている ANSI、ISO および JIS の3つの標準キーボードがあります。北米では主に ANSI が使われ、ヨーロッパおよびアフリカでは主に ISO が使われ、日本では JIS が使われます。言及されていない地域では、ANSI あるいは ISO が使われています。これらのレイアウトに対応するキーコードは以下の通りです:</p>
@@ -3131,8 +3131,8 @@
 <p>QMK には2つの機能、ブートマジックとコマンドがあり、これによりその場でキーボードの動作を変更することができます。これには Ctrl/Caps の交換、Gui の無効化、Alt/Gui の交換、Backspace/Backslash の交換、全てのキーの無効化およびその他の動作の変更が含まれますが、これらに限定されません。</p>
 <p>迅速な解決策として、キーボードを接続している時に <code>Space</code>+<code>Backspace</code> を押してみてください。これはキーボードに保存されている設定をリセットし、これらのキーを通常の操作に戻します。うまく行かない場合は、以下を見てください:</p>
 <ul>
-<li><a href="ja/feature_bootmagic.md">ブートマジック</a></li>
-<li><a href="ja/feature_command.md">コマンド</a></li>
+<li><a href="../feature_bootmagic/">ブートマジック</a></li>
+<li><a href="../feature_command/">コマンド</a></li>
 </ul>
 <h2 id="_5">メニューキーが動作しない<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>ほとんどの最近のキーボードにある、<code>KC_RGUI</code> と <code>KC_RCTL</code> の間にあるキーは、実際には <code>KC_APP</code> と呼ばれます。これは、そのキーが発明された時に、関連する標準にすでに <code>MENU</code> という名前のキーが存在していたため、MS はそれを <code>APP</code> キーと呼ぶことを選択したためです。</p>
@@ -3163,7 +3163,7 @@ https://github.com/tmk/tmk_keyboard/issues/67</p>
 <p>この機能を有効にした後で、キーマップでキーコード <code>KC_LCAP</code>、<code>KC_LNUM</code> および <code>KC_LSCR</code> を使います。</p>
 <p>古いビンテージメカニカルキーボードにはロックスイッチが付いている場合がありますが、最新のものにはありません。<strong><em>ほとんどの場合この機能は必要なく、単にキーコード <code>KC_CAPS</code>、<code>KC_NLCK</code> および <code>KC_SLCK</code></em></strong> を使います。</p>
 <h2 id="c-ascii">セディーユ 'Ç' のような ASCII 以外の特別文字の入力<a class="headerlink" href="#c-ascii" title="Permanent link">&para;</a></h2>
-<p><a href="ja/feature_unicode.md">ユニコード</a> 機能を見てください。</p>
+<p><a href="../feature_unicode/">ユニコード</a> 機能を見てください。</p>
 <h2 id="macos-fn">macOS での <code>Fn</code> キー<a class="headerlink" href="#macos-fn" title="Permanent link">&para;</a></h2>
 <p>ほとんどの Fn キーと異なり、Apple のキーボードの Fn キーには実際には独自のキーコードのようなものがあります。基本的な 6KRO HID レポートの6番目のキーコードの代わりになります -- つまり、Apple キーボードは実際には 5KRO のみです。</p>
 <p>QMK にこのキーを送信させることは技術的に可能です。ただし、そうするには Fn キーの状態を追加するためにレポート形式の修正を必要とします。 
@@ -3190,7 +3190,7 @@ https://github.com/tekezo/Karabiner/issues/403#issuecomment-102559237</p>
 https://github.com/tmk/tmk_keyboard/issues/213
 https://github.com/tekezo/Karabiner/issues/403</p>
 <h2 id="esc">単一のキーでの Esc と<code>&#96;</code><a class="headerlink" href="#esc" title="Permanent link">&para;</a></h2>
-<p><a href="ja/feature_grave_esc.md">Grave Escape</a> 機能を見てください。</p>
+<p><a href="../feature_grave_esc/">Grave Escape</a> 機能を見てください。</p>
 <h2 id="mac-osx-eject">Mac OSX での Eject<a class="headerlink" href="#mac-osx-eject" title="Permanent link">&para;</a></h2>
 <p><code>KC_EJCT</code> キーコードは OSX で動作します。https://github.com/tmk/tmk_keyboard/issues/250
 Windows 10 はコードを無視し、Linux/Xorg は認識しますが、デフォルトではマッピングがありません。</p>

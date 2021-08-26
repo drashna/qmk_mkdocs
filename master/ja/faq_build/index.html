@@ -2969,7 +2969,7 @@
   git diff 0.12.43 HEAD -- docs/faq_build.md | cat
 -->
 
-<p>このページは QMK のビルドに関する質問を説明します。まだビルドをしていない場合は、<a href="ja/getting_started_build_tools.md">ビルド環境のセットアップ</a> および <a href="ja/getting_started_make_guide.md">Make 手順</a>ガイドを読むべきです。</p>
+<p>このページは QMK のビルドに関する質問を説明します。まだビルドをしていない場合は、<a href="getting_started_build_tools.md">ビルド環境のセットアップ</a> および <a href="../getting_started_make_guide/">Make 手順</a>ガイドを読むべきです。</p>
 <h2 id="linux">Linux でプログラムできません<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
 <p>デバイスを操作するには適切な権限が必要です。Linux ユーザの場合は、以下の <code>udev</code> ルールに関する指示を見てください。<code>udev</code> に問題がある場合は、回避策は <code>sudo</code> コマンドを使うことです。このコマンドに慣れていない場合は、<code>man sudo</code> コマンドでマニュアルを確認するか、<a href="https://linux.die.net/man/8/sudo">この web ページを見てください</a>。</p>
 <p>コントローラが ATMega32u4 の場合の <code>sudo</code> の使い方の例:</p>
@@ -2999,7 +2999,7 @@ sudo systemctl restart ModemManager
 <h2 id="dfu">DFU ブートローダの不明なデバイス<a class="headerlink" href="#dfu" title="Permanent link">&para;</a></h2>
 <p>Windows 上でキーボードを書き込む時に発生する問題は、ブートローダ用に間違ったドライバがインストールされているか、全くインストールされていないかによるものがほとんどです。</p>
 <p>QMK インストールスクリプト (MSYS2 あるいは WSL 内の <code>qmk_firmware</code> ディレクトリから <code>./util/qmk_install.sh</code>) を再実行するか、QMK Toolbox の再インストールでこの問題が解決するかもしれません。別のやり方として、手動で <a href="https://github.com/qmk/qmk_driver_installer"><code>qmk_driver_installer</code></a> パッケージをダウンロードして実行することができます。</p>
-<p>それでもうまく行かない場合は、Zadig をダウンロードして実行する必要があります。詳細な情報は <a href="ja/driver_installation_zadig.md">Zadig を使ったブートローダドライバのインストール</a>を見てください。</p>
+<p>それでもうまく行かない場合は、Zadig をダウンロードして実行する必要があります。詳細な情報は <a href="../driver_installation_zadig/">Zadig を使ったブートローダドライバのインストール</a>を見てください。</p>
 <h2 id="usb-vid-pid">USB VID と PID<a class="headerlink" href="#usb-vid-pid" title="Permanent link">&para;</a></h2>
 <p><code>config.h</code> を編集することで任意の ID を使うことができます。おそらく未使用の ID を使っても、他の製品と衝突するとても低い可能性があることを除いて、実際には問題はありません。</p>
 <p>QMK のほとんどのキーボードは、vendor ID として、<code>0xFEED</code> を使います。他のキーボードを調べて、ユニークな ID を選択してください。</p>
@@ -3012,7 +3012,7 @@ https://github.com/tmk/tmk_keyboard/issues/150</p>
 <p>ARM ベースのチップ上での EEPROM の動作によって、保存された設定が無効になる場合があります。これはデフォルトレイヤに影響し、まだ調査中の特定の環境下でキーボードが使えなくなるかも<em>しれません</em>。EEPROM のリセットでこれが修正されます。</p>
 <p><a href="https://cdn.discordapp.com/attachments/473506116718952450/539284620861243409/planck_rev6_default.bin">Planck rev6 reset EEPROM</a> を使って eeprom のリセットを強制することができます。このイメージを書き込んだ後で、通常のファームウェアを書き込むと、キーボードが <em>通常</em> の動作順序に復元されます。
 <a href="https://cdn.discordapp.com/attachments/473506116718952450/537849497313738762/preonic_rev3_default.bin">Preonic rev3 reset EEPROM</a></p>
-<p>いずれかの形式でブートマジックが有効になっている場合は、これも実行できるはずです (実行方法の詳細については、<a href="ja/feature_bootmagic.md">ブートマジックドキュメント</a>とキーボード情報を見てください)。</p>
+<p>いずれかの形式でブートマジックが有効になっている場合は、これも実行できるはずです (実行方法の詳細については、<a href="../feature_bootmagic/">ブートマジックドキュメント</a>とキーボード情報を見てください)。</p>
                 
               
               

@@ -3058,7 +3058,7 @@
 <span class="cp">endif</span>
 </code></pre></div></p>
 <h3 id="override-default-userspace">デフォルトのユーザスペースの上書き<a class="headerlink" href="#override-default-userspace" title="Permanent link">&para;</a></h3>
-<p>デフォルトでは、使用されるユーザスペース名はキーマップ名と同じです。状況によってはこれは望ましくありません。例えば、<a href="ja/feature_layouts.md">レイアウト</a>機能を使う場合、異なるキーマップに同じ名前 (例えば、ANSI および ISO) を使うことができません。レイアウトに <code>mylayout-ansi</code> や <code>mylayout-iso</code> という名前を付け、以下の行をレイアウトの <code>rules.mk</code> に追加します:</p>
+<p>デフォルトでは、使用されるユーザスペース名はキーマップ名と同じです。状況によってはこれは望ましくありません。例えば、<a href="../feature_layouts/">レイアウト</a>機能を使う場合、異なるキーマップに同じ名前 (例えば、ANSI および ISO) を使うことができません。レイアウトに <code>mylayout-ansi</code> や <code>mylayout-iso</code> という名前を付け、以下の行をレイアウトの <code>rules.mk</code> に追加します:</p>
 <div class="highlight"><pre><span></span><code>USER_NAME := mylayout
 </code></pre></div>
 <p>これは、基板上に物理的に異なる機能を備えた、複数の異なるキーボード(RGBライトを備えたキーボード、オーディオを備えたキーボード、LEDの数が異なる、コントローラ上の異なるPINに接続されているなど)がある場合にも役立ちます。</p>
@@ -3068,7 +3068,7 @@
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 </div>
-<p><code>config.h</code> は<a href="ja/config_options.md">設定オプション</a>のために使い、<code>&lt;name&gt;.h</code> ファイルはユーザあるいは(レイヤーあるいはキーコードのための enum のような)キーマップ固有の設定のために使うべきです</p>
+<p><code>config.h</code> は<a href="../config_options/">設定オプション</a>のために使い、<code>&lt;name&gt;.h</code> ファイルはユーザあるいは(レイヤーあるいはキーコードのための enum のような)キーマップ固有の設定のために使うべきです</p>
 <h2 id="readme-readmemd">Readme (<code>readme.md</code>)<a class="headerlink" href="#readme-readmemd" title="Permanent link">&para;</a></h2>
 <p>作者情報 (あなたの名前、GitHub ユーザ名、eメール)およびオプションで<a href="https://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses">GPL 互換のライセンス</a>を含めてください。</p>
 <p>以下をテンプレートとして使うことができます:
@@ -3103,9 +3103,9 @@ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 <p>簡単な例については、<a href="https://github.com/qmk/qmk_firmware/tree/master/users/_example"><code>/users/_example/</code></a> を調べてください。
 より複雑な例については、<a href="https://github.com/qmk/qmk_firmware/tree/master/users/drashna"><code>/users/drashna/</code></a> のユーザスペースを調べてください。</p>
 <h3 id="customized-functions">カスタマイズされた関数<a class="headerlink" href="#customized-functions" title="Permanent link">&para;</a></h3>
-<p>QMK には、<a href="ja/custom_quantum_functions.md#a-word-on-core-vs-keyboards-vs-keymap"><code>_quantum</code>、<code>_kb</code> および <code>_user</code> バージョン</a>を持つ使用可能な<a href="../custom_quantum_functions/">関数</a>が山ほどあります。 ほとんどの場合、これらの関数のユーザバージョンを使う必要があります。しかし問題はそれらをユーザスペースで使う場合、キーマップで使うことができるバージョンが無いことです。</p>
+<p>QMK には、<a href="../custom_quantum_functions/#a-word-on-core-vs-keyboards-vs-keymap"><code>_quantum</code>、<code>_kb</code> および <code>_user</code> バージョン</a>を持つ使用可能な<a href="../custom_quantum_functions/">関数</a>が山ほどあります。 ほとんどの場合、これらの関数のユーザバージョンを使う必要があります。しかし問題はそれらをユーザスペースで使う場合、キーマップで使うことができるバージョンが無いことです。</p>
 <p>しかし、実際にはキーマップバージョンのサポートを追加し、ユーザスペースとキーマップの両方で使うことができます。</p>
-<p>例えば、<code>layer_state_set_user()</code> 関数を見てみましょう。全てのキーボードで <a href="ja/ref_functions.md#olkb-tri-layers">Tri Layer State</a> 機能を有効にしながら、<code>keymap.c</code> ファイルで Tri Layer 機能を保持することができます。</p>
+<p>例えば、<code>layer_state_set_user()</code> 関数を見てみましょう。全てのキーボードで <a href="../ref_functions/#olkb-tri-layers">Tri Layer State</a> 機能を有効にしながら、<code>keymap.c</code> ファイルで Tri Layer 機能を保持することができます。</p>
 <p><code>&lt;name.c&gt;</code> ファイル内で、以下を追加する必要があります:
 <div class="highlight"><pre><span></span><code><span class="n">__attribute__</span> <span class="p">((</span><span class="n">weak</span><span class="p">))</span>
 <span class="n">layer_state_t</span> <span class="n">layer_state_set_keymap</span> <span class="p">(</span><span class="n">layer_state_t</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>

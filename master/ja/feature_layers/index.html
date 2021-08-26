@@ -2986,22 +2986,22 @@
 -->
 
 <p>QMK ファームウェアの最も強力で良く使われている機能の一つは、レイヤーを使う機能です。ほとんどの人にとって、これはラップトップやタブレットキーボードにあるのと同じように、様々なキーを可能にするファンクションキーに相当します。</p>
-<p>レイヤースタックがどのように動作するかの詳細な説明については、<a href="ja/keymap.md#keymap-and-layers">キーマップの概要</a>を調べてください。</p>
+<p>レイヤースタックがどのように動作するかの詳細な説明については、<a href="../keymap/#keymap-and-layers">キーマップの概要</a>を調べてください。</p>
 <h2 id="switching-and-toggling-layers">レイヤーの切り替えとトグル<a class="headerlink" href="#switching-and-toggling-layers" title="Permanent link">&para;</a></h2>
 <p>以下の関数により、様々な方法でレイヤーをアクティブにすることができます。レイヤーは通常、独立したレイアウトでは無いことに注意してください -- 複数のレイヤーを一度にアクティブにすることができ、レイヤーが <code>KC_TRNS</code> を使ってキーの押下を下のレイヤーへと透過させることが一般的です。MO()、LM()、TT() あるいは LT() を使って一時的なレイヤーの切り替えを使う場合、上のレイヤーのキーを透過にするようにしてください。さもないと意図したように動作しないかもしれません。</p>
 <ul>
-<li><code>DF(layer)</code> - デフォルトレイヤーを切り替えます。デフォルトレイヤーは、他のレイヤーがその上に積み重なっている、常にアクティブな基本レイヤーです。デフォルトレイヤーの詳細については以下を見てください。これは QWERTY から Dvorak レイアウトに切り替えるために使うことができます。(これは一時的な切り替えであり、キーボードの電源が切れるまでしか持続しないことに注意してください。デフォルトレイヤーを永続的に変更するには、<a href="ja/custom_quantum_functions.md#programming-the-behavior-of-any-keycode">process_record_user</a> 内で <code>set_single_persistent_default_layer</code> 関数を呼び出すなど、より深いカスタマイズが必要です。)</li>
+<li><code>DF(layer)</code> - デフォルトレイヤーを切り替えます。デフォルトレイヤーは、他のレイヤーがその上に積み重なっている、常にアクティブな基本レイヤーです。デフォルトレイヤーの詳細については以下を見てください。これは QWERTY から Dvorak レイアウトに切り替えるために使うことができます。(これは一時的な切り替えであり、キーボードの電源が切れるまでしか持続しないことに注意してください。デフォルトレイヤーを永続的に変更するには、<a href="../custom_quantum_functions/#programming-the-behavior-of-any-keycode">process_record_user</a> 内で <code>set_single_persistent_default_layer</code> 関数を呼び出すなど、より深いカスタマイズが必要です。)</li>
 <li><code>MO(layer)</code> - 一時的に<em>レイヤー</em>をアクティブにします。キーを放すとすぐに、レイヤーは非アクティブになります。</li>
 <li><code>LM(layer, mod)</code> - (<code>MO</code> のように)一時的に<em>レイヤー</em>をアクティブにしますが、モディファイア <em>mod</em> がアクティブな状態です。layer 0-15 と、左モディファイアのみをサポートします: <code>MOD_LCTL</code>、<code>MOD_LSFT</code>、<code>MOD_LALT</code>、<code>MOD_LGUI</code> (<code>KC_</code> 定数の代わりに <code>MOD_</code> 定数を使うことに注意してください)。これらのモディファイアは、例えば <code>LM(_RAISE, MOD_LCTL | MOD_LALT)</code> のように、ビット単位の OR を使って組み合わせることができます。</li>
 <li><code>LT(layer, kc)</code> - ホールドされた時に<em>レイヤー</em>を一時的にアクティブにし、タップされた時に <em>kc</em> を送信します。layer 0-15 のみをサポートします。</li>
-<li><code>OSL(layer)</code> - 次のキーが押されるまで、一時的に<em>レイヤー</em>をアクティブにします。詳細と追加機能については、<a href="ja/one_shot_keys.md">ワンショットキー</a>を見てください。</li>
+<li><code>OSL(layer)</code> - 次のキーが押されるまで、一時的に<em>レイヤー</em>をアクティブにします。詳細と追加機能については、<a href="../one_shot_keys/">ワンショットキー</a>を見てください。</li>
 <li><code>TG(layer)</code> - <em>レイヤー</em>を切り替えます。非アクティブな場合はアクティブにし、逆も同様です。</li>
 <li><code>TO(layer)</code> - <em>レイヤー</em>をアクティブにし、他の全てのレイヤー(デフォルトレイヤーを除く)を非アクティブにします。この関数は特別です。1つのレイヤーをアクティブなレイヤースタックに追加/削除する代わりに、現在のアクティブなレイヤーを完全に置き換え、唯一上位のレイヤーを下位のレイヤーで置き換えることができるからです。これはキーダウンで(キーが押されるとすぐに)アクティブになります。</li>
 <li><code>TT(layer)</code> - レイヤーのタップ切り替え。キーを押したままにすると<em>レイヤー</em>がアクティブにされ、放すと非アクティブになります (<code>MO</code> 風)。繰り返しタップすると、レイヤーはオンあるいはオフを切り替えます (<code>TG</code> 風)。デフォルトでは5回のタップが必要ですが、<code>TAPPING_TOGGLE</code> を定義することで変更することができます -- 例えば、2回のタップだけで切り替えるには、<code>#define TAPPING_TOGGLE 2</code> を定義します。</li>
 </ul>
 <h3 id="caveats">注意事項<a class="headerlink" href="#caveats" title="Permanent link">&para;</a></h3>
-<p>現在のところ、<code>LT()</code> の <code>layer</code> 引数はレイヤー 0-15 に制限され、<code>kc</code> 引数は<a href="ja/keycodes_basic.md">基本的なキーコードセット</a>に制限されています。つまり、<code>LCTL()</code>、<code>KC_TILD</code> あるいは <code>0xFF</code> より大きなキーコードを使うことができません。これは、QMK が16ビットのキーコードを使うためです。4ビットは機能の識別のために使われ、4ビットはレイヤーのために使われ、キーコードには8ビットしか残されていません。</p>
-<p>これを拡張してもせいぜい複雑になるだけでしょう。32ビットキーコードに移行すると、これの多くが解決されますが、キーマップマトリックスが使用する領域が2倍になります。また、問題が起きる可能性もあります。タップしたキーコードにモディファイアを適用する必要がある場合は、<a href="ja/feature_tap_dance.md#example-5-using-tap-dance-for-advanced-mod-tap-and-layer-tap-keys">タップダンス</a>を使うことができます。</p>
+<p>現在のところ、<code>LT()</code> の <code>layer</code> 引数はレイヤー 0-15 に制限され、<code>kc</code> 引数は<a href="../keycodes_basic/">基本的なキーコードセット</a>に制限されています。つまり、<code>LCTL()</code>、<code>KC_TILD</code> あるいは <code>0xFF</code> より大きなキーコードを使うことができません。これは、QMK が16ビットのキーコードを使うためです。4ビットは機能の識別のために使われ、4ビットはレイヤーのために使われ、キーコードには8ビットしか残されていません。</p>
+<p>これを拡張してもせいぜい複雑になるだけでしょう。32ビットキーコードに移行すると、これの多くが解決されますが、キーマップマトリックスが使用する領域が2倍になります。また、問題が起きる可能性もあります。タップしたキーコードにモディファイアを適用する必要がある場合は、<a href="../feature_tap_dance/#example-5-using-tap-dance-for-advanced-mod-tap-and-layer-tap-keys">タップダンス</a>を使うことができます。</p>
 <h2 id="working-with-layers">レイヤーとの連携<a class="headerlink" href="#working-with-layers" title="Permanent link">&para;</a></h2>
 <p>レイヤーを切り替える時は注意してください。(キーボードを取り外さずに)そのレイヤーを非アクティブにすることができずレイヤーから移動できなくなる可能性があります。最も一般的な問題を避けるためのガイドラインを作成しました。</p>
 <h3 id="beginners">初心者<a class="headerlink" href="#beginners" title="Permanent link">&para;</a></h3>
@@ -3088,15 +3088,15 @@
 <td>デバッガのコンソールに現在のビットマスクと最も高いアクティブなレイヤーを出力する。</td>
 </tr>
 <tr>
-<td><a href="ja/ref_functions.md#setting-the-persistent-default-layer"><code>set_single_persistent_default_layer(layer)</code></a></td>
+<td><a href="../ref_functions/#setting-the-persistent-default-layer"><code>set_single_persistent_default_layer(layer)</code></a></td>
 <td>デフォルトレイヤーを設定し、それを永続化メモリ (EEPROM) に書き込む。</td>
 </tr>
 <tr>
-<td><a href="ja/ref_functions.md#update_tri_layerx-y-z"><code>update_tri_layer(x, y, z)</code></a></td>
+<td><a href="../ref_functions/#update_tri_layerx-y-z"><code>update_tri_layer(x, y, z)</code></a></td>
 <td>レイヤー <code>x</code> と <code>y</code> の両方がオンであるかを調べ、それに基づいて <code>z</code> を設定する(両方がオンの場合オン、そうでなければオフ)。</td>
 </tr>
 <tr>
-<td><a href="ja/ref_functions.md#update_tri_layer_statestate-x-y-z"><code>update_tri_layer_state(state, x, y, z)</code></a></td>
+<td><a href="../ref_functions/#update_tri_layer_statestate-x-y-z"><code>update_tri_layer_state(state, x, y, z)</code></a></td>
 <td><code>update_tri_layer(x, y, z)</code> と同じことをするが、<code>layer_state_set_*</code> 関数から呼ばれる。</td>
 </tr>
 </tbody>
@@ -3130,7 +3130,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>これらのコールバックを使うための追加の情報については、<a href="ja/custom_quantum_functions.md#layer-change-code">レイヤー変換コード</a>のドキュメントを調べてください。</p>
+<p>これらのコールバックを使うための追加の情報については、<a href="../custom_quantum_functions/#layer-change-code">レイヤー変換コード</a>のドキュメントを調べてください。</p>
 </div>
 <p>次の関数やマクロを使って、特定のレイヤーの状態を確認することもできます。</p>
 <table>
