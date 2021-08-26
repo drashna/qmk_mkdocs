@@ -27,7 +27,7 @@ jobs:
       run: ./build_translations.sh
 
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@3.7.1
+      uses: JamesIves/github-pages-deploy-action@4.1.4
       with:
         branch: gh-pages
         folder: site
