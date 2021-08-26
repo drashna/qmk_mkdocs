@@ -1,6 +1,7 @@
 name: Master Docs
 
 on:
+  workflow_dispatch:
   push:
     branches:
     - main
