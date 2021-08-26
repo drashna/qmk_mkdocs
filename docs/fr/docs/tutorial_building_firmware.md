@@ -52,9 +52,10 @@ Cette ligne indique le début d'une liste de calques (layers). En dessous, vous 
 
 Libre à vous de choisir comment compléter cette étape. Faites le petit changement qui vous dérange ou retravaillez tout de zéro. Vous pouvez supprimer des calques si vous ne les utilisez pas tous, ou ajouter des calques jusqu'à un maximum de 32. Vérifiez la documentation suivante pour trouver ce que vous pouvez définir ici:
 
-* [Keycodes](keycodes.md)
-* [Fonctionnalités](features.md)
-* [FAQ](faq.md)
+* [Keycodes basiques](keycodes_basic.md)
+* [Keycodes quantiques](quantum_keycodes.md)
+* [Grave/Escape](feature_grave_esc.md)
+* [Boutons de souris](feature_mouse_keys.md)
 
 !!! tip
     Lorsque vous découvrez comment des keymaps fonctionnent, faites de petits changements. De gros changements rendent le débuggage des problèmes éventuels plus difficile.
@@ -81,4 +82,4 @@ Checking file size of planck_rev5_xyverz.hex                                    
 
 ## Flasher votre firmware
 
-Allez sur la page [Flasher le firmware](fr-FR/tutorial_flashing.md) pour apprendre comment écrire votre nouveau firmware sur votre clavier.
+Allez sur la page [Flasher le firmware](tutorial_flashing.md) pour apprendre comment écrire votre nouveau firmware sur votre clavier.

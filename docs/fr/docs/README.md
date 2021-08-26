@@ -29,4 +29,4 @@ Cette commande compilera la révision `rev4` du clavier `planck` avec la disposi
 
 ## Comment le personnaliser
 
-QMK a beaucoup de [fonctionnalités](features.md) à explorer, et [une documentation](https://docs.qmk.fm) très abondante que vous pourrez parcourir. La plupart des fonctionnalités vous permettrons de modifier vos [dispositions](keymap.md) (keymaps) et de changer [les codes de caractères](keycodes.md) (keycodes).
+QMK a beaucoup de fonctionnalités à explorer, et [une documentation](https://docs.qmk.fm) très abondante que vous pourrez parcourir. La plupart des fonctionnalités vous permettrons de modifier vos [dispositions](keymap.md) (keymaps) et de changer [les codes de caractères](keycodes.md) (keycodes).
