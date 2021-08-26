@@ -43,7 +43,7 @@ nav:
       - Introduction: tutorial.md
       - מקורות ללמידה: tutorial_learn_more_resources.md
     - בסיס QMK:
-        - מבוא לQMK: getting_started_introduction.md
+        - מבוא לQMK: tutorial.md
         - איך להשתמש בGitHub: getting_started_github.md
         - קבלת עזרה: support.md
     - שאלות נפוצות:
@@ -60,7 +60,7 @@ nav:
       - עבודה נכונה ב GIT: tutorial_best_practices.md
       - מקורות ללמידה: tutorial_learn_more_resources.md
     - בסיס QMK:
-      - מבוא לQMK: getting_started_introduction.md
+      - מבוא לQMK: tutorial.md
       - QMK CLI: cli.md
       - QMK CLI Config: cli_configuration.md
       - תרומה ל QMK: contributing.md

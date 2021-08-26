@@ -10,7 +10,7 @@
   * [学习资源](tutorial_learn_more_resources.md)
 
 * [QMK基础](README.md)
-  * [QMK简介](getting_started_introduction.md)
+  * [QMK简介](tutorial.md)
   * [QMK命令行工具](cli.md)
   * [QMK命令行工具配置](cli_configuration.md)
   * [向QMK贡献代码](contributing.md)

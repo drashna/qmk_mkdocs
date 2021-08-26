@@ -70,6 +70,7 @@ nav:
       - Tab Completion: cli_tab_complete.md
   - Using QMK:
     - Guides:
+      - Github Guide: getting_started_github.md
       - Customizing Functionality: custom_quantum_functions.md
       - Driver Installation with Zadig: driver_installation_zadig.md
       - Keymap Overview: keymap.md

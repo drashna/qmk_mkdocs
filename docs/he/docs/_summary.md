@@ -4,7 +4,7 @@
 * [המדריך המלא למתחילים](tutorial.md)
   * [מקורות ללמידה](tutorial_learn_more_resources.md)
 * [בסיס QMK](README.md)
-    * [מבוא לQMK](getting_started_introduction.md)
+    * [מבוא לQMK](tutorial.md)
     * [איך להשתמש בGitHub](getting_started_github.md)
     * [קבלת עזרה](support.md)
 * [שאלות נפוצות](faq.md)
@@ -23,7 +23,7 @@
   * [מקורות ללמידה](tutorial_learn_more_resources.md)
 
 * [בסיס QMK](README.md)
-  * [מבוא לQMK](getting_started_introduction.md)
+  * [מבוא לQMK](tutorial.md)
   * [QMK CLI](cli.md)
   * [QMK CLI Config](cli_configuration.md)
   * [תרומה ל QMK](contributing.md)

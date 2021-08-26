@@ -9,7 +9,7 @@
   * [Ressources d'apprentissage](tutorial_learn_more_resources.md)
 
 * [Les bases de QMK](README.md)
-  * [Indroduction à QMK](getting_started_introduction.md)
+  * [Indroduction à QMK](tutorial.md)
   * [QMK CLI](cli.md)
   * [Configuration de la CLI QMK](cli_configuration.md)
   * [Contribuer à QMK](contributing.md)
