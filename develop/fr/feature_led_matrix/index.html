@@ -1,0 +1,2938 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="canonical" href="https://docs.qmk.fm/devel/fr/feature_led_matrix/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+    
+    
+      
+        <title>Matrice LED - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round:300,400,400i,700%7CSource+Code+Pro&display=fallback">
+        <style>:root{--md-text-font-family:"Varela Round";--md-code-font-family:"Source Code Pro"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/qmk.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#led-matrix-lighting" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Matrice LED
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/zh/" hreflang="zh" class="md-select__link">
+                    中文
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/es/" hreflang="es" class="md-select__link">
+                    Español
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/fr/" hreflang="fr" class="md-select__link">
+                    Français
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/he/" hreflang="he" class="md-select__link">
+                    עברית
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/pt/" hreflang="pt" class="md-select__link">
+                    Português
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ru/" hreflang="ru" class="md-select__link">
+                    Русский
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="/ja/" hreflang="ja" class="md-select__link">
+                    日本語
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/qmk/qmk_firmware/" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/qmk/qmk_firmware/" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        En Français
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="En Français" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          En Français
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" data-md-state="indeterminate" type="checkbox" id="__nav_2_1" checked>
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        Guide pour débutant complet
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Guide pour débutant complet" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Guide pour débutant complet
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_getting_started/" class="md-nav__link">
+        Pour débuter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_building_firmware/" class="md-nav__link">
+        Compiler son premier firmware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_flashing/" class="md-nav__link">
+        Flasher le Firmware
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_testing_debugging/" class="md-nav__link">
+        Test et Débuggage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_best_practices/" class="md-nav__link">
+        Bonnes pratiques Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_learn_more_resources/" class="md-nav__link">
+        Ressources d'apprentissage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" data-md-state="indeterminate" type="checkbox" id="__nav_2_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Les bases de QMK
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Les bases de QMK" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Les bases de QMK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_introduction/" class="md-nav__link">
+        Indroduction à QMK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        QMK CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_configuration/" class="md-nav__link">
+        Configuration de la CLI QMK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        Contribuer à QMK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_github/" class="md-nav__link">
+        Comment utiliser GitHub
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_getting_help/" class="md-nav__link">
+        Trouver de l'aide
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        Breaking changes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Breaking changes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Breaking changes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../breaking_changes/" class="md-nav__link">
+        Aperçu
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ChangeLog/20190830/" class="md-nav__link">
+        30 août 2019
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_4" checked>
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        FAQ
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="FAQ" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          FAQ
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_general/" class="md-nav__link">
+        FAQ Générale
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_build/" class="md-nav__link">
+        Compiler QMK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_debug/" class="md-nav__link">
+        Débugguer / Dépanner QMK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq_keymap/" class="md-nav__link">
+        Keymap / Disposition
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../driver_installation_zadig/" class="md-nav__link">
+        Installer les drivers avec Zadig
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        En Anglais
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="En Anglais" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          En Anglais
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" data-md-state="indeterminate" type="checkbox" id="__nav_3_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_1">
+        Guides détaillés
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Guides détaillés" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Guides détaillés
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_build_tools.md" class="md-nav__link">
+        Installation des outils de compilation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_vagrant/" class="md-nav__link">
+        Guide Vagrant
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_make_guide/" class="md-nav__link">
+        Commandes de compilations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flashing/" class="md-nav__link">
+        Flasher les firmwares
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom_quantum_functions/" class="md-nav__link">
+        Personnaliser les fonctionnalités
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keymap/" class="md-nav__link">
+        Aperçu des fonctionnalités des dispositions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" data-md-state="indeterminate" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Hardware
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Hardware" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware_avr/" class="md-nav__link">
+        Processeurs AVR
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware_drivers/" class="md-nav__link">
+        Pilotes / Drivers
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" data-md-state="indeterminate" type="checkbox" id="__nav_3_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Réferences
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Réferences" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Réferences
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware_keyboard_guidelines/" class="md-nav__link">
+        Lignes de conduite des claviers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config_options/" class="md-nav__link">
+        Options de configurations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keycodes/" class="md-nav__link">
+        Keycodes / Codes des caractères
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coding_conventions_c/" class="md-nav__link">
+        Conventions de codage - C
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coding_conventions_python/" class="md-nav__link">
+        Conventions de codage - Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation_best_practices/" class="md-nav__link">
+        Meilleurs pratiques sur la documentation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentation_templates/" class="md-nav__link">
+        Modèles de documentation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference_glossary/" class="md-nav__link">
+        Glossaire
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unit_testing/" class="md-nav__link">
+        Tests unitaires
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ref_functions/" class="md-nav__link">
+        Fonctions utiles
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference_configurator_support/" class="md-nav__link">
+        Support de configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference_info_json/" class="md-nav__link">
+        Format du fichier info.json
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli_development/" class="md-nav__link">
+        Développer la CLI en Python
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" checked>
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        Fonctionnalités
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Fonctionnalités" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Fonctionnalités
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keycodes_basic/" class="md-nav__link">
+        Keycodes basiques
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keycodes_us_ansi_shifted/" class="md-nav__link">
+        Touches utilisées avec Shift (US ANSI)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_keycodes/" class="md-nav__link">
+        Keycodes quantiques
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_advanced_keycodes/" class="md-nav__link">
+        Keycodes avancés
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_audio/" class="md-nav__link">
+        Fonctionnalités audio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_auto_shift/" class="md-nav__link">
+        Majuscule automatique
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_backlight/" class="md-nav__link">
+        Rétroéclairage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_bluetooth/" class="md-nav__link">
+        Bluetooth
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_bootmagic/" class="md-nav__link">
+        Bootmagic
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_combo/" class="md-nav__link">
+        Combos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_command/" class="md-nav__link">
+        Commande
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_debounce_type/" class="md-nav__link">
+        API anti-rebond
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_dip_switch/" class="md-nav__link">
+        DIP Switch
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_dynamic_macros/" class="md-nav__link">
+        Macros dynamiques
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_encoders/" class="md-nav__link">
+        Interrupteurs rotatifs
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_grave_esc/" class="md-nav__link">
+        Grave Escape
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_haptic_feedback/" class="md-nav__link">
+        Retour haptique
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_hd44780/" class="md-nav__link">
+        Contrôleur LCD HD44780
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_key_lock/" class="md-nav__link">
+        Touche à verrou / Lock-key
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_layouts/" class="md-nav__link">
+        Dispositions / layouts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_leader_key/" class="md-nav__link">
+        Touche leader
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Matrice LED
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Matrice LED
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#driver-configuration" class="md-nav__link">
+    Driver configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Driver configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is31fl3731-idis-31fl3731" class="md-nav__link">
+    IS31FL3731 {: id=is }31fl3731
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-configuration" class="md-nav__link">
+    Common Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    Flags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keycodes" class="md-nav__link">
+    Keycodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-matrix-effects" class="md-nav__link">
+    LED Matrix Effects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-led-matrix-effects" class="md-nav__link">
+    Custom LED Matrix Effects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-configh-options" class="md-nav__link">
+    Additional config.h Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eeprom-storage" class="md-nav__link">
+    EEPROM storage
+  </a>
+  
+    <nav class="md-nav" aria-label="EEPROM storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-operation" class="md-nav__link">
+    Direct Operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-enable-effects" class="md-nav__link">
+    Disable/Enable Effects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-effect-mode" class="md-nav__link">
+    Change Effect Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-value" class="md-nav__link">
+    Change Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-current-status" class="md-nav__link">
+    Query Current Status
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    Callbacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indicators" class="md-nav__link">
+    Indicators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suspended-state" class="md-nav__link">
+    Suspended State
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_macros/" class="md-nav__link">
+        Macros
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_mouse_keys/" class="md-nav__link">
+        Boutons de souris
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_oled_driver/" class="md-nav__link">
+        Pilotes / Drivers OLED
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one_shot_keys/" class="md-nav__link">
+        Touche one-shot
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_pointing_device/" class="md-nav__link">
+        Périphériques de pointage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_ps2_mouse/" class="md-nav__link">
+        Souris PS/2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_rgblight/" class="md-nav__link">
+        Éclairage RGB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_rgb_matrix/" class="md-nav__link">
+        Matrice RGB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_space_cadet/" class="md-nav__link">
+        Space Cadet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_split_keyboard/" class="md-nav__link">
+        Claviers scindés / splittés
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_stenography/" class="md-nav__link">
+        Stenographie
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_swap_hands/" class="md-nav__link">
+        Inversion des mains
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_tap_dance/" class="md-nav__link">
+        Tap Dance
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_terminal/" class="md-nav__link">
+        Terminale
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_thermal_printer/" class="md-nav__link">
+        Imprimante thermique
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_unicode/" class="md-nav__link">
+        Caractères unicodes
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_userspace/" class="md-nav__link">
+        Dossier utilisateur
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feature_velocikey/" class="md-nav__link">
+        Velocikey
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_3_5" checked>
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        Pour les makers et les bricoleurs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Pour les makers et les bricoleurs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Pour les makers et les bricoleurs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hand_wire/" class="md-nav__link">
+        Guide des claviers soudés à la main
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../isp_flashing_guide/" class="md-nav__link">
+        Guide de flash de l’ISP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arm_debugging/" class="md-nav__link">
+        Guide du débogage ARM
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../i2c_driver/" class="md-nav__link">
+        Drivers I2C
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../spi_driver/" class="md-nav__link">
+        Drivers SPI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internals_gpio_control/" class="md-nav__link">
+        Contrôles des GPIO
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proton_c_conversion/" class="md-nav__link">
+        Conversion en Proton C
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" data-md-state="indeterminate" type="checkbox" id="__nav_3_6" checked>
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        Pour aller plus loin
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Pour aller plus loin" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Pour aller plus loin
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_keyboards_work/" class="md-nav__link">
+        Comment fonctionnent les claviers
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../understanding_qmk/" class="md-nav__link">
+        Comprendre QMK
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" data-md-state="indeterminate" type="checkbox" id="__nav_3_7" checked>
+      
+      <label class="md-nav__link" for="__nav_3_7">
+        Autres sujets
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Autres sujets" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Autres sujets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other_eclipse/" class="md-nav__link">
+        Utiliser Eclipse avec QMK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other_vscode/" class="md-nav__link">
+        Utiliser VSCode avec QMK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started_getting_help/" class="md-nav__link">
+        Support
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translating/" class="md-nav__link">
+        Comment ajouter des traductions
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_8" data-md-state="indeterminate" type="checkbox" id="__nav_3_8" checked>
+      
+      <label class="md-nav__link" for="__nav_3_8">
+        À l’intérieur de QMK (En cours de documentation)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="À l’intérieur de QMK (En cours de documentation)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_8">
+          <span class="md-nav__icon md-icon"></span>
+          À l’intérieur de QMK (En cours de documentation)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internals_defines/" class="md-nav__link">
+        Définitions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internals_input_callback_reg/" class="md-nav__link">
+        Input Callback Reg
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internals_midi_device/" class="md-nav__link">
+        Appareils Midi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internals_midi_device_setup_process/" class="md-nav__link">
+        Installation d’un appareil Midi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internals_midi_util/" class="md-nav__link">
+        Utilitaires Midi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internals_send_functions/" class="md-nav__link">
+        Fonctions Midi
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../internals_sysex_tools/" class="md-nav__link">
+        Outils Sysex
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#driver-configuration" class="md-nav__link">
+    Driver configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Driver configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#is31fl3731-idis-31fl3731" class="md-nav__link">
+    IS31FL3731 {: id=is }31fl3731
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-configuration" class="md-nav__link">
+    Common Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags" class="md-nav__link">
+    Flags
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keycodes" class="md-nav__link">
+    Keycodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#led-matrix-effects" class="md-nav__link">
+    LED Matrix Effects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-led-matrix-effects" class="md-nav__link">
+    Custom LED Matrix Effects
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-configh-options" class="md-nav__link">
+    Additional config.h Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eeprom-storage" class="md-nav__link">
+    EEPROM storage
+  </a>
+  
+    <nav class="md-nav" aria-label="EEPROM storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-operation" class="md-nav__link">
+    Direct Operation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-enable-effects" class="md-nav__link">
+    Disable/Enable Effects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-effect-mode" class="md-nav__link">
+    Change Effect Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-value" class="md-nav__link">
+    Change Value
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-current-status" class="md-nav__link">
+    Query Current Status
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    Callbacks
+  </a>
+  
+    <nav class="md-nav" aria-label="Callbacks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#indicators" class="md-nav__link">
+    Indicators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suspended-state" class="md-nav__link">
+    Suspended State
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_led_matrix.md" title="Editer cette page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="led-matrix-lighting">LED Matrix Lighting<a class="headerlink" href="#led-matrix-lighting" title="Permanent link">&para;</a></h1>
+<p>This feature allows you to use LED matrices driven by external drivers. It hooks into the backlight system so you can use the same keycodes as backlighting to control it.</p>
+<p>If you want to use RGB LED's you should use the <a href="../feature_rgb_matrix/">RGB Matrix Subsystem</a> instead.</p>
+<h2 id="driver-configuration">Driver configuration<a class="headerlink" href="#driver-configuration" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="is31fl3731-idis-31fl3731">IS31FL3731 {: id=is }31fl3731<a class="headerlink" href="#is31fl3731-idis-31fl3731" title="Permanent link">&para;</a></h3>
+<p>There is basic support for addressable LED matrix lighting with the I2C IS31FL3731 LED controller. To enable it, add this to your <code>rules.mk</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">LED_MATRIX_ENABLE</span> <span class="o">=</span> yes
+<span class="nv">LED_MATRIX_DRIVER</span> <span class="o">=</span> IS31FL3731
+</code></pre></div>
+<p>You can use between 1 and 4 IS31FL3731 IC's. Do not specify <code>LED_DRIVER_ADDR_&lt;N&gt;</code> defines for IC's that are not present on your keyboard. You can define the following items in <code>config.h</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ISSI_TIMEOUT</code></td>
+<td>(Optional) How long to wait for i2c messages, in milliseconds</td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>ISSI_PERSISTENCE</code></td>
+<td>(Optional) Retry failed messages this many times</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>LED_DRIVER_COUNT</code></td>
+<td>(Required) How many LED driver IC's are present</td>
+<td></td>
+</tr>
+<tr>
+<td><code>DRIVER_LED_TOTAL</code></td>
+<td>(Required) How many LED lights are present across all drivers</td>
+<td></td>
+</tr>
+<tr>
+<td><code>LED_DRIVER_ADDR_1</code></td>
+<td>(Required) Address for the first LED driver</td>
+<td></td>
+</tr>
+<tr>
+<td><code>LED_DRIVER_ADDR_2</code></td>
+<td>(Optional) Address for the second LED driver</td>
+<td></td>
+</tr>
+<tr>
+<td><code>LED_DRIVER_ADDR_3</code></td>
+<td>(Optional) Address for the third LED driver</td>
+<td></td>
+</tr>
+<tr>
+<td><code>LED_DRIVER_ADDR_4</code></td>
+<td>(Optional) Address for the fourth LED driver</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Here is an example using 2 drivers.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// This is a 7-bit address, that gets left-shifted and bit 0</span>
+<span class="c1">// set to 0 for write, 1 for read (as per I2C protocol)</span>
+<span class="c1">// The address will vary depending on your wiring:</span>
+<span class="c1">// 0b1110100 AD &lt;-&gt; GND</span>
+<span class="c1">// 0b1110111 AD &lt;-&gt; VCC</span>
+<span class="c1">// 0b1110101 AD &lt;-&gt; SCL</span>
+<span class="c1">// 0b1110110 AD &lt;-&gt; SDA</span>
+<span class="cp">#define LED_DRIVER_ADDR_1 0b1110100</span>
+<span class="cp">#define LED_DRIVER_ADDR_2 0b1110110</span>
+
+<span class="cp">#define LED_DRIVER_COUNT 2</span>
+<span class="cp">#define LED_DRIVER_1_LED_TOTAL 25</span>
+<span class="cp">#define LED_DRIVER_2_LED_TOTAL 24</span>
+<span class="cp">#define DRIVER_LED_TOTAL (LED_DRIVER_1_LED_TOTAL + LED_DRIVER_2_LED_TOTAL)</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Note the parentheses, this is so when <code>LED_DRIVER_LED_TOTAL</code> is used in code and expanded, the values are added together before any additional math is applied to them. As an example, <code>rand() % (LED_DRIVER_1_LED_TOTAL + LED_DRIVER_2_LED_TOTAL)</code> will give very different results than <code>rand() % LED_DRIVER_1_LED_TOTAL + LED_DRIVER_2_LED_TOTAL</code>.</p>
+</div>
+<p>Define these arrays listing all the LEDs in your <code>&lt;keyboard&gt;.c</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">is31_led</span> <span class="n">g_is31_leds</span><span class="p">[</span><span class="n">DRIVER_LED_TOTAL</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="cm">/* Refer to IS31 manual for these locations</span>
+<span class="cm"> *    driver</span>
+<span class="cm"> *    |  LED address</span>
+<span class="cm"> *    |  | */</span>
+    <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="n">C1_1</span>  <span class="p">},</span>
+    <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="n">C1_15</span> <span class="p">},</span>
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Where <code>Cx_y</code> is the location of the LED in the matrix defined by <a href="https://www.issi.com/WW/pdf/31FL3731.pdf">the datasheet</a> and the header file <code>drivers/issi/is31fl3731-simple.h</code>. The <code>driver</code> is the index of the driver you defined in your <code>config.h</code> (<code>0</code>, <code>1</code>, <code>2</code>, or <code>3</code> ).</p>
+<hr />
+<h2 id="common-configuration">Common Configuration<a class="headerlink" href="#common-configuration" title="Permanent link">&para;</a></h2>
+<p>From this point forward the configuration is the same for all the drivers. The <code>led_config_t</code> struct provides a key electrical matrix to led index lookup table, what the physical position of each LED is on the board, and what type of key or usage the LED if the LED represents. Here is a brief example:</p>
+<div class="highlight"><pre><span></span><code><span class="n">led_config_t</span> <span class="n">g_led_config</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span>
+  <span class="c1">// Key Matrix to LED Index</span>
+  <span class="p">{</span>   <span class="mi">5</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span>   <span class="mi">0</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span> <span class="p">},</span>
+  <span class="p">{</span>   <span class="mi">4</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span>   <span class="mi">1</span> <span class="p">},</span>
+  <span class="p">{</span>   <span class="mi">3</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span>   <span class="mi">2</span> <span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+  <span class="c1">// LED Index to Physical Position</span>
+  <span class="p">{</span> <span class="mi">188</span><span class="p">,</span>  <span class="mi">16</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">187</span><span class="p">,</span>  <span class="mi">48</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">149</span><span class="p">,</span>  <span class="mi">64</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">112</span><span class="p">,</span>  <span class="mi">64</span> <span class="p">},</span> <span class="p">{</span>  <span class="mi">37</span><span class="p">,</span>  <span class="mi">48</span> <span class="p">},</span> <span class="p">{</span>  <span class="mi">38</span><span class="p">,</span>  <span class="mi">16</span> <span class="p">}</span>
+<span class="p">},</span> <span class="p">{</span>
+  <span class="c1">// LED Index to Flag</span>
+  <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span>
+<span class="p">}</span> <span class="p">};</span>
+</code></pre></div>
+<p>The first part, <code>// Key Matrix to LED Index</code>, tells the system what key this LED represents by using the key's electrical matrix row &amp; col. The second part, <code>// LED Index to Physical Position</code> represents the LED's physical <code>{ x, y }</code> position on the keyboard. The default expected range of values for <code>{ x, y }</code> is the inclusive range <code>{ 0..224, 0..64 }</code>. This default expected range is due to effects that calculate the center of the keyboard for their animations. The easiest way to calculate these positions is imagine your keyboard is a grid, and the top left of the keyboard represents <code>{ x, y }</code> coordinate <code>{ 0, 0 }</code> and the bottom right of your keyboard represents <code>{ 224, 64 }</code>. Using this as a basis, you can use the following formula to calculate the physical position:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">224</span> <span class="o">/</span> <span class="p">(</span><span class="n">NUMBER_OF_COLS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">COL_POSITION</span>
+<span class="n">y</span> <span class="o">=</span>  <span class="mi">64</span> <span class="o">/</span> <span class="p">(</span><span class="n">NUMBER_OF_ROWS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">ROW_POSITION</span>
+</code></pre></div>
+<p>Where NUMBER_OF_COLS, NUMBER_OF_ROWS, COL_POSITION, &amp; ROW_POSITION are all based on the physical layout of your keyboard, not the electrical layout. </p>
+<p>As mentioned earlier, the center of the keyboard by default is expected to be <code>{ 112, 32 }</code>, but this can be changed if you want to more accurately calculate the LED's physical <code>{ x, y }</code> positions. Keyboard designers can implement <code>#define LED_MATRIX_CENTER { 112, 32 }</code> in their config.h file with the new center point of the keyboard, or where they want it to be allowing more possibilities for the <code>{ x, y }</code> values. Do note that the maximum value for x or y is 255, and the recommended maximum is 224 as this gives animations runoff room before they reset.</p>
+<p><code>// LED Index to Flag</code> is a bitmask, whether or not a certain LEDs is of a certain type. It is recommended that LEDs are set to only 1 type.</p>
+<h2 id="flags">Flags<a class="headerlink" href="#flags" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Define</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HAS_FLAGS(bits, flags)</code></td>
+<td><em>n/a</em></td>
+<td>Evaluates to <code>true</code> if <code>bits</code> has all <code>flags</code> set</td>
+</tr>
+<tr>
+<td><code>HAS_ANY_FLAGS(bits, flags)</code></td>
+<td><em>n/a</em></td>
+<td>Evaluates to <code>true</code> if <code>bits</code> has any <code>flags</code> set</td>
+</tr>
+<tr>
+<td><code>LED_FLAG_NONE</code></td>
+<td><code>0x00</code></td>
+<td>If this LED has no flags</td>
+</tr>
+<tr>
+<td><code>LED_FLAG_ALL</code></td>
+<td><code>0xFF</code></td>
+<td>If this LED has all flags</td>
+</tr>
+<tr>
+<td><code>LED_FLAG_MODIFIER</code></td>
+<td><code>0x01</code></td>
+<td>If the LED is on a modifier key</td>
+</tr>
+<tr>
+<td><code>LED_FLAG_KEYLIGHT</code></td>
+<td><code>0x04</code></td>
+<td>If the LED is for key backlight</td>
+</tr>
+<tr>
+<td><code>LED_FLAG_INDICATOR</code></td>
+<td><code>0x08</code></td>
+<td>If the LED is for keyboard state indication</td>
+</tr>
+</tbody>
+</table>
+<h2 id="keycodes">Keycodes<a class="headerlink" href="#keycodes" title="Permanent link">&para;</a></h2>
+<p>All LED matrix keycodes are currently shared with the <a href="../feature_backlight/">Backlight feature</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BL_TOGG</code></td>
+<td>Toggle LED Matrix on or off</td>
+</tr>
+<tr>
+<td><code>BL_STEP</code></td>
+<td>Cycle through modes</td>
+</tr>
+<tr>
+<td><code>BL_ON</code></td>
+<td>Turn on LED Matrix</td>
+</tr>
+<tr>
+<td><code>BL_OFF</code></td>
+<td>Turn off LED Matrix</td>
+</tr>
+<tr>
+<td><code>BL_INC</code></td>
+<td>Increase the brightness level</td>
+</tr>
+<tr>
+<td><code>BL_DEC</code></td>
+<td>Decrease the brightness level</td>
+</tr>
+</tbody>
+</table>
+<h2 id="led-matrix-effects">LED Matrix Effects<a class="headerlink" href="#led-matrix-effects" title="Permanent link">&para;</a></h2>
+<p>These are the effects that are currently available:</p>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="n">led_matrix_effects</span> <span class="p">{</span>
+    <span class="n">LED_MATRIX_NONE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="n">LED_MATRIX_SOLID</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>           <span class="c1">// Static single val, no speed support</span>
+    <span class="n">LED_MATRIX_ALPHAS_MODS</span><span class="p">,</span>         <span class="c1">// Static dual val, speed is val for LEDs marked as modifiers</span>
+    <span class="n">LED_MATRIX_BREATHING</span><span class="p">,</span>           <span class="c1">// Cycling brightness animation</span>
+    <span class="n">LED_MATRIX_BAND</span><span class="p">,</span>                <span class="c1">// Band fading brightness scrolling left to right</span>
+    <span class="n">LED_MATRIX_BAND_PINWHEEL</span><span class="p">,</span>       <span class="c1">// 3 blade spinning pinwheel fades brightness</span>
+    <span class="n">LED_MATRIX_BAND_SPIRAL</span><span class="p">,</span>         <span class="c1">// Spinning spiral fades brightness</span>
+    <span class="n">LED_MATRIX_CYCLE_LEFT_RIGHT</span><span class="p">,</span>    <span class="c1">// Full gradient scrolling left to right</span>
+    <span class="n">LED_MATRIX_CYCLE_UP_DOWN</span><span class="p">,</span>       <span class="c1">// Full gradient scrolling top to bottom</span>
+    <span class="n">LED_MATRIX_CYCLE_OUT_IN</span><span class="p">,</span>        <span class="c1">// Full gradient scrolling out to in</span>
+    <span class="n">LED_MATRIX_DUAL_BEACON</span><span class="p">,</span>         <span class="c1">// Full gradient spinning around center of keyboard</span>
+<span class="cp">#if defined(LED_MATRIX_KEYPRESSES) || defined(LED_MATRIX_KEYRELEASES)</span>
+    <span class="n">LED_MATRIX_SOLID_REACTIVE_SIMPLE</span><span class="p">,</span>   <span class="c1">// Pulses keys hit then fades out</span>
+    <span class="n">LED_MATRIX_SOLID_REACTIVE_WIDE</span>       <span class="c1">// Value pulses near a single key hit then fades out</span>
+    <span class="n">LED_MATRIX_SOLID_REACTIVE_MULTIWIDE</span>  <span class="c1">// Value pulses near multiple key hits then fades out</span>
+    <span class="n">LED_MATRIX_SOLID_REACTIVE_CROSS</span>      <span class="c1">// Value pulses the same column and row of a single key hit then fades out</span>
+    <span class="n">LED_MATRIX_SOLID_REACTIVE_MULTICROSS</span> <span class="c1">// Value pulses the same column and row of multiple key hits then fades out</span>
+    <span class="n">LED_MATRIX_SOLID_REACTIVE_NEXUS</span>      <span class="c1">// Value pulses away on the same column and row of a single key hit then fades out</span>
+    <span class="n">LED_MATRIX_SOLID_REACTIVE_MULTINEXUS</span> <span class="c1">// Value pulses away on the same column and row of multiple key hits then fades out</span>
+    <span class="n">LED_MATRIX_SOLID_SPLASH</span><span class="p">,</span>             <span class="c1">// Value pulses away from a single key hit then fades out</span>
+    <span class="n">LED_MATRIX_SOLID_MULTISPLASH</span><span class="p">,</span>        <span class="c1">// Value pulses away from multiple key hits then fades out</span>
+<span class="cp">#endif</span>
+    <span class="n">LED_MATRIX_WAVE_LEFT_RIGHT</span>           <span class="c1">// Sine wave scrolling from left to right</span>
+    <span class="n">LED_MATRIX_WAVE_UP_DOWN</span>              <span class="c1">// Sine wave scrolling from up to down</span>
+    <span class="n">LED_MATRIX_EFFECT_MAX</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>You can disable a single effect by defining <code>DISABLE_[EFFECT_NAME]</code> in your <code>config.h</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Define</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_ALPHAS_MODS</code></td>
+<td>Disables <code>LED_MATRIX_ALPHAS_MODS</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_BREATHING</code></td>
+<td>Disables <code>LED_MATRIX_BREATHING</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_BAND</code></td>
+<td>Disables <code>LED_MATRIX_BAND</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_BAND_PINWHEEL</code></td>
+<td>Disables <code>LED_MATRIX_BAND_PINWHEEL</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_BAND_SPIRAL</code></td>
+<td>Disables <code>LED_MATRIX_BAND_SPIRAL</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_CYCLE_LEFT_RIGHT</code></td>
+<td>Disables <code>LED_MATRIX_CYCLE_LEFT_RIGHT</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_CYCLE_UP_DOWN</code></td>
+<td>Disables <code>LED_MATRIX_CYCLE_UP_DOWN</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_CYCLE_OUT_IN</code></td>
+<td>Disables <code>LED_MATRIX_CYCLE_OUT_IN</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_DUAL_BEACON</code></td>
+<td>Disables <code>LED_MATRIX_DUAL_BEACON</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_SOLID_REACTIVE_SIMPLE</code></td>
+<td>Disables <code>LED_MATRIX_SOLID_REACTIVE_SIMPLE</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_SOLID_REACTIVE_WIDE</code></td>
+<td>Disables <code>LED_MATRIX_SOLID_REACTIVE_WIDE</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_SOLID_REACTIVE_MULTIWIDE</code></td>
+<td>Disables <code>LED_MATRIX_SOLID_REACTIVE_MULTIWIDE</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_SOLID_REACTIVE_CROSS</code></td>
+<td>Disables <code>LED_MATRIX_SOLID_REACTIVE_CROSS</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_SOLID_REACTIVE_MULTICROSS</code></td>
+<td>Disables <code>LED_MATRIX_SOLID_REACTIVE_MULTICROSS</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_SOLID_REACTIVE_NEXUS</code></td>
+<td>Disables <code>LED_MATRIX_SOLID_REACTIVE_NEXUS</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_SOLID_REACTIVE_MULTINEXUS</code></td>
+<td>Disables <code>LED_MATRIX_SOLID_REACTIVE_MULTINEXUS</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_SOLID_SPLASH</code></td>
+<td>Disables <code>LED_MATRIX_SOLID_SPLASH</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_SOLID_MULTISPLASH</code></td>
+<td>Disables <code>LED_MATRIX_SOLID_MULTISPLASH</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_WAVE_LEFT_RIGHT</code></td>
+<td>Disables <code>LED_MATRIX_WAVE_LEFT_RIGHT</code></td>
+</tr>
+<tr>
+<td><code>#define DISABLE_LED_MATRIX_WAVE_UP_DOWN</code></td>
+<td>Disables <code>LED_MATRIX_WAVE_UP_DOWN</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="custom-led-matrix-effects">Custom LED Matrix Effects<a class="headerlink" href="#custom-led-matrix-effects" title="Permanent link">&para;</a></h2>
+<p>By setting <code>LED_MATRIX_CUSTOM_USER</code> (and/or <code>LED_MATRIX_CUSTOM_KB</code>) in <code>rules.mk</code>, new effects can be defined directly from userspace, without having to edit any QMK core files.</p>
+<p>To declare new effects, create a new <code>led_matrix_user/kb.inc</code> that looks something like this:</p>
+<p><code>led_matrix_user.inc</code> should go in the root of the keymap directory.
+<code>led_matrix_kb.inc</code> should go in the root of the keyboard directory.</p>
+<p>To use custom effects in your code, simply prepend <code>LED_MATRIX_CUSTOM_</code> to the effect name specified in <code>LED_MATRIX_EFFECT()</code>. For example, an effect declared as <code>LED_MATRIX_EFFECT(my_cool_effect)</code> would be referenced with:</p>
+<div class="highlight"><pre><span></span><code><span class="n">led_matrix_mode</span><span class="p">(</span><span class="n">led_MATRIX_CUSTOM_my_cool_effect</span><span class="p">);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// !!! DO NOT ADD #pragma once !!! //</span>
+
+<span class="c1">// Step 1.</span>
+<span class="c1">// Declare custom effects using the LED_MATRIX_EFFECT macro</span>
+<span class="c1">// (note the lack of semicolon after the macro!)</span>
+<span class="n">LED_MATRIX_EFFECT</span><span class="p">(</span><span class="n">my_cool_effect</span><span class="p">)</span>
+<span class="n">LED_MATRIX_EFFECT</span><span class="p">(</span><span class="n">my_cool_effect2</span><span class="p">)</span>
+
+<span class="c1">// Step 2.</span>
+<span class="c1">// Define effects inside the `LED_MATRIX_CUSTOM_EFFECT_IMPLS` ifdef block</span>
+<span class="cp">#ifdef LED_MATRIX_CUSTOM_EFFECT_IMPLS</span>
+
+<span class="c1">// e.g: A simple effect, self-contained within a single method</span>
+<span class="k">static</span> <span class="kt">bool</span> <span class="n">my_cool_effect</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LED_MATRIX_USE_LIMITS</span><span class="p">(</span><span class="n">led_min</span><span class="p">,</span> <span class="n">led_max</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">led_min</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">led_max</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">led_matrix_set_value</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">led_max</span> <span class="o">&lt;</span> <span class="n">DRIVER_LED_TOTAL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// e.g: A more complex effect, relying on external methods and state, with</span>
+<span class="c1">// dedicated init and run methods</span>
+<span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">some_global_state</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">my_cool_effect2_complex_init</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">some_global_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">static</span> <span class="kt">bool</span> <span class="nf">my_cool_effect2_complex_run</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LED_MATRIX_USE_LIMITS</span><span class="p">(</span><span class="n">led_min</span><span class="p">,</span> <span class="n">led_max</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">led_min</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">led_max</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">led_matrix_set_value</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">some_global_state</span><span class="o">++</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">led_max</span> <span class="o">&lt;</span> <span class="n">DRIVER_LED_TOTAL</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">static</span> <span class="kt">bool</span> <span class="nf">my_cool_effect2</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">params</span><span class="o">-&gt;</span><span class="n">init</span><span class="p">)</span> <span class="n">my_cool_effect2_complex_init</span><span class="p">(</span><span class="n">params</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">my_cool_effect2_complex_run</span><span class="p">(</span><span class="n">params</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cp">#endif </span><span class="c1">// LED_MATRIX_CUSTOM_EFFECT_IMPLS</span>
+</code></pre></div>
+<p>For inspiration and examples, check out the built-in effects under <code>quantum/led_matrix_animations/</code></p>
+<h2 id="additional-configh-options">Additional <code>config.h</code> Options<a class="headerlink" href="#additional-configh-options" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="cp">#define LED_MATRIX_KEYPRESSES </span><span class="c1">// reacts to keypresses</span>
+<span class="cp">#define LED_MATRIX_KEYRELEASES </span><span class="c1">// reacts to keyreleases (instead of keypresses)</span>
+<span class="cp">#define LED_MATRIX_FRAMEBUFFER_EFFECTS </span><span class="c1">// enable framebuffer effects</span>
+<span class="cp">#define LED_DISABLE_TIMEOUT 0 </span><span class="c1">// number of milliseconds to wait until led automatically turns off</span>
+<span class="cp">#define LED_DISABLE_AFTER_TIMEOUT 0 </span><span class="c1">// OBSOLETE: number of ticks to wait until disabling effects</span>
+<span class="cp">#define LED_DISABLE_WHEN_USB_SUSPENDED false </span><span class="c1">// turn off effects when suspended</span>
+<span class="cp">#define LED_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 </span><span class="c1">// limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)</span>
+<span class="cp">#define LED_MATRIX_LED_FLUSH_LIMIT 16 </span><span class="c1">// limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)</span>
+<span class="cp">#define LED_MATRIX_MAXIMUM_BRIGHTNESS 255 </span><span class="c1">// limits maximum brightness of LEDs</span>
+<span class="cp">#define LED_MATRIX_STARTUP_MODE LED_MATRIX_SOLID </span><span class="c1">// Sets the default mode, if none has been set</span>
+<span class="cp">#define LED_MATRIX_STARTUP_VAL LED_MATRIX_MAXIMUM_BRIGHTNESS </span><span class="c1">// Sets the default brightness value, if none has been set</span>
+<span class="cp">#define LED_MATRIX_STARTUP_SPD 127 </span><span class="c1">// Sets the default animation speed, if none has been set</span>
+<span class="cp">#define LED_MATRIX_SPLIT { X, Y }   </span><span class="c1">// (Optional) For split keyboards, the number of LEDs connected on each half. X = left, Y = Right.</span>
+                                    <span class="c1">// If LED_MATRIX_KEYPRESSES or LED_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR</span>
+</code></pre></div>
+<h2 id="eeprom-storage">EEPROM storage<a class="headerlink" href="#eeprom-storage" title="Permanent link">&para;</a></h2>
+<p>The EEPROM for it is currently shared with the RGB Matrix system (it's generally assumed only one feature would be used at a time), but could be configured to use its own 32bit address with:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#define EECONFIG_LED_MATRIX (uint32_t *)28</span>
+</code></pre></div>
+<p>Where <code>28</code> is an unused index from <code>eeconfig.h</code>.</p>
+<h3 id="direct-operation">Direct Operation<a class="headerlink" href="#direct-operation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>led_matrix_set_value_all(v)</code></td>
+<td>Set all of the LEDs to the given value, where <code>v</code> is between 0 and 255 (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>led_matrix_set_value(index, v)</code></td>
+<td>Set a single LED to the given value, where <code>v</code> is between 0 and 255, and <code>index</code> is between 0 and <code>DRIVER_LED_TOTAL</code> (not written to EEPROM)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="disable-enable-effects">Disable/Enable Effects<a class="headerlink" href="#disable-enable-effects" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>led_matrix_toggle()</code></td>
+<td>Toggle effect range LEDs between on and off</td>
+</tr>
+<tr>
+<td><code>led_matrix_toggle_noeeprom()</code></td>
+<td>Toggle effect range LEDs between on and off (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>led_matrix_enable()</code></td>
+<td>Turn effect range LEDs on, based on their previous state</td>
+</tr>
+<tr>
+<td><code>led_matrix_enable_noeeprom()</code></td>
+<td>Turn effect range LEDs on, based on their previous state (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>led_matrix_disable()</code></td>
+<td>Turn effect range LEDs off, based on their previous state</td>
+</tr>
+<tr>
+<td><code>led_matrix_disable_noeeprom()</code></td>
+<td>Turn effect range LEDs off, based on their previous state (not written to EEPROM)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="change-effect-mode">Change Effect Mode<a class="headerlink" href="#change-effect-mode" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>led_matrix_mode(mode)</code></td>
+<td>Set the mode, if LED animations are enabled</td>
+</tr>
+<tr>
+<td><code>led_matrix_mode_noeeprom(mode)</code></td>
+<td>Set the mode, if LED animations are enabled (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>led_matrix_step()</code></td>
+<td>Change the mode to the next LED animation in the list of enabled LED animations</td>
+</tr>
+<tr>
+<td><code>led_matrix_step_noeeprom()</code></td>
+<td>Change the mode to the next LED animation in the list of enabled LED animations (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>led_matrix_step_reverse()</code></td>
+<td>Change the mode to the previous LED animation in the list of enabled LED animations</td>
+</tr>
+<tr>
+<td><code>led_matrix_step_reverse_noeeprom()</code></td>
+<td>Change the mode to the previous LED animation in the list of enabled LED animations (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>led_matrix_increase_speed()</code></td>
+<td>Increase the speed of the animations</td>
+</tr>
+<tr>
+<td><code>led_matrix_increase_speed_noeeprom()</code></td>
+<td>Increase the speed of the animations (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>led_matrix_decrease_speed()</code></td>
+<td>Decrease the speed of the animations</td>
+</tr>
+<tr>
+<td><code>led_matrix_decrease_speed_noeeprom()</code></td>
+<td>Decrease the speed of the animations (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>led_matrix_set_speed(speed)</code></td>
+<td>Set the speed of the animations to the given value where <code>speed</code> is between 0 and 255</td>
+</tr>
+<tr>
+<td><code>led_matrix_set_speed_noeeprom(speed)</code></td>
+<td>Set the speed of the animations to the given value where <code>speed</code> is between 0 and 255 (not written to EEPROM)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="change-value">Change Value<a class="headerlink" href="#change-value" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>led_matrix_increase_val()</code></td>
+<td>Increase the value for effect range LEDs. This wraps around at maximum value</td>
+</tr>
+<tr>
+<td><code>led_matrix_increase_val_noeeprom()</code></td>
+<td>Increase the value for effect range LEDs. This wraps around at maximum value (not written to EEPROM)</td>
+</tr>
+<tr>
+<td><code>led_matrix_decrease_val()</code></td>
+<td>Decrease the value for effect range LEDs. This wraps around at minimum value</td>
+</tr>
+<tr>
+<td><code>led_matrix_decrease_val_noeeprom()</code></td>
+<td>Decrease the value for effect range LEDs. This wraps around at minimum value (not written to EEPROM)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="query-current-status">Query Current Status<a class="headerlink" href="#query-current-status" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>led_matrix_is_enabled()</code></td>
+<td>Gets current on/off status</td>
+</tr>
+<tr>
+<td><code>led_matrix_get_mode()</code></td>
+<td>Gets current mode</td>
+</tr>
+<tr>
+<td><code>led_matrix_get_val()</code></td>
+<td>Gets current val</td>
+</tr>
+<tr>
+<td><code>led_matrix_get_speed()</code></td>
+<td>Gets current speed</td>
+</tr>
+<tr>
+<td><code>led_matrix_get_suspend_state()</code></td>
+<td>Gets current suspend state</td>
+</tr>
+</tbody>
+</table>
+<h2 id="callbacks">Callbacks<a class="headerlink" href="#callbacks" title="Permanent link">&para;</a></h2>
+<h3 id="indicators">Indicators<a class="headerlink" href="#indicators" title="Permanent link">&para;</a></h3>
+<p>If you want to set custom indicators, such as an LED for Caps Lock, or layer indication, you can use the <code>led_matrix_indicators_kb</code> or <code>led_matrix_indicators_user</code> function for that: 
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">led_matrix_indicators_kb</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">led_matrix_set_color</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<p>In addition, there are the advanced indicator functions.  These are aimed at those with heavily customized displays, where rendering every LED per cycle is expensive.  This includes a special macro to help make this easier to use: <code>LED_MATRIX_INDICATOR_SET_VALUE(i, v)</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">led_matrix_indicators_advanced_user</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">led_min</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">led_max</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">LED_MATRIX_INDICATOR_SET_VALUE</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="suspended-state">Suspended State<a class="headerlink" href="#suspended-state" title="Permanent link">&para;</a></h2>
+<p>To use the suspend feature, make sure that <code>#define LED_DISABLE_WHEN_USB_SUSPENDED true</code> is added to the <code>config.h</code> file. </p>
+<p>Additionally add this to your <code>&lt;keyboard&gt;.c</code>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">suspend_power_down_kb</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">led_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+    <span class="n">suspend_power_down_user</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">suspend_wakeup_init_kb</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">led_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+    <span class="n">suspend_wakeup_init_user</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+or add this to your <code>keymap.c</code>:
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">suspend_power_down_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">led_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">suspend_wakeup_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">led_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page">
+      
+        
+        <a href="../feature_leader_key/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Touche leader" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Touche leader
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../feature_macros/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Macros" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Macros
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
+      
+    
+  </body>
+</html>
