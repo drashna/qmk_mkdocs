@@ -6,7 +6,7 @@ set -e
 set -x
 
 if [ -z "$1" ]; then
-	echo usage: $0 <branch>
+	echo "usage: $0 <branch>"
 	exit 1
 fi
 
