@@ -52,9 +52,10 @@ Esta línea indica el comienzo del listado de Capas. Debajo encontrarás líneas
 
 Cómo completar esta paso depende enteramente de ti. Haz ese pequeño cambio que querías o rehaz completamente todo. Puedes eliminar capas si no las necesitas todas, o añadir nuevas hasta un total de 32. Comprueba la siguiente documentación para descubrir qué es lo que puedes definir aquí:
 
-* [Keycodes](keycodes.md)
-* [Características](features.md)
-* [Preguntas frecuentes](faq.md)
+* [Keycodes Básicos](keycodes_basic.md)
+* [Keycodes Quantum](quantum_keycodes.md)
+* [Grave/Escape](feature_grave_esc.md)
+* [Teclas del ratón](feature_mouse_keys.md)
 
 !!! tip
     Mientras estás descubriendo cómo funcionan los keymaps, haz pequeños cambios. Cambios mayores pueden hacer difícil la depuración de problemas que puedan aparecer.
