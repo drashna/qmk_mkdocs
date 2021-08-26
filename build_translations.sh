@@ -5,13 +5,15 @@
 set -e
 set -x
 
-# Build the master site
-mkdocs build
+# Prepare the site dir
+rm -rf site
+mkdir site
 
 # Build the translations
+pushd "$(dirname "${BASH_SOURCE[0]}")"/docs
 for translation in ??/; do
 	echo '*** Setting up symlinks for language' $translation
-	./symlink_translation.sh $translation
+	../symlink_translation.sh $translation
 
 	echo '*** Building site for language' $translation
 	pushd $translation
@@ -19,5 +21,6 @@ for translation in ??/; do
 	popd
 
 	echo "*** Moving $translation/site to site/$translation"
-	mv $translation/site site/$translation
+	mv $translation/site ../site/$translation
 done
+popd
