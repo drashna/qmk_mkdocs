@@ -3019,7 +3019,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="update_tri_layer_statestate-x-y-z"><code>update_tri_layer_state(state, x, y, z)</code><a class="headerlink" href="#update_tri_layer_statestate-x-y-z" title="Permanent link">&para;</a></h3>
-<p>もう1つの関数は <code>update_tri_layer_state(state, x, y, z)</code> です。この関数は <a href="ja/custom_quantum_functions.md#layer-change-code"><code>layer_state_set_*</code> 関数</a>から呼び出されることを意図しています。これは、キーコードを使ってレイヤーを変更するたびに、これがチェックされることを意味します。したがって、<code>LT(layer, kc)</code> を使ってレイヤーを変更すると、同じレイヤーチェックが引き起こされます。</p>
+<p>もう1つの関数は <code>update_tri_layer_state(state, x, y, z)</code> です。この関数は <a href="../custom_quantum_functions/#layer-change-code"><code>layer_state_set_*</code> 関数</a>から呼び出されることを意図しています。これは、キーコードを使ってレイヤーを変更するたびに、これがチェックされることを意味します。したがって、<code>LT(layer, kc)</code> を使ってレイヤーを変更すると、同じレイヤーチェックが引き起こされます。</p>
 <p>このメソッドの注意点は2つあります:
 1. <code>x</code> および <code>y</code> レイヤーをオンにしないと、<code>z</code> レイヤーにアクセスできません。これは、レイヤー <code>z</code> のみをアクティブにしようとすると、このコードが実行され、使用前にレイヤー <code>z</code> がオフになるからです。
 2. レイヤーは最上位の番号から処理されるので、<code>z</code> は <code>x</code> や <code>y</code> よりも上位のレイヤーでなければなりません。そうでなければアクセスできない場合があります。</p>
@@ -3038,7 +3038,7 @@
 <h2 id="_4">永続的なデフォルトレイヤーの設定<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>デフォルトレイヤーを設定して、キーボードを取り外しても保持されるようにしたいですか？そうであれば、これがそのための関数です。</p>
 <p>これを使うには、<code>set_single_persistent_default_layer(layer)</code> を使います。レイヤーに名前が定義されている場合は、代わりにそれを使うことができます (_QWERTY、_DVORAK、_COLEMAK など)。</p>
-<p>これは、デフォルトレイヤーを設定し、永続設定が更新され、もし <a href="ja/feature_audio.md">オーディオ</a> がキーボードで有効でデフォルトレイヤーの音が設定されている場合は、曲を再生します。</p>
+<p>これは、デフォルトレイヤーを設定し、永続設定が更新され、もし <a href="../feature_audio/">オーディオ</a> がキーボードで有効でデフォルトレイヤーの音が設定されている場合は、曲を再生します。</p>
 <p>デフォルトレイヤーの音を設定するには、以下のように <code>config.h</code> ファイルに定義する必要があります。</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \</span>
 <span class="cp">                              SONG(COLEMAK_SOUND), \</span>
@@ -3053,7 +3053,7 @@
 <p>使用できる <code>RESET</code> quantum キーコードがあります。ただし、キーを個別に押すのではなくマクロの一部としてリセットしたい場合は、そうすることができます。</p>
 <p>そのためには、<code>reset_keyboard()</code> を関数またはマクロに追加すると、ブートローダがリセットされます。</p>
 <h2 id="eeprom">EEPROM (永続ストレージ)の消去<a class="headerlink" href="#eeprom" title="Permanent link">&para;</a></h2>
-<p>オーディオ、RGB アンダーグロー、バックライト、キーの動作に問題がある場合は、EEPROM (永続的な設定のストレージ)をリセットすることができます。EEPROM を強制的にリセットするには、<a href="ja/quantum_keycodes.md"><code>EEP_RST</code> キーコード</a>あるいは<a href="ja/feature_bootmagic.md">ブートマジック</a>機能を使います。それらのいずれも選択肢にない場合は、カスタムマクロを使って行うことができます。</p>
+<p>オーディオ、RGB アンダーグロー、バックライト、キーの動作に問題がある場合は、EEPROM (永続的な設定のストレージ)をリセットすることができます。EEPROM を強制的にリセットするには、<a href="../quantum_keycodes/"><code>EEP_RST</code> キーコード</a>あるいは<a href="../feature_bootmagic/">ブートマジック</a>機能を使います。それらのいずれも選択肢にない場合は、カスタムマクロを使って行うことができます。</p>
 <p>EEPROM を消去するには、関数またはマクロから <code>eeconfig_init()</code> を実行し、ほとんどの設定をデフォルトにリセットします。</p>
 <h2 id="_6">タップランダムキー<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>ランダムな文字をホストコンピュータに送信する場合は、<code>tap_random_base64()</code> 関数を使うことができます。これは<a href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">疑似乱数的に</a>0から63の数字を選択し、その選択に基づいてキー押下を送信します。(0–25 は <code>A</code>–<code>Z</code>、26–51 は <code>a</code>–<code>z</code>、52–61 は <code>0</code>–<code>9</code>、62 は <code>+</code>、63 は <code>/</code>)。</p>
