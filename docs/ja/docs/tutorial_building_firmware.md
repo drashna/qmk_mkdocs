@@ -49,10 +49,10 @@
 あるレイヤー全体が必要ない場合はレイヤーを削除することもでき、必要があれば、合計 32 個までレイヤーを追加することもできます。
 QMK にはたくさんの機能があり、完全なリストは左側のサイドバーの「QMK を使う」の下を調べてください。ここから始めるために、簡単に使える機能をいくつか紹介します:
 
-* [基本的なキーコード](ja/keycodes_basic.md)
-* [Quantum キーコード](ja/quantum_keycodes.md)
-* [グレイブ エスケープ](ja/feature_grave_esc.md)
-* [マウスキー](ja/feature_mouse_keys.md)
+* [基本的なキーコード](keycodes_basic.md)
+* [Quantum キーコード](quantum_keycodes.md)
+* [グレイブ エスケープ](feature_grave_esc.md)
+* [マウスキー](feature_mouse_keys.md)
 
 !!! tip
     キーマップがどのように機能するかを感じながら、各変更を小さくしてください。大きな変更は、発生する問題のデバッグを困難にします。
@@ -80,4 +80,4 @@ Checking file size of planck_rev5_default.hex                                   
 
 ## ファームウェアを書きこむ
 
-[「ファームウェアを書きこむ」](ja/tutorial_flashing.md) に移動して、キーボードに新しいファームウェアを書き込む方法を学習します。
+[「ファームウェアを書きこむ」](tutorial_flashing.md) に移動して、キーボードに新しいファームウェアを書き込む方法を学習します。

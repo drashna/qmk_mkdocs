@@ -121,7 +121,7 @@ QMK Toolbox の `Flash` ボタンをクリックします。次のような出�
 
     WARNING: This board's bootloader is not specified or is not supported by the ":flash" target at this time.
 
-この場合、あなたは明示的にブートローダを指定する方法を使わなければなりません。詳細は、[ファームウェアのフラッシュ](ja/flashing.md)ガイドを参照してください。
+この場合、あなたは明示的にブートローダを指定する方法を使わなければなりません。詳細は、[ファームウェアのフラッシュ](flashing.md)ガイドを参照してください。
 
 ## テストしましょう！
 
