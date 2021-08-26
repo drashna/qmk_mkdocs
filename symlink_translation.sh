@@ -14,10 +14,10 @@ translation=$1
 
 cd "$(dirname "${BASH_SOURCE[0]}")"/docs/en
 
-for file in $(find docs -name \*.md); do
+for file in $(find docs -type f); do
 	if ! [ -e ../${translation}/${file} ]; then
 		# Ugly hack, but ChangeLog is the only subdir we have...
-		if echo $file | grep -q ChangeLog; then
+		if echo $file | grep -q '/.*/'; then
 			mkdir -p ../$(dirname ${translation}/${file})
 			ln -s ../../../en/${file} ../${translation}/${file}
 		else
