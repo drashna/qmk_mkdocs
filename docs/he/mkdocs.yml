@@ -1,31 +1,6 @@
 extra_css:
   - stylesheets/qmk.css
 extra:
-  alternate:
-    - name: English
-      link: /
-      lang: en
-    - name: 中文
-      link: /zh/
-      lang: zh
-    - name: Español
-      link: /es/
-      lang: es
-    - name: Français
-      link: /fr/
-      lang: fr
-    - name: עברית
-      link: /he/
-      lang: he
-    - name: Português
-      link: /pt/
-      lang: pt
-    - name: Русский
-      link: /ru/
-      lang: ru
-    - name: 日本語
-      link: /ja/
-      lang: ja
   version:
     provider: mike
 plugins:
