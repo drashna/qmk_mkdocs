@@ -1,762 +1,762 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/_summary/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/_summary/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/adc_driver/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/adc_driver/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/api_development_environment/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/api_development_environment/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/api_development_overview/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/api_development_overview/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/api_docs/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/api_docs/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/api_overview/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/api_overview/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/arm_debugging/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/arm_debugging/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/audio_driver/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/audio_driver/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/breaking_changes/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/breaking_changes/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/breaking_changes_history/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/breaking_changes_history/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/breaking_changes_instructions/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/breaking_changes_instructions/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/cli/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/cli/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/cli_commands/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/cli_commands/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/cli_configuration/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/cli_configuration/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/cli_development/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/cli_development/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/cli_tab_complete/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/cli_tab_complete/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/coding_conventions_c/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/coding_conventions_c/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/coding_conventions_python/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/coding_conventions_python/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/compatible_microcontrollers/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/compatible_microcontrollers/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/config_options/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/config_options/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/configurator_architecture/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/configurator_architecture/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/configurator_default_keymaps/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/configurator_default_keymaps/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/configurator_step_by_step/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/configurator_step_by_step/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/configurator_troubleshooting/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/configurator_troubleshooting/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/contributing/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/contributing/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/custom_matrix/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/custom_matrix/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/custom_quantum_functions/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/custom_quantum_functions/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/data_driven_config/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/data_driven_config/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/documentation_best_practices/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/documentation_best_practices/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/documentation_templates/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/documentation_templates/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/driver_installation_zadig/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/driver_installation_zadig/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/eeprom_driver/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/eeprom_driver/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/faq_build/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/faq_build/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/faq_debug/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/faq_debug/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/faq_general/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/faq_general/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/faq_keymap/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/faq_keymap/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/faq_misc/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/faq_misc/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_advanced_keycodes/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_advanced_keycodes/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_audio/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_audio/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_auto_shift/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_auto_shift/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_backlight/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_backlight/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_bluetooth/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_bluetooth/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_bootmagic/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_bootmagic/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_combo/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_combo/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_command/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_command/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_debounce_type/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_debounce_type/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_dip_switch/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_dip_switch/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_dynamic_macros/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_dynamic_macros/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_encoders/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_encoders/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_grave_esc/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_grave_esc/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_haptic_feedback/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_haptic_feedback/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_hd44780/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_hd44780/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_joystick/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_joystick/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_key_lock/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_key_lock/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_layers/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_layers/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_layouts/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_layouts/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_leader_key/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_leader_key/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_led_indicators/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_led_indicators/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_led_matrix/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_led_matrix/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_macros/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_macros/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_midi/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_midi/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_mouse_keys/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_mouse_keys/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_oled_driver/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_oled_driver/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_pointing_device/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_pointing_device/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_ps2_mouse/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_ps2_mouse/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_rawhid/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_rawhid/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_rgb_matrix/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_rgb_matrix/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_rgblight/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_rgblight/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_sequencer/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_sequencer/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_space_cadet/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_space_cadet/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_split_keyboard/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_split_keyboard/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_stenography/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_stenography/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_swap_hands/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_swap_hands/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_tap_dance/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_tap_dance/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_terminal/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_terminal/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_thermal_printer/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_thermal_printer/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_unicode/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_unicode/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_userspace/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_userspace/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_velocikey/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_velocikey/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/feature_wpm/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/feature_wpm/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/flashing/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/flashing/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/flashing_bootloadhid/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/flashing_bootloadhid/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/getting_started_build_tools/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/getting_started_build_tools/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/getting_started_docker/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/getting_started_docker/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/getting_started_getting_help/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/getting_started_getting_help/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/getting_started_github/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/getting_started_github/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/getting_started_introduction/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/getting_started_introduction/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/getting_started_make_guide/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/getting_started_make_guide/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/getting_started_vagrant/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/getting_started_vagrant/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/hand_wire/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/hand_wire/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/hardware_avr/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/hardware_avr/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/hardware_drivers/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/hardware_drivers/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/hardware_keyboard_guidelines/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/hardware_keyboard_guidelines/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/how_a_matrix_works/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/how_a_matrix_works/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/how_keyboards_work/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/how_keyboards_work/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/i2c_driver/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/i2c_driver/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/internals_defines/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/internals_defines/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/internals_gpio_control/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/internals_gpio_control/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/internals_input_callback_reg/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/internals_input_callback_reg/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/internals_midi_device/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/internals_midi_device/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/internals_midi_device_setup_process/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/internals_midi_device_setup_process/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/internals_midi_util/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/internals_midi_util/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/internals_send_functions/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/internals_send_functions/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/internals_sysex_tools/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/internals_sysex_tools/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/isp_flashing_guide/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/isp_flashing_guide/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/keycodes/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/keycodes/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/keycodes_basic/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/keycodes_basic/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/keycodes_us_ansi_shifted/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/keycodes_us_ansi_shifted/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/keymap/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/keymap/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/mod_tap/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/mod_tap/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/one_shot_keys/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/one_shot_keys/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/other_eclipse/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/other_eclipse/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/other_vscode/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/other_vscode/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/platformdev_chibios_earlyinit/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/platformdev_chibios_earlyinit/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/platformdev_selecting_arm_mcu/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/platformdev_selecting_arm_mcu/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/pr_checklist/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/pr_checklist/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/proton_c_conversion/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/proton_c_conversion/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/quantum_keycodes/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/quantum_keycodes/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/ref_functions/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/ref_functions/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/reference_configurator_support/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/reference_configurator_support/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/reference_glossary/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/reference_glossary/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/reference_info_json/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/reference_info_json/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/reference_keymap_extras/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/reference_keymap_extras/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/serial_driver/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/serial_driver/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/spi_driver/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/spi_driver/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/support/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/support/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/syllabus/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/syllabus/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tap_hold/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tap_hold/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/translating/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/translating/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial_building_firmware/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial_building_firmware/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial_building_firmware_configurator/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial_building_firmware_configurator/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial_flashing/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial_flashing/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial_getting_started/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial_getting_started/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial_git_best_practices/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial_git_best_practices/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial_git_resolving_merge_conflicts/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial_git_resolving_merge_conflicts/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial_git_resynchronize_a_branch/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial_git_resynchronize_a_branch/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial_git_using_your_master_branch/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial_git_using_your_master_branch/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial_learn_more_resources/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial_learn_more_resources/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/tutorial_testing_debugging/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/tutorial_testing_debugging/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/uart_driver/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/uart_driver/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/understanding_qmk/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/understanding_qmk/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/unit_testing/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/unit_testing/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/ws2812_driver/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/ws2812_driver/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/ChangeLog/20190830/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/ChangeLog/20190830/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/ChangeLog/20200229/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/ChangeLog/20200229/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/ChangeLog/20200530/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/ChangeLog/20200530/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/ChangeLog/20200829/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/ChangeLog/20200829/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/ChangeLog/20201128/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/ChangeLog/20201128/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/ChangeLog/20210227/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/ChangeLog/20210227/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.qmk.fm/devel/ru/ChangeLog/20210529/</loc>
+         <loc>https://qmk.github.io/qmk_mkdocs/develop/ru/ChangeLog/20210529/</loc>
          <lastmod>2021-08-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
