@@ -56,8 +56,7 @@ nav:
       - התחלה: tutorial_getting_started.md
       - בנייה של הקושחה הראשונה שלך: tutorial_building_firmware.md
       - צריבה של הקושחה: tutorial_flashing.md
-      - בדיקות ודיבאגינג: tutorial_testing_debugging.md
-      - עבודה נכונה ב GIT: tutorial_best_practices.md
+      - עבודה נכונה ב GIT: tutorial_git_best_practices.md
       - מקורות ללמידה: tutorial_learn_more_resources.md
     - בסיס QMK:
       - מבוא לQMK: tutorial.md
