@@ -1,0 +1,35 @@
+name: Generate Docs
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - 'docs/**'
+
+jobs:
+  docs_main:
+    runs-on: ubuntu-latest
+    container: qmkfm/base_container
+
+    # protect against those who develop with their fork on master
+    if: github.repository == 'qmk/qmk_mkdocs'
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+
+    - name: Install dependencies
+      run: python3 -m pip install -r requirements.txt
+
+    - name: Build docs
+      run: ./build_translations.sh
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+      with:
+        branch: gh-pages
+        folder: site
+        git-config-email: hello@qmk.fm
+        target-folder: master
