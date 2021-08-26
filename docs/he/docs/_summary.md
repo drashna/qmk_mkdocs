@@ -6,7 +6,7 @@
 * [בסיס QMK](README.md)
     * [מבוא לQMK](getting_started_introduction.md)
     * [איך להשתמש בGitHub](getting_started_github.md)
-    * [קבלת עזרה](getting_started_getting_help.md)
+    * [קבלת עזרה](support.md)
 * [שאלות נפוצות](faq.md)
     * [שאלות נפוצות כלליות](faq_general.md)
 * [חומרה](hardware.md)
@@ -28,7 +28,7 @@
   * [QMK CLI Config](cli_configuration.md)
   * [תרומה ל QMK](contributing.md)
   * [איך להשתמש בGitHub](getting_started_github.md)
-  * [קבלת עזרה](getting_started_getting_help.md)
+  * [קבלת עזרה](support.md)
 
 * [שינויים משמעותיים](breaking_changes.md)
   * [2019 Aug 30](ChangeLog/20190830.md)
@@ -125,7 +125,7 @@
 * נושאים נוספים
   * [שימוש ב - Eclipse עם QMK](other_eclipse.md)
   * [שימוש ב - VSCode עם QMK](other_vscode.md)
-  * [תמיכה](getting_started_getting_help.md)
+  * [תמיכה](support.md)
   * [כיצד להוסיף תרגום](translating.md)
 
 * QMK מבפנים (בתהליך)

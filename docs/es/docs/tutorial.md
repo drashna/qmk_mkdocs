@@ -16,7 +16,7 @@ Hay 7 secciones principales en esta guía:
 * [Mejores práticas](tutorial_best_practices.md)
 * [Recursos de aprendizaje](tutorial_learn_more_resources.md)
 
-Esta guía está enfocada en ayudar a alguien que nunca ha compilado software con anterioridad. Toma decisiones y hace recomendaciones teniendo en cuenta este punto de vista. Hay métodos alternativos para muchos de estos procedimientos, y soportamos la mayoría de esas alternativas. Si tienes alguna duda sobre cómo llevar a cabo una tarea nos puedes [preguntar para que te guiemos](getting_started_getting_help.md).
+Esta guía está enfocada en ayudar a alguien que nunca ha compilado software con anterioridad. Toma decisiones y hace recomendaciones teniendo en cuenta este punto de vista. Hay métodos alternativos para muchos de estos procedimientos, y soportamos la mayoría de esas alternativas. Si tienes alguna duda sobre cómo llevar a cabo una tarea nos puedes [preguntar para que te guiemos](support.md).
 
 ## Recursos adicionales
 

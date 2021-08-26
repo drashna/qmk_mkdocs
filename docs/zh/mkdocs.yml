@@ -55,7 +55,7 @@ nav:
     - QMK命令行工具配置: cli_configuration.md
     - 向QMK贡献代码: contributing.md
     - 如何使用GitHub: getting_started_github.md
-    - 获得帮助: getting_started_getting_help.md
+    - 获得帮助: support.md
   - 非兼容性修改:
     - Overview: breaking_changes.md
     - 我的PR已经被标记为非兼容性修改: breaking_changes_instructions.md
@@ -150,7 +150,7 @@ nav:
   - 其他话题:
     - 使用Eclipse开发QMK: other_eclipse.md
     - 使用VSCode开发QMK: other_vscode.md
-    - 支持: getting_started_getting_help.md
+    - 支持: support.md
     - 翻译QMK文档: translating.md
   - QMK 内构 (正在编写):
     - 定义: internals_defines.md

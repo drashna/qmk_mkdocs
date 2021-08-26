@@ -52,7 +52,7 @@ nav:
     - Configuración de QMK CLI: cli_configuration.md
     - Contribuyendo a QMK: contributing.md
     - Cómo usar GitHub: getting_started_github.md
-    - Obtener ayuda: getting_started_getting_help.md
+    - Obtener ayuda: support.md
   - Cambios incompatibles:
     - Overview: breaking_changes.md
     - 30 Ago 2019: ChangeLog/20190830.md
@@ -141,7 +141,7 @@ nav:
   - Otros temas:
     - Usando Eclipse con QMK: other_eclipse.md
     - Usando VSCode con QMK: other_vscode.md
-    - Soporte: getting_started_getting_help.md
+    - Soporte: support.md
     - Cómo añadir traducciones: translating.md
   - QMK Internals (En progreso):
     - Defines: internals_defines.md

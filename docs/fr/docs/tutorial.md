@@ -16,7 +16,7 @@ Il y a 7 sections principales dans ce guide:
 * [Bonnes pratiques Git](fr-FR/tutorial_best_practices.md)
 * [Ressources d'apprentissage](fr-FR/tutorial_learn_more_resources.md)
 
-Ce guide a pour but principal d'aider quelqu'un qui n'a jamais compilé de logiciel avant. Les recommandations et les choix qu'il contient vont donc dans ce sens. Il y a des méthodes alternatives pour beaucoup de ces procédures, et nous supportons la plupart de ces alternatives. Si vous avez un doute sur comment accomplir une tâche, vous pouvez [nous demander de l'aide](fr-FR/getting_started_getting_help.md).
+Ce guide a pour but principal d'aider quelqu'un qui n'a jamais compilé de logiciel avant. Les recommandations et les choix qu'il contient vont donc dans ce sens. Il y a des méthodes alternatives pour beaucoup de ces procédures, et nous supportons la plupart de ces alternatives. Si vous avez un doute sur comment accomplir une tâche, vous pouvez [nous demander de l'aide](fr-FR/support.md).
 
 ## Ressources additionnelles
 

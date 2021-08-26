@@ -14,7 +14,7 @@
   * [Configuration de la CLI QMK](cli_configuration.md)
   * [Contribuer à QMK](contributing.md)
   * [Comment utiliser GitHub](getting_started_github.md)
-  * [Trouver de l'aide](getting_started_getting_help.md)
+  * [Trouver de l'aide](support.md)
 
 * [Breaking changes](breaking_changes.md)
   * [30 août 2019](ChangeLog/20190830.md)
@@ -113,7 +113,7 @@
 * Autres sujets
   * [Utiliser Eclipse avec QMK](other_eclipse.md)
   * [Utiliser VSCode avec QMK](other_vscode.md)
-  * [Support](getting_started_getting_help.md)
+  * [Support](support.md)
   * [Comment ajouter des traductions](translating.md)
 
 * À l’intérieur de QMK (En cours de documentation)
