@@ -27,6 +27,6 @@
 
 ## 翻訳のプレビュー
 
-ドキュメントのローカルインスタンスをセットアップする方法については、[ドキュメントのプレビュー](ja/contributing.md#previewing-the-documentation)を見てください - 右上の "Translations" メニューから新しい言語を選択することができるはずです。
+ドキュメントのローカルインスタンスをセットアップする方法については、[ドキュメントのプレビュー](contributing.md#previewing-the-documentation)を見てください - 右上の "Translations" メニューから新しい言語を選択することができるはずです。
 
 作業に満足したら、遠慮なくプルリクエストを開いてください！

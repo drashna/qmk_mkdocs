@@ -22,7 +22,7 @@ Eclipse のような IDE の使用は、プレーンテキストエディタの�
 
 # 前提条件
 ## ビルド環境
-始める前に、チュートリアルの[セットアップ](ja/tutorial_getting_started.md)のセクションに従う必要があります。特に、[`qmk compile` コマンド](ja/tutorial_building_firmware.md#build-your-firmware)でファームウェアをビルドできなければなりません。
+始める前に、チュートリアルの[セットアップ](tutorial_getting_started.md)のセクションに従う必要があります。特に、[`qmk compile` コマンド](tutorial_building_firmware.md#build-your-firmware)でファームウェアをビルドできなければなりません。
 
 ## Java
 Eclipse は Java アプリケーションであるため、実行するには Java 8 以降をインストールする必要があります。JRE または JDK を選択できますが、Java 開発を行う場合は後者が役に立ちます。

@@ -8,7 +8,7 @@
 
 このページでは QMK における AVR マイコンのサポートについて説明します。AVR マイコンには、Atmel 社製の atmega32u4、atmega32u2、at90usb1286 やその他のマイコンを含みます。AVR マイコンは、簡単に動かせるよう設計された8ビットの MCU です。キーボードでよく使用される AVR マイコンには USB 機能や大きなキーボードマトリックスのためのたくさんの GPIO を搭載しています。これらは、現在、キーボードで使われる最も一般的な MCU です。
 
-まだ読んでない場合は、[キーボードガイドライン](ja/hardware_keyboard_guidelines.md) を読んで、キーボードを QMK にどのように適合させるかを把握する必要があります。
+まだ読んでない場合は、[キーボードガイドライン](hardware_keyboard_guidelines.md) を読んで、キーボードを QMK にどのように適合させるかを把握する必要があります。
 
 ## AVR を使用したキーボードを QMK に追加する
 
@@ -38,16 +38,16 @@ or open the directory in your favourite text editor.
 
 ## `readme.md`
 
-このファイルではキーボードに関する説明を記述します。[キーボード Readme テンプレート](ja/documentation_templates.md#keyboard-readmemd-template)に従って `readme.md` を記入して下さい。`readme.md` の上部に画像を配置することをお勧めします。画像は [Imgur](https://imgur.com) のような外部サービスを利用してください。
+このファイルではキーボードに関する説明を記述します。[キーボード Readme テンプレート](documentation_templates.md#keyboard-readmemd-template)に従って `readme.md` を記入して下さい。`readme.md` の上部に画像を配置することをお勧めします。画像は [Imgur](https://imgur.com) のような外部サービスを利用してください。
 
 ## `<keyboard>.c`
 
 このファイルではキーボード上で実行される全てのカスタマイズされたロジックを記述します。多くのキーボードの場合、何も書く必要はありません。
-[機能のカスタマイズ](ja/custom_quantum_functions.md)で、カスタマイズされたロジックの記述方法を詳しく学ぶことが出来ます。
+[機能のカスタマイズ](custom_quantum_functions.md)で、カスタマイズされたロジックの記述方法を詳しく学ぶことが出来ます。
 
 ## `<keyboard>.h`
 
-このファイルでは、[レイアウト](ja/feature_layouts.md)を定義します。最低限、以下のような `#define LAYOUT` を記述する必要があります。
+このファイルでは、[レイアウト](feature_layouts.md)を定義します。最低限、以下のような `#define LAYOUT` を記述する必要があります。
 
 ```c
 #define LAYOUT(          \
@@ -67,7 +67,7 @@ or open the directory in your favourite text editor.
 
 ## `config.h`
 
-`config.h` ファイルには、ハードウェアや機能の設定を記述します。このファイルで設定できるオプションは列挙しきれないほどたくさんあります。利用できるオプションの概要は[設定オプション](ja/config_options.md)を参照して下さい。
+`config.h` ファイルには、ハードウェアや機能の設定を記述します。このファイルで設定できるオプションは列挙しきれないほどたくさんあります。利用できるオプションの概要は[設定オプション](config_options.md)を参照して下さい。
 
 ### ハードウェアの設定
 
@@ -135,7 +135,7 @@ or open the directory in your favourite text editor.
 
 ### バックライトの設定
 
-QMK では GPIO ピンでのバックライト制御をサポートしています。これらの設定を選択して MCU から制御できます。詳しくは[バックライト](ja/feature_backlight.md)を参照して下さい。
+QMK では GPIO ピンでのバックライト制御をサポートしています。これらの設定を選択して MCU から制御できます。詳しくは[バックライト](feature_backlight.md)を参照して下さい。
 
 ```c
 #define BACKLIGHT_PIN B7
@@ -146,7 +146,7 @@ QMK では GPIO ピンでのバックライト制御をサポートしていま�
 
 ### その他の設定オプション
 
-`config.h` で設定・調整できる機能はたくさんあります。詳しくは[設定オプション](ja/config_options.md)を参照して下さい。
+`config.h` で設定・調整できる機能はたくさんあります。詳しくは[設定オプション](config_options.md)を参照して下さい。
 
 ## `rules.mk`
 
@@ -188,4 +188,4 @@ BOOTLOADER = caterina
 
 ### ビルドオプション
 
-`rules.mk` にはオン・オフできるたくさんの機能があります。詳細なリストと説明は[設定オプション](ja/config_options.md#feature-options)を参照して下さい。
+`rules.mk` にはオン・オフできるたくさんの機能があります。詳細なリストと説明は[設定オプション](config_options.md#feature-options)を参照して下さい。
