@@ -1,3 +1,5 @@
 *.swp
 site
+!/site
+/site/??/
 venv
