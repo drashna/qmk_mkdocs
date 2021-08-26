@@ -6,8 +6,7 @@ set -e
 set -x
 
 # Prepare the site dir
-rm -rf site
-mkdir site
+rm -rf site/??/
 
 # Build the translations
 pushd "$(dirname "${BASH_SOURCE[0]}")"/docs
