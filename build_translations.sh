@@ -5,11 +5,19 @@
 set -e
 set -x
 
+if [ -z "$1" ]; then
+	echo usage: $0 <branch>
+	exit 1
+fi
+
 # Prepare the site dir
 rm -rf site/??/
 
-# Build the translations
+# Set the site URL
 pushd "$(dirname "${BASH_SOURCE[0]}")"/docs
+sed -i 's,/devel/,/'$1'/,' docs/*/mkdocs.yml
+
+# Build the translations
 for translation in ??/; do
 	echo '*** Setting up symlinks for language' $translation
 	../symlink_translation.sh $translation

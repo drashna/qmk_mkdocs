@@ -235,7 +235,7 @@ nav:
 repo_name: qmk/qmk_firmware
 repo_url: https://github.com/qmk/qmk_firmware
 site_name: QMK Firmware Docs
-site_url: https://docs.qmk.fm/devel/kr
+site_url: https://qmk.github.io/qmk_mkdocs/devel/kr
 theme:
   features:
     - navigation.expand
