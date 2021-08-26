@@ -67,7 +67,7 @@ nav:
     - 布局: faq_keymap.md
     - Zadig驱动安装: driver_installation_zadig.md
   - 详细指南:
-    - 安装构建工具: getting_started_build_tools.md
+    - 安装构建工具: tutorial_getting_started.md
     - vagrant指南: getting_started_vagrant.md
     - 构建/编译指南: getting_started_make_guide.md
     - 刷新固件: flashing.md

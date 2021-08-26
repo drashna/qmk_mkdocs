@@ -20,7 +20,7 @@ QMK (*Quantum Mechanical Keyboard*) היא קהילת קוד פתוח (open sour
 
 ## איך לקמפל
 
-לפני שתצליחו לקמפל, תדרשו [להתקין סביבה](getting_started_build_tools.md) עבור פיתוח AVR ו/או ARM. ברגע שהדבר בוצע, תוכלו להריץ פקודת `make` כדי לבנות מקלדת ומיפוי עם התחביר הבא: 
+לפני שתצליחו לקמפל, תדרשו [להתקין סביבה](tutorial_getting_started.md) עבור פיתוח AVR ו/או ARM. ברגע שהדבר בוצע, תוכלו להריץ פקודת `make` כדי לבנות מקלדת ומיפוי עם התחביר הבא: 
 
     make planck/rev4:default
 

@@ -25,7 +25,7 @@
   * [Driver Installation with Zadig](driver_installation_zadig.md)
 
 * Detailed Guides
-  * [Install Build Tools](getting_started_build_tools.md)
+  * [Install Build Tools](tutorial_getting_started.md)
   * [Vagrant Guide](getting_started_vagrant.md)
   * [Build/Compile Instructions](getting_started_make_guide.md)
   * [Flashing Firmware](flashing.md)

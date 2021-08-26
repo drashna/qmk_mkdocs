@@ -20,7 +20,7 @@ QMK(*Quantum Mechanical Keyboard 양자 기계식 키보드*)란 QMK 컴워어, 
 
 ## 컴파일
 
-먼저 컴파일을 하기전 AVR 이나 ARM [개발환경](getting_started_build_tools.md)을 구축해야 합니다. 모든준비가 끝났다면 `make`를 다음과 같이 키보드와 키맵을 선택하여 컴파일 할 수 있습니다.
+먼저 컴파일을 하기전 AVR 이나 ARM [개발환경](tutorial_getting_started.md)을 구축해야 합니다. 모든준비가 끝났다면 `make`를 다음과 같이 키보드와 키맵을 선택하여 컴파일 할 수 있습니다.
 
     make planck/rev4:default
 

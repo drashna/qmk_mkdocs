@@ -19,7 +19,7 @@ De cualquier manera, también puedes descargarlo directamente en formatos ([zip]
 
 ## Cómo compilar
 
-Antes de poder compilar, necesitarás [instalar un entorno](getting_started_build_tools.md) para el desarrollo de AVR y/o ARM. Una vez hayas completado este paso, usarás el comando `make` para compilar un teclado y keymap con la siguiente notación:
+Antes de poder compilar, necesitarás [instalar un entorno](tutorial_getting_started.md) para el desarrollo de AVR y/o ARM. Una vez hayas completado este paso, usarás el comando `make` para compilar un teclado y keymap con la siguiente notación:
 
     make planck/rev4:default
 

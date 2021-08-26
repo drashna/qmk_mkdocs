@@ -19,7 +19,7 @@ Sinon, vous pouvez aussi le télécharger directement en ([zip](https://github.c
 
 ## Comment le compiler
 
-Avant d'être prêt à compiler vous allez devoir [installer un environnement](getting_started_build_tools.md) pour les développements AVR et/ou ARM. Une fois ceci fait, vous pourrez utiliser la commande `make` pour compiler le clavier et la disposition avec une commande de ce type :
+Avant d'être prêt à compiler vous allez devoir [installer un environnement](tutorial_getting_started.md) pour les développements AVR et/ou ARM. Une fois ceci fait, vous pourrez utiliser la commande `make` pour compiler le clavier et la disposition avec une commande de ce type :
 
     make planck/rev4:default
 

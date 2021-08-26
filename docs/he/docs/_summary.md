@@ -41,7 +41,7 @@
   * [התקנת דרייברים עם Zadig](driver_installation_zadig.md)
 
 * מדריכים מפורטים
-  * [התקנת כלי Build](getting_started_build_tools.md)
+  * [התקנת כלי Build](tutorial_getting_started.md)
   * [מדריך Vagrant](getting_started_vagrant.md)
   * [הוראות בנייה/קומפילציה](getting_started_make_guide.md)
   * [צריבת קושחה](flashing.md)

@@ -63,7 +63,7 @@ QMK Toolbox является дополнительной графической
 * Arch: `pacman -S git`
 
 !!! tip
-    Docker также является вариантом для всех платформ. [Нажмите сюда для получения подробностей.](getting_started_build_tools.md#docker)
+    Docker также является вариантом для всех платформ. [Нажмите сюда для получения подробностей.](tutorial_getting_started.md#docker)
 
 ## Установите QMK
 

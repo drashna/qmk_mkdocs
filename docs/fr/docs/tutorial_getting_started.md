@@ -62,7 +62,7 @@ Vous devez installer Git. Il est très probable que vous l'ayez déjà installé
 * Arch: `pacman -S git`
 
 !!! tip
-    Docker est aussi une option sur toutes les plateformes. [Appuyez ici pour plus de détail.](getting_started_build_tools.md#docker)
+    Docker est aussi une option sur toutes les plateformes. [Appuyez ici pour plus de détail.](tutorial_getting_started.md#docker)
 
 ## Configurer QMK
 

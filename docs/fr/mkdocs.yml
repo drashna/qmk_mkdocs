@@ -65,7 +65,7 @@ nav:
       - Installer les drivers avec Zadig: driver_installation_zadig.md
   - En Anglais:
     - Guides détaillés:
-      - Installation des outils de compilation: getting_started_build_tools.md
+      - Installation des outils de compilation: tutorial_getting_started.md
       - Guide Vagrant: getting_started_vagrant.md
       - Commandes de compilations: getting_started_make_guide.md
       - Flasher les firmwares: flashing.md
