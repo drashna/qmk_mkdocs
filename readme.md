@@ -8,6 +8,7 @@ This is a repo for playing around with mkdocs for QMK.
 
 # Serve locally
 
+    cd docs/en
     mkdocs serve
 
 # Translations
