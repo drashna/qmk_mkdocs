@@ -23,7 +23,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        apt-get update && apt-get install -y rsync
+        apt-get update && apt-get install -y rsync nodejs npm
+        npm install -g lunr lunr-languages
         python3 -m pip install -r requirements.txt
 
     - name: Build docs
