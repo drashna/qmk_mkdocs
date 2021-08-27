@@ -16,7 +16,7 @@
     
     
       
-        <title>入门 - QMK Firmware Docs</title>
+        <title>安装构建工具 - QMK Firmware Docs</title>
       
     
     
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              入门
+              安装构建工具
             
           </span>
         </div>
@@ -128,68 +128,6 @@
         
       </form>
     
-    
-      <div class="md-header__option">
-        <div class="md-select">
-          
-          <button class="md-header__button md-icon" aria-label="Select language">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24z"/></svg>
-          </button>
-          <div class="md-select__inner">
-            <ul class="md-select__list">
-              
-                <li class="md-select__item">
-                  <a href="/" hreflang="en" class="md-select__link">
-                    English
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="/zh/" hreflang="zh" class="md-select__link">
-                    中文
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="/es/" hreflang="es" class="md-select__link">
-                    Español
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="/fr/" hreflang="fr" class="md-select__link">
-                    Français
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="/he/" hreflang="he" class="md-select__link">
-                    עברית
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="/pt/" hreflang="pt" class="md-select__link">
-                    Português
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="/ru/" hreflang="ru" class="md-select__link">
-                    Русский
-                  </a>
-                </li>
-                
-                <li class="md-select__item">
-                  <a href="/ja/" hreflang="ja" class="md-select__link">
-                    日本語
-                  </a>
-                </li>
-                
-            </ul>
-          </div>
-        </div>
-      </div>
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -312,16 +250,14 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
       <label class="md-nav__link" for="__nav_2">
         完全菜鸟指南
@@ -349,21 +285,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="./" class="md-nav__link">
         入门
       </a>
-      
     </li>
   
 
@@ -516,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting_started_introduction/" class="md-nav__link">
+      <a href="../tutorial/" class="md-nav__link">
         QMK简介
       </a>
     </li>
@@ -576,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting_started_getting_help/" class="md-nav__link">
+      <a href="../support/" class="md-nav__link">
         获得帮助
       </a>
     </li>
@@ -755,14 +681,16 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       <label class="md-nav__link" for="__nav_6">
         详细指南
@@ -778,11 +706,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../getting_started_build_tools.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         安装构建工具
       </a>
+      
     </li>
   
 
@@ -1248,7 +1186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../feature_combo" class="md-nav__link">
+      <a href="../feature_combo/" class="md-nav__link">
         组合
       </a>
     </li>
@@ -1896,7 +1834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting_started_getting_help/" class="md-nav__link">
+      <a href="../support/" class="md-nav__link">
         支持
       </a>
     </li>
@@ -2119,7 +2057,7 @@
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>无论你使用哪种平台，Docker都可以是你的选择<a href="getting_started_build_tools.md#docker">点这里进一步了解</a></p>
+<p>无论你使用哪种平台，Docker都可以是你的选择<a href="./#docker">点这里进一步了解</a></p>
 </div>
 <h2 id="qmk_1">同步QMK工程<a class="headerlink" href="#qmk_1" title="Permanent link">&para;</a></h2>
 <p>当你建立Linux/Unix环境后,你就已经可以下载QMK了.下载时我们可以用Git来 "clone" QMK仓库. 打开一个终端或MSYS2 MinGW 窗口，在阅读剩余的指南时请保持窗口打开。在窗口里面运行以下两句命令:</p>
@@ -2171,7 +2109,7 @@ Checking file size of clueboard_66_rev3_default.hex                             
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../tutorial/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Introduction" rel="prev">
+        <a href="../driver_installation_zadig/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Zadig驱动安装" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2180,20 +2118,20 @@ Checking file size of clueboard_66_rev3_default.hex                             
               <span class="md-footer__direction">
                 上一页
               </span>
-              Introduction
+              Zadig驱动安装
             </div>
           </div>
         </a>
       
       
         
-        <a href="../tutorial_building_firmware/" class="md-footer__link md-footer__link--next" aria-label="下一页: 构建你的第一个固件" rel="next">
+        <a href="../getting_started_vagrant/" class="md-footer__link md-footer__link--next" aria-label="下一页: vagrant指南" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              构建你的第一个固件
+              vagrant指南
             </div>
           </div>
           <div class="md-footer__button md-icon">
