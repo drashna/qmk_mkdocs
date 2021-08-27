@@ -2,8 +2,8 @@
 
 # Setup the symlinks for working on a translation
 
-#set -e
-set -x
+set -e
+#set -x
 
 if [ -z "$1" ]; then
 	echo "usage: $0 <translation>"

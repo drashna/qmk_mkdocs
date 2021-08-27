@@ -3,7 +3,7 @@
 # This script is used to build the complete site with translations. You do not need to use this normally.
 
 set -e
-set -x
+#set -x
 
 if [ -z "$1" ]; then
 	echo "usage: $0 <branch>"
