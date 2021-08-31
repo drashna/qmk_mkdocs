@@ -1,34 +1,19 @@
 extra_css:
   - stylesheets/qmk.css
 extra:
-  alternate:
-    - name: English
-      link: README.md
-      lang: en
-    - name: 中文
-      link: zh-cn/
-      lang: zh
-    - name: Español
-      link: es/
-      lang: es
-    - name: Français
-      link: fr-fr/
-      lang: fr
-    - name: עברית
-      link: he-il/
-      lang: he
-    - name: Português
-      link: pt-br/
-      lang: pt
-    - name: Русский
-      link: ru-ru/
-      lang: ru
-    - name: 日本語
-      link: ja/
-      lang: ja
   version:
     provider: mike
 plugins:
+  - i18n:
+      default_language: en
+      languages:
+        zh: 中文
+        es: Español
+        fr: Français
+        he: עברית
+        pt: Português
+        ru: Русский
+        ja: 日本語
   - search:
       lang:
         - en
