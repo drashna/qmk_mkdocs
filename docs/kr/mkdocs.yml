@@ -4,6 +4,8 @@ extra:
   version:
     provider: mike
 plugins:
+  - multisite:
+      fallback_dir: ../en/docs
   - search:
       lang:
         - en

@@ -4,6 +4,8 @@ extra:
   version:
     provider: mike
 plugins:
+  - multisite:
+      fallback_dir: ../en/docs
   - search:
       lang:
         - en
@@ -57,6 +59,12 @@ nav:
     - Breaking changes:
       - Aperçu: breaking_changes.md
       - 30 août 2019: ChangeLog/20190830.md
+      - ChangeLog/20200229.md
+      - ChangeLog/20200530.md
+      - ChangeLog/20200829.md
+      - ChangeLog/20201128.md
+      - ChangeLog/20210227.md
+      - ChangeLog/20210529.md
     - FAQ:
       - FAQ Générale: faq_general.md
       - Compiler QMK: faq_build.md
@@ -65,10 +73,8 @@ nav:
       - Installer les drivers avec Zadig: driver_installation_zadig.md
   - En Anglais:
     - Guides détaillés:
-      - Installation des outils de compilation: tutorial_getting_started.md
       - Guide Vagrant: getting_started_vagrant.md
       - Commandes de compilations: getting_started_make_guide.md
-      - Flasher les firmwares: flashing.md
       - Personnaliser les fonctionnalités: custom_quantum_functions.md
       - Aperçu des fonctionnalités des dispositions: keymap.md
     - Hardware:
@@ -143,7 +149,6 @@ nav:
     - Autres sujets:
       - Utiliser Eclipse avec QMK: other_eclipse.md
       - Utiliser VSCode avec QMK: other_vscode.md
-      - Support: support.md
       - Comment ajouter des traductions: translating.md
     - À l’intérieur de QMK (En cours de documentation):
       - Définitions: internals_defines.md
@@ -153,6 +158,50 @@ nav:
       - Utilitaires Midi: internals_midi_util.md
       - Fonctions Midi: internals_send_functions.md
       - Outils Sysex: internals_sysex_tools.md
+    - Uncategorized:
+      - adc_driver.md
+      - api_development_environment.md
+      - api_development_overview.md
+      - api_docs.md
+      - api_overview.md
+      - audio_driver.md
+      - breaking_changes_instructions.md
+      - cli_commands.md
+      - cli_tab_complete.md
+      - compatible_microcontrollers.md
+      - configurator_architecture.md
+      - configurator_default_keymaps.md
+      - configurator_step_by_step.md
+      - configurator_troubleshooting.md
+      - custom_matrix.md
+      - data_driven_config.md
+      - eeprom_driver.md
+      - faq_misc.md
+      - feature_joystick.md
+      - feature_layers.md
+      - feature_led_indicators.md
+      - feature_midi.md
+      - feature_rawhid.md
+      - feature_sequencer.md
+      - feature_wpm.md
+      - flashing_bootloadhid.md
+      - getting_started_docker.md
+      - how_a_matrix_works.md
+      - mod_tap.md
+      - platformdev_chibios_earlyinit.md
+      - platformdev_selecting_arm_mcu.md
+      - pr_checklist.md
+      - reference_keymap_extras.md
+      - serial_driver.md
+      - syllabus.md
+      - tap_hold.md
+      - tutorial_git_best_practices.md
+      - tutorial_git_resolving_merge_conflicts.md
+      - tutorial_git_resynchronize_a_branch.md
+      - tutorial_git_using_your_master_branch.md
+      - uart_driver.md
+      - ws2812_driver.md
+
 repo_name: qmk/qmk_firmware
 repo_url: https://github.com/qmk/qmk_firmware
 site_name: QMK Firmware Docs
