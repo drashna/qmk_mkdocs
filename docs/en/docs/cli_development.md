@@ -10,10 +10,14 @@ The QMK CLI operates using the subcommand pattern made famous by git. The main `
 
 If you intend to maintain keyboards and/or contribute to QMK, you can enable the CLI's "Developer" mode:
 
-`qmk config user.developer=True`
+```bash
+qmk config user.developer=True
+```
 
-This will allow you to see all available subcommands.  
-**Note:** You will have to install additional requirements:  
+This will allow you to see all available subcommands.
+
+**Note:** You will have to install additional requirements:
+
 ```bash
 python3 -m pip install -r requirements-dev.txt
 ```
@@ -172,7 +176,7 @@ Some arguments should not be propagated to the configuration file. These can be 
 
 Example:
 
-``` python
+```
 @cli.argument('-o', '--output', arg_only=True, help='File to write to')
 @cli.argument('filename', arg_only=True, help='Configurator JSON file')
 @cli.subcommand('Create a keymap.c from a QMK Configurator export.')
@@ -182,13 +186,13 @@ def json_keymap(cli):
 
 You will only be able to access these arguments using `cli.args`. For example:
 
-``` python
+```
 cli.log.info('Reading from %s and writing to %s', cli.args.filename, cli.args.output)
 ```
 
 # Testing, and Linting, and Formatting (oh my!)
 
-We use nose2, flake8, and yapf to test, lint, and format code. You can use the `pytest` and `pyformat` subcommands to run these tests:
+We use nose2, flake8, and yapf to test, lint, and format code. You can use the `pytest` and `format-py` subcommands to run these tests:
 
 ### Testing and Linting
 
@@ -196,18 +200,18 @@ We use nose2, flake8, and yapf to test, lint, and format code. You can use the `
 
 ### Formatting
 
-    qmk pyformat
+    qmk format-py
 
 ## Formatting Details
 
 We use [yapf](https://github.com/google/yapf) to automatically format code. Our configuration is in the `[yapf]` section of `setup.cfg`.
 
 !!! tip
-    Many editors can use yapf as a plugin to automatically format code as you type.
+    Tip- Many editors can use yapf as a plugin to automatically format code as you type.
 
 ## Testing Details
 
-Our tests can be found in `lib/python/qmk/tests/`. You will find both unit and integration tests in this directory. We hope you will write both unit and integration tests for your code, but if you do not please favor integration tests. 
+Our tests can be found in `lib/python/qmk/tests/`. You will find both unit and integration tests in this directory. We hope you will write both unit and integration tests for your code, but if you do not please favor integration tests.
 
 If your PR does not include a comprehensive set of tests please add comments like this to your code so that other people know where they can help:
 

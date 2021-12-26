@@ -60,7 +60,7 @@ endif
 
 ### デフォルトのユーザスペースの上書き {: id=override-default-userspace }
 
-デフォルトでは、使用されるユーザスペース名はキーマップ名と同じです。状況によってはこれは望ましくありません。例えば、[レイアウト](feature_layouts.md)機能を使う場合、異なるキーマップに同じ名前 (例えば、ANSI および ISO) を使うことができません。レイアウトに `mylayout-ansi` や `mylayout-iso` という名前を付け、以下の行をレイアウトの `rules.mk` に追加します:
+デフォルトでは、使用されるユーザスペース名はキーマップ名と同じです。状況によってはこれは望ましくありません。例えば、[レイアウト](ja/feature_layouts.md)機能を使う場合、異なるキーマップに同じ名前 (例えば、ANSI および ISO) を使うことができません。レイアウトに `mylayout-ansi` や `mylayout-iso` という名前を付け、以下の行をレイアウトの `rules.mk` に追加します:
 
 ```
 USER_NAME := mylayout
@@ -75,7 +75,7 @@ USER_NAME := mylayout
 この理由は、`<name>.h` は (`#define TAPPING_TERM 100` などのような)設定を追加する時には追加されず、`config.h` ファイル内の `<name.h>` ファイルを含めるとコンパイルの問題を引き起こすからです。
 
 !!! tip
-   `config.h` は[設定オプション](config_options.md)のために使い、`<name>.h` ファイルはユーザあるいは(レイヤーあるいはキーコードのための enum のような)キーマップ固有の設定のために使うべきです
+    `config.h` は[設定オプション](ja/config_options.md)のために使い、`<name>.h` ファイルはユーザあるいは(レイヤーあるいはキーコードのための enum のような)キーマップ固有の設定のために使うべきです
 
 
 ## Readme (`readme.md`)
@@ -124,12 +124,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ### カスタマイズされた関数 {: id=customized-functions }
 
-QMK には、[`_quantum`、`_kb` および `_user` バージョン](custom_quantum_functions.md#a-word-on-core-vs-keyboards-vs-keymap)を持つ使用可能な[関数](custom_quantum_functions.md)が山ほどあります。 ほとんどの場合、これらの関数のユーザバージョンを使う必要があります。しかし問題はそれらをユーザスペースで使う場合、キーマップで使うことができるバージョンが無いことです。
+QMK には、[`_quantum`、`_kb` および `_user` バージョン](ja/custom_quantum_functions.md#a-word-on-core-vs-keyboards-vs-keymap)を持つ使用可能な[関数](custom_quantum_functions.md)が山ほどあります。 ほとんどの場合、これらの関数のユーザバージョンを使う必要があります。しかし問題はそれらをユーザスペースで使う場合、キーマップで使うことができるバージョンが無いことです。
 
 しかし、実際にはキーマップバージョンのサポートを追加し、ユーザスペースとキーマップの両方で使うことができます。
 
 
-例えば、`layer_state_set_user()` 関数を見てみましょう。全てのキーボードで [Tri Layer State](ref_functions.md#olkb-tri-layers) 機能を有効にしながら、`keymap.c` ファイルで Tri Layer 機能を保持することができます。
+例えば、`layer_state_set_user()` 関数を見てみましょう。全てのキーボードで [Tri Layer State](ja/ref_functions.md#olkb-tri-layers) 機能を有効にしながら、`keymap.c` ファイルで Tri Layer 機能を保持することができます。
 
 `<name.c>` ファイル内で、以下を追加する必要があります:
 ```c
@@ -255,7 +255,7 @@ endif
 
 これは任意のキーマップで使うことができる新しい `KC_MAKE` キーコードを追加します。そして、このキーコードは、`make <keyboard>:<keymap>` を出力するため、頻繁なコンパイルを簡単にします。そして、これは現在のキーボードの情報を出力するため、全てのキーボードとキーマップで動作します。そのため毎回これを入力する必要はありません。
 
-また、Shift を押したままにすると書き込みの対象 (`:flash`) をコマンドに追加します。Control を押したままにすると、複数のファイルを一度に処理することでコンパイル時間を短縮する幾つかのコマンドを追加します。 
+また、Shift を押したままにすると書き込みの対象 (`:flash`) をコマンドに追加します。Control を押したままにすると、複数のファイルを一度に処理することでコンパイル時間を短縮する幾つかのコマンドを追加します。
 
 そして Shift キーが無いキーボード、あるいは常に書き込みを試したいキーボードについては、キーマップの `rules.mk` に `FLASH_BOOTLOADER = yes` を追加することができます。
 

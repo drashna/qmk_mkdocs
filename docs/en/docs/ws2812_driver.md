@@ -50,6 +50,19 @@ WS2812_DRIVER = bitbang
 !!! note
     This driver is not hardware accelerated and may not be performant on heavily loaded systems.
 
+#### Adjusting bit timings
+
+The WS2812 LED communication topology depends on a serialized timed window. Different versions of the addressable LEDs have differing requirements for the timing parameters, for instance, of the SK6812.
+You can tune these parameters through the definition of the following macros:
+
+| Macro               |Default                                     | AVR                | ARM                |
+|---------------------|--------------------------------------------|--------------------|--------------------|
+|`WS2812_TIMING`      |`1250`                                      | :heavy_check_mark: | :heavy_check_mark: |
+|`WS2812_T0H`         |`350`                                       | :heavy_check_mark: | :heavy_check_mark: |
+|`WS2812_T0L`         |`WS2812_TIMING - WS2812_T0H`                |                    | :heavy_check_mark: |
+|`WS2812_T1H`         |`900`                                       | :heavy_check_mark: | :heavy_check_mark: |
+|`WS2812_T1L`         |`WS2812_TIMING - WS2812_T1H`                |                    | :heavy_check_mark: |
+
 ### I2C
 Targeting boards where WS2812 support is offloaded to a 2nd MCU. Currently the driver is limited to AVR given the known consumers are ps2avrGB/BMC. To configure it, add this to your rules.mk:
 
@@ -81,7 +94,7 @@ Configure the hardware via your config.h:
 You must also turn on the SPI feature in your halconf.h and mcuconf.h
 
 #### Circular Buffer Mode
-Some boards may flicker while in the normal buffer mode. To fix this issue, circular buffer mode may be used to rectify the issue. 
+Some boards may flicker while in the normal buffer mode. To fix this issue, circular buffer mode may be used to rectify the issue.
 
 By default, the circular buffer mode is disabled.
 
@@ -153,7 +166,7 @@ This can be configured for bitbang, PWM and SPI.
 
 Note: This only applies to STM32 boards.
 
- To configure the `RGB_DI_PIN` to open drain configuration add this to your config.h file: 
+ To configure the `RGB_DI_PIN` to open drain configuration add this to your config.h file:
 ```c
 #define WS2812_EXTERNAL_PULLUP
 ```

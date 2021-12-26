@@ -20,8 +20,8 @@
 
 以下を見てください。
 
-* [基本的なキーコードリファレンス](keycodes_basic.md)
-* [高度なキーコードリファレンス](feature_advanced_keycodes.md)
+* [基本的なキーコードリファレンス](ja/keycodes_basic.md)
+* [高度なキーコードリファレンス](ja/feature_advanced_keycodes.md)
 
 #### コンパイルできません
 

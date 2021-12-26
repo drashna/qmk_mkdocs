@@ -99,7 +99,7 @@ QMK Toolbox の `Flash` ボタンをクリックします。次のような出�
     Validating...  Success
     0x3F80 bytes written into 0x7000 bytes memory (56.70%).
 >>> dfu-programmer.exe atmega32u4 reset
-    
+
 *** DFU device disconnected: Atmel Corp: ATmega32U4 (03EB:2FF4:0000)
 ```
 
@@ -121,7 +121,7 @@ QMK Toolbox の `Flash` ボタンをクリックします。次のような出�
 
     WARNING: This board's bootloader is not specified or is not supported by the ":flash" target at this time.
 
-この場合、あなたは明示的にブートローダを指定する方法を使わなければなりません。詳細は、[ファームウェアのフラッシュ](flashing.md)ガイドを参照してください。
+この場合、あなたは明示的にブートローダを指定する方法を使わなければなりません。詳細は、[ファームウェアのフラッシュ](ja/flashing.md)ガイドを参照してください。
 
 ## テストしましょう！
 

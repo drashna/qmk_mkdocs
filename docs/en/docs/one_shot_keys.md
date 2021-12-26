@@ -21,7 +21,7 @@ You can control the behavior of one shot keys by defining these in `config.h`:
 * `OS_OFF` - Turns off One Shot keys. OSM act as regular mod keys, OSL act like `MO`.
 * `OS_TOGG` - Toggles the one shot key status.
 
-Sometimes, you want to activate a one-shot key as part of a macro or tap dance routine.  
+Sometimes, you want to activate a one-shot key as part of a macro or tap dance routine.
 
 For one shot layers, you need to call `set_oneshot_layer(LAYER, ONESHOT_START)` on key down, and `clear_oneshot_layer_state(ONESHOT_PRESSED)` on key up. If you want to cancel the oneshot, call `reset_oneshot_layer()`.
 

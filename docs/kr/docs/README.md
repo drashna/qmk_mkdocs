@@ -1,7 +1,6 @@
 # Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
-[![Build Status](https://travis-ci.org/qmk/qmk_firmware.svg?branch=master)](https://travis-ci.org/qmk/qmk_firmware)
 [![Discord](https://img.shields.io/discord/440868230475677696.svg)](https://discord.gg/Uq7gcHh)
 [![Docs Status](https://img.shields.io/badge/docs-ready-orange.svg)](https://docs.qmk.fm)
 [![GitHub contributors](https://img.shields.io/github/contributors/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/pulse/monthly)
@@ -20,7 +19,7 @@ QMK(*Quantum Mechanical Keyboard 양자 기계식 키보드*)란 QMK 컴워어, 
 
 ## 컴파일
 
-먼저 컴파일을 하기전 AVR 이나 ARM [개발환경](tutorial_getting_started.md)을 구축해야 합니다. 모든준비가 끝났다면 `make`를 다음과 같이 키보드와 키맵을 선택하여 컴파일 할 수 있습니다.
+먼저 컴파일을 하기전 AVR 이나 ARM [개발환경](getting_started_build_tools.md)을 구축해야 합니다. 모든준비가 끝났다면 `make`를 다음과 같이 키보드와 키맵을 선택하여 컴파일 할 수 있습니다.
 
     make planck/rev4:default
 
@@ -30,4 +29,4 @@ QMK(*Quantum Mechanical Keyboard 양자 기계식 키보드*)란 QMK 컴워어, 
 
 ## 커스터마이징
 
-QMK는 사용할 수 있는 매우 다양한 기능과 체계화된 [참고자료](https://docs.qmk.fm)들이 있습니다. 그중 대부분은 [키맵](keymap.md)을 수정하거나 [키코드](keycodes.md)를 변경하는데에 특화되어 있습니다.
+QMK는 사용할 수 있는 매우 다양한 [기능](features.md)과 체계화된 [참고자료](https://docs.qmk.fm)들이 있습니다. 그중 대부분은 [키맵](keymap.md)을 수정하거나 [키코드](keycodes.md)를 변경하는데에 특화되어 있습니다.

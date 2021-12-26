@@ -8,8 +8,8 @@
 
 ## テスト
 
-[ここに移動しました](faq_misc.md#testing)
+[ここに移動しました](ja/faq_misc.md#testing)
 
 ## デバッグ {: id=debugging }
 
-[ここに移動しました](faq_debug.md#debugging)
+[ここに移動しました](ja/faq_debug.md#debugging)

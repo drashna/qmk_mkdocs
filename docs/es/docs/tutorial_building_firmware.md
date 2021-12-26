@@ -4,7 +4,7 @@ Ahora que has configurado tu entorno de construcción estas listo para empezar a
 
 Si has cerrado y reabierto la ventana de tu terminal después de seguir el primero paso de esta guía, no olvides hacer `cd qmk_firmware` para que tu terminal esté en el directorio correcto.
 
-## Navega a tu carpeta de keymaps 
+## Navega a tu carpeta de keymaps
 
 Comienza navegando a la carpeta `keymaps` correspondiente a tu teclado.
 
@@ -13,17 +13,17 @@ Comienza navegando a la carpeta `keymaps` correspondiente a tu teclado.
 
     macOS:
 
-        open keyboards/<keyboard_folder>/keymaps
+    abre keyboards/<keyboard_folder>/keymaps
 
     Windows:
 
-        start .\keyboards\<keyboard_folder>\keymaps
+    inicia .\\keyboards\\<keyboard_folder>\\keymaps
 
 ## Crea una copia del keymap `default`
 
 Una vez que tengas la carpeta `keymaps` abierta querrás crear una copia de la carpeta `default`. Recomendamos encarecidamente que nombres la carpeta igual que tu nombre de usuario de GitHub, pero puedes utilizar el nombre que quieras siempre que contenga sólo letras en minúscula, números y el caracter de guión bajo.
 
-Para automatizar el proceso, también tienes la opción de ejecutar el script `new_keymap.sh`. 
+Para automatizar el proceso, también tienes la opción de ejecutar el script `new_keymap.sh`.
 
 Navega a la carpeta `qmk_firmware/util` e introduce lo siguiente:
 
@@ -52,10 +52,9 @@ Esta línea indica el comienzo del listado de Capas. Debajo encontrarás líneas
 
 Cómo completar esta paso depende enteramente de ti. Haz ese pequeño cambio que querías o rehaz completamente todo. Puedes eliminar capas si no las necesitas todas, o añadir nuevas hasta un total de 32. Comprueba la siguiente documentación para descubrir qué es lo que puedes definir aquí:
 
-* [Keycodes Básicos](keycodes_basic.md)
-* [Keycodes Quantum](quantum_keycodes.md)
-* [Grave/Escape](feature_grave_esc.md)
-* [Teclas del ratón](feature_mouse_keys.md)
+* [Keycodes](keycodes.md)
+* [Características](features.md)
+* [Preguntas frecuentes](faq.md)
 
 !!! tip
     Mientras estás descubriendo cómo funcionan los keymaps, haz pequeños cambios. Cambios mayores pueden hacer difícil la depuración de problemas que puedan aparecer.

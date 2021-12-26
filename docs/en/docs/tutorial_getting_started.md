@@ -24,14 +24,13 @@ We've tried to make QMK as easy to set up as possible. You only have to prepare 
 
     QMK maintains a Bundle of MSYS2, the CLI and all necessary dependencies. It also provides a handy `QMK MSYS` terminal shortcut to boot you directly into the correct environment.
 
-    #### Prerequisites
+    ####     Prerequisites
 
     You will need to install [QMK MSYS](https://msys.qmk.fm/). The latest release is available [here](https://github.com/qmk/qmk_distro_msys/releases/latest).
 
     Alternatively, if you'd like to manually install MSYS2, the following section will walk you through the process.
 
     ??? "Manual Install"
-    
         !!! tip
             Ignore the following steps if you use `QMK MSYS`.
 
@@ -46,13 +45,14 @@ We've tried to make QMK as easy to set up as possible. You only have to prepare 
 
         Then run the following command:
 
-            pacman --needed --noconfirm --disable-download-timeout -S git mingw-w64-x86_64-toolchain mingw-w64-x86_64-python3-pip
+        pacman --needed --noconfirm --disable-download-timeout -S git mingw-w64-x86_64-toolchain mingw-w64-x86_64-python3-pip
 
         #### Installation
 
         Install the QMK CLI by running:
 
-            python3 -m pip install qmk
+        python3 -m pip install qmk
+
 
 === "macOS"
 
@@ -113,7 +113,11 @@ We've tried to make QMK as easy to set up as possible. You only have to prepare 
 
     NOTE: remember to follow the instructions printed at the end of installation (use `pkg info -Dg "py*-qmk"` to show them again).
 
+<!-- tabs:end -->
+
 ## 3. Run QMK Setup {: id=set-up-qmk }
+
+<!-- tabs:start -->
 
 === "Windows"
 
@@ -139,14 +143,10 @@ We've tried to make QMK as easy to set up as possible. You only have to prepare 
 
     In most situations you will want to answer `y` to all of the prompts.
 
-    **Note on Debian, Ubuntu and their derivatives**:
-
+    ?>**Note on Debian, Ubuntu and their derivatives**:
     It's possible, that you will get an error saying something like: `bash: qmk: command not found`.
-
     This is due to a [bug](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=839155) Debian introduced with their Bash 4.4 release, which removed `$HOME/.local/bin` from the PATH. This bug was later fixed on Debian and Ubuntu.
-
     Sadly, Ubuntu reitroduced this bug and is [yet to fix it](https://bugs.launchpad.net/ubuntu/+source/bash/+bug/1588562).
-
     Luckily, the fix is easy. Run this as your user: `echo 'PATH="$HOME/.local/bin:$PATH"' >> $HOME/.bashrc && source $HOME/.bashrc`
 
 === "FreeBSD"
@@ -156,6 +156,8 @@ We've tried to make QMK as easy to set up as possible. You only have to prepare 
         qmk setup
 
     In most situations you will want to answer `y` to all of the prompts.
+
+<!-- tabs:end -->
 
 !!! tip
     The qmk home folder can be specified at setup with `qmk setup -H <path>`, and modified afterwards using the [cli configuration](cli_configuration.md?id=single-key-example) and the variable `user.qmk_home`. For all available options run `qmk setup --help`.
@@ -195,7 +197,7 @@ You can also set your default keymap name. Most people use their GitHub username
 
     qmk config user.keymap=<github_username>
 
-After this you can leave those arguments off and compile your keyboard like this:
+The keyboard can now be compiled without arguments using the following command after creating your keymap in the next section:
 
     qmk compile
 

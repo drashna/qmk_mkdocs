@@ -2,9 +2,9 @@
 
 Github can be a little tricky to those that aren't familiar with it - this guide will walk through each step of forking, cloning, and submitting a pull request with QMK.
 
-Github는 자주 사용하는 사람이 아니면 좀 여려울수도 있습니다. 이 문서는 Github를 사용하는데 필요한 forking, cloning 그리고 submitting a pull request with QMK를 설명할 것입니다. 
+Github는 자주 사용하는 사람이 아니면 좀 여려울수도 있습니다. 이 문서는 Github를 사용하는데 필요한 forking, cloning 그리고 submitting a pull request with QMK를 설명할 것입니다.
 
-!!! note
+!!! notej
     이 가이드는 당신이 git커맨드를 사용하는데 익숙하고 git환경을 당신의 시스템이 설치하였다는 전제하에 작성되었습니다.
 
 아래와 같이 [QMK Github 페이지](https://github.com/qmk/qmk_firmware)에서 당신은 "Fork"라고 쓰여있는 버튼을 볼 수 있습니다
@@ -33,7 +33,7 @@ Resolving deltas: 100% (29362/29362), done.
 Checking out files: 100% (2799/2799), done.
 ```
 
-당신은 이제 모든파일이 로컬시스템이 추가 되었습니다 그리고 이제 키맵을 추가하거나 컴파일, 프로그램 업로드(flashing)를 할 수 있습니다. 
+당신은 이제 모든파일이 로컬시스템이 추가 되었습니다 그리고 이제 키맵을 추가하거나 컴파일, 프로그램 업로드(flashing)를 할 수 있습니다.
 모든 추가 변경을 만든 뒤에는 add, commit, and push를 사용하여 당신의 Folk에 추가 할 수 있습니다.
 
 ```

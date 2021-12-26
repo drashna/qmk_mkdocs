@@ -5,7 +5,7 @@
   git diff 0.12.43 HEAD -- docs/faq_build.md | cat
 -->
 
-このページは QMK のビルドに関する質問を説明します。まだビルドをしていない場合は、[ビルド環境のセットアップ](tutorial_getting_started.md) および [Make 手順](getting_started_make_guide.md)ガイドを読むべきです。
+このページは QMK のビルドに関する質問を説明します。まだビルドをしていない場合は、[ビルド環境のセットアップ](ja/getting_started_build_tools.md) および [Make 手順](ja/getting_started_make_guide.md)ガイドを読むべきです。
 
 ## Linux でプログラムできません
 デバイスを操作するには適切な権限が必要です。Linux ユーザの場合は、以下の `udev` ルールに関する指示を見てください。`udev` に問題がある場合は、回避策は `sudo` コマンドを使うことです。このコマンドに慣れていない場合は、`man sudo` コマンドでマニュアルを確認するか、[この web ページを見てください](https://linux.die.net/man/8/sudo)。
@@ -50,7 +50,7 @@ Windows 上でキーボードを書き込む時に発生する問題は、ブー
 
 QMK インストールスクリプト (MSYS2 あるいは WSL 内の `qmk_firmware` ディレクトリから `./util/qmk_install.sh`) を再実行するか、QMK Toolbox の再インストールでこの問題が解決するかもしれません。別のやり方として、手動で [`qmk_driver_installer`](https://github.com/qmk/qmk_driver_installer) パッケージをダウンロードして実行することができます。
 
-それでもうまく行かない場合は、Zadig をダウンロードして実行する必要があります。詳細な情報は [Zadig を使ったブートローダドライバのインストール](driver_installation_zadig.md)を見てください。
+それでもうまく行かない場合は、Zadig をダウンロードして実行する必要があります。詳細な情報は [Zadig を使ったブートローダドライバのインストール](ja/driver_installation_zadig.md)を見てください。
 
 ## USB VID と PID
 `config.h` を編集することで任意の ID を使うことができます。おそらく未使用の ID を使っても、他の製品と衝突するとても低い可能性があることを除いて、実際には問題はありません。
@@ -70,4 +70,4 @@ ARM ベースのチップ上での EEPROM の動作によって、保存され�
 [Planck rev6 reset EEPROM](https://cdn.discordapp.com/attachments/473506116718952450/539284620861243409/planck_rev6_default.bin) を使って eeprom のリセットを強制することができます。このイメージを書き込んだ後で、通常のファームウェアを書き込むと、キーボードが _通常_ の動作順序に復元されます。
 [Preonic rev3 reset EEPROM](https://cdn.discordapp.com/attachments/473506116718952450/537849497313738762/preonic_rev3_default.bin)
 
-いずれかの形式でブートマジックが有効になっている場合は、これも実行できるはずです (実行方法の詳細については、[ブートマジックドキュメント](feature_bootmagic.md)とキーボード情報を見てください)。
+いずれかの形式でブートマジックが有効になっている場合は、これも実行できるはずです (実行方法の詳細については、[ブートマジックドキュメント](ja/feature_bootmagic.md)とキーボード情報を見てください)。

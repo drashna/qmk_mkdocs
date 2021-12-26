@@ -1,10 +1,10 @@
-# 刷新你的键盘 
+# 刷新你的键盘
 
 现在您已经构建了一个自定义固件文件，那么您就需要刷新键盘了。
 
 ## 用QMK工具箱刷新键盘
 
-刷新键盘的最简单方法是使用[QMK 工具箱](https://github.com/qmk/qmk_toolbox/releases). 
+刷新键盘的最简单方法是使用[QMK 工具箱](https://github.com/qmk/qmk_toolbox/releases).
 
 但是，QMK工具箱目前仅适用于Windows和MacOS。如果您使用的是Linux（或者只是希望从命令行刷新固件），则必须使用 [方法概述](tutorial_flashing.md#flash-your-keyboard-from-the-command-line).
 
@@ -12,16 +12,16 @@
 
 首先打开QMK工具箱应用程序。您将要在访达或资源管理器中找到固件文件。您的键盘固件可能是两种格式之一`.hex`或`.bin`。qmk会尝试将键盘的相应文件复制到“qmk_firmware”根目录中。
 
-!!! tip
+!!! info
     如果您在Windows或MacOS上，可以使用以下命令轻松地在资源管理器或访达中打开当前固件文件夹。
 
     Windows:
 
-        start .
+    start .
 
     macOS:
 
-        open .
+    open .
 
 固件文件始终遵循此命名格式:
 
@@ -72,7 +72,7 @@
     Validating...  Success
     0x5600 bytes written into 0x7000 bytes memory (76.79%).
 >>> dfu-programmer atmega32u4 reset
-    
+
 *** DFU device disconnected
 *** Clueboard - Clueboard 66% HotSwap connected -- 0xC1ED:0x2390
 ```
@@ -81,13 +81,13 @@
 
 首先，您需要知道您的键盘使用的是哪个bootloader。通常是以下四个常见的bootloader。Pro-Micro 和 clones 使用 CATERINA, Teensy 使用 Halfkay, OLKB 键盘使用 QMK-DFU, 其他的atmega32u4芯片使用DFU。
 
-您可以在以下文章中了解更多关于bootloader[刷新指令和Bootloader信息](flashing.md)。 
+您可以在以下文章中了解更多关于bootloader[刷新指令和Bootloader信息](flashing.md)。
 
 如果您知道正在使用的bootloader是哪种，那么在编译固件时，可以向“make”命令里添加一些额外参数，以自动执行刷新过程。
 
 ### DFU
 
-对于DFU引导加载程序，当您准备好编译和刷新固件时，打开终端窗口并运行构建命令: 
+对于DFU引导加载程序，当您准备好编译和刷新固件时，打开终端窗口并运行构建命令:
 
     make <my_keyboard>:<my_keymap>:dfu
 
@@ -101,7 +101,7 @@
 Linking: .build/planck_rev5_xyverz.elf                                                              [OK]
 Creating load file for flashing: .build/planck_rev5_xyverz.hex                                      [OK]
 Copying planck_rev5_xyverz.hex to qmk_firmware folder                                               [OK]
-Checking file size of planck_rev5_xyverz.hex                                                        
+Checking file size of planck_rev5_xyverz.hex
  * File size is fine - 18574/28672
  ```
 
@@ -142,9 +142,9 @@ Checking file size of planck_rev5_xyverz.hex
 * `:dfu-split-right` - 这将刷新正常固件，就像默认选项(`:dfu`). 但是，这也会刷新“右侧”EEPROM文件，用于分割键盘。 _这是基于Elite C的键盘的推荐选择。_
 
 
-### Caterina 
+### Caterina
 
-对于Arduino板以及其克隆版来说(比如SparkFun和ProMicro), 准备好编译和刷新固件后，打开终端窗口并运行构建命令: 
+对于Arduino板以及其克隆版来说(比如SparkFun和ProMicro), 准备好编译和刷新固件后，打开终端窗口并运行构建命令:
 
     make <my_keyboard>:<my_keymap>:avrdude
 
@@ -152,7 +152,7 @@ Checking file size of planck_rev5_xyverz.hex
 
     make lets_split/rev2:xyverz:avrdude
 
-固件完成编译后，它将输出类似以下的内容: 
+固件完成编译后，它将输出类似以下的内容:
 
 ```
 Linking: .build/lets_split_rev2_xyverz.elf                                                            [OK]
@@ -220,7 +220,7 @@ avrdude.exe done.  Thank you.
 
 ## HalfKay
 
-对于PJRC设备（Teensy），当您准备好编译和刷新固件时，打开终端窗口并运行构建命令: 
+对于PJRC设备（Teensy），当您准备好编译和刷新固件时，打开终端窗口并运行构建命令:
 
     make <my_keyboard>:<my_keymap>:teensy
 

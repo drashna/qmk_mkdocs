@@ -103,11 +103,11 @@ These are the three main initialization functions, listed in the order that they
 
 ## Keyboard Pre Initialization code
 
-This runs very early during startup, even before the USB has been started. 
+This runs very early during startup, even before the USB has been started.
 
 Shortly after this, the matrix is initialized.
 
-For most users, this shouldn't be used, as it's primarily for hardware oriented initialization. 
+For most users, this shouldn't be used, as it's primarily for hardware oriented initialization.
 
 However, if you have hardware stuff that you need initialized, this is the best place for it (such as initializing LED pins).
 
@@ -135,9 +135,9 @@ void keyboard_pre_init_user(void) {
 
 ## Matrix Initialization Code
 
-This is called when the matrix is initialized, and after some of the hardware has been set up, but before many of the features have been initialized. 
+This is called when the matrix is initialized, and after some of the hardware has been set up, but before many of the features have been initialized.
 
-This is useful for setting up stuff that you may need elsewhere, but isn't hardware related nor is dependant on where it's started. 
+This is useful for setting up stuff that you may need elsewhere, but isn't hardware related nor is dependant on where it's started.
 
 
 ### `matrix_init_*` Function Documentation
@@ -145,6 +145,14 @@ This is useful for setting up stuff that you may need elsewhere, but isn't hardw
 * Keyboard/Revision: `void matrix_init_kb(void)`
 * Keymap: `void matrix_init_user(void)`
 
+### Low-level Matrix Overrides Function Documentation {: id=low-level-matrix-overrides }
+
+* GPIO pin initialisation: `void matrix_init_pins(void)`
+  * This needs to perform the low-level initialisation of all row and column pins. By default this will initialise the input/output state of each of the GPIO pins listed in `MATRIX_ROW_PINS` and `MATRIX_COL_PINS`, based on whether or not the keyboard is set up for `ROW2COL`, `COL2ROW`, or `DIRECT_PINS`. Should the keyboard designer override this function, no initialisation of pin state will occur within QMK itself, instead deferring to the keyboard's override.
+* `COL2ROW`-based row reads: `void matrix_read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)`
+* `ROW2COL`-based column reads: `void matrix_read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col, matrix_row_t row_shifter)`
+* `DIRECT_PINS`-based reads: `void matrix_read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)`
+  * These three functions need to perform the low-level retrieval of matrix state of relevant input pins, based on the matrix type. Only one of the functions should be implemented, if needed. By default this will iterate through `MATRIX_ROW_PINS` and `MATRIX_COL_PINS`, configuring the inputs and outputs based on whether or not the keyboard is set up for `ROW2COL`, `COL2ROW`, or `DIRECT_PINS`. Should the keyboard designer override this function, no manipulation of matrix GPIO pin state will occur within QMK itself, instead deferring to the keyboard's override.
 
 ## Keyboard Post Initialization code
 
@@ -207,11 +215,11 @@ This is controlled by two functions: `suspend_power_down_*` and `suspend_wakeup_
 
 ```c
 void suspend_power_down_user(void) {
-    rgb_matrix_set_suspend_state(true);
+    // code will run multiple times while keyboard is suspended
 }
 
 void suspend_wakeup_init_user(void) {
-    rgb_matrix_set_suspend_state(false);
+    // code will run on keyboard wakeup
 }
 ```
 
@@ -266,17 +274,17 @@ The `state` is the bitmask of the active layers, as explained in the [Keymap Ove
 
 # Persistent Configuration (EEPROM)
 
-This allows you to configure persistent settings for your keyboard.  These settings are stored in the EEPROM of your controller, and are retained even after power loss. The settings can be read with `eeconfig_read_kb` and `eeconfig_read_user`, and can be written to using `eeconfig_update_kb` and `eeconfig_update_user`. This is useful for features that you want to be able to toggle (like toggling rgb layer indication).  Additionally, you can use `eeconfig_init_kb` and `eeconfig_init_user` to set the default values for the EEPROM. 
+This allows you to configure persistent settings for your keyboard.  These settings are stored in the EEPROM of your controller, and are retained even after power loss. The settings can be read with `eeconfig_read_kb` and `eeconfig_read_user`, and can be written to using `eeconfig_update_kb` and `eeconfig_update_user`. This is useful for features that you want to be able to toggle (like toggling rgb layer indication).  Additionally, you can use `eeconfig_init_kb` and `eeconfig_init_user` to set the default values for the EEPROM.
 
 The complicated part here, is that there are a bunch of ways that you can store and access data via EEPROM, and there is no "correct" way to do this.  However, you only have a DWORD (4 bytes) for each function.
 
 Keep in mind that EEPROM has a limited number of writes. While this is very high, it's not the only thing writing to the EEPROM, and if you write too often, you can potentially drastically shorten the life of your MCU.
 
-* If you don't understand the example, then you may want to avoid using this feature, as it is rather complicated. 
+* If you don't understand the example, then you may want to avoid using this feature, as it is rather complicated.
 
 ### Example Implementation
 
-This is an example of how to add settings, and read and write it. We're using the user keymap for the example here.  This is a complex function, and has a lot going on.  In fact, it uses a lot of the above functions to work! 
+This is an example of how to add settings, and read and write it. We're using the user keymap for the example here.  This is a complex function, and has a lot going on.  In fact, it uses a lot of the above functions to work!
 
 
 In your keymap.c file, add this to the top:
@@ -291,11 +299,11 @@ typedef union {
 user_config_t user_config;
 ```
 
-This sets up a 32 bit structure that we can store settings with in memory, and write to the EEPROM. Using this removes the need to define variables, since they're defined in this structure. Remember that `bool` (boolean) values use 1 bit, `uint8_t` uses 8 bits, `uint16_t` uses up 16 bits.  You can mix and match, but changing the order can cause issues, as it will change the values that are read and written. 
+This sets up a 32 bit structure that we can store settings with in memory, and write to the EEPROM. Using this removes the need to define variables, since they're defined in this structure. Remember that `bool` (boolean) values use 1 bit, `uint8_t` uses 8 bits, `uint16_t` uses up 16 bits.  You can mix and match, but changing the order can cause issues, as it will change the values that are read and written.
 
-We're using `rgb_layer_change`, for the `layer_state_set_*` function, and use `keyboard_post_init_user` and `process_record_user` to configure everything. 
+We're using `rgb_layer_change`, for the `layer_state_set_*` function, and use `keyboard_post_init_user` and `process_record_user` to configure everything.
 
-Now, using the `keyboard_post_init_user` code above, you want to add `eeconfig_read_user()` to it, to populate the structure you've just created. And you can then immediately use this structure to control functionality in your keymap.  And It should look like: 
+Now, using the `keyboard_post_init_user` code above, you want to add `eeconfig_read_user()` to it, to populate the structure you've just created. And you can then immediately use this structure to control functionality in your keymap.  And It should look like:
 ```c
 void keyboard_post_init_user(void) {
   // Call the keymap level matrix init.
@@ -311,7 +319,7 @@ void keyboard_post_init_user(void) {
   }
 }
 ```
-The above function will use the EEPROM config immediately after reading it, to set the default layer's RGB color. The "raw" value of it is converted in a usable structure based on the "union" that you created above. 
+The above function will use the EEPROM config immediately after reading it, to set the default layer's RGB color. The "raw" value of it is converted in a usable structure based on the "union" that you created above.
 
 ```c
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -375,7 +383,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
 }
 ```
-And lastly, you want to add the `eeconfig_init_user` function, so that when the EEPROM is reset, you can specify default values, and even custom actions. To force an EEPROM reset, use the `EEP_RST` keycode or [Bootmagic](feature_bootmagic.md) functionallity. For example, if you want to set rgb layer indication by default, and save the default valued. 
+And lastly, you want to add the `eeconfig_init_user` function, so that when the EEPROM is reset, you can specify default values, and even custom actions. To force an EEPROM reset, use the `EEP_RST` keycode or [Bootmagic Lite](feature_bootmagic.md) functionallity. For example, if you want to set rgb layer indication by default, and save the default valued.
 
 ```c
 void eeconfig_init_user(void) {  // EEPROM is getting reset!
@@ -390,11 +398,78 @@ void eeconfig_init_user(void) {  // EEPROM is getting reset!
 }
 ```
 
-And you're done.  The RGB layer indication will only work if you want it to. And it will be saved, even after unplugging the board. And if you use any of the RGB codes, it will disable the layer indication, so that it stays on the mode and color that you set it to. 
+And you're done.  The RGB layer indication will only work if you want it to. And it will be saved, even after unplugging the board. And if you use any of the RGB codes, it will disable the layer indication, so that it stays on the mode and color that you set it to.
 
 ### 'EECONFIG' Function Documentation
 
 * Keyboard/Revision: `void eeconfig_init_kb(void)`, `uint32_t eeconfig_read_kb(void)` and `void eeconfig_update_kb(uint32_t val)`
 * Keymap: `void eeconfig_init_user(void)`, `uint32_t eeconfig_read_user(void)` and `void eeconfig_update_user(uint32_t val)`
 
-The `val` is the value of the data that you want to write to EEPROM.  And the `eeconfig_read_*` function return a 32 bit (DWORD) value from the EEPROM. 
+The `val` is the value of the data that you want to write to EEPROM.  And the `eeconfig_read_*` function return a 32 bit (DWORD) value from the EEPROM.
+
+### Deferred Execution {: id=deferred-execution }
+
+QMK has the ability to execute a callback after a specified period of time, rather than having to manually manage timers.
+
+#### Deferred executor callbacks
+
+All _deferred executor callbacks_ have a common function signature and look like:
+
+```c
+uint32_t my_callback(uint32_t trigger_time, void *cb_arg) {
+    /* do something */
+    bool repeat = my_deferred_functionality();
+    return repeat ? 500 : 0;
+}
+```
+
+The first argument `trigger_time` is the intended time of execution. If other delays prevent executing at the exact trigger time, this allows for "catch-up" or even skipping intervals, depending on the required behaviour.
+
+The second argument `cb_arg` is the same argument passed into `defer_exec()` below, and can be used to access state information from the original call context.
+
+The return value is the number of milliseconds to use if the function should be repeated -- if the callback returns `0` then it's automatically unregistered. In the example above, a hypothetical `my_deferred_functionality()` is invoked to determine if the callback needs to be repeated -- if it does, it reschedules for a `500` millisecond delay, otherwise it informs the deferred execution background task that it's done, by returning `0`.
+
+!!! info
+    Note that the returned delay will be applied to the intended trigger time, not the time of callback invocation. This allows for generally consistent timing even in the face of occasional late execution.
+
+#### Deferred executor registration
+
+Once a callback has been defined, it can be scheduled using the following API:
+
+```c
+deferred_token my_token = defer_exec(1500, my_callback, NULL);
+```
+
+The first argument is the number of milliseconds to wait until executing `my_callback` -- in the case above, `1500` milliseconds, or 1.5 seconds.
+
+The third parameter is the `cb_arg` that gets passed to the callback at the point of execution. This value needs to be valid at the time the callback is invoked -- a local function value will be destroyed before the callback is executed and should not be used. If this is not required, `NULL` should be used.
+
+The return value is a `deferred_token` that can consequently be used to cancel the deferred executor callback before it's invoked. If a failure occurs, the returned value will be `INVALID_DEFERRED_TOKEN`. Usually this will be as a result of supplying `0` to the delay, or a `NULL` for the callback. The other failure case is if there are too many deferred executions "in flight" -- this can be increased by changing the limit, described below.
+
+#### Extending a deferred execution
+
+The `deferred_token` returned by `defer_exec()` can be used to extend a the duration a pending execution waits before it gets invoked:
+```c
+// This will re-delay my_token's future execution such that it is invoked 800ms after the current time
+extend_deferred_exec(my_token, 800);
+```
+
+#### Cancelling a deferred execution
+
+The `deferred_token` returned by `defer_exec()` can be used to cancel a pending execution before it gets invoked:
+```c
+// This will cancel my_token's future execution
+cancel_deferred_exec(my_token);
+```
+
+Once a token has been canceled, it should be considered invalid. Reusing the same token is not supported.
+
+#### Deferred callback limits
+
+There are a maximum number of deferred callbacks that can be scheduled, controlled by the value of the define `MAX_DEFERRED_EXECUTORS`.
+
+If registrations fail, then you can increase this value in your keyboard or keymap `config.h` file, for example to 16 instead of the default 8:
+
+```c
+#define MAX_DEFERRED_EXECUTORS 16
+```

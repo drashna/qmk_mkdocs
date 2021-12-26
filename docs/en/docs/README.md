@@ -6,6 +6,8 @@ QMK (*Quantum Mechanical Keyboard*) is an open source community centered around 
 
 ## Get Started
 
+<!-- tabs:start -->
+
 === "Basic"
 
     [QMK Configurator](tutorial_building_firmware_configurator.md)
@@ -17,6 +19,8 @@ QMK (*Quantum Mechanical Keyboard*) is an open source community centered around 
     [Use The Source](tutorial.md)
 
     More powerful, but harder to use.
+
+<!-- tabs:end -->
 
 ## Make It Yours
 

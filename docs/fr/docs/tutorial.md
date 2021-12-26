@@ -8,15 +8,15 @@ Vous voulez savoir si votre clavier peut utiliser QMK? Si c'est un clavier méca
 
 Il y a 7 sections principales dans ce guide:
 
-* [Pour débuter](tutorial_getting_started.md)
-* [Compiler votre premier firmware en utilisant la ligne de commande](tutorial_building_firmware.md)
-* [Compiler votre premier firmware en utilisant l'interface graphique en ligne](tutorial_building_firmware_configurator.md)
-* [Flasher le Firmware](tutorial_flashing.md)
-* [Test et Débuggage](tutorial_testing_debugging.md)
-* [Bonnes pratiques Git](tutorial_best_practices.md)
-* [Ressources d'apprentissage](tutorial_learn_more_resources.md)
+* [Pour débuter](fr-FR/tutorial_getting_started.md)
+* [Compiler votre premier firmware en utilisant la ligne de commande](fr-FR/tutorial_building_firmware.md)
+* [Compiler votre premier firmware en utilisant l'interface graphique en ligne](fr-FR/tutorial_building_firmware_configurator.md)
+* [Flasher le Firmware](fr-FR/tutorial_flashing.md)
+* [Test et Débuggage](fr-FR/tutorial_testing_debugging.md)
+* [Bonnes pratiques Git](fr-FR/tutorial_best_practices.md)
+* [Ressources d'apprentissage](fr-FR/tutorial_learn_more_resources.md)
 
-Ce guide a pour but principal d'aider quelqu'un qui n'a jamais compilé de logiciel avant. Les recommandations et les choix qu'il contient vont donc dans ce sens. Il y a des méthodes alternatives pour beaucoup de ces procédures, et nous supportons la plupart de ces alternatives. Si vous avez un doute sur comment accomplir une tâche, vous pouvez [nous demander de l'aide](support.md).
+Ce guide a pour but principal d'aider quelqu'un qui n'a jamais compilé de logiciel avant. Les recommandations et les choix qu'il contient vont donc dans ce sens. Il y a des méthodes alternatives pour beaucoup de ces procédures, et nous supportons la plupart de ces alternatives. Si vous avez un doute sur comment accomplir une tâche, vous pouvez [nous demander de l'aide](fr-FR/getting_started_getting_help.md).
 
 ## Ressources additionnelles
 

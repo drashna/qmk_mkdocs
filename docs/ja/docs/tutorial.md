@@ -19,22 +19,22 @@ QMK は、簡単なことは簡単に、そして、難しいことを可能な�
 QMK は[多くの趣味のキーボード](https://qmk.fm/keyboards/)をサポートしています。
 現在使用しているキーボードが QMK を実行できない場合、QMK を実行できるキーボードの選択肢はたくさんあります。
 
-!!! question "このガイドは私のためにあるのでしょうか？"
-    もし、プログラミングの考え方に抵抗があるのであれば、代わりに[私たちのオンライン GUI](tutorial_building_firmware_configurator.md) を見てみてください。
+!!! question "*このガイドは私のためにあるのでしょうか"
+    もし、プログラミングの考え方に抵抗があるのであれば、代わりに[私たちのオンライン GUI](ja/tutorial_building_firmware_configurator.md) を見てみてください。
 
 ## 概要
 
 このガイドは、ソースコードを使ってキーボードのファームウェアを構築したいと考えている人に適しています。 もしあなたがすでにプログラマーであれば、このプロセスはとても身近で簡単に理解できるでしょう。このガイドには3つの主要なセクションがあります:
 
-1. [環境設定](tutorial_getting_started.md)
-2. [コマンドラインを使用して初めてのファームウェアを構築する](tutorial_building_firmware.md)
-3. [ファームウェアを書きこむ](tutorial_flashing.md)
+1. [環境設定](ja/tutorial_getting_started.md)
+2. [コマンドラインを使用して初めてのファームウェアを構築する](ja/tutorial_building_firmware.md)
+3. [ファームウェアを書きこむ](ja/tutorial_flashing.md)
 
 このガイドは、これまでソフトウェアをコンパイルしたことがない人を支援することに特化しています。
 その観点から選択と推奨を行います。
 これらの手順の多くには代替方法があり、これらの代替方法のほとんどをサポートしています。
-タスクを達成する方法について疑問がある場合は、[案内を求めることができます](support.md)。
+タスクを達成する方法について疑問がある場合は、[案内を求めることができます](ja/getting_started_getting_help.md)。
 
 ## 追加のリソース
 
-このガイドの他にも、QMK の学習に役立つリソースがいくつかあります。[シラバス](syllabus.md)と[学習リソース](tutorial_learn_more_resources.md)のページにまとめました。
+このガイドの他にも、QMK の学習に役立つリソースがいくつかあります。[シラバス](ja/syllabus.md)と[学習リソース](ja/tutorial_learn_more_resources.md)のページにまとめました。

@@ -9,12 +9,12 @@ QMK API は、Web と GUI ツールが [QMK](https://qmk.fm/) によってサポ
 
 ## アプリケーション開発者
 
-もしあなたがアプリケーションでこの API を使うことに興味があるアプリケーション開発者であれば、[API の使用](api_docs.md) に行くべきです。
+もしあなたがアプリケーションでこの API を使うことに興味があるアプリケーション開発者であれば、[API の使用](ja/api_docs.md) に行くべきです。
 
 ## キーボードのメンテナ
 
-もし QMK Compiler API でのあなたのキーボードのサポートを強化したい場合は、[キーボードサポート](reference_configurator_support.md) の節に行くべきです。
+もし QMK Compiler API でのあなたのキーボードのサポートを強化したい場合は、[キーボードサポート](ja/reference_configurator_support.md) の節に行くべきです。
 
 ## バックエンド開発者
 
-もし API 自体に取り組むことに興味がある場合は、[開発環境](api_development_environment.md)のセットアップから始め、それから [API のハッキング](api_development_overview.md) を調べるべきです。
+もし API 自体に取り組むことに興味がある場合は、[開発環境](ja/api_development_environment.md)のセットアップから始め、それから [API のハッキング](ja/api_development_overview.md) を調べるべきです。

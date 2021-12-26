@@ -57,7 +57,7 @@ Keycode Entry is accomplished in one of 3 ways:
 When you're satisfied with your keymap or just want to work on it later, press the `Export Keymap` button. It will save your keymap to your computer. You can then load this .json file in the future by pressing the `Import Keymap` button.
 
 !!! danger
-    This is not the same type of .json file used for kbfirmware.com or any other tool. If you try to use this for those tools, or the .json from those tools with QMK Configurator, you will encounter problems.
+    **CAUTION:** This is not the same type of .json file used for kbfirmware.com or any other tool. If you try to use this for those tools, or the .json from those tools with QMK Configurator, you will encounter problems.
 
 ## Step 6: Compile Your Firmware File
 

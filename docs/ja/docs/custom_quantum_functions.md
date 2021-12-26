@@ -7,7 +7,7 @@
 
 多くの人にとって、カスタムキーボードはボタンの押下をコンピュータに送信するだけではありません。単純なボタンの押下やマクロよりも複雑なことを実行できるようにしたいでしょう。QMK にはコードを挿入したり、機能を上書きしたり、様々な状況でキーボードの挙動をカスタマイズできるフックがあります。
 
-このページでは、QMK に関する特別な知識は想定していませんが、[QMK の理解](understanding_qmk.md)を読むとより根本的なレベルで何が起きているかを理解するのに役立ちます。
+このページでは、QMK に関する特別な知識は想定していませんが、[QMK の理解](ja/understanding_qmk.md)を読むとより根本的なレベルで何が起きているかを理解するのに役立ちます。
 
 ## コア、キーボード、キーマップ階層 {: id=a-word-on-core-vs-keyboards-vs-keymap }
 
@@ -133,7 +133,7 @@ void keyboard_pre_init_user(void) {
 }
 ```
 
-### `keyboard_pre_init_*` 関数のドキュメント {: id=keyboard }_pre_init_-function-documentation
+### `keyboard_pre_init_*` 関数のドキュメント {: id=keyboard_pre_init_-function-documentation }
 
 * キーボード/リビジョン: `void keyboard_pre_init_kb(void)`
 * キーマップ: `void keyboard_pre_init_user(void)`
@@ -212,11 +212,11 @@ void keyboard_post_init_user(void) {
 
 ```c
 void suspend_power_down_user(void) {
-    rgb_matrix_set_suspend_state(true);
+    // code will run multiple times while keyboard is suspended
 }
 
 void suspend_wakeup_init_user(void) {
-    rgb_matrix_set_suspend_state(false);
+    // code will run on keyboard wakeup
 }
 ```
 
@@ -231,7 +231,7 @@ void suspend_wakeup_init_user(void) {
 
 ### `layer_state_set_*` の実装例
 
-この例は、レイヤーに基づいて [RGB アンダーグロー](feature_rgblight.md)を設定する方法を示していて、Planck を例として使っています。
+この例は、レイヤーに基づいて [RGB アンダーグロー](ja/feature_rgblight.md)を設定する方法を示していて、Planck を例として使っています。
 
 ```c
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -266,7 +266,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 * キーマップ: `layer_state_t layer_state_set_user(layer_state_t state)`
 
 
-[キーマップの概要](keymap.md#keymap-layer-status)で説明されるように、`state` はアクティブなレイヤーのビットマスクです。
+[キーマップの概要](ja/keymap.md#keymap-layer-status)で説明されるように、`state` はアクティブなレイヤーのビットマスクです。
 
 
 # 永続的な設定 (EEPROM)
@@ -379,7 +379,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
 }
 ```
-最後に、`eeconfig_init_user` 関数を追加して、EEPROM がリセットされた時にデフォルト値、さらにはカスタムアクションを指定できるようにします。EEPROM を強制的にリセットするには、`EEP_RST` キーコードあるいは[ブートマジック](feature_bootmagic.md)機能を使います。例えば、デフォルトで rgb レイヤー表示を設定し、デフォルト値を保存したい場合。
+最後に、`eeconfig_init_user` 関数を追加して、EEPROM がリセットされた時にデフォルト値、さらにはカスタムアクションを指定できるようにします。EEPROM を強制的にリセットするには、`EEP_RST` キーコードあるいは[ブートマジック](ja/feature_bootmagic.md)機能を使います。例えば、デフォルトで rgb レイヤー表示を設定し、デフォルト値を保存したい場合。
 
 ```c
 void eeconfig_init_user(void) {  // EEPROM がリセットされます！

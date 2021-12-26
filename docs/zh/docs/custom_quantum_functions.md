@@ -213,7 +213,7 @@ void keyboard_pre_init_user(void) {
 
 ## 矩阵初始化代码
 
-这将会在矩阵初始化时被调用，在某些硬件设置好后，但在一些功能被初始化前。 
+这将会在矩阵初始化时被调用，在某些硬件设置好后，但在一些功能被初始化前。
 
 这在你设置其他地方会用到的东西的时候会很有用，但与硬件无关，也不依赖于它的启动位置。
 
@@ -277,11 +277,11 @@ void keyboard_post_init_user(void) {
 
 ```c
 void suspend_power_down_user(void) {
-    rgb_matrix_set_suspend_state(true);
+    // code will run multiple times while keyboard is suspended
 }
 
 void suspend_wakeup_init_user(void) {
-    rgb_matrix_set_suspend_state(false);
+    // code will run on keyboard wakeup
 }
 ```
 
@@ -299,7 +299,7 @@ void suspend_wakeup_init_user(void) {
 本例使用了Planck键盘示范了如何设置 [RGB背光灯](feature_rgblight.md)使之与层对应
 
 ```c
-uint32_t layer_state_set_user(uint32_t state) {
+layer_state_t layer_state_set_user(layer_state_t state) {
     switch (biton32(state)) {
     case _RAISE:
         rgblight_setrgb (0x00,  0x00, 0xFF);
@@ -323,7 +323,7 @@ uint32_t layer_state_set_user(uint32_t state) {
 ### `layer_state_set_*` 函数文档
 
 * 键盘/修订: `uint32_t layer_state_set_kb(uint32_t state)`
-* 布局: `uint32_t layer_state_set_user(uint32_t state)`
+* 布局: `layer_state_t layer_state_set_user(layer_state_t state)`
 
 
 该`状态`是活动层的bitmask, 详见[布局概述](keymap.md#布局的层状态)
@@ -331,7 +331,7 @@ uint32_t layer_state_set_user(uint32_t state) {
 
 # 掉电保存配置 (EEPROM)
 
-这会让你的配置长期的保存在键盘中。这些配置保存在你主控的EEPROM里，掉电不会消失。 设置可以用`eeconfig_read_kb`和`eeconfig_read_user`读取，可以用`eeconfig_update_kb`和`eeconfig_update_user`写入。这对于您希望能够切换的功能很有用(比如切换RGB层指示。此外，你可以用`eeconfig_init_kb`和`eeconfig_init_user`来设置EEPROM默认值。 
+这会让你的配置长期的保存在键盘中。这些配置保存在你主控的EEPROM里，掉电不会消失。 设置可以用`eeconfig_read_kb`和`eeconfig_read_user`读取，可以用`eeconfig_update_kb`和`eeconfig_update_user`写入。这对于您希望能够切换的功能很有用(比如切换RGB层指示。此外，你可以用`eeconfig_init_kb`和`eeconfig_init_user`来设置EEPROM默认值。
 
 最复杂的部分可能是，有很多方法可以通过EEPROM存储和访问数据，并且并没有用哪种方法是“政治正确”的。你每个功能只有一个双字(四字节)空间。
 
@@ -356,11 +356,11 @@ typedef union {
 user_config_t user_config;
 ```
 
-以上代码建立了一个结构体，该结构体可以存储设置并可用于写入EEPROM。如此这般将无需定义变量，因为在结构体中已然定义。要记住`bool` (布尔)值使用1位, `uint8_t`使用8位, `uint16_t`使用16位。你可以混合搭配使用，但是顺序记错可能会招致麻烦，因为那会改变写入写出的值。 
+以上代码建立了一个结构体，该结构体可以存储设置并可用于写入EEPROM。如此这般将无需定义变量，因为在结构体中已然定义。要记住`bool` (布尔)值使用1位, `uint8_t`使用8位, `uint16_t`使用16位。你可以混合搭配使用，但是顺序记错可能会招致麻烦，因为那会改变写入写出的值。
 
  `layer_state_set_*`函数中使用了`rgb_layer_change`，使用了`keyboard_post_init_user`和`process_record_user`来配置一切。
 
-首先要使用`keyboard_post_init_user，你要加入`eeconfig_read_user()`来填充你刚刚创建的结构体。然后您可以立即使用这个结构来控制您的布局中的功能。就像这样： 
+首先要使用`keyboard_post_init_user，你要加入`eeconfig_read_user()`来填充你刚刚创建的结构体。然后您可以立即使用这个结构来控制您的布局中的功能。就像这样：
 ```c
 void keyboard_post_init_user(void) {
   // 调用布局级别的矩阵初始化
@@ -371,15 +371,15 @@ void keyboard_post_init_user(void) {
   // 如使能，设置默认层
   if (user_config.rgb_layer_change) {
     rgblight_enable_noeeprom();
-    rgblight_sethsv_noeeprom_cyan(); 
+    rgblight_sethsv_noeeprom_cyan();
     rgblight_mode_noeeprom(1);
   }
 }
 ```
-以上函数会在读EEPROM配置后立即使用该设置来设置默认层RGB颜色。"raw"的值是从你上面基于"union"创建的结构体中转换来的。 
+以上函数会在读EEPROM配置后立即使用该设置来设置默认层RGB颜色。"raw"的值是从你上面基于"union"创建的结构体中转换来的。
 
 ```c
-uint32_t layer_state_set_user(uint32_t state) {
+layer_state_t layer_state_set_user(layer_state_t state) {
     switch (biton32(state)) {
     case _RAISE:
         if (user_config.rgb_layer_change) { rgblight_sethsv_noeeprom_magenta(); rgblight_mode_noeeprom(1); }
@@ -419,7 +419,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return true; // 让QMK产生回车按下/释放事件
     case RGB_LYR:  // 本句让underglow作为层指示，或正常使用。
-        if (record->event.pressed) { 
+        if (record->event.pressed) {
             user_config.rgb_layer_change ^= 1; // 切换状态
             eeconfig_update_user(user_config.raw); // 向EEPROM写入新状态
             if (user_config.rgb_layer_change) { // 如果层状态被使能
@@ -430,7 +430,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case RGB_MODE_FORWARD ... RGB_MODE_GRADIENT: // 对于所有的RGB代码 (see quantum_keycodes.h, L400 可以参考)
         if (record->event.pressed) { //本句失能层指示，假设你改变了这个…你要把它禁用
             if (user_config.rgb_layer_change) {        // 仅当使能时
-                user_config.rgb_layer_change = false;  // 失能，然后 
+                user_config.rgb_layer_change = false;  // 失能，然后
                 eeconfig_update_user(user_config.raw); // 向EEPROM写入设置
             }
         }
@@ -455,7 +455,7 @@ void eeconfig_init_user(void) {  // EEPROM正被重置
 }
 ```
 
-然后就完事了。RGB层指示会在你想让它工作时工作。这个设置会一直保存，即便你拔下键盘。如果你使用其他RGB代码，层指示将失能，现在它可以做你所想了。 
+然后就完事了。RGB层指示会在你想让它工作时工作。这个设置会一直保存，即便你拔下键盘。如果你使用其他RGB代码，层指示将失能，现在它可以做你所想了。
 
 ### 'EECONFIG' 函数文档
 
@@ -472,7 +472,7 @@ void eeconfig_init_user(void) {  // EEPROM正被重置
 
 ## `get_tapping_term`示例实现
 
-想要修改基于键码的`TAPPING TERM`,你要向`keymap.c`文件添加如下代码: 
+想要修改基于键码的`TAPPING TERM`,你要向`keymap.c`文件添加如下代码:
 
 ```c
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {

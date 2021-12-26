@@ -118,19 +118,19 @@ AからZを含むアルファベット文字を自動シフトしません。
 
     hello world. my name is john doe. i am a computer programmer playing with
     keyboards right now.
-    
-     [KC_ASDN を何度か押します] 
-    
+
+     [KC_ASDN を何度か押します]
+
     heLLo woRLd. mY nAMe is JOHn dOE. i AM A compUTeR proGRaMMER PlAYiNG witH
     KEYboArDS RiGHT NOw.
-    
-     [KC_ASUP を数回押します] 
-    
+
+     [KC_ASUP を数回押します]
+
     hello world. my name is john Doe. i am a computer programmer playing with
     keyboarDs right now.
-    
-     [KC_ASRPを押します] 
-    
+
+     [KC_ASRPを押します]
+
     115
 
 キーボードは現在の `AUTO_SHIFT_TIMEOUT` 値を表す `115` を入力しました。これで設定が完了しました！テスト中に現れる *D* キーを少し練習してください。それで完璧です。

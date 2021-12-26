@@ -1,6 +1,6 @@
 # Foire aux questions sur la compilation
 
-Cette page couvre les questions concernant la compilation de QMK. Si vous ne l'avez pas encore fait, vous devriez lire les guides [Configuration de l'environnement de build](tutorial_getting_started.md) et [Instructions pour Make](getting_started_make_guide.md).
+Cette page couvre les questions concernant la compilation de QMK. Si vous ne l'avez pas encore fait, vous devriez lire les guides [Configuration de l'environnement de build](getting_started_build_tools.md) et [Instructions pour Make](getting_started_make_guide.md).
 
 ## Je ne peux pas programmer sous Linux
 

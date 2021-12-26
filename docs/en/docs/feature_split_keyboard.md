@@ -1,16 +1,15 @@
-# Split Keyboard 
+# Split Keyboard
 
-Many keyboards in the QMK Firmware repo are "split" keyboards. They use two controllers—one plugging into USB, and the second connected by a serial or an I<sup>2</sup>C connection over a TRRS or similar cable. 
+Many keyboards in the QMK Firmware repo are "split" keyboards. They use two controllers—one plugging into USB, and the second connected by a serial or an I<sup>2</sup>C connection over a TRRS or similar cable.
 
-Split keyboards can have a lot of benefits, but there is some additional work needed to get them enabled.  
+Split keyboards can have a lot of benefits, but there is some additional work needed to get them enabled.
 
-QMK Firmware has a generic implementation that is usable by any board, as well as numerous board specific implementations. 
+QMK Firmware has a generic implementation that is usable by any board, as well as numerous board specific implementations.
 
-For this, we will mostly be talking about the generic implementation used by the Let's Split and other keyboards. 
+For this, we will mostly be talking about the generic implementation used by the Let's Split and other keyboards.
 
 !!! info
-    ARM is not yet fully supported for Split Keyboards and has many limitations. Progress is being made, but we have not yet reached 100% feature parity.
-
+    ARM split supports most QMK subsystems when using the 'serial' and 'serial_usart' drivers. I2C slave is currently unsupported.
 
 ## Compatibility Overview
 
@@ -25,32 +24,32 @@ Notes:
 
 ## Hardware Configuration
 
-This assumes that you're using two Pro Micro-compatible controllers, and are using TRRS jacks to connect to two halves. 
+This assumes that you're using two Pro Micro-compatible controllers, and are using TRRS jacks to connect to two halves.
 
 ### Required Hardware
 
 Apart from diodes and key switches for the keyboard matrix in each half, you will need 2x TRRS sockets and 1x TRRS cable.
 
-Alternatively, you can use any sort of cable and socket that has at least 3 wires. 
+Alternatively, you can use any sort of cable and socket that has at least 3 wires.
 
 If you want to use I<sup>2</sup>C to communicate between halves, you will need a cable with at least 4 wires and 2x 4.7kΩ pull-up resistors.
 
-#### Considerations 
+#### Considerations
 
-The most commonly used connection is a TRRS cable and jacks.  These provide 4 wires, making them very useful for split keyboards, and are easy to find. 
+The most commonly used connection is a TRRS cable and jacks.  These provide 4 wires, making them very useful for split keyboards, and are easy to find.
 
-However, since one of the wires carries VCC, this means that the boards are not hot pluggable. You should always disconnect the board from USB before unplugging and plugging in TRRS cables, or you can short the controller, or worse. 
+However, since one of the wires carries VCC, this means that the boards are not hot pluggable. You should always disconnect the board from USB before unplugging and plugging in TRRS cables, or you can short the controller, or worse.
 
-Another option is to use phone cables (as in, old school RJ-11/RJ-14 cables). Make sure that you use one that actually supports 4 wires/lanes.  
+Another option is to use phone cables (as in, old school RJ-11/RJ-14 cables). Make sure that you use one that actually supports 4 wires/lanes.
 
-However, USB cables, SATA cables, and even just 4 wires have been known to be used for communication between the controllers. 
+However, USB cables, SATA cables, and even just 4 wires have been known to be used for communication between the controllers.
 
 !!! tip
-    Using USB cables for communication between the controllers works just fine, but the connector could be mistaken for a normal USB connection and potentially short out the keyboard, depending on how it's wired.  For this reason, they are not recommended for connecting split keyboards.  
+    Using USB cables for communication between the controllers works just fine, but the connector could be mistaken for a normal USB connection and potentially short out the keyboard, depending on how it's wired.  For this reason, they are not recommended for connecting split keyboards.
 
 ### Serial Wiring
 
-The 3 wires of the TRS/TRRS cable need to connect GND, VCC, and D0/D1/D2/D3 (aka PD0/PD1/PD2/PD3) between the two Pro Micros. 
+The 3 wires of the TRS/TRRS cable need to connect GND, VCC, and D0/D1/D2/D3 (aka PD0/PD1/PD2/PD3) between the two Pro Micros.
 
 !!! note
     The pin used here is actually set by `SOFT_SERIAL_PIN` below.
@@ -60,7 +59,7 @@ The 3 wires of the TRS/TRRS cable need to connect GND, VCC, and D0/D1/D2/D3 (aka
 
 ### I<sup>2</sup>C Wiring
 
-The 4 wires of the TRRS cable need to connect GND, VCC, and SCL and SDA (aka PD0/pin 3 and PD1/pin 2, respectively) between the two Pro Micros. 
+The 4 wires of the TRRS cable need to connect GND, VCC, and SCL and SDA (aka PD0/pin 3 and PD1/pin 2, respectively) between the two Pro Micros.
 
 The pull-up resistors may be placed on either half. If you wish to use the halves independently, it is also possible to use 4 resistors and have the pull-ups in both halves.
 Note that the total resistance for the connected system should be within spec at 2.2k-10kOhm, with an 'ideal' at 4.7kOhm, regardless of the placement and number.
@@ -69,13 +68,13 @@ Note that the total resistance for the connected system should be within spec at
 
 ## Firmware Configuration
 
-To enable the split keyboard feature, add the following to your `rules.mk`: 
+To enable the split keyboard feature, add the following to your `rules.mk`:
 
 ```make
 SPLIT_KEYBOARD = yes
 ```
 
-If you're using a custom transport (communication method), then you will also need to add: 
+If you're using a custom transport (communication method), then you will also need to add:
 
 ```make
 SPLIT_TRANSPORT = custom
@@ -93,7 +92,13 @@ You can configure the firmware to read a pin on the controller to determine hand
 #define SPLIT_HAND_PIN B7
 ```
 
-This will read the specified pin. If it's high, then the controller assumes it is the left hand, and if it's low, it's assumed to be the right side. 
+This will read the specified pin. By default, if it's high, then the controller assumes it is the left hand, and if it's low, it's assumed to be the right side.
+
+This behaviour can be flipped by adding this to you `config.h` file:
+
+```c
+#define	SPLIT_HAND_PIN_LOW_IS_LEFT
+```
 
 #### Handedness by Matrix Pin
 
@@ -119,16 +124,16 @@ While `MATRIX_MASKED` isn't necessary to use `SPLIT_HAND_MATRIX_GRID` successful
 
 #### Handedness by EEPROM
 
-This method sets the keyboard's handedness by setting a flag in the persistent storage (`EEPROM`).  This is checked when the controller first starts up, and determines what half the keyboard is, and how to orient the keyboard layout. 
+This method sets the keyboard's handedness by setting a flag in the persistent storage (`EEPROM`).  This is checked when the controller first starts up, and determines what half the keyboard is, and how to orient the keyboard layout.
 
 
-To enable this method, add the following to your `config.h` file: 
+To enable this method, add the following to your `config.h` file:
 
 ```c
 #define EE_HANDS
 ```
 
-However, you'll have to flash the EEPROM files for the correct hand to each controller.  You can do this manually, or there are targets for avrdude and dfu to do this, while flashing the firmware: 
+However, you'll have to flash the EEPROM files for the correct hand to each controller.  You can do this manually, or there are targets for avrdude and dfu to do this, while flashing the firmware:
 
 * `:avrdude-split-left`
 * `:avrdude-split-right`
@@ -143,9 +148,9 @@ Example:
 make crkbd:default:avrdude-split-left
 ```
 
-This setting is not changed when re-initializing the EEPROM using the `EEP_RST` key, or using the `eeconfig_init()` function.  However, if you reset the EEPROM outside of the firmware's built in options (such as flashing a file that overwrites the `EEPROM`, like how the [QMK Toolbox]()'s "Reset EEPROM" button works), you'll need to re-flash the controller with the `EEPROM` files. 
+This setting is not changed when re-initializing the EEPROM using the `EEP_RST` key, or using the `eeconfig_init()` function.  However, if you reset the EEPROM outside of the firmware's built in options (such as flashing a file that overwrites the `EEPROM`, like how the [QMK Toolbox]()'s "Reset EEPROM" button works), you'll need to re-flash the controller with the `EEPROM` files.
 
-You can find the `EEPROM` files in the QMK firmware repo, [here](https://github.com/qmk/qmk_firmware/tree/master/quantum/split_common). 
+You can find the `EEPROM` files in the QMK firmware repo, [here](https://github.com/qmk/qmk_firmware/tree/master/quantum/split_common).
 
 #### Handedness by `#define`
 
@@ -155,7 +160,7 @@ You can set the handedness at compile time.  This is done by adding the followin
 #define MASTER_RIGHT
 ```
 
-or 
+or
 
 ```c
 #define MASTER_LEFT
@@ -172,13 +177,13 @@ Because not every split keyboard is identical, there are a number of additional 
 #define USE_I2C
 ```
 
-This enables I<sup>2</sup>C support for split keyboards. This isn't strictly for communication, but can be used for OLED or other I<sup>2</sup>C-based devices. 
+This configures the use of I<sup>2</sup>C support for split keyboard transport (AVR only).
 
 ```c
 #define SOFT_SERIAL_PIN D0
 ```
 
-This sets the pin to be used for serial communication. If you're not using serial, you shouldn't need to define this.  
+This sets the pin to be used for serial communication. If you're not using serial, you shouldn't need to define this.
 
 However, if you are using serial and I<sup>2</sup>C on the board, you will need to set this, and to something other than D0 and D1 (as these are used for I<sup>2</sup>C communication).
 
@@ -196,24 +201,162 @@ If you're having issues with serial communication, you can change this value, as
 * **`5`**: about 20kbps
 
 ```c
-#define SPLIT_MODS_ENABLE
+#define FORCED_SYNC_THROTTLE_MS 100
 ```
 
-This enables transmitting modifier state (normal, weak and oneshot) to the non
-primary side of the split keyboard.  This adds a few bytes of data to the split
-communication protocol and may impact the matrix scan speed when enabled.
-The purpose of this feature is to support cosmetic use of modifer state (e.g.
-displaying status on an OLED screen).
+This sets the maximum number of milliseconds before forcing a synchronization of data from master to slave. Under normal circumstances this sync occurs whenever the data _changes_, for safety a data transfer occurs after this number of milliseconds if no change has been detected since the last sync.
+
+```c
+#define SPLIT_MAX_CONNECTION_ERRORS 10
+```
+This sets the maximum number of failed communication attempts (one per scan cycle) from the master part before it assumes that no slave part is connected. This makes it possible to use a master part without the slave part connected.
+
+Set to 0 to disable the disconnection check altogether.
+
+```c
+#define SPLIT_CONNECTION_CHECK_TIMEOUT 500
+```
+How long (in milliseconds) the master part should block all connection attempts to the slave after the communication has been flagged as disconnected (see `SPLIT_MAX_CONNECTION_ERRORS` above).
+
+One communication attempt will be allowed everytime this amount of time has passed since the last attempt. If that attempt succeeds, the communication is seen as working again.
+
+Set to 0 to disable this throttling of communications while disconnected. This can save you a couple of bytes of firmware size.
+
+
+### Data Sync Options
+
+The following sync options add overhead to the split communication protocol and may negatively impact the matrix scan speed when enabled. These can be enabled by adding the chosen option(s) to your `config.h` file.
 
 ```c
 #define SPLIT_TRANSPORT_MIRROR
 ```
 
-This mirrors the master side matrix to the slave side for features that react or require knowledge of master side key presses on the slave side.  This adds a few bytes of data to the split communication protocol and may impact the matrix scan speed when enabled. The purpose of this feature is to support cosmetic use of key events (e.g. RGB reacting to Keypresses).
+This mirrors the master side matrix to the slave side for features that react or require knowledge of master side key presses on the slave side. The purpose of this feature is to support cosmetic use of key events (e.g. RGB reacting to keypresses).
+
+```c
+#define SPLIT_LAYER_STATE_ENABLE
+```
+
+This enables syncing of the layer state between both halves of the split keyboard. The main purpose of this feature is to enable support for use of things like OLED display of the currently active layer.
+
+```c
+#define SPLIT_LED_STATE_ENABLE
+```
+
+This enables syncing of the Host LED status (caps lock, num lock, etc) between both halves of the split keyboard. The main purpose of this feature is to enable support for use of things like OLED display of the Host LED status.
+
+```c
+#define SPLIT_MODS_ENABLE
+```
+
+This enables transmitting modifier state (normal, weak and oneshot) to the non primary side of the split keyboard. The purpose of this feature is to support cosmetic use of modifer state (e.g. displaying status on an OLED screen).
+
+```c
+#define SPLIT_WPM_ENABLE
+```
+
+This enables transmitting the current WPM to the slave side of the split keyboard. The purpose of this feature is to support cosmetic use of WPM (e.g. displaying the current value on an OLED screen).
+
+```c
+#define SPLIT_OLED_ENABLE
+```
+
+This enables transmitting the current OLED on/off status to the slave side of the split keyboard. The purpose of this feature is to support state (on/off state only) syncing.
+
+```c
+#define SPLIT_ST7565_ENABLE
+```
+
+This enables transmitting the current ST7565 on/off status to the slave side of the split keyboard. The purpose of this feature is to support state (on/off state only) syncing.
+
+```c
+#define SPLIT_POINTING_ENABLE
+```
+
+This enables transmitting the pointing device status to the master side of the split keyboard. The purpose of this feature is to enable use pointing devices on the slave side.
+
+!!! warning
+    There is additional required configuration for `SPLIT_POINTING_ENABLE` outlined in the [pointing device documentation](feature_pointing_device.md?id=split-keyboard-configuration).
+
+### Custom data sync between sides {: id=custom-data-sync }
+
+QMK's split transport allows for arbitrary data transactions at both the keyboard and user levels. This is modelled on a remote procedure call, with the master invoking a function on the slave side, with the ability to send data from master to slave, process it slave side, and send data back from slave to master.
+
+To leverage this, a keyboard or user/keymap can define a comma-separated list of _transaction IDs_:
+
+```c
+// for keyboard-level data sync:
+#define SPLIT_TRANSACTION_IDS_KB KEYBOARD_SYNC_A, KEYBOARD_SYNC_B
+// or, for user:
+#define SPLIT_TRANSACTION_IDS_USER USER_SYNC_A, USER_SYNC_B, USER_SYNC_C
+```
+
+These _transaction IDs_ then need a slave-side handler function to be registered with the split transport, for example:
+
+```c
+typedef struct _master_to_slave_t {
+    int m2s_data;
+} master_to_slave_t;
+
+typedef struct _slave_to_master_t {
+    int s2m_data;
+} slave_to_master_t;
+
+void user_sync_a_slave_handler(uint8_t in_buflen, const void* in_data, uint8_t out_buflen, void* out_data) {
+    const master_to_slave_t *m2s = (const master_to_slave_t*)in_data;
+    slave_to_master_t *s2m = (slave_to_master_t*)out_data;
+    s2m->s2m_data = m2s->m2s_data + 5; // whatever comes in, add 5 so it can be sent back
+}
+
+void keyboard_post_init_user(void) {
+    transaction_register_rpc(USER_SYNC_A, user_sync_a_slave_handler);
+}
+```
+
+The master side can then invoke the slave-side handler - for normal keyboard functionality to be minimally affected, any keyboard- or user-level code attempting to sync data should be throttled:
+
+```c
+void housekeeping_task_user(void) {
+    if (is_keyboard_master()) {
+        // Interact with slave every 500ms
+        static uint32_t last_sync = 0;
+        if (timer_elapsed32(last_sync) > 500) {
+            master_to_slave_t m2s = {6};
+            slave_to_master_t s2m = {0};
+            if(transaction_rpc_exec(USER_SYNC_A, sizeof(m2s), &m2s, sizeof(s2m), &s2m)) {
+                last_sync = timer_read32();
+                dprintf("Slave value: %d\n", s2m.s2m_data); // this will now be 11, as the slave adds 5
+            } else {
+                dprint("Slave sync failed!\n");
+            }
+        }
+    }
+}
+```
+
+!!! warning
+    It is recommended that any data sync between halves happens during the master side's _housekeeping task_. This ensures timely retries should failures occur.
+
+If only one-way data transfer is needed, helper methods are provided:
+
+```c
+bool transaction_rpc_exec(int8_t transaction_id, uint8_t initiator2target_buffer_size, const void *initiator2target_buffer, uint8_t target2initiator_buffer_size, void *target2initiator_buffer);
+bool transaction_rpc_send(int8_t transaction_id, uint8_t initiator2target_buffer_size, const void *initiator2target_buffer);
+bool transaction_rpc_recv(int8_t transaction_id, uint8_t target2initiator_buffer_size, void *target2initiator_buffer);
+```
+
+By default, the inbound and outbound data is limited to a maximum of 32 bytes each. The sizes can be altered if required:
+
+```c
+// Master to slave:
+#define RPC_M2S_BUFFER_SIZE 48
+// Slave to master:
+#define RPC_S2M_BUFFER_SIZE 48
+```
 
 ###  Hardware Configuration Options
 
-There are some settings that you may need to configure, based on how the hardware is set up. 
+There are some settings that you may need to configure, based on how the hardware is set up.
 
 ```c
 #define MATRIX_ROW_PINS_RIGHT { <row pins> }
@@ -245,7 +388,7 @@ This option enables synchronization of the RGB Light modes between the controlle
 #define RGBLED_SPLIT { 6, 6 }
 ```
 
-This sets how many LEDs are directly connected to each controller.  The first number is the left side, and the second number is the right side.  
+This sets how many LEDs are directly connected to each controller.  The first number is the left side, and the second number is the right side.
 
 !!! info
     This setting implies that `RGBLIGHT_SPLIT` is enabled, and will forcibly enable it, if it's not.
@@ -300,7 +443,7 @@ You may need to use the 5V pad from the regulator block above as the pads were t
 
 ## Additional Resources
 
-Nicinabox has a [very nice and detailed guide](https://github.com/nicinabox/lets-split-guide) for the Let's Split keyboard, that covers most everything you need to know, including troubleshooting information. 
+Nicinabox has a [very nice and detailed guide](https://github.com/nicinabox/lets-split-guide) for the Let's Split keyboard, that covers most everything you need to know, including troubleshooting information.
 
 However, the RGB Light section is out of date, as it was written long before the RGB Split code was added to QMK Firmware. Instead, wire each strip up directly to the controller.
 

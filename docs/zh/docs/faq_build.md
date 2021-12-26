@@ -1,6 +1,6 @@
 # 关于构建的常见问题
 
-本页所写是QMK构建的常见问题.如果你还没有进行过编译,就看一下[构建环境搭建](tutorial_getting_started.md) 和 [make的说明](getting_started_make_guide.md).
+本页所写是QMK构建的常见问题.如果你还没有进行过编译,就看一下[构建环境搭建](getting_started_build_tools.md) 和 [make的说明](getting_started_make_guide.md).
 
 ## 如果您不能在Linux上编程
 您需要适当的权限才能操作设备。对于Linux用户, 请参阅下方有关`udev`规则的说明。如果您对`udev`有问题，解决方法是用`sudo`命令。如果您不熟悉此命令，使用`man sudo`查看其手册或[看这个网页](https://linux.die.net/man/8/sudo).
@@ -82,7 +82,7 @@ https://github.com/tmk/tmk_keyboard/issues/150
 OPT_DEFS += -DBOOTLOADER_SIZE=2048
 ```
 
-## 在MacOS上 `avr-gcc: internal compiler error: Abort trap: 6 (program cc1)` 
+## 在MacOS上 `avr-gcc: internal compiler error: Abort trap: 6 (program cc1)`
 这是brew更新的问题，导致AVR GCC依赖的符号链接被损坏。
 
 解决方案是移除并重新安装所有受影响的模块。

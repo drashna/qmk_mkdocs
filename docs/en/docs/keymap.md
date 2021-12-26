@@ -78,7 +78,7 @@ Note that ***higher layers have higher priority within the stack of layers***. T
          /  KC_TRNS  //
         /___________//   <--- Lower layer (KC_A)
         /___________/
-    
+
     In the above scenario, the non-transparent keys on the higher layer would be usable, but whenever `KC_TRNS` (or equivalent) is defined, the keycode (`KC_A`) on the lower level would be used.
 
 **Note:** Valid ways to denote transparency on a given layer:
@@ -105,9 +105,9 @@ At the top of the file you'll find this:
     #include QMK_KEYBOARD_H
 
     // Helpful defines
-    #define GRAVE_MODS  (MOD_BIT(KC_LSHIFT)|MOD_BIT(KC_RSHIFT)|MOD_BIT(KC_LGUI)|MOD_BIT(KC_RGUI)|MOD_BIT(KC_LALT)|MOD_BIT(KC_RALT))
+    #define GRAVE_MODS  (MOD_BIT(KC_LSFT)|MOD_BIT(KC_RSFT)|MOD_BIT(KC_LGUI)|MOD_BIT(KC_RGUI)|MOD_BIT(KC_LALT)|MOD_BIT(KC_RALT))
 
-    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      *  You can use _______ in place for KC_TRNS (transparent)   *
      *  Or you can use XXXXXXX for KC_NO (NOOP)                  *
      * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -164,7 +164,7 @@ Our function layer is, from a code point of view, no different from the base lay
 
     [_FL] = LAYOUT(
       KC_GRV,  KC_F1,   KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,   KC_F10,   KC_F11,   KC_F12,   _______, KC_DEL,           BL_STEP, \
-      _______, _______, _______,_______,_______,_______,_______,_______,KC_PSCR,KC_SLCK, KC_PAUS,  _______,  _______,  _______,                   _______, \
+      _______, _______, _______,_______,_______,_______,_______,_______,KC_PSCR,KC_SCRL, KC_PAUS,  _______,  _______,  _______,                   _______, \
       _______, _______, MO(_CL),_______,_______,_______,_______,_______,_______,_______, _______,  _______,  _______,  _______,                           \
       _______, _______, _______,_______,_______,_______,_______,_______,_______,_______, _______,  _______,  _______,  _______,          KC_PGUP,         \
       _______, _______, _______, _______,        _______,_______,                        _______,  _______,  _______,  MO(_FL), KC_HOME, KC_PGDN, KC_END),

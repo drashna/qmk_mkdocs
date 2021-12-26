@@ -14,11 +14,11 @@ QMK に貢献するプロセスを順を追って説明し、この作業を簡�
 
 このセクションは以下のことを前提としています:
 
-1. あなたは GitHub アカウントがあり、アカウントに [qmk_firmware リポジトリをフォーク](getting_started_github.md) している。
-2. あなたは、[環境構築](tutorial_getting_started.md#set-up-your-environment) と [QMK の設定](tutorial_getting_started.md#set-up-qmk) を両方とも完了している。
+1. あなたは GitHub アカウントがあり、アカウントに [qmk_firmware リポジトリをフォーク](ja/getting_started_github.md) している。
+2. あなたは、[環境構築](ja/tutorial_getting_started.md#set-up-your-environment) と [QMK の設定](ja/tutorial_getting_started.md#set-up-qmk) を両方とも完了している。
 
 ---
 
-- パート 1: [あなたのフォークの master ブランチ: 更新は頻繁に、コミットはしないこと](tutorial_git_using_your_master_branch.md)
-- パート 2: [マージの競合の解決](tutorial_git_resolving_merge_conflicts.md)
-- パート 3: [同期のとれていない git ブランチの再同期](tutorial_git_resynchronize_a_branch.md)
+- パート 1: [あなたのフォークの master ブランチ: 更新は頻繁に、コミットはしないこと](ja/tutorial_git_using_your_master_branch.md)
+- パート 2: [マージの競合の解決](ja/tutorial_git_resolving_merge_conflicts.md)
+- パート 3: [同期のとれていない git ブランチの再同期](ja/tutorial_git_resynchronize_a_branch.md)

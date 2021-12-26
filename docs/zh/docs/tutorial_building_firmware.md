@@ -13,11 +13,11 @@
 
     macOS:
 
-        open keyboards/<keyboard_folder>/keymaps
+    open keyboards/<keyboard_folder>/keymaps
 
     Windows:
 
-        start .\\keyboards\\<keyboard_folder>\\keymaps
+    start .\\keyboards\\<keyboard_folder>\\keymaps
 
 ## 创建`default` 布局副本
 
@@ -54,13 +54,7 @@
 
 * [键码](keycodes.md)
 * [特性](features.md)
-* 问题与解答
-    * [构建/编译](faq_build.md)
-    * [调试/故障排除](faq_debug.md)
-    * [一般问题](faq_general.md)
-    * [布局](faq_keymap.md)
-    * [Misc FAQ](faq_misc.md)
-
+* [问题与解答](faq.md)
 
 !!! tip
     当你明白布局是怎么工作时，您也要让每次改变尽可能小。一次改变很大在调试时找出问题会十分困难。

@@ -102,8 +102,6 @@ Use the `keyboard_name` object to set the name of the keyboard. For instruction 
     "tags": {
         "form_factor": "numpad"
     },
-    "width": 4,
-    "height": 5,
     "layouts": {
         "LAYOUT": {
             "layout": [
@@ -174,7 +172,7 @@ k33   | {"label":"Enter", "x":3, "y":3, "h":2}
 k40   | {"label":"0", "x":0, "y":4, "w":2}
 k42   | {"label":".", "x":2, "y":4}
 
-When a user selects the top-left key in the Configurator, and assigns Num Lock to it, the Configurator builds a keymap file with `KC_NLCK` as the first key, and so on as the keymap is built. The `label` keys are not used; they are only for the user's reference in identifying specific keys when debugging the `info.json` file.
+When a user selects the top-left key in the Configurator, and assigns Num Lock to it, the Configurator builds a keymap file with `KC_NUM` as the first key, and so on as the keymap is built. The `label` keys are not used; they are only for the user's reference in identifying specific keys when debugging the `info.json` file.
 
 
 ## Issues and Hazards
@@ -187,15 +185,15 @@ Currently, the Configurator does not support key rotation or non-rectangular key
 
 For ISO Enter keys, QMK custom is to display it as a rectangular key, 1.25u wide and 2u high, aligned so its right edge is aligned with the right edge of the alphanumeric key block.
 
-![](https://i.imgur.com/JKngtTw.png)  
+![](https://i.imgur.com/JKngtTw.png)
 *A 60% keyboard in standard ISO layout, as rendered by QMK Configurator.*
 
 #### Vertically-offset keys
 
 For vertically-offset keys, place them in KLE as if they were not offset, then edit the Y-values as needed in the converted JSON file
 
-![](https://i.imgur.com/fmDvDzR.png)  
+![](https://i.imgur.com/fmDvDzR.png)
 *An 1800-layout keyboard as rendered in Keyboard Layout Editor, without the vertical offset applied to the arrow keys.*
 
-![](https://i.imgur.com/8beYMBR.png)  
+![](https://i.imgur.com/8beYMBR.png)
 *A Unix diff file, showing the changes needed to vertically-offset the arrow keys in our keyboard's JSON file.*

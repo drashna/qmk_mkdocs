@@ -1,7 +1,6 @@
 # QMK机械键盘固件
 
 [![当前版本](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
-[![开发状态](https://travis-ci.org/qmk/qmk_firmware.svg?branch=master)](https://travis-ci.org/qmk/qmk_firmware)
 [![异议](https://img.shields.io/discord/440868230475677696.svg)](https://discord.gg/Uq7gcHh)
 [![文档状态](https://img.shields.io/badge/docs-ready-orange.svg)](https://docs.qmk.fm)
 [![GitHub贡献者](https://img.shields.io/github/contributors/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/pulse/monthly)
@@ -19,7 +18,7 @@ QMK (*Quantum Mechanical Keyboard*) 是一个社区维护的开源软件，包�
 
 ## 如何编译
 
-在你能编译之前, 你需要[部署环境](tutorial_getting_started.md) 用于 AVR or/and ARM 开发。完成后, 你可以使用 `make` 命令来编译一个键盘和布局使用以下命令:
+在你能编译之前, 你需要[部署环境](zh-cn/getting_started_build_tools.md) 用于 AVR or/and ARM 开发。完成后, 你可以使用 `make` 命令来编译一个键盘和布局使用以下命令:
 
     make planck/rev4:default
 
@@ -29,4 +28,4 @@ QMK (*Quantum Mechanical Keyboard*) 是一个社区维护的开源软件，包�
 
 ## 如何定制
 
-QMK 有许多 特性来探索，也有很多 [参考文档](https://docs.qmk.fm) 供您发掘。你可以通过修改 [布局](keymap.md)和[键码](keycodes.md)来利用许多特性。
+QMK 有许多 [特性](zh-cn/features.md)来探索，也有很多 [参考文档](https://docs.qmk.fm) 供您发掘。你可以通过修改 [布局](zh-cn/keymap.md)和[键码](zh-cn/keycodes.md)来利用许多特性。

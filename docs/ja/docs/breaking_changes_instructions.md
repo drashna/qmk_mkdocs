@@ -33,7 +33,7 @@ QMK のメンバーがあなたのプルリクエストに返信し、あなた�
 ### ChangeLog エントリの提供
 
 Breaking change プロセスを経て提出する際には、変更ログのエントリを含めることを我々は要請します。
-エントリーは、あなたのプルリクエストが行う変更の短い要約としてください &ndash; [ここの各セクションは changelog として開始されました](ChangeLog/20190830.md "n.b. This should link to the 2019 Aug 30 Breaking Changes doc - @noroadsleft")。
+エントリーは、あなたのプルリクエストが行う変更の短い要約としてください &ndash; [ここの各セクションは changelog として開始されました](ja/ChangeLog/20190830.md "n.b. This should link to the 2019 Aug 30 Breaking Changes doc - @noroadsleft")。
 
 変更ログは `docs/ChangeLog/YYYYMMDD/PR####.md` に置いてください。
 ここで、`YYYYMMDD` は QMK の breaking change ブランチ &ndash; 通常は `develop` という名称 &ndash; が `master` ブランチにマージされる日付、`####` はプルリクエストの番号です。

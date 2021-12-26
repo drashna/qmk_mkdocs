@@ -17,11 +17,11 @@ Démarrez en ouvrant l'application QMK Toolbox. Cherchez le fichier de firmware 
 
     Windows:
 
-        start .
+    start .
 
     macOS:
 
-        open .
+    open .
 
 Le fichier firmware suit toujours ce format de nommage:
 
@@ -225,7 +225,7 @@ Si vous avez un souci, essayez de faire ceci:
 
     sudo make <my_keyboard>:<my_keymap>:avrdude
 
-#### Commandes Caterina 
+#### Commandes Caterina
 
 Il existe un certain nombre de commandes DFU que vous pouvez utiliser pour mettre à jour le firmware sur un périphérique DFU:
 

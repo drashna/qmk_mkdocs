@@ -2,7 +2,6 @@
 # קושחה עבור Quantum Mechanical Keyboard
 
 [![גירסה נוכחית](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
-[![מצב הבניה](https://travis-ci.org/qmk/qmk_firmware.svg?branch=master)](https://travis-ci.org/qmk/qmk_firmware)
 [![ערוץ דיסקורד](https://img.shields.io/discord/440868230475677696.svg)](https://discord.gg/Uq7gcHh)
 [![מצב מסמכים](https://img.shields.io/badge/docs-ready-orange.svg)](https://docs.qmk.fm)
 [![תומכי GitHub](https://img.shields.io/github/contributors/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/pulse/monthly)
@@ -20,7 +19,7 @@ QMK (*Quantum Mechanical Keyboard*) היא קהילת קוד פתוח (open sour
 
 ## איך לקמפל
 
-לפני שתצליחו לקמפל, תדרשו [להתקין סביבה](tutorial_getting_started.md) עבור פיתוח AVR ו/או ARM. ברגע שהדבר בוצע, תוכלו להריץ פקודת `make` כדי לבנות מקלדת ומיפוי עם התחביר הבא: 
+לפני שתצליחו לקמפל, תדרשו [להתקין סביבה](he-il/getting_started_build_tools.md) עבור פיתוח AVR ו/או ARM. ברגע שהדבר בוצע, תוכלו להריץ פקודת `make` כדי לבנות מקלדת ומיפוי עם התחביר הבא: 
 
     make planck/rev4:default
 
@@ -30,5 +29,5 @@ QMK (*Quantum Mechanical Keyboard*) היא קהילת קוד פתוח (open sour
 
 ## איך להתאים
 
-לQMK יש המון [יכולות](features.md) שאפשר לנווט בהן, וכמות נכבדת של [תיעוד ודוקומנטציה](https://docs.qmk.fm) בה אפשר לנבור. רוב הפיצ׳רים באים לידי ביטוי על ידי שינוי  [מיפוי המקלדת](keymap.md) ושינוי  [קודי המקשים](keycodes.md).
+לQMK יש המון [יכולות](he-il/features.md) שאפשר לנווט בהן, וכמות נכבדת של [תיעוד ודוקומנטציה](https://docs.qmk.fm) בה אפשר לנבור. רוב הפיצ׳רים באים לידי ביטוי על ידי שינוי  [מיפוי המקלדת](he-il/keymap.md) ושינוי  [קודי המקשים](he-il/keycodes.md).
 </div>

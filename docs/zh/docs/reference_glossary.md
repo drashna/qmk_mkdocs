@@ -38,6 +38,11 @@ Français (法国)标准键盘布局。用键盘的前六个字母命名。
 
 * [动态宏文档](feature_dynamic_macros.md)
 
+## Eclipse
+是一种受C语言开发者追捧的集成开发环境(IDE)。
+
+* [Eclipse安装说明](eclipse.md)
+
 ## Firmware(固件)
 用来控制单片机的软件。
 

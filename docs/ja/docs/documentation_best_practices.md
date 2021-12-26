@@ -43,13 +43,13 @@ This page covers my super cool feature. You can use this feature to make coffee,
 
 ```
 !!! tip
-     This is a helpful tip.
+    This is a helpful tip.
 ```
 
 以下のように表示されます:
 
 !!! tip
-     This is a helpful tip.
+    This is a helpful tip.
 
 
 # 機能を文章化する

@@ -36,7 +36,7 @@ QMK 工具箱 是一种可选的Windows和macOS下的图形化工具，它可以
 我们为了使QMK环境变得更容易建立已竭尽所能。你只需要准备Linux 或 Unix 环境, 然后让QMK安装剩余部分。
 
 !!! tip
-     如果你从未使用过Linux/Unix的命令行,有一些你需要学习的基础概念和命令，以下资料将教会您使用QMK环境的必要能力:<br>
+    如果你从未使用过Linux/Unix的命令行,有一些你需要学习的基础概念和命令，以下资料将教会您使用QMK环境的必要能力:<br>
 [必会Linux命令](https://www.guru99.com/must-know-linux-commands.html)<br>
 [一些基本的Unix命令](https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html)
 
@@ -63,7 +63,7 @@ QMK 工具箱 是一种可选的Windows和macOS下的图形化工具，它可以
 * Arch: `pacman -S git`
 
 !!! tip
-     无论你使用哪种平台，Docker都可以是你的选择[点这里进一步了解](tutorial_getting_started.md#docker)
+    无论你使用哪种平台，Docker都可以是你的选择[点这里进一步了解](getting_started_build_tools.md#docker)
 
 ## 同步QMK工程
 
@@ -75,7 +75,7 @@ cd qmk_firmware
 ```
 
 !!! tip
-     如果您已经知道[如何使用GitHub](getting_started_github.md), 我们推荐您创建您自己的分支并克隆。 如果您不知道这是什么, 您完全可以忽略这句无关紧要的话。
+    如果您已经知道[如何使用GitHub](getting_started_github.md), 我们推荐您创建您自己的分支并克隆。 如果您不知道这是什么, 您完全可以忽略这句无关紧要的话。
 
 QMK附带一个脚本，可帮助您设置剩余的所需内容.您可以通过输入此命令来运行它:
 

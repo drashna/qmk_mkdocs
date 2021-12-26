@@ -222,14 +222,14 @@ If you've done all of these things, keep in mind that sometimes you might have h
 
 Once you have confirmed that the keyboard is working, if you have used a seperate (non handwire specific) controller you will want to secure it in place.  This can be done in many different ways e.g. hot glue, double sided sticky tape, 3D printed caddy, electrical tape.
 
-If you found this fullfilling you could experiment by adding additional features such as [in switch LEDs](https://geekhack.org/index.php?topic=94258.0), [in switch RGB](https://www.reddit.com/r/MechanicalKeyboards/comments/5s1l5u/photoskeyboard_science_i_made_a_handwired_rgb/), [RGB underglow](https://medium.com/@DavidNZ/hand-wired-custom-keyboard-cdd14429c7b3#.7a1ovebsk) or even an [OLED display!](https://www.reddit.com/r/olkb/comments/5zy7og/adding_ssd1306_oled_display_to_your_build/) 
+If you found this fullfilling you could experiment by adding additional features such as [in switch LEDs](https://geekhack.org/index.php?topic=94258.0), [in switch RGB](https://www.reddit.com/r/MechanicalKeyboards/comments/5s1l5u/photoskeyboard_science_i_made_a_handwired_rgb/), [RGB underglow](https://medium.com/@DavidNZ/hand-wired-custom-keyboard-cdd14429c7b3#.7a1ovebsk) or even an [OLED display!](https://www.reddit.com/r/olkb/comments/5zy7og/adding_ssd1306_oled_display_to_your_build/)
 
 There are a lot of possibilities inside the firmware - explore [docs.qmk.fm](https://docs.qmk.fm) for a full feature list, and dive into the different keyboards to see how people use all of them. You can always stop by [the OLKB subreddit](https://reddit.com/r/olkb) or [QMK Discord](https://discord.gg/Uq7gcHh) for help!
 
 ## Links to Other Guides
 
 - [matt3o's step by step guide (BrownFox build)](https://deskthority.net/viewtopic.php?f=7&t=6050) also his [website](https://matt3o.com/hand-wiring-a-custom-keyboard/) and [video guide](https://www.youtube.com/watch?v=LVzpsjFWPP4)
-- [Cribbit's "Modern hand wiring guide - stronger, cleaner, easier"](https://geekhack.org/index.php?topic=87689.0) 
+- [Cribbit's "Modern hand wiring guide - stronger, cleaner, easier"](https://geekhack.org/index.php?topic=87689.0)
 - [Sasha Solomon's "Building my first Keyboard"](https://medium.com/@sachee/building-my-first-keyboard-and-you-can-too-512c0f8a4c5f)
 - [RoastPotatoes' "How to hand wire a Planck"](https://blog.roastpotatoes.co/guide/2015/11/04/how-to-handwire-a-planck/)
 - [Masterzen's "Handwired keyboard build log"](https://www.masterzen.fr/2018/12/16/handwired-keyboard-build-log-part-1/)

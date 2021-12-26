@@ -81,7 +81,7 @@ $ qmk compile -kb dz60
 ## `qmk flash`
 
 このコマンドは `qmk compile` に似ていますが、ブートローダを対象にすることもできます。ブートローダはオプションで、デフォルトでは `:flash` に設定されています。
-違うブートローダを指定するには、`-bl <bootloader>` を使ってください。利用可能なブートローダの詳細については、[ファームウェアを書き込む](flashing.md)を見てください。
+違うブートローダを指定するには、`-bl <bootloader>` を使ってください。利用可能なブートローダの詳細については、[ファームウェアを書き込む](ja/flashing.md)を見てください。
 
 このコマンドはディレクトリを認識します。キーボードやキーマップのディレクトリにいる場合、自動的に KEYBOARD や KEYMAP を入力します。
 
@@ -105,7 +105,7 @@ qmk flash -b
 
 ## `qmk config`
 
-このコマンドにより QMK の挙動を設定することができます。完全な `qmk config` のドキュメントについては、[CLI 設定](cli_configuration.md)を見てください。
+このコマンドにより QMK の挙動を設定することができます。完全な `qmk config` のドキュメントについては、[CLI 設定](ja/cli_configuration.md)を見てください。
 
 **使用法**:
 
@@ -211,7 +211,7 @@ qmk new-keymap [-kb KEYBOARD] [-km KEYMAP]
 
 # 開発者用コマンド
 
-## `qmk cformat`
+## `qmk format-c`
 
 このコマンドは clang-format を使って C コードを整形します。
 
@@ -222,25 +222,25 @@ qmk new-keymap [-kb KEYBOARD] [-km KEYMAP]
 **指定したファイルに対する使い方**:
 
 ```
-qmk cformat [file1] [file2] [...] [fileN]
+qmk format-c [file1] [file2] [...] [fileN]
 ```
 
 **全てのコアファイルに対する使い方**:
 
 ```
-qmk cformat -a
+qmk format-c -a
 ```
 
 **origin/master で変更されたファイルのみに対する使い方**:
 
 ```
-qmk cformat
+qmk format-c
 ```
 
 **branch_name で変更されたファイルのみに対する使い方**:
 
 ```
-qmk cformat -b branch_name
+qmk format-c -b branch_name
 ```
 
 ## `qmk docs`
@@ -275,14 +275,14 @@ $ qmk kle2json -f kle.txt -f
 Ψ Wrote out to info.json
 ```
 
-## `qmk pyformat`
+## `qmk format-py`
 
 このコマンドは `qmk_firmware` 内の python コードを整形します。
 
 **使用法**:
 
 ```
-qmk pyformat
+qmk format-py
 ```
 
 ## `qmk pytest`

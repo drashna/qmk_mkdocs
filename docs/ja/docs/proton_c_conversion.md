@@ -27,7 +27,7 @@ QMK で現在サポートされているキーボードが Pro Micro（または
 #endif
 ```
 
-`PORTB/DDRB` などが定義されていないというエラーが発生した場合は、ARM と AVR の両方で機能する [GPIO 制御](internals_gpio_control.md) を使用するようにキーボードのコードを変換する必要があります。これは AVR ビルドにまったく影響を与えません。
+`PORTB/DDRB` などが定義されていないというエラーが発生した場合は、ARM と AVR の両方で機能する [GPIO 制御](ja/internals_gpio_control.md) を使用するようにキーボードのコードを変換する必要があります。これは AVR ビルドにまったく影響を与えません。
 
 Proton C には1つのオンボード LED(C13)しかなく、デフォルトでは TXLED(D5) がそれにマップされています。代わりに RXLED(B0) をそれにマッピングしたい場合は、`config.h` に次のように追加してください。
 
@@ -39,11 +39,11 @@ Proton C には1つのオンボード LED(C13)しかなく、デフォルトで�
 
 | 機能                                  | 説明                                                                               |
 |--------------------------------------|------------------------------------------------------------------------------------|
-| [オーディオ](feature_audio.md)      | 有効                                                                      |
-| [RGB ライト](feature_rgblight.md)  | 無効                                                                       |
-| [バックライト](feature_backlight.md)   | ARM が自動コンフィギュレーションを提供できるようになるまで、[タスク駆動 PWM](feature_backlight.md#software-pwm-driver))が強制されます |
+| [オーディオ](ja/feature_audio.md)      | 有効                                                                      |
+| [RGB ライト](ja/feature_rgblight.md)  | 無効                                                                       |
+| [バックライト](feature_backlight.md)   | ARM が自動コンフィギュレーションを提供できるようになるまで、[タスク駆動 PWM](ja/(feature_backlight.md#software-pwm-driver))が強制されます |
 | USB ホスト (例えば USB-USB コンバータ)   | 未サポート (USB ホストコードは AVR 固有のもので、現在 ARM ではサポートされていません。 |
-| [分割キーボード](feature_split_keyboard.md) | 部分的 - 有効にする機能に大きく依存します                               |
+| [分割キーボード](ja/feature_split_keyboard.md) | 部分的 - 有効にする機能に大きく依存します                               |
 
 ## 手動で変換
 

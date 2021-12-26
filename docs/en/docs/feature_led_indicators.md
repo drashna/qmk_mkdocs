@@ -1,7 +1,7 @@
 # LED Indicators
 
 !!! info
-    Currently, this feature is not supported for split keyboards
+    This feature requires additional configuration to work on both halves of a split keyboard see [Data sync options](feature_split_keyboard.md#data-sync-options)
 
 QMK provides methods to read 5 of the LEDs defined in the HID spec:
 
@@ -54,7 +54,7 @@ Some examples include:
     - return `true` because you want the `_kb` function to run, and this is in addition to the default LED behavior.
 
 !!! info
-    Because the `led_set_*` functions return `void` instead of `bool`, they do not allow for overriding the keyboard LED control. It's recommended to use `led_update_*` instead.
+    Because the `led_set_*` functions return `void` instead of `bool`, they do not allow for overriding the keyboard LED control, and thus it's recommended to use `led_update_*` instead.
 
 ### Example `led_update_kb()` Implementation
 

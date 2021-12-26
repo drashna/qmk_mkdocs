@@ -6,9 +6,9 @@ QMK intenta poner un montón de poder en tus manos haciendo que las cosas fácil
 
 # Comenzando
 
-Antes de que puedas construir keymaps, necesitarás instalar algun software y configurar tu entorno de construcción. Esto sólo hay que hacerlo una vez sin importar en cuántos teclados planeas configurar el software. 
+Antes de que puedas construir keymaps, necesitarás instalar algun software y configurar tu entorno de construcción. Esto sólo hay que hacerlo una vez sin importar en cuántos teclados planeas configurar el software.
 
-Si prefieres hacerlo mediante un interfaz gráfico , por favor, considera utilizar el [Configurador QMK](https://config.qmk.fm). En ese caso dirígete a [Construyendo tu primer firmware usando la GUI](tutorial_building_firmware_configurator.md). 
+Si prefieres hacerlo mediante un interfaz gráfico , por favor, considera utilizar el [Configurador QMK](https://config.qmk.fm). En ese caso dirígete a [Construyendo tu primer firmware usando la GUI](tutorial_building_firmware_configurator.md).
 
 
 ## Descarga el software
@@ -20,7 +20,7 @@ Necesitarás un programa con el que puedas editar y guardar archivos de **texto 
 También puedes descargar e instalar un editor de texto dedicado como [Sublime Text](https://www.sublimetext.com/) o [VS Code](https://code.visualstudio.com/). Esta es probablemente la mejor manera independientemente de la plataforma, ya que estos programas fueron creados específicamente para editar código.
 
 !!! tip
-     ¿No estás seguro de qué editor de texto utilizar? Laurence Bradford escribió una [estupenda introducción](https://learntocodewith.me/programming/basics/text-editors/) al tema.
+    ¿No estás seguro de qué editor de texto utilizar? Laurence Bradford escribió una [estupenda introducción](https://learntocodewith.me/programming/basics/text-editors/) al tema.
 
 ### QMK Toolbox
 
@@ -37,10 +37,9 @@ Hemos intentado hacer QMK lo más fácil de configurar posible. Sólo tienes que
 instale el resto.
 
 !!! tip
-     Si no has trabajado con la línea de comandos de Linux/Unix con anterioridad, hay algunos conceptos y comandos básicos que deberías aprender. Estos recursos te enseñarán lo suficiente para poder trabajar con QMK:
-
-    * [Comandos de Linux que debería saber](https://www.guru99.com/must-know-linux-commands.html)
-    * [Algunos comandos básicos de Unix](https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html)
+    Si no has trabajado con la línea de comandos de Linux/Unix con anterioridad, hay algunos conceptos y comandos básicos que deberías aprender. Estos recursos te enseñarán lo suficiente para poder trabajar con QMK:<br>
+[Comandos de Linux que debería saber](https://www.guru99.com/must-know-linux-commands.html)<br>
+[Algunos comandos básicos de Unix](https://www.tjhsst.edu/~dhyatt/superap/unixcmd.html)
 
 ### Windows
 
@@ -65,7 +64,7 @@ Necesitarás instalar Git. Es bastante probable que ya lo tengas, pero si no, un
 * Arch: `pacman -S git`
 
 !!! info
-     Docker es también una opción en todas las plataformas. [Haz click aquí si quieres detalles.](tutorial_getting_started.md#docker)
+    Docker es también una opción en todas las plataformas. [Haz click aquí si quieres detalles.](getting_started_build_tools.md#docker)
 
 ## Configura QMK
 
@@ -77,7 +76,7 @@ cd qmk_firmware
 ```
 
 !!! tip
-     Si ya sabes [cómo usar GitHub](getting_started_github.md), te recomendamos en vez de eso, crees y clones tu propio fork. Si no sabes lo que significa, puedes ignorar este mensaje sin problemas.
+    Si ya sabes [cómo usar GitHub](getting_started_github.md), te recomendamos en vez de eso, crees y clones tu propio fork. Si no sabes lo que significa, puedes ignorar este mensaje sin problemas.
 
 QMK viene con un script para ayudarte a configurar el resto de cosas que necesitarás. Deberías ejecutarlo introduciendo este comando:
 

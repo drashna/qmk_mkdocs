@@ -43,13 +43,13 @@ ChibiOS does have support for a handful of non-STM32 devices, and the list can b
 
 Do note that there are sometimes licensing restrictions with respect to redistribution. As an example, binaries built for nRF5 are not able to be redistributed via QMK Configurator, due to the licensing of their board support package.
 
-## Adding support for a new STM32 MCU (for an existing family) {: id=add-new-stm }32-mcu
+## Adding support for a new STM32 MCU (for an existing family) {: id=add-new-stm32-mcu }
 
 Usually, one can "masquerade" as an existing MCU of the same family, especially if the only difference is RAM or Flash size. As an example, some MCUs within the same family are virtually identical, with the exception of adding a cryptographic peripheral -- STM32L072 vs. STM32L082 for instance. Given the unlikely use of the cryptographic peripheral, L082 chips can actually run as if they're an L072, and can be targeted accordingly.
 
 Adding proper support for new MCUs within an existing STM32 family should ideally be upstreamed to ChibiOS. In general, this will require modifications of the `stm32_registry.h` file, providing correct responses for the same `#define`s provided for the other MCUs in that family.
 
-## Adding support for a new STM32 Family {: id=add-new-stm }32-family
+## Adding support for a new STM32 Family {: id=add-new-stm32-family }
 
 If this is a requirement, this needs to go through upstream ChibiOS before QMK would consider accepting boards targeting the new family. More information for porting should be sought by approaching ChibiOS directly, rather than through QMK.
 

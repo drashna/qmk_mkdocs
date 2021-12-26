@@ -44,8 +44,8 @@ piezo speakers are marked with :one: for the first/primary and :two: for the sec
   | pwm hardware | state-update                             |                        |               | A8 = :one: <sup>3</sup>       |
 
 
-<sup>1</sup>: the routing and alternate functions for PWM differ sometimes between STM32 MCUs, if in doubt consult the data-sheet  
-<sup>2</sup>: one piezo connected to A4 and A5, with AUDIO_PIN_ALT_AS_NEGATIVE set  
+<sup>1</sup>: the routing and alternate functions for PWM differ sometimes between STM32 MCUs, if in doubt consult the data-sheet
+<sup>2</sup>: one piezo connected to A4 and A5, with AUDIO_PIN_ALT_AS_NEGATIVE set
 <sup>3</sup>: TIM1_CH1 = A8 on STM32F103C8, other combinations are possible, see Data-sheet. configured with: AUDIO_PWM_DRIVER and AUDIO_PWM_CHANNEL
 
 
@@ -57,7 +57,7 @@ This driver needs one Timer per enabled/used DAC channel, to trigger conversion;
 
 Additionally, in the board config, you'll want to make changes to enable the DACs, GPT for Timers 6, 7 and 8:
 
-``` c
+```c
 //halconf.h:
 #define HAL_USE_DAC                 TRUE
 #define HAL_USE_GPT                 TRUE
@@ -80,9 +80,9 @@ Additionally, in the board config, you'll want to make changes to enable the DAC
 ```
 
 !!! note
-    DAC1 (A4) uses TIM6, DAC2 (A5) uses TIM7, and the audio state timer uses TIM8 (configurable). 
+    DAC1 (A4) uses TIM6, DAC2 (A5) uses TIM7, and the audio state timer uses TIM8 (configurable).
 
-You can also change the timer used for the overall audio state by defining the driver.  For instance: 
+You can also change the timer used for the overall audio state by defining the driver.  For instance:
 
 ```c
 #define AUDIO_STATE_TIMER GPTD9
@@ -94,14 +94,14 @@ only needs one timer (GPTD6, Tim6) to trigger the DAC unit to do a conversion; t
 
 Additionally, in the board config, you'll want to make changes to enable the DACs, GPT for Timer 6:
 
-``` c
+```c
 //halconf.h:
 #define HAL_USE_DAC                 TRUE
 #define HAL_USE_GPT                 TRUE
 #include_next <halconf.h>
 ```
 
-``` c
+```c
 // mcuconf.h:
 #include_next <mcuconf.h>
 #undef STM32_DAC_USE_DAC1_CH1
@@ -114,15 +114,17 @@ Additionally, in the board config, you'll want to make changes to enable the DAC
 
 ### DAC Config
 
-| Define                           | Defaults                   | Description                                                --------------------------------------------------------------------------------------------- |
-| `AUDIO_DAC_SAMPLE_MAX`           | `4095U`                    | Highest value allowed. Lower value means lower volume. And 4095U is the upper limit, since this is limited to a 12 bit value. Only effects non-pregenerated samples.  |
+| Define                           | Defaults                   | Description                                                                                                                                                            |
+|----------------------------------|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `AUDIO_DAC_SAMPLE_MAX`           | `4095U`                    | Highest value allowed. Lower value means lower volume. And 4095U is the upper limit, since this is limited to a 12 bit value. Only effects non-pregenerated samples.   |
 | `AUDIO_DAC_OFF_VALUE`            | `AUDIO_DAC_SAMPLE_MAX / 2` | The value of the DAC when notplaying anything. Some setups may require a high (`AUDIO_DAC_SAMPLE_MAX`) or low (`0`) value here.                                        |
-| `AUDIO_MAX_SIMULTANEOUS_TONES`   | __see next table__         | The number of tones that can be played simultaneously.  A value that is too high may freeze the controller or glitch out when too many tones are being played.        |
-| `AUDIO_DAC_SAMPLE_RATE`          | __see next table__         | Effective bit rate of the DAC (in hertz), higher limits simultaneous tones, and lower sacrifices quality.                                                          |
+| `AUDIO_MAX_SIMULTANEOUS_TONES`   | __see next table__         | The number of tones that can be played simultaneously.  A value that is too high may freeze the controller or glitch out when too many tones are being played.         |
+| `AUDIO_DAC_SAMPLE_RATE`          | __see next table__         | Effective bit rate of the DAC (in hertz), higher limits simultaneous tones, and lower sacrifices quality.                                                              |
 
-There are a number of predefined quality settings that you can use, with "sane minimum" being the default.  You can use custom values by simply defining the sample rate and number of simultaneous tones, instead of using one of the listed presets. 
+There are a number of predefined quality settings that you can use, with "sane minimum" being the default.  You can use custom values by simply defining the sample rate and number of simultaneous tones, instead of using one of the listed presets.
 
 | Define                            | Sample Rate | Simultaneous tones  |
+|-----------------------------------|-------------|---------------------|
 | `AUDIO_DAC_QUALITY_VERY_LOW`      | `11025U`    | `8`                 |
 | `AUDIO_DAC_QUALITY_LOW`           | `22040U`    | `4`                 |
 | `AUDIO_DAC_QUALITY_HIGH`          | `44100U`    | `2`                 |
@@ -154,7 +156,7 @@ This driver uses the ChibiOS-PWM system to produce a square-wave on specific out
 The hardware directly toggles the pin via its alternate function. See your MCU's data-sheet for which pin can be driven by what timer - looking for TIMx_CHy and the corresponding alternate function.
 
 A configuration example for the STM32F103C8 would be:
-``` c
+```c
 //halconf.h:
 #define HAL_USE_PWM                 TRUE
 #define HAL_USE_PAL                 TRUE
@@ -162,7 +164,7 @@ A configuration example for the STM32F103C8 would be:
 #include_next <halconf.h>
 ```
 
-``` c
+```c
 // mcuconf.h:
 #include_next <mcuconf.h>
 #undef STM32_PWM_USE_TIM1
@@ -178,7 +180,7 @@ If we now target pin A8, looking through the data-sheet of the STM32F103C8, for 
 - TIM1_CH4 = PA11
 
 with all this information, the configuration would contain these lines:
-``` c
+```c
 //config.h:
 #define AUDIO_PIN A8
 #define AUDIO_PWM_DRIVER PWMD1
@@ -195,7 +197,7 @@ On 'larger' STM32s, GPIOv2 or GPIOv3 are used; with them it is also necessary to
 This driver uses the PWM callbacks from PWMD1 with TIM1_CH1 to toggle the selected AUDIO_PIN in software.
 During the same callback, with AUDIO_PIN_ALT_AS_NEGATIVE set, the AUDIO_PIN_ALT is toggled inversely to AUDIO_PIN. This is useful for setups that drive a piezo from two pins (instead of one and Gnd).
 
-You can also change the timer used for software PWM by defining the driver.  For instance: 
+You can also change the timer used for software PWM by defining the driver.  For instance:
 
 ```c
 #define AUDIO_STATE_TIMER GPTD8
@@ -215,8 +217,8 @@ While not an exhaustive list, the following table provides the scenarios that ha
 | L0xx                     | :x: (no Tim8)      | ?                  | ?                  | ?                  |
 
 
-:heavy_check_mark: : works and was tested  
-:o: : does not apply  
+:heavy_check_mark: : works and was tested
+:o: : does not apply
 :x: : not supported by MCU
 
 *Other supported ChibiOS boards and/or pins may function, it will be highly chip and configuration dependent.*

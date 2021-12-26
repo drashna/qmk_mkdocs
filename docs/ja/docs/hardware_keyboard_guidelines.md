@@ -75,11 +75,11 @@ Clueboard は、サブフォルダをまとめるためとキーボードのリ�
 
 ### `readme.md`
 
-全てのプロジェクトにはどのようなキーボードなのか、誰が設計したか、どこで入手できるかを説明する `readme.md` ファイルが必要です。もしあれば、メーカーの Web サイトなどの詳しい情報へのリンクも含める必要があります。[キーボード readme テンプレート](documentation_templates.md#keyboard-readmemd-template)を参考にして下さい。
+全てのプロジェクトにはどのようなキーボードなのか、誰が設計したか、どこで入手できるかを説明する `readme.md` ファイルが必要です。もしあれば、メーカーの Web サイトなどの詳しい情報へのリンクも含める必要があります。[キーボード readme テンプレート](ja/documentation_templates.md#keyboard-readmemd-template)を参考にして下さい。
 
 ### `info.json`
 
-このファイルは [QMK API](https://github.com/qmk/qmk_api) から使用されます。[QMK Configurator](https://config.qmk.fm/) が必要とするキーボードの情報が含まれています。ここでメタデータを設定することもできます。詳しくは [info.json 形式](reference_info_json.md) を参照して下さい。
+このファイルは [QMK API](https://github.com/qmk/qmk_api) から使用されます。[QMK Configurator](https://config.qmk.fm/) が必要とするキーボードの情報が含まれています。ここでメタデータを設定することもできます。詳しくは [info.json 形式](ja/reference_info_json.md) を参照して下さい。
 
 ### `config.h`
 
@@ -117,7 +117,7 @@ Clueboard は、サブフォルダをまとめるためとキーボードのリ�
     // iOS device need lessthan 100
     #define USB_MAX_POWER_CONSUMPTION 100
   #endif
-  
+
   #ifdef RGBLIGHT_ENABLE
     #ifndef IOS_DEVICE_ENABLE
       #define RGBLIGHT_LIMIT_VAL 200
@@ -199,7 +199,7 @@ QMK が提供する機能の量を考えれば、新しいユーザーが混乱�
 
 ### ブートマジックとコマンド
 
-[ブートマジック](feature_bootmagic.md) と[コマンド](feature_command.md)は、ユーザーがキーボードを明白でない方法で制御出来るようにする2つの関連機能です。いずれかの機能を有効にする場合、この機能をどのように提供するかについて、よく考えることをおすすめします。この機能が必要なユーザーは、あなたのキーボードを最初のプログラムできるキーボードとして使用している初心者に影響を与えることなく、個人的なキーマップ内で有効に出来ることを覚えておきましょう。
+[ブートマジック](ja/feature_bootmagic.md) と[コマンド](ja/feature_command.md)は、ユーザーがキーボードを明白でない方法で制御出来るようにする2つの関連機能です。いずれかの機能を有効にする場合、この機能をどのように提供するかについて、よく考えることをおすすめします。この機能が必要なユーザーは、あなたのキーボードを最初のプログラムできるキーボードとして使用している初心者に影響を与えることなく、個人的なキーマップ内で有効に出来ることを覚えておきましょう。
 
 新規ユーザーが遭遇する最も多い問題は、キーボードを接続している間に間違えてブートマジックをトリガーしてしまうことです。キーボードの下を持っているとき、知らない間に Alt とスペースバーを押して、これらのキーが交換されてしまったことに気づきます。デフォルトではこの機能を無効にすることをおすすめしますが、有効にする場合は、キーボードを接続している間に押し間違えないキーへ `BOOTMAGIC_KEY_SALT` を設定することを検討して下さい。
 
@@ -207,7 +207,7 @@ QMK が提供する機能の量を考えれば、新しいユーザーが混乱�
 
 ## カスタムキーボードプログラミング
 
-[機能のカスタマイズ](custom_quantum_functions.md)にあるようにキーボードのカスタム関数を定義できます。ユーザーも同様にその動作をカスタマイズしたいかもしれないということと、ユーザーにそれを可能にすることを忘れないで下さい。 `process_record_kb()`のようなカスタム関数を提供している場合、関数がその関数の `_user()` 版を呼び出すことを確認して下さい。また、その関数の`_user()` 版の戻り値を確認して、user が `true` を返した場合のみカスタムコードを実行しなければいけません。
+[機能のカスタマイズ](ja/custom_quantum_functions.md)にあるようにキーボードのカスタム関数を定義できます。ユーザーも同様にその動作をカスタマイズしたいかもしれないということと、ユーザーにそれを可能にすることを忘れないで下さい。 `process_record_kb()`のようなカスタム関数を提供している場合、関数がその関数の `_user()` 版を呼び出すことを確認して下さい。また、その関数の`_user()` 版の戻り値を確認して、user が `true` を返した場合のみカスタムコードを実行しなければいけません。
 
 ## 生産しない/手配線 プロジェクト
 
@@ -236,4 +236,6 @@ QMK が提供する機能の量を考えれば、新しいユーザーが混乱�
 
 QMK のコア部分は [GNU General Public License](https://www.gnu.org/licenses/licenses.en.html) でライセンスされます。AVR マイコン用のバイナリを提供する場合は、[GPLv2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) か、[GPLv3](https://www.gnu.org/licenses/gpl.html) のどちらかから選択出来ます。ARM マイコン用のバイナリを提供する場合は、 [ChibiOS](https://www.chibios.org) の GPLv3 ライセンスに準拠するため、[GPL Version 3](https://www.gnu.org/licenses/gpl.html) を選択しなければいけません。
 
-[uGFX](https://ugfx.io) を使用している場合は、[uGFX License](https://ugfx.io/license.html) に準拠する必要があります。uGFX を利用したデバイスを販売するには個別に商用ライセンスを取得しなければいけません。
+## 技術的な詳細
+
+キーボードを QMK で動作させるための詳細は[ハードウェア](ja/hardware.md)を参照して下さい！

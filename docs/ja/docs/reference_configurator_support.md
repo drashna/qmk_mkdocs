@@ -27,7 +27,7 @@ Configurator がキーボードをどのように理解するかを理解する�
 ```
 
 !!! tip
-    レイアウトマクロの詳細については、[QMK の理解: マトリックススキャン](understanding_qmk.md?id=matrix-scanning) と [QMK の理解: マトリックスから物理レイアウトへのマップ](understanding_qmk.md?id=matrix-to-physical-layout-map) を見てください。
+    レイアウトマクロの詳細については、[QMK の理解: マトリックススキャン](ja/understanding_qmk.md?id=matrix-scanning) と [QMK の理解: マトリックスから物理レイアウトへのマップ](ja/understanding_qmk.md?id=matrix-to-physical-layout-map) を見てください。
 
 Configurator の API はキーボードの `.h` ファイルを `qmk_firmware/keyboards/<keyboard>/<keyboard>.h` から読み取ります。numpad の場合、このファイルは `qmk_firmware/keyboards/numpad/numpad.h` です:
 
@@ -107,8 +107,6 @@ JSON ファイルをビルドする最も簡単な方法は、[Keyboard Layout E
     "tags": {
         "form_factor": "numpad"
     },
-    "width": 4,
-    "height": 5,
     "layouts": {
         "LAYOUT": {
             "layout": [
@@ -152,7 +150,7 @@ JSON ファイルをビルドする最も簡単な方法は、[Keyboard Layout E
 一部のオブジェクトには、それぞれキーの幅と高さを表す `"w"` 属性キーと `"h"` 属性キーがあります。
 
 !!! info
-    `info.json` ファイルの詳細については、[`info.json` 形式](reference_info_json.md) を参照してください。
+    `info.json` ファイルの詳細については、[`info.json` 形式](ja/reference_info_json.md) を参照してください。
 
 
 ## Configurator がキーをプログラムする方法
@@ -192,15 +190,15 @@ Configurator の API は、指定されたレイアウトマクロと JSON フ�
 
 ISO Enter キーについては、QMK custom は幅 1.25u、高さ 2u の長方形のキーとして表示し、右端が英数字キーブロックの右端に揃うように配置されます。
 
-![](https://i.imgur.com/JKngtTw.png)  
+![](https://i.imgur.com/JKngtTw.png)
 *QMK Configurator によって描画される標準 ISO レイアウトの60%キーボード。*
 
 #### 垂直方向にずれたキー
 
 垂直方向にずれたキーについては、ずれていないかのように KLE で配置し、変換された JSON ファイルで必要に応じて Y 値を編集します。
 
-![](https://i.imgur.com/fmDvDzR.png)  
+![](https://i.imgur.com/fmDvDzR.png)
 *矢印キーに適用される垂直方向のずれのない、Keyboard Layout Editor で描画された1800レイアウトのキーボード。*
 
-![](https://i.imgur.com/8beYMBR.png)  
+![](https://i.imgur.com/8beYMBR.png)
 *キーボードの JSON ファイルで矢印キーを垂直方向にずらすために必要な変更を示す、Unix の diff ファイル。*

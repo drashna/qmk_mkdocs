@@ -78,7 +78,7 @@ Note that there is currently only one speaker/pin supported.
 
 set in `rules.mk`:
 
-`AUDIO_DRIVER = pwm_software` and in `config.h`: 
+`AUDIO_DRIVER = pwm_software` and in `config.h`:
 `#define AUDIO_PIN C13` (can be any pin) to have the selected pin output a pwm signal, generated from a timer callback which toggles the pin in software.
 
 #### Wiring
@@ -159,7 +159,7 @@ PLAY_LOOP(my_song);
 
 It's advised that you wrap all audio features in `#ifdef AUDIO_ENABLE` / `#endif` to avoid causing problems when audio isn't built into the keyboard.
 
-The available keycodes for audio are: 
+The available keycodes for audio are:
 
 * `AU_ON` - Turn Audio Feature on
 * `AU_OFF` - Turn Audio Feature off
@@ -167,6 +167,32 @@ The available keycodes for audio are:
 
 !!! info
     These keycodes turn all of the audio functionality on and off.  Turning it off means that audio feedback, audio clicky, music mode, etc. are disabled, completely.
+
+## Audio Config
+
+| Settings                        | Default              | Description                                                                   |
+|---------------------------------|----------------------|-------------------------------------------------------------------------------|
+|`AUDIO_PIN`                      | *Not defined*        |Configures the pin that the speaker is connected to.                           |
+|`AUDIO_PIN_ALT`                  | *Not defined*        |Configures the pin for a second speaker or second pin connected to one speaker.|
+|`AUDIO_PIN_ALT_AS_NEGATIVE`      | *Not defined*        |Enables support for one speaker connected to two pins.                         |
+|`AUDIO_INIT_DELAY`               | *Not defined*        |Enables delay during startup song to accomidate for USB startup issues.        |
+|`AUDIO_ENABLE_TONE_MULTIPLEXING` | *Not defined*        |Enables time splicing/multiplexing to create multiple tones simutaneously.     |
+|`STARTUP_SONG`                   | `STARTUP_SOUND`      |Plays when the keyboard starts up (audio.c)                                    |
+|`GOODBYE_SONG`                   | `GOODBYE_SOUND`      |Plays when you press the RESET key (quantum.c)                                 |
+|`AG_NORM_SONG`                   | `AG_NORM_SOUND`      |Plays when you press AG_NORM (process_magic.c)                                 |
+|`AG_SWAP_SONG`                   | `AG_SWAP_SOUND`      |Plays when you press AG_SWAP (process_magic.c)                                 |
+|`CG_NORM_SONG`                   | `AG_NORM_SOUND`      |Plays when you press CG_NORM (process_magic.c)                                 |
+|`CG_SWAP_SONG`                   | `AG_SWAP_SOUND`      |Plays when you press CG_SWAP (process_magic.c)                                 |
+|`MUSIC_ON_SONG`                  | `MUSIC_ON_SOUND`     |Plays when music mode is activated (process_music.c)                           |
+|`MUSIC_OFF_SONG`                 | `MUSIC_OFF_SOUND`    |Plays when music mode is deactivated (process_music.c)                         |
+|`MIDI_ON_SONG`                   | `MUSIC_ON_SOUND`     |Plays when midi mode is activated (process_music.c)                            |
+|`MIDI_OFF_SONG`                  | `MUSIC_OFF_SOUND`    |Plays when midi mode is deactivated (process_music.c)                          |
+|`CHROMATIC_SONG`                 | `CHROMATIC_SOUND`    |Plays when the chromatic music mode is selected (process_music.c)              |
+|`GUITAR_SONG`                    | `GUITAR_SOUND`       |Plays when the guitar music mode is selected (process_music.c)                 |
+|`VIOLIN_SONG`                    | `VIOLIN_SOUND`       |Plays when the violin music mode is selected (process_music.c)                 |
+|`MAJOR_SONG`                     | `MAJOR_SOUND`        |Plays when the major music mode is selected (process_music.c)                  |
+|`DEFAULT_LAYER_SONGS`            | *Not defined*        |Plays song when switched default layers with [`set_single_persistent_default_layer(layer)`](ref_functions.md#setting-the-persistent-default-layer)(quantum.c)       |
+|`SENDSTRING_BELL`                | *Not defined*        |Plays chime when the "enter" ("\a") character is sent (send_string.c)          |
 
 ## Tempo
 the 'speed' at which SONGs are played is dictated by the set Tempo, which is measured in beats-per-minute. Note lengths are defined relative to that.
@@ -252,9 +278,9 @@ Things that return false are not part of the mask, and are always processed.
 
 ### Music Map
 
-By default, the Music Mode uses the columns and row to determine the scale for the keys. For a board that uses a rectangular matrix that matches the keyboard layout, this is just fine.  However, for boards that use a more complicated matrix (such as the Planck Rev6, or many split keyboards) this would result in a very skewed experience.  
+By default, the Music Mode uses the columns and row to determine the scale for the keys. For a board that uses a rectangular matrix that matches the keyboard layout, this is just fine.  However, for boards that use a more complicated matrix (such as the Planck Rev6, or many split keyboards) this would result in a very skewed experience.
 
-However, the Music Map option allows you to remap the scaling for the music mode, so it fits the layout, and is more natural. 
+However, the Music Map option allows you to remap the scaling for the music mode, so it fits the layout, and is more natural.
 
 To enable this feature, add `#define MUSIC_MAP` to your `config.h` file, and then you will want to add a `uint8_t music_map` to your keyboard's `c` file, or your `keymap.c`.
 
@@ -267,13 +293,13 @@ const uint8_t music_map[MATRIX_ROWS][MATRIX_COLS] = LAYOUT_ortho_4x12(
 );
 ```
 
-You will want to use whichever `LAYOUT` macro that your keyboard uses here.  This maps it to the correct key location.  Start in  the bottom left of the keyboard layout, and  move to the right, and then upwards.  Fill in all the entries until you have a complete matrix.  
+You will want to use whichever `LAYOUT` macro that your keyboard uses here.  This maps it to the correct key location.  Start in  the bottom left of the keyboard layout, and  move to the right, and then upwards.  Fill in all the entries until you have a complete matrix.
 
-You can look at the [Planck Keyboard](https://github.com/qmk/qmk_firmware/blob/e9ace1487887c1f8b4a7e8e6d87c322988bec9ce/keyboards/planck/planck.c#L24-L29) as an example of how to implement this. 
+You can look at the [Planck Keyboard](https://github.com/qmk/qmk_firmware/blob/e9ace1487887c1f8b4a7e8e6d87c322988bec9ce/keyboards/planck/planck.c#L24-L29) as an example of how to implement this.
 
 ## Audio Click
 
-This adds a click sound each time you hit a button, to simulate click sounds from the keyboard. And the sounds are slightly different for each keypress, so it doesn't sound like a single long note, if you type rapidly. 
+This adds a click sound each time you hit a button, to simulate click sounds from the keyboard. And the sounds are slightly different for each keypress, so it doesn't sound like a single long note, if you type rapidly.
 
 * `CK_TOGG` - Toggles the status (will play sound if enabled)
 * `CK_ON` - Turns on Audio Click (plays sound)
@@ -288,7 +314,7 @@ The feature is disabled by default, to save space.  To enable it, add this to yo
     #define AUDIO_CLICKY
 
 
-You can configure the default, min and max frequencies, the stepping and built in randomness by defining these values: 
+You can configure the default, min and max frequencies, the stepping and built in randomness by defining these values:
 
 | Option | Default Value | Description |
 |--------|---------------|-------------|
@@ -296,7 +322,7 @@ You can configure the default, min and max frequencies, the stepping and built i
 | `AUDIO_CLICKY_FREQ_MIN` | 65.0f | Sets the lowest frequency (under 60f are a bit buggy). |
 | `AUDIO_CLICKY_FREQ_MAX` | 1500.0f | Sets the highest frequency. Too high may result in coworkers attacking you. |
 | `AUDIO_CLICKY_FREQ_FACTOR` | 1.18921f| Sets the stepping of UP/DOWN key codes.  This is a multiplicative factor.  The default steps the frequency up/down by a musical minor third.  |
-| `AUDIO_CLICKY_FREQ_RANDOMNESS`     |  0.05f |  Sets a factor of randomness for the clicks, Setting this to `0f` will make each click identical, and `1.0f` will make this sound much like the 90's computer screen scrolling/typing effect. | 
+| `AUDIO_CLICKY_FREQ_RANDOMNESS`     |  0.05f |  Sets a factor of randomness for the clicks, Setting this to `0f` will make each click identical, and `1.0f` will make this sound much like the 90's computer screen scrolling/typing effect. |
 | `AUDIO_CLICKY_DELAY_DURATION` | 1 | An integer note duration where 1 is 1/16th of the tempo, or a sixty-fourth note (see `quantum/audio/musical_notes.h` for implementation details). The main clicky effect will be delayed by this duration.  Adjusting this to values around 6-12 will help compensate for loud switches. |
 
 
