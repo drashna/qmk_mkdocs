@@ -169,7 +169,7 @@ nav:
 repo_name: qmk/qmk_firmware
 repo_url: https://github.com/qmk/qmk_firmware
 site_name: QMK Firmware Docs
-site_url: https://docs.qmk.fm/master/zh
+site_url: https://drashna.github.io/master/zh
 theme:
   favicon: images/favicon.ico
   features:
