@@ -11,8 +11,11 @@ if [ -z "$1" ]; then
 fi
 
 # Prepare the site dir
+echo " this folder"
 ls .
+echo "parent"
 ls ..
+echo "parent parent"
 ls ../..
 rm -rf ../../site/??/
 
