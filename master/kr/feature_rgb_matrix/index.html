@@ -8,11 +8,10 @@
       
       
       
-      
         <link rel="canonical" href="https://qmk.github.io/qmk_mkdocs/master/kr/feature_rgb_matrix/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -20,10 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -33,16 +32,15 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round:300,400,400i,700%7CSource+Code+Pro&display=fallback">
-        <style>:root{--md-text-font-family:"Varela Round";--md-code-font-family:"Source Code Pro"}</style>
+        <style>:root{--md-text-font:"Varela Round";--md-code-font:"Source Code Pro"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../stylesheets/qmk.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
 
     
     
@@ -59,9 +57,8 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -78,7 +75,16 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
       
@@ -113,7 +119,7 @@
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
             </label>
           
         
@@ -133,8 +139,7 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -172,8 +177,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/qmk/qmk_firmware/" title="저장소로 이동" class="md-source" data-md-component="source">
+        <a href="https://github.com/qmk/qmk_firmware/" title="저장소로 이동" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -185,11 +189,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -215,8 +222,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/qmk/qmk_firmware/" title="저장소로 이동" class="md-source" data-md-component="source">
+      <a href="https://github.com/qmk/qmk_firmware/" title="저장소로 이동" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -259,10 +265,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
-      <label class="md-nav__link" for="__nav_2">
-        Tutorial
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Tutorial" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
@@ -271,6 +281,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -281,8 +292,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -293,8 +306,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -305,8 +320,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -317,8 +334,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -329,8 +348,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -341,8 +362,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -353,6 +376,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -375,10 +399,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
-      <label class="md-nav__link" for="__nav_3">
-        FAQs
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          FAQs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="FAQs" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
@@ -387,6 +415,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -397,8 +426,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -409,8 +440,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -421,8 +454,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -433,8 +468,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -445,8 +482,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -457,6 +496,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -479,10 +519,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
-      <label class="md-nav__link" for="__nav_4">
-        Configurator
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Configurator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configurator" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
@@ -491,6 +535,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -501,8 +546,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -513,8 +560,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -525,8 +574,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -537,8 +588,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -548,10 +601,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" data-md-state="indeterminate" type="checkbox" id="__nav_4_5" checked>
       
-      <label class="md-nav__link" for="__nav_4_5">
-        QMK API
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          QMK API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK API" data-md-level="2">
         <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
@@ -560,6 +617,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -570,8 +628,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -582,8 +642,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -594,8 +656,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -606,12 +670,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -634,10 +700,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
       
-      <label class="md-nav__link" for="__nav_5">
-        CLI
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="CLI" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
@@ -646,6 +716,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -656,8 +727,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -668,8 +741,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -680,8 +755,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -692,6 +769,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -716,10 +794,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
-      <label class="md-nav__link" for="__nav_6">
-        Using QMK
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Using QMK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Using QMK" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
@@ -728,6 +810,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -737,10 +820,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" data-md-state="indeterminate" type="checkbox" id="__nav_6_1" checked>
       
-      <label class="md-nav__link" for="__nav_6_1">
-        Guides
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1">
+          Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Guides" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_1">
           <span class="md-nav__icon md-icon"></span>
@@ -749,6 +836,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -759,8 +847,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -771,8 +861,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -783,8 +875,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -794,10 +888,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_4" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_4" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_4">
-        Development Environments
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_4">
+          Development Environments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Development Environments" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_4">
           <span class="md-nav__icon md-icon"></span>
@@ -806,6 +904,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -816,8 +915,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -828,14 +929,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -845,10 +949,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_5" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_5" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_5">
-        Flashing
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_5">
+          Flashing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Flashing" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_5">
           <span class="md-nav__icon md-icon"></span>
@@ -857,6 +965,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -867,8 +976,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -879,14 +990,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -896,10 +1010,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_6" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_6" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_6">
-        IDEs
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_6">
+          IDEs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="IDEs" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_6">
           <span class="md-nav__icon md-icon"></span>
@@ -908,6 +1026,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -918,8 +1037,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -930,14 +1051,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -947,10 +1071,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_7" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_7" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_7">
-        Git Best Practices
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_7">
+          Git Best Practices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Git Best Practices" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_7">
           <span class="md-nav__icon md-icon"></span>
@@ -959,6 +1087,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -969,8 +1098,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -981,8 +1112,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -993,8 +1126,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1005,14 +1140,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1022,10 +1160,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_8" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_8" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_8">
-        Keyboard Building
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_8">
+          Keyboard Building
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Keyboard Building" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_8">
           <span class="md-nav__icon md-icon"></span>
@@ -1034,6 +1176,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1044,8 +1187,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1056,20 +1201,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1079,10 +1228,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" data-md-state="indeterminate" type="checkbox" id="__nav_6_2" checked>
       
-      <label class="md-nav__link" for="__nav_6_2">
-        Simple Keycodes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          Simple Keycodes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Simple Keycodes" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1091,6 +1244,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1101,8 +1255,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1113,8 +1269,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1125,8 +1283,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1137,8 +1297,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1149,14 +1311,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1166,10 +1331,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" data-md-state="indeterminate" type="checkbox" id="__nav_6_3" checked>
       
-      <label class="md-nav__link" for="__nav_6_3">
-        Advanced Keycodes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          Advanced Keycodes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Advanced Keycodes" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_3">
           <span class="md-nav__icon md-icon"></span>
@@ -1178,6 +1347,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1188,8 +1358,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1200,8 +1372,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1212,8 +1386,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1224,8 +1400,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1236,8 +1414,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1248,8 +1428,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1260,8 +1442,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1272,8 +1456,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1284,14 +1470,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1301,10 +1490,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" data-md-state="indeterminate" type="checkbox" id="__nav_6_4" checked>
       
-      <label class="md-nav__link" for="__nav_6_4">
-        Software Features
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4">
+          Software Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Software Features" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_4">
           <span class="md-nav__icon md-icon"></span>
@@ -1313,6 +1506,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1323,8 +1517,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1335,8 +1531,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1347,8 +1545,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1359,8 +1559,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1371,8 +1573,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1383,8 +1587,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1395,8 +1601,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1407,8 +1615,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1419,8 +1629,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1431,8 +1643,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1443,8 +1657,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1455,8 +1671,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1467,8 +1685,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1479,8 +1699,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1491,8 +1713,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1503,14 +1727,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -1522,10 +1749,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" checked>
       
-      <label class="md-nav__link" for="__nav_6_5">
-        Hardware Features
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5">
+          Hardware Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Hardware Features" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_5">
           <span class="md-nav__icon md-icon"></span>
@@ -1534,6 +1765,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1543,10 +1775,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_1" data-md-state="indeterminate" type="checkbox" id="__nav_6_5_1" checked>
       
-      <label class="md-nav__link" for="__nav_6_5_1">
-        Displays
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_1">
+          Displays
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Displays" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_5_1">
           <span class="md-nav__icon md-icon"></span>
@@ -1555,6 +1791,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1565,8 +1802,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1577,14 +1816,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -1596,10 +1838,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_2" type="checkbox" id="__nav_6_5_2" checked>
       
-      <label class="md-nav__link" for="__nav_6_5_2">
-        Lighting
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_2">
+          Lighting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Lighting" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_5_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1608,6 +1854,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1618,8 +1865,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1630,8 +1879,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1642,8 +1893,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -1667,6 +1920,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="목차">
   
   
@@ -1886,14 +2140,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1904,8 +2161,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1916,8 +2175,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1928,8 +2189,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1940,8 +2203,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1952,8 +2217,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1964,8 +2231,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1976,8 +2245,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1988,8 +2259,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2000,8 +2273,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2012,8 +2287,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2024,8 +2301,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2036,8 +2315,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2048,8 +2329,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2060,8 +2343,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2072,8 +2357,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2084,12 +2371,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -2112,10 +2401,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
       
-      <label class="md-nav__link" for="__nav_7">
-        Developing QMK
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Developing QMK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Developing QMK" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -2124,6 +2417,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2134,8 +2428,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2145,10 +2441,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" data-md-state="indeterminate" type="checkbox" id="__nav_7_2" checked>
       
-      <label class="md-nav__link" for="__nav_7_2">
-        Breaking Changes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Breaking Changes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Breaking Changes" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
@@ -2157,6 +2457,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2167,8 +2468,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2179,8 +2482,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2191,8 +2496,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2202,10 +2509,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_2_4" checked>
       
-      <label class="md-nav__link" for="__nav_7_2_4">
-        Past Breaking Changes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2_4">
+          Past Breaking Changes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Past Breaking Changes" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_2_4">
           <span class="md-nav__icon md-icon"></span>
@@ -2214,6 +2525,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2224,8 +2536,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2236,8 +2550,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2248,8 +2564,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2260,8 +2578,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2272,8 +2592,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2284,20 +2606,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2307,10 +2633,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" data-md-state="indeterminate" type="checkbox" id="__nav_7_3" checked>
       
-      <label class="md-nav__link" for="__nav_7_3">
-        C Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          C Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="C Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_3">
           <span class="md-nav__icon md-icon"></span>
@@ -2319,6 +2649,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2329,8 +2660,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2341,8 +2674,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2353,8 +2688,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2365,8 +2702,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2376,10 +2715,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_7_3_5" checked>
       
-      <label class="md-nav__link" for="__nav_7_3_5">
-        Drivers
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3_5">
+          Drivers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Drivers" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_3_5">
           <span class="md-nav__icon md-icon"></span>
@@ -2388,6 +2731,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2398,8 +2742,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2410,8 +2756,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2422,8 +2770,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2434,8 +2784,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2446,8 +2798,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2458,8 +2812,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2470,8 +2826,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2482,8 +2840,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2494,14 +2854,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2512,8 +2875,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2524,14 +2889,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2541,10 +2909,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_4" checked>
       
-      <label class="md-nav__link" for="__nav_7_4">
-        Python Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Python Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Python Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
@@ -2553,6 +2925,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2563,8 +2936,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2575,14 +2950,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2592,10 +2970,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" data-md-state="indeterminate" type="checkbox" id="__nav_7_5" checked>
       
-      <label class="md-nav__link" for="__nav_7_5">
-        Configurator Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          Configurator Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configurator Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_5">
           <span class="md-nav__icon md-icon"></span>
@@ -2604,6 +2986,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2613,10 +2996,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5_1" data-md-state="indeterminate" type="checkbox" id="__nav_7_5_1" checked>
       
-      <label class="md-nav__link" for="__nav_7_5_1">
-        QMK API
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5_1">
+          QMK API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK API" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_5_1">
           <span class="md-nav__icon md-icon"></span>
@@ -2625,6 +3012,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2635,8 +3023,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2647,20 +3037,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2670,10 +3064,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6" data-md-state="indeterminate" type="checkbox" id="__nav_7_6" checked>
       
-      <label class="md-nav__link" for="__nav_7_6">
-        Hardware Platform Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6">
+          Hardware Platform Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Hardware Platform Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_6">
           <span class="md-nav__icon md-icon"></span>
@@ -2682,6 +3080,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2691,10 +3090,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6_1" data-md-state="indeterminate" type="checkbox" id="__nav_7_6_1" checked>
       
-      <label class="md-nav__link" for="__nav_7_6_1">
-        Arm/ChibiOS
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6_1">
+          Arm/ChibiOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Arm/ChibiOS" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_6_1">
           <span class="md-nav__icon md-icon"></span>
@@ -2703,6 +3106,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2713,8 +3117,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2725,20 +3131,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2748,10 +3158,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" data-md-state="indeterminate" type="checkbox" id="__nav_7_7" checked>
       
-      <label class="md-nav__link" for="__nav_7_7">
-        QMK Reference
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_7">
+          QMK Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK Reference" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_7">
           <span class="md-nav__icon md-icon"></span>
@@ -2760,6 +3174,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2770,8 +3185,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2782,8 +3199,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2794,8 +3213,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2806,8 +3227,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2818,8 +3241,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2830,8 +3255,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2842,8 +3269,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2854,8 +3283,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2866,8 +3297,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2878,8 +3311,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2890,14 +3325,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2907,10 +3345,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" data-md-state="indeterminate" type="checkbox" id="__nav_7_8" checked>
       
-      <label class="md-nav__link" for="__nav_7_8">
-        For a Deeper Understanding
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          For a Deeper Understanding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="For a Deeper Understanding" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_8">
           <span class="md-nav__icon md-icon"></span>
@@ -2919,6 +3361,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2929,8 +3372,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2941,8 +3386,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2953,14 +3400,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2970,10 +3420,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" data-md-state="indeterminate" type="checkbox" id="__nav_7_9" checked>
       
-      <label class="md-nav__link" for="__nav_7_9">
-        QMK Internals (In Progress)
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_9">
+          QMK Internals (In Progress)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK Internals (In Progress)" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_9">
           <span class="md-nav__icon md-icon"></span>
@@ -2982,6 +3436,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2992,8 +3447,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3004,8 +3461,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3016,8 +3475,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3028,8 +3489,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3040,8 +3503,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3052,8 +3517,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -3064,12 +3531,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -3089,6 +3558,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="목차">
   
   
@@ -3313,12 +3783,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_rgb_matrix.md" title="이 페이지를 편집" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="rgb-matrix-lighting">RGB Matrix Lighting<a class="headerlink" href="#rgb-matrix-lighting" title="Permanent link">&para;</a></h1>
+<a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_rgb_matrix.md" title="이 페이지를 편집" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="rgb-matrix-lighting">RGB Matrix Lighting<a class="headerlink" href="#rgb-matrix-lighting" title="Permanent link">&para;</a></h1>
 <p>This feature allows you to use RGB LED matrices driven by external drivers. It hooks into the RGBLIGHT system so you can use the same keycodes as RGBLIGHT to control it.</p>
 <p>If you want to use single color LED's you should use the <a href="../feature_led_matrix/">LED Matrix Subsystem</a> instead.</p>
 <h2 id="driver-configuration">Driver configuration<a class="headerlink" href="#driver-configuration" title="Permanent link">&para;</a></h2>
@@ -3401,16 +3871,16 @@
 <p>Note the parentheses, this is so when <code>DRIVER_LED_TOTAL</code> is used in code and expanded, the values are added together before any additional math is applied to them. As an example, <code>rand() % (DRIVER_1_LED_TOTAL + DRIVER_2_LED_TOTAL)</code> will give very different results than <code>rand() % DRIVER_1_LED_TOTAL + DRIVER_2_LED_TOTAL</code>.</p>
 </div>
 <p>Define these arrays listing all the LEDs in your <code>&lt;keyboard&gt;.c</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">is31_led</span> <span class="n">g_is31_leds</span><span class="p">[</span><span class="n">DRIVER_LED_TOTAL</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">is31_led</span><span class="w"> </span><span class="n">g_is31_leds</span><span class="p">[</span><span class="n">DRIVER_LED_TOTAL</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="cm">/* Refer to IS31 manual for these locations</span>
 <span class="cm"> *   driver</span>
 <span class="cm"> *   |  R location</span>
 <span class="cm"> *   |  |      G location</span>
 <span class="cm"> *   |  |      |      B location</span>
-<span class="cm"> *   |  |      |      | */</span>
-    <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="n">C1_3</span><span class="p">,</span>  <span class="n">C2_3</span><span class="p">,</span>  <span class="n">C3_3</span><span class="p">},</span>
-    <span class="p">....</span>
-<span class="p">}</span>
+<span class="cm"> *   |  |      |      | */</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">C1_3</span><span class="p">,</span><span class="w">  </span><span class="n">C2_3</span><span class="p">,</span><span class="w">  </span><span class="n">C3_3</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">....</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Where <code>Cx_y</code> is the location of the LED in the matrix defined by <a href="https://www.issi.com/WW/pdf/31FL3731.pdf">the datasheet</a> and the header file <code>drivers/issi/is31fl3731.h</code>. The <code>driver</code> is the index of the driver you defined in your <code>config.h</code> (<code>0</code>, <code>1</code>, <code>2</code>, or <code>3</code>).</p>
 <hr />
@@ -3516,16 +3986,16 @@
 </div>
 <p>Currently only 4 drivers are supported, but it would be trivial to support all 8 combinations.</p>
 <p>Define these arrays listing all the LEDs in your <code>&lt;keyboard&gt;.c</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">is31_led</span> <span class="n">g_is31_leds</span><span class="p">[</span><span class="n">DRIVER_LED_TOTAL</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">is31_led</span><span class="w"> </span><span class="n">g_is31_leds</span><span class="p">[</span><span class="n">DRIVER_LED_TOTAL</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="cm">/* Refer to IS31 manual for these locations</span>
 <span class="cm"> *   driver</span>
 <span class="cm"> *   |  R location</span>
 <span class="cm"> *   |  |       G location</span>
 <span class="cm"> *   |  |       |       B location</span>
-<span class="cm"> *   |  |       |       | */</span>
-    <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="n">B_1</span><span class="p">,</span>    <span class="n">A_1</span><span class="p">,</span>    <span class="n">C_1</span><span class="p">},</span>
-    <span class="p">....</span>
-<span class="p">}</span>
+<span class="cm"> *   |  |       |       | */</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">B_1</span><span class="p">,</span><span class="w">    </span><span class="n">A_1</span><span class="p">,</span><span class="w">    </span><span class="n">C_1</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">....</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Where <code>X_Y</code> is the location of the LED in the matrix defined by <a href="https://www.issi.com/WW/pdf/31FL3733.pdf">the datasheet</a> and the header file <code>drivers/issi/is31fl3733.h</code>. The <code>driver</code> is the index of the driver you defined in your <code>config.h</code> (<code>0</code>, <code>1</code>, <code>2</code>, or <code>3</code> for now).</p>
 <hr />
@@ -3553,16 +4023,16 @@
 </code></pre></div>
 <p>Currently only a single drivers is supported, but it would be trivial to support all 4 combinations. For now define <code>DRIVER_ADDR_2</code> as <code>DRIVER_ADDR_1</code></p>
 <p>Define these arrays listing all the LEDs in your <code>&lt;keyboard&gt;.c</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">is31_led</span> <span class="n">g_is31_leds</span><span class="p">[</span><span class="n">DRIVER_LED_TOTAL</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="n">is31_led</span><span class="w"> </span><span class="n">g_is31_leds</span><span class="p">[</span><span class="n">DRIVER_LED_TOTAL</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="cm">/* Refer to IS31 manual for these locations</span>
 <span class="cm"> *   driver</span>
 <span class="cm"> *   |  R location</span>
 <span class="cm"> *   |  |       G location</span>
 <span class="cm"> *   |  |       |       B location</span>
-<span class="cm"> *   |  |       |       | */</span>
-    <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="n">B_1</span><span class="p">,</span>    <span class="n">A_1</span><span class="p">,</span>    <span class="n">C_1</span><span class="p">},</span>
-    <span class="p">....</span>
-<span class="p">}</span>
+<span class="cm"> *   |  |       |       | */</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">B_1</span><span class="p">,</span><span class="w">    </span><span class="n">A_1</span><span class="p">,</span><span class="w">    </span><span class="n">C_1</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">....</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Where <code>X_Y</code> is the location of the LED in the matrix defined by <a href="https://www.issi.com/WW/pdf/31FL3737.pdf">the datasheet</a> and the header file <code>drivers/issi/is31fl3737.h</code>. The <code>driver</code> is the index of the driver you defined in your <code>config.h</code> (Only <code>0</code> right now).</p>
 <hr />
@@ -3594,23 +4064,23 @@
 <hr />
 <h2 id="common-configuration">Common Configuration<a class="headerlink" href="#common-configuration" title="Permanent link">&para;</a></h2>
 <p>From this point forward the configuration is the same for all the drivers. The <code>led_config_t</code> struct provides a key electrical matrix to led index lookup table, what the physical position of each LED is on the board, and what type of key or usage the LED if the LED represents. Here is a brief example:</p>
-<div class="highlight"><pre><span></span><code><span class="n">led_config_t</span> <span class="n">g_led_config</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span>
-  <span class="c1">// Key Matrix to LED Index</span>
-  <span class="p">{</span>   <span class="mi">5</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span>   <span class="mi">0</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span> <span class="p">},</span>
-  <span class="p">{</span>   <span class="mi">4</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span>   <span class="mi">1</span> <span class="p">},</span>
-  <span class="p">{</span>   <span class="mi">3</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span> <span class="n">NO_LED</span><span class="p">,</span>   <span class="mi">2</span> <span class="p">}</span>
-<span class="p">},</span> <span class="p">{</span>
-  <span class="c1">// LED Index to Physical Position</span>
-  <span class="p">{</span> <span class="mi">188</span><span class="p">,</span>  <span class="mi">16</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">187</span><span class="p">,</span>  <span class="mi">48</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">149</span><span class="p">,</span>  <span class="mi">64</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">112</span><span class="p">,</span>  <span class="mi">64</span> <span class="p">},</span> <span class="p">{</span>  <span class="mi">37</span><span class="p">,</span>  <span class="mi">48</span> <span class="p">},</span> <span class="p">{</span>  <span class="mi">38</span><span class="p">,</span>  <span class="mi">16</span> <span class="p">}</span>
-<span class="p">},</span> <span class="p">{</span>
-  <span class="c1">// LED Index to Flag</span>
-  <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span>
-<span class="p">}</span> <span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="n">led_config_t</span><span class="w"> </span><span class="n">g_led_config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Key Matrix to LED Index</span>
+<span class="w">  </span><span class="p">{</span><span class="w">   </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">NO_LED</span><span class="p">,</span><span class="w"> </span><span class="n">NO_LED</span><span class="p">,</span><span class="w">   </span><span class="mi">0</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">NO_LED</span><span class="p">,</span><span class="w"> </span><span class="n">NO_LED</span><span class="p">,</span><span class="w"> </span><span class="n">NO_LED</span><span class="p">,</span><span class="w"> </span><span class="n">NO_LED</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w">   </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">NO_LED</span><span class="p">,</span><span class="w"> </span><span class="n">NO_LED</span><span class="p">,</span><span class="w">   </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w">   </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">NO_LED</span><span class="p">,</span><span class="w"> </span><span class="n">NO_LED</span><span class="p">,</span><span class="w">   </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// LED Index to Physical Position</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="mi">188</span><span class="p">,</span><span class="w">  </span><span class="mi">16</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">187</span><span class="p">,</span><span class="w">  </span><span class="mi">48</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">149</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">112</span><span class="p">,</span><span class="w">  </span><span class="mi">64</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">37</span><span class="p">,</span><span class="w">  </span><span class="mi">48</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">38</span><span class="p">,</span><span class="w">  </span><span class="mi">16</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// LED Index to Flag</span>
+<span class="w">  </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
 </code></pre></div>
 <p>The first part, <code>// Key Matrix to LED Index</code>, tells the system what key this LED represents by using the key's electrical matrix row &amp; col. The second part, <code>// LED Index to Physical Position</code> represents the LED's physical <code>{ x, y }</code> position on the keyboard. The default expected range of values for <code>{ x, y }</code> is the inclusive range <code>{ 0..224, 0..64 }</code>. This default expected range is due to effects that calculate the center of the keyboard for their animations. The easiest way to calculate these positions is imagine your keyboard is a grid, and the top left of the keyboard represents <code>{ x, y }</code> coordinate <code>{ 0, 0 }</code> and the bottom right of your keyboard represents <code>{ 224, 64 }</code>. Using this as a basis, you can use the following formula to calculate the physical position:</p>
-<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">224</span> <span class="o">/</span> <span class="p">(</span><span class="n">NUMBER_OF_COLS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">COL_POSITION</span>
-<span class="n">y</span> <span class="o">=</span>  <span class="mi">64</span> <span class="o">/</span> <span class="p">(</span><span class="n">NUMBER_OF_ROWS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">ROW_POSITION</span>
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">224</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">NUMBER_OF_COLS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">COL_POSITION</span><span class="w"></span>
+<span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="mi">64</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">NUMBER_OF_ROWS</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">ROW_POSITION</span><span class="w"></span>
 </code></pre></div>
 <p>Where NUMBER_OF_COLS, NUMBER_OF_ROWS, COL_POSITION, &amp; ROW_POSITION are all based on the physical layout of your keyboard, not the electrical layout. </p>
 <p>As mentioned earlier, the center of the keyboard by default is expected to be <code>{ 112, 32 }</code>, but this can be changed if you want to more accurately calculate the LED's physical <code>{ x, y }</code> positions. Keyboard designers can implement <code>#define RGB_MATRIX_CENTER { 112, 32 }</code> in their config.h file with the new center point of the keyboard, or where they want it to be allowing more possibilities for the <code>{ x, y }</code> values. Do note that the maximum value for x or y is 255, and the recommended maximum is 224 as this gives animations runoff room before they reset.</p>
@@ -3765,55 +4235,55 @@
 </div>
 <h2 id="rgb-matrix-effects">RGB Matrix Effects<a class="headerlink" href="#rgb-matrix-effects" title="Permanent link">&para;</a></h2>
 <p>All effects have been configured to support current configuration values (Hue, Saturation, Value, &amp; Speed) unless otherwise noted below. These are the effects that are currently available:</p>
-<div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="n">rgb_matrix_effects</span> <span class="p">{</span>
-    <span class="n">RGB_MATRIX_NONE</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="n">RGB_MATRIX_SOLID_COLOR</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>     <span class="c1">// Static single hue, no speed support</span>
-    <span class="n">RGB_MATRIX_ALPHAS_MODS</span><span class="p">,</span>         <span class="c1">// Static dual hue, speed is hue for secondary hue</span>
-    <span class="n">RGB_MATRIX_GRADIENT_UP_DOWN</span><span class="p">,</span>    <span class="c1">// Static gradient top to bottom, speed controls how much gradient changes</span>
-    <span class="n">RGB_MATRIX_GRADIENT_LEFT_RIGHT</span><span class="p">,</span>    <span class="c1">// Static gradient left to right, speed controls how much gradient changes</span>
-    <span class="n">RGB_MATRIX_BREATHING</span><span class="p">,</span>           <span class="c1">// Single hue brightness cycling animation</span>
-    <span class="n">RGB_MATRIX_BAND_SAT</span><span class="p">,</span>        <span class="c1">// Single hue band fading saturation scrolling left to right</span>
-    <span class="n">RGB_MATRIX_BAND_VAL</span><span class="p">,</span>        <span class="c1">// Single hue band fading brightness scrolling left to right</span>
-    <span class="n">RGB_MATRIX_BAND_PINWHEEL_SAT</span><span class="p">,</span>   <span class="c1">// Single hue 3 blade spinning pinwheel fades saturation</span>
-    <span class="n">RGB_MATRIX_BAND_PINWHEEL_VAL</span><span class="p">,</span>   <span class="c1">// Single hue 3 blade spinning pinwheel fades brightness</span>
-    <span class="n">RGB_MATRIX_BAND_SPIRAL_SAT</span><span class="p">,</span>     <span class="c1">// Single hue spinning spiral fades saturation</span>
-    <span class="n">RGB_MATRIX_BAND_SPIRAL_VAL</span><span class="p">,</span>     <span class="c1">// Single hue spinning spiral fades brightness</span>
-    <span class="n">RGB_MATRIX_CYCLE_ALL</span><span class="p">,</span>           <span class="c1">// Full keyboard solid hue cycling through full gradient</span>
-    <span class="n">RGB_MATRIX_CYCLE_LEFT_RIGHT</span><span class="p">,</span>    <span class="c1">// Full gradient scrolling left to right</span>
-    <span class="n">RGB_MATRIX_CYCLE_UP_DOWN</span><span class="p">,</span>       <span class="c1">// Full gradient scrolling top to bottom</span>
-    <span class="n">RGB_MATRIX_CYCLE_OUT_IN</span><span class="p">,</span>        <span class="c1">// Full gradient scrolling out to in</span>
-    <span class="n">RGB_MATRIX_CYCLE_OUT_IN_DUAL</span><span class="p">,</span>   <span class="c1">// Full dual gradients scrolling out to in</span>
-    <span class="n">RGB_MATRIX_RAINBOW_MOVING_CHEVRON</span><span class="p">,</span>  <span class="c1">// Full gradent Chevron shapped scrolling left to right</span>
-    <span class="n">RGB_MATRIX_CYCLE_PINWHEEL</span><span class="p">,</span>      <span class="c1">// Full gradient spinning pinwheel around center of keyboard</span>
-    <span class="n">RGB_MATRIX_CYCLE_SPIRAL</span><span class="p">,</span>        <span class="c1">// Full gradient spinning spiral around center of keyboard</span>
-    <span class="n">RGB_MATRIX_DUAL_BEACON</span><span class="p">,</span>         <span class="c1">// Full gradient spinning around center of keyboard</span>
-    <span class="n">RGB_MATRIX_RAINBOW_BEACON</span><span class="p">,</span>      <span class="c1">// Full tighter gradient spinning around center of keyboard</span>
-    <span class="n">RGB_MATRIX_RAINBOW_PINWHEELS</span><span class="p">,</span>   <span class="c1">// Full dual gradients spinning two halfs of keyboard</span>
-    <span class="n">RGB_MATRIX_RAINDROPS</span><span class="p">,</span>           <span class="c1">// Randomly changes a single key&#39;s hue</span>
-    <span class="n">RGB_MATRIX_JELLYBEAN_RAINDROPS</span><span class="p">,</span> <span class="c1">// Randomly changes a single key&#39;s hue and saturation</span>
-    <span class="n">RGB_MATRIX_HUE_BREATHING</span><span class="p">,</span>       <span class="c1">// Hue shifts up a slight ammount at the same time, then shifts back</span>
-    <span class="n">RGB_MATRIX_HUE_PENDULUM</span><span class="p">,</span>        <span class="c1">// Hue shifts up a slight ammount in a wave to the right, then back to the left</span>
-    <span class="n">RGB_MATRIX_HUE_WAVE</span><span class="p">,</span>            <span class="c1">// Hue shifts up a slight ammount and then back down in a wave to the right </span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">rgb_matrix_effects</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">RGB_MATRIX_NONE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_COLOR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="c1">// Static single hue, no speed support</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_ALPHAS_MODS</span><span class="p">,</span><span class="w">         </span><span class="c1">// Static dual hue, speed is hue for secondary hue</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_GRADIENT_UP_DOWN</span><span class="p">,</span><span class="w">    </span><span class="c1">// Static gradient top to bottom, speed controls how much gradient changes</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_GRADIENT_LEFT_RIGHT</span><span class="p">,</span><span class="w">    </span><span class="c1">// Static gradient left to right, speed controls how much gradient changes</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_BREATHING</span><span class="p">,</span><span class="w">           </span><span class="c1">// Single hue brightness cycling animation</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_BAND_SAT</span><span class="p">,</span><span class="w">        </span><span class="c1">// Single hue band fading saturation scrolling left to right</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_BAND_VAL</span><span class="p">,</span><span class="w">        </span><span class="c1">// Single hue band fading brightness scrolling left to right</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_BAND_PINWHEEL_SAT</span><span class="p">,</span><span class="w">   </span><span class="c1">// Single hue 3 blade spinning pinwheel fades saturation</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_BAND_PINWHEEL_VAL</span><span class="p">,</span><span class="w">   </span><span class="c1">// Single hue 3 blade spinning pinwheel fades brightness</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_BAND_SPIRAL_SAT</span><span class="p">,</span><span class="w">     </span><span class="c1">// Single hue spinning spiral fades saturation</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_BAND_SPIRAL_VAL</span><span class="p">,</span><span class="w">     </span><span class="c1">// Single hue spinning spiral fades brightness</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_CYCLE_ALL</span><span class="p">,</span><span class="w">           </span><span class="c1">// Full keyboard solid hue cycling through full gradient</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_CYCLE_LEFT_RIGHT</span><span class="p">,</span><span class="w">    </span><span class="c1">// Full gradient scrolling left to right</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_CYCLE_UP_DOWN</span><span class="p">,</span><span class="w">       </span><span class="c1">// Full gradient scrolling top to bottom</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_CYCLE_OUT_IN</span><span class="p">,</span><span class="w">        </span><span class="c1">// Full gradient scrolling out to in</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_CYCLE_OUT_IN_DUAL</span><span class="p">,</span><span class="w">   </span><span class="c1">// Full dual gradients scrolling out to in</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_RAINBOW_MOVING_CHEVRON</span><span class="p">,</span><span class="w">  </span><span class="c1">// Full gradent Chevron shapped scrolling left to right</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_CYCLE_PINWHEEL</span><span class="p">,</span><span class="w">      </span><span class="c1">// Full gradient spinning pinwheel around center of keyboard</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_CYCLE_SPIRAL</span><span class="p">,</span><span class="w">        </span><span class="c1">// Full gradient spinning spiral around center of keyboard</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_DUAL_BEACON</span><span class="p">,</span><span class="w">         </span><span class="c1">// Full gradient spinning around center of keyboard</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_RAINBOW_BEACON</span><span class="p">,</span><span class="w">      </span><span class="c1">// Full tighter gradient spinning around center of keyboard</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_RAINBOW_PINWHEELS</span><span class="p">,</span><span class="w">   </span><span class="c1">// Full dual gradients spinning two halfs of keyboard</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_RAINDROPS</span><span class="p">,</span><span class="w">           </span><span class="c1">// Randomly changes a single key&#39;s hue</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_JELLYBEAN_RAINDROPS</span><span class="p">,</span><span class="w"> </span><span class="c1">// Randomly changes a single key&#39;s hue and saturation</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_HUE_BREATHING</span><span class="p">,</span><span class="w">       </span><span class="c1">// Hue shifts up a slight ammount at the same time, then shifts back</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_HUE_PENDULUM</span><span class="p">,</span><span class="w">        </span><span class="c1">// Hue shifts up a slight ammount in a wave to the right, then back to the left</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_HUE_WAVE</span><span class="p">,</span><span class="w">            </span><span class="c1">// Hue shifts up a slight ammount and then back down in a wave to the right </span>
 <span class="cp">#if define(RGB_MATRIX_FRAMEBUFFER_EFFECTS)</span>
-    <span class="n">RGB_MATRIX_TYPING_HEATMAP</span><span class="p">,</span>      <span class="c1">// How hot is your WPM!</span>
-    <span class="n">RGB_MATRIX_DIGITAL_RAIN</span><span class="p">,</span>        <span class="c1">// That famous computer simulation</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_TYPING_HEATMAP</span><span class="p">,</span><span class="w">      </span><span class="c1">// How hot is your WPM!</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_DIGITAL_RAIN</span><span class="p">,</span><span class="w">        </span><span class="c1">// That famous computer simulation</span>
 <span class="cp">#endif</span>
 <span class="cp">#if defined(RGB_MATRIX_KEYPRESSES) || defined(RGB_MATRIX_KEYRELEASES)</span>
-    <span class="n">RGB_MATRIX_SOLID_REACTIVE_SIMPLE</span><span class="p">,</span>   <span class="c1">// Pulses keys hit to hue &amp; value then fades value out</span>
-    <span class="n">RGB_MATRIX_SOLID_REACTIVE</span><span class="p">,</span>      <span class="c1">// Static single hue, pulses keys hit to shifted hue then fades to current hue</span>
-    <span class="n">RGB_MATRIX_SOLID_REACTIVE_WIDE</span>       <span class="c1">// Hue &amp; value pulse near a single key hit then fades value out</span>
-    <span class="n">RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE</span>  <span class="c1">// Hue &amp; value pulse near multiple key hits then fades value out</span>
-    <span class="n">RGB_MATRIX_SOLID_REACTIVE_CROSS</span>      <span class="c1">// Hue &amp; value pulse the same column and row of a single key hit then fades value out</span>
-    <span class="n">RGB_MATRIX_SOLID_REACTIVE_MULTICROSS</span> <span class="c1">// Hue &amp; value pulse the same column and row of multiple key hits then fades value out</span>
-    <span class="n">RGB_MATRIX_SOLID_REACTIVE_NEXUS</span>      <span class="c1">// Hue &amp; value pulse away on the same column and row of a single key hit then fades value out</span>
-    <span class="n">RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS</span> <span class="c1">// Hue &amp; value pulse away on the same column and row of multiple key hits then fades value out</span>
-    <span class="n">RGB_MATRIX_SPLASH</span><span class="p">,</span>              <span class="c1">// Full gradient &amp; value pulse away from a single key hit then fades value out</span>
-    <span class="n">RGB_MATRIX_MULTISPLASH</span><span class="p">,</span>         <span class="c1">// Full gradient &amp; value pulse away from multiple key hits then fades value out</span>
-    <span class="n">RGB_MATRIX_SOLID_SPLASH</span><span class="p">,</span>        <span class="c1">// Hue &amp; value pulse away from a single key hit then fades value out</span>
-    <span class="n">RGB_MATRIX_SOLID_MULTISPLASH</span><span class="p">,</span>   <span class="c1">// Hue &amp; value pulse away from multiple key hits then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_REACTIVE_SIMPLE</span><span class="p">,</span><span class="w">   </span><span class="c1">// Pulses keys hit to hue &amp; value then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_REACTIVE</span><span class="p">,</span><span class="w">      </span><span class="c1">// Static single hue, pulses keys hit to shifted hue then fades to current hue</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_REACTIVE_WIDE</span><span class="w">       </span><span class="c1">// Hue &amp; value pulse near a single key hit then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE</span><span class="w">  </span><span class="c1">// Hue &amp; value pulse near multiple key hits then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_REACTIVE_CROSS</span><span class="w">      </span><span class="c1">// Hue &amp; value pulse the same column and row of a single key hit then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_REACTIVE_MULTICROSS</span><span class="w"> </span><span class="c1">// Hue &amp; value pulse the same column and row of multiple key hits then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_REACTIVE_NEXUS</span><span class="w">      </span><span class="c1">// Hue &amp; value pulse away on the same column and row of a single key hit then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS</span><span class="w"> </span><span class="c1">// Hue &amp; value pulse away on the same column and row of multiple key hits then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SPLASH</span><span class="p">,</span><span class="w">              </span><span class="c1">// Full gradient &amp; value pulse away from a single key hit then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_MULTISPLASH</span><span class="p">,</span><span class="w">         </span><span class="c1">// Full gradient &amp; value pulse away from multiple key hits then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_SPLASH</span><span class="p">,</span><span class="w">        </span><span class="c1">// Hue &amp; value pulse away from a single key hit then fades value out</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_SOLID_MULTISPLASH</span><span class="p">,</span><span class="w">   </span><span class="c1">// Hue &amp; value pulse away from multiple key hits then fades value out</span>
 <span class="cp">#endif</span>
-    <span class="n">RGB_MATRIX_EFFECT_MAX</span>
-<span class="p">};</span>
+<span class="w">    </span><span class="n">RGB_MATRIX_EFFECT_MAX</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </code></pre></div>
 <p>You can disable a single effect by defining <code>DISABLE_[EFFECT_NAME]</code> in your <code>config.h</code>:</p>
 <table>
@@ -4001,47 +4471,47 @@ automatically every 25 milliseconds by default.</p>
 <p><code>rgb_matrix_user.inc</code> should go in the root of the keymap directory.
 <code>rgb_matrix_kb.inc</code> should go in the root of the keyboard directory.</p>
 <p>To use custom effects in your code, simply prepend <code>RGB_MATRIX_CUSTOM_</code> to the effect name specified in <code>RGB_MATRIX_EFFECT()</code>. For example, an effect declared as <code>RGB_MATRIX_EFFECT(my_cool_effect)</code> would be referenced with:</p>
-<div class="highlight"><pre><span></span><code><span class="n">rgb_matrix_mode</span><span class="p">(</span><span class="n">RGB_MATRIX_CUSTOM_my_cool_effect</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="n">rgb_matrix_mode</span><span class="p">(</span><span class="n">RGB_MATRIX_CUSTOM_my_cool_effect</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">// !!! DO NOT ADD #pragma once !!! //</span>
 
 <span class="c1">// Step 1.</span>
 <span class="c1">// Declare custom effects using the RGB_MATRIX_EFFECT macro</span>
 <span class="c1">// (note the lack of semicolon after the macro!)</span>
-<span class="n">RGB_MATRIX_EFFECT</span><span class="p">(</span><span class="n">my_cool_effect</span><span class="p">)</span>
-<span class="n">RGB_MATRIX_EFFECT</span><span class="p">(</span><span class="n">my_cool_effect2</span><span class="p">)</span>
+<span class="n">RGB_MATRIX_EFFECT</span><span class="p">(</span><span class="n">my_cool_effect</span><span class="p">)</span><span class="w"></span>
+<span class="n">RGB_MATRIX_EFFECT</span><span class="p">(</span><span class="n">my_cool_effect2</span><span class="p">)</span><span class="w"></span>
 
 <span class="c1">// Step 2.</span>
 <span class="c1">// Define effects inside the `RGB_MATRIX_CUSTOM_EFFECT_IMPLS` ifdef block</span>
 <span class="cp">#ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS</span>
 
 <span class="c1">// e.g: A simple effect, self-contained within a single method</span>
-<span class="k">static</span> <span class="kt">bool</span> <span class="n">my_cool_effect</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">RGB_MATRIX_USE_LIMITS</span><span class="p">(</span><span class="n">led_min</span><span class="p">,</span> <span class="n">led_max</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">led_min</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">led_max</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mh">0xff</span><span class="p">,</span> <span class="mh">0xff</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">);</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="n">led_max</span> <span class="o">&lt;</span> <span class="n">DRIVER_LED_TOTAL</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">my_cool_effect</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span><span class="w"> </span><span class="n">params</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">RGB_MATRIX_USE_LIMITS</span><span class="p">(</span><span class="n">led_min</span><span class="p">,</span><span class="w"> </span><span class="n">led_max</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">led_min</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">led_max</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mh">0xff</span><span class="p">,</span><span class="w"> </span><span class="mh">0xff</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">led_max</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">DRIVER_LED_TOTAL</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="c1">// e.g: A more complex effect, relying on external methods and state, with</span>
 <span class="c1">// dedicated init and run methods</span>
-<span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">some_global_state</span><span class="p">;</span>
-<span class="k">static</span> <span class="kt">void</span> <span class="nf">my_cool_effect2_complex_init</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">some_global_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">static</span> <span class="kt">bool</span> <span class="nf">my_cool_effect2_complex_run</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">RGB_MATRIX_USE_LIMITS</span><span class="p">(</span><span class="n">led_min</span><span class="p">,</span> <span class="n">led_max</span><span class="p">);</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">led_min</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">led_max</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mh">0xff</span><span class="p">,</span> <span class="n">some_global_state</span><span class="o">++</span><span class="p">,</span> <span class="mh">0xff</span><span class="p">);</span>
-  <span class="p">}</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">some_global_state</span><span class="p">;</span><span class="w"></span>
+<span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">my_cool_effect2_complex_init</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span><span class="w"> </span><span class="n">params</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">some_global_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">my_cool_effect2_complex_run</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span><span class="w"> </span><span class="n">params</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">RGB_MATRIX_USE_LIMITS</span><span class="p">(</span><span class="n">led_min</span><span class="p">,</span><span class="w"> </span><span class="n">led_max</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">led_min</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">led_max</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="mh">0xff</span><span class="p">,</span><span class="w"> </span><span class="n">some_global_state</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="mh">0xff</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="k">return</span> <span class="n">led_max</span> <span class="o">&lt;</span> <span class="n">DRIVER_LED_TOTAL</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">static</span> <span class="kt">bool</span> <span class="nf">my_cool_effect2</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span> <span class="n">params</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">params</span><span class="o">-&gt;</span><span class="n">init</span><span class="p">)</span> <span class="n">my_cool_effect2_complex_init</span><span class="p">(</span><span class="n">params</span><span class="p">);</span>
-  <span class="k">return</span> <span class="n">my_cool_effect2_complex_run</span><span class="p">(</span><span class="n">params</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">led_max</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">DRIVER_LED_TOTAL</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="k">static</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">my_cool_effect2</span><span class="p">(</span><span class="n">effect_params_t</span><span class="o">*</span><span class="w"> </span><span class="n">params</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">params</span><span class="o">-&gt;</span><span class="n">init</span><span class="p">)</span><span class="w"> </span><span class="n">my_cool_effect2_complex_init</span><span class="p">(</span><span class="n">params</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">my_cool_effect2_complex_run</span><span class="p">(</span><span class="n">params</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="cp">#endif </span><span class="c1">// RGB_MATRIX_CUSTOM_EFFECT_IMPLS</span>
 </code></pre></div>
@@ -4148,7 +4618,7 @@ automatically every 25 milliseconds by default.</p>
 <span class="cp">#define RGB_MATRIX_STARTUP_SPD 127 </span><span class="c1">// Sets the default animation speed, if none has been set</span>
 <span class="cp">#define RGB_MATRIX_DISABLE_KEYCODES </span><span class="c1">// disables control of rgb matrix by keycodes (must use code functions to control the feature)</span>
 <span class="cp">#define RGB_MATRIX_SPLIT { X, Y }   </span><span class="c1">// (Optional) For split keyboards, the number of LEDs connected on each half. X = left, Y = Right.</span>
-                                    <span class="c1">// If RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR</span>
+<span class="w">                                    </span><span class="c1">// If RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR</span>
 </code></pre></div>
 <h2 id="eeprom-storage">EEPROM storage<a class="headerlink" href="#eeprom-storage" title="Permanent link">&para;</a></h2>
 <p>The EEPROM for it is currently shared with the LED Matrix system (it's generally assumed only one feature would be used at a time), but could be configured to use its own 32bit address with:</p>
@@ -4382,70 +4852,65 @@ automatically every 25 milliseconds by default.</p>
 <h2 id="callbacks">Callbacks<a class="headerlink" href="#callbacks" title="Permanent link">&para;</a></h2>
 <h3 id="indicators">Indicators<a class="headerlink" href="#indicators" title="Permanent link">&para;</a></h3>
 <p>If you want to set custom indicators, such as an LED for Caps Lock, or layer indication, you can use the <code>rgb_matrix_indicators_kb</code> or <code>rgb_matrix_indicators_user</code> function for that: 
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">rgb_matrix_indicators_kb</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">rgb_matrix_indicators_kb</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <p>In addition, there are the advanced indicator functions.  These are aimed at those with heavily customized displays, where rendering every LED per cycle is expensive.  Such as some of the "drashna" layouts.  This includes a special macro to help make this easier to use: <code>RGB_MATRIX_INDICATOR_SET_COLOR(i, r, g, b)</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">rgb_matrix_indicators_advanced_user</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">led_min</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">led_max</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">RGB_MATRIX_INDICATOR_SET_COLOR</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">rgb_matrix_indicators_advanced_user</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">led_min</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">led_max</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">RGB_MATRIX_INDICATOR_SET_COLOR</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">red</span><span class="p">,</span><span class="w"> </span><span class="n">green</span><span class="p">,</span><span class="w"> </span><span class="n">blue</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="indicator-examples">Indicator Examples<a class="headerlink" href="#indicator-examples" title="Permanent link">&para;</a></h3>
 <p>Caps Lock indicator on alphanumeric flagged keys:
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">rgb_matrix_indicators_advanced_user</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">led_min</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">led_max</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">host_keyboard_led_state</span><span class="p">().</span><span class="n">caps_lock</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">led_min</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">led_max</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">g_led_config</span><span class="p">.</span><span class="n">flags</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&amp;</span> <span class="n">LED_FLAG_KEYLIGHT</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">RGB_RED</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">rgb_matrix_indicators_advanced_user</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">led_min</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">led_max</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">host_keyboard_led_state</span><span class="p">().</span><span class="n">caps_lock</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">led_min</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">led_max</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">g_led_config</span><span class="p">.</span><span class="n">flags</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">LED_FLAG_KEYLIGHT</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">RGB_RED</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <p>Layer indicator on all flagged keys:
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">rgb_matrix_indicators_advanced_user</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">led_min</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">led_max</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">led_min</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">led_max</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">switch</span><span class="p">(</span><span class="n">get_highest_layer</span><span class="p">(</span><span class="n">layer_state</span><span class="o">|</span><span class="n">default_layer_state</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">case</span> <span class="nl">RAISE</span><span class="p">:</span>
-                <span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">RGB_BLUE</span><span class="p">);</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="nl">LOWER</span><span class="p">:</span>
-                <span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">RGB_YELLOW</span><span class="p">);</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">default</span><span class="o">:</span>
-                <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">rgb_matrix_indicators_advanced_user</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">led_min</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">led_max</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">led_min</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">led_max</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">switch</span><span class="p">(</span><span class="n">get_highest_layer</span><span class="p">(</span><span class="n">layer_state</span><span class="o">|</span><span class="n">default_layer_state</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="nl">RAISE</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">RGB_BLUE</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">case</span><span class="w"> </span><span class="nl">LOWER</span><span class="p">:</span><span class="w"></span>
+<span class="w">                </span><span class="n">rgb_matrix_set_color</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">RGB_YELLOW</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
+<span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <h3 id="suspended-state">Suspended state<a class="headerlink" href="#suspended-state" title="Permanent link">&para;</a></h3>
 <p>To use the suspend feature, make sure that <code>#define RGB_DISABLE_WHEN_USB_SUSPENDED true</code> is added to the <code>config.h</code> file. </p>
 <p>Additionally add this to your <code>&lt;keyboard&gt;.c</code>:</p>
-<p><div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">suspend_power_down_kb</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
-    <span class="n">suspend_power_down_user</span><span class="p">();</span>
-<span class="p">}</span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">suspend_power_down_kb</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">suspend_power_down_user</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">suspend_wakeup_init_kb</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
-    <span class="n">suspend_wakeup_init_user</span><span class="p">();</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">suspend_wakeup_init_kb</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">suspend_wakeup_init_user</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 or add this to your <code>keymap.c</code>:
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">suspend_power_down_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">suspend_power_down_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">suspend_wakeup_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">suspend_wakeup_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
-                
-              
-              
-                
-
 
               
             </article>
@@ -4454,8 +4919,7 @@ or add this to your <code>keymap.c</code>:
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
@@ -4494,14 +4958,15 @@ or add this to your <code>keymap.c</code>:
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -4511,10 +4976,10 @@ or add this to your <code>keymap.c</code>:
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "search.config.lang": "en", "search.config.pipeline": " ", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\uac80\uc0c9", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version.title": "\ubc84\uc804 \uc120\ud0dd"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "search.config.lang": "en", "search.config.pipeline": " ", "search.config.separator": "[\\s\\-]+", "search.placeholder": "\uac80\uc0c9", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version.title": "\ubc84\uc804 \uc120\ud0dd"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

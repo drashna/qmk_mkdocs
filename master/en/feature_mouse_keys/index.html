@@ -8,11 +8,10 @@
       
       
       
-      
         <link rel="canonical" href="https://qmk.github.io/qmk_mkdocs/master/en/feature_mouse_keys/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -20,10 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -33,16 +32,15 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round:300,400,400i,700%7CSource+Code+Pro&display=fallback">
-        <style>:root{--md-text-font-family:"Varela Round";--md-code-font-family:"Source Code Pro"}</style>
+        <style>:root{--md-text-font:"Varela Round";--md-code-font:"Source Code Pro"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../stylesheets/qmk.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
 
     
     
@@ -59,9 +57,8 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -78,7 +75,16 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
       
@@ -113,7 +119,7 @@
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
             </label>
           
         
@@ -133,8 +139,7 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -172,8 +177,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -185,11 +189,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -215,8 +222,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -259,10 +265,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
-      <label class="md-nav__link" for="__nav_2">
-        Tutorial
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Tutorial" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
@@ -271,6 +281,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -281,8 +292,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -293,8 +306,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -305,8 +320,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -317,8 +334,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -329,8 +348,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -341,8 +362,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -353,6 +376,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -375,10 +399,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
-      <label class="md-nav__link" for="__nav_3">
-        FAQs
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          FAQs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="FAQs" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
@@ -387,6 +415,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -397,8 +426,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -409,8 +440,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -421,8 +454,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -433,8 +468,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -445,8 +482,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -457,6 +496,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -479,10 +519,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
-      <label class="md-nav__link" for="__nav_4">
-        Configurator
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Configurator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configurator" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
@@ -491,6 +535,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -501,8 +546,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -513,8 +560,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -525,8 +574,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -537,8 +588,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -548,10 +601,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" data-md-state="indeterminate" type="checkbox" id="__nav_4_5" checked>
       
-      <label class="md-nav__link" for="__nav_4_5">
-        QMK API
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          QMK API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK API" data-md-level="2">
         <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
@@ -560,6 +617,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -570,8 +628,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -582,8 +642,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -594,8 +656,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -606,12 +670,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -634,10 +700,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
       
-      <label class="md-nav__link" for="__nav_5">
-        CLI
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="CLI" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
@@ -646,6 +716,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -656,8 +727,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -668,8 +741,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -680,8 +755,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -692,6 +769,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -716,10 +794,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
-      <label class="md-nav__link" for="__nav_6">
-        Using QMK
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Using QMK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Using QMK" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
@@ -728,6 +810,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -737,10 +820,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" data-md-state="indeterminate" type="checkbox" id="__nav_6_1" checked>
       
-      <label class="md-nav__link" for="__nav_6_1">
-        Guides
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1">
+          Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Guides" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_1">
           <span class="md-nav__icon md-icon"></span>
@@ -749,6 +836,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -759,8 +847,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -771,8 +861,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -783,8 +875,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -795,8 +889,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -806,10 +902,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_5" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_5" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_5">
-        Development Environments
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_5">
+          Development Environments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Development Environments" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_5">
           <span class="md-nav__icon md-icon"></span>
@@ -818,6 +918,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -828,8 +929,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -840,14 +943,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -857,10 +963,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_6" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_6" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_6">
-        Flashing
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_6">
+          Flashing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Flashing" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_6">
           <span class="md-nav__icon md-icon"></span>
@@ -869,6 +979,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -879,8 +990,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -891,14 +1004,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -908,10 +1024,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_7" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_7" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_7">
-        IDEs
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_7">
+          IDEs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="IDEs" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_7">
           <span class="md-nav__icon md-icon"></span>
@@ -920,6 +1040,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -930,8 +1051,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -942,14 +1065,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -959,10 +1085,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_8" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_8" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_8">
-        Git Best Practices
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_8">
+          Git Best Practices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Git Best Practices" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_8">
           <span class="md-nav__icon md-icon"></span>
@@ -971,6 +1101,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -981,8 +1112,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -993,8 +1126,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1005,8 +1140,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1017,14 +1154,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1034,10 +1174,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_9" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_9" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_9">
-        Keyboard Building
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_9">
+          Keyboard Building
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Keyboard Building" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_9">
           <span class="md-nav__icon md-icon"></span>
@@ -1046,6 +1190,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1056,8 +1201,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1068,20 +1215,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1091,10 +1242,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" data-md-state="indeterminate" type="checkbox" id="__nav_6_2" checked>
       
-      <label class="md-nav__link" for="__nav_6_2">
-        Simple Keycodes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          Simple Keycodes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Simple Keycodes" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1103,6 +1258,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1113,8 +1269,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1125,8 +1283,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1137,8 +1297,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1149,8 +1311,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1161,14 +1325,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -1180,10 +1347,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" type="checkbox" id="__nav_6_3" checked>
       
-      <label class="md-nav__link" for="__nav_6_3">
-        Advanced Keycodes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          Advanced Keycodes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Advanced Keycodes" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_3">
           <span class="md-nav__icon md-icon"></span>
@@ -1192,6 +1363,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1202,8 +1374,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1214,8 +1388,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1226,8 +1402,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1238,8 +1416,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1250,8 +1430,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1262,8 +1444,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -1287,6 +1471,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -1382,8 +1567,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1394,8 +1581,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1406,14 +1595,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1423,10 +1615,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" data-md-state="indeterminate" type="checkbox" id="__nav_6_4" checked>
       
-      <label class="md-nav__link" for="__nav_6_4">
-        Software Features
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4">
+          Software Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Software Features" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_4">
           <span class="md-nav__icon md-icon"></span>
@@ -1435,6 +1631,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1445,8 +1642,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1457,8 +1656,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1469,8 +1670,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1481,8 +1684,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1493,8 +1698,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1505,8 +1712,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1517,8 +1726,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1529,8 +1740,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1541,8 +1754,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1553,8 +1768,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1565,8 +1782,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1577,8 +1796,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1589,8 +1810,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1601,8 +1824,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1613,8 +1838,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1625,14 +1852,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1642,10 +1872,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" data-md-state="indeterminate" type="checkbox" id="__nav_6_5" checked>
       
-      <label class="md-nav__link" for="__nav_6_5">
-        Hardware Features
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5">
+          Hardware Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Hardware Features" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_5">
           <span class="md-nav__icon md-icon"></span>
@@ -1654,6 +1888,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1663,10 +1898,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_1" data-md-state="indeterminate" type="checkbox" id="__nav_6_5_1" checked>
       
-      <label class="md-nav__link" for="__nav_6_5_1">
-        Displays
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_1">
+          Displays
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Displays" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_5_1">
           <span class="md-nav__icon md-icon"></span>
@@ -1675,6 +1914,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1685,8 +1925,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1697,14 +1939,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1714,10 +1959,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_2" data-md-state="indeterminate" type="checkbox" id="__nav_6_5_2" checked>
       
-      <label class="md-nav__link" for="__nav_6_5_2">
-        Lighting
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_2">
+          Lighting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Lighting" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_5_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1726,6 +1975,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1736,8 +1986,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1748,8 +2000,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1760,8 +2014,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1772,14 +2028,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1790,8 +2049,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1802,8 +2063,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1814,8 +2077,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1826,8 +2091,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1838,8 +2105,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1850,8 +2119,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1862,8 +2133,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1874,8 +2147,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1886,8 +2161,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1898,8 +2175,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1910,8 +2189,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1922,8 +2203,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1934,8 +2217,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1946,8 +2231,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1958,8 +2245,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1970,12 +2259,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1998,10 +2289,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
       
-      <label class="md-nav__link" for="__nav_7">
-        Developing QMK
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Developing QMK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Developing QMK" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -2010,6 +2305,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2020,8 +2316,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2031,10 +2329,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" data-md-state="indeterminate" type="checkbox" id="__nav_7_2" checked>
       
-      <label class="md-nav__link" for="__nav_7_2">
-        Breaking Changes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Breaking Changes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Breaking Changes" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
@@ -2043,6 +2345,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2053,8 +2356,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2065,8 +2370,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2077,8 +2384,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2088,10 +2397,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_2_4" checked>
       
-      <label class="md-nav__link" for="__nav_7_2_4">
-        Past ChangeLogs
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2_4">
+          Past ChangeLogs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Past ChangeLogs" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_2_4">
           <span class="md-nav__icon md-icon"></span>
@@ -2100,6 +2413,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2110,8 +2424,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2122,8 +2438,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2134,8 +2452,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2146,8 +2466,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2158,8 +2480,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2170,20 +2494,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2193,10 +2521,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" data-md-state="indeterminate" type="checkbox" id="__nav_7_3" checked>
       
-      <label class="md-nav__link" for="__nav_7_3">
-        C Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          C Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="C Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_3">
           <span class="md-nav__icon md-icon"></span>
@@ -2205,6 +2537,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2215,8 +2548,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2227,8 +2562,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2239,8 +2576,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2251,8 +2590,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2262,10 +2603,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_7_3_5" checked>
       
-      <label class="md-nav__link" for="__nav_7_3_5">
-        Drivers
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3_5">
+          Drivers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Drivers" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_3_5">
           <span class="md-nav__icon md-icon"></span>
@@ -2274,6 +2619,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2284,8 +2630,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2296,8 +2644,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2308,8 +2658,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2320,8 +2672,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2332,8 +2686,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2344,8 +2700,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2356,8 +2714,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2368,8 +2728,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2380,14 +2742,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2398,8 +2763,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2410,14 +2777,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2427,10 +2797,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_4" checked>
       
-      <label class="md-nav__link" for="__nav_7_4">
-        Python Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Python Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Python Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
@@ -2439,6 +2813,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2449,8 +2824,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2461,14 +2838,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2478,10 +2858,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" data-md-state="indeterminate" type="checkbox" id="__nav_7_5" checked>
       
-      <label class="md-nav__link" for="__nav_7_5">
-        Configurator Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          Configurator Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configurator Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_5">
           <span class="md-nav__icon md-icon"></span>
@@ -2490,6 +2874,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2499,10 +2884,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5_1" data-md-state="indeterminate" type="checkbox" id="__nav_7_5_1" checked>
       
-      <label class="md-nav__link" for="__nav_7_5_1">
-        QMK API
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5_1">
+          QMK API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK API" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_5_1">
           <span class="md-nav__icon md-icon"></span>
@@ -2511,6 +2900,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2521,8 +2911,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2533,20 +2925,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2556,10 +2952,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6" data-md-state="indeterminate" type="checkbox" id="__nav_7_6" checked>
       
-      <label class="md-nav__link" for="__nav_7_6">
-        Hardware Platform Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6">
+          Hardware Platform Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Hardware Platform Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_6">
           <span class="md-nav__icon md-icon"></span>
@@ -2568,6 +2968,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2577,10 +2978,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6_1" data-md-state="indeterminate" type="checkbox" id="__nav_7_6_1" checked>
       
-      <label class="md-nav__link" for="__nav_7_6_1">
-        Arm/ChibiOS
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6_1">
+          Arm/ChibiOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Arm/ChibiOS" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_6_1">
           <span class="md-nav__icon md-icon"></span>
@@ -2589,6 +2994,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2599,8 +3005,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2611,20 +3019,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2634,10 +3046,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" data-md-state="indeterminate" type="checkbox" id="__nav_7_7" checked>
       
-      <label class="md-nav__link" for="__nav_7_7">
-        QMK Reference
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_7">
+          QMK Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK Reference" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_7">
           <span class="md-nav__icon md-icon"></span>
@@ -2646,6 +3062,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2656,8 +3073,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2668,8 +3087,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2680,8 +3101,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2692,8 +3115,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2704,8 +3129,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2716,8 +3143,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2728,8 +3157,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2740,8 +3171,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2752,8 +3185,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2764,8 +3199,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2776,14 +3213,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2793,10 +3233,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" data-md-state="indeterminate" type="checkbox" id="__nav_7_8" checked>
       
-      <label class="md-nav__link" for="__nav_7_8">
-        For a Deeper Understanding
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          For a Deeper Understanding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="For a Deeper Understanding" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_8">
           <span class="md-nav__icon md-icon"></span>
@@ -2805,6 +3249,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2815,8 +3260,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2827,8 +3274,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2839,14 +3288,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2856,10 +3308,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" data-md-state="indeterminate" type="checkbox" id="__nav_7_9" checked>
       
-      <label class="md-nav__link" for="__nav_7_9">
-        QMK Internals (In Progress)
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_9">
+          QMK Internals (In Progress)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK Internals (In Progress)" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_9">
           <span class="md-nav__icon md-icon"></span>
@@ -2868,6 +3324,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2878,8 +3335,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2890,8 +3349,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2902,8 +3363,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2914,8 +3377,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2926,8 +3391,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2938,8 +3405,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2950,12 +3419,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -2975,6 +3446,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -3075,18 +3547,18 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_mouse_keys.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="mouse-keys">Mouse keys<a class="headerlink" href="#mouse-keys" title="Permanent link">&para;</a></h1>
+<a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_mouse_keys.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="mouse-keys">Mouse keys<a class="headerlink" href="#mouse-keys" title="Permanent link">&para;</a></h1>
 <p>Mouse keys is a feature that allows you to emulate a mouse using your keyboard. You can move the pointer at different speeds, press 5 buttons and scroll in 8 directions.</p>
 <h2 id="adding-mouse-keys-to-your-keyboard">Adding mouse keys to your keyboard<a class="headerlink" href="#adding-mouse-keys-to-your-keyboard" title="Permanent link">&para;</a></h2>
 <p>To use mouse keys, you must at least enable mouse keys support and map mouse actions to keys on your keyboard.</p>
 <h3 id="enabling-mouse-keys">Enabling mouse keys<a class="headerlink" href="#enabling-mouse-keys" title="Permanent link">&para;</a></h3>
 <p>To enable mouse keys, add the following line to your keymap’s <code>rules.mk</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">MOUSEKEY_ENABLE</span> <span class="o">=</span> <span class="n">yes</span>
+<div class="highlight"><pre><span></span><code><span class="n">MOUSEKEY_ENABLE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">yes</span><span class="w"></span>
 </code></pre></div>
 <h3 id="mapping-mouse-actions">Mapping mouse actions<a class="headerlink" href="#mapping-mouse-actions" title="Permanent link">&para;</a></h3>
 <p>In your keymap you can use the following keycodes to map key presses to mouse actions:</p>
@@ -3487,11 +3959,6 @@ useful for moving the cursor large distances without much accuracy.</li>
 </code></pre></div>
 <h2 id="use-with-ps2-mouse-and-pointing-device">Use with PS/2 Mouse and Pointing Device<a class="headerlink" href="#use-with-ps2-mouse-and-pointing-device" title="Permanent link">&para;</a></h2>
 <p>Mouse keys button state is shared with <a href="../feature_ps2_mouse/">PS/2 mouse</a> and <a href="../feature_pointing_device/">pointing device</a> so mouse keys button presses can be used for clicks and drags.</p>
-                
-              
-              
-                
-
 
               
             </article>
@@ -3500,8 +3967,7 @@ useful for moving the cursor large distances without much accuracy.</li>
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
@@ -3540,14 +4006,15 @@ useful for moving the cursor large distances without much accuracy.</li>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -3557,10 +4024,10 @@ useful for moving the cursor large distances without much accuracy.</li>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

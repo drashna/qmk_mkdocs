@@ -8,11 +8,10 @@
       
       
       
-      
         <link rel="canonical" href="https://qmk.github.io/qmk_mkdocs/master/zh/feature_leader_key/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -20,10 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -33,16 +32,15 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round:300,400,400i,700%7CSource+Code+Pro&display=fallback">
-        <style>:root{--md-text-font-family:"Varela Round";--md-code-font-family:"Source Code Pro"}</style>
+        <style>:root{--md-text-font:"Varela Round";--md-code-font:"Source Code Pro"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../stylesheets/qmk.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
 
     
     
@@ -59,9 +57,8 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -78,8 +75,17 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
     <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
       
   
@@ -113,7 +119,7 @@
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
             </label>
           
         
@@ -133,8 +139,7 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -143,13 +148,13 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="查找">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
         </button>
       </nav>
@@ -172,8 +177,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/qmk/qmk_firmware/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+        <a href="https://github.com/qmk/qmk_firmware/" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -185,11 +189,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -203,7 +210,7 @@
                     
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
       
@@ -215,8 +222,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/qmk/qmk_firmware/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+      <a href="https://github.com/qmk/qmk_firmware/" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -259,10 +265,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
-      <label class="md-nav__link" for="__nav_2">
-        完全菜鸟指南
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          完全菜鸟指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="完全菜鸟指南" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
@@ -271,6 +281,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -281,8 +292,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -293,8 +306,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -305,8 +320,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -317,8 +334,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -329,8 +348,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -340,10 +361,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" data-md-state="indeterminate" type="checkbox" id="__nav_2_6" checked>
       
-      <label class="md-nav__link" for="__nav_2_6">
-        Git最佳实践
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          Git最佳实践
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Git最佳实践" data-md-level="2">
         <label class="md-nav__title" for="__nav_2_6">
           <span class="md-nav__icon md-icon"></span>
@@ -352,6 +377,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -362,8 +388,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -374,8 +402,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -386,14 +416,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -404,6 +437,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -426,10 +460,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
-      <label class="md-nav__link" for="__nav_3">
-        QMK基础
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          QMK基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK基础" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
@@ -438,6 +476,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -448,8 +487,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -460,8 +501,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -472,8 +515,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -484,8 +529,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -496,8 +543,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -508,6 +557,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -530,10 +580,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
-      <label class="md-nav__link" for="__nav_4">
-        非兼容性修改
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          非兼容性修改
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="非兼容性修改" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
@@ -542,6 +596,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -552,8 +607,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -564,8 +621,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -576,6 +635,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -598,10 +658,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
       
-      <label class="md-nav__link" for="__nav_5">
-        问题与解答
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          问题与解答
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="问题与解答" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
@@ -610,6 +674,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -620,8 +685,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -632,8 +699,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -644,8 +713,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -656,8 +727,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -668,6 +741,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -690,10 +764,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
       
-      <label class="md-nav__link" for="__nav_6">
-        详细指南
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          详细指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="详细指南" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
@@ -702,6 +780,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -712,8 +791,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -724,8 +805,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -736,8 +819,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -748,8 +833,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -760,8 +847,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -772,6 +861,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -794,10 +884,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
       
-      <label class="md-nav__link" for="__nav_7">
-        硬件
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          硬件
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="硬件" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -806,6 +900,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -816,8 +911,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -828,8 +925,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -840,6 +939,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -862,10 +962,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
       
-      <label class="md-nav__link" for="__nav_8">
-        参考
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          参考
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="参考" data-md-level="1">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
@@ -874,6 +978,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -884,8 +989,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -896,8 +1003,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -908,8 +1017,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -920,8 +1031,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -932,8 +1045,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -944,8 +1059,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -956,8 +1073,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -968,8 +1087,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -980,8 +1101,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -992,8 +1115,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1004,8 +1129,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1016,8 +1143,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1028,6 +1157,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1052,10 +1182,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
       
-      <label class="md-nav__link" for="__nav_9">
-        特性
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          特性
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="特性" data-md-level="1">
         <label class="md-nav__title" for="__nav_9">
           <span class="md-nav__icon md-icon"></span>
@@ -1064,6 +1198,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1074,8 +1209,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1086,8 +1223,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1098,8 +1237,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1110,8 +1251,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1122,8 +1265,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1134,8 +1279,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1146,8 +1293,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1158,8 +1307,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1170,8 +1321,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1182,8 +1335,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1194,8 +1349,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1206,8 +1363,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1218,8 +1377,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1230,8 +1391,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1242,8 +1405,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1254,8 +1419,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1266,8 +1433,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1278,8 +1447,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1290,8 +1461,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1302,8 +1475,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -1327,6 +1502,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
@@ -1395,8 +1571,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1407,8 +1585,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1419,8 +1599,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1431,8 +1613,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1443,8 +1627,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1455,8 +1641,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1467,8 +1655,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1479,8 +1669,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1491,8 +1683,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1503,8 +1697,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1515,8 +1711,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1527,8 +1725,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1539,8 +1739,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1551,8 +1753,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1563,8 +1767,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1575,8 +1781,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1587,8 +1795,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1599,8 +1809,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1611,8 +1823,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1623,6 +1837,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1645,10 +1860,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
       
-      <label class="md-nav__link" for="__nav_10">
-        制造和定制者指南
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          制造和定制者指南
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="制造和定制者指南" data-md-level="1">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
@@ -1657,6 +1876,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1667,8 +1887,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1679,8 +1901,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1691,8 +1915,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1703,8 +1929,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1715,8 +1943,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1727,8 +1957,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1739,8 +1971,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1751,8 +1985,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1763,8 +1999,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1775,8 +2013,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1787,6 +2027,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1809,10 +2050,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" data-md-state="indeterminate" type="checkbox" id="__nav_11" checked>
       
-      <label class="md-nav__link" for="__nav_11">
-        深入了解
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          深入了解
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="深入了解" data-md-level="1">
         <label class="md-nav__title" for="__nav_11">
           <span class="md-nav__icon md-icon"></span>
@@ -1821,6 +2066,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1831,8 +2077,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1843,6 +2091,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1865,10 +2114,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" data-md-state="indeterminate" type="checkbox" id="__nav_12" checked>
       
-      <label class="md-nav__link" for="__nav_12">
-        其他话题
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          其他话题
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="其他话题" data-md-level="1">
         <label class="md-nav__title" for="__nav_12">
           <span class="md-nav__icon md-icon"></span>
@@ -1877,6 +2130,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1887,8 +2141,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1899,8 +2155,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1911,8 +2169,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1923,6 +2183,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1945,10 +2206,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" data-md-state="indeterminate" type="checkbox" id="__nav_13" checked>
       
-      <label class="md-nav__link" for="__nav_13">
-        QMK 内构 (正在编写)
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_13">
+          QMK 内构 (正在编写)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK 内构 (正在编写)" data-md-level="1">
         <label class="md-nav__title" for="__nav_13">
           <span class="md-nav__icon md-icon"></span>
@@ -1957,6 +2222,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1967,8 +2233,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1979,8 +2247,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1991,8 +2261,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2003,8 +2275,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2015,8 +2289,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2027,8 +2303,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2039,6 +2317,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -2058,6 +2337,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
@@ -2131,12 +2411,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_leader_key.md" title="编辑此页" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="the-leader-key-a-new-kind-of-modifier">The Leader Key: A New Kind of Modifier<a class="headerlink" href="#the-leader-key-a-new-kind-of-modifier" title="Permanent link">&para;</a></h1>
+<a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_leader_key.md" title="编辑此页" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="the-leader-key-a-new-kind-of-modifier">The Leader Key: A New Kind of Modifier<a class="headerlink" href="#the-leader-key-a-new-kind-of-modifier" title="Permanent link">&para;</a></h1>
 <p>If you've ever used Vim, you know what a Leader key is. If not, you're about to discover a wonderful concept. :) Instead of hitting Alt+Shift+W for example (holding down three keys at the same time), what if you could hit a <em>sequence</em> of keys instead? So you'd hit our special modifier (the Leader key), followed by W and then C (just a rapid succession of keys), and something would happen.</p>
 <p>That's what <code>KC_LEAD</code> does. Here's an example:</p>
 <ol>
@@ -2145,31 +2425,31 @@
    * By default, this timeout is how long after pressing <code>KC_LEAD</code> to complete your entire sequence. This may be very low for some people. So you may want to increase this timeout.  Optionally, you may want to enable the <code>LEADER_PER_KEY_TIMING</code> option, which resets the timeout after each key is tapped.  This allows you to maintain a low value here, but still be able to use the longer sequences.   To enable this option, add <code>#define LEADER_PER_KEY_TIMING</code> to your <code>config.h</code>.</li>
 <li>Within your <code>matrix_scan_user</code> function, add something like this:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="n">LEADER_EXTERNS</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><span class="n">LEADER_EXTERNS</span><span class="p">();</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">matrix_scan_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">LEADER_DICTIONARY</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">leading</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-    <span class="n">leader_end</span><span class="p">();</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">matrix_scan_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">LEADER_DICTIONARY</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">leading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">leader_end</span><span class="p">();</span><span class="w"></span>
 
-    <span class="n">SEQ_ONE_KEY</span><span class="p">(</span><span class="n">KC_F</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// Anything you can do in a macro.</span>
-      <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;QMK is awesome.&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">SEQ_TWO_KEYS</span><span class="p">(</span><span class="n">KC_D</span><span class="p">,</span> <span class="n">KC_D</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">SEND_STRING</span><span class="p">(</span><span class="n">SS_LCTL</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span> <span class="n">SS_LCTL</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">));</span>
-    <span class="p">}</span>
-    <span class="n">SEQ_THREE_KEYS</span><span class="p">(</span><span class="n">KC_D</span><span class="p">,</span> <span class="n">KC_D</span><span class="p">,</span> <span class="n">KC_S</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;https://start.duckduckgo.com</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">SEQ_TWO_KEYS</span><span class="p">(</span><span class="n">KC_A</span><span class="p">,</span> <span class="n">KC_S</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">register_code</span><span class="p">(</span><span class="n">KC_LGUI</span><span class="p">);</span>
-      <span class="n">register_code</span><span class="p">(</span><span class="n">KC_S</span><span class="p">);</span>
-      <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_S</span><span class="p">);</span>
-      <span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_LGUI</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">SEQ_ONE_KEY</span><span class="p">(</span><span class="n">KC_F</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// Anything you can do in a macro.</span>
+<span class="w">      </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;QMK is awesome.&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">SEQ_TWO_KEYS</span><span class="p">(</span><span class="n">KC_D</span><span class="p">,</span><span class="w"> </span><span class="n">KC_D</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="n">SS_LCTL</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">SS_LCTL</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">SEQ_THREE_KEYS</span><span class="p">(</span><span class="n">KC_D</span><span class="p">,</span><span class="w"> </span><span class="n">KC_D</span><span class="p">,</span><span class="w"> </span><span class="n">KC_S</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;https://start.duckduckgo.com</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">SEQ_TWO_KEYS</span><span class="p">(</span><span class="n">KC_A</span><span class="p">,</span><span class="w"> </span><span class="n">KC_S</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">register_code</span><span class="p">(</span><span class="n">KC_LGUI</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="n">register_code</span><span class="p">(</span><span class="n">KC_S</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_S</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="n">unregister_code</span><span class="p">(</span><span class="n">KC_LGUI</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>As you can see, you have a few function. You can use <code>SEQ_ONE_KEY</code> for single-key sequences (Leader followed by just one key), and <code>SEQ_TWO_KEYS</code>, <code>SEQ_THREE_KEYS</code> up to <code>SEQ_FIVE_KEYS</code> for longer sequences.</p>
 <p>Each of these accepts one or more keycodes as arguments. This is an important point: You can use keycodes from <strong>any layer on your keyboard</strong>. That layer would need to be active for the leader macro to fire, obviously.</p>
@@ -2186,9 +2466,9 @@
 <div class="highlight"><pre><span></span><code><span class="cp">#define LEADER_TIMEOUT 250</span>
 </code></pre></div>
 <p>Now, something like this won't seem impossible to do without a 1000MS leader key timeout:</p>
-<div class="highlight"><pre><span></span><code><span class="n">SEQ_THREE_KEYS</span><span class="p">(</span><span class="n">KC_C</span><span class="p">,</span> <span class="n">KC_C</span><span class="p">,</span> <span class="n">KC_C</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;Per key timing is great!!!&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="n">SEQ_THREE_KEYS</span><span class="p">(</span><span class="n">KC_C</span><span class="p">,</span><span class="w"> </span><span class="n">KC_C</span><span class="p">,</span><span class="w"> </span><span class="n">KC_C</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;Per key timing is great!!!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h2 id="infinite-leader-key-timeout">Infinite Leader key timeout<a class="headerlink" href="#infinite-leader-key-timeout" title="Permanent link">&para;</a></h2>
 <p>Sometimes your leader key is not on a comfortable places as the rest of keys on your sequence. Imagine that your leader key is one of your outer top right keys, you may need to reposition your hand just to reach your leader key.
@@ -2206,64 +2486,59 @@ This way you can configure a very short <code>LEADER_TIMEOUT</code> but still ha
 <p>The Leader Key feature has some additional customization to how the Leader Key feature works.  It has two functions that can be called at certain parts of the process.  Namely <code>leader_start()</code> and <code>leader_end()</code>.</p>
 <p>The <code>leader_start()</code> function is called when you tap the <code>KC_LEAD</code> key, and the <code>leader_end()</code> function is called when either the leader sequence is completed, or the leader timeout is hit. </p>
 <p>You can add these functions to your code (<code>keymap.c</code> usually) to add feedback to the Leader sequences (such as beeping or playing music).</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">leader_start</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// sequence started</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">leader_start</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// sequence started</span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">leader_end</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// sequence ended (no success/failure detection)</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">leader_end</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// sequence ended (no success/failure detection)</span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <p>This example will play the Mario "One Up" sound when you hit <code>KC_LEAD</code> to start the Leader Sequence, and will play "All Star" if it completes successfully or "Rick Roll" you if it fails. </p>
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">did_leader_succeed</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">did_leader_succeed</span><span class="p">;</span><span class="w"></span>
 <span class="cp">#ifdef AUDIO_ENABLE</span>
-<span class="kt">float</span> <span class="n">leader_start</span><span class="p">[][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">SONG</span><span class="p">(</span><span class="n">ONE_UP_SOUND</span> <span class="p">);</span>
-<span class="kt">float</span> <span class="n">leader_succeed</span><span class="p">[][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">SONG</span><span class="p">(</span><span class="n">ALL_STAR</span><span class="p">);</span>
-<span class="kt">float</span> <span class="n">leader_fail</span><span class="p">[][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">SONG</span><span class="p">(</span><span class="n">RICK_ROLL</span><span class="p">);</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">leader_start</span><span class="p">[][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SONG</span><span class="p">(</span><span class="n">ONE_UP_SOUND</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
+<span class="kt">float</span><span class="w"> </span><span class="n">leader_succeed</span><span class="p">[][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SONG</span><span class="p">(</span><span class="n">ALL_STAR</span><span class="p">);</span><span class="w"></span>
+<span class="kt">float</span><span class="w"> </span><span class="n">leader_fail</span><span class="p">[][</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SONG</span><span class="p">(</span><span class="n">RICK_ROLL</span><span class="p">);</span><span class="w"></span>
 <span class="cp">#endif</span>
-<span class="n">LEADER_EXTERNS</span><span class="p">();</span>
+<span class="n">LEADER_EXTERNS</span><span class="p">();</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">matrix_scan_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">LEADER_DICTIONARY</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">did_leader_succeed</span> <span class="o">=</span> <span class="n">leading</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">matrix_scan_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">LEADER_DICTIONARY</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">did_leader_succeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">leading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
 
-    <span class="n">SEQ_ONE_KEY</span><span class="p">(</span><span class="n">KC_E</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// Anything you can do in a macro.</span>
-      <span class="n">SEND_STRING</span><span class="p">(</span><span class="n">SS_LCTL</span><span class="p">(</span><span class="n">SS_LSFT</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)));</span>
-      <span class="n">did_leader_succeed</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="p">}</span> <span class="k">else</span> 
-    <span class="n">SEQ_TWO_KEYS</span><span class="p">(</span><span class="n">KC_E</span><span class="p">,</span> <span class="n">KC_D</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">SEND_STRING</span><span class="p">(</span><span class="n">SS_LGUI</span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="p">)</span> <span class="s">&quot;cmd</span><span class="se">\n</span><span class="s">&quot;</span> <span class="n">SS_LCTL</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">));</span>
-      <span class="n">did_leader_succeed</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">leader_end</span><span class="p">();</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">SEQ_ONE_KEY</span><span class="p">(</span><span class="n">KC_E</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// Anything you can do in a macro.</span>
+<span class="w">      </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="n">SS_LCTL</span><span class="p">(</span><span class="n">SS_LSFT</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)));</span><span class="w"></span>
+<span class="w">      </span><span class="n">did_leader_succeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span>
+<span class="w">    </span><span class="n">SEQ_TWO_KEYS</span><span class="p">(</span><span class="n">KC_E</span><span class="p">,</span><span class="w"> </span><span class="n">KC_D</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="n">SS_LGUI</span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;cmd</span><span class="se">\n</span><span class="s">&quot;</span><span class="w"> </span><span class="n">SS_LCTL</span><span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">));</span><span class="w"></span>
+<span class="w">      </span><span class="n">did_leader_succeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">leader_end</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">leader_start</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">leader_start</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="cp">#ifdef AUDIO_ENABLE</span>
-    <span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">leader_start</span><span class="p">);</span>
+<span class="w">    </span><span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">leader_start</span><span class="p">);</span><span class="w"></span>
 <span class="cp">#endif</span>
-<span class="p">}</span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">leader_end</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">did_leader_succeed</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">leader_end</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">did_leader_succeed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="cp">#ifdef AUDIO_ENABLE</span>
-    <span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">leader_succeed</span><span class="p">);</span>
+<span class="w">    </span><span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">leader_succeed</span><span class="p">);</span><span class="w"></span>
 <span class="cp">#endif</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="cp">#ifdef AUDIO_ENABLE</span>
-    <span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">leader_fail</span><span class="p">);</span>
+<span class="w">    </span><span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">leader_fail</span><span class="p">);</span><span class="w"></span>
 <span class="cp">#endif</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
-                
-              
-              
-                
-
 
               
             </article>
@@ -2272,10 +2547,9 @@ This way you can configure a very short <code>LEADER_TIMEOUT</code> but still ha
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
         <a href="../feature_layouts/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 布局" rel="prev">
@@ -2312,14 +2586,15 @@ This way you can configure a very short <code>LEADER_TIMEOUT</code> but still ha
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -2329,10 +2604,10 @@ This way you can configure a very short <code>LEADER_TIMEOUT</code> but still ha
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

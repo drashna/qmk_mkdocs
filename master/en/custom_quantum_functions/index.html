@@ -8,11 +8,10 @@
       
       
       
-      
         <link rel="canonical" href="https://qmk.github.io/qmk_mkdocs/master/en/custom_quantum_functions/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -20,10 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -33,16 +32,15 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round:300,400,400i,700%7CSource+Code+Pro&display=fallback">
-        <style>:root{--md-text-font-family:"Varela Round";--md-code-font-family:"Source Code Pro"}</style>
+        <style>:root{--md-text-font:"Varela Round";--md-code-font:"Source Code Pro"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../stylesheets/qmk.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
 
     
     
@@ -59,9 +57,8 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -78,7 +75,16 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
       
@@ -113,7 +119,7 @@
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
             </label>
           
         
@@ -133,8 +139,7 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -172,8 +177,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -185,11 +189,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -215,8 +222,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -259,10 +265,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
-      <label class="md-nav__link" for="__nav_2">
-        Tutorial
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Tutorial" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
@@ -271,6 +281,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -281,8 +292,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -293,8 +306,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -305,8 +320,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -317,8 +334,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -329,8 +348,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -341,8 +362,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -353,6 +376,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -375,10 +399,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
-      <label class="md-nav__link" for="__nav_3">
-        FAQs
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          FAQs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="FAQs" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
@@ -387,6 +415,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -397,8 +426,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -409,8 +440,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -421,8 +454,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -433,8 +468,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -445,8 +482,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -457,6 +496,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -479,10 +519,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
-      <label class="md-nav__link" for="__nav_4">
-        Configurator
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Configurator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configurator" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
@@ -491,6 +535,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -501,8 +546,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -513,8 +560,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -525,8 +574,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -537,8 +588,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -548,10 +601,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" data-md-state="indeterminate" type="checkbox" id="__nav_4_5" checked>
       
-      <label class="md-nav__link" for="__nav_4_5">
-        QMK API
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          QMK API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK API" data-md-level="2">
         <label class="md-nav__title" for="__nav_4_5">
           <span class="md-nav__icon md-icon"></span>
@@ -560,6 +617,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -570,8 +628,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -582,8 +642,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -594,8 +656,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -606,12 +670,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -634,10 +700,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
       
-      <label class="md-nav__link" for="__nav_5">
-        CLI
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="CLI" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
@@ -646,6 +716,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -656,8 +727,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -668,8 +741,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -680,8 +755,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -692,6 +769,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -716,10 +794,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
-      <label class="md-nav__link" for="__nav_6">
-        Using QMK
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Using QMK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Using QMK" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
@@ -728,6 +810,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
     
@@ -739,10 +822,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
       
-      <label class="md-nav__link" for="__nav_6_1">
-        Guides
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1">
+          Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Guides" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_1">
           <span class="md-nav__icon md-icon"></span>
@@ -751,6 +838,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -761,8 +849,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -786,6 +876,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -813,8 +904,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -825,8 +918,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -837,8 +932,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -848,10 +945,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_5" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_5" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_5">
-        Development Environments
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_5">
+          Development Environments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Development Environments" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_5">
           <span class="md-nav__icon md-icon"></span>
@@ -860,6 +961,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -870,8 +972,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -882,14 +986,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -899,10 +1006,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_6" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_6" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_6">
-        Flashing
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_6">
+          Flashing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Flashing" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_6">
           <span class="md-nav__icon md-icon"></span>
@@ -911,6 +1022,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -921,8 +1033,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -933,14 +1047,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -950,10 +1067,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_7" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_7" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_7">
-        IDEs
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_7">
+          IDEs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="IDEs" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_7">
           <span class="md-nav__icon md-icon"></span>
@@ -962,6 +1083,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -972,8 +1094,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -984,14 +1108,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1001,10 +1128,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_8" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_8" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_8">
-        Git Best Practices
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_8">
+          Git Best Practices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Git Best Practices" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_8">
           <span class="md-nav__icon md-icon"></span>
@@ -1013,6 +1144,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1023,8 +1155,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1035,8 +1169,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1047,8 +1183,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1059,14 +1197,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1076,10 +1217,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_9" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_9" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_9">
-        Keyboard Building
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_9">
+          Keyboard Building
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Keyboard Building" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_9">
           <span class="md-nav__icon md-icon"></span>
@@ -1088,6 +1233,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1098,8 +1244,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1110,20 +1258,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1133,10 +1285,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" data-md-state="indeterminate" type="checkbox" id="__nav_6_2" checked>
       
-      <label class="md-nav__link" for="__nav_6_2">
-        Simple Keycodes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          Simple Keycodes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Simple Keycodes" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1145,6 +1301,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1155,8 +1312,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1167,8 +1326,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1179,8 +1340,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1191,8 +1354,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1203,14 +1368,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1220,10 +1388,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" data-md-state="indeterminate" type="checkbox" id="__nav_6_3" checked>
       
-      <label class="md-nav__link" for="__nav_6_3">
-        Advanced Keycodes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          Advanced Keycodes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Advanced Keycodes" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_3">
           <span class="md-nav__icon md-icon"></span>
@@ -1232,6 +1404,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1242,8 +1415,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1254,8 +1429,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1266,8 +1443,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1278,8 +1457,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1290,8 +1471,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1302,8 +1485,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1314,8 +1499,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1326,8 +1513,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1338,14 +1527,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1355,10 +1547,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" data-md-state="indeterminate" type="checkbox" id="__nav_6_4" checked>
       
-      <label class="md-nav__link" for="__nav_6_4">
-        Software Features
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4">
+          Software Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Software Features" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_4">
           <span class="md-nav__icon md-icon"></span>
@@ -1367,6 +1563,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1377,8 +1574,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1389,8 +1588,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1401,8 +1602,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1413,8 +1616,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1425,8 +1630,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1437,8 +1644,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1449,8 +1658,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1461,8 +1672,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1473,8 +1686,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1485,8 +1700,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1497,8 +1714,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1509,8 +1728,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1521,8 +1742,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1533,8 +1756,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1545,8 +1770,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1557,14 +1784,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1574,10 +1804,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" data-md-state="indeterminate" type="checkbox" id="__nav_6_5" checked>
       
-      <label class="md-nav__link" for="__nav_6_5">
-        Hardware Features
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5">
+          Hardware Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Hardware Features" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_5">
           <span class="md-nav__icon md-icon"></span>
@@ -1586,6 +1820,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1595,10 +1830,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_1" data-md-state="indeterminate" type="checkbox" id="__nav_6_5_1" checked>
       
-      <label class="md-nav__link" for="__nav_6_5_1">
-        Displays
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_1">
+          Displays
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Displays" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_5_1">
           <span class="md-nav__icon md-icon"></span>
@@ -1607,6 +1846,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1617,8 +1857,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1629,14 +1871,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1646,10 +1891,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_2" data-md-state="indeterminate" type="checkbox" id="__nav_6_5_2" checked>
       
-      <label class="md-nav__link" for="__nav_6_5_2">
-        Lighting
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_2">
+          Lighting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Lighting" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_5_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1658,6 +1907,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1668,8 +1918,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1680,8 +1932,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1692,8 +1946,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1704,14 +1960,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1722,8 +1981,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1734,8 +1995,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1746,8 +2009,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1758,8 +2023,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1770,8 +2037,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1782,8 +2051,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1794,8 +2065,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1806,8 +2079,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1818,8 +2093,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1830,8 +2107,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1842,8 +2121,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1854,8 +2135,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1866,8 +2149,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1878,8 +2163,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1890,8 +2177,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1902,12 +2191,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1930,10 +2221,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
       
-      <label class="md-nav__link" for="__nav_7">
-        Developing QMK
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Developing QMK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Developing QMK" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -1942,6 +2237,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1952,8 +2248,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1963,10 +2261,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" data-md-state="indeterminate" type="checkbox" id="__nav_7_2" checked>
       
-      <label class="md-nav__link" for="__nav_7_2">
-        Breaking Changes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Breaking Changes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Breaking Changes" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1975,6 +2277,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1985,8 +2288,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1997,8 +2302,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2009,8 +2316,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2020,10 +2329,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_2_4" checked>
       
-      <label class="md-nav__link" for="__nav_7_2_4">
-        Past ChangeLogs
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2_4">
+          Past ChangeLogs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Past ChangeLogs" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_2_4">
           <span class="md-nav__icon md-icon"></span>
@@ -2032,6 +2345,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2042,8 +2356,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2054,8 +2370,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2066,8 +2384,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2078,8 +2398,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2090,8 +2412,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2102,20 +2426,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2125,10 +2453,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" data-md-state="indeterminate" type="checkbox" id="__nav_7_3" checked>
       
-      <label class="md-nav__link" for="__nav_7_3">
-        C Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          C Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="C Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_3">
           <span class="md-nav__icon md-icon"></span>
@@ -2137,6 +2469,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2147,8 +2480,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2159,8 +2494,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2171,8 +2508,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2183,8 +2522,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2194,10 +2535,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_7_3_5" checked>
       
-      <label class="md-nav__link" for="__nav_7_3_5">
-        Drivers
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3_5">
+          Drivers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Drivers" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_3_5">
           <span class="md-nav__icon md-icon"></span>
@@ -2206,6 +2551,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2216,8 +2562,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2228,8 +2576,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2240,8 +2590,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2252,8 +2604,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2264,8 +2618,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2276,8 +2632,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2288,8 +2646,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2300,8 +2660,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2312,14 +2674,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2330,8 +2695,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2342,14 +2709,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2359,10 +2729,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_4" checked>
       
-      <label class="md-nav__link" for="__nav_7_4">
-        Python Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Python Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Python Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
@@ -2371,6 +2745,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2381,8 +2756,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2393,14 +2770,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2410,10 +2790,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" data-md-state="indeterminate" type="checkbox" id="__nav_7_5" checked>
       
-      <label class="md-nav__link" for="__nav_7_5">
-        Configurator Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          Configurator Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configurator Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_5">
           <span class="md-nav__icon md-icon"></span>
@@ -2422,6 +2806,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2431,10 +2816,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5_1" data-md-state="indeterminate" type="checkbox" id="__nav_7_5_1" checked>
       
-      <label class="md-nav__link" for="__nav_7_5_1">
-        QMK API
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5_1">
+          QMK API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK API" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_5_1">
           <span class="md-nav__icon md-icon"></span>
@@ -2443,6 +2832,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2453,8 +2843,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2465,20 +2857,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2488,10 +2884,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6" data-md-state="indeterminate" type="checkbox" id="__nav_7_6" checked>
       
-      <label class="md-nav__link" for="__nav_7_6">
-        Hardware Platform Development
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6">
+          Hardware Platform Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Hardware Platform Development" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_6">
           <span class="md-nav__icon md-icon"></span>
@@ -2500,6 +2900,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2509,10 +2910,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6_1" data-md-state="indeterminate" type="checkbox" id="__nav_7_6_1" checked>
       
-      <label class="md-nav__link" for="__nav_7_6_1">
-        Arm/ChibiOS
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6_1">
+          Arm/ChibiOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Arm/ChibiOS" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_6_1">
           <span class="md-nav__icon md-icon"></span>
@@ -2521,6 +2926,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2531,8 +2937,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2543,20 +2951,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2566,10 +2978,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" data-md-state="indeterminate" type="checkbox" id="__nav_7_7" checked>
       
-      <label class="md-nav__link" for="__nav_7_7">
-        QMK Reference
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_7">
+          QMK Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK Reference" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_7">
           <span class="md-nav__icon md-icon"></span>
@@ -2578,6 +2994,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2588,8 +3005,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2600,8 +3019,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2612,8 +3033,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2624,8 +3047,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2636,8 +3061,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2648,8 +3075,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2660,8 +3089,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2672,8 +3103,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2684,8 +3117,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2696,8 +3131,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2708,14 +3145,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2725,10 +3165,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" data-md-state="indeterminate" type="checkbox" id="__nav_7_8" checked>
       
-      <label class="md-nav__link" for="__nav_7_8">
-        For a Deeper Understanding
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          For a Deeper Understanding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="For a Deeper Understanding" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_8">
           <span class="md-nav__icon md-icon"></span>
@@ -2737,6 +3181,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2747,8 +3192,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2759,8 +3206,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2771,14 +3220,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2788,10 +3240,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" data-md-state="indeterminate" type="checkbox" id="__nav_7_9" checked>
       
-      <label class="md-nav__link" for="__nav_7_9">
-        QMK Internals (In Progress)
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_9">
+          QMK Internals (In Progress)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK Internals (In Progress)" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_9">
           <span class="md-nav__icon md-icon"></span>
@@ -2800,6 +3256,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2810,8 +3267,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2822,8 +3281,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2834,8 +3295,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2846,8 +3309,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2858,8 +3323,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2870,8 +3337,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2882,12 +3351,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -2907,6 +3378,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -2939,12 +3411,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/custom_quantum_functions.md" title="Edit this page" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="how-to-customize-your-keyboards-behavior">How to Customize Your Keyboard's Behavior<a class="headerlink" href="#how-to-customize-your-keyboards-behavior" title="Permanent link">&para;</a></h1>
+<a href="https://github.com/qmk/qmk_firmware/edit/master/docs/custom_quantum_functions.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="how-to-customize-your-keyboards-behavior">How to Customize Your Keyboard's Behavior<a class="headerlink" href="#how-to-customize-your-keyboards-behavior" title="Permanent link">&para;</a></h1>
 <p>For a lot of people a custom keyboard is about more than sending button presses to your computer. You want to be able to do things that are more complex than simple button presses and macros. QMK has hooks that allow you to inject code, override functionality, and otherwise customize how your keyboard behaves in different situations.</p>
 <p>This page does not assume any special knowledge about QMK, but reading <a href="../understanding_qmk/">Understanding QMK</a> will help you understand what is going on at a more fundamental level.</p>
 <h2 id="a-word-on-core-vs-keyboards-vs-keymap">A Word on Core vs Keyboards vs Keymap<a class="headerlink" href="#a-word-on-core-vs-keyboards-vs-keymap" title="Permanent link">&para;</a></h2>
@@ -2963,35 +3435,35 @@
 <h2 id="defining-a-new-keycode">Defining a New Keycode<a class="headerlink" href="#defining-a-new-keycode" title="Permanent link">&para;</a></h2>
 <p>The first step to creating your own custom keycode(s) is to enumerate them. This means both naming them and assigning a unique number to that keycode. Rather than limit custom keycodes to a fixed range of numbers QMK provides the <code>SAFE_RANGE</code> macro. You can use <code>SAFE_RANGE</code> when enumerating your custom keycodes to guarantee that you get a unique number.</p>
 <p>Here is an example of enumerating 2 keycodes. After adding this block to your <code>keymap.c</code> you will be able to use <code>FOO</code> and <code>BAR</code> inside your keymap.</p>
-<div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="n">my_keycodes</span> <span class="p">{</span>
-  <span class="n">FOO</span> <span class="o">=</span> <span class="n">SAFE_RANGE</span><span class="p">,</span>
-  <span class="n">BAR</span>
-<span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="n">my_keycodes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">FOO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SAFE_RANGE</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">BAR</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </code></pre></div>
 <h2 id="programming-the-behavior-of-any-keycode">Programming the Behavior of Any Keycode<a class="headerlink" href="#programming-the-behavior-of-any-keycode" title="Permanent link">&para;</a></h2>
 <p>When you want to override the behavior of an existing key, or define the behavior for a new key, you should use the <code>process_record_kb()</code> and <code>process_record_user()</code> functions. These are called by QMK during key processing before the actual key event is handled. If these functions return <code>true</code> QMK will process the keycodes as usual. That can be handy for extending the functionality of a key rather than replacing it. If these functions return <code>false</code> QMK will skip the normal key handling, and it will be up to you to send any key up or down events that are required.</p>
 <p>These function are called every time a key is pressed or released.</p>
 <h3 id="example-process_record_user-implementation">Example <code>process_record_user()</code> Implementation<a class="headerlink" href="#example-process_record_user-implementation" title="Permanent link">&para;</a></h3>
 <p>This example does two things. It defines the behavior for a custom keycode called <code>FOO</code>, and it supplements our Enter key by playing a tone whenever it is pressed.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="nl">FOO</span><span class="p">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Do something when pressed</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// Do something else when release</span>
-      <span class="p">}</span>
-      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// Skip all further processing of this key</span>
-    <span class="k">case</span> <span class="nl">KC_ENTER</span><span class="p">:</span>
-      <span class="c1">// Play a tone when enter is pressed</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">tone_qwerty</span><span class="p">);</span>
-      <span class="p">}</span>
-      <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// Let QMK send the enter press/release events</span>
-    <span class="k">default</span><span class="o">:</span>
-      <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// Process all other keycodes normally</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">keycode</span><span class="p">,</span><span class="w"> </span><span class="n">keyrecord_t</span><span class="w"> </span><span class="o">*</span><span class="n">record</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">keycode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">FOO</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Do something when pressed</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Do something else when release</span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// Skip all further processing of this key</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">KC_ENTER</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// Play a tone when enter is pressed</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">tone_qwerty</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Let QMK send the enter press/release events</span>
+<span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Process all other keycodes normally</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="process_record_-function-documentation"><code>process_record_*</code> Function Documentation<a class="headerlink" href="#process_record_-function-documentation" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3000,16 +3472,16 @@
 </ul>
 <p>The <code>keycode</code> argument is whatever is defined in your keymap, eg <code>MO(1)</code>, <code>KC_L</code>, etc. You should use a <code>switch...case</code> block to handle these events.</p>
 <p>The <code>record</code> argument contains information about the actual press:</p>
-<div class="highlight"><pre><span></span><code><span class="n">keyrecord_t</span> <span class="n">record</span> <span class="p">{</span>
-  <span class="n">keyevent_t</span> <span class="n">event</span> <span class="p">{</span>
-    <span class="n">keypos_t</span> <span class="n">key</span> <span class="p">{</span>
-      <span class="kt">uint8_t</span> <span class="n">col</span>
-      <span class="kt">uint8_t</span> <span class="n">row</span>
-    <span class="p">}</span>
-    <span class="kt">bool</span>     <span class="n">pressed</span>
-    <span class="kt">uint16_t</span> <span class="n">time</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="n">keyrecord_t</span><span class="w"> </span><span class="n">record</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">keyevent_t</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">keypos_t</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">col</span><span class="w"></span>
+<span class="w">      </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">     </span><span class="n">pressed</span><span class="w"></span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">time</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h1 id="keyboard-initialization-code">Keyboard Initialization Code<a class="headerlink" href="#keyboard-initialization-code" title="Permanent link">&para;</a></h1>
 <p>There are several steps in the keyboard initialization process.  Depending on what you want to do, it will influence which function you should use.</p>
@@ -3030,16 +3502,16 @@
 <p>However, if you have hardware stuff that you need initialized, this is the best place for it (such as initializing LED pins).</p>
 <h3 id="example-keyboard_pre_init_user-implementation">Example <code>keyboard_pre_init_user()</code> Implementation<a class="headerlink" href="#example-keyboard_pre_init_user-implementation" title="Permanent link">&para;</a></h3>
 <p>This example, at the keyboard level, sets up B0, B1, B2, B3, and B4 as LED pins.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">keyboard_pre_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Call the keyboard pre init code.</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">keyboard_pre_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Call the keyboard pre init code.</span>
 
-  <span class="c1">// Set our LED pins as output</span>
-  <span class="n">setPinOutput</span><span class="p">(</span><span class="n">B0</span><span class="p">);</span>
-  <span class="n">setPinOutput</span><span class="p">(</span><span class="n">B1</span><span class="p">);</span>
-  <span class="n">setPinOutput</span><span class="p">(</span><span class="n">B2</span><span class="p">);</span>
-  <span class="n">setPinOutput</span><span class="p">(</span><span class="n">B3</span><span class="p">);</span>
-  <span class="n">setPinOutput</span><span class="p">(</span><span class="n">B4</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="c1">// Set our LED pins as output</span>
+<span class="w">  </span><span class="n">setPinOutput</span><span class="p">(</span><span class="n">B0</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">setPinOutput</span><span class="p">(</span><span class="n">B1</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">setPinOutput</span><span class="p">(</span><span class="n">B2</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">setPinOutput</span><span class="p">(</span><span class="n">B3</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">setPinOutput</span><span class="p">(</span><span class="n">B4</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="keyboard_pre_init_-function-documentation"><code>keyboard_pre_init_*</code> Function Documentation<a class="headerlink" href="#keyboard_pre_init_-function-documentation" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3058,12 +3530,12 @@
 <p>This is ran as the very last task in the keyboard initialization process. This is useful if you want to make changes to certain features, as they should be initialized by this point.</p>
 <h3 id="example-keyboard_post_init_user-implementation">Example <code>keyboard_post_init_user()</code> Implementation<a class="headerlink" href="#example-keyboard_post_init_user-implementation" title="Permanent link">&para;</a></h3>
 <p>This example, running after everything else has initialized, sets up the rgb underglow configuration.</p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">keyboard_post_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Call the post init code.</span>
-  <span class="n">rgblight_enable_noeeprom</span><span class="p">();</span> <span class="c1">// enables Rgb, without saving settings</span>
-  <span class="n">rgblight_sethsv_noeeprom</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">// sets the color to teal/cyan without saving</span>
-  <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="n">RGBLIGHT_MODE_BREATHING</span> <span class="o">+</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">// sets mode to Fast breathing without saving</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">keyboard_post_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Call the post init code.</span>
+<span class="w">  </span><span class="n">rgblight_enable_noeeprom</span><span class="p">();</span><span class="w"> </span><span class="c1">// enables Rgb, without saving settings</span>
+<span class="w">  </span><span class="n">rgblight_sethsv_noeeprom</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span><span class="w"> </span><span class="c1">// sets the color to teal/cyan without saving</span>
+<span class="w">  </span><span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="n">RGBLIGHT_MODE_BREATHING</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// sets mode to Fast breathing without saving</span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="keyboard_post_init_-function-documentation"><code>keyboard_post_init_*</code> Function Documentation<a class="headerlink" href="#keyboard_post_init_-function-documentation" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3092,13 +3564,13 @@
 <p>If the board supports it, it can be "idled", by stopping a number of functions.  A good example of this is RGB lights or backlights.   This can save on power consumption, or may be better behavior for your keyboard.</p>
 <p>This is controlled by two functions: <code>suspend_power_down_*</code> and <code>suspend_wakeup_init_*</code>, which are called when the system board is idled and when it wakes up, respectively.</p>
 <h3 id="example-suspend_power_down_user-and-suspend_wakeup_init_user-implementation">Example suspend_power_down_user() and suspend_wakeup_init_user() Implementation<a class="headerlink" href="#example-suspend_power_down_user-and-suspend_wakeup_init_user-implementation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">suspend_power_down_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">suspend_power_down_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span> <span class="nf">suspend_wakeup_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">suspend_wakeup_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgb_matrix_set_suspend_state</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <h3 id="keyboard-suspendwake-function-documentation">Keyboard suspend/wake  Function Documentation<a class="headerlink" href="#keyboard-suspendwake-function-documentation" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3109,26 +3581,26 @@
 <p>This runs code every time that the layers get changed.  This can be useful for layer indication, or custom layer handling.</p>
 <h3 id="example-layer_state_set_-implementation">Example <code>layer_state_set_*</code> Implementation<a class="headerlink" href="#example-layer_state_set_-implementation" title="Permanent link">&para;</a></h3>
 <p>This example shows how to set the <a href="../feature_rgblight/">RGB Underglow</a> lights based on the layer, using the Planck as an example.</p>
-<div class="highlight"><pre><span></span><code><span class="n">layer_state_t</span> <span class="nf">layer_state_set_user</span><span class="p">(</span><span class="n">layer_state_t</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">switch</span> <span class="p">(</span><span class="n">get_highest_layer</span><span class="p">(</span><span class="n">state</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="nl">_RAISE</span><span class="p">:</span>
-        <span class="n">rgblight_setrgb</span> <span class="p">(</span><span class="mh">0x00</span><span class="p">,</span>  <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="nl">_LOWER</span><span class="p">:</span>
-        <span class="n">rgblight_setrgb</span> <span class="p">(</span><span class="mh">0xFF</span><span class="p">,</span>  <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="nl">_PLOVER</span><span class="p">:</span>
-        <span class="n">rgblight_setrgb</span> <span class="p">(</span><span class="mh">0x00</span><span class="p">,</span>  <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="nl">_ADJUST</span><span class="p">:</span>
-        <span class="n">rgblight_setrgb</span> <span class="p">(</span><span class="mh">0x7A</span><span class="p">,</span>  <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">default</span><span class="o">:</span> <span class="c1">//  for any other layers, or the default layer</span>
-        <span class="n">rgblight_setrgb</span> <span class="p">(</span><span class="mh">0x00</span><span class="p">,</span>  <span class="mh">0xFF</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">);</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="k">return</span> <span class="n">state</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="n">layer_state_t</span><span class="w"> </span><span class="nf">layer_state_set_user</span><span class="p">(</span><span class="n">layer_state_t</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">get_highest_layer</span><span class="p">(</span><span class="n">state</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">_RAISE</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">rgblight_setrgb</span><span class="w"> </span><span class="p">(</span><span class="mh">0x00</span><span class="p">,</span><span class="w">  </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">_LOWER</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">rgblight_setrgb</span><span class="w"> </span><span class="p">(</span><span class="mh">0xFF</span><span class="p">,</span><span class="w">  </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">_PLOVER</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">rgblight_setrgb</span><span class="w"> </span><span class="p">(</span><span class="mh">0x00</span><span class="p">,</span><span class="w">  </span><span class="mh">0xFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0x00</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">_ADJUST</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="n">rgblight_setrgb</span><span class="w"> </span><span class="p">(</span><span class="mh">0x7A</span><span class="p">,</span><span class="w">  </span><span class="mh">0x00</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="c1">//  for any other layers, or the default layer</span>
+<span class="w">        </span><span class="n">rgblight_setrgb</span><span class="w"> </span><span class="p">(</span><span class="mh">0x00</span><span class="p">,</span><span class="w">  </span><span class="mh">0xFF</span><span class="p">,</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">state</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>Use the <code>IS_LAYER_ON_STATE(state, layer)</code> and <code>IS_LAYER_OFF_STATE(state, layer)</code> macros to check the status of a particular layer.</p>
 <p>Outside of <code>layer_state_set_*</code> functions, you can use the <code>IS_LAYER_ON(layer)</code> and <code>IS_LAYER_OFF(layer)</code> macros to check global layer state.</p>
@@ -3148,103 +3620,103 @@
 <h3 id="example-implementation">Example Implementation<a class="headerlink" href="#example-implementation" title="Permanent link">&para;</a></h3>
 <p>This is an example of how to add settings, and read and write it. We're using the user keymap for the example here.  This is a complex function, and has a lot going on.  In fact, it uses a lot of the above functions to work! </p>
 <p>In your keymap.c file, add this to the top:
-<div class="highlight"><pre><span></span><code><span class="k">typedef</span> <span class="k">union</span> <span class="p">{</span>
-  <span class="kt">uint32_t</span> <span class="n">raw</span><span class="p">;</span>
-  <span class="k">struct</span> <span class="p">{</span>
-    <span class="kt">bool</span>     <span class="nl">rgb_layer_change</span> <span class="p">:</span><span class="mi">1</span><span class="p">;</span>
-  <span class="p">};</span>
-<span class="p">}</span> <span class="n">user_config_t</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="k">union</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">raw</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">bool</span><span class="w">     </span><span class="nl">rgb_layer_change</span><span class="w"> </span><span class="p">:</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">};</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">user_config_t</span><span class="p">;</span><span class="w"></span>
 
-<span class="n">user_config_t</span> <span class="n">user_config</span><span class="p">;</span>
+<span class="n">user_config_t</span><span class="w"> </span><span class="n">user_config</span><span class="p">;</span><span class="w"></span>
 </code></pre></div></p>
 <p>This sets up a 32 bit structure that we can store settings with in memory, and write to the EEPROM. Using this removes the need to define variables, since they're defined in this structure. Remember that <code>bool</code> (boolean) values use 1 bit, <code>uint8_t</code> uses 8 bits, <code>uint16_t</code> uses up 16 bits.  You can mix and match, but changing the order can cause issues, as it will change the values that are read and written. </p>
 <p>We're using <code>rgb_layer_change</code>, for the <code>layer_state_set_*</code> function, and use <code>keyboard_post_init_user</code> and <code>process_record_user</code> to configure everything. </p>
 <p>Now, using the <code>keyboard_post_init_user</code> code above, you want to add <code>eeconfig_read_user()</code> to it, to populate the structure you've just created. And you can then immediately use this structure to control functionality in your keymap.  And It should look like: 
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">keyboard_post_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Call the keymap level matrix init.</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">keyboard_post_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// Call the keymap level matrix init.</span>
 
-  <span class="c1">// Read the user config from EEPROM</span>
-  <span class="n">user_config</span><span class="p">.</span><span class="n">raw</span> <span class="o">=</span> <span class="n">eeconfig_read_user</span><span class="p">();</span>
+<span class="w">  </span><span class="c1">// Read the user config from EEPROM</span>
+<span class="w">  </span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eeconfig_read_user</span><span class="p">();</span><span class="w"></span>
 
-  <span class="c1">// Set default layer, if enabled</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">rgblight_enable_noeeprom</span><span class="p">();</span>
-    <span class="n">rgblight_sethsv_noeeprom_cyan</span><span class="p">();</span>
-    <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="c1">// Set default layer, if enabled</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgblight_enable_noeeprom</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgblight_sethsv_noeeprom_cyan</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 The above function will use the EEPROM config immediately after reading it, to set the default layer's RGB color. The "raw" value of it is converted in a usable structure based on the "union" that you created above. </p>
-<p><div class="highlight"><pre><span></span><code><span class="n">layer_state_t</span> <span class="nf">layer_state_set_user</span><span class="p">(</span><span class="n">layer_state_t</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">switch</span> <span class="p">(</span><span class="n">get_highest_layer</span><span class="p">(</span><span class="n">state</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="nl">_RAISE</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="n">rgblight_sethsv_noeeprom_magenta</span><span class="p">();</span> <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="nl">_LOWER</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="n">rgblight_sethsv_noeeprom_red</span><span class="p">();</span> <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="nl">_PLOVER</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="n">rgblight_sethsv_noeeprom_green</span><span class="p">();</span> <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="nl">_ADJUST</span><span class="p">:</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="n">rgblight_sethsv_noeeprom_white</span><span class="p">();</span> <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">default</span><span class="o">:</span> <span class="c1">//  for any other layers, or the default layer</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="n">rgblight_sethsv_noeeprom_cyan</span><span class="p">();</span> <span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="k">return</span> <span class="n">state</span><span class="p">;</span>
-<span class="p">}</span>
+<p><div class="highlight"><pre><span></span><code><span class="n">layer_state_t</span><span class="w"> </span><span class="nf">layer_state_set_user</span><span class="p">(</span><span class="n">layer_state_t</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">get_highest_layer</span><span class="p">(</span><span class="n">state</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">_RAISE</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">rgblight_sethsv_noeeprom_magenta</span><span class="p">();</span><span class="w"> </span><span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">_LOWER</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">rgblight_sethsv_noeeprom_red</span><span class="p">();</span><span class="w"> </span><span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">_PLOVER</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">rgblight_sethsv_noeeprom_green</span><span class="p">();</span><span class="w"> </span><span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">_ADJUST</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">rgblight_sethsv_noeeprom_white</span><span class="p">();</span><span class="w"> </span><span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="c1">//  for any other layers, or the default layer</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">rgblight_sethsv_noeeprom_cyan</span><span class="p">();</span><span class="w"> </span><span class="n">rgblight_mode_noeeprom</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">state</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 This will cause the RGB underglow to be changed ONLY if the value was enabled.  Now to configure this value, create a new keycode for <code>process_record_user</code> called <code>RGB_LYR</code>. Additionally, we want to make sure that if you use the normal RGB codes, that it turns off  Using the example above, make it look this:
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="nl">FOO</span><span class="p">:</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Do something when pressed</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// Do something else when release</span>
-      <span class="p">}</span>
-      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// Skip all further processing of this key</span>
-    <span class="k">case</span> <span class="nl">KC_ENTER</span><span class="p">:</span>
-        <span class="c1">// Play a tone when enter is pressed</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">tone_qwerty</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// Let QMK send the enter press/release events</span>
-    <span class="k">case</span> <span class="nl">RGB_LYR</span><span class="p">:</span>  <span class="c1">// This allows me to use underglow as layer indication, or as normal</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span> <span class="o">^=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// Toggles the status</span>
-            <span class="n">eeconfig_update_user</span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="p">);</span> <span class="c1">// Writes the new status to EEPROM</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// if layer state indication is enabled,</span>
-                <span class="n">layer_state_set</span><span class="p">(</span><span class="n">layer_state</span><span class="p">);</span>   <span class="c1">// then immediately update the layer color</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-    <span class="k">case</span> <span class="n">RGB_MODE_FORWARD</span> <span class="p">...</span> <span class="nl">RGB_MODE_GRADIENT</span><span class="p">:</span> <span class="c1">// For any of the RGB codes (see quantum_keycodes.h, L400 for reference)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//This disables layer indication, as it&#39;s assumed that if you&#39;re changing this ... you want that disabled</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span> <span class="p">{</span>        <span class="c1">// only if this is enabled</span>
-                <span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>  <span class="c1">// disable it, and</span>
-                <span class="n">eeconfig_update_user</span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="p">);</span> <span class="c1">// write the setings to EEPROM</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
-    <span class="k">default</span><span class="o">:</span>
-      <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// Process all other keycodes normally</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">keycode</span><span class="p">,</span><span class="w"> </span><span class="n">keyrecord_t</span><span class="w"> </span><span class="o">*</span><span class="n">record</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">keycode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">FOO</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Do something when pressed</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Do something else when release</span>
+<span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// Skip all further processing of this key</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">KC_ENTER</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Play a tone when enter is pressed</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">PLAY_SONG</span><span class="p">(</span><span class="n">tone_qwerty</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Let QMK send the enter press/release events</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">RGB_LYR</span><span class="p">:</span><span class="w">  </span><span class="c1">// This allows me to use underglow as layer indication, or as normal</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="w"> </span><span class="o">^=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// Toggles the status</span>
+<span class="w">            </span><span class="n">eeconfig_update_user</span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="p">);</span><span class="w"> </span><span class="c1">// Writes the new status to EEPROM</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// if layer state indication is enabled,</span>
+<span class="w">                </span><span class="n">layer_state_set</span><span class="p">(</span><span class="n">layer_state</span><span class="p">);</span><span class="w">   </span><span class="c1">// then immediately update the layer color</span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">RGB_MODE_FORWARD</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="nl">RGB_MODE_GRADIENT</span><span class="p">:</span><span class="w"> </span><span class="c1">// For any of the RGB codes (see quantum_keycodes.h, L400 for reference)</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//This disables layer indication, as it&#39;s assumed that if you&#39;re changing this ... you want that disabled</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">        </span><span class="c1">// only if this is enabled</span>
+<span class="w">                </span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// disable it, and</span>
+<span class="w">                </span><span class="n">eeconfig_update_user</span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="p">);</span><span class="w"> </span><span class="c1">// write the setings to EEPROM</span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// Process all other keycodes normally</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 And lastly, you want to add the <code>eeconfig_init_user</code> function, so that when the EEPROM is reset, you can specify default values, and even custom actions. To force an EEPROM reset, use the <code>EEP_RST</code> keycode or <a href="../feature_bootmagic/">Bootmagic</a> functionallity. For example, if you want to set rgb layer indication by default, and save the default valued. </p>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="nf">eeconfig_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// EEPROM is getting reset!</span>
-  <span class="n">user_config</span><span class="p">.</span><span class="n">raw</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// We want this enabled by default</span>
-  <span class="n">eeconfig_update_user</span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="p">);</span> <span class="c1">// Write default value to EEPROM now</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">eeconfig_init_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// EEPROM is getting reset!</span>
+<span class="w">  </span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">user_config</span><span class="p">.</span><span class="n">rgb_layer_change</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// We want this enabled by default</span>
+<span class="w">  </span><span class="n">eeconfig_update_user</span><span class="p">(</span><span class="n">user_config</span><span class="p">.</span><span class="n">raw</span><span class="p">);</span><span class="w"> </span><span class="c1">// Write default value to EEPROM now</span>
 
-  <span class="c1">// use the non noeeprom versions, to write these values to EEPROM too</span>
-  <span class="n">rgblight_enable</span><span class="p">();</span> <span class="c1">// Enable RGB by default</span>
-  <span class="n">rgblight_sethsv_cyan</span><span class="p">();</span>  <span class="c1">// Set it to CYAN by default</span>
-  <span class="n">rgblight_mode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// set to solid by default</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="c1">// use the non noeeprom versions, to write these values to EEPROM too</span>
+<span class="w">  </span><span class="n">rgblight_enable</span><span class="p">();</span><span class="w"> </span><span class="c1">// Enable RGB by default</span>
+<span class="w">  </span><span class="n">rgblight_sethsv_cyan</span><span class="p">();</span><span class="w">  </span><span class="c1">// Set it to CYAN by default</span>
+<span class="w">  </span><span class="n">rgblight_mode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// set to solid by default</span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>And you're done.  The RGB layer indication will only work if you want it to. And it will be saved, even after unplugging the board. And if you use any of the RGB codes, it will disable the layer indication, so that it stays on the mode and color that you set it to. </p>
 <h3 id="eeconfig-function-documentation">'EECONFIG' Function Documentation<a class="headerlink" href="#eeconfig-function-documentation" title="Permanent link">&para;</a></h3>
@@ -3253,11 +3725,6 @@ And lastly, you want to add the <code>eeconfig_init_user</code> function, so tha
 <li>Keymap: <code>void eeconfig_init_user(void)</code>, <code>uint32_t eeconfig_read_user(void)</code> and <code>void eeconfig_update_user(uint32_t val)</code></li>
 </ul>
 <p>The <code>val</code> is the value of the data that you want to write to EEPROM.  And the <code>eeconfig_read_*</code> function return a 32 bit (DWORD) value from the EEPROM. </p>
-                
-              
-              
-                
-
 
               
             </article>
@@ -3266,8 +3733,7 @@ And lastly, you want to add the <code>eeconfig_init_user</code> function, so tha
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
@@ -3306,14 +3772,15 @@ And lastly, you want to add the <code>eeconfig_init_user</code> function, so tha
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -3323,10 +3790,10 @@ And lastly, you want to add the <code>eeconfig_init_user</code> function, so tha
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>

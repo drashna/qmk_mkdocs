@@ -8,11 +8,10 @@
       
       
       
-      
         <link rel="canonical" href="https://qmk.github.io/qmk_mkdocs/master/ja/feature_userspace/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
     
     
       
@@ -20,10 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.be71726b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bb3983ee.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -33,16 +32,15 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round:300,400,400i,700%7CSource+Code+Pro&display=fallback">
-        <style>:root{--md-text-font-family:"Varela Round";--md-code-font-family:"Source Code Pro"}</style>
+        <style>:root{--md-text-font:"Varela Round";--md-code-font:"Source Code Pro"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../stylesheets/qmk.css">
     
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
 
     
     
@@ -59,9 +57,8 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
   
     
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -78,7 +75,16 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="ヘッダー">
     <a href=".." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
       
@@ -113,7 +119,7 @@
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
             </label>
           
         
@@ -133,8 +139,7 @@
       <label class="md-header__button md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -172,8 +177,7 @@
     
     
       <div class="md-header__source">
-        
-<a href="https://github.com/qmk/qmk_firmware/" title="リポジトリへ" class="md-source" data-md-component="source">
+        <a href="https://github.com/qmk/qmk_firmware/" title="リポジトリへ" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -185,11 +189,14 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -215,8 +222,7 @@
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/qmk/qmk_firmware/" title="リポジトリへ" class="md-source" data-md-component="source">
+      <a href="https://github.com/qmk/qmk_firmware/" title="リポジトリへ" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
@@ -259,10 +265,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
       
-      <label class="md-nav__link" for="__nav_2">
-        チュートリアル
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          チュートリアル
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="チュートリアル" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
@@ -271,6 +281,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -281,8 +292,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -293,8 +306,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -305,8 +320,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -317,8 +334,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -329,8 +348,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -341,8 +362,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -353,6 +376,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -375,10 +399,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
-      <label class="md-nav__link" for="__nav_3">
-        FAQ
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          FAQ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="FAQ" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
@@ -387,6 +415,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -397,8 +426,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -409,8 +440,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -421,8 +454,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -433,8 +468,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -445,8 +482,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -457,6 +496,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -479,10 +519,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
-      <label class="md-nav__link" for="__nav_4">
-        Configurator
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Configurator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configurator" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
@@ -491,6 +535,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -501,8 +546,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -513,8 +560,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -525,8 +574,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -536,10 +587,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" data-md-state="indeterminate" type="checkbox" id="__nav_4_4" checked>
       
-      <label class="md-nav__link" for="__nav_4_4">
-        QMK API
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          QMK API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK API" data-md-level="2">
         <label class="md-nav__title" for="__nav_4_4">
           <span class="md-nav__icon md-icon"></span>
@@ -548,6 +603,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -558,8 +614,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -570,8 +628,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -582,8 +642,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -594,12 +656,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -622,10 +686,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
       
-      <label class="md-nav__link" for="__nav_5">
-        CLI
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="CLI" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
@@ -634,6 +702,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -644,8 +713,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -656,8 +727,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -668,8 +741,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -680,6 +755,7 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -704,10 +780,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
-      <label class="md-nav__link" for="__nav_6">
-        QMK を使う
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          QMK を使う
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK を使う" data-md-level="1">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
@@ -716,6 +796,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -725,10 +806,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" data-md-state="indeterminate" type="checkbox" id="__nav_6_1" checked>
       
-      <label class="md-nav__link" for="__nav_6_1">
-        ガイド
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1">
+          ガイド
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="ガイド" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_1">
           <span class="md-nav__icon md-icon"></span>
@@ -737,6 +822,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -747,8 +833,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -759,8 +847,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -771,8 +861,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -782,10 +874,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_4" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_4" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_4">
-        開発環境
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_4">
+          開発環境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="開発環境" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_4">
           <span class="md-nav__icon md-icon"></span>
@@ -794,6 +890,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -804,8 +901,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -816,14 +915,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -833,10 +935,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_5" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_5" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_5">
-        書き込み
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_5">
+          書き込み
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="書き込み" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_5">
           <span class="md-nav__icon md-icon"></span>
@@ -845,6 +951,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -855,8 +962,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -867,14 +976,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -884,10 +996,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_6" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_6" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_6">
-        IDE
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_6">
+          IDE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="IDE" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_6">
           <span class="md-nav__icon md-icon"></span>
@@ -896,6 +1012,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -906,8 +1023,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -918,14 +1037,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -935,10 +1057,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_7" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_7" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_7">
-        Git のベストプラクティス
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_7">
+          Git のベストプラクティス
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Git のベストプラクティス" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_7">
           <span class="md-nav__icon md-icon"></span>
@@ -947,6 +1073,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -957,8 +1084,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -969,8 +1098,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -981,8 +1112,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -993,14 +1126,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1010,10 +1146,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_8" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_8" checked>
       
-      <label class="md-nav__link" for="__nav_6_1_8">
-        キーボードを作る
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_8">
+          キーボードを作る
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="キーボードを作る" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_1_8">
           <span class="md-nav__icon md-icon"></span>
@@ -1022,6 +1162,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1032,8 +1173,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1044,20 +1187,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1067,10 +1214,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" data-md-state="indeterminate" type="checkbox" id="__nav_6_2" checked>
       
-      <label class="md-nav__link" for="__nav_6_2">
-        単純なキーコード
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          単純なキーコード
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="単純なキーコード" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1079,6 +1230,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1089,8 +1241,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1101,8 +1255,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1113,8 +1269,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1125,8 +1283,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1137,14 +1297,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1154,10 +1317,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" data-md-state="indeterminate" type="checkbox" id="__nav_6_3" checked>
       
-      <label class="md-nav__link" for="__nav_6_3">
-        高度なキーコード
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          高度なキーコード
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="高度なキーコード" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_3">
           <span class="md-nav__icon md-icon"></span>
@@ -1166,6 +1333,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1176,8 +1344,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1188,8 +1358,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1200,8 +1372,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1212,8 +1386,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1224,8 +1400,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1236,8 +1414,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1248,8 +1428,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1260,8 +1442,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1272,14 +1456,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -1291,10 +1478,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" type="checkbox" id="__nav_6_4" checked>
       
-      <label class="md-nav__link" for="__nav_6_4">
-        ソフトウェア機能
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4">
+          ソフトウェア機能
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="ソフトウェア機能" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_4">
           <span class="md-nav__icon md-icon"></span>
@@ -1303,6 +1494,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1313,8 +1505,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1325,8 +1519,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1337,8 +1533,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1349,8 +1547,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1361,8 +1561,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1373,8 +1575,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1385,8 +1589,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1397,8 +1603,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1409,8 +1617,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1421,8 +1631,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1433,8 +1645,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1445,8 +1659,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1457,8 +1673,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1469,8 +1687,10 @@
     </li>
   
 
+            
           
             
+              
   
   
     
@@ -1494,6 +1714,7 @@
       </a>
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="目次">
   
   
@@ -1589,8 +1810,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1601,14 +1824,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1618,10 +1844,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" data-md-state="indeterminate" type="checkbox" id="__nav_6_5" checked>
       
-      <label class="md-nav__link" for="__nav_6_5">
-        ハードウェア機能
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5">
+          ハードウェア機能
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="ハードウェア機能" data-md-level="2">
         <label class="md-nav__title" for="__nav_6_5">
           <span class="md-nav__icon md-icon"></span>
@@ -1630,6 +1860,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1639,10 +1870,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_1" data-md-state="indeterminate" type="checkbox" id="__nav_6_5_1" checked>
       
-      <label class="md-nav__link" for="__nav_6_5_1">
-        表示
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_1">
+          表示
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="表示" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_5_1">
           <span class="md-nav__icon md-icon"></span>
@@ -1651,6 +1886,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1661,8 +1897,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1673,14 +1911,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1690,10 +1931,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_2" data-md-state="indeterminate" type="checkbox" id="__nav_6_5_2" checked>
       
-      <label class="md-nav__link" for="__nav_6_5_2">
-        電飾
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_2">
+          電飾
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="電飾" data-md-level="3">
         <label class="md-nav__title" for="__nav_6_5_2">
           <span class="md-nav__icon md-icon"></span>
@@ -1702,6 +1947,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1712,8 +1958,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1724,8 +1972,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1736,8 +1986,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1748,14 +2000,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1766,8 +2021,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1778,8 +2035,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1790,8 +2049,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1802,8 +2063,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1814,8 +2077,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1826,8 +2091,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1838,8 +2105,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1850,8 +2119,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1862,8 +2133,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1874,8 +2147,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1886,8 +2161,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1898,8 +2175,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1910,8 +2189,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1922,8 +2203,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1934,12 +2217,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -1962,10 +2247,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
       
-      <label class="md-nav__link" for="__nav_7">
-        QMK の開発
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          QMK の開発
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK の開発" data-md-level="1">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
@@ -1974,6 +2263,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -1984,8 +2274,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -1995,10 +2287,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" data-md-state="indeterminate" type="checkbox" id="__nav_7_2" checked>
       
-      <label class="md-nav__link" for="__nav_7_2">
-        互換性を破る変更/Breaking changes
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          互換性を破る変更/Breaking changes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="互換性を破る変更/Breaking changes" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_2">
           <span class="md-nav__icon md-icon"></span>
@@ -2007,6 +2303,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2017,8 +2314,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2029,8 +2328,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2041,8 +2342,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2052,10 +2355,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_2_4" checked>
       
-      <label class="md-nav__link" for="__nav_7_2_4">
-        過去の互換性を破る変更
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2_4">
+          過去の互換性を破る変更
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="過去の互換性を破る変更" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_2_4">
           <span class="md-nav__icon md-icon"></span>
@@ -2064,6 +2371,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2074,8 +2382,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2086,8 +2396,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2098,8 +2410,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2110,8 +2424,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2122,8 +2438,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2134,20 +2452,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2157,10 +2479,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" data-md-state="indeterminate" type="checkbox" id="__nav_7_3" checked>
       
-      <label class="md-nav__link" for="__nav_7_3">
-        C 開発
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          C 開発
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="C 開発" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_3">
           <span class="md-nav__icon md-icon"></span>
@@ -2169,6 +2495,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2179,8 +2506,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2191,8 +2520,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2203,8 +2534,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2215,8 +2548,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2226,10 +2561,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_7_3_5" checked>
       
-      <label class="md-nav__link" for="__nav_7_3_5">
-        ドライバ
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3_5">
+          ドライバ
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="ドライバ" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_3_5">
           <span class="md-nav__icon md-icon"></span>
@@ -2238,6 +2577,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2248,8 +2588,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2260,8 +2602,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2272,8 +2616,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2284,8 +2630,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2296,8 +2644,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2308,8 +2658,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2320,8 +2672,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2332,14 +2686,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2350,8 +2707,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2362,14 +2721,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2379,10 +2741,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_4" checked>
       
-      <label class="md-nav__link" for="__nav_7_4">
-        Python 開発
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Python 開発
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Python 開発" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_4">
           <span class="md-nav__icon md-icon"></span>
@@ -2391,6 +2757,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2401,8 +2768,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2413,14 +2782,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2430,10 +2802,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" data-md-state="indeterminate" type="checkbox" id="__nav_7_5" checked>
       
-      <label class="md-nav__link" for="__nav_7_5">
-        Configurator 開発
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          Configurator 開発
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Configurator 開発" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_5">
           <span class="md-nav__icon md-icon"></span>
@@ -2442,6 +2818,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2451,10 +2828,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5_1" data-md-state="indeterminate" type="checkbox" id="__nav_7_5_1" checked>
       
-      <label class="md-nav__link" for="__nav_7_5_1">
-        QMK API
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5_1">
+          QMK API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK API" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_5_1">
           <span class="md-nav__icon md-icon"></span>
@@ -2463,6 +2844,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2473,8 +2855,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2485,20 +2869,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2508,10 +2896,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6" data-md-state="indeterminate" type="checkbox" id="__nav_7_6" checked>
       
-      <label class="md-nav__link" for="__nav_7_6">
-        ハードウェアプラットフォーム開発
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6">
+          ハードウェアプラットフォーム開発
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="ハードウェアプラットフォーム開発" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_6">
           <span class="md-nav__icon md-icon"></span>
@@ -2520,6 +2912,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2529,10 +2922,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6_1" data-md-state="indeterminate" type="checkbox" id="__nav_7_6_1" checked>
       
-      <label class="md-nav__link" for="__nav_7_6_1">
-        Arm/ChibiOS
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6_1">
+          Arm/ChibiOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="Arm/ChibiOS" data-md-level="3">
         <label class="md-nav__title" for="__nav_7_6_1">
           <span class="md-nav__icon md-icon"></span>
@@ -2541,6 +2938,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2551,8 +2949,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2563,20 +2963,24 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2586,10 +2990,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" data-md-state="indeterminate" type="checkbox" id="__nav_7_7" checked>
       
-      <label class="md-nav__link" for="__nav_7_7">
-        QMK Reference
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_7">
+          QMK Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK Reference" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_7">
           <span class="md-nav__icon md-icon"></span>
@@ -2598,6 +3006,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2608,8 +3017,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2620,8 +3031,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2632,8 +3045,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2644,8 +3059,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2656,8 +3073,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2668,8 +3087,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2680,8 +3101,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2692,8 +3115,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2704,8 +3129,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2716,8 +3143,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2728,14 +3157,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2745,10 +3177,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" data-md-state="indeterminate" type="checkbox" id="__nav_7_8" checked>
       
-      <label class="md-nav__link" for="__nav_7_8">
-        より深く知るために
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          より深く知るために
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="より深く知るために" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_8">
           <span class="md-nav__icon md-icon"></span>
@@ -2757,6 +3193,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2767,8 +3204,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2779,8 +3218,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2791,14 +3232,17 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2808,10 +3252,14 @@
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" data-md-state="indeterminate" type="checkbox" id="__nav_7_9" checked>
       
-      <label class="md-nav__link" for="__nav_7_9">
-        QMK の内部詳細(作成中)
-        <span class="md-nav__icon md-icon"></span>
-      </label>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_9">
+          QMK の内部詳細(作成中)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <nav class="md-nav" aria-label="QMK の内部詳細(作成中)" data-md-level="2">
         <label class="md-nav__title" for="__nav_7_9">
           <span class="md-nav__icon md-icon"></span>
@@ -2820,6 +3268,7 @@
         <ul class="md-nav__list" data-md-scrollfix>
           
             
+              
   
   
   
@@ -2830,8 +3279,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2842,8 +3293,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2854,8 +3307,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2866,8 +3321,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2878,8 +3335,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2890,8 +3349,10 @@
     </li>
   
 
+            
           
             
+              
   
   
   
@@ -2902,12 +3363,14 @@
     </li>
   
 
+            
           
         </ul>
       </nav>
     </li>
   
 
+            
           
         </ul>
       </nav>
@@ -2927,6 +3390,7 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="目次">
   
   
@@ -3027,12 +3491,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_userspace.md" title="編集" class="md-content__button md-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-                  </a>
-                
-                
-                <h1 id="_1">ユーザスペース: キーマップ間でのコードの共有<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<a href="https://github.com/qmk/qmk_firmware/edit/master/docs/feature_userspace.md" title="編集" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="_1">ユーザスペース: キーマップ間でのコードの共有<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <!---
   original document: 0.13.17:docs/feature_userspace.md
   git diff 0.13.17 HEAD -- docs/feature_userspace.md | cat
@@ -3132,15 +3596,15 @@ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 <p>しかし、実際にはキーマップバージョンのサポートを追加し、ユーザスペースとキーマップの両方で使うことができます。</p>
 <p>例えば、<code>layer_state_set_user()</code> 関数を見てみましょう。全てのキーボードで <a href="../ref_functions/#olkb-tri-layers">Tri Layer State</a> 機能を有効にしながら、<code>keymap.c</code> ファイルで Tri Layer 機能を保持することができます。</p>
 <p><code>&lt;name.c&gt;</code> ファイル内で、以下を追加する必要があります:
-<div class="highlight"><pre><span></span><code><span class="n">__attribute__</span> <span class="p">((</span><span class="n">weak</span><span class="p">))</span>
-<span class="n">layer_state_t</span> <span class="n">layer_state_set_keymap</span> <span class="p">(</span><span class="n">layer_state_t</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n">state</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="n">__attribute__</span><span class="w"> </span><span class="p">((</span><span class="n">weak</span><span class="p">))</span><span class="w"></span>
+<span class="n">layer_state_t</span><span class="w"> </span><span class="n">layer_state_set_keymap</span><span class="w"> </span><span class="p">(</span><span class="n">layer_state_t</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">state</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">layer_state_t</span> <span class="n">layer_state_set_user</span> <span class="p">(</span><span class="n">layer_state_t</span> <span class="n">state</span><span class="p">)</span> <span class="p">{</span>
-  <span class="n">state</span> <span class="o">=</span> <span class="n">update_tri_layer_state</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
-  <span class="k">return</span> <span class="n">layer_state_set_keymap</span> <span class="p">(</span><span class="n">state</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="n">layer_state_t</span><span class="w"> </span><span class="n">layer_state_set_user</span><span class="w"> </span><span class="p">(</span><span class="n">layer_state_t</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">update_tri_layer_state</span><span class="p">(</span><span class="n">state</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">layer_state_set_keymap</span><span class="w"> </span><span class="p">(</span><span class="n">state</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <code>__attribute__ ((weak))</code> 部分は、コンパイラにこれが <code>keymap.c</code> 内のバージョンに置き換えられるプレースホルダ関数であることを伝えます。そうすれば、<code>keymap.c</code> に追加する必要はありませんが、追加しても関数が同じ名前を持つため競合することはありません。</p>
 <p>ここでの <code>_keymap</code> 部分は重要では無く、<code>_quantum</code>、<code>_kb</code> あるいは <code>_user</code> は既に使われているため、それら以外のものである必要があります。<code>layer_state_set_mine</code>、<code>layer_state_set_fn</code> などを使うことができます。</p>
@@ -3155,23 +3619,23 @@ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 <code>OPT_DEFS</code> 設定は <code>MACROS_ENABLED</code> がキーボード用に定義されるようにし(名前の前に <code>-D</code> があることに注意してください)、c/h ファイルで状態をチェックするために <code>#ifdef MACROS_ENABLED</code> を使うことができ、それに基づいてそのコードを処理します。</p>
 <p>次にキーマップの <code>rules.mk</code> に <code>MACROS_ENABLED = yes</code> を追加し、ユーザスペースでこの機能とコードを有効にします。</p>
 <p>そして <code>process_record_user</code> 関数の中で、以下のようなことを行います:
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">keycode</span><span class="p">,</span><span class="w"> </span><span class="n">keyrecord_t</span><span class="w"> </span><span class="o">*</span><span class="n">record</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">keycode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="cp">#ifdef MACROS_ENABLED</span>
-  <span class="k">case</span> <span class="nl">MACRO1</span><span class="p">:</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;This is macro 1!&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">break</span><span class="p">;</span>
-  <span class="k">case</span> <span class="nl">MACRO2</span><span class="p">:</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;This is macro 2!&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nl">MACRO1</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;This is macro 1!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="nl">MACRO2</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;This is macro 2!&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 <span class="cp">#endif</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></p>
 <h3 id="_5">結合マクロ<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>全てのキーマップについてユーザスペースにマクロやそのほかの関数を統合したい場合は、そうすることができます。これは上記の<a href="#customized-functions">カスタマイズ関数</a>の例に基づいています。これは異なるキーボード間で共有される大量のマクロを維持し、キーボード固有のマクロも可能です。</p>
@@ -3180,49 +3644,49 @@ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 <p>それが完了したら、必要なキーコードの定義を <code>&lt;name&gt;.h</code> ファイルに設定します。例えば:
 <div class="highlight"><pre><span></span><code><span class="cp">#pragma once</span>
 
-<span class="cp">#include</span> <span class="cpf">&quot;quantum.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;action.h&quot;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&quot;version.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;quantum.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;action.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;version.h&quot;</span><span class="cp"></span>
 
 <span class="c1">// 全てを定義</span>
-<span class="k">enum</span> <span class="n">custom_keycodes</span> <span class="p">{</span>
-  <span class="n">KC_MAKE</span> <span class="o">=</span> <span class="n">SAFE_RANGE</span><span class="p">,</span>
-  <span class="n">NEW_SAFE_RANGE</span>  <span class="c1">// キーマップ固有のコードについては &quot;NEW_SAFE_RANGE&quot; を使用</span>
-<span class="p">};</span>
+<span class="k">enum</span><span class="w"> </span><span class="n">custom_keycodes</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">KC_MAKE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SAFE_RANGE</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">NEW_SAFE_RANGE</span><span class="w">  </span><span class="c1">// キーマップ固有のコードについては &quot;NEW_SAFE_RANGE&quot; を使用</span>
+<span class="p">};</span><span class="w"></span>
 </code></pre></div></p>
 <p>ここで、<code>&lt;name&gt;.c</code> ファイルを作成し、この内容をそれに追加します:</p>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;&lt;name&gt;.h&quot;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;&lt;name&gt;.h&quot;</span><span class="cp"></span>
 
-<span class="n">__attribute__</span> <span class="p">((</span><span class="n">weak</span><span class="p">))</span>
-<span class="kt">bool</span> <span class="n">process_record_keymap</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="n">__attribute__</span><span class="w"> </span><span class="p">((</span><span class="n">weak</span><span class="p">))</span><span class="w"></span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">process_record_keymap</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">keycode</span><span class="p">,</span><span class="w"> </span><span class="n">keyrecord_t</span><span class="w"> </span><span class="o">*</span><span class="n">record</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">bool</span> <span class="n">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span> <span class="n">keycode</span><span class="p">,</span> <span class="n">keyrecord_t</span> <span class="o">*</span><span class="n">record</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">switch</span> <span class="p">(</span><span class="n">keycode</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="nl">KC_MAKE</span><span class="p">:</span>  <span class="c1">// ファームウェアをコンパイルし、キーボードのブートローダに基づく書き込みコマンドを追加します</span>
-            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">uint8_t</span> <span class="n">temp_mod</span> <span class="o">=</span> <span class="n">get_mods</span><span class="p">();</span>
-            <span class="kt">uint8_t</span> <span class="n">temp_osm</span> <span class="o">=</span> <span class="n">get_oneshot_mods</span><span class="p">();</span>
-            <span class="n">clear_mods</span><span class="p">();</span> <span class="n">clear_oneshot_mods</span><span class="p">();</span>
-            <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;make &quot;</span> <span class="n">QMK_KEYBOARD</span> <span class="s">&quot;:&quot;</span> <span class="n">QMK_KEYMAP</span><span class="p">);</span>
-    <span class="cp">#ifndef FLASH_BOOTLOADER</span>
-            <span class="k">if</span> <span class="p">((</span><span class="n">temp_mod</span> <span class="o">|</span> <span class="n">temp_osm</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">MOD_MASK_SHIFT</span><span class="p">)</span>
-    <span class="cp">#endif</span>
-            <span class="p">{</span>
-                <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;:flash&quot;</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="k">if</span> <span class="p">((</span><span class="n">temp_mod</span> <span class="o">|</span> <span class="n">temp_osm</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">MOD_MASK_CTRL</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot; -j8 --output-sync&quot;</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="n">tap_code</span><span class="p">(</span><span class="n">KC_ENT</span><span class="p">);</span>
-            <span class="n">set_mods</span><span class="p">(</span><span class="n">temp_mod</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">break</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">process_record_user</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">keycode</span><span class="p">,</span><span class="w"> </span><span class="n">keyrecord_t</span><span class="w"> </span><span class="o">*</span><span class="n">record</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">keycode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="nl">KC_MAKE</span><span class="p">:</span><span class="w">  </span><span class="c1">// ファームウェアをコンパイルし、キーボードのブートローダに基づく書き込みコマンドを追加します</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">record</span><span class="o">-&gt;</span><span class="n">event</span><span class="p">.</span><span class="n">pressed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">temp_mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_mods</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">temp_osm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_oneshot_mods</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">clear_mods</span><span class="p">();</span><span class="w"> </span><span class="n">clear_oneshot_mods</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;make &quot;</span><span class="w"> </span><span class="n">QMK_KEYBOARD</span><span class="w"> </span><span class="s">&quot;:&quot;</span><span class="w"> </span><span class="n">QMK_KEYMAP</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="cp">#ifndef FLASH_BOOTLOADER</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">temp_mod</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">temp_osm</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">MOD_MASK_SHIFT</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="cp">#endif</span>
+<span class="w">            </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot;:flash&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">temp_mod</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">temp_osm</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">MOD_MASK_CTRL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">SEND_STRING</span><span class="p">(</span><span class="s">&quot; -j8 --output-sync&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="n">tap_code</span><span class="p">(</span><span class="n">KC_ENT</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">set_mods</span><span class="p">(</span><span class="n">temp_mod</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="n">process_record_keymap</span><span class="p">(</span><span class="n">keycode</span><span class="p">,</span> <span class="n">record</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">process_record_keymap</span><span class="p">(</span><span class="n">keycode</span><span class="p">,</span><span class="w"> </span><span class="n">record</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>(マクロパッドのような) Shift ボタンを持たないキーボードについては、ブートローダオプションを常に含める方法が必要です。これを行うには、以下をユーザスペースフォルダ内の <code>rules.mk</code> に追加します:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">ifeq ($(strip $(FLASH_BOOTLOADER)), yes)</span>
@@ -3236,11 +3700,6 @@ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
 <p class="admonition-title">Note</p>
 <p>これはブートローダの設定に基づいて正しいユーティリティを使って新しくコンパイルされたファームウェアを自動的に書き込むはずです (あるいはデフォルトで HEX ファイルを生成するだけ)。ただし、これは全てのシステムで動作するわけではないことに注意してください。はっきり言うと、AVRDUDE は WSL では動作しません。そして、これは BootloadHID あるいは mdloader をサポートしません。</p>
 </div>
-                
-              
-              
-                
-
 
               
             </article>
@@ -3249,8 +3708,7 @@ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
         
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
@@ -3289,14 +3747,15 @@ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-        
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
@@ -3306,10 +3765,10 @@ along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.409db549.min.js", "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.56a63758.min.js"></script>
+      <script src="../assets/javascripts/bundle.289a2a4b.min.js"></script>
       
     
   </body>
