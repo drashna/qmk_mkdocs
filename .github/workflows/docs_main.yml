@@ -1,4 +1,4 @@
-name: Master Docs
+name: Testing Docs
 
 on:
   workflow_dispatch:
