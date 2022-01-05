@@ -1,20 +1,20 @@
 # QMK シラバス
 
 <!---
-  original document: 0.9.51:docs/syllabus.md
-  git diff 0.9.51 HEAD -- docs/syllabus.md | cat
+  original document: 0.14.22:docs/syllabus.md
+  git diff 0.14.22 HEAD -- docs/syllabus.md | cat
 -->
 
 このページは最初に基本を紹介し、そして、QMK に習熟するために必要な全ての概念を理解するように導くことで、QMK の知識を構築するのに役立ちます。
 
 # 初級トピック
 
-他に何も読んでいない場合は、このセクションのドキュメントを読んでください。[QMK 初心者ガイド](tutorial.md)を読み終わると、基本的なキーマップを作成し、それをコンパイルし、キーボードに書き込みできるようになっているはずです。残りのドキュメントはこれらの基本的な知識を具体的に肉付けします。
+他に何も読んでいない場合は、このセクションのドキュメントを読んでください。[QMK 初心者ガイド](newbs.md)を読み終わると、基本的なキーマップを作成し、それをコンパイルし、キーボードに書き込みできるようになっているはずです。残りのドキュメントはこれらの基本的な知識を具体的に肉付けします。
 
 * **QMK Tools の使い方を学ぶ**
-   * [QMK 初心者ガイド](tutorial.md)
+   * [QMK 初心者ガイド](newbs.md)
    * [CLI](cli.md)
-   * [Git](tutorial_git_best_practices.md)
+   * [Git](newbs_git_best_practices.md)
 * **キーマップについて学ぶ**
    * [レイヤー](feature_layers.md)
    * [キーコード](keycodes.md)
@@ -45,6 +45,7 @@
    * [タップダンス](feature_tap_dance.md)
    * [コンボ](feature_combo.md)
    * [ユーザスペース](feature_userspace.md)
+   * [キーオーバーライド](feature_key_overrides.md)
 
 # 上級トピック
 
@@ -58,7 +59,7 @@
 * **高度な機能**
    * [ユニコード](feature_unicode.md)
    * [API](api_overview.md)
-   * [ブートマジック](feature_bootmagic.md)
+   * [ブートマジックライト](feature_bootmagic.md)
 * **ハードウェア**
    * [キーボードがどのように動作するか](how_keyboards_work.md)
    * [キーボードマトリックスの仕組み](how_a_matrix_works.md)

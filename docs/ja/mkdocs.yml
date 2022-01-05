@@ -3,14 +3,20 @@ extra_css:
 extra:
   version:
     provider: mike
+  alternate:
+    - name: English
+      link: /master/en/
+      lang: en
+    - name: 日本語
+      link: /master/jp/
+      lang: jp
+    - name: 简体中文
+      link: /master/zh/
+      lang: zh
 plugins:
   - search:
       lang:
         - en
-        - es
-        - fr
-        - pt
-        - ru
         - ja
       prebuild_index: true
       separator: '[\s\-\_]+'
@@ -40,11 +46,11 @@ nav:
   - Home: README.md
   - チュートリアル:
     - 入門: tutorial.md
-    - セットアップ: tutorial_getting_started.md
-    - 初めてのファームウェアの構築: tutorial_building_firmware.md
-    - ファームウェアのフラッシュ: tutorial_flashing.md
+    - セットアップ: newbs_getting_started.md
+    - 初めてのファームウェアの構築: newbs_building_firmware.md
+    - ファームウェアのフラッシュ: newbs_flashing.md
     - 手助けを得る/サポート: support.md
-    - 他のリソース: tutorial_learn_more_resources.md
+    - 他のリソース: newbs_learn_more_resources.md
     - シラバス: syllabus.md
   - FAQ:
     - 一般的な FAQ: faq_general.md
@@ -54,7 +60,7 @@ nav:
     - キーマップ FAQ: faq_keymap.md
     - 用語: reference_glossary.md
   - Configurator:
-    - 概要: tutorial_building_firmware_configurator.md
+    - 概要: newbs_building_firmware_configurator.md
     - ステップ・バイ・ステップ: configurator_step_by_step.md
     - トラブルシューティング: configurator_troubleshooting.md
     - QMK API:
@@ -82,10 +88,10 @@ nav:
         - QMK での Eclipse の使用: other_eclipse.md
         - QMK での VSCode の使用: other_vscode.md
       - Git のベストプラクティス:
-        - 入門: tutorial_git_best_practices.md
-        - フォーク: tutorial_git_using_your_master_branch.md
-        - マージの競合の解決: tutorial_git_resolving_merge_conflicts.md
-        - ブランチの修正: tutorial_git_resynchronize_a_branch.md
+        - 入門: newbs_git_best_practices.md
+        - フォーク: newbs_git_using_your_master_branch.md
+        - マージの競合の解決: newbs_git_resolving_merge_conflicts.md
+        - ブランチの修正: newbs_git_resynchronize_a_branch.md
       - キーボードを作る:
         - Hand Wiring ガイド: hand_wire.md
         - ISP 書き込みガイド: isp_flashing_guide.md
@@ -213,8 +219,9 @@ nav:
 repo_name: qmk/qmk_firmware
 repo_url: https://github.com/qmk/qmk_firmware
 site_name: QMK Firmware Docs
-site_url: https://qmk.github.io/qmk_mkdocs/devel/ja
+site_url: https://docs.qmk.fm/master/ja
 theme:
+  favicon: images/favicon.ico
   features:
     - navigation.expand
     #- navigation.instant

@@ -16,7 +16,7 @@
 一部のキーボードでは、ブートマジックはデフォルトで無効になっています。その場合、`rules.mk` 内で以下のように明示的に有効にする必要があります:
 
 ```make
-BOOTMAGIC_ENABLE = full
+BOOTMAGIC_ENABLE = yes
 ```
 
 !!! warning

@@ -1,4 +1,4 @@
-# `midi_util` グループ {#group__midi__util}
+d# `midi_util` グループ {#group__midi__util}
 
 <!---
   original document: 0.10.9:docs/internals_midi_util.md
@@ -56,4 +56,3 @@ THREE            |
 
 #### 返り値
 パケットの長さ。バイトがステータスバイトではない場合、あるいは sysex ステータスバイトの場合は、UNDEFINED を返します。
-

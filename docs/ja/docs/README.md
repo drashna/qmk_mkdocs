@@ -6,7 +6,6 @@
 -->
 
 [![現在のバージョン](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
-[![ビルド状態](https://travis-ci.org/qmk/qmk_firmware.svg?branch=master)](https://travis-ci.org/qmk/qmk_firmware)
 [![Discord](https://img.shields.io/discord/440868230475677696.svg)](https://discord.gg/Uq7gcHh)
 [![ドキュメントの状態](https://img.shields.io/badge/docs-ready-orange.svg)](https://docs.qmk.fm)
 [![GitHub 貢献者](https://img.shields.io/github/contributors/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/pulse/monthly)
@@ -23,13 +22,13 @@ QMK は初めてですか？始めるには2つの方法があります:
 * 基本: [QMK Configurator](https://config.qmk.fm)
     * ドロップダウンからあなたのキーボードを選択し、キーボードをプログラムします。
     * 見ることができる [紹介ビデオ](https://www.youtube.com/watch?v=-imgglzDMdY) があります。
-    * 読むことができる概要 [ドキュメント](tutorial_building_firmware_configurator.md) があります。
-* 発展: [ソースを使用します](tutorial.md)
+    * 読むことができる概要 [ドキュメント](newbs_building_firmware_configurator.md) があります。
+* 発展: [ソースを使用します](newbs.md)
     * より強力ですが、使うのはより困難です。
 
 ## 自分用にアレンジします
 
-QMK には、探求すべき多くの機能と、深く知るためのリファレンスドキュメントがたくさんあります。ほとんどの機能は[キーマップ](keymap.md)を変更し、[キーコード](keycodes.md)を変更することで活用されます。
+QMK には、探求すべき多くの[機能](features.md)と、深く知るためのリファレンスドキュメントがたくさんあります。ほとんどの機能は[キーマップ](keymap.md)を変更し、[キーコード](keycodes.md)を変更することで活用されます。
 
 ## 手助けが必要ですか？
 

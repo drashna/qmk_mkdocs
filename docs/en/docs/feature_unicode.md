@@ -110,7 +110,6 @@ You can find the default implementations of these functions in [`process_ucis.c`
 
 Unicode input in QMK works by inputting a sequence of characters to the OS, sort of like a macro. Unfortunately, the way this is done differs for each platform. Specifically, each platform requires a different combination of keys to trigger Unicode input. Therefore, a corresponding input mode has to be set in QMK.
 
-The following input modes are available.
 
 ### UC_MAC
 
@@ -135,7 +134,7 @@ Enabled by default and works almost anywhere on IBus-enabled distros. Without IB
 By default, this mode uses Ctrl+Shift+U (`LCTL(LSFT(KC_U))`) to start Unicode input, but this can be changed by defining [`UNICODE_KEY_LNX`](#input-key-configuration) with a different keycode. This might be required for IBus versions ≥1.5.15, where Ctrl+Shift+U behavior is consolidated into Ctrl+Shift+E.
 
 Users who wish support in non-GTK apps without IBus may need to resort to a more indirect method, such as creating a custom keyboard layout ([more on this method](#custom-linux-layout)).
-
+  
 ### UC_WIN
 
 _(not recommended)_ Windows built-in hex numpad Unicode input. Supports code points up to `0xFFFF`.
@@ -155,6 +154,7 @@ Windows Unicode input using [WinCompose](https://github.com/samhocevar/wincompos
 To enable, install the [latest release](https://github.com/samhocevar/wincompose/releases/latest). Once installed, WinCompose will automatically run on startup. This mode works reliably under all version of Windows supported by the app.
 
 By default, this mode uses right Alt (`KC_RALT`) as the Compose key, but this can be changed in the WinCompose settings and by defining [`UNICODE_KEY_WINC`](#input-key-configuration) with a different keycode.
+
 
 ## 3. Setting the Input Mode {: id=setting-the-input-mode }
 
@@ -191,7 +191,7 @@ You can switch the input mode at any time by using the following keycodes. Addin
 You can also switch the input mode by calling `set_unicode_input_mode(x)` in your code, where _x_ is one of the above input mode constants (e.g. `UC_LNX`).
 
 !!! tip
-    Using `UNICODE_SELECTED_MODES` is preferable to calling `set_unicode_input_mode()` in `matrix_init_user()` or similar functions, since it's better integrated into the Unicode system and has the added benefit of avoiding unnecessary writes to EEPROM.
+     Using `UNICODE_SELECTED_MODES` is preferable to calling `set_unicode_input_mode()` in `matrix_init_user()` or similar functions, since it's better integrated into the Unicode system and has the added benefit of avoiding unnecessary writes to EEPROM.
 
 #### Audio Feedback
 

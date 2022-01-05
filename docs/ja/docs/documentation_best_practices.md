@@ -52,6 +52,7 @@ This page covers my super cool feature. You can use this feature to make coffee,
      This is a helpful tip.
 
 
+
 # 機能を文章化する
 
 QMK のために新しい機能を作成した場合、そのドキュメントページを作成してください。長い必要は無く、機能を説明する幾つかの文と、関連するキーコードを列挙した表で十分です。以下は基本的なテンプレートです:

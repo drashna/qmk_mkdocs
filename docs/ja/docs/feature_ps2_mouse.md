@@ -1,4 +1,4 @@
-# PS/2 マウスサポート {: id=ps }2-mouse-support
+# PS/2 マウスサポート {: id=ps2-mouse-support }
 
 <!---
   original document: 0.13.17:docs/feature_ps2_mouse.md
@@ -43,14 +43,8 @@ PS2_USE_BUSYWAIT = yes
 
 ```c
 #ifdef PS2_USE_BUSYWAIT
-#   define PS2_CLOCK_PORT  PORTD
-#   define PS2_CLOCK_PIN   PIND
-#   define PS2_CLOCK_DDR   DDRD
-#   define PS2_CLOCK_BIT   1
-#   define PS2_DATA_PORT   PORTD
-#   define PS2_DATA_PIN    PIND
-#   define PS2_DATA_DDR    DDRD
-#   define PS2_DATA_BIT    2
+#   define PS2_CLOCK_PIN   D1
+#   define PS2_DATA_PIN    D2
 #endif
 ```
 
@@ -69,14 +63,8 @@ PS2_USE_INT = yes
 
 ```c
 #ifdef PS2_USE_INT
-#define PS2_CLOCK_PORT  PORTD
-#define PS2_CLOCK_PIN   PIND
-#define PS2_CLOCK_DDR   DDRD
-#define PS2_CLOCK_BIT   2
-#define PS2_DATA_PORT   PORTD
-#define PS2_DATA_PIN    PIND
-#define PS2_DATA_DDR    DDRD
-#define PS2_DATA_BIT    5
+#define PS2_CLOCK_PIN   D2
+#define PS2_DATA_PIN    D5
 
 #define PS2_INT_INIT()  do {    \
     EICRA |= ((1<<ISC21) |      \
@@ -107,14 +95,9 @@ PS2_USE_USART = yes
 
 ```c
 #ifdef PS2_USE_USART
-#define PS2_CLOCK_PORT  PORTD
-#define PS2_CLOCK_PIN   PIND
-#define PS2_CLOCK_DDR   DDRD
-#define PS2_CLOCK_BIT   5
-#define PS2_DATA_PORT   PORTD
-#define PS2_DATA_PIN    PIND
-#define PS2_DATA_DDR    DDRD
-#define PS2_DATA_BIT    2
+#ifdef PS2_USE_USART
+#define PS2_CLOCK_PIN   D5
+#define PS2_DATA_PIN    D2
 
 /* 同期、奇数パリティ、1-bit ストップ、8-bit データ、立ち下がりエッジでサンプル */
 /* CLOCK の DDR を入力としてスレーブに設定 */
@@ -151,7 +134,7 @@ PS2_USE_USART = yes
 
 ## 追加の設定 {: id=additional-settings }
 
-### PS/2 マウス機能 {: id=ps }2-mouse-features
+### PS/2 マウス機能 {: id=ps2-mouse-features }
 
 以下の PS/2 マウスプロトコルによってサポートされる設定を有効にします。
 

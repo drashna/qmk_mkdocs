@@ -140,4 +140,3 @@ A device can represent an actual physical device [serial port, usb port] or some
 #### `public uint8_t `[`input_queue_data`](internals_midi_device.md#struct__midi__device_1ada41de021135dc423abedcbb30f366ff) {#struct__midi__device_1ada41de021135dc423abedcbb30f366ff}
 
 #### `public `[`byteQueue_t`](#structbyte_queue__t)` `[`input_queue`](#struct__midi__device_1a49c8538a8a02193c58e28a56eb695d8f) {#struct__midi__device_1a49c8538a8a02193c58e28a56eb695d8f}
-

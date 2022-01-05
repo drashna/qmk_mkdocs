@@ -18,7 +18,7 @@ export QMK_HOME='~/qmk_firmware' # Optional, set the location for `qmk_firmware`
 qmk setup  # This will clone `qmk/qmk_firmware` and optionally set up your build environment
 ```
 
-### Install Using pip {: id=install-using-easy }_install-or-pip
+### Install Using pip {: id=install-using-easy_install-or-pip }
 
 If your system is not listed above you can install QMK manually. First ensure that you have Python 3.6 (or later) installed and have installed pip. Then install QMK with this command:
 

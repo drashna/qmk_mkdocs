@@ -21,6 +21,8 @@ I'll say that again because it's important:
     * Ask the manufacturer if they have submitted a Pull Request to QMK
     * File an issue at [qmk_firmware](https://github.com/qmk/qmk_firmware/issues) requesting to support that particular keyboard
 
+ <!-- FIXME(skullydazed): This feels too wordy and I'm not sure we want to encourage these kinds of issues. Also, should we prompt them to bug the manufacutrer? -->
+
 ## Step 2: Select Your Keyboard Layout
 
 Choose the layout that best represents the keymap you want to create. Some keyboards do not have enough layouts or correct layouts defined yet. They will be supported in the future.
@@ -44,12 +46,12 @@ Keycode Entry is accomplished in one of 3 ways:
 3. Clicking on an empty spot on the layout, then pressing the physical key on your keyboard
 
 !!! tip
-    Hover your mouse over a key and a short blurb will tell you what that keycode does. For a more verbose description please see:
+   Hover your mouse over a key and a short blurb will tell you what that keycode does. For a more verbose description please see:
 
 * [Basic Keycode Reference](keycodes_basic.md)
 * [Advanced Keycode Reference](feature_advanced_keycodes.md)
 
-!!! tip
+!!! tip 
     If your selected layout doesn't match your physical build leave the unused keys blank. If you're not sure which key is in use, for example you have a one backspace key but `LAYOUT_all` has 2 keys, put the same keycode in both locations.
 
 ## Step 5: Save Your Keymap for Future Changes
@@ -67,4 +69,4 @@ When the compilation is done, you will be able to press the green `Download Firm
 
 ## Next steps: Flashing Your Keyboard
 
-Please refer to [Flashing Firmware](tutorial_flashing.md).
+Please refer to [Flashing Firmware](newbs_flashing.md).

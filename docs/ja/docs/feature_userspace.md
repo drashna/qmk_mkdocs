@@ -74,8 +74,8 @@ USER_NAME := mylayout
 
 この理由は、`<name>.h` は (`#define TAPPING_TERM 100` などのような)設定を追加する時には追加されず、`config.h` ファイル内の `<name.h>` ファイルを含めるとコンパイルの問題を引き起こすからです。
 
-!!! tip
-   `config.h` は[設定オプション](config_options.md)のために使い、`<name>.h` ファイルはユーザあるいは(レイヤーあるいはキーコードのための enum のような)キーマップ固有の設定のために使うべきです
+!!! hint
+    config.h` は[設定オプション](config_options.md)のために使い、`<name>.h` ファイルはユーザあるいは(レイヤーあるいはキーコードのための enum のような)キーマップ固有の設定のために使うべきです
 
 
 ## Readme (`readme.md`)

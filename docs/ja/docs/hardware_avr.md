@@ -12,26 +12,28 @@
 
 ## AVR を使用したキーボードを QMK に追加する
 
-QMK には AVR を使ったキーボードでの作業を簡略化するための機能が多数あります。大体のキーボードでは1行もコードを書く必要がありません。まずはじめに、`util/new_keyboard.sh` スクリプトを実行します。
+QMK には AVR を使ったキーボードでの作業を簡略化するための機能が多数あります。大体のキーボードでは1行もコードを書く必要がありません。まずはじめに、`qmk new-keyboard` を実行します。
 
 ```
-$ ./util/new_keyboard.sh
-Generating a new QMK keyboard directory
+$ qmk new-keyboard
+Ψ Generating a new QMK keyboard directory
 
-Keyboard Name: mycoolkb
-Keyboard Type [avr]: 
-Your Name [John Smith]: 
+Keyboard Name: mycoolkeeb
+Keyboard Type:
+        1. avr
+        2. ps2avrgb
+Please enter your choice:  [1]
+Your Name: [John Smith]
+Ψ Copying base template files...
+Ψ Copying avr template files...
+Ψ Renaming keyboard.[ch] to mycoolkeeb.[ch]...
+Ψ Replacing %YEAR% with 2021...
+Ψ Replacing %KEYBOARD% with mycoolkeeb...
+Ψ Replacing %YOUR_NAME% with John Smith...
 
-Copying base template files... done
-Copying avr template files... done
-Renaming keyboard files... done
-Replacing %KEYBOARD% with mycoolkb... done
-Replacing %YOUR_NAME% with John Smith... done
-
-Created a new keyboard called mycoolkb.
-
-To start working on things, cd into keyboards/mycoolkb,
-or open the directory in your favourite text editor.
+Ψ Created a new keyboard called mycoolkeeb.
+Ψ To start working on things, `cd` into keyboards/mycoolkeeb,
+Ψ or open the directory in your preferred text editor.
 ```
 
 これにより、新しいキーボードをサポートするために必要なすべてのファイルが作成され、デフォルト値で設定が入力されます。あとはあなたのキーボード用にカスタマイズするだけです。
@@ -85,7 +87,7 @@ or open the directory in your favourite text editor.
 
 !!! tip
     Windows や macOS では、`MANUFACTURER` と `PRODUCT` が USBデバイスのリストに表示されます。
-
+    
     Linux 上の `lsusb` では、代わりに [USB ID Repository](http://www.linux-usb.org/usb-ids.html) によって維持されているリストの値を優先します。デフォルトでは、リストに `VENDOR_ID` / `PRODUCT_ID` を含まない場合にのみ、`MANUFACTURER` と `PRODUCT` を使います。`sudo lsusb -v` を使用するとデバイスから示された値を表示します。また、接続したときのカーネルログにも表示されます。
 
 ### キーボードマトリックスの設定

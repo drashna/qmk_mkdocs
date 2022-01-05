@@ -177,7 +177,7 @@ From here, you should have a working keyboard once you program a firmware.
 
 Simple firmware can be created easily using the [Keyboard Firmware Builder](https://kbfirmware.com/) website.  Recreate your layout using [Keyboard Layout Editor](https://www.keyboard-layout-editor.com), import it and recreate the matrix (if not already done as part of [planning the matrix](#planning-the-matrix).
 
-Go through the rest of the tabs, assigning keys until you get to the last one where you can compile and download your firmware.  The .hex file can be flashed straight onto your keyboard, and the .zip of source files can be modified for advanced functionality and compiled locally using the method described in [Building Your First Firmware](tutorial_building_firmware?id=build-your-firmware).
+Go through the rest of the tabs, assigning keys until you get to the last one where you can compile and download your firmware.  The .hex file can be flashed straight onto your keyboard, and the .zip of source files can be modified for advanced functionality and compiled locally using the method described in [Building Your First Firmware](newbs_building_firmware?id=build-your-firmware).
 
 The source given by Keyboard Firmware Builder is QMK, but is based on a version of QMK from early 2017. To compile the code from your .zip file in a modern version of QMK Firmware, you'll need to open the .zip and follow these instructions:
 

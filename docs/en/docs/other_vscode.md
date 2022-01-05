@@ -3,7 +3,6 @@
 [Visual Studio Code](https://code.visualstudio.com/) (VS Code) is an open-source code editor that supports many different programming languages. 
 
 Using a full-featured editor such as VS Code provides many advantages over a plain text editor, such as:
-
 * intelligent code completion
 * convenient navigation in the code
 * refactoring tools
@@ -16,7 +15,7 @@ The purpose of this page is to document how to set up VS Code for developing QMK
 This guide covers how to configure everything needed on Windows and Ubuntu 18.04
 
 # Set up VS Code
-Before starting, you will want to make sure that you have all of the build tools set up, and QMK Firmware cloned. Head to the the [Newbs Getting Started Guide](tutorial_getting_started.md) to get things set up, if you haven't already.
+Before starting, you will want to make sure that you have all of the build tools set up, and QMK Firmware cloned. Head to the the [Newbs Getting Started Guide](newbs_getting_started.md) to get things set up, if you haven't already.
 
 ## Windows
 
@@ -57,6 +56,7 @@ Once you have saved this file, you will need to reload VS Code, if it was alread
 
 !!! note
     You should see an `extensions.json` and `settings.json` file in the `.vscode` folder, as well.
+
 
 Now, we will set up the MSYS2 window to show up in VSCode as the integrated terminal.  This has a number of advantages. Mostly, you can control+click on errors and jump to those files.  This makes debugging much easier.  It's also nice, in that you don't have to jump to another window. 
 
@@ -110,7 +110,6 @@ This installs a bunch of Git related tools that may make using Git with QMK Firm
 * [GitHub Markdown Preview](https://marketplace.visualstudio.com/items?itemName=bierner.github-markdown-preview) - _[Optional]_ - Makes the markdown preview in VS Code more like GitHub's.
 * [VS Live Share Extension Pack](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack) - _[Optional]_ - This extension allows somebody else to access your workspace (or you to access somebody else's workspace) and help out.  This is great if you're having issues and need some help from somebody.
 * [VIM Keymap](https://marketplace.visualstudio.com/items?itemName=GiuseppeCesarano.vim-keymap) - _[Optional]_ - For those that prefer VIM style keybindings. There are other options for this, too. 
-* [Travis CI Status](https://marketplace.visualstudio.com/items?itemName=felixrieseberg.vsc-travis-ci-status) - _[Optional]_ - This shows the current Travis CI status, if you have it set up.
 
 Restart once you've installed any extensions
 

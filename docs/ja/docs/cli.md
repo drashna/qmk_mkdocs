@@ -23,7 +23,7 @@ export QMK_HOME='~/qmk_firmware' # オプション、`qmk_firmware` の場所を
 qmk setup  # これは `qmk/qmk_firmware` をクローンし、オプションでビルド環境をセットアップします
 ```
 
-### pip を使ってインストール {: id=install-using-easy }_install-or-pip
+### pip を使ってインストール {: id=install-using-easy_install-or-pip }
 
 上で列挙した中にあなたのシステムがない場合は、QMK を手動でインストールすることができます。最初に、python 3.6 (以降)をインストールしていて、pip をインストールしていることを確認してください。次に以下のコマンドを使って QMK をインストールします:
 

@@ -4,12 +4,12 @@ This page helps you build up your QMK knowledge by introducing the basics first 
 
 # Beginning Topics
 
-If you read nothing else you should read the documents in this section. After reading the [Tutorial](tutorial.md) you should be able to create a basic keymap, compile it, and flash it to your keyboard. The remaining documents will flesh out your knowledge of these basics.
+If you read nothing else you should read the documents in this section. After reading the [Tutorial](newbs.md) you should be able to create a basic keymap, compile it, and flash it to your keyboard. The remaining documents will flesh out your knowledge of these basics.
 
 * **Learn How To Use QMK Tools**
-    * [Tutorial](tutorial.md)
+    * [Tutorial](newbs.md)
     * [CLI](cli.md)
-    * [GIT](tutorial_git_best_practices.md)
+    * [GIT](newbs_git_best_practices.md)
 * **Learn About Keymaps**
     * [Layers](feature_layers.md)
     * [Keycodes](keycodes.md)
@@ -31,6 +31,7 @@ These topics start to dig into some of the features that QMK supports. You don't
         * [RGB Lighting](feature_rgblight.md)
         * [RGB Matrix](feature_rgb_matrix.md)
     * [Tap-Hold Configuration](tap_hold.md)
+    * [Squeezing Space from AVR](squeezing_avr.md)
 * **Learn More About Keymaps**
     * [Keymaps](keymap.md)
     * [Custom Functions and Keycodes](custom_quantum_functions.md)
@@ -40,6 +41,7 @@ These topics start to dig into some of the features that QMK supports. You don't
     * [Tap Dance](feature_tap_dance.md)
     * [Combos](feature_combo.md)
     * [Userspace](feature_userspace.md)
+    * [Key Overrides](feature_key_overrides.md)
 
 # Advanced Topics
 
@@ -53,7 +55,7 @@ Everything below here requires a lot of foundational knowledge. Besides being ab
 * **Advanced Features**
     * [Unicode](feature_unicode.md)
     * [API](api_overview.md)
-    * [Bootmagic](feature_bootmagic.md)
+    * [Bootmagic Lite](feature_bootmagic.md)
 * **Hardware**
     * [How Keyboards Work](how_keyboards_work.md)
     * [How A Keyboard Matrix Works](how_a_matrix_works.md)
