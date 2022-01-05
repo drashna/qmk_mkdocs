@@ -18,7 +18,7 @@ pushd "$(dirname "${BASH_SOURCE[0]}")"/../docs
 sed -i 's,/devel/,/'$1'/,' */mkdocs.yml
 
 # Setup the language switcher
-cp versions.json ../../site/
+cp versions.json ../site/
 
 # Build the translations
 for translation in ../??/; do
