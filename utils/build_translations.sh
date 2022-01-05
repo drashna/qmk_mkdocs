@@ -15,7 +15,7 @@ rm -rf site/??/
 
 # Set the site URL
 pushd "$(dirname "${BASH_SOURCE[0]}")"/docs
-sed -i 's,/'$1'/,' */mkdocs.yml
+sed -i 's,/devel/,/'$1'/,' */mkdocs.yml
 
 # Setup the language switcher
 cp versions.json ../site/
