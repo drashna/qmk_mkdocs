@@ -11,6 +11,9 @@ if [ -z "$1" ]; then
 fi
 
 # Prepare the site dir
+ls .
+ls ..
+ls ../..
 rm -rf ../../site/??/
 
 # Set the site URL
