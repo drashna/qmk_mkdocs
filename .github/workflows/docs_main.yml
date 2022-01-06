@@ -37,4 +37,3 @@ jobs:
         branch: gh-pages
         folder: site
         git-config-email: hello@qmk.fm
-        target-folder: master
