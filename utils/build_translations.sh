@@ -16,6 +16,7 @@ rm -rf ../../site/??/
 # Set the site URL
 pushd "$(dirname "${BASH_SOURCE[0]}")"/../docs
 sed -i 's,/devel/,/'$1'/,' */mkdocs.yml
+sed -i 's,/devel/,/'$1'/,' base.yml
 
 # Setup the language switcher
 cp versions.json ../site/
@@ -23,16 +24,16 @@ cp versions.json ../site/
 # Build the translations
 for translation in ??/; do
 	echo '*** Setting up symlinks for language' $translation
-	../utils/symlink_translation.sh $translation $1
+	../utils/symlink_translation.sh $translation
 
-	echo '*** Building site for language' $translation $1
+	echo '*** Building site for language' $translation
 	pushd $translation
 	mkdocs build
 	popd
 	echo "We are in:"
 	basename "$PWD"
 	ls
-	echo "*** Moving $translation/site to site/$translation/$1"
-	mv $translation/site ../site/$translation/$1
+	echo "*** Moving $translation/site to site/$translation/"
+	mv $translation/site ../site/$translation/1
 done
 popd

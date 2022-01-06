@@ -47,7 +47,7 @@ markdown_extensions:
 repo_name: qmk/qmk_firmware
 repo_url: https://github.com/qmk/qmk_firmware
 site_name: QMK Firmware Docs
-site_dir: ./site
+site_dir: ./site/devel/
 theme:
   favicon: images/favicon.ico
   features:
