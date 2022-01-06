@@ -11,12 +11,6 @@ if [ -z "$1" ]; then
 fi
 
 # Prepare the site dir
-echo " this folder"
-ls .
-echo "parent"
-ls ..
-echo "parent parent"
-ls ../..
 rm -rf ../../site/??/
 
 # Set the site URL
@@ -27,7 +21,7 @@ sed -i 's,/devel/,/'$1'/,' */mkdocs.yml
 cp versions.json ../site/
 
 # Build the translations
-for translation in ../??/; do
+for translation in ??/; do
 	echo '*** Setting up symlinks for language' $translation
 	../utils/symlink_translation.sh $translation
 
