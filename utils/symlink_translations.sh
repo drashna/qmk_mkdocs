@@ -15,7 +15,7 @@ rm -rf site/??/
 
 # Set the site URL
 pushd "$(dirname "${BASH_SOURCE[0]}")"/docs
-sed -i 's,/devel/,/'$1'/,' */mkdocs.yml
+sed -i 's,/'$1'/,' */mkdocs.yml
 
 # Setup the language switcher
 cp versions.json ../site/
@@ -23,7 +23,7 @@ cp versions.json ../site/
 # Build the translations
 for translation in ??/; do
 	echo '*** Setting up symlinks for language' $translation
-	./symlink_translation.sh $translation
+	../symlink_translation.sh $translation
 
 	echo '*** Building site for language' $translation
 	pushd $translation
