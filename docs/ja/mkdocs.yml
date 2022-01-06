@@ -45,7 +45,7 @@ markdown_extensions:
 nav:
   - Home: README.md
   - チュートリアル:
-    - 入門: tutorial.md
+    - 入門: newbs.md
     - セットアップ: newbs_getting_started.md
     - 初めてのファームウェアの構築: newbs_building_firmware.md
     - ファームウェアのフラッシュ: newbs_flashing.md
