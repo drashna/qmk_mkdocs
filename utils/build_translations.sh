@@ -31,3 +31,6 @@ for translation in ??/; do
 	mv $translation/site ../site/$translation/
 done
 popd
+
+git clone --branch gh-pages https://github.com/drashna/qmk_mkdocs.git dist
+cp -a site/. dist/
