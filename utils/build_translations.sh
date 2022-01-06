@@ -26,8 +26,10 @@ for translation in ??/; do
 	mkdocs build
 	popd
 
-	echo "*** Moving ${translation}/site to site/${translation}/"
+	echo "*** Setting up index.html and versions.json"
 	cp versions.json $translation/site/
+	cp index.html $translation/site/
+	echo "*** Moving ${translation}/site to site/${translation}/"
 	mv $translation/site ../site/$translation/
 done
 popd
