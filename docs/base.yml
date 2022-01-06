@@ -3,7 +3,12 @@ extra_css:
 extra:
   version:
     provider: mike
-plugins:
+  alternate:
+    - name: master
+      link: /qmk_mkdocs/master
+    - name: develop
+      link: /qmk_mkdocs/develop
+  plugins:
   - search:
       lang:
         - en
