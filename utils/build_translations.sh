@@ -11,7 +11,7 @@ if [ -z "$1" ]; then
 fi
 
 # Prepare the site dir
-rm -rf ../../site/??/
+rm -rf ../../site/??/$1/
 
 # Set the site URL
 pushd "$(dirname "${BASH_SOURCE[0]}")"/../docs
@@ -34,6 +34,6 @@ for translation in ??/; do
 	basename "$PWD"
 	ls
 	echo "*** Moving $translation/site to site/$translation/"
-	mv $translation/site ../site/$translation/1
+	mv $translation/site ../site/$translation/
 done
 popd
