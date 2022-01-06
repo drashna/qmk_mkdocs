@@ -36,3 +36,4 @@ jobs:
         branch: gh-pages
         folder: site
         git-config-email: hello@qmk.fm
+        preserve: true
