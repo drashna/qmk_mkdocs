@@ -31,6 +31,6 @@ for translation in ??/; do
 	popd
 
 	echo "*** Moving $translation/site to site/$translation"
-	mv $translation/site ../site/$translation
+	mv $translation/site ../$translation/site
 done
 popd
