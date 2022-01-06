@@ -32,7 +32,7 @@ for translation in ??/; do
 	echo "We are in:"
 	basename "$PWD"
 	ls
-	echo "*** Moving $translation/site to site/$translation"
-	mv $translation/site ../site/$translation
+	echo "*** Moving $translation/site to site/$translation/$1"
+	mv $translation/site ../site/$translation/$1
 done
 popd
