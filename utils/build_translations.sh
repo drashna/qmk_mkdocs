@@ -10,6 +10,8 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
+	ls ../site/??/$1/
+
 
 # Set the site URL
 pushd "$(dirname "${BASH_SOURCE[0]}")"/../docs
@@ -19,7 +21,7 @@ sed -i 's,/devel/,/'$1'/,' base.yml
 # Build the translations
 for translation in ??/; do
 	# Prepare the site dir
-	ls R ../site/??/$1/
+	ls ../site/??/$1/
 	# rm -rf ../site/??/$1/
 
 	echo '*** Building site for language' $translation
