@@ -1,36 +1,27 @@
 #!/usr/bin/env bash
 
-# This script is used to build the complete site with translations. You do not need to use this normally.
+# Setup the symlinks for working on a translation
 
 set -e
 #set -x
 
 if [ -z "$1" ]; then
-	echo "usage: $0 <branch>"
+	echo "usage: $0 <translation>"
 	exit 1
 fi
 
-# Prepare the site dir
-rm -rf site/??/
+translation=$1
 
-# Set the site URL
-pushd "$(dirname "${BASH_SOURCE[0]}")"/docs
-sed -i 's,/'$1'/,' */mkdocs.yml
+cd "$(dirname "${BASH_SOURCE[0]}")"/docs/en
 
-# Setup the language switcher
-cp versions.json ../site/
-
-# Build the translations
-for translation in ??/; do
-	echo '*** Setting up symlinks for language' $translation
-	../symlink_translation.sh $translation
-
-	echo '*** Building site for language' $translation
-	pushd $translation
-	mkdocs build
-	popd
-
-	echo "*** Moving $translation/site to site/$translation"
-	mv $translation/site ../site/$translation
+for file in $(find docs -type f); do
+	if ! [ -e ../${translation}/${file} ]; then
+		# Ugly hack, but ChangeLog is the only subdir we have...
+		if echo $file | grep -q '/.*/'; then
+			mkdir -p ../$(dirname ${translation}/${file})
+			ln -s ../../../en/${file} ../${translation}/${file}
+		else
+			ln -s ../../en/${file} ../${translation}/${file}
+		fi
+	fi
 done
-popd
