@@ -1,0 +1,4383 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://drashna.github.io/qmk_mkdocs/master/en/ChangeLog/20211127/">
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.4">
+    
+    
+      
+        <title>2021 Nov 27, 0.15.0 - QMK Firmware Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bb3983ee.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round:300,400,400i,700%7CSource+Code+Pro&display=fallback">
+        <style>:root{--md-text-font:"Varela Round";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/qmk.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qmk-breaking-changes-2021-november-27-changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        <aside class="md-banner md-banner--warning">
+          
+        </aside>
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="QMK Firmware Docs" class="md-header__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QMK Firmware Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2021 Nov 27, 0.15.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="QMK Firmware Docs" class="md-nav__button md-logo" aria-label="QMK Firmware Docs" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    QMK Firmware Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/qmk/qmk_firmware/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    qmk/qmk_firmware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Tutorial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorial" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorial
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../newbs/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../newbs_getting_started/" class="md-nav__link">
+        Setup
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../newbs_building_firmware/" class="md-nav__link">
+        Building Your First Firmware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../newbs_flashing/" class="md-nav__link">
+        Flashing Firmware
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        Getting Help/Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../newbs_learn_more_resources/" class="md-nav__link">
+        Other Resources
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../syllabus/" class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          FAQs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="FAQs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          FAQs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq_general/" class="md-nav__link">
+        General FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq_build/" class="md-nav__link">
+        Build/Compile QMK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq_misc/" class="md-nav__link">
+        Troubleshooting QMK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq_debug/" class="md-nav__link">
+        Debugging QMK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq_keymap/" class="md-nav__link">
+        Keymap FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../squeezing_avr/" class="md-nav__link">
+        Squeezing Space from AVR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference_glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Configurator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configurator" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configurator
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../newbs_building_firmware_configurator/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurator_step_by_step/" class="md-nav__link">
+        Step by Step
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurator_troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurator_architecture/" class="md-nav__link">
+        Architecture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" data-md-state="indeterminate" type="checkbox" id="__nav_4_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          QMK API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="QMK API" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          QMK API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api_overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api_docs/" class="md-nav__link">
+        API Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference_configurator_support/" class="md-nav__link">
+        Keyboard Support
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configurator_default_keymaps/" class="md-nav__link">
+        Adding Default Keymaps
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" data-md-state="indeterminate" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          CLI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CLI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          CLI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli_configuration/" class="md-nav__link">
+        Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli_commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli_tab_complete/" class="md-nav__link">
+        Tab Completion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" data-md-state="indeterminate" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Using QMK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Using QMK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Using QMK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" data-md-state="indeterminate" type="checkbox" id="__nav_6_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1">
+          Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Guides" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started_github/" class="md-nav__link">
+        Github Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom_quantum_functions/" class="md-nav__link">
+        Customizing Functionality
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../driver_installation_zadig/" class="md-nav__link">
+        Driver Installation with Zadig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../easy_maker/" class="md-nav__link">
+        Easy Maker for One Offs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../keymap/" class="md-nav__link">
+        Keymap Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_6" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_6">
+          Development Environments
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Development Environments" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_1_6">
+          <span class="md-nav__icon md-icon"></span>
+          Development Environments
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started_docker/" class="md-nav__link">
+        Docker Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started_vagrant/" class="md-nav__link">
+        Vagrant Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_7" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_7">
+          Flashing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Flashing" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_1_7">
+          <span class="md-nav__icon md-icon"></span>
+          Flashing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flashing/" class="md-nav__link">
+        Flashing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flashing_bootloadhid/" class="md-nav__link">
+        Flashing ATmega32A (ps2avrgb)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_8" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_8">
+          IDEs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="IDEs" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_1_8">
+          <span class="md-nav__icon md-icon"></span>
+          IDEs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_eclipse/" class="md-nav__link">
+        Using Eclipse with QMK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other_vscode/" class="md-nav__link">
+        Using VSCode with QMK
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_9" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_9">
+          Git Best Practices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git Best Practices" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_1_9">
+          <span class="md-nav__icon md-icon"></span>
+          Git Best Practices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../newbs_git_best_practices/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../newbs_git_using_your_master_branch/" class="md-nav__link">
+        Your Fork
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../newbs_git_resolving_merge_conflicts/" class="md-nav__link">
+        Merge Conflicts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../newbs_git_resynchronize_a_branch/" class="md-nav__link">
+        Fixing Your Branch
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1_10" data-md-state="indeterminate" type="checkbox" id="__nav_6_1_10" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1_10">
+          Keyboard Building
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Keyboard Building" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_1_10">
+          <span class="md-nav__icon md-icon"></span>
+          Keyboard Building
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hand_wire/" class="md-nav__link">
+        Hand Wiring Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../isp_flashing_guide/" class="md-nav__link">
+        ISP Flashing Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" data-md-state="indeterminate" type="checkbox" id="__nav_6_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_2">
+          Simple Keycodes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Simple Keycodes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Simple Keycodes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../keycodes/" class="md-nav__link">
+        Full List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../keycodes_basic/" class="md-nav__link">
+        Basic Keycodes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference_keymap_extras/" class="md-nav__link">
+        Language-Specific Keycodes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_advanced_keycodes/" class="md-nav__link">
+        Modifier Keys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum_keycodes/" class="md-nav__link">
+        Quantum Keycodes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../keycodes_magic/" class="md-nav__link">
+        Magic Keycodes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" data-md-state="indeterminate" type="checkbox" id="__nav_6_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_3">
+          Advanced Keycodes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Advanced Keycodes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_3">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced Keycodes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_command/" class="md-nav__link">
+        Command
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_dynamic_macros/" class="md-nav__link">
+        Dynamic Macros
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_grave_esc/" class="md-nav__link">
+        Grave Escape
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_leader_key/" class="md-nav__link">
+        Leader Key
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mod_tap/" class="md-nav__link">
+        Mod-Tap
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_macros/" class="md-nav__link">
+        Macros
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_mouse_keys/" class="md-nav__link">
+        Mouse Keys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_programmable_button/" class="md-nav__link">
+        Programmable Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_space_cadet/" class="md-nav__link">
+        Space Cadet Shift
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../keycodes_us_ansi_shifted/" class="md-nav__link">
+        US ANSI Shifted Keys
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" data-md-state="indeterminate" type="checkbox" id="__nav_6_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4">
+          Software Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software Features" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Software Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_auto_shift/" class="md-nav__link">
+        Auto Shift
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_combo/" class="md-nav__link">
+        Combos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_debounce_type/" class="md-nav__link">
+        Debounce API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_key_lock/" class="md-nav__link">
+        Key Lock
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_key_overrides/" class="md-nav__link">
+        Key Overrides
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_layers/" class="md-nav__link">
+        Layers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../one_shot_keys/" class="md-nav__link">
+        One Shot Keys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_pointing_device/" class="md-nav__link">
+        Pointing Device
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_rawhid/" class="md-nav__link">
+        Raw HID
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_sequencer/" class="md-nav__link">
+        Sequencer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_swap_hands/" class="md-nav__link">
+        Swap Hands
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_tap_dance/" class="md-nav__link">
+        Tap Dance
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tap_hold/" class="md-nav__link">
+        Tap-Hold Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_terminal/" class="md-nav__link">
+        Terminal
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_unicode/" class="md-nav__link">
+        Unicode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_userspace/" class="md-nav__link">
+        Userspace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_wpm/" class="md-nav__link">
+        WPM Calculation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" data-md-state="indeterminate" type="checkbox" id="__nav_6_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5">
+          Hardware Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hardware Features" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_1" data-md-state="indeterminate" type="checkbox" id="__nav_6_5_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_1">
+          Displays
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Displays" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Displays
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_hd44780/" class="md-nav__link">
+        HD44780 LCD Controller
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_st7565/" class="md-nav__link">
+        ST7565 LCD Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_oled_driver/" class="md-nav__link">
+        OLED Driver
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_2" data-md-state="indeterminate" type="checkbox" id="__nav_6_5_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_2">
+          Lighting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lighting" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Lighting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_backlight/" class="md-nav__link">
+        Backlight
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_led_matrix/" class="md-nav__link">
+        LED Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_rgblight/" class="md-nav__link">
+        RGB Lighting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_rgb_matrix/" class="md-nav__link">
+        RGB Matrix
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_audio/" class="md-nav__link">
+        Audio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_bluetooth/" class="md-nav__link">
+        Bluetooth
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_bootmagic/" class="md-nav__link">
+        Bootmagic Lite
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../custom_matrix/" class="md-nav__link">
+        Custom Matrix
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_digitizer/" class="md-nav__link">
+        Digitizer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_dip_switch/" class="md-nav__link">
+        DIP Switch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_encoders/" class="md-nav__link">
+        Encoders
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_haptic_feedback/" class="md-nav__link">
+        Haptic Feedback
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_joystick/" class="md-nav__link">
+        Joystick
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_led_indicators/" class="md-nav__link">
+        LED Indicators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_midi/" class="md-nav__link">
+        MIDI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proton_c_conversion/" class="md-nav__link">
+        Proton C Conversion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_ps2_mouse/" class="md-nav__link">
+        PS/2 Mouse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_split_keyboard/" class="md-nav__link">
+        Split Keyboard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_stenography/" class="md-nav__link">
+        Stenography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_thermal_printer/" class="md-nav__link">
+        Thermal Printer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_velocikey/" class="md-nav__link">
+        Velocikey
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Developing QMK
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Developing QMK" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Developing QMK
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr_checklist/" class="md-nav__link">
+        PR Checklist
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Breaking Changes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Breaking Changes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Breaking Changes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../breaking_changes/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../breaking_changes_instructions/" class="md-nav__link">
+        My Pull Request Was Flagged
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./" class="md-nav__link">
+        Most Recent ChangeLog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2_4" type="checkbox" id="__nav_7_2_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_2_4">
+          Past ChangeLogs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Past ChangeLogs" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Past ChangeLogs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2021 Nov 27, 0.15.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        2021 Nov 27, 0.15.0
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qmk-2000th-keyboard" class="md-nav__link">
+    2000 keyboards!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notable-features" class="md-nav__link">
+    Notable Features
+  </a>
+  
+    <nav class="md-nav" aria-label="Notable Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expanded-pointing-device" class="md-nav__link">
+    Expanded Pointing Device support (#14343)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-tapping-term" class="md-nav__link">
+    Dynamic Tapping Term (#11036)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macros-in-keymap-json" class="md-nav__link">
+    Macros in JSON keymaps (#14374)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes-requiring-user-action" class="md-nav__link">
+    Changes Requiring User Action
+  </a>
+  
+    <nav class="md-nav" aria-label="Changes Requiring User Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updated-keyboard-codebases" class="md-nav__link">
+    Updated Keyboard Codebases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squeezing-space-from-avr" class="md-nav__link">
+    Squeezing space out of AVR (#15243)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicit-rgb-modes" class="md-nav__link">
+    Require explicit enabling of RGB Matrix modes (#15018)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oled-task-refactor" class="md-nav__link">
+    OLED task refactoring (#14864)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootmagic-full-removal" class="md-nav__link">
+    Bootmagic Full Removal (#15002)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-qwiic" class="md-nav__link">
+    Remove QWIIC_DRIVERS (#14174)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notable-core" class="md-nav__link">
+    Notable core changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Notable core changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-mcu-support" class="md-nav__link">
+    New MCU Support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eeprom-changes" class="md-nav__link">
+    EEPROM Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compile-commands" class="md-nav__link">
+    Compilation Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codebase-restructure" class="md-nav__link">
+    Codebase restructure and cleanup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-changelist" class="md-nav__link">
+    Full changelist
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20210828/" class="md-nav__link">
+        2021 Aug 28, 0.14.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20210529/" class="md-nav__link">
+        2021 May 29, 0.13.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20210227/" class="md-nav__link">
+        2021 Feb 27, 0.12.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20201128/" class="md-nav__link">
+        2020 Nov 28, 0.11.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20200829/" class="md-nav__link">
+        2020 Aug 29, 0.10.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20200530/" class="md-nav__link">
+        2020 May 30, 0.9.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20200229/" class="md-nav__link">
+        2020 Feb 29, 0.8.0
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20190830/" class="md-nav__link">
+        2019 Aug 30, 0.7.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" data-md-state="indeterminate" type="checkbox" id="__nav_7_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          C Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="C Development" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          C Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arm_debugging/" class="md-nav__link">
+        ARM Debugging Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware_avr/" class="md-nav__link">
+        AVR Processors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding_conventions_c/" class="md-nav__link">
+        Coding Conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compatible_microcontrollers/" class="md-nav__link">
+        Compatible Microcontrollers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3_5" data-md-state="indeterminate" type="checkbox" id="__nav_7_3_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_3_5">
+          Drivers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Drivers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Drivers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware_drivers/" class="md-nav__link">
+        Hardware Drivers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adc_driver/" class="md-nav__link">
+        ADC Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../audio_driver/" class="md-nav__link">
+        Audio Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../i2c_driver/" class="md-nav__link">
+        I2C Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spi_driver/" class="md-nav__link">
+        SPI Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ws2812_driver/" class="md-nav__link">
+        WS2812 Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eeprom_driver/" class="md-nav__link">
+        EEPROM Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../serial_driver/" class="md-nav__link">
+        serial Driver
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uart_driver/" class="md-nav__link">
+        UART Driver
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals_gpio_control/" class="md-nav__link">
+        GPIO Controls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware_keyboard_guidelines/" class="md-nav__link">
+        Keyboard Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" data-md-state="indeterminate" type="checkbox" id="__nav_7_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Python Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python Development" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Python Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coding_conventions_python/" class="md-nav__link">
+        Coding Conventions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli_development/" class="md-nav__link">
+        QMK CLI Development
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" data-md-state="indeterminate" type="checkbox" id="__nav_7_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          Configurator Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configurator Development" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Configurator Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5_1" data-md-state="indeterminate" type="checkbox" id="__nav_7_5_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_5_1">
+          QMK API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="QMK API" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          QMK API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api_development_environment/" class="md-nav__link">
+        Development Environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api_development_overview/" class="md-nav__link">
+        Architecture Overview
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6" data-md-state="indeterminate" type="checkbox" id="__nav_7_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6">
+          Hardware Platform Development
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hardware Platform Development" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Hardware Platform Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6_1" data-md-state="indeterminate" type="checkbox" id="__nav_7_6_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_6_1">
+          Arm/ChibiOS
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Arm/ChibiOS" data-md-level="3">
+        <label class="md-nav__title" for="__nav_7_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Arm/ChibiOS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platformdev_selecting_arm_mcu/" class="md-nav__link">
+        Selecting an MCU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../platformdev_chibios_earlyinit/" class="md-nav__link">
+        Early initialization
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" data-md-state="indeterminate" type="checkbox" id="__nav_7_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_7">
+          QMK Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="QMK Reference" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          QMK Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        Contributing to QMK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translating/" class="md-nav__link">
+        Translating the QMK Docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config_options/" class="md-nav__link">
+        Config Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data_driven_config/" class="md-nav__link">
+        Data Driven Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started_make_guide/" class="md-nav__link">
+        Make Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation_best_practices/" class="md-nav__link">
+        Documentation Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentation_templates/" class="md-nav__link">
+        Documentation Templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../feature_layouts/" class="md-nav__link">
+        Community Layouts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit_testing/" class="md-nav__link">
+        Unit Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref_functions/" class="md-nav__link">
+        Useful Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference_info_json/" class="md-nav__link">
+        info.json Format
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_8" data-md-state="indeterminate" type="checkbox" id="__nav_7_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_8">
+          For a Deeper Understanding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="For a Deeper Understanding" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_8">
+          <span class="md-nav__icon md-icon"></span>
+          For a Deeper Understanding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how_keyboards_work/" class="md-nav__link">
+        How Keyboards Work
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how_a_matrix_works/" class="md-nav__link">
+        How a Matrix Works
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../understanding_qmk/" class="md-nav__link">
+        Understanding QMK
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_9" data-md-state="indeterminate" type="checkbox" id="__nav_7_9" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_9">
+          QMK Internals (In Progress)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="QMK Internals (In Progress)" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_9">
+          <span class="md-nav__icon md-icon"></span>
+          QMK Internals (In Progress)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals_defines/" class="md-nav__link">
+        Defines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals_input_callback_reg/" class="md-nav__link">
+        Input Callback Reg
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals_midi_device/" class="md-nav__link">
+        Midi Device
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals_midi_device_setup_process/" class="md-nav__link">
+        Midi Device Setup Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals_midi_util/" class="md-nav__link">
+        Midi Util
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals_send_functions/" class="md-nav__link">
+        Send Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../internals_sysex_tools/" class="md-nav__link">
+        Sysex Tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qmk-2000th-keyboard" class="md-nav__link">
+    2000 keyboards!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notable-features" class="md-nav__link">
+    Notable Features
+  </a>
+  
+    <nav class="md-nav" aria-label="Notable Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expanded-pointing-device" class="md-nav__link">
+    Expanded Pointing Device support (#14343)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-tapping-term" class="md-nav__link">
+    Dynamic Tapping Term (#11036)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macros-in-keymap-json" class="md-nav__link">
+    Macros in JSON keymaps (#14374)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes-requiring-user-action" class="md-nav__link">
+    Changes Requiring User Action
+  </a>
+  
+    <nav class="md-nav" aria-label="Changes Requiring User Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#updated-keyboard-codebases" class="md-nav__link">
+    Updated Keyboard Codebases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#squeezing-space-from-avr" class="md-nav__link">
+    Squeezing space out of AVR (#15243)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explicit-rgb-modes" class="md-nav__link">
+    Require explicit enabling of RGB Matrix modes (#15018)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oled-task-refactor" class="md-nav__link">
+    OLED task refactoring (#14864)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootmagic-full-removal" class="md-nav__link">
+    Bootmagic Full Removal (#15002)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-qwiic" class="md-nav__link">
+    Remove QWIIC_DRIVERS (#14174)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notable-core" class="md-nav__link">
+    Notable core changes
+  </a>
+  
+    <nav class="md-nav" aria-label="Notable core changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-mcu-support" class="md-nav__link">
+    New MCU Support
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eeprom-changes" class="md-nav__link">
+    EEPROM Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compile-commands" class="md-nav__link">
+    Compilation Database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codebase-restructure" class="md-nav__link">
+    Codebase restructure and cleanup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-changelist" class="md-nav__link">
+    Full changelist
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/qmk/qmk_firmware/edit/master/docs/ChangeLog/20211127.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="qmk-breaking-changes-2021-november-27-changelog">QMK Breaking Changes - 2021 November 27 Changelog<a class="headerlink" href="#qmk-breaking-changes-2021-november-27-changelog" title="Permanent link">&para;</a></h1>
+<h2 id="qmk-2000th-keyboard">2000 keyboards!<a class="headerlink" href="#qmk-2000th-keyboard" title="Permanent link">&para;</a></h2>
+<p>QMK had it's 2000th keyboard submitted during this breaking changes cycle.... and it only <em>just</em> made the cut-off!</p>
+<div class="highlight"><pre><span></span><code>% qmk list-keyboards <span class="p">|</span> wc -l
+<span class="m">2003</span>
+</code></pre></div>
+<p>From the whole QMK team, a major thankyou to the community for embracing QMK as your preferred keyboard firmware!</p>
+<h2 id="notable-features">Notable Features<a class="headerlink" href="#notable-features" title="Permanent link">&para;</a></h2>
+<h3 id="expanded-pointing-device">Expanded Pointing Device support (<a href="https://github.com/qmk/qmk_firmware/pull/14343">#14343</a>)<a class="headerlink" href="#expanded-pointing-device" title="Permanent link">&para;</a></h3>
+<p>Pointing device support has been reworked and reimplemented to allow for easier integration of new peripherals.</p>
+<p>Usages of <code>POINTING_DEVICE_ENABLE = yes</code> in <code>rules.mk</code> files now need to be accompanied by a corresponding <code>POINTING_DEVICE_DRIVER = ???</code> line, specifying which driver to use during the build. Existing keyboards have already been migrated across to the new usage pattern, so most likely no change is required by users.</p>
+<p>QMK now has core-supplied support for the following pointing device peripherals:</p>
+<table>
+<thead>
+<tr>
+<th><code>rules.mk</code> line</th>
+<th>Supported device</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POINTING_DEVICE_DRIVER = analog_joystick</code></td>
+<td>Analog joysticks, such as PSP joysticks</td>
+</tr>
+<tr>
+<td><code>POINTING_DEVICE_DRIVER = adns5050</code></td>
+<td>ADNS 5050 sensor</td>
+</tr>
+<tr>
+<td><code>POINTING_DEVICE_DRIVER = adns9800</code></td>
+<td>ADNS 9800 laser sensor</td>
+</tr>
+<tr>
+<td><code>POINTING_DEVICE_DRIVER = cirque_pinnacle_i2c</code></td>
+<td>Cirque touchpad, I2C mode</td>
+</tr>
+<tr>
+<td><code>POINTING_DEVICE_DRIVER = cirque_pinnacle_spi</code></td>
+<td>Cirque Touchpad, SPI mode</td>
+</tr>
+<tr>
+<td><code>POINTING_DEVICE_DRIVER = pimoroni_trackball</code></td>
+<td>Pimoroni Trackball</td>
+</tr>
+<tr>
+<td><code>POINTING_DEVICE_DRIVER = pmw3360</code></td>
+<td>PMW 3360</td>
+</tr>
+</tbody>
+</table>
+<p>See the new documentation for the <a href="../../feature_pointing_device/">Pointing Device</a> feature for more information on specific configuration for each driver.</p>
+<h3 id="dynamic-tapping-term">Dynamic Tapping Term (<a href="https://github.com/qmk/qmk_firmware/pull/11036">#11036</a>)<a class="headerlink" href="#dynamic-tapping-term" title="Permanent link">&para;</a></h3>
+<p>For people who are starting out with tapping keys, or for people who think tapping keys don't "feel right", it's sometimes quite difficult to determine what duration of tapping term to use to make things seem natural.</p>
+<p>If you're in this stage of discovery, you can now add <code>DYNAMIC_TAPPING_TERM_ENABLE = yes</code> to your <code>rules.mk</code>, which enables the use of the following keycodes in your keymap:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DT_PRNT</code></td>
+<td>"Dynamic Tapping Term Print": Types the current tapping term, in milliseconds</td>
+</tr>
+<tr>
+<td><code>DT_UP</code></td>
+<td>"Dynamic Tapping Term Up": Increases the current tapping term by 5ms</td>
+</tr>
+<tr>
+<td><code>DT_DOWN</code></td>
+<td>"Dynamic Tapping Term Down": Decreases the current tapping term by 5ms</td>
+</tr>
+</tbody>
+</table>
+<p>Coupled with the use of <code>qmk console</code> or QMK Toolbox to show console output from your keyboard, you can tweak the tapping term dynamically in order to narrow down what "feels right" to you. Once you're happy, drop in the resulting number into your keymap's <code>config.h</code> and you're good to go!</p>
+<h3 id="macros-in-keymap-json">Macros in JSON keymaps (<a href="https://github.com/qmk/qmk_firmware/pull/14374">#14374</a>)<a class="headerlink" href="#macros-in-keymap-json" title="Permanent link">&para;</a></h3>
+<p>You can now define up to 32 macros in your <code>keymap.json</code> file, as used by <a href="../../newbs_building_firmware_configurator/">QMK Configurator</a>, and <code>qmk compile</code>. You can define these macros in a list under the <code>macros</code> keyword, like this:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;keyboard&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;handwired/my_macropad&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;keymap&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_keymap&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;macros&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="kc">f</span><span class="err">irs</span><span class="kc">t</span><span class="w"> </span><span class="err">lis</span><span class="kc">te</span><span class="err">d</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">MACRO_</span><span class="mf">0...</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;down&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;keycodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;LSFT&quot;</span><span class="p">]},</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;hello world1&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;up&quot;</span><span class="p">,</span><span class="nt">&quot;keycodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;LSFT&quot;</span><span class="p">]}</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="kc">t</span><span class="err">he</span><span class="kc">n</span><span class="w"> </span><span class="err">MACRO_</span><span class="mf">1...</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;tap&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;keycodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;LCTL&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;LALT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DEL&quot;</span><span class="p">]}</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">...</span><span class="kc">t</span><span class="err">he</span><span class="kc">n</span><span class="w"> </span><span class="err">MACRO_</span><span class="mf">2...</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;ding!&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;beep&quot;</span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">],</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">...a</span><span class="kc">n</span><span class="err">d</span><span class="w"> </span><span class="err">MACRO_</span><span class="mf">3.</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;tap&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;keycodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;F1&quot;</span><span class="p">]},</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;delay&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;duration&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1000&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">            </span><span class="p">{</span><span class="nt">&quot;action&quot;</span><span class="p">:</span><span class="s2">&quot;tap&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;keycodes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;PGDN&quot;</span><span class="p">]}</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;layout&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LAYOUT_all&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;layers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="s2">&quot;MACRO_0&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;MACRO_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;MACRO_2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;MACRO_3&quot;</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="p">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>In due course, <a href="https://config.qmk.fm/">QMK Configurator</a> will pick up support for defining these in its UI, but for now the json is the only way to define macros.</p>
+<h2 id="changes-requiring-user-action">Changes Requiring User Action<a class="headerlink" href="#changes-requiring-user-action" title="Permanent link">&para;</a></h2>
+<h3 id="updated-keyboard-codebases">Updated Keyboard Codebases<a class="headerlink" href="#updated-keyboard-codebases" title="Permanent link">&para;</a></h3>
+<p>The following keyboards have had their source moved within QMK:</p>
+<table>
+<thead>
+<tr>
+<th>Old Keyboard Name</th>
+<th>New Keyboard Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aozora/hotswap</td>
+<td>aozora</td>
+</tr>
+<tr>
+<td>gskt00</td>
+<td>kapcave/gskt00</td>
+</tr>
+<tr>
+<td>handwired/dtisaac01</td>
+<td>dtisaac/dtisaac01</td>
+</tr>
+<tr>
+<td>kprepublic/bm60poker</td>
+<td>kprepublic/bm60hsrgb_poker/rev1</td>
+</tr>
+<tr>
+<td>kprepublic/bm60rgb</td>
+<td>kprepublic/bm60hsrgb/rev1</td>
+</tr>
+<tr>
+<td>kprepublic/bm60rgb_iso</td>
+<td>kprepublic/bm60hsrgb_iso/rev1</td>
+</tr>
+<tr>
+<td>kprepublic/bm65iso</td>
+<td>kprepublic/bm65hsrgb_iso</td>
+</tr>
+<tr>
+<td>kprepublic/bm68rgb</td>
+<td>kprepublic/bm68hsrgb</td>
+</tr>
+<tr>
+<td>paladin64</td>
+<td>kapcave/paladin64</td>
+</tr>
+<tr>
+<td>portal_66</td>
+<td>portal_66/soldered</td>
+</tr>
+<tr>
+<td>signum/3_0/elitec</td>
+<td>signum/3_0</td>
+</tr>
+<tr>
+<td>tgr/jane</td>
+<td>tgr/jane/v2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="squeezing-space-from-avr">Squeezing space out of AVR (<a href="https://github.com/qmk/qmk_firmware/pull/15243">#15243</a>)<a class="headerlink" href="#squeezing-space-from-avr" title="Permanent link">&para;</a></h3>
+<p>The AVR platform has been problematic for some time, in the sense that it is severely resource-constrained -- this makes life difficult for anyone attempting to add new functionality such as display panels to their keymap code. The illustrious Drashna has contributed some newer documentation on how to attempt to free up some space on AVR-based keyboards that are in short supply.</p>
+<p>Of course, there are much fewer constraints with ARM chips... ;)</p>
+<h3 id="explicit-rgb-modes">Require explicit enabling of RGB Matrix modes (<a href="https://github.com/qmk/qmk_firmware/pull/15018">#15018</a>)<a class="headerlink" href="#explicit-rgb-modes" title="Permanent link">&para;</a></h3>
+<p>Related to the previous section -- RGB Matrix modes have now been made to be opt-in, rather than opt-out. As these animations are now opt-in, you may find that your keyboard no longer has all the RGB modes you're expecting -- you may need to configure and recompile your firmware and enable your animations of choice... with any luck they'll still fit in the space available.</p>
+<p>Most keyboards keep their original functionality, but over time the QMK maintainers have found that removal of animations ends up being the quickest way to free up space... and some keyboards have had animations such as reactive effects disabled by default in order to still fit within the flash space available.</p>
+<p>The full list of configurables to turn specific animations back on can be found at on the <a href="../../feature_rgb_matrix/#rgb-matrix-effects">RGB Matrix documentation</a> page.</p>
+<h3 id="oled-task-refactor">OLED task refactoring (<a href="https://github.com/qmk/qmk_firmware/pull/14864">#14864</a>)<a class="headerlink" href="#oled-task-refactor" title="Permanent link">&para;</a></h3>
+<p>OLED display code was traditionally difficult to override in keymaps as they did not follow the standard pattern of <code>bool *_kb()</code> deferring to <code>bool *_user()</code> functions, allowing signalling to the higher level that processing had already been done.</p>
+<p>This changes the standard OLED drawing function model to allow for a base implementation to be provided by a keyboard, but also still allow for keymap-level overrides without needing to modify the keyboard's code.</p>
+<p>The old keymap code went something like this:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">oled_task_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// keymap drawing code</span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<p>...but the new keymap code looks like this:
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">oled_task_user</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// keymap drawing code</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
+<p>Keyboard designers should now structure their keyboard-level drawing routines like the following, in order to allow for keymap overrides:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="nf">oled_task_kb</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Defer to the keymap if they want to override</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">oled_task_user</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// default keyboard drawing code</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<h3 id="bootmagic-full-removal">Bootmagic Full Removal (<a href="https://github.com/qmk/qmk_firmware/pull/15002">#15002</a>)<a class="headerlink" href="#bootmagic-full-removal" title="Permanent link">&para;</a></h3>
+<p>As noted during previous breaking changes cycles, QMK decided to deprecate the full Bootmagic feature and leave Bootmagic Lite as the only remaining option.</p>
+<p>This removal is now complete!</p>
+<p>This pull request changes the behavior of <code>BOOTMAGIC_ENABLE</code> such that specifying <code>lite</code> or <code>full</code> results in an error, allowing only <code>yes</code> or <code>no</code>, with <code>yes</code> mirroring historical <code>lite</code> functionality.</p>
+<p>All use of the <code>lite</code> keyword within the repository has been migrated to <code>yes</code> -- any new submissions using <code>lite</code> will now fail to build and should be updated accordingly.</p>
+<h4 id="bootmagic-full-deprecation-schedule-complete">Bootmagic Full Deprecation Schedule: Complete!<a class="headerlink" href="#bootmagic-full-deprecation-schedule-complete" title="Permanent link">&para;</a></h4>
+<p>This is the historical timeline for the behavior of <code>BOOTMAGIC_ENABLE</code>:</p>
+<ul>
+<li>(done) From 2021 May 29, setting <code>BOOTMAGIC_ENABLE = yes</code> will enable Bootmagic Lite instead of full Bootmagic.</li>
+<li>(done) From 2021 Aug 28, <code>BOOTMAGIC_ENABLE</code> must be either <code>yes</code>, <code>lite</code>, or <code>no</code> – setting <code>BOOTMAGIC_ENABLE = full</code> will cause compilation to fail.</li>
+<li>(now) From 2021 Nov 27, <code>BOOTMAGIC_ENABLE</code> must be either <code>yes</code> or <code>no</code> – setting <code>BOOTMAGIC_ENABLE = lite</code> will cause compilation to fail.</li>
+</ul>
+<h3 id="remove-qwiic">Remove QWIIC_DRIVERS (<a href="https://github.com/qmk/qmk_firmware/pull/14174">#14174</a>)<a class="headerlink" href="#remove-qwiic" title="Permanent link">&para;</a></h3>
+<p>Due to minimal QWIIC adoption and other options for similar functionality, the QWIIC drivers were removed from QMK. Existing OLED usages have been migrated across to the normal QMK OLED driver instead.</p>
+<h2 id="notable-core">Notable core changes<a class="headerlink" href="#notable-core" title="Permanent link">&para;</a></h2>
+<h3 id="new-mcu-support">New MCU Support<a class="headerlink" href="#new-mcu-support" title="Permanent link">&para;</a></h3>
+<p>QMK firmware picked up support for a handful of new MCU families, potentially making it a bit easier to source components.</p>
+<p>QMK firmware is now no longer limited to AVR and ARM - it also picked up support for our first RISC-V chip, the GD32VF103.</p>
+<ul>
+<li>Add support for RISC-V builds and GD32VF103 MCU (<a href="https://github.com/qmk/qmk_firmware/pull/12508">#12508</a>)</li>
+<li>Add HT32 support to core (<a href="https://github.com/qmk/qmk_firmware/pull/14388">#14388</a>)</li>
+<li>Westberrytech pr (<a href="https://github.com/qmk/qmk_firmware/pull/14422">#14422</a>)</li>
+<li>Initial pass of F405 support (<a href="https://github.com/qmk/qmk_firmware/pull/14584">#14584</a>)</li>
+</ul>
+<h3 id="eeprom-changes">EEPROM Changes<a class="headerlink" href="#eeprom-changes" title="Permanent link">&para;</a></h3>
+<p>There were a few EEPROM-related changes that landed during this breaking changes cycle, most prominently the long-awaited ability for the Drop boards to gain persistent storage. Any users of the Drop CTRL or Drop ALT should update QMK Toolbox as well -- coupled with a QMK firmware update settings should now be saved.</p>
+<ul>
+<li>massdrop alt/ctrl: support saving into nvm (<a href="https://github.com/qmk/qmk_firmware/pull/6068">#6068</a>)</li>
+<li>Implement F4 eeprom (<a href="https://github.com/qmk/qmk_firmware/pull/14195">#14195</a>)</li>
+<li>make the full 4096 bytes of EEPROM work on Teensy 3.6 (<a href="https://github.com/qmk/qmk_firmware/pull/12947">#12947</a>)</li>
+<li>Further tidy up of STM32 eeprom emulation (<a href="https://github.com/qmk/qmk_firmware/pull/14591">#14591</a>)</li>
+<li>Enable eeprom with F401xE ld (<a href="https://github.com/qmk/qmk_firmware/pull/14752">#14752</a>)</li>
+</ul>
+<h3 id="compile-commands">Compilation Database<a class="headerlink" href="#compile-commands" title="Permanent link">&para;</a></h3>
+<p>A clang-compatible compilation database generator has been added as an option in order to help development environments such as Visual Studio Code.</p>
+<p>Running <code>qmk generate-compilation-database -kb &lt;yourkb&gt; -km &lt;yourkeymap&gt;</code> from within the QMK firmware directory will generate a <code>compile_commands.json</code> file -- using a compatible IDE will likely see this and correctly start detecting the correct locations for source files as well as type and function information that are relevant to your build.</p>
+<p>Do note that switching keyboards will require re-generation of this file.</p>
+<ul>
+<li>New CLI subcommand to create clang-compatible compilation database (<code>compile_commands.json</code>) (<a href="https://github.com/qmk/qmk_firmware/pull/14370">#14370</a>)</li>
+<li>compiledb: query include paths from gcc directly. (<a href="https://github.com/qmk/qmk_firmware/pull/14462">#14462</a>)</li>
+</ul>
+<h3 id="codebase-restructure">Codebase restructure and cleanup<a class="headerlink" href="#codebase-restructure" title="Permanent link">&para;</a></h3>
+<p>QMK continues on its restructuring journey, in order to make it easier to integrate newer features and add support for new hardware. This quarter's batch of changes include:</p>
+<ul>
+<li>add 'include keyboard_features.mk' into build_keyboard.mk (<a href="https://github.com/qmk/qmk_firmware/pull/8422">#8422</a>)</li>
+<li>Infer more when building features (<a href="https://github.com/qmk/qmk_firmware/pull/13890">#13890</a>)</li>
+<li>Move <code>tmk_core/common/&lt;plat&gt;</code> (<a href="https://github.com/qmk/qmk_firmware/pull/13918">#13918</a>)</li>
+<li>Move feature suspend logic out of platform specific code (<a href="https://github.com/qmk/qmk_firmware/pull/14210">#14210</a>)</li>
+<li>Remove bin/qmk (<a href="https://github.com/qmk/qmk_firmware/pull/14231">#14231</a>)</li>
+<li>Move Audio drivers from quantum to platform drivers folder (<a href="https://github.com/qmk/qmk_firmware/pull/14308">#14308</a>)</li>
+<li>Remove Arduino-style <code>analogRead()</code> (<a href="https://github.com/qmk/qmk_firmware/pull/14348">#14348</a>)</li>
+<li>Remove unreferenced IBM4704, Sony NEWS, NeXT keyboard code. (<a href="https://github.com/qmk/qmk_firmware/pull/14380">#14380</a>)</li>
+<li>Move Bluetooth config to common_features.mk (<a href="https://github.com/qmk/qmk_firmware/pull/14404">#14404</a>)</li>
+<li>Relocate Adafruit BLE code (<a href="https://github.com/qmk/qmk_firmware/pull/14530">#14530</a>)</li>
+<li>Change <code>MK66F18</code> -&gt; <code>MK66FX1M0</code> (<a href="https://github.com/qmk/qmk_firmware/pull/14659">#14659</a>)</li>
+<li>Remove sysex API (<a href="https://github.com/qmk/qmk_firmware/pull/14723">#14723</a>)</li>
+<li>Basic keycode overhaul (<a href="https://github.com/qmk/qmk_firmware/pull/14726">#14726</a>)</li>
+<li>Remove SERIAL_LINK feature (<a href="https://github.com/qmk/qmk_firmware/pull/14727">#14727</a>)</li>
+<li>Move converter specific tmk_core protocols (<a href="https://github.com/qmk/qmk_firmware/pull/14743">#14743</a>)</li>
+<li>Align PS/2 GPIO defines (<a href="https://github.com/qmk/qmk_firmware/pull/14745">#14745</a>)</li>
+<li>Clean up LED/RGB Matrix driver config (<a href="https://github.com/qmk/qmk_firmware/pull/14760">#14760</a>)</li>
+<li>Update UART driver API (<a href="https://github.com/qmk/qmk_firmware/pull/14839">#14839</a>)</li>
+<li>Tidy up LCD_ENABLE/visualizer references (<a href="https://github.com/qmk/qmk_firmware/pull/14855">#14855</a>)</li>
+<li>Remove legacy Makefile functionality (<a href="https://github.com/qmk/qmk_firmware/pull/14858">#14858</a>)</li>
+<li>Begin to carve out platform/protocol API - Migrate keyboard_* calls (<a href="https://github.com/qmk/qmk_firmware/pull/14888">#14888</a>)</li>
+<li>Rename platform SRC variable (<a href="https://github.com/qmk/qmk_firmware/pull/14894">#14894</a>)</li>
+<li>Relocate PS2 code (<a href="https://github.com/qmk/qmk_firmware/pull/14895">#14895</a>)</li>
+<li>Move USE_CCACHE logic to common location (<a href="https://github.com/qmk/qmk_firmware/pull/14899">#14899</a>)</li>
+<li>Migrate makefile utilities to sub-directory (<a href="https://github.com/qmk/qmk_firmware/pull/14917">#14917</a>)</li>
+<li>Remove SERIAL_MOUSE (<a href="https://github.com/qmk/qmk_firmware/pull/14969">#14969</a>)</li>
+<li>Relocate protocol files within tmk_core/common/ (<a href="https://github.com/qmk/qmk_firmware/pull/14972">#14972</a>)</li>
+<li>More platform/protocol alignment (<a href="https://github.com/qmk/qmk_firmware/pull/14976">#14976</a>)</li>
+<li>Fix uart function prototypes (<a href="https://github.com/qmk/qmk_firmware/pull/15162">#15162</a>)</li>
+<li>Remove deprecated KEYMAP alias (<a href="https://github.com/qmk/qmk_firmware/pull/15037">#15037</a>)</li>
+<li>Move non-assignment code to post_rules.mk (<a href="https://github.com/qmk/qmk_firmware/pull/14207">#14207</a>)</li>
+<li>Helix use <code>post_rules.mk</code> (<a href="https://github.com/qmk/qmk_firmware/pull/14216">#14216</a>)</li>
+<li>Make ChibiOS PAL interactions less STM32 specific - Round 2 (<a href="https://github.com/qmk/qmk_firmware/pull/14456">#14456</a>)</li>
+</ul>
+<hr />
+<h2 id="full-changelist">Full changelist<a class="headerlink" href="#full-changelist" title="Permanent link">&para;</a></h2>
+<p>Core:
+* massdrop alt/ctrl: support saving into nvm (<a href="https://github.com/qmk/qmk_firmware/pull/6068">#6068</a>)
+* Made AVR backlight pwm resolution configurable (<a href="https://github.com/qmk/qmk_firmware/pull/7521">#7521</a>)
+* add 'include keyboard_features.mk' into build_keyboard.mk (<a href="https://github.com/qmk/qmk_firmware/pull/8422">#8422</a>)
+* New feature: <code>DYNAMIC_TAPPING_TERM_ENABLE</code> (<a href="https://github.com/qmk/qmk_firmware/pull/11036">#11036</a>)
+* Add Retro Shift (Auto Shift for Tap Hold via Retro Tapping) and Custom Auto Shifts (<a href="https://github.com/qmk/qmk_firmware/pull/11059">#11059</a>)
+* Add support for RISC-V builds and GD32VF103 MCU (<a href="https://github.com/qmk/qmk_firmware/pull/12508">#12508</a>)
+* Add Fractal RGB matrix effects (<a href="https://github.com/qmk/qmk_firmware/pull/12670">#12670</a>)
+* Added power tracking api (<a href="https://github.com/qmk/qmk_firmware/pull/12691">#12691</a>)
+* haptic: Feature to disable it when usb port is not configured or suspended. (<a href="https://github.com/qmk/qmk_firmware/pull/12692">#12692</a>)
+* make the full 4096 bytes of EEPROM work on Teensy 3.6 (<a href="https://github.com/qmk/qmk_firmware/pull/12947">#12947</a>)
+* Add Support for USB programmable buttons (<a href="https://github.com/qmk/qmk_firmware/pull/12950">#12950</a>)
+* [Tests] Increase QMK test coverage (<a href="https://github.com/qmk/qmk_firmware/pull/13789">#13789</a>)
+* Add support for ISSI drivers on both sides of a split keyboard (<a href="https://github.com/qmk/qmk_firmware/pull/13842">#13842</a>)
+* Infer more when building features (<a href="https://github.com/qmk/qmk_firmware/pull/13890">#13890</a>)
+* Reimplements WPM feature to be smaller &amp; precise (<a href="https://github.com/qmk/qmk_firmware/pull/13902">#13902</a>)
+* Move <code>tmk_core/common/&lt;plat&gt;</code> (<a href="https://github.com/qmk/qmk_firmware/pull/13918">#13918</a>)
+* Improvements to handling of disconnected split keyboards. (<a href="https://github.com/qmk/qmk_firmware/pull/14033">#14033</a>)
+* Add Pixel Rain RGB Matrix effect (<a href="https://github.com/qmk/qmk_firmware/pull/14155">#14155</a>)
+* Remove QWIIC_DRIVERS (<a href="https://github.com/qmk/qmk_firmware/pull/14174">#14174</a>)
+* Add LM() keys to the list of keys disabled by NO_HAPTIC_MOD (<a href="https://github.com/qmk/qmk_firmware/pull/14181">#14181</a>)
+* Implement F4 eeprom (<a href="https://github.com/qmk/qmk_firmware/pull/14195">#14195</a>)
+* define to AUTO_SHIFT_DISABLED_AT_STARTUP (<a href="https://github.com/qmk/qmk_firmware/pull/14201">#14201</a>)
+* Move feature suspend logic out of platform specific code (<a href="https://github.com/qmk/qmk_firmware/pull/14210">#14210</a>)
+* Remove bin/qmk (<a href="https://github.com/qmk/qmk_firmware/pull/14231">#14231</a>)
+* Change keyboard level include guards to <code>pragma once</code> (<a href="https://github.com/qmk/qmk_firmware/pull/14248">#14248</a>)
+* i2c_master: Add support for reading/writing to 16-bit registers (<a href="https://github.com/qmk/qmk_firmware/pull/14289">#14289</a>)
+* Move Audio drivers from quantum to platform drivers folder (<a href="https://github.com/qmk/qmk_firmware/pull/14308">#14308</a>)
+* Add RGBW support to PWM and SPI drivers for ChibiOS (<a href="https://github.com/qmk/qmk_firmware/pull/14327">#14327</a>)
+* Rework and expand Pointing Device support (<a href="https://github.com/qmk/qmk_firmware/pull/14343">#14343</a>)
+* Remove Arduino-style <code>analogRead()</code> (<a href="https://github.com/qmk/qmk_firmware/pull/14348">#14348</a>)
+* Macros in JSON keymaps (<a href="https://github.com/qmk/qmk_firmware/pull/14374">#14374</a>)
+* Remove unreferenced IBM4704, Sony NEWS, NeXT keyboard code. (<a href="https://github.com/qmk/qmk_firmware/pull/14380">#14380</a>)
+* Add HT32 support to core (<a href="https://github.com/qmk/qmk_firmware/pull/14388">#14388</a>)
+* Align ChibiOS I2C defs with other drivers (<a href="https://github.com/qmk/qmk_firmware/pull/14399">#14399</a>)
+* Move Bluetooth config to common_features.mk (<a href="https://github.com/qmk/qmk_firmware/pull/14404">#14404</a>)
+* Westberrytech pr (<a href="https://github.com/qmk/qmk_firmware/pull/14422">#14422</a>)
+* Refactor use of STM32_SYSCLK (<a href="https://github.com/qmk/qmk_firmware/pull/14430">#14430</a>)
+* Migrate STM32_EEPROM_ENABLE to use EEPROM_DRIVER (<a href="https://github.com/qmk/qmk_firmware/pull/14433">#14433</a>)
+* Refactor use of <em>STM32</em> defines (<a href="https://github.com/qmk/qmk_firmware/pull/14439">#14439</a>)
+* Add i2c defaults for Convert to Proton C (<a href="https://github.com/qmk/qmk_firmware/pull/14470">#14470</a>)
+* Use opendrain pin with external pullup again (<a href="https://github.com/qmk/qmk_firmware/pull/14474">#14474</a>)
+* Add ability to use numpad digits for unicode mode UC_WIN (<a href="https://github.com/qmk/qmk_firmware/pull/14496">#14496</a>)
+* Enable de-ghosting for RGB/LED matrix on all ISSI LED drivers (<a href="https://github.com/qmk/qmk_firmware/pull/14508">#14508</a>)
+* Relocate Adafruit BLE code (<a href="https://github.com/qmk/qmk_firmware/pull/14530">#14530</a>)
+* Initial pass of F405 support (<a href="https://github.com/qmk/qmk_firmware/pull/14584">#14584</a>)
+* Further tidy up of STM32 eeprom emulation (<a href="https://github.com/qmk/qmk_firmware/pull/14591">#14591</a>)
+* Remove GCC version check from song list inclusion (<a href="https://github.com/qmk/qmk_firmware/pull/14600">#14600</a>)
+* Change <code>MK66F18</code> -&gt; <code>MK66FX1M0</code> (<a href="https://github.com/qmk/qmk_firmware/pull/14659">#14659</a>)
+* Add ifndef to WS2812 timing constraints (<a href="https://github.com/qmk/qmk_firmware/pull/14678">#14678</a>)
+* Reuse of EEPROM debounce logic (<a href="https://github.com/qmk/qmk_firmware/pull/14699">#14699</a>)
+* Remove sysex API (<a href="https://github.com/qmk/qmk_firmware/pull/14723">#14723</a>)
+* Basic keycode overhaul (<a href="https://github.com/qmk/qmk_firmware/pull/14726">#14726</a>)
+* Remove SERIAL_LINK feature (<a href="https://github.com/qmk/qmk_firmware/pull/14727">#14727</a>)
+* Enable CLI flashing via mdloader (<a href="https://github.com/qmk/qmk_firmware/pull/14729">#14729</a>)
+* Correct the Turkish F '?' keycode (TR_QUES) (<a href="https://github.com/qmk/qmk_firmware/pull/14740">#14740</a>)
+* Move converter specific tmk_core protocols (<a href="https://github.com/qmk/qmk_firmware/pull/14743">#14743</a>)
+* Align PS/2 GPIO defines (<a href="https://github.com/qmk/qmk_firmware/pull/14745">#14745</a>)
+* Improve Adafruit BLE configuration defines (<a href="https://github.com/qmk/qmk_firmware/pull/14749">#14749</a>)
+* Enable eeprom with F401xE ld (<a href="https://github.com/qmk/qmk_firmware/pull/14752">#14752</a>)
+* Clean up LED/RGB Matrix driver config (<a href="https://github.com/qmk/qmk_firmware/pull/14760">#14760</a>)
+* Initial USB2422 driver (<a href="https://github.com/qmk/qmk_firmware/pull/14835">#14835</a>)
+* Update UART driver API (<a href="https://github.com/qmk/qmk_firmware/pull/14839">#14839</a>)
+* Split out arm_atsam shift register logic (<a href="https://github.com/qmk/qmk_firmware/pull/14848">#14848</a>)
+* Split out HAPTIC_ENABLE to have separate DRIVER option (<a href="https://github.com/qmk/qmk_firmware/pull/14854">#14854</a>)
+* Tidy up LCD_ENABLE/visualizer references (<a href="https://github.com/qmk/qmk_firmware/pull/14855">#14855</a>)
+* Remove legacy Makefile functionality (<a href="https://github.com/qmk/qmk_firmware/pull/14858">#14858</a>)
+* Add support for deferred executors. (<a href="https://github.com/qmk/qmk_firmware/pull/14859">#14859</a>)
+* Change OLED task function to be boolean (<a href="https://github.com/qmk/qmk_firmware/pull/14864">#14864</a>)
+* Add a new led driver for Keychron's keyboards. (<a href="https://github.com/qmk/qmk_firmware/pull/14872">#14872</a>)
+* Begin to carve out platform/protocol API - Migrate keyboard_* calls (<a href="https://github.com/qmk/qmk_firmware/pull/14888">#14888</a>)
+* Rename platform SRC variable (<a href="https://github.com/qmk/qmk_firmware/pull/14894">#14894</a>)
+* Relocate PS2 code (<a href="https://github.com/qmk/qmk_firmware/pull/14895">#14895</a>)
+* Move USE_CCACHE logic to common location (<a href="https://github.com/qmk/qmk_firmware/pull/14899">#14899</a>)
+* Migrate makefile utilities to sub-directory (<a href="https://github.com/qmk/qmk_firmware/pull/14917">#14917</a>)
+* Remove legacy handling for ErgoDox Infinity handedness (<a href="https://github.com/qmk/qmk_firmware/pull/14919">#14919</a>)
+* Align usbasp flashing behaviour (<a href="https://github.com/qmk/qmk_firmware/pull/14928">#14928</a>)
+* Optimize matrix scanning by removing variable shifts (<a href="https://github.com/qmk/qmk_firmware/pull/14947">#14947</a>)
+* Stop-gap forward-port Drop LED features for CTRL and ALT (<a href="https://github.com/qmk/qmk_firmware/pull/14967">#14967</a>)
+* Remove SERIAL_MOUSE (<a href="https://github.com/qmk/qmk_firmware/pull/14969">#14969</a>)
+* Relocate protocol files within tmk_core/common/ (<a href="https://github.com/qmk/qmk_firmware/pull/14972">#14972</a>)
+* Move LTO logic from common.mk (<a href="https://github.com/qmk/qmk_firmware/pull/14973">#14973</a>)
+* More platform/protocol alignment (<a href="https://github.com/qmk/qmk_firmware/pull/14976">#14976</a>)
+* Add support to persist MD LED framework settings (<a href="https://github.com/qmk/qmk_firmware/pull/14980">#14980</a>)
+* Enable configuration of PWM frequency for IS31FL3733B (<a href="https://github.com/qmk/qmk_firmware/pull/14983">#14983</a>)
+* Remove <code>BOOTMAGIC_ENABLE = lite</code> option (<a href="https://github.com/qmk/qmk_firmware/pull/15002">#15002</a>)
+* Manually format develop (<a href="https://github.com/qmk/qmk_firmware/pull/15003">#15003</a>)
+* Require explicit enabling of RGB Matrix modes (<a href="https://github.com/qmk/qmk_firmware/pull/15018">#15018</a>)
+* Remove deprecated KEYMAP alias (<a href="https://github.com/qmk/qmk_firmware/pull/15037">#15037</a>)
+* Fix uart function prototypes (<a href="https://github.com/qmk/qmk_firmware/pull/15162">#15162</a>)
+* Rename RGB fractal (<a href="https://github.com/qmk/qmk_firmware/pull/15174">#15174</a>)
+* Format code according to conventions (<a href="https://github.com/qmk/qmk_firmware/pull/15195">#15195</a>)
+* Format code according to conventions (<a href="https://github.com/qmk/qmk_firmware/pull/15196">#15196</a>)
+* Add uint to char functions (<a href="https://github.com/qmk/qmk_firmware/pull/15244">#15244</a>)
+* [Tests] Increase QMK test coverage take 2 (<a href="https://github.com/qmk/qmk_firmware/pull/15269">#15269</a>)
+* Tidy up adjustable ws2812 timing (<a href="https://github.com/qmk/qmk_firmware/pull/15299">#15299</a>)
+* Add script for performing compilation size regression investigations. (<a href="https://github.com/qmk/qmk_firmware/pull/15303">#15303</a>)
+* WB32F3G71 config migration with removal of unnecessary items. (<a href="https://github.com/qmk/qmk_firmware/pull/15309">#15309</a>)
+* Re-add encoder tests (<a href="https://github.com/qmk/qmk_firmware/pull/15312">#15312</a>)</p>
+<p>CLI:
+* Add check for non-assignment code in rules.mk (<a href="https://github.com/qmk/qmk_firmware/pull/12108">#12108</a>)
+* Export list of <code>develop</code> PRs to be merged into <code>master</code> (<a href="https://github.com/qmk/qmk_firmware/pull/13944">#13944</a>)
+* remove qmk console, which is now part of the global cli (<a href="https://github.com/qmk/qmk_firmware/pull/14206">#14206</a>)
+* New CLI subcommand to create clang-compatible compilation database (<code>compile_commands.json</code>) (<a href="https://github.com/qmk/qmk_firmware/pull/14370">#14370</a>)
+* compiledb: query include paths from gcc directly. (<a href="https://github.com/qmk/qmk_firmware/pull/14462">#14462</a>)</p>
+<p>Submodule updates:
+* Update to ChibiOS 20.3.4, support builds against trunk (<a href="https://github.com/qmk/qmk_firmware/pull/14208">#14208</a>)
+* Update ChibiOS-Contrib (<a href="https://github.com/qmk/qmk_firmware/pull/14408">#14408</a>)
+* Update ChibiOS-Contrib (<a href="https://github.com/qmk/qmk_firmware/pull/14419">#14419</a>)
+* Purge uGFX. (<a href="https://github.com/qmk/qmk_firmware/pull/14720">#14720</a>)</p>
+<p>Keyboards:
+* Add support for PaladinPad, Arya pcb and move keyboards by KapCave into their own directory (<a href="https://github.com/qmk/qmk_firmware/pull/14194">#14194</a>)
+* Move non-assignment code to post_rules.mk (<a href="https://github.com/qmk/qmk_firmware/pull/14207">#14207</a>)
+* Helix use <code>post_rules.mk</code> (<a href="https://github.com/qmk/qmk_firmware/pull/14216">#14216</a>)
+* handwired/symmetric70_proto use post_rules.mk (<a href="https://github.com/qmk/qmk_firmware/pull/14235">#14235</a>)
+* Add Adelais PCB. Adelais RGB rev.3, Adelais rev. 4 APM32F103, Adelais AVR rev. 1 (<a href="https://github.com/qmk/qmk_firmware/pull/14252">#14252</a>)
+* GMMK Pro keymap (<a href="https://github.com/qmk/qmk_firmware/pull/14389">#14389</a>)
+* Migrate boston_meetup/2019 away from QWIIC_DRIVERS (<a href="https://github.com/qmk/qmk_firmware/pull/14413">#14413</a>)
+* Migrate hadron away from QWIIC_DRIVERS (<a href="https://github.com/qmk/qmk_firmware/pull/14415">#14415</a>)
+* Enable Proton C defaults for SplitKB Kyria (<a href="https://github.com/qmk/qmk_firmware/pull/14490">#14490</a>)
+* Set USB max power consumption of kint* controllers to 100mA (<a href="https://github.com/qmk/qmk_firmware/pull/14546">#14546</a>)
+* Remove complex <code>fn_actions</code> macros (<a href="https://github.com/qmk/qmk_firmware/pull/14662">#14662</a>)
+* New Keyboard: TGR Jane CE (<a href="https://github.com/qmk/qmk_firmware/pull/14713">#14713</a>)
+* Migrate satisfaction75 away from QWIIC_DRIVERS (<a href="https://github.com/qmk/qmk_firmware/pull/14747">#14747</a>)
+* add Lefty keyboard (<a href="https://github.com/qmk/qmk_firmware/pull/14898">#14898</a>)
+* overnumpad controller: Add support for turning off solenoid enable in low power. (<a href="https://github.com/qmk/qmk_firmware/pull/15021">#15021</a>)
+* Reduce compile size for melgeek mach80 (<a href="https://github.com/qmk/qmk_firmware/pull/15034">#15034</a>)
+* Update updated KPrepublic boards to be prepared for the update (<a href="https://github.com/qmk/qmk_firmware/pull/15040">#15040</a>)
+* rename kprepublic bm keyboards to have a standardized naming format (<a href="https://github.com/qmk/qmk_firmware/pull/15047">#15047</a>)
+* matrix/abelx - Update ChibiOS conf files (<a href="https://github.com/qmk/qmk_firmware/pull/15130">#15130</a>)
+* Disable console on Keebio foldkb and iris rev3 (<a href="https://github.com/qmk/qmk_firmware/pull/15260">#15260</a>)
+* Disable console on Sofle default keymap (<a href="https://github.com/qmk/qmk_firmware/pull/15261">#15261</a>)
+* Disable features on SplitKB boards to fit under size (<a href="https://github.com/qmk/qmk_firmware/pull/15262">#15262</a>)
+* Enable LTO on viktus/sp_mini via keymap (<a href="https://github.com/qmk/qmk_firmware/pull/15263">#15263</a>)</p>
+<p>Keyboard fixes:
+* Fix number of elements in info.json does not match errors (<a href="https://github.com/qmk/qmk_firmware/pull/14213">#14213</a>)
+* Fix typos from 14248 (<a href="https://github.com/qmk/qmk_firmware/pull/14261">#14261</a>)
+* Stream cheap via fixes/updates (<a href="https://github.com/qmk/qmk_firmware/pull/14325">#14325</a>)
+* Map <code>PRODUCT</code> define to <code>keyboard_name</code> (<a href="https://github.com/qmk/qmk_firmware/pull/14372">#14372</a>)
+* Fix BT rules for dosa40rgb (<a href="https://github.com/qmk/qmk_firmware/pull/14497">#14497</a>)
+* Fix typo in mechloving adelais header files (<a href="https://github.com/qmk/qmk_firmware/pull/14590">#14590</a>)
+* Fix for mechlovin/adelais/standard_led/arm/rev4 (<a href="https://github.com/qmk/qmk_firmware/pull/14639">#14639</a>)
+* Fix OLED timeout on recent qwiic migrations (<a href="https://github.com/qmk/qmk_firmware/pull/14775">#14775</a>)
+* Fix OLED timeout on satisfaction75 after migration from QWIIC (<a href="https://github.com/qmk/qmk_firmware/pull/14780">#14780</a>)
+* Fix Compile issues for lefty (<a href="https://github.com/qmk/qmk_firmware/pull/14982">#14982</a>)
+* Fix missing return for oled task on Lefty (<a href="https://github.com/qmk/qmk_firmware/pull/15010">#15010</a>)
+* Fix missing return for oled task on Arabica37 (<a href="https://github.com/qmk/qmk_firmware/pull/15011">#15011</a>)
+* Fix missing return for oled task in drashna userspace (<a href="https://github.com/qmk/qmk_firmware/pull/15012">#15012</a>)
+* Fix size issues on pistachio pro via keymap (<a href="https://github.com/qmk/qmk_firmware/pull/15017">#15017</a>)
+* Fix keycode collision in craftwalk keymap (<a href="https://github.com/qmk/qmk_firmware/pull/15055">#15055</a>)
+* Fix compilation issues for yanghu Unicorne (<a href="https://github.com/qmk/qmk_firmware/pull/15068">#15068</a>)
+* Fixup broken build after #15040 (<a href="https://github.com/qmk/qmk_firmware/pull/15073">#15073</a>)
+* Fix compilation issues for Lime (<a href="https://github.com/qmk/qmk_firmware/pull/15116">#15116</a>)
+* Fix additional board sizes for RGB Matrix (<a href="https://github.com/qmk/qmk_firmware/pull/15170">#15170</a>)
+* Fix bandominedoni via keymap compilation (<a href="https://github.com/qmk/qmk_firmware/pull/15171">#15171</a>)
+* Fix handful of boards compiling too large due to RGB matrix changes (<a href="https://github.com/qmk/qmk_firmware/pull/15184">#15184</a>)
+* Fix oled_task_user for ffkeebs/puca (<a href="https://github.com/qmk/qmk_firmware/pull/15185">#15185</a>)
+* More headroom. (<a href="https://github.com/qmk/qmk_firmware/pull/15301">#15301</a>)
+* More headroom. (<a href="https://github.com/qmk/qmk_firmware/pull/15302">#15302</a>)</p>
+<p>Others:
+* Clean up some code block languages (<a href="https://github.com/qmk/qmk_firmware/pull/14434">#14434</a>)
+* Clarify "nested" and "rolling" key sequences (<a href="https://github.com/qmk/qmk_firmware/pull/14655">#14655</a>)
+* CI: Create GitHub Actions unit test workflow (<a href="https://github.com/qmk/qmk_firmware/pull/15223">#15223</a>)
+* Squeezing space out of AVR (<a href="https://github.com/qmk/qmk_firmware/pull/15243">#15243</a>)</p>
+<p>Bugs:
+* Fix parallel builds w/ LTO on systems where make is not GNU make. (<a href="https://github.com/qmk/qmk_firmware/pull/13955">#13955</a>)
+* fix automatic directory for qmk lint (<a href="https://github.com/qmk/qmk_firmware/pull/14215">#14215</a>)
+* RN42 Bluetooth typo fix (<a href="https://github.com/qmk/qmk_firmware/pull/14421">#14421</a>)
+* fix typo in backlight code from #14439 (<a href="https://github.com/qmk/qmk_firmware/pull/14442">#14442</a>)
+* fix compilation issues with USB programmable buttons (<a href="https://github.com/qmk/qmk_firmware/pull/14454">#14454</a>)
+* Fix descriptor for USB Programmable Buttons (<a href="https://github.com/qmk/qmk_firmware/pull/14455">#14455</a>)
+* Make ChibiOS PAL interactions less STM32 specific - Round 2 (<a href="https://github.com/qmk/qmk_firmware/pull/14456">#14456</a>)
+* fix logical minimum in Programmable Button rdesc (<a href="https://github.com/qmk/qmk_firmware/pull/14464">#14464</a>)
+* Fix i2c_readReg16 (<a href="https://github.com/qmk/qmk_firmware/pull/14730">#14730</a>)
+* Put back eeconfig_update_ functions (<a href="https://github.com/qmk/qmk_firmware/pull/14751">#14751</a>)
+* Fix misplaced endif in led_matrix_drivers.c (<a href="https://github.com/qmk/qmk_firmware/pull/14785">#14785</a>)
+* Fix builds for ChibiOS + Cortex-M0[+] (<a href="https://github.com/qmk/qmk_firmware/pull/14879">#14879</a>)
+* Fix ccache default (<a href="https://github.com/qmk/qmk_firmware/pull/14906">#14906</a>)
+* Fix issues with Oneshot disabling (<a href="https://github.com/qmk/qmk_firmware/pull/14934">#14934</a>)
+* Fix develop after recent changes (<a href="https://github.com/qmk/qmk_firmware/pull/14975">#14975</a>)
+* Fix up issues shown by clang-format of vusb (<a href="https://github.com/qmk/qmk_firmware/pull/15004">#15004</a>)
+* Fix unterminated ifdef in ISSI 3733 driver (<a href="https://github.com/qmk/qmk_firmware/pull/15014">#15014</a>)
+* Fix build failures caused by #12947. (<a href="https://github.com/qmk/qmk_firmware/pull/15019">#15019</a>)
+* Fixup LED matrix. (<a href="https://github.com/qmk/qmk_firmware/pull/15020">#15020</a>)
+* Revert to old init order for host driver (<a href="https://github.com/qmk/qmk_firmware/pull/15029">#15029</a>)
+* Fixup #15029 (<a href="https://github.com/qmk/qmk_firmware/pull/15031">#15031</a>)
+* RISC-V toolchain and picolibc fixes (<a href="https://github.com/qmk/qmk_firmware/pull/15109">#15109</a>)
+* gcc10 LTO - Only specify adhlns assembler options at link time (<a href="https://github.com/qmk/qmk_firmware/pull/15115">#15115</a>)
+* Add needed include to pointing_device.c (<a href="https://github.com/qmk/qmk_firmware/pull/15167">#15167</a>)
+* Fix missing variable for Backlight Breathing (<a href="https://github.com/qmk/qmk_firmware/pull/15199">#15199</a>)
+* Revert backlight pins on function call (<a href="https://github.com/qmk/qmk_firmware/pull/15205">#15205</a>)
+* Fix timer include in override_wiring.c (<a href="https://github.com/qmk/qmk_firmware/pull/15221">#15221</a>)
+* fix broken macro in transport.h (<a href="https://github.com/qmk/qmk_firmware/pull/15239">#15239</a>)
+* Short term bodge for PRODUCT warning (<a href="https://github.com/qmk/qmk_firmware/pull/15240">#15240</a>)
+* Remove use of __flash due to LTO issues (<a href="https://github.com/qmk/qmk_firmware/pull/15268">#15268</a>)
+* Documentation typo fix (<a href="https://github.com/qmk/qmk_firmware/pull/15298">#15298</a>)
+* [Core] Hotfix for HOLD_ON_OTHER_KEY_PRESS after #11059 (<a href="https://github.com/qmk/qmk_firmware/pull/15307">#15307</a>)
+* Fix call to pointing_device_handle_buttons (<a href="https://github.com/qmk/qmk_firmware/pull/15313">#15313</a>)
+* [Develop] Fix ploopy readme typos (<a href="https://github.com/qmk/qmk_firmware/pull/15316">#15316</a>)</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="./" class="md-footer__link md-footer__link--prev" aria-label="Previous: Most Recent ChangeLog" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Most Recent ChangeLog
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../20210828/" class="md-footer__link md-footer__link--next" aria-label="Next: 2021 Aug 28, 0.14.0" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              2021 Aug 28, 0.14.0
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.361d90f1.min.js", "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.289a2a4b.min.js"></script>
+      
+    
+  </body>
+</html>
