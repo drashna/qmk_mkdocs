@@ -24,12 +24,12 @@ for translation in ??/; do
 	echo '*** Building site for language' $translation
 	pushd $translation
 	mkdocs build
+	cp ../versions.json ../site/$(basename "$PWD")
 	popd
 
-	echo "*** Moving $translation/site to site/$translation/"
+	echo "*** Moving ${translation}/site to site/${translation}/"
 	mv $translation/site ../site/$translation/
-	command=$(basename "$PWM")
-	echo $command
+	# echo "We are in ${command}"
 	# cp versions.json ../sites/$command/
 done
 popd
