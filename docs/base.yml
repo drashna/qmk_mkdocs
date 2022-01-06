@@ -5,13 +5,13 @@ extra:
     provider: mike
   alternate:
     - name: English
-      link: /en/devel/
+      link: /qmk_mkdocs/en/devel/
       lang: en
     - name: 日本語
-      link: /jp/devel/
+      link: /qmk_mkdocs/jp/devel/
       lang: jp
     - name: 简体中文
-      link: /zh/devel/
+      link: /qmk_mkdocs/zh/devel/
       lang: zh
   plugins:
   - literate-nav:
