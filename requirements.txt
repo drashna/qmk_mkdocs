@@ -1,3 +1,5 @@
 mkdocs-git-revision-date-plugin
 mkdocs-material
+mkdocs-literate-nav
+mkdocs-same-dir
 pygments

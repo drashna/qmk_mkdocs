@@ -1,4 +1,5 @@
 INHERIT: ../base.yml
+
 nav:
   - Home: README.md
   - 完全菜鸟指南:

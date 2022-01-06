@@ -1,4 +1,8 @@
 INHERIT: ../base.yml
+docs_dir: .
+site_dir: ../site
+site_url: https://drashna.github.io/qmk_mkdocs/devel/en
+
 nav:
   - Home: README.md
   - Tutorial:
@@ -187,4 +191,3 @@ nav:
       - Midi Util: internals_midi_util.md
       - Send Functions: internals_send_functions.md
       - Sysex Tools: internals_sysex_tools.md
-site_url: https://drashna.github.io/qmk_mkdocs/devel/en

@@ -1,5 +1,7 @@
 extra_css:
   - stylesheets/qmk.css
+docs_dir: .
+site_dir: ../site
 extra:
   version:
     provider: mike
