@@ -16,7 +16,7 @@ rm -rf ../../site/??/$1/
 # Set the site URL
 pushd "$(dirname "${BASH_SOURCE[0]}")"/../docs
 sed -i 's,/devel/,/'$1'/,' */mkdocs.yml
-sed -i 's,/devel/,/'$1'/,' base.ymlzzs
+sed -i 's,/devel/,/'$1'/,' base.yml
 
 # Build the translations
 for translation in ??/; do
