@@ -11,7 +11,7 @@ if [ -z "$1" ]; then
 fi
 
 # Prepare the site dir
-rm -rf ../../site/??/$1/
+rm -rf ../site/??/$1/
 
 # Set the site URL
 pushd "$(dirname "${BASH_SOURCE[0]}")"/../docs
