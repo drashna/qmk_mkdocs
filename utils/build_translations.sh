@@ -19,14 +19,14 @@ sed -i 's,/devel/,/'$1'/,' base.yml
 # Build the translations
 for translation in ??/; do
 	echo "*** Setting up index.html and versions.json"
-	cp versions.json $translation/site/
-	cp index.html $translation/site/
+	cp versions.json $translation/
 
 	echo '*** Building site for language' $translation
 	pushd $translation
 	mkdocs build
 	popd
 
+	cp index.html $translation/site/
 	echo "*** Moving ${translation}/site to site/${translation}/"
 	mv $translation/site ../site/$translation/
 done
