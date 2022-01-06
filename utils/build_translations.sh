@@ -21,12 +21,14 @@ sed -i 's,/devel/,/'$1'/,' base.yml
 # Build the translations
 for translation in ??/; do
 
+	if ! [ -e ../site/${translation} ]; then
+		mkdir -p ../site/${translation}
+	fi
+
 	echo '*** Building site for language' $translation
 	pushd $translation
 	mkdocs build
 	popd
-
-	cp versions.json ../site/${translation}/../
 
 	echo "*** Moving $translation/site to site/$translation/"
 	mv $translation/site ../site/$translation/
