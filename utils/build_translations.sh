@@ -11,10 +11,10 @@ if [ -z "$1" ]; then
 fi
 
 # Prepare the site dir
-rm -rf site/??/
+rm -rf ../site/??/
 
 # Set the site URL
-pushd "$(dirname "${BASH_SOURCE[0]}")"/docs
+pushd "$(dirname "${BASH_SOURCE[0]}")"/../docs
 sed -i 's,/devel/,/'$1'/,' */mkdocs.yml
 
 # Setup the language switcher
