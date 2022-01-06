@@ -1,5 +1,5 @@
 INHERIT: ../base.yml
-site_url: https://drashna.github.io/qmk_mkdocs/en/devel/
+site_url: https://drashna.github.io/qmk_mkdocs/devel/en/
 docs_dir: .
 plugins:
   - same-dir
