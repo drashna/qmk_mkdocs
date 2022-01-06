@@ -23,9 +23,9 @@ cp versions.json ../site/
 # Build the translations
 for translation in ??/; do
 	echo '*** Setting up symlinks for language' $translation
-	../utils/symlink_translation.sh $translation
+	../utils/symlink_translation.sh $translation $1
 
-	echo '*** Building site for language' $translation
+	echo '*** Building site for language' $translation $1
 	pushd $translation
 	mkdocs build
 	popd
