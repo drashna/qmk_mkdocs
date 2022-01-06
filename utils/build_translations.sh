@@ -19,7 +19,8 @@ sed -i 's,/devel/,/'$1'/,' base.yml
 # Build the translations
 for translation in ??/; do
 	# Prepare the site dir
-	rm -rf ../site/??/$1/
+	ls R ../site/??/$1/
+	# rm -rf ../site/??/$1/
 
 	echo '*** Building site for language' $translation
 	pushd $translation
