@@ -21,7 +21,6 @@ sed -i 's,/devel/,/'$1'/,' base.yml
 # Build the translations
 for translation in ??/; do
 	echo '*** Setting up symlinks for language' $translation
-	../utils/symlink_translation.sh $translation
 
 	echo '*** Building site for language' $translation
 	pushd $translation
