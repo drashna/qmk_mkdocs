@@ -29,7 +29,7 @@ for translation in ??/; do
 	popd
 
 	cp versions.json ../site/$translation
-	mv ../site/$ranslation/versions.json ..
+	mv ../site/$ranslation/versions.json ../
 	echo "*** Moving $translation/site to site/$translation/"
 	mv $translation/site ../site/$translation/
 done
