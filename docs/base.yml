@@ -1,7 +1,5 @@
 extra_css:
   - stylesheets/qmk.css
-docs_dir: .
-site_dir: ../site
 extra:
   version:
     provider: mike
@@ -16,6 +14,8 @@ extra:
   #     link: devel/zh/
   #     lang: zh
   plugins:
+  - literate-nav:
+      nav_file: _summary.md
   - search:
       lang:
         - en
@@ -47,6 +47,7 @@ markdown_extensions:
 repo_name: qmk/qmk_firmware
 repo_url: https://github.com/qmk/qmk_firmware
 site_name: QMK Firmware Docs
+site_dir: ./site
 theme:
   favicon: images/favicon.ico
   features:

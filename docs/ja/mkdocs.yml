@@ -1,7 +1,8 @@
 INHERIT: ../base.yml
 site_url: https://drashna.github.io/qmk_mkdocs/devel/ja
 docs_dir: .
-site_dir: ../site
+plugins:
+  - same-dir
 
 nav:
   - Home: README.md

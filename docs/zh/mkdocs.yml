@@ -1,4 +1,8 @@
 INHERIT: ../base.yml
+site_url: https://drashna.github.io/qmk_mkdocs/devel/zh
+docs_dir: .
+plugins:
+  - same-dir
 
 nav:
   - Home: README.md
@@ -124,4 +128,3 @@ nav:
     - Midi工具库: internals_midi_util.md
     - 发送函数: internals_send_functions.md
     - Sysex工具: internals_sysex_tools.md
-site_url: https://drashna.github.io/qmk_mkdocs/devel/zh
