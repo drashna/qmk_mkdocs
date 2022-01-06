@@ -6,7 +6,7 @@ on:
     branches:
     - develop
     paths:
-    - 'docs/**'
+    - '**'
 
 jobs:
   docs_develop:
@@ -14,7 +14,7 @@ jobs:
     container: qmkfm/qmk_cli
 
     # protect against those who develop with their fork on master
-    if: github.repository == 'qmk/qmk_mkdocs'
+    if: github.repository == 'drashna/qmk_mkdocs'
 
     steps:
     - uses: actions/checkout@v2
