@@ -28,6 +28,7 @@ for translation in ??/; do
 
 	echo "*** Moving $translation/site to site/$translation/"
 	mv $translation/site ../site/$translation/
-	cp docs/versions.json ../site/${translation}/../
+	command=$(basename $PWM)
+	cp versions.json ../sites/$command/
 done
 popd
