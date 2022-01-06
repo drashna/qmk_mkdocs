@@ -29,7 +29,7 @@ for translation in ??/; do
 	pushd $translation
 	mkdocs build
 	popd
-	echo "We are in:""
+	echo "We are in:"
 	basename "$PWD"
 	ls
 	echo "*** Moving $translation/site to site/$translation"
