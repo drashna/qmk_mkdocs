@@ -1,10 +1,13 @@
-name: Testing Docs
+name: Master Docs
 
 on:
   workflow_dispatch:
   push:
     branches:
-    - testing
+    - main
+    paths:
+    - 'docs/**'
+
 
 jobs:
   docs_main:
@@ -26,7 +29,7 @@ jobs:
         python3 -m pip install -r requirements.txt
 
     - name: Build docs
-      run: ./utils/build_translations.sh testing
+      run: ./utils/build_translations.sh master
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.4
@@ -34,4 +37,4 @@ jobs:
         branch: gh-pages
         folder: site
         git-config-email: hello@qmk.fm
-        target-folder: testing
+        target-folder: master
